@@ -1,0 +1,36 @@
+
+
+.mosaic-slide-grid-item{
+    width: 80%;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.mosaic-slide-grid-item > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.mosaic-slide-grid-item-text-div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 66;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.451);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    transform: rotateY(90deg);
+    transition: all 1s;
+  }
+  
+  
+  .mosaic-slide-grid-item:hover .mosaic-slide-grid-item-text-div{
+    transform: rotateY(0);
+  }

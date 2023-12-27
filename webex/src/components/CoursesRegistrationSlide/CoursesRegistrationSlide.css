@@ -1,0 +1,56 @@
+.courses-registration-slide-item{
+    width: 253px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 0px 26px 26px 0px;
+    box-shadow: 0 0 5px  #272A7B;
+    border: 1px solid #272A7B;
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    position: relative;
+    color: white;
+}
+
+
+.react-multi-carousel-track > li:nth-child(odd) .courses-registration-slide-item .courses-registration-slide-item-bootom{
+    background-color: #4E3584CC;
+}
+
+
+.react-multi-carousel-track > li:nth-child(even) .courses-registration-slide-item .courses-registration-slide-item-bootom{
+    background-color: #2E3E6D;
+}
+
+
+.courses-registration-slide-item-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.courses-registration-slide-item-bootom{
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 26px 0px;
+    box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.39);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+@media(max-width: 1024px){
+    .forms-div{
+        flex-direction: column;
+    }
+}
+
+
+
+
+

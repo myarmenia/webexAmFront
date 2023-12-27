@@ -1,0 +1,71 @@
+.courses-registration-info{
+    padding: 100px 0;
+}
+
+
+.courses-registration-info .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 200px;
+}
+.courses-registration-info-item-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.courses-registration-info-item-text h5{
+    color: var(--Withe, #FFF);
+    font-family: Calibri;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.courses-registration-info .container .courses-registration-info-item{
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+@media(max-width:1024px){
+    .courses-registration-info .container{
+        padding: 0 100px;
+    }
+}
+
+@media(max-width:720px){
+    .courses-registration-info .container{
+        padding: 0 50px;
+    }
+
+    .courses-registration-info-item-text h5{
+        font-size: 17px;
+    }
+
+    .courses-registration-info-item-text p{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:480px){
+    .courses-registration-info .container{
+        padding: 0 30px;
+    }
+
+    .courses-registration-info-item-text h5{
+        font-size: 15px;
+    }
+
+    .courses-registration-info-item-text p{
+        font-size: 12px;
+    }
+}

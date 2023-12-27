@@ -1,0 +1,134 @@
+img{
+    border-radius: 10px;
+    object-fit:cover;
+    object-position: center;
+}
+
+.projects-page-item{
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    padding-bottom: 50px;
+    border-bottom: 1px solid gray;
+}
+
+.projects-page-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.projects-page-item .projects-page-item-imgs{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projects-page-item .projects-page-item-imgs .projects-page-item-imgs-div-1{
+    width: 100%;
+    height: 350px;
+}
+
+.projects-page-item .projects-page-item-imgs .projects-page-item-imgs-div-1 >img{
+    width: 100%;
+    height: 100%;
+}
+
+.projects-page-item .projects-page-item-imgs .projects-page-item-imgs-div-2{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+}
+
+.projects-page-item .projects-page-item-imgs .projects-page-item-imgs-div-2 >img{
+    width: 23.7%;
+
+}
+
+
+
+
+/* ======================================= */
+
+.projects-page-item-bottom-div{
+    display: flex;
+    gap: 20px;
+}
+
+.projects-page-item-info-div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.projects-page-item h4{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.projects-page-item p{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+@media(max-width: 1024px){
+    .projects-page-item{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .projects-page-item:nth-child(even){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-page-item .projects-page-item-imgs{
+        width: 70%;
+    }
+
+    .projects-page-item-info-div{
+        width: 70%;
+    }
+    .projects-page-item-info-div h4 {
+        font-size: 20px;
+    }
+
+    .projects-page-item-info-div p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 480px){
+    .projects-page-item .projects-page-item-imgs{
+        width: 100%;
+    }
+
+    .projects-page-item-info-div{
+        width: 100%;
+    }
+
+    .projects-page-item-info-div h4 {
+        font-size: 17px;
+    }
+
+    .projects-page-item-info-div p {
+        font-size: 13px;
+    }
+}
+
+

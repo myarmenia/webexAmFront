@@ -1,0 +1,36 @@
+.createItemWebsitesAndMobileApp {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.createItemWebsitesAndMobileApp h4{
+    background-color: #2D318A;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 350px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+
+.createItemWebsitesAndMobileApp p{
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+@media(max-width: 1024px){
+    .createItemWebsitesAndMobileApp p{
+        font-size: 16px;
+    }
+}

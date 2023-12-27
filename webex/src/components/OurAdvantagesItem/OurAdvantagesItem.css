@@ -1,0 +1,46 @@
+.OurAdvantagesItem{
+    width: 273px;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 0px 26px 26px 0px;
+    background: rgba(56, 60, 162, 0.80);
+    box-shadow: 2px 2px 4px 0px #272A7B;
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.OurAdvantagesItem h4{
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.OurAdvantagesItem p{
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.OurAdvantagesItem >div{
+    /* width: 273px; */
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 26px 0px;
+    background: #4E3584;
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

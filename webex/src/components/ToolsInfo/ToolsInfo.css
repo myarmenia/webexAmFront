@@ -1,0 +1,27 @@
+
+
+.tools-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    
+}
+
+
+.tools-info-items{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    
+}
+
+
+
+@media (max-width: 1024px){
+    
+    .tools-info-items{
+        flex-wrap: wrap;
+    }
+
+}

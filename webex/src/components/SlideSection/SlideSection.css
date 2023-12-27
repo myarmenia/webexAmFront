@@ -1,0 +1,19 @@
+.react-multiple-carousel__arrow{
+    display: none;
+}
+
+.react-multi-carousel-list{
+    position: static;
+}
+
+
+.slide-section-items{
+    position: relative;
+    padding: 100px 0;
+}
+
+
+.react-multi-carousel-dot-list{
+    bottom: -30px;
+}
+

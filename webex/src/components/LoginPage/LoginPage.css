@@ -1,0 +1,123 @@
+.login{
+    background-color:#010526;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.login .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    height: 100%;
+    column-gap: 100px;
+}
+
+.login .container form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.login .container form input {
+    width: 383px;
+    height: 40px;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    color: white;
+}
+
+.login .container form p{
+    color: red;
+    font-size: 13px;
+}
+
+
+.login .container form h2{
+    color: var(--Withe, #FFF);
+    font-family: Calibri;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.login .container form h6{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.login .container form h6 a{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.log_img_div{
+    width: 900px;
+    height: 400px;
+}
+.log_img_div > canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media(max-width:1024px){
+    .log_img_div{
+        width: 600px;
+        height: 300px;
+    }
+    .login .container{
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media(max-width:720px){
+    .log_img_div{
+        width: 400px;
+        height: 200px;
+    }
+    .login .container{
+        flex-direction: column-reverse;
+    }
+
+    .login .container form h2{
+        font-size: 20px;
+    }
+    .login{
+        padding: 30px 20px;
+    }
+}
+
+@media(max-width:480px){
+    .log_img_div{
+        width: 300px;
+        height: 200px;
+    }
+    .login .container{
+        flex-direction: column-reverse;
+    }
+
+    .login .container form h2{
+        font-size: 20px;
+    }
+    .login{
+        padding: 30px 20px;
+    }
+
+    .login .container form input{
+        width: 300px;
+    }
+}
+

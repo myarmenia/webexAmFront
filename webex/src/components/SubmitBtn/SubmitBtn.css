@@ -1,0 +1,121 @@
+.btn{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    display: flex;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    outline: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: 2px solid white;
+    border: none;
+}
+
+.btn:hover{
+    color: white;
+    background: #00bcff;
+    box-shadow:0 0 10px  #00bcff, 0 0 40px #00bcff, 0 0 80px #00bcff;
+    transition-delay: 1s;
+    outline: none;
+}
+
+.btn span{
+    position: absolute;
+    display: block;
+}
+
+.btn span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00bcff);
+}
+
+.btn:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+.btn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #00bcff);
+}
+
+.btn:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.btn span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #00bcff);
+}
+
+.btn:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.btn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #00bcff);
+}
+
+.btn:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+@media(min-width: 1920px){
+    .btn{
+        font-size: 25px;
+    }
+  }
+
+@media (max-width: 1920px){
+    .btn{
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 1440px){
+    .btn{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 1140px){
+    .btn{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 720px){
+    .btn{
+        font-size: 13px;
+    }
+}
+

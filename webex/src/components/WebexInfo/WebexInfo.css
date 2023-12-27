@@ -1,0 +1,237 @@
+.webex-info-div{
+    display: flex;
+    column-gap: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.webex-info-div >div{
+    width: 50%;
+}
+
+
+
+.images-div-webex{
+    /* width: 400px; */
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(2, 350px);
+    gap: 10px;
+    padding: 50px;
+}
+
+.img-top-left{
+    border-radius: 80px 0px 0px 0px;
+    background-image: url('../../images/img1_info.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.img-top-right{
+    border-radius: 0px 800px 0px 0px;
+    background: #5D3584CC;
+}
+
+.img-top-right > div {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/7613.png\ with\ oval\ new_\ 2.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: cover; */
+}
+
+.img-botom-left{
+    border-radius: 0px 0px 0px 80px;
+    background: #1F316F;
+}
+
+.img-botom-left > div{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/3img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18pc;
+}
+
+.img-botom-right{
+    border-radius: 0px 0px 0px 800px;
+    background: #00B1A7;
+}
+
+.img-botom-right > div{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/7611\ 3.png');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.webex-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.webex-info p{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    
+}
+
+.webex-info h2{
+    color: #FFF;
+    font-family: Calibri;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media(max-width: 1440px){
+    .webex-info-div{
+        column-gap: 170px;
+    }
+}
+@media (max-width: 1140px){
+    .images-div-webex{
+        /* width: 400px; */
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: repeat(2, 200px);
+        gap: 10px;
+        padding: 50px;
+    }
+
+    .webex-info{
+        row-gap: 20px;
+    }
+
+    .img-botom-right > div{
+        background-position: top right;
+        background-size: 10pc;
+    }
+
+
+    .img-botom-left > div{
+        background-size: 10pc;
+    }
+
+    .webex-info p{
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .webex-info h2{
+        font-size: 30px;
+    }
+
+    .img-top-right > div{
+        background-size: 12pc;
+    }
+}
+
+
+@media (max-width: 1024px){
+
+    .images-div-webex{
+        /* width: 400px; */
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(2, 150px);
+        gap: 10px;
+        padding: 50px;
+    }
+
+    .img-botom-left > div{
+        background-size: 6pc;
+    }
+
+    .img-botom-right > div{
+        background-position: top right;
+        background-size: 7pc;
+    }
+
+    .img-top-right > div{
+        background-size: 8pc;
+    }
+    
+    .webex-info-div{
+        column-gap: 20px;
+    }
+
+    .webex-info p{
+        font-size: 16px;
+    }
+
+    .webex-info h2{
+        font-size: 20px;
+    }
+     
+}
+
+
+@media (max-width: 720px){
+    .webex-info-div{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 40px;
+    }
+
+    .webex-info-div >div{
+        min-width: 80%;
+    }
+     
+}
+
+@media (max-width: 480px){
+    .webex-info-div{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 40px;
+    }
+
+    .images-div-webex{
+        /* width: 400px; */
+        display: grid;
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: repeat(2, 100px);
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .img-botom-left > div{
+        background-size: 3pc;
+        background-position:  center;
+    }
+
+    .img-botom-right > div{
+        background-position: top right;
+        background-size: 5pc;
+    }
+
+    .img-top-right > div{
+        background-size: 6pc;
+    }
+
+    .webex-info-div{
+        column-gap: 20px;
+    }
+
+    .webex-info p{
+        font-size: 16px;
+    }
+
+    .webex-info h2{
+        font-size: 15px;
+    }
+
+     
+}

@@ -1,0 +1,89 @@
+.slide-section-item{
+    width: 273px;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 0px 26px 26px 0px;
+    /* background: rgba(56, 60, 162, 0.80); */
+    box-shadow: 2px 2px 4px 0px #272A7B;
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    position: relative;
+}
+
+
+.react-multi-carousel-track > li:nth-child(even) .slide-section-item .top-div .slide-section-item-img-div > svg:nth-of-type(1) path{
+   fill: #2B72C7CC;
+}
+.react-multi-carousel-track > li:nth-child(odd) .slide-section-item{
+    background-color: #4E3584CC;
+}
+
+.react-multi-carousel-track > li:nth-child(even) .slide-section-item{
+    background-color: #2B72C7CC;
+}
+
+.react-multi-carousel-track > li:nth-child(odd) .slide-section-item .top-div .slide-section-item-img-div > svg:nth-of-type(1) path{
+    fill: #4E3584CC;;
+ }
+
+
+
+
+
+/* .top-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.top-div .slide-section-item-img-div > svg:nth-of-type(1){
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+
+.top-div .slide-section-item-img-div > svg:nth-of-type(2){
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+
+.top-div > h4{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.slide-section-item p{
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Calibri;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.slide-section-item .bottom-div{
+    /* width: 273px; */
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 26px 0px;
+    box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.39);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+

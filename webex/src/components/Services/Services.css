@@ -1,0 +1,129 @@
+ .services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 400px 0;
+}
+
+
+.centre-div{
+    width: 160px;
+    height: 160.154px;
+    background-color:rgba(89, 156, 218, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    animation: centre 3s  linear infinite;
+}
+
+
+
+
+
+.centre-div h4{
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.70);
+    font-family: Calibri;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+
+
+@keyframes centre {
+    0% {
+        box-shadow: 0 0 5px #58FFFE;
+    }
+    50% {
+        box-shadow: 0 0 20px #58FFFE;
+    }
+    100% {
+        box-shadow: 0 0 5px #58FFFE;
+    }
+}
+
+
+@media(max-width: 1024px){
+    .centre-div{
+        width: 100px;
+        height: 100px;
+    }
+
+    .centre-div h4{
+        font-size: 12px;
+    }
+
+    .services{
+        padding: 100px 0;
+    }
+}
+
+
+@media(max-width: 720px){
+    .centre-div{
+        width: 500px;
+        background-color: transparent;
+        flex-direction: column;
+        animation: none;
+        row-gap: 20px;
+
+    }
+    .items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .centre-div h4{
+        background-color: #599CDA;
+        border-radius: 30px;
+        padding: 16px 30px;
+        border-radius: 14px;
+        font-size: 16px;
+        animation: centre 3s linear infinite;
+    }
+}
+
+@media(max-width: 480px){
+    .centre-div{
+        width: 300px;
+        background-color: transparent;
+        flex-direction: column;
+        animation: none;
+        row-gap: 20px;
+    }
+    .items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .centre-div h4{
+        background-color: #599CDA;
+        border-radius: 30px;
+        padding: 16px 60px;
+        border-radius: 14px;
+        font-size: 12px;
+        animation: centre 3s linear infinite;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
