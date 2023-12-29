@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import './Header.css';
 import Button from '../Button/Button';
 import Button2 from '../Button2/Button2';
-import { headerImg } from '../../images/images';
 
 function Header() {
   const { t, i18n } = useTranslation();
@@ -38,6 +37,7 @@ function Header() {
 
   return (
     <div className='header'>
+      <h1 style={{display:'none'}}>Software development and web courses</h1>
       <div className='header-title'>
           <h2>{animatedTextH2}</h2>
         <div>
@@ -48,8 +48,6 @@ function Header() {
           <Button2 index='2' />
         </div>
       </div>
-
-      {/* <img src={headerImg} /> */}
 
       <div className='animation-container'>
         <div className='animation-badge'>
