@@ -1,5 +1,5 @@
 import { angularJsIcon, closeLockIcon, cssIcon, jQueryIcon, javaScriptIcon, mySqlIcon, openLockIcon, reactIcon, slide_AngularJSIcon, slide_JQueryIcon, slide_ReactIcon, slide_htaccessIcon, slide_jsIcon, toolsIcon1, toolsIcon2, toolsIcon3, toolsIcon4, toolsIcon5, toolsIcon6, wordPressIcon } from './iconFolder/icon'
-import { projectImg_1, projectImg_2, projectImg_3, projectImg_4, projectImg_5, projectImg_6, projectImg_7, projectImg_8, servicesLine_1, servicesLine_2, servicesLine_3, servicesLine_4, servicesLine_5, servicesLine_6, servicesLine_7, servicesLine_8, slideItemImg } from '../src/images/images'
+import { co_workers_image1, co_workers_image10, co_workers_image11, co_workers_image12, co_workers_image13, co_workers_image14, co_workers_image2, co_workers_image3, co_workers_image4, co_workers_image5, co_workers_image6, co_workers_image7, co_workers_image8, co_workers_image9, projectImg_1, projectImg_2, projectImg_3, projectImg_4, projectImg_5, projectImg_6, projectImg_7, projectImg_8, servicesLine_1, servicesLine_2, servicesLine_3, servicesLine_4, servicesLine_5, servicesLine_6, servicesLine_7, servicesLine_8, slideItemImg } from '../src/images/images'
 
 // ===================tools-Info====================================
 
@@ -612,3 +612,90 @@ export const projectsPageData = [
     },
 ]
 
+
+
+export const co_workers_data = [
+    {
+        _id: '1',
+        img: co_workers_image1,
+        txt: 'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն'
+    },
+
+    {
+        _id: '2',
+        img: co_workers_image1,
+        txt: 'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն'
+    },
+    
+    {
+        _id: '3',
+        img: co_workers_image2,
+        txt: 'Պաշտպանության նախարարություն'
+    },
+
+    {
+        _id: '4',
+        img: co_workers_image1,
+        txt: 'ՀՀ բարձր տեխնոլոգիական արդյունաբերության նախարարություն'
+    },
+
+    {
+        _id: '5',
+        img: co_workers_image3,
+        txt: 'LGG foundation'
+    },
+
+    {
+        _id: '6',
+        img: co_workers_image4,
+        txt: 'Elinarti'
+    },
+
+    {
+        _id: '7',
+        img: co_workers_image5,
+        txt: 'ՀՀ ոստիկանություն'
+    },
+
+    {
+        _id: '8',
+        img: co_workers_image6,
+        txt: 'Angel investor Club of Armenia'
+    },
+
+    {
+        _id: '9',
+        img: co_workers_image7,
+        txt: 'Com.lussen'
+    },
+
+    {
+        _id: '10',
+        img: co_workers_image8,
+        txt: 'Վ․Ա․ Ֆանարջյանի անվան ուռուցքաբանության ազգային կենտրոն ՓԲԸ'
+    },
+
+    {
+        _id: '12',
+        img: co_workers_image9,
+        txt: 'Armenian center of hemophilia and thrombophilia'
+    },
+
+    {
+        _id: '13',
+        img: co_workers_image10,
+        txt: 'Bresta.am'
+    },
+
+    {
+        _id: '14',
+        img: co_workers_image13,
+        txt: 'Лига услуг'
+    },
+
+    {
+        _id: '15',
+        img: co_workers_image14,
+        txt: 'Erita.am'
+    },
+]
