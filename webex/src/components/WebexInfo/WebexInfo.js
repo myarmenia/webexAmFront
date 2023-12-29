@@ -8,6 +8,15 @@ function WebexInfo() {
     //     setleng(i18n.language === 'am')
     // },[leng])
 
+    const [sizeGap, setSizeGap] = useState(40)
+
+  useEffect(()=>{
+    window.addEventListener('scroll', ()=> {
+      window.scrollY > 660 && window.scrollY  < 1000 ?setSizeGap(10) : setSizeGap(40);
+
+    })
+  },[])
+
     const { t, i18n } = useTranslation();
     
     const arryText =  i18n.language === 'am' ? t('webexInfo.'+ '1').split(':') : t('webexInfo.'+ '1').split('.')
@@ -17,8 +26,12 @@ function WebexInfo() {
     )
     
   return (
-    <div className='webex-info-div'>
-        <div className='images-div-webex'>
+    <div  className='webex-info-div'>
+        <div 
+          style={{
+            gap: `${sizeGap}px`
+          }}
+          className='images-div-webex' >
             <div className='img-top-left'>
                 <div className='img-div'></div>
             </div>
