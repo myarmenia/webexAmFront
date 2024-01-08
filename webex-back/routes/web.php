@@ -52,11 +52,11 @@ use App\Http\Controllers\tables\Basic as TablesBasic;
 Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
 // Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
 // Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
-Auth::routes(['register' => false, 'verify' => false,]);
+Auth::routes(['register' => false, 'verify' => false]);
 
-Route::post('/web/login-check', [AuthController::class, 'login'])->name('web-login-check');
+// Route::post('/web/login-check', [AuthController::class, 'login'])->name('web-login-check');
 
-Route::group(['middleware' => ['authCheck']], function () {
+Route::group(['middleware' => ['auth']], function () {
   // Main Page Route
   Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
@@ -106,10 +106,8 @@ Route::group(['middleware' => ['authCheck']], function () {
 
   // tables
   Route::get('/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
-
-});
-
-Route::group(['middleware' => ['auth']], function () {
-  // Route::resource('roles', RoleController::class);
+  
+ // Route::resource('roles', RoleController::class);
   // Route::resource('users', UserController::class);
 });
+

@@ -31,9 +31,7 @@ class LoginController extends Controller
     protected function redirectTo()
     {
 
-        $user = Auth::user();
-
-        dd($user);
+      return Auth::user()->isAdmin() ? '/' : null;
 
     }
 
@@ -45,6 +43,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest')->except('logout');
     }
 }
