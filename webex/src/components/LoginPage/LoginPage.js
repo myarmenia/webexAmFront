@@ -7,13 +7,17 @@ import { globImg } from "../../images/images";
 import SectionTitle from "../SectionTitle/SectionTitle";
 // import ParticleSliderComponent from "../AnimLogo/AnimLogo";
 import AnimLogo from "../AnimLogo/AnimLogo.tsx";
-import './LoginPage.css'
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { eyeIcon } from "../../iconFolder/icon.js";
-import { useState } from "react";
-
+import { useRef, useState } from "react";
+import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
+import { useSelector, useDispatch } from 'react-redux'
+import './LoginPage.css'
+import { selectLogin, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
 function LoginPage({setUser, setPage, user}) {
+
+    const fref = useRef(null)
 
     const [viewPassword, setViewPassword] = useState(true)
 
@@ -21,6 +25,10 @@ function LoginPage({setUser, setPage, user}) {
 
     const {pathname} = useLocation()
 
+    const dispatch = useDispatch()
+
+    const log = useSelector(selectLogin)
+    
     const  validationSchema = yup.object().shape({
         email: yup.string().email('Գրե՜ք ճիշտ Էլ. հասցե').required('Պարտադիր գրել Էլ. հասցե'),
         password: yup.string()
@@ -30,6 +38,12 @@ function LoginPage({setUser, setPage, user}) {
         confirmPassword: yup.string().oneOf([yup.ref('password')], 'Գաղտնաբառները չեն համնկնում').required('Պարտադիր գրել գաղտնաբառը'),
 
     })
+
+    function handleLogSub(e,handleSubmit) {
+        e.preventDefault()
+        handleSubmit()
+        dispatch(postLogin({email: e.target[0].value, password: e.target[1].value}))
+    }
     return (
         <Formik
             initialValues={{
@@ -44,7 +58,7 @@ function LoginPage({setUser, setPage, user}) {
                         ...values
                     }
                 ])
-                setPage('log')
+                // setPage('log')
                 resetForm()
             }}
 
@@ -57,7 +71,7 @@ function LoginPage({setUser, setPage, user}) {
             ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
                 <div className="login">
                     <div className="container">
-                            <form className="log-form"  onSubmit={handleSubmit}>
+                            <form className="log-form"  onSubmit={(e)=>handleLogSub(e,handleSubmit)}>
                                 <SectionTitle title={t('reg_and_log.'+ '1')}/>
 
                             <div className="email-inp">

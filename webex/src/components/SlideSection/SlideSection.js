@@ -30,7 +30,7 @@ function SlideSection() {
         el.img = packageSlideItem[el.type].img
       }
       
-     return <SlideSectionItem key={el.id}
+     return <SlideSectionItem key={el._id}
               id = {el._id}
               title = {el.title}
               timeLine = {el.timeLine} 
