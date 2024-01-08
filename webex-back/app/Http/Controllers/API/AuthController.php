@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\BaseController;
+use App\Http\Requests\SingupRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Request;
 
-class AuthController extends Controller
+class AuthController extends BaseController
 {
     public function __construct()
     {
@@ -33,6 +36,13 @@ class AuthController extends Controller
         auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
+    }
+
+    public function signup(Request $request)
+    {
+        dd(333);
+        $validated = $request->validated();
+        dd($validated);
     }
 
     public function refresh()
