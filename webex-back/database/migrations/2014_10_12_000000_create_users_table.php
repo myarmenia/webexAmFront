@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('password');
             $table->boolean('status')->default(1);
             $table->string('avatar')->nullable();
+            $table->boolean('passport')->default(0);
             $table->string('phone');
             $table->timestamps();
         });
