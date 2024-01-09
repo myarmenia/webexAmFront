@@ -17,7 +17,8 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-      {{-- {{dd($menuData[0])}} --}}
+
+
       {{-- @dd($menuData) --}}
         @foreach ($menuData[0]->menu as $menu)
             {{-- adding active and open class if child is active --}}

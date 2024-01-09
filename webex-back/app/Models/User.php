@@ -15,19 +15,18 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
-        'password',
         'status',
         'avatar',
+        'passport',
         'phone',
-    ];
-
-    protected $hidden = [
         'password',
     ];
 
-    protected $casts = [
-        'password' => 'hashed',
-    ];
+    protected $hidden = ['password']; 
+
+    // protected $casts = [
+    //     'password' => 'hashed',
+    // ];
 
     public function getJWTIdentifier()
     {
@@ -38,4 +37,18 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function isAdmin() {
+
+      foreach ($this->roles()->get() as $role)
+      {
+          if ($role->name == "Admin" || $role->name == "mentor")
+          {
+              return true;
+          }
+      }
+
+      return false;
+  }
+
 }

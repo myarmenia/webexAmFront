@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\API\BaseController;
+use App\Http\Requests\SingupRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
-class AuthController extends Controller
+class AuthController extends BaseController
 {
     public function __construct()
     {
@@ -16,10 +21,15 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
+        if (! $token = JWTAuth::attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
+        // auth()->user()->update([
+        //     'wifi_ip' => request()->ip(),
+        //     'login_at' => now(),
+        // ]);
+dd(auth()->user());
         return $this->respondWithToken($token);
     }
 
@@ -35,6 +45,13 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
+    public function signup(Request $request)
+    {
+        dd(333);
+        $validated = $request->validated();
+        dd($validated);
+    }
+
     public function refresh()
     {
         return $this->respondWithToken(auth()->refresh());
@@ -45,7 +62,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
 }

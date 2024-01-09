@@ -30,10 +30,9 @@
 
 
 .item span{
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--main_font_color);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(1, 5, 38, 0.75);
-    font-family: Calibri;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

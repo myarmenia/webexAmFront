@@ -19,6 +19,8 @@ return new class extends Migration {
             $table->string('avatar')->nullable();
             $table->boolean('passport')->default(0);
             $table->string('phone');
+            $table->string('ip')->nullable();
+            $table->timestamp('login_at')->nullable();
             $table->timestamps();
         });
     }
