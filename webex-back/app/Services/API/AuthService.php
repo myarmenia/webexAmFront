@@ -29,5 +29,24 @@ class AuthService
             'token' => $token
         ];
     }
+
+    public function login($request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (! $token = JWTAuth::attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        auth()->user()->update([
+            'ip' => request()->ip(),
+            'login_at' => now(),
+        ]);
+
+        return [
+            'authUser' => auth()->user(),
+            'token' => $token
+        ];
+    }
   
 }
