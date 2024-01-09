@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 
 class CreateUserSeeder extends Seeder
 {
@@ -13,7 +16,7 @@ class CreateUserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'admin@mail.ru')->first();
+        $user = User::where('email', 'info@webex.am')->first();
 
         if(!$user){
             $user = User::updateOrCreate([
@@ -21,9 +24,17 @@ class CreateUserSeeder extends Seeder
             'status' => 1,
             'avatar' => '',
             'phone' => '+37494444444',
-            'email' => 'admin@mail.ru',
+            'email' => 'info@webex.am',
             'password' => bcrypt('123456')
             ]);
+
+            $role = Role::create(['name' => 'Admin']);
+
+            $permissions = Permission::pluck('id', 'id')->all();
+
+            $role->syncPermissions($permissions);
+
+            $user->assignRole([$role->id]);
         } 
     }
 }
