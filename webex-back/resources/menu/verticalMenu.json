@@ -18,6 +18,31 @@
       ]
     },
     {
+
+      "name": "Courses",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "form-layouts",
+      "submenu": [
+        {
+          "url": "/course/course-language",
+          "name": "Course Languages list",
+          "slug": "course-language"
+        },
+        {
+          "url": "/lesson/lesson-list",
+          "name": "Lessons",
+          "slug": "lesson-list"
+        },
+        {
+          "url": "/task/task-list",
+          "name": "Tasks",
+          "slug": "task-list"
+        }
+      ]
+    },
+
+    {
+
       "menuHeader": "Apps & Pages"
     },
     {
@@ -43,6 +68,33 @@
       ]
     },
     {
+
+      "name": "Authentications",
+      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "slug": "auth",
+      "submenu": [
+        {
+          "url": "auth/login-basic",
+          "name": "Login",
+          "slug": "auth-login-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/register-basic",
+          "name": "Register",
+          "slug": "auth-register-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/forgot-password-basic",
+          "name": "Forgot Password",
+          "slug": "auth-forgot-password-basic",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+
       "menuHeader": "Components"
     },
     {
@@ -223,4 +275,6 @@
       "menuHeader": "Misc"
     }
   ]
+
 }
+

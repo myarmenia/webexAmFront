@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Http\Controllers\Admin\Courses\CourseLanguageController;
+use App\Http\Controllers\Admin\Lessons\LessonController;
+use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -45,7 +49,6 @@ use App\Http\Controllers\form_elements\InputGroups;
 use App\Http\Controllers\form_layouts\VerticalForm;
 use App\Http\Controllers\form_layouts\HorizontalForm;
 use App\Http\Controllers\tables\Basic as TablesBasic;
-
 
 
 // authentication
@@ -109,5 +112,23 @@ Route::group(['middleware' => ['auth']], function () {
   
  // Route::resource('roles', RoleController::class);
   // Route::resource('users', UserController::class);
+  
+  
+  // course-language
+Route::get('/course/course-language', [CourseLanguageController::class,'index'])->name('course-language');
+Route::get('/course/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
+Route::post('/course/course-language-store', [CourseLanguageController::class,'store'])->name('course-language-store');
+
+// lessons
+Route::get('/lesson/lesson-list', [LessonController::class,'index'])->name('lesson-list');
+Route::get('/lesson/lesson-create', [LessonController::class,'create'])->name('lesson-create');
+Route::post('/lesson/lesson-store', [LessonController::class,'store'])->name('lesson-store');
+Route::get('/lesson/lesson-edit/{id}', [LessonController::class,'edit'])->name('lesson-edit');
+
+//tasks
+Route::get('/task/task-list', [TaskController::class,'index'])->name('task-list');
+Route::get('/task/task-create', [TaskController::class,'create'])->name('task-create');
+Route::post('/task/task-store', [TaskController::class,'store'])->name('task-store');
+
 });
 

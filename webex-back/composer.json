@@ -34,8 +34,10 @@
       "Database\\Seeders\\": "database/seeders/"
     },
     "files": [
-      "app/Helpers/common.php"
+      "app/Helpers/common.php",
+      "app/helpers.php"
     ]
+
   },
   "autoload-dev": {
     "psr-4": {
