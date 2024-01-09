@@ -38,4 +38,18 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function isAdmin() {
+
+      foreach ($this->roles()->get() as $role)
+      {
+          if ($role->name == "Admin" || $role->name == "mentor")
+          {
+              return true;
+          }
+      }
+
+      return false;
+  }
+
 }

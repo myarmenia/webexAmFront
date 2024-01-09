@@ -1,5 +1,5 @@
 .nav-bar{
-    background-color: #010526;
+    background-color: var(--main_color);
     z-index: 9999;
 }
 
@@ -9,6 +9,8 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 
 
@@ -34,11 +36,19 @@
     .navbar-rigth-div a, #lng{
         font-size: 17px;
     }
+    .nav-bar .container > a{
+        padding: 10px 5px;
+        font-size: 16px;
+    }
   }
 
 @media(max-width: 1440px){
     .navbar-rigth-div a, #lng{
-        font-size: 15px;
+        font-size: 13px;
+    }
+    .nav-bar .container > a{
+        padding: 10px 5px;
+        font-size: 10px;
     }
   }
 
@@ -46,6 +56,10 @@
   @media(max-width: 1140px){
     .navbar-rigth-div a, #lng{
         font-size: 13px;
+    }
+    .nav-bar .container > a{
+        padding: 10px 5px;
+        font-size: 10px;
     }
   }
 
