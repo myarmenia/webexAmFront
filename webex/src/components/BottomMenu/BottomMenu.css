@@ -1,52 +1,10 @@
-/* .bottom-menu{
-    display: none;
-}
-.mobile-nav {
-    background: #2D318A;
-    position: fixed;
-    bottom: 0;
-    height: 65px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    z-index: 99;
-  }
-
-  .bloc-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-
-  @media (max-width: 480px){
-    .bottom-menu{
-        display: block;
-    }
-  }
-  */
-
 
   @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-} */
- :root {
-  --clr: #010526;
-} 
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: var(--clr);
-} */
 
+ /* :root {
+  --clr: #010526;
+}  */
 
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
@@ -69,6 +27,9 @@
   display: flex;
   width: 350px;
   justify-content: space-between;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
 }
 .navigation ul li {
   position: relative;
@@ -101,7 +62,7 @@
 }
 .navigation ul li a .text {
   position: absolute;
-  color: white;
+  color: var(--main_font_color);
   font-weight: 400;
   font-size: 0.75em;
   letter-spacing: 0.05em;
@@ -127,9 +88,9 @@
 
 .elips{
   position: absolute;
-  top: -37px;
-  left: -15px;
-  transform: rotate(2deg);
+  top: -32px;
+  left: -8px;
+  /* transform: rotate(2deg); */
 }
 
 

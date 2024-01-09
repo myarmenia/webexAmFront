@@ -12,9 +12,20 @@
     row-gap: 20px;
 }
 
+
+
+/* ==================================================================== */
+.OurAdvantagesItem:nth-of-type(1), .OurAdvantagesItem:nth-of-type(4), .OurAdvantagesItem:nth-of-type(5), .OurAdvantagesItem:nth-of-type(8){
+    transition: all 1.4s;
+}
+
+.OurAdvantagesItem:nth-of-type(2), .OurAdvantagesItem:nth-of-type(3), .OurAdvantagesItem:nth-of-type(6), .OurAdvantagesItem:nth-of-type(7), .OurAdvantagesItem:nth-of-type(9), .OurAdvantagesItem:nth-of-type(10) {
+    transition: all 1s;
+}
+
+
 .OurAdvantagesItem h4{
-    color: rgba(255, 255, 255, 0.95);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -24,7 +35,6 @@
 
 .OurAdvantagesItem p{
     color: rgba(255, 255, 255, 0.95);
-    font-family: Calibri;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

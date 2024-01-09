@@ -6,8 +6,7 @@
 
 .createItemWebsitesAndMobileApp h4{
     background-color: #2D318A;
-    color: rgba(255, 255, 255, 0.95);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -19,12 +18,13 @@
 
 
 .createItemWebsitesAndMobileApp p{
-    color: rgba(255, 255, 255, 0.95);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    transition: all .6s;
+    transform-origin: top center;
 }
 
 

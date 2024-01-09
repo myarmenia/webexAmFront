@@ -75,8 +75,7 @@
 }
 
 .webex-info p{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -85,8 +84,7 @@
 }
 
 .webex-info h2{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 40px;
     font-style: normal;
     font-weight: 700;

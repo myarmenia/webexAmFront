@@ -1,13 +1,9 @@
 .header-title{
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .header .header-title h2{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
@@ -16,8 +12,7 @@
 }
 
 .header .header-title h4{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -92,8 +87,7 @@
     padding-left: 0.25rem;
     box-sizing: border-box;
     font-weight: 400;
-    color: #fafafa;
-    font-family: Roboto, sans-serif;
+    color: var(--main_font_color);
     border-radius: 20px;
     width: 9rem; /* Increased width */
     height: 9rem; /* Increased height */
@@ -126,6 +120,10 @@
     .header .header-title h4{
         font-size: 25px;
     }
+
+    .animation-badge:hover .badge-text{
+        margin-left: -14rem;
+    }
 }
 
 @media (max-width: 1140px){
@@ -152,6 +150,7 @@
         width: 5rem;
         height: 5rem;
         line-height: 5rem;
+        font-size: 13px;
     }
 
     .header .header-title h2{
@@ -160,6 +159,10 @@
 
     .header .header-title h4{
         font-size: 17px;
+    }
+
+    .animation-badge:hover .badge-text{
+        font-size: 20px;
     }
 }
 
@@ -170,6 +173,10 @@
         flex-direction: column-reverse;
         align-items: center;
         row-gap: 40px;
+    }
+    .header-title{
+        align-items: center;
+        width: 100%;
     }
 }
 

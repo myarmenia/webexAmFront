@@ -1,22 +1,26 @@
 .video-courses-section-item{
     width: 300px;
     height: 700px;
-    display: flex;
+     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    row-gap: 50px;
+    align-items: flex-start; 
+     row-gap: 90px; 
     padding: 10px;
-    color: #ffffff;
+    color: var(--main_font_color);
 }
 
 
 .video-courses-section-item-info-div-1{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 10px; */
     width: 100%;
     height: 150px;
+}
+
+.video-courses-section-item-info-div-1 span{
+    display: block;
 }
 
 .video-courses-section-item h2{
