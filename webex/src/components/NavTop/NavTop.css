@@ -1,7 +1,6 @@
 .nav-top{
     background-color: var(--main_color);
     border-bottom: 1px solid rgba(128, 128, 128, 0.503);
-
 }
 
 .nav-top .container{
@@ -19,6 +18,15 @@
     position: relative;
 }
 
+.mail-block{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.nav_top_phone .tel{
+    display: flex;
+    column-gap: 20px;
+}
 
 .nav_top_phone .tel span:nth-of-type(1){
     border-right: 1px solid gray;
@@ -27,6 +35,8 @@
 .contact{
     display: flex;
     gap: 100px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .nav_top_icons{
@@ -66,7 +76,7 @@
         left: -20px;
         top: 40px;
         width: 160px;
-        background-color:  #050a3a97;
+        background-color:  #1A1A42;
         backdrop-filter: blur(50px);
         transform: rotateX(90deg);
         transition: all .3s;
@@ -90,5 +100,17 @@
 
     .nav_top_phone:hover .tel{
         transform: rotateX(0);
+    }
+}
+
+
+
+@media (max-width: 480px){
+    .mail-block, .contact .nav_top_phone{
+        display: none;
+    }
+
+    .contact{
+        justify-content: flex-end;
     }
 }
