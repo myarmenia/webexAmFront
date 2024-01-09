@@ -4,6 +4,7 @@
 use App\Http\Controllers\Admin\Courses\CourseLanguageController;
 use App\Http\Controllers\Admin\Lessons\LessonController;
 use App\Http\Controllers\Admin\Tasks\TaskController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -62,7 +63,9 @@ Auth::routes(['register' => false, 'verify' => false]);
 Route::group(['middleware' => ['auth']], function () {
   // Main Page Route
   Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
-
+  // Route::resource('roles', RoleController::class);
+  Route::resource('users', UserController::class);
+  
   // pages
   Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
   Route::get('/pages/account-settings-notifications', [AccountSettingsNotifications::class, 'index'])->name('pages-account-settings-notifications');
@@ -110,9 +113,7 @@ Route::group(['middleware' => ['auth']], function () {
   // tables
   Route::get('/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
   
- // Route::resource('roles', RoleController::class);
-  // Route::resource('users', UserController::class);
-  
+ 
   
   // course-language
 Route::get('/course/course-language', [CourseLanguageController::class,'index'])->name('course-language');
