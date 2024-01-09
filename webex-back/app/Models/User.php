@@ -20,6 +20,7 @@ class User extends Authenticatable implements JWTSubject
         'passport',
         'phone',
         'password',
+        'ip',
     ];
 
     protected $hidden = ['password']; 
@@ -42,7 +43,7 @@ class User extends Authenticatable implements JWTSubject
 
       foreach ($this->roles()->get() as $role)
       {
-          if ($role->name == "Admin" || $role->name == "mentor")
+          if ($role->name == "admin" || $role->name == "mentor")
           {
               return true;
           }
