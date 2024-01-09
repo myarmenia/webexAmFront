@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NavMenuItem from '../NavMenuItem/NavMenuItem'
-import { navIcon } from '../../iconFolder/icon'
+import { dropIcon, navIcon } from '../../iconFolder/icon'
 import './NavMenu.css'
 import { logoImage } from '../../images/images'
 import { NavLink } from 'react-router-dom'
@@ -15,7 +15,7 @@ function NavMenu() {
             <NavLink to={'/'}>{logoImage}</NavLink>
              <ul className='nav-menu'>
                 <div className='drop-item'>
-                    <li className='programing'>{t('navMenu.'+ '1')}</li>
+                    <li className='programing'>{t('navMenu.'+ '1')} {dropIcon}</li>
                     <ul className='drop-menu'>
                          <NavMenuItem index="8" path="/1"/>
                          <NavMenuItem index="9" path="/2"/>

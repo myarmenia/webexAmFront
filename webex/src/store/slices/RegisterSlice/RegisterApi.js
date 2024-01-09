@@ -1,28 +1,23 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import customAxios from "../../../axios";
 
-export const postLogin = createAsyncThunk(
-    'login/postLogin',
-    // async function (body) {
-    //     const {data} = await customAxios.post('/api/auth/login', body)
-    //     console.log(data);
-    //     return data
-        
-    // }
-
+export const postRegister = createAsyncThunk(
+    'register/postregister',
 
     async (body, thunkAPI) => {
         try {
-          const signInData = {
+          const registerData = {
+            name: body.name,
             email: body.email,
             password: body.password,
+            password_confirmation: body.confirmPassword
           };
-    
+          
+          console.log(registerData);
           const config = {
             method: "post",
-            url: "auth/login",
-            data: signInData,
+            url: "auth/signup",
+            data: registerData,
           };
     
           const response = await customAxios(config);

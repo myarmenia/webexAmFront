@@ -63,12 +63,20 @@
     line-height: normal;
     cursor: pointer;
     transition: all .4s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .programing:hover{
     border-bottom: 1px solid var(--main_font_color);
 }
-
+.programing >svg{
+    transition: all .6s;
+}
+.drop-item:hover .programing >svg{
+    transform: rotate(180deg);
+}
 @media(min-width: 1920px){
     .programing{
         font-size: 20px;

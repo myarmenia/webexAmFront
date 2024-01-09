@@ -1,5 +1,5 @@
 import React from 'react'
-import { fbIcon, instaIcon, linkedinIcon, telIcon } from '../../iconFolder/icon'
+import { fbIcon, instaIcon, linkedinIcon, mailIcon, telIcon } from '../../iconFolder/icon'
 
 import './NavTop.css'
 
@@ -11,7 +11,10 @@ function NavTop() {
   return (
     <div className='nav-top'>
         <div className='container'>
-            <a href="#">info@webex.am</a>
+            <div className='mail-block'>
+                <span>{mailIcon}</span>
+                <a href="mailto:info@webex.am">info@webex.am</a>
+            </div>
             <div className='contact'>
                 <div className='nav_top_phone'>
                     <span>{telIcon}</span>
