@@ -1,5 +1,5 @@
 .projects-page{
-    background-color: #010526;
+    background-color: var(--main_color);
     padding: 100px 0;
 }
 
@@ -41,8 +41,7 @@
 }
 
 .filter-menu-projects li .filter-menu-projects-title{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;

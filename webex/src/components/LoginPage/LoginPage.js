@@ -32,11 +32,7 @@ function LoginPage({setUser, setPage, user}) {
     const  validationSchema = yup.object().shape({
         email: yup.string().email('Գրե՜ք ճիշտ Էլ. հասցե').required('Պարտադիր գրել Էլ. հասցե'),
         password: yup.string()
-        .matches(/[0-9]/, 'Գաղտնաբառը պետք է պարունակի թվանշան')
-        .matches(/[a-z]/, 'Գաղտնաբառը պետք է պարունակի  Փոքրատառ')
         .required('Պարտադիր գրել գաղտնաբառը'),
-        confirmPassword: yup.string().oneOf([yup.ref('password')], 'Գաղտնաբառները չեն համնկնում').required('Պարտադիր գրել գաղտնաբառը'),
-
     })
 
     function handleLogSub(e,handleSubmit) {

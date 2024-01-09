@@ -1,5 +1,5 @@
 .register{
-    background-color:#010526;
+    background-color: var(--main_color);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,9 +26,9 @@
     height: 40px;
     border: 1px solid white;
     background-color: transparent;
-    padding: 10px;
+    padding: 0 10px;
     outline: none;
-    color: white;
+    color: var(--main_font_color);
 }
 
 .register .container form p{
@@ -38,8 +38,7 @@
 
 
 .register .container form h2{
-    color: var(--Withe, #FFF);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -47,16 +46,14 @@
 }
 
 .register .container form h6{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     line-height: normal;
 }
 
 .register .container form h6 a{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 20px;
     font-style: normal;
     line-height: normal;
@@ -117,6 +114,7 @@
     }
     .register .container{
         flex-direction: column-reverse;
+        padding: 0;
     }
 
     .register .container form h2{
@@ -129,5 +127,6 @@
     .register .container form input{
         width: 300px;
     }
+
 }
 

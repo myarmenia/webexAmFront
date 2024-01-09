@@ -9,7 +9,7 @@
 
 .create-website-mobile-app-items{
     max-width: 1152px;
-    background-color: #10083B;
+    background-color: var(--main_color);
     border-radius: 26px;
     border: 0.2px solid  #140956;
     padding: 50px;

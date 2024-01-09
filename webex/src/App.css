@@ -1,5 +1,10 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+}
 .container{
-  max-width: 1140px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 50px;
   box-sizing:border-box;
@@ -13,9 +18,27 @@ a{
   text-decoration: none;
 }
 
+:root {
+  --main_color: #010526;
+  --main_font_color: #d5d5d5;
+}
 
 
-@media(max-width: 1440px){
+
+ /* @font-face {
+  font-family:font-1;
+  src: url(./fonts/RobotoFlex-Regular.ttf);
+} 
+
+
+ @media(min-width: 1920px){
+  .container{
+    max-width: 100%;
+    padding: 0 100px;
+  }
+} 
+
+ @media(max-width: 1440px){
   .container{
     max-width: 1440px;
   }
@@ -26,19 +49,16 @@ a{
     max-width: 1920px;
     
   }
-}
+} */
+
+
+
 
 @media(max-width: 1140px){
   .container{
     max-width: 1140px;
     padding: 0 20px;
   }
-}
+} 
 
 
-@media(min-width: 1920px){
-  .container{
-    max-width: 100%;
-    padding: 0 100px;
-  }
-}
