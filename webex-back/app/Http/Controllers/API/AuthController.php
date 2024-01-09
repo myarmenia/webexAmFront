@@ -7,7 +7,7 @@ use App\Http\Requests\SingupRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use Request;
+use Illuminate\Http\Request;
 
 class AuthController extends BaseController
 {
@@ -16,19 +16,19 @@ class AuthController extends BaseController
         $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        $credentials = request(['email', 'password']);
+        $credentials = $request->only('email', 'password');
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        // auth()->user()->update([
-        //     'wifi_ip' => request()->ip(),
-        //     'login_at' => now(),
-        // ]);
-dd(auth()->user());
+        auth()->user()->update([
+            'ip' => request()->ip(),
+            'login_at' => now(),
+        ]);
+
         return $this->respondWithToken($token);
     }
 
