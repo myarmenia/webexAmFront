@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\API\BaseController;
 use App\Http\Requests\SingupRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Request;
@@ -24,6 +25,11 @@ class AuthController extends BaseController
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
+        // auth()->user()->update([
+        //     'wifi_ip' => request()->ip(),
+        //     'login_at' => now(),
+        // ]);
+dd(auth()->user());
         return $this->respondWithToken($token);
     }
 
