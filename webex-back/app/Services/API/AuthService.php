@@ -17,7 +17,7 @@ class AuthService
         ]);
 
         $user->assignRole('student');
-
+  
         $credentials = Arr::only($data, ['email', 'password']);
   
         if (! $token = JWTAuth::attempt($credentials)) {
@@ -25,7 +25,7 @@ class AuthService
         }
 
         return [
-            'authUser' => $user,
+            'authUser' => $user->toArray(),
             'token' => $token
         ];
     }
@@ -44,7 +44,7 @@ class AuthService
         ]);
 
         return [
-            'authUser' => auth()->user(),
+            'authUser' => auth()->user()->toArray(),
             'token' => $token
         ];
     }

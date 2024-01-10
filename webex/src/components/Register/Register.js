@@ -28,8 +28,9 @@ function Registre({setUser, setPage, user}) {
         dispatch(postRegister({
                             name: e.target[0].value,
                             email: e.target[1].value,
-                            password: e.target[2].value,
-                            confirmPassword: e.target[3].value
+                            phone: e.target[2].value,
+                            password: e.target[3].value,
+                            confirmPassword: e.target[4].value
                              }))
     }
 
