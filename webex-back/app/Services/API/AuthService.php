@@ -38,6 +38,10 @@ class AuthService
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
+        if (auth()->user()->status === 0) {
+            return response()->json(['error' => 'User is blocked'], 403);
+        }
+
         auth()->user()->update([
             'ip' => request()->ip(),
             'login_at' => now(),
