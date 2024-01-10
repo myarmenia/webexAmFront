@@ -4,33 +4,38 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\API\BaseController;
 use App\Http\Requests\SingupRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Services\API\AuthService;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use Request;
+use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+
 
 class AuthController extends BaseController
 {
-    public function __construct()
+
+    public $authService;
+
+    public function __construct(AuthService $authService)
     {
-        $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
+        $this->authService = $authService;
+        // $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        $credentials = request(['email', 'password']);
 
-        if (! $token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
+        $data = $this->authService->login($request);
 
-        // auth()->user()->update([
-        //     'wifi_ip' => request()->ip(),
-        //     'login_at' => now(),
-        // ]);
-// dd(auth()->user());
-        return $this->respondWithToken($token);
+        $readyData = [
+            'authUser' => customUserResource($data['authUser']),
+            'token' => $data['token'],
+        ];
+
+        return response()->json($readyData);
+
     }
 
     public function me()
@@ -45,11 +50,16 @@ class AuthController extends BaseController
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-    public function signup(Request $request)
+    public function signup(SingupRequest $request)
     {
-        dd(333);
-        $validated = $request->validated();
-        dd($validated);
+        $data = $this->authService->signup($request->all());
+
+        $readyData = [
+            'authUser' => customUserResource($data['authUser']),
+            'token' => $data['token'],
+        ];
+
+        return response()->json($readyData);
     }
 
     public function refresh()

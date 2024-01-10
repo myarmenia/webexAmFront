@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('users.index', compact('data'))
+        return view('content.users.index', compact('data'))
         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -50,6 +50,8 @@ class UserController extends Controller
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+        $user->assignRole(['student']);
+
 
         return redirect()->route('users.index')
         ->with('success', 'User created successfully');
@@ -64,7 +66,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('users.show', compact('user'));
+        // return view('users.show', compact('user'));
     }
 
     /**
