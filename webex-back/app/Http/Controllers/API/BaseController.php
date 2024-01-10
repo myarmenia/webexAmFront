@@ -16,9 +16,8 @@ class BaseController extends Controller
         ];
 
         if ($count_page != null) {
-            $response['cont_page'] = $count_page;
+            $response['count_page'] = $count_page;
         }
-
 
         return response()->json($response, 200);
     }
