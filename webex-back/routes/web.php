@@ -1,10 +1,11 @@
 <?php
 
-
+use App\Http\Controllers\Admin\ChangeStatusController;
 use App\Http\Controllers\Admin\Courses\CourseLanguageController;
 use App\Http\Controllers\Admin\Lessons\LessonController;
 use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -65,7 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
   // Route::resource('roles', RoleController::class);
   Route::resource('users', UserController::class);
-  
+
   // pages
   Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
   Route::get('/pages/account-settings-notifications', [AccountSettingsNotifications::class, 'index'])->name('pages-account-settings-notifications');
@@ -112,9 +113,9 @@ Route::group(['middleware' => ['auth']], function () {
 
   // tables
   Route::get('/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
-  
- 
-  
+
+
+
   // course-language
 Route::get('/course/course-language', [CourseLanguageController::class,'index'])->name('course-language');
 Route::get('/course/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
@@ -130,6 +131,10 @@ Route::get('/lesson/lesson-edit/{id}', [LessonController::class,'edit'])->name('
 Route::get('/task/task-list', [TaskController::class,'index'])->name('task-list');
 Route::get('/task/task-create', [TaskController::class,'create'])->name('task-create');
 Route::post('/task/task-store', [TaskController::class,'store'])->name('task-store');
+
+Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
+Route::get('student-is-present', [StudentIsPresentController::class,'index']);
+
 
 });
 
