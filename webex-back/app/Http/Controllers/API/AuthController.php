@@ -30,8 +30,8 @@ class AuthController extends BaseController
         $data = $this->authService->login($request);
 
         $readyData = [
-            'authUser' => customUserResource($data['authUser']),
-            'token' => $data['token'],
+            'authUser' => $data['authUser'],
+            'access_token' => $data['token'],
         ];
 
         return response()->json($readyData);
@@ -55,8 +55,8 @@ class AuthController extends BaseController
         $data = $this->authService->signup($request->all());
 
         $readyData = [
-            'authUser' => customUserResource($data['authUser']),
-            'token' => $data['token'],
+            'authUser' => $data['authUser'],
+            'access_token' => $data['token'],
         ];
 
         return response()->json($readyData);
