@@ -29,7 +29,7 @@ class AuthController extends BaseController
         //     'wifi_ip' => request()->ip(),
         //     'login_at' => now(),
         // ]);
-dd(auth()->user());
+// dd(auth()->user());
         return $this->respondWithToken($token);
     }
 

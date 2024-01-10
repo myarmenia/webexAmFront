@@ -38,8 +38,8 @@ class LessonController extends Controller
      */
     public function store(LessonRequest $request)
     {
-
-      $lesson = Lesson::create($request->only(['course_language_id','duration']));
+// dd($request->all());
+      $lesson = Lesson::create($request->only(['course_language_id','duration','number']));
       if($request->has('video')){
 
         $path=FileUploadService::upload($request->video,'lessons/'.$lesson->id);
@@ -77,7 +77,7 @@ class LessonController extends Controller
     public function edit(string $id)
     {
 
-        $lesson = Lesson::where('id',$id)->with(['lesson_translations','course_languages'])->get();
+        $lesson = Lesson::where('id',$id)->with(['lesson_translations','course_languages'])->first();
         $course_language = CourseLanguage::all();
 
         return view('content.lessons.edit',compact('lesson','course_language'));

@@ -21,23 +21,22 @@
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Language Name</label>
               <div class="col-sm-10">
-
+{{-- {{dd($lesson->)}} --}}
                 <select class="form-select" name="course_language_id" id="exampleFormControlSelect1" aria-label="Default select example">
                   <option disabled> Language name</option>
                   @if (count($course_language)>0)
                     @foreach ($course_language as $item)
-                      <option value="{{ $item->id }}">{{$item->name}}</option>
+                        @if ($lesson->course_language_id==$item->id)
+                            <option value="{{ $item->id }}" selected>{{$item->name}}</option>
+                        @else
+                          <option value="{{ $item->id }}">{{$item->name}}</option>
+                        @endif
                     @endforeach
 
                   @else
                     <option value="">There is no records</option>
                   @endif
                 </select>
-
-                {{-- @error('name')
-                  <div class="alert alert-danger mt-2">{{ $message }}</div>
-                @enderror --}}
-
               </div>
             </div>
             <!--/ Dropdown with icon -->
@@ -45,7 +44,7 @@
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label" for="basic-default-name">Duration</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="duration" id="basic-default-name" placeholder="Duration" />
+              <input type="text" class="form-control" name="duration" value="{{$lesson}}" id="basic-default-name" placeholder="Duration" />
               @if($errors->has("duration"))
                 <div class="alert alert-danger mt-2">{{ $errors->first("duration") }}</div>
               @endif
