@@ -3,6 +3,7 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
+    <script src="{{ asset('assets/js/111.js') }}"></script>
 @endsection
 
 @section('content')
@@ -83,7 +84,7 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-itemp present" href="javascript:void(0);">
+                                            <a class="dropdown-item present" href="javascript:void(0);">
                                                 <i class="tf-icons bx bx-task"></i> Присутствует
                                             </a>
                                             <a class="dropdown-item d-flex" href="javascript:void(0);">

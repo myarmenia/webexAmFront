@@ -133,7 +133,7 @@ Route::get('/task/task-create', [TaskController::class,'create'])->name('task-cr
 Route::post('/task/task-store', [TaskController::class,'store'])->name('task-store');
 
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
-Route::get('student-is-present', [StudentIsPresentController::class,'index']);
+Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
 
 
 });
