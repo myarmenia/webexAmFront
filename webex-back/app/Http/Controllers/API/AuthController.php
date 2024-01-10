@@ -26,6 +26,7 @@ class AuthController extends BaseController
 
     public function login(Request $request)
     {
+
         $data = $this->authService->login($request);
 
         $readyData = [
@@ -34,6 +35,7 @@ class AuthController extends BaseController
         ];
 
         return response()->json($readyData);
+
     }
 
     public function me()

@@ -84,6 +84,15 @@
               @endif
             </div>
           </div>
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="basic-default-name">Video</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="number" value="{{old('number')}}" id="description" placeholder="Number" />
+              @if($errors->has("number"))
+                <div class="alert alert-danger mt-2">{{ $errors->first("number")  }}</div>
+              @endif
+            </div>
+          </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
               <button type="submit" class="btn btn-primary">Send</button>
