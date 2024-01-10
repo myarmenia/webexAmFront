@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { postLogin } from "./LoginApi";
+import { postRegister } from "./RegisterApi";
 
 const initialState = {
    authUser: {},
@@ -7,8 +7,8 @@ const initialState = {
    error: null,
    };
 
-const loginSlice = createSlice({
-    name: 'login',
+const registerSlice = createSlice({
+    name: 'register',
     initialState,
     reducers: {
       
@@ -18,14 +18,14 @@ const loginSlice = createSlice({
  
     extraReducers: (builder) => {
        builder
-          .addCase(postLogin.pending, (state) => {
+          .addCase(postRegister.pending, (state) => {
              state.status = 'loading';
           })
-          .addCase(postLogin.fulfilled, (state, action) => {
+          .addCase(postRegister.fulfilled, (state, action) => {
             state.authUser = action.payload.authUser
              state.status = 'succes';
           })
-          .addCase(postLogin.rejected, (state, action) => {
+          .addCase(postRegister.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
           });
@@ -33,8 +33,8 @@ const loginSlice = createSlice({
  });
  
 
-export const selectLogin = (state) => state.login
+export const selectRegister = (state) => state.register
 
- export const {setLogin} = loginSlice.actions
+ export const {} = registerSlice.actions
 
-export const loginReducer =  loginSlice.reducer
+export const registerReducer =  registerSlice.reducer
