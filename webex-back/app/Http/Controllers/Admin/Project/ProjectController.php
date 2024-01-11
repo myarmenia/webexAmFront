@@ -25,11 +25,10 @@ class ProjectController extends Controller
                ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
-    // public function create()
-    // {
-    //     $roles = Role::pluck('name', 'name')->all();
-    //     return view('users.create', compact('roles'));
-    // }
+    public function create()
+    {
+        return view('content.project.create');
+    }
 
     // public function store(Request $request)
     // {

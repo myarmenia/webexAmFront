@@ -139,6 +139,7 @@ Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index'
 //Project
 Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
+  Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
 });
 
 });
