@@ -26,16 +26,18 @@ class AuthController extends BaseController
 
     public function login(Request $request)
     {
+        try {
+            $data = $this->authService->login($request);
 
-        $data = $this->authService->login($request);
+            $readyData = [
+                'authUser' => $data['authUser'],
+                'access_token' => $data['token'],
+            ];
 
-        $readyData = [
-            'authUser' => $data['authUser'],
-            'access_token' => $data['token'],
-        ];
-
-        return response()->json($readyData);
-
+            return response()->json($readyData);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], $e->getCode());
+        }
     }
 
     public function me()

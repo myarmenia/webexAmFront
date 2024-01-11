@@ -17,10 +17,10 @@ class AuthService
         ]);
 
         $user->assignRole('student');
-  
+
         $credentials = Arr::only($data, ['email', 'password']);
-  
-        if (! $token = JWTAuth::attempt($credentials)) {
+
+        if (!$token = JWTAuth::attempt($credentials)) {
             return responsgite()->json(['error' => 'Something went wrong'], 401);
         }
 
@@ -32,25 +32,30 @@ class AuthService
 
     public function login($request)
     {
-        $credentials = $request->only('email', 'password');
+        try {
+            $credentials = $request->only('email', 'password');
 
-        if (! $token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            if (!$token = JWTAuth::attempt($credentials)) {
+                throw new \Exception('Unauthorized', 401);
+            }
+             if (auth()->user()->status === 0) {
+                        return response()->json(['error' => 'User is blocked'], 403);
+              }
+
+            auth()->user()->update([
+                'ip' => request()->ip(),
+                'login_at' => now(),
+            ]);
+
+            return [
+                'authUser' => auth()->user()->toArray(),
+                'token' => $token
+            ];
+        } catch (\Exception $e) {
+            throw $e;
         }
 
-        if (auth()->user()->status === 0) {
-            return response()->json(['error' => 'User is blocked'], 403);
-        }
 
-        auth()->user()->update([
-            'ip' => request()->ip(),
-            'login_at' => now(),
-        ]);
-
-        return [
-            'authUser' => auth()->user()->toArray(),
-            'token' => $token
-        ];
     }
-  
+
 }
