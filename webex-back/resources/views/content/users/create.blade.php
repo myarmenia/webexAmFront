@@ -67,15 +67,15 @@
 
                     <div class="col-md-2 form-check form-switch mb-2">
 
-                        <input class="form-check-input" type="checkbox" id="status" checked="">
+                        <input class="form-check-input" type="checkbox" id="status" checked>
                         <label class="form-check-label" for="status">Статус</label>
                     </div>
                     <div class="col-md-2 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="passport" checked="">
+                        <input class="form-check-input" type="checkbox" id="passport" >
                         <label class="form-check-label" for="passport">Пасспорт</label>
                     </div>
                     <div class="col-md-4 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="payment_status" checked="">
+                        <input class="form-check-input" type="checkbox" id="payment_status" >
 
                         <label class="form-check-label" for="payment_status">Статус платежа</label>
 
