@@ -26,7 +26,8 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Lesson Name</th>
+            <th>Lesson Number</th>
             <th>Language name</th>
             <th>Status</th>
             <th>Actions</th>
@@ -35,22 +36,22 @@
         <tbody>
           @if (count($lessons)>0)
             @foreach ($lessons as $item )
-            {{-- {{dd($item)}} --}}
-            <tr>
-              <td><i class="bx bxl-angular bx-sm text-danger me-3"></i> <span class="fw-medium">{{$item->lesson_translations[0]->title}}</span></td>
-              <td>{{$item->course_languages->name}}</td>
-              <td><span class="badge bg-label-primary me-1">Active</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{route('lesson-edit',$item->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+            {{-- {{dd($item->lesson_translations)}} --}}
+              <tr>
+                <td><i class="bx bxl-angular bx-sm text-danger me-3"></i> <span class="fw-medium">{{$item->lesson_translations[0]->title}}</span></td>
+                <td>{{$item->number}}</td>
+                <td>{{$item->course_languages->name}}</td>
+                <td><span class="badge bg-label-primary me-1">Active</span></td>
+                <td>
+                  <div class="dropdown">
+                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{{route('lesson-edit',$item->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
-
+                </td>
+              </tr>
             @endforeach
 
           @else
