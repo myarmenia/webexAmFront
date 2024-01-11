@@ -18,15 +18,15 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
     type: yup.string().required('Պարտադիր նշել դասընթացի տեսակը'),
   });
 
+
+  const handleFormSubmit = (e, handleSubmit) => {
+    e.preventDefault()
+    handleSubmit()
+  }
   return (
     <div className="course-registration-page">
       
-      {/* <div className="forms-div course-forms-div">
-        <div>
-          {changeForm.logForm && <LoginPage />}
-          {changeForm.regForm && <Registre />}
-        </div>
-        <div> */}
+      
           <Formik
             initialValues={{
               name: '',
@@ -45,7 +45,7 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
             {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
               <div className="register">
                 <div className="container">
-                  <form className="reg-form" onSubmit={handleSubmit}>
+                  <form className="reg-form" onSubmit={(e, handleSubmit) => handleFormSubmit(e, handleSubmit)}>
                     <SectionTitle title={t('reg_and_log.' + '11')} />
                     <div className="name-inp">
                       <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} />
@@ -88,12 +88,7 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
                                 <AnimLogo/>
                              </div>
         </div>
-      // </div>
-
-        /* <CoursesRegistrationSlide/>
-
-        <CoursesRegistrationInfo/> */
-    // </div>
+      
   );
 }
 
