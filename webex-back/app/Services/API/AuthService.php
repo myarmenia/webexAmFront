@@ -38,6 +38,9 @@ class AuthService
             if (!$token = JWTAuth::attempt($credentials)) {
                 throw new \Exception('Unauthorized', 401);
             }
+             if (auth()->user()->status === 0) {
+                        return response()->json(['error' => 'User is blocked'], 403);
+              }
 
             auth()->user()->update([
                 'ip' => request()->ip(),
@@ -51,6 +54,8 @@ class AuthService
         } catch (\Exception $e) {
             throw $e;
         }
+
+
     }
 
 }
