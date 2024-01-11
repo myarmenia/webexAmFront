@@ -1,6 +1,9 @@
 .course-registration-page{
     background-color: var(--main_color);
     padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -74,6 +77,12 @@
 .online-btn, .ofline-btn{
     width: 175px;
     height: 30px;
+}
+
+
+
+.course-registration-page .container .reg-form input{
+    width: 440px;
 }
 
 
