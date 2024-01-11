@@ -23,7 +23,19 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
     e.preventDefault()
     handleSubmit()
 
-    console.log('jannn');
+    var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+      
+        // Տվեք այստեղ ձեր մեյլի հասցեն
+        var yourEmail = "poghosyan.01@list.ru";
+      
+        // այստեղ տվեք ձեր հաղորդագրման պառածած հասցեն
+        var subject = "Նոր կոնտակտ";
+      
+        var mailtoLink = "mailto:" + yourEmail + "?subject=" + subject + "&body=" + message;
+      console.log(mailtoLink);
+        window.location.href = mailtoLink;
   }
   return (
     <div className="course-registration-page">
