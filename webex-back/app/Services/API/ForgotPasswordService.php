@@ -33,6 +33,12 @@ class ForgotPasswordService
 
   public function checkForgotToken($data)
   {
-    dd($data);
+    $haveOrNot = PasswordReset::where('email', $data['email'])->where('token', $data['token'])->first();
+
+    if($haveOrNot){
+        return true;
+    }
+
+    return false;
   }
 }
