@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ChangeStatusController;
 use App\Http\Controllers\Admin\Courses\CourseLanguageController;
 use App\Http\Controllers\Admin\Lessons\LessonController;
+use App\Http\Controllers\Admin\Project\ProjectController;
 use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
@@ -135,6 +136,10 @@ Route::post('/task/task-store', [TaskController::class,'store'])->name('task-sto
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
 
+//Project
+Route::group(['prefix' => 'project'], function () {
+  Route::get('/', [ProjectController::class, 'index'])->name('project');
+});
 
 });
 
