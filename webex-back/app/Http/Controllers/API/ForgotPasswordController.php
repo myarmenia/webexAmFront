@@ -26,7 +26,13 @@ class ForgotPasswordController extends Controller
 
     public function checkForgotToken(Request $request)
     {
-        dd(333);
         $haveOrNot = $this->forgotPasswordService->checkForgotToken($request->all());
+
+        if($haveOrNot){
+            return response()->json(['success' => true]);
+        }
+
+        return response()->json(['success' => false]);
+
     }
 }
