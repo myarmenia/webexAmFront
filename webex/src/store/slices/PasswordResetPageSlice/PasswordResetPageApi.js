@@ -13,7 +13,7 @@ export const postResetPasswordPage = createAsyncThunk(
 
           const config = {
             method: "post",
-            url: "/test",
+            url: "/check-forgot-token",
             data: resetPasswordePageData,
           };
     
