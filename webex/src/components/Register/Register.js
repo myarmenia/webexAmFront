@@ -30,19 +30,19 @@ function Registre({setUser, setPage, user}) {
                             email: e.target[1].value,
                             phone: e.target[2].value,
                             password: e.target[3].value,
-                            confirmPassword: e.target[4].value
+                            confirmPassword: e.target[4].value,
                              }))
     }
 
     const  validationSchema = yup.object().shape({
-        name: yup.string().required('Պարտադիր գրել անուն'),
+        name: yup.string().required(t('validation_reg_log.' + '0')),
         phone: yup.string(),
-        email: yup.string().email('Գրե՜ք ճիշտ Էլ. հասցե').required('Պարտադիր գրել Էլ. հասցե'),
+        email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
-        .matches(/[0-9]/, 'Գաղտնաբառը պետք է պարունակի թվանշան')
-        .matches(/[a-z]/, 'Գաղտնաբառը պետք է պարունակի  Փոքրատառ')
-        .required('Պարտադիր գրել գաղտնաբառը'),
-        confirmPassword: yup.string().oneOf([yup.ref('password')], 'Գաղտնաբառները չեն համնկնում').required('Պարտադիր գրել գաղտնաբառը'),
+        .matches(/[0-9]/, t('validation_reg_log.'+ '2'))
+        .matches(/[a-z]/, t('validation_reg_log.'+ '3'))
+        .required(t('validation_reg_log.'+ '0')),
+        confirmPassword: yup.string().oneOf([yup.ref('password')], t('validation_reg_log.'+ '4')).required(t('validation_reg_log.'+ '0')),
 
     })
     return (    
@@ -57,13 +57,13 @@ function Registre({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                setUser([
-                    ...user,
-                    {
-                        ...values
-                    }
-                ])
-                setPage('log')
+                // setUser([
+                //     ...user,
+                //     {
+                //         ...values
+                //     }
+                // ])
+                // setPage('log')
                 resetForm()
             }}
 

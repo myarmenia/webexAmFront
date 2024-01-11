@@ -40,10 +40,11 @@ class LessonController extends Controller
     {
 // dd($request->all());
       $lesson = Lesson::create($request->only(['course_language_id','duration','number']));
+
       if($request->has('video')){
 
-        $path=FileUploadService::upload($request->video,'lessons/'.$lesson->id);
-        $lesson->video=$path;
+        $path = FileUploadService::upload($request->video,'lessons/'.$lesson->id);
+        $lesson->video = $path;
         $lesson->save();
         if($lesson){
           foreach($request->translate as $key => $lang){

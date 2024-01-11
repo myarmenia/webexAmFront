@@ -36,7 +36,7 @@
             @foreach ($tasks as $item )
             {{-- {{dd($item)}} --}}
             <tr>
-              <td><i class="bx bxl-angular bx-sm text-danger me-3"></i> <span class="fw-medium">{{$item->task_translations[0]->title}}</span></td>
+              <td><i class="bx bxl-angular bx-sm text-danger me-3"></i> <span class="fw-medium">{{$item->task_translations[0]->description}}</span></td>
               <td><span class="badge bg-label-primary me-1">Active</span></td>
               <td>
                 <div class="dropdown">

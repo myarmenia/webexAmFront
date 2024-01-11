@@ -26,7 +26,6 @@ class TaskRequest extends FormRequest
         'duration' =>'required',
         'translate.*.description'=>'required',
         'video'=>'required',
-        'lang'=>'required',
 
     ];
     }

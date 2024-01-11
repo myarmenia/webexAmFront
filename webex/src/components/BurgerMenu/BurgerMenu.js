@@ -42,8 +42,8 @@ function BurgerMenu() {
                 <NavMenuItem index = "4" path="/contact"/>
               </ul>
 
-              <Button index = "0" path="/registr"/>
-              <Button index = "2" path="/courses-registration"/>
+              {/* <Button index = "0" path="/registr"/>
+              <Button index = "2" path="/courses-registration"/> */}
 
 
               <div className="icons">

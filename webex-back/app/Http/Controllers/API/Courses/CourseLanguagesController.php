@@ -17,9 +17,7 @@ class CourseLanguagesController extends BaseController
     {
 
         $course_languages=CourseLanguage::all();
-        // dd($course_languages);
-// $k=CourseLanguageResource::collection($course_languages);
-
+        
         return  $this->sendResponse(CourseLanguageResource::collection($course_languages), 'success');
 
     }
