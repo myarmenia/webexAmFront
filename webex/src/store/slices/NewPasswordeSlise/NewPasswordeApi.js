@@ -15,7 +15,7 @@ export const postNewPassword = createAsyncThunk(
     
           const config = {
             method: "post",
-            url: "/send-new-passwordest",
+            url: "/send-new-password",
             data: newPasswordData,
           };
     
