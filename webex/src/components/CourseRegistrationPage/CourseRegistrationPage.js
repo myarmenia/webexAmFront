@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import './CourseRegistrationPage.css';
-import LoginPage from '../LoginPage/LoginPage.js';
-import Button from '../Button/Button.js';
 import { useTranslation } from 'react-i18next';
-import Registre from '../Register/Register.js';
 import SubmitBtn from '../SubmitBtn/SubmitBtn.js';
 import { Formik } from 'formik';
 import SectionTitle from '../SectionTitle/SectionTitle.js';
-import { NavLink } from 'react-router-dom';
 import * as yup from 'yup';
-import CoursesRegistrationSlide from '../CoursesRegistrationSlide/CoursesRegistrationSlide.js';
-import CoursesRegistrationInfo from '../CoursesRegistrationInfo/CoursesRegistrationInfo.js';
-
+import AnimLogo from '../AnimLogo/AnimLogo.tsx'
 function CourseRegistrationPage({ setUser, setPage, user }) {
   const [changeForm, setChangeForm] = useState({ regForm: false, logForm: true });
   const [activeBtn, setactiveBtn] = useState({online: false, ofline: false});
@@ -63,17 +57,6 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
                       {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                     </div>
 
-                    <div className="select">
-                      <select name="courses" id="courses" value={values.courses} onChange={handleChange} onBlur={handleBlur}>
-                        <option value="" disabled> {t('reg_and_log.' + '12')}</option>
-                        <option value="js">Front-end</option>
-                        <option value="react">Back-end</option>
-                        <option value="redux">Full-stack</option>
-                        <option value="typeScript">Unity C#</option>
-                        <option value="typeScript">Java Core</option>
-                      </select>
-                      {touched.courses && errors.courses && <p className="error">{errors.courses}</p>}
-                    </div>
 
                     <div className="radio-inp">
                       <div className='label-btns'><label>
@@ -100,6 +83,10 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
               </div>
             )}
           </Formik>
+
+          <div className="log_img_div">
+                                <AnimLogo/>
+                             </div>
         </div>
       // </div>
 
