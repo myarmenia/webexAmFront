@@ -2,7 +2,7 @@
 
 @section('title', 'Account settings - Account')
 @section('page-script')
-    <script src="{{ asset('assets/js/change-status.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/change-status.js') }}"></script> --}}
     <script src="{{ asset('assets/js/111.js') }}"></script>
 @endsection
 
@@ -43,7 +43,6 @@
                         @foreach ($data as $key => $user)
                             <tr>
                                 <td>{{ ++$i }}</td>
-
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->phone }}</td>
@@ -62,14 +61,15 @@
                                     @endif
                                 </td>
                                 <td>
-
                                     @if (!empty($user->getRoleNames()))
                                         @foreach ($user->getRoleNames() as $v)
                                             <label>{{ $v }}</label>
                                         @endforeach
                                     @endif
                                 </td>
-                                <td>{{ $user->lesson_quantity }}</td>
+                                <td class="lesson_quantity">{{ $user->lesson_quantity }}</td>
+
+
                                 <td class="payment_status">
                                     @if ($user->payment_status)
                                         <span class="badge bg-label-success me-1">Оплачено</span>
