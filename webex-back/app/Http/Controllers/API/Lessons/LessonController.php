@@ -4,6 +4,10 @@ namespace App\Http\Controllers\API\Lessons;
 
 use App\Http\Controllers\API\BaseController;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\FirstLessonTasksResource;
+use App\Http\Resources\LanguageLessonsResource;
+use App\Http\Resources\TasksResource;
+use App\Models\CourseLanguage;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
@@ -16,8 +20,35 @@ class LessonController extends BaseController
     public function languageLessons(Request $request,$id)
     {
 
-      $lessons = Lesson::where('course_language_id',$request->id)->with(['lesson_translations'])->get();
-        dd($lessons);
+      $lessons = Lesson::where('course_language_id',$request->id)
+                ->with('lesson_translations')
+                ->get();
+
+                $lessons_array=[];
+
+                foreach ($lessons as $key => $item) {
+
+                  if($key==0){
+
+                    $first_elem = [
+                      'id' => $item->id,
+                      'number' => $item->number,
+                      'duration' => $item->duration,
+                      'title' => $item->lesson_translations[0]->title,
+                      'description' => $item->lesson_translations[0]->description,
+                      'tasks'=> TasksResource::collection($item->tasks),
+                    ];
+                    array_push($lessons_array,$first_elem);
+
+                  }else{
+                    $element = new LanguageLessonsResource($item);
+                    array_push($lessons_array,$element);
+                  }
+                }
+
+                return $this->sendResponse($lessons_array, 'success');
+
+
     }
 
 
