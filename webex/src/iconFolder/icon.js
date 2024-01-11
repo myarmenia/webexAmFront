@@ -83,7 +83,7 @@ export const lengIcon = <svg xmlns="http://www.w3.org/2000/svg" width={16} heigh
 // ====================Bottom-Menu-============================================
 
 
-export const videoIcon = <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 20 20" fill="none">
+export const videoIcon = <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 20 20" fill="none">
                             <path d="M2 6C2 4.89543 2.89543 4 4 4H10C11.1046 4 12 4.89543 12 6V14C12 15.1046 11.1046 16 10 16H4C2.89543 16 2 15.1046 2 14V6Z" fill="white" />
                             <path d="M14.5528 7.10557C14.214 7.27497 14 7.62123 14 8V12C14 12.3788 14.214 12.725 14.5528 12.8944L16.5528 13.8944C16.8628 14.0494 17.2309 14.0329 17.5257 13.8507C17.8205 13.6684 18 13.3466 18 13V7C18 6.65342 17.8205 6.33156 17.5257 6.14935C17.2309 5.96714 16.8628 5.95058 16.5528 6.10557L14.5528 7.10557Z" fill="white" />
                           </svg>
@@ -91,25 +91,25 @@ export const videoIcon = <svg xmlns="http://www.w3.org/2000/svg" width={38} heig
 
 
 
-export const homeIcon = <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 20 20" fill="none">
+export const homeIcon = <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 20 20" fill="none">
                           <path d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z" fill="white" />
                         </svg>
 
 
 
-export const botomMailIcon  = <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 20 20" fill="none">
+export const botomMailIcon  = <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 20 20" fill="none">
                               <path d="M2.00333 5.88355L9.99995 9.88186L17.9967 5.8835C17.9363 4.83315 17.0655 4 16 4H4C2.93452 4 2.06363 4.83318 2.00333 5.88355Z" fill="white" />
                               <path d="M18 8.1179L9.99995 12.1179L2 8.11796V14C2 15.1046 2.89543 16 4 16H16C17.1046 16 18 15.1046 18 14V8.1179Z" fill="white" />
                             </svg>
 
 
-export const botomtelIcon = <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 20 20" fill="none">
+export const botomtelIcon = <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 20 20" fill="none">
                               <path d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z" fill="white" />
                             </svg>
 
 
 
-export const orderIcon = <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 20 20" fill="none">
+export const orderIcon = <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 20 20" fill="none">
                           <path d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z" fill="white" />
                           <path fillRule="evenodd" clipRule="evenodd" d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z" fill="white" />
                         </svg>

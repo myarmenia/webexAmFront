@@ -18,12 +18,13 @@
     background-color: transparent;
     outline: 2px solid white;
     border: none;
+    width: 100%;
 }
 
 .btn:hover{
     color: var(--main_font_color);
-    background: #00bcff;
-    box-shadow:0 0 10px  #00bcff, 0 0 40px #00bcff, 0 0 80px #00bcff;
+    background: #0090BB;
+    box-shadow:0 0 10px  #0090BB, 0 0 40px #0090BB, 0 0 80px #0090BB;
     transition-delay: 1s;
     outline: none;
 }
@@ -117,4 +118,12 @@
         font-size: 13px;
     }
 }
+
+
+/* @media (max-width: 480px){
+    .btn{
+        font-size: 13px;
+        width: 320px;
+    }
+} */
 

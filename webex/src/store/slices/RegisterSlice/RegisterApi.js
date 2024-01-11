@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 import customAxios from "../../../axios";
 
 export const postRegister = createAsyncThunk(
@@ -10,11 +11,11 @@ export const postRegister = createAsyncThunk(
             phone: body.phone,
             name: body.name,
             email: body.email,
+            phone: body.phone,
             password: body.password,
             password_confirmation: body.confirmPassword
           };
-          
-          console.log(registerData);
+    
           const config = {
             method: "post",
             url: "auth/signup",

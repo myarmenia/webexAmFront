@@ -20,8 +20,8 @@ function NavBar() {
         <div className='container'>
             <NavMenu/>
 
-            <Button index = "0" path="/courses-registration"/>
-            <Button index = "2" path="/courses-registration"/>
+            {/* <Button index = "0" path="/courses-registration"/>
+            <Button index = "2" path="/courses-registration"/> */}
 
             <div className='navbar-rigth-div'>
                 <RegistreButton path="/registr"/>

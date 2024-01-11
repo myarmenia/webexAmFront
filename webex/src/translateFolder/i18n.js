@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { years_webex } from '../data';
 
 i18n
   .use(initReactI18next)
@@ -22,7 +23,11 @@ i18n
             'Register',
             'Registration for the first course',
             'Course',
-            'The first lesson with us is free'
+            'The first lesson with us is free',
+            'I forgot my password',
+            'Restore',
+            'Reset password',
+            'Send'
           ],
 
           //====================== reg and log buttons===========================
@@ -34,9 +39,9 @@ i18n
             // ====================toolsInfo========================================
 
             toolsInfo: [
-              'More than 20 years in the market',
-              'Student 5000',
-              'Project 1900+',
+              `More than ${years_webex} years in the market`,
+              'Student',
+              'Project',
               'Websites 8000+',
               'Supported Projects 6000+',           
               'Programming Languages 30',
@@ -146,6 +151,25 @@ i18n
               'Advanced programming course. Dear students. To improve your skills, we offer you an advanced course. At Webex Technologies, you can increase your knowledge and level of expertise in your preferred field. To do this, you need to register.'
             ],
 
+
+            VideoCoursesSection_duration:[
+              'Duration - 120 minutes',
+              'Duration - 960 minutes',
+              'Duration - 1440 minutes',
+            ],
+
+            VideoCoursesSection_value:[
+              'Value 0 AMD',
+              'Value 45000 AMD',
+              'Value 60000 AMD',
+            ],
+
+
+            VideoCoursesSection_title:[
+              'Trial course',
+              'Standart course',
+              'Professional course'
+            ],
             // ===============Footer=======================
 
             footerMenu: [
@@ -162,6 +186,15 @@ i18n
            courseseRegistrationSlideCountLine: [
             'Duration ',
             'minute'
+          ],
+
+          validation_reg_log: [
+            'This field is required',
+            'Write the correct E-mail! address:',
+            'Password must contain a number',
+            'Password must contain a lowercase letter',
+            'Passwords do not match',
+            
           ]
         },
       },
@@ -170,7 +203,7 @@ i18n
           // ==========================reg_and_log=============================
           reg_and_log: [
             'Դասընթացների Գրանցում',
-            'Մուտք պրոֆիլ',
+            'Մուտք',
             'Անուն Ազգանուն',
             'Էլ․ հասցե',
             'Հեռախոս',
@@ -182,7 +215,11 @@ i18n
             'Գրանցվել',
             'Գրանցում առաջին դասընթացին',
             'Դասընթաց',
-            'Մեզ մոտ առաաջին դասը անվճար է'
+            'Մեզ մոտ առաաջին դասը անվճար է',
+            'Մոռացել եմ գաղտնաբառը',
+            'Վերականգնել',
+            'Վերականգնել գաղտնաբառը',
+            'Ուղարկել',
           ],
           
           //====================== reg and log buttons===========================
@@ -194,9 +231,9 @@ i18n
             // ====================toolsInfo========================================
 
           toolsInfo: [
-            'Շուկայում ավելի քան 20 տարի',
-            'Ուսանող 5000',
-            'Պրոեկտ 1900+',
+            `Շուկայում ավելի քան ${years_webex} տարի`,
+            'Ուսանող',
+            'Պրոեկտ',
             'Վեբ կայքեր 8000+',
             'Սպասարկվող Պրոեկտներ 6000+',
             'Ծրագրավորման Լեզու 30',
@@ -322,6 +359,28 @@ i18n
             'Ծրագրավորման խորացված դասընթաց. Սիրելի ուսանողներ. Ձեր հմտությունները բարելավելու համար մենք ձեզ առաջարկում ենք խորացված դասընթաց։ Webex Technologies-ում դուք կարող եք բարձրացնել ձեր գիտելիքները և ձեր մասնագիտացման մակարդակը նախընտրելի ոլորտում: Դա անելու համար անհրաժեշտ է գրանցվել։'
           ],
 
+          VideoCoursesSection_duration:[
+            'Տեվողությունը-120 Րոպե',
+            'Տեվողությունը-960 Րոպե',
+            'Տեվողությունը-1440 Րոպե',
+          ],
+
+
+          VideoCoursesSection_value:[
+            'Արժեքը 0 դրամ',
+            'Արժեքը 45000 դրամ',
+            'Արժեքը 60000 դրամ',
+          ],
+
+
+
+
+
+          VideoCoursesSection_title: [
+            'Փորձնական դասընթաց',
+            'Ստանդարտ փաթեթ',
+            'Պրոֆեսիոնալ փաթեթ'
+          ],
           // ==================Footer===========================
 
           footerMenu: [
@@ -341,6 +400,16 @@ i18n
           ]
  
         },
+
+
+        validation_reg_log: [
+          'Այս դաշտը պարտադիր է',
+          'Գրե՜ք ճիշտ Էլ. հասցե',
+          'Գաղտնաբառը պետք է պարունակի թվանշան',
+          'Գաղտնաբառը պետք է պարունակի  Փոքրատառ',
+          'Գաղտնաբառները չեն համնկնում',
+
+        ]
       },
 
       ru: {
@@ -361,7 +430,11 @@ i18n
             'Регистрация',
             'Запись на первый курс',
             'Курс',
-            'Первое занятие у нас бесплатно'
+            'Первое занятие у нас бесплатно',
+            'Я забыл пароль',
+            'Восстановить',
+            'Сброс пароля',
+            'Отправлять'
           ],
           
           //====================== reg and log buttons===========================
@@ -373,9 +446,9 @@ i18n
            // ====================toolsInfo========================================
 
           toolsInfo: [
-            'Более 20 лет на рынке',
-            'Студентов 5000 чел.',
-            'Проектов 1900+',
+            `Более ${years_webex} лет на рынке`,
+            'Студентов ',
+            'Проектов',
             'Сайтов 8000+',
             'Обслуживание сайтов 6000+',
             'Язык программирования 30',
@@ -504,6 +577,26 @@ i18n
             'Углубленный курс по программированию. Дорогие студенты. Для поднятия квалификации вам предлагается, углубленный курс. В компании Webex Technologies вы можете повысить знания и ваш уровень специализации в узкой области. Для этого вам нужно зарегистрироваться.'
           ],
 
+
+          VideoCoursesSection_duration:[
+            'Продолжительность - 120 минут',
+            'Продолжительность - 960 минут',
+            'Продолжительность - 1440 минут'
+          ],
+
+          VideoCoursesSection_value:[
+            'Ценность 0 АМД',
+            'Ценность 45000 АМД',
+            'Ценность 60000 АМД',
+          ],
+
+
+          VideoCoursesSection_title:[
+            'Пробный курс',
+            'Стандартный пакет',
+            'Профессиональный пакет'
+          ],
+
           // ==========================Footer============================
 
           footerMenu: [
@@ -520,6 +613,15 @@ i18n
            courseseRegistrationSlideCountLine: [
             'Продолжительность ',
             'минута'
+          ],
+
+          validation_reg_log: [
+            'Это поле является обязательным',
+            'Напишите правильный E-mail!',
+            'Пароль должен содержать цифру',
+            'Пароль должен содержать строчные буквы',
+            'Пароли не совпадают',
+            
           ]
         },
       },

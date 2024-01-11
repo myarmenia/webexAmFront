@@ -20,7 +20,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    align-items: center;
 }
+
+
 .login .container form input {
     width: 383px;
     height: 40px;
@@ -45,19 +48,22 @@
     line-height: normal;
 }
 
-.login .container form h6{
+.login .container form h6, .login .container form h5{
+    color: var(--main_font_color);
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.login .container form h6 a, .login .container form h5 span {
     color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     line-height: normal;
-}
-
-.login .container form h6 a{
-    color: var(--main_font_color);
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
     text-decoration-line: underline;
+    cursor: pointer;
 }
 
 .log_img_div{
