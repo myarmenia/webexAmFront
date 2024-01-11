@@ -3,43 +3,57 @@ import { co_workers_image1, co_workers_image10, co_workers_image11, co_workers_i
 
 // ===================tools-Info====================================
 
-export const toolsData = [
-    {
-        _id: '1',
-        icon: toolsIcon1,
-        color: '#6C98EC'
-    },
+export const years_webex = new Date().getFullYear() -2003
 
-    {
+export const packageTools = [
+   {
         _id: '2',
-        icon: toolsIcon2,
-        color: '#7A77A3'
-    },
-
-    {
-        _id: '3',
-        icon: toolsIcon3,
-        color: '#315A93'
-    },
-
-    {
-        _id: '4',
-        icon: toolsIcon4,
-        color: '#5073A7'
-    },
-
-    {
-        _id: '5',
-        icon: toolsIcon5,
-        color: '#7A77A3'
+        count: '5000+',
         
     },
 
     {
-        _id: '6',
+        _id: '3',
+        count: '1900+',
+    },
+]
+
+
+export const toolsData = [
+
+
+     {
+        icon: toolsIcon1,
+        color: '#6C98EC'
+    },
+
+     {
+        icon: toolsIcon2,
+        color: '#7A77A3',
+        type: 'user'
+    },
+
+     {
+        icon: toolsIcon3,
+        color: '#315A93',
+        type: 'project'
+
+    },
+
+     {
+        icon: toolsIcon4,
+        color: '#5073A7'
+    },
+    {
+        icon: toolsIcon5,
+        color: '#7A77A3'
+    },
+
+     {
         icon: toolsIcon6,
         color: '#315A93'
-    },
+    }
+    
 
 ]
 
@@ -197,41 +211,41 @@ export const createWebAndMobileApp_data = [
 export const packageTxts = {
     free_package: {
         txt: 'Կայքում ներկայացված են վիդեոդասեր, որոնք կարող եք դիտել բացարձակ անվճար։ Կծանոթանաք դասավանդման ձևերին, և կհամոզվեք, որ մեր վիդեոդասերը պարզ են և հասկանալի բոլորի համար։',
-        value: 'Արժեքը-0 Դրամ',
         icon: openLockIcon,
         _id: '1',
     },
     standart_package: {
         txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել Վեբ ծրագրավորման ոլորտում։',
-        value: '',
         icon: closeLockIcon,
         _id: '2',
 
     },
     profesional_package: {
         txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
-        value: '',
         icon: closeLockIcon,
         _id: '3',
     }
 }
 export const VideoCoursesSectionData = [
     {
-        title: 'Անվճար փաթեթ',
+        title: 'Փորձնական դաս',
         type: "free_package",
-        timeLine: '235 Րոպե',
+        timeLine: 'Տեվողությունը-120 Րոպե',
+        value: 'Արժեքը-0 Դրամ',
     },
 
     {
         title: 'Ստանդարտ փաթեթներ',
         type: 'standart_package',
-        timeLine: '1301.58 Րոպե',
+        timeLine: 'Տեվողությունը-960 Րոպե',
+        value: 'Արժեքը-45000 Դրամ',
     },
 
     {
         title: 'Պրոֆեսիոնալ փաթեթներ',
         type: 'profesional_package',
-        timeLine: '287 Րոպե',
+        timeLine: 'Տեվողությունը-1440 Րոպե',
+        value: 'Արժեքը-60000 Դրամ',
     },
 
 ]

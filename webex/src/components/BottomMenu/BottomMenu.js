@@ -71,7 +71,7 @@ const BottomMenu = () => {
         </li>
 
         <div className="indicator">
-            <span className='elips'>{elips}</span>
+            
         </div>
       </ul>
     </div>

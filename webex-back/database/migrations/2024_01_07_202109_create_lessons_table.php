@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('course_language_id')->references('id')->on('course_languages')->onUpdate('cascade')->onDelete('cascade');
             $table->string('video')->nullable();
             $table->string('duration');
+            $table->integer('number');
             $table->timestamps();
         });
     }

@@ -1,4 +1,4 @@
-.btn{
+.btn_{
     color: var(--main_font_color);
     font-size: 17px;
     font-style: normal;
@@ -17,27 +17,27 @@
     align-items: center;
 }
 
-.btn:hover{
+.btn_:hover{
     color: var(--main_font_color);
-    background: #00bcff;
-    box-shadow:0 0 10px  #00bcff, 0 0 40px #00bcff, 0 0 80px #00bcff;
+    background: #0090BB;
+    box-shadow:0 0 10px  #0090BB, 0 0 40px #0090BB, 0 0 80px #0090BB;
     transition-delay: 1s;
     outline: none;
 }
-.btn-active{
+.btn_-active{
     color: var(--main_font_color);
-    background: #00bcff;
-    box-shadow:0 0 10px  #00bcff, 0 0 40px #00bcff, 0 0 80px #00bcff;
+    background: #0090BB;
+    box-shadow:0 0 10px  #0090BB, 0 0 40px #0090BB, 0 0 80px #0090BB;
     transition-delay: 1s;
     outline: none;
 }
 
-.btn span{
+.btn_ span{
     position: absolute;
     display: block;
 }
 
-.btn span:nth-child(1){
+.btn_ span:nth-child(1){
     top: 0;
     left: -100%;
     width: 100%;
@@ -45,12 +45,12 @@
     background: linear-gradient(90deg, transparent, #00bcff);
 }
 
-.btn:hover span:nth-child(1){
+.btn_:hover span:nth-child(1){
     left: 100%;
     transition: 1s;
 }
 
-.btn span:nth-child(2){
+.btn_ span:nth-child(2){
     top: -100%;
     right: 0;
     width: 2px;
@@ -58,13 +58,13 @@
     background: linear-gradient(180deg, transparent, #00bcff);
 }
 
-.btn:hover span:nth-child(2){
+.btn_:hover span:nth-child(2){
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
 }
 
-.btn span:nth-child(3){
+.btn_ span:nth-child(3){
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -72,13 +72,13 @@
     background: linear-gradient(270deg, transparent, #00bcff);
 }
 
-.btn:hover span:nth-child(3){
+.btn_:hover span:nth-child(3){
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
 }
 
-.btn span:nth-child(4){
+.btn_ span:nth-child(4){
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -86,38 +86,38 @@
     background: linear-gradient(360deg, transparent, #00bcff);
 }
 
-.btn:hover span:nth-child(4){
+.btn_:hover span:nth-child(4){
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
 }
 @media(min-width: 1920px){
-    .btn{
+    .btn_{
         font-size: 25px;
     }
   }
 
 @media (max-width: 1920px){
-    .btn{
+    .btn_{
         font-size: 20px;
         padding: 15px 20px;
     }
 }
 
 @media (max-width: 1440px){
-    .btn{
+    .btn_{
         font-size: 17px;
     }
 }
 
 @media (max-width: 1140px){
-    .btn{
+    .btn_{
         font-size: 15px;
     }
 }
 
 @media (max-width: 720px){
-    .btn{
+    .btn_{
         font-size: 13px;
     }
 }

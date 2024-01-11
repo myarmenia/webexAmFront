@@ -6,7 +6,7 @@ function Button({index, path}) {
 
   
   return (
-    <NavLink  to={path} className="btn">
+    <NavLink  to={path} className="btn_">
         <span></span>
         <span></span>
         <span></span>

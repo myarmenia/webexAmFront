@@ -8,6 +8,7 @@ export const postRegister = createAsyncThunk(
     async (body, thunkAPI) => {
         try {
           const registerData = {
+            phone: body.phone,
             name: body.name,
             email: body.email,
             phone: body.phone,

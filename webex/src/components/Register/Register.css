@@ -20,7 +20,9 @@
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    align-items: center;
 }
+
 .register .container form input {
     width: 383px;
     height: 40px;
@@ -127,6 +129,8 @@
     .register .container form input{
         width: 300px;
     }
+
+    
 
 }
 

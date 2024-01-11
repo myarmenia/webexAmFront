@@ -17,7 +17,7 @@ class AuthService
         ]);
 
         $user->assignRole('student');
-
+  
         $credentials = Arr::only($data, ['email', 'password']);
   
         if (! $token = JWTAuth::attempt($credentials)) {
@@ -25,7 +25,26 @@ class AuthService
         }
 
         return [
-            'authUser' => $user,
+            'authUser' => $user->toArray(),
+            'token' => $token
+        ];
+    }
+
+    public function login($request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (! $token = JWTAuth::attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        auth()->user()->update([
+            'ip' => request()->ip(),
+            'login_at' => now(),
+        ]);
+
+        return [
+            'authUser' => auth()->user()->toArray(),
             'token' => $token
         ];
     }

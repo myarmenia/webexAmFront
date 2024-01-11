@@ -9,9 +9,9 @@ function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
     <div className='video-courses-section-item'>
         <div className='video-courses-section-item-info-div-1'>
             <h2>{'0' + id}</h2>
-            <h5>{title}</h5>
-            <span>{value}</span>
-            <span> Տեվողությունը-{timeLine}</span>
+            <h5>{t('VideoCoursesSection_title.' + txt)}</h5>
+            <span>{t('VideoCoursesSection_value.' + txt)}</span>
+            <span>{t('VideoCoursesSection_duration.' + txt)}</span>
         </div>
         <div className='video-courses-section-item-info-div-2'>
             <div>
@@ -19,7 +19,7 @@ function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
             <p>{t('videoCoursesSectionTxt.' + txt)}</p>
             </div>
             
-            <Button index="1"/>
+            {txt == 0 ? <Button index="1" path="registr"/> : <Button index="1" path="/courses-registration"/>}
         </div>
     </div>
   )

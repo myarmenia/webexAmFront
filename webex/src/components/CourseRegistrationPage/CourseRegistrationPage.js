@@ -26,29 +26,13 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
 
   return (
     <div className="course-registration-page">
-      <div className="change-form-div">
-        <button style={{backgroundColor: changeForm.regForm && '#00bcff', outline: changeForm.regForm && 'none'}} className="btn" onClick={() => setChangeForm({ regForm: true, logForm: false })}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          {t('reg_log.' + '1')}
-        </button>
-
-        <button style={{backgroundColor: changeForm.logForm && '#00bcff', outline: changeForm.logForm && 'none'}} className="btn" onClick={() => setChangeForm({ regForm: false, logForm: true })}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          {t('reg_log.' + '0')}
-        </button>
-      </div>
-      <div className="forms-div course-forms-div">
+      
+      {/* <div className="forms-div course-forms-div">
         <div>
           {changeForm.logForm && <LoginPage />}
           {changeForm.regForm && <Registre />}
         </div>
-        <div>
+        <div> */}
           <Formik
             initialValues={{
               name: '',
@@ -117,12 +101,12 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
             )}
           </Formik>
         </div>
-      </div>
+      // </div>
 
-        <CoursesRegistrationSlide/>
+        /* <CoursesRegistrationSlide/>
 
-        <CoursesRegistrationInfo/>
-    </div>
+        <CoursesRegistrationInfo/> */
+    // </div>
   );
 }
 

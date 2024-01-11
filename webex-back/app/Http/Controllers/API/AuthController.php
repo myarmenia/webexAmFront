@@ -26,18 +26,16 @@ class AuthController extends BaseController
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
 
-        if (! $token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
+        $data = $this->authService->login($request);
 
-        auth()->user()->update([
-            'ip' => request()->ip(),
-            'login_at' => now(),
-        ]);
+        $readyData = [
+            'authUser' => $data['authUser'],
+            'access_token' => $data['token'],
+        ];
 
-        return $this->respondWithToken($token);
+        return response()->json($readyData);
+
     }
 
     public function me()
@@ -58,7 +56,7 @@ class AuthController extends BaseController
 
         $readyData = [
             'authUser' => $data['authUser'],
-            'token' => $data['token'],
+            'access_token' => $data['token'],
         ];
 
         return response()->json($readyData);
