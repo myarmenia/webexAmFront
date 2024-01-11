@@ -22,7 +22,7 @@ const newPasswordSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postNewPassword.fulfilled, (state, action) => {
-            state.massage = action.payload.massage
+            state.massage = action.payload.success
              state.status = 'succes';
           })
           .addCase(postNewPassword.rejected, (state, action) => {

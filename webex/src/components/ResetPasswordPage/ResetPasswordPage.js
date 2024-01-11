@@ -49,7 +49,7 @@ function ResetPasswordPage() {
         respNewPass && navigate('/login')
     }
   return (
-    respResetPass ? <div className='reset-password-page'>
+    respResetPass?.message ? <div className='reset-password-page'>
     <div className='container'>
         <h5>{t('reg_and_log.' + '18')}</h5>
         <form ref={formRef} className='reset-password-form' onSubmit={handleSubmit}>

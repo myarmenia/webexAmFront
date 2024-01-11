@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postResetPasswordPage } from "./PasswordResetPageApi";
 
 const initialState = {
-   massage: '',
+   message: false,
    status: 'idle',
    error: null,
    };
@@ -22,8 +22,7 @@ const resetPasswordPageSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postResetPasswordPage.fulfilled, (state, action) => {
-            state.massage = action.payload.success
-             state.status = 'succes';
+            state.message = action.payload.success
           })
           .addCase(postResetPasswordPage.rejected, (state, action) => {
             state.status = 'failed';
