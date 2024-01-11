@@ -24,7 +24,7 @@ function App() {
               <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
               <Route path='registr' element={<Register/>}/>
               <Route path='login' element={<LoginPage  />}/> 
-              <Route path='resetPassword' element={<ResetPasswordPage/>}/>
+              <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
           </Route>
         </Routes>
     </div>

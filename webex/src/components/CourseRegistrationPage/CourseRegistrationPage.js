@@ -22,6 +22,8 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
   const handleFormSubmit = (e, handleSubmit) => {
     e.preventDefault()
     handleSubmit()
+
+    console.log('jannn');
   }
   return (
     <div className="course-registration-page">
@@ -35,8 +37,8 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
               type: '',
             }}
             onSubmit={(values, { resetForm }) => {
-              setUser([...user, { ...values }]);
-              setPage('log');
+              // setUser([...user, { ...values }]);
+              // setPage('log');
               resetForm();
             }}
             validateOnBlur
@@ -45,7 +47,7 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
             {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
               <div className="register">
                 <div className="container">
-                  <form className="reg-form" onSubmit={(e, handleSubmit) => handleFormSubmit(e, handleSubmit)}>
+                  <form className="reg-form" onSubmit={(e) => handleFormSubmit(e, handleSubmit)}>
                     <SectionTitle title={t('reg_and_log.' + '11')} />
                     <div className="name-inp">
                       <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} />

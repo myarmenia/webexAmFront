@@ -22,7 +22,7 @@ const resetPasswordPageSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postResetPasswordPage.fulfilled, (state, action) => {
-            state.massage = action.payload.massage
+            state.massage = action.payload.success
              state.status = 'succes';
           })
           .addCase(postResetPasswordPage.rejected, (state, action) => {
