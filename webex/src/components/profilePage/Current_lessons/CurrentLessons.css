@@ -1,0 +1,109 @@
+.allSide{
+  display: flex;
+  justify-content: space-around;
+}
+
+.leftSideTop{
+  position: relative;
+  /* width: 100%; */
+  /* margin-left: 100px; */
+}
+
+.leftSideTop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  width: 84vw;
+}
+.title{
+  font-size: 48px;
+  font-weight: 700;
+  line-height:58.59px;
+}
+.title_name{
+  font-size: 32px;
+  font-weight: 700;
+  line-height:39.06px;
+  color: #FFFFFF;
+}
+.Introduction{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.3px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+.allvideoLessons{
+   display: flex;
+   align-items: center;
+   gap: 13px;
+}
+.titleAllVideo{
+  color: #FFFFFF;
+  line-height: 39.06px;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.nameAllVideo{
+  line-height: 34.18px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #A7A7A7;
+}
+
+.description{
+ background-color: #D9D9D9;
+ width: 100%;
+ padding: 20px 96px 20px 26px;
+ border-radius: 20px;
+ margin-top: 60px;
+}
+.description_title{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.3px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.description_text{
+  font-size: 18px;
+  line-height: 24.41px;
+  font-weight: 400;
+}
+.description_more{
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.homework_line{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+  padding-bottom: 25px;
+}
+.homework_line_p{
+  font-size: 21px;
+  line-height: 29.3px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.HomeworkList{
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 34.18px;
+  color: #FFFFFF;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.vector222{
+  width: 19px;
+  height: 14px;
+}
