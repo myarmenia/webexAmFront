@@ -26,6 +26,7 @@ class AuthController extends BaseController
 
     public function login(Request $request)
     {
+        dd($request->header('accept-language'));
         try {
             $data = $this->authService->login($request);
 
