@@ -85,7 +85,7 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="basic-default-name">Video</label>
+            <label class="col-sm-2 col-form-label" for="basic-default-name">Number</label>
             <div class="col-sm-10">
               <input type="number" class="form-control" name="number" value="{{old('number')}}" id="description" placeholder="Number" />
               @if($errors->has("number"))
