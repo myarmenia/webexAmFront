@@ -16,7 +16,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
 import { selectLogin, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
 import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
-function LoginPage({setUser, setPage, user}) {
+function LoginPage() {
 
     const fref = useRef(null)
 
@@ -50,13 +50,8 @@ function LoginPage({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                setUser([
-                    ...user,
-                    {
-                        ...values
-                    }
-                ])
-                // setPage('log')
+               
+            
                 resetForm()
             }}
 
