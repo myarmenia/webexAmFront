@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import customAxios from "../../../axios";
+import instance from "../../../axios";
 
 export const postLogin = createAsyncThunk(
     'login/postLogin',
     // async function (body) {
-    //     const {data} = await customAxios.post('/api/auth/login', body)
+    //     const {data} = await instance.post('/api/auth/login', body)
     //     console.log(data);
     //     return data
         
@@ -25,7 +25,7 @@ export const postLogin = createAsyncThunk(
             data: signInData,
           };
     
-          const response = await customAxios(config);
+          const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
           window.location.href ='/users';
           return true;

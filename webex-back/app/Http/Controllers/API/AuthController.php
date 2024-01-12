@@ -42,7 +42,7 @@ class AuthController extends BaseController
 
     public function me()
     {
-        return response()->json(auth()->user());
+        return response()->json(auth('api')->user());
     }
 
     public function logout()
@@ -66,7 +66,7 @@ class AuthController extends BaseController
 
     public function refresh()
     {
-        return $this->respondWithToken(auth()->refresh());
+        return $this->respondWithToken(auth('api')->refresh());
     }
 
     protected function respondWithToken($token)

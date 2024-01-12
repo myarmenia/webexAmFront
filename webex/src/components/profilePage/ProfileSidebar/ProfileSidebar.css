@@ -1,0 +1,51 @@
+.line_div{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  width: 250px;
+  color: #FFFFFF;
+}
+.line_divActive{
+  /* color: #4340BB !important; */
+  filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
+}
+/* .iconss {
+  width: 30px;
+  height: 30px;
+  filter: invert(24%) sepia(84%) saturate(2617%) hue-rotate(236deg) brightness(76%) contrast(92%);
+} */
+
+
+.leftSidebar{
+display: flex;
+}
+.line{
+  height: 520px;
+  margin-left: 30px;
+}
+.nameSideBar{
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 24.41px;
+}
+.nameSideBarActive{
+  color: red;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 24.41px;
+}
+
+.leftSidebar_divs{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  width: 35px;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+.leftSidebar_divs:hover{
+  width: 220px;
+  cursor: pointer;
+}
+
