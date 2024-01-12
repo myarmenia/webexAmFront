@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\Lessons;
 
+use App\Http\Controllers\API\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserCurrentLessonResource;
 use App\Models\UserCourseMenegment;
@@ -9,7 +10,7 @@ use App\Services\API\UserCurrentLessonService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserCurrentLessonController extends Controller
+class UserCurrentLessonController extends BaseController
 {
 
   protected $userCurrentLessonService;
@@ -19,9 +20,11 @@ class UserCurrentLessonController extends Controller
 
   }
     public function index(Request $request){
-
+ 
+// dd(auth('api')->user());
         $user_current_lesson = $this->userCurrentLessonService->getcurrentlesson();
 
-        return new UserCurrentLessonResource($user_current_lesson);
+        $current_lesson = new UserCurrentLessonResource($user_current_lesson);
+        return $this->sendResponse($current_lesson, 'success');
     }
 }
