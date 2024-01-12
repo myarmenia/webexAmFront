@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import customAxios from "../../../axios";
+import instance from "../../../axios";
 
 export const postResetPassword = createAsyncThunk(
     'resetPassword/postResetPassword',
@@ -17,7 +17,7 @@ export const postResetPassword = createAsyncThunk(
             data: resetEmailData,
           };
     
-          const response = await customAxios(config);
+          const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
           return true;
         } catch (error) {

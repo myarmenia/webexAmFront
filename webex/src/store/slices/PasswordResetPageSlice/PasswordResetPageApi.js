@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import customAxios from "../../../axios";
+import instance from "../../../axios";
 
 export const postResetPasswordPage = createAsyncThunk(
     'resetPasswordPage/postResetPasswordPage',
@@ -17,7 +17,7 @@ export const postResetPasswordPage = createAsyncThunk(
             data: resetPasswordePageData,
           };
     
-          const response = await customAxios(config);
+          const response = await instance(config);
           return response?.data;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);

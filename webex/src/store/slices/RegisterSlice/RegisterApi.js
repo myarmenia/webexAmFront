@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import customAxios from "../../../axios";
+import instance from "../../../axios";
 
 export const postRegister = createAsyncThunk(
     'register/postregister',
@@ -22,7 +22,7 @@ export const postRegister = createAsyncThunk(
             data: registerData,
           };
     
-          const response = await customAxios(config);
+          const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
           window.location.href ='/users';
           return true;

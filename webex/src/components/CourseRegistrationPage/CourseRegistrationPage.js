@@ -11,31 +11,31 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
   const [activeBtn, setactiveBtn] = useState({online: false, ofline: false});
   const { t, i18n } = useTranslation();
 
+  
   const validationSchema = yup.object().shape({
-    name: yup.string().required('Պարտադիր գրել անուն'),
-    phone: yup.string().required('Պարտադիր գրել հեռախոսահամար'),
-    courses: yup.string().required('Պարտադիր նշել դասընթացի տեսակը'),
-    type: yup.string().required('Պարտադիր նշել դասընթացի տեսակը'),
+    name: yup.string().required(t('validation_reg_log.0')),
+    phone: yup.string().required(t('validation_reg_log.0')),
+    type: yup.string().required(t('validation_reg_log.0')),
   });
 
 
   const handleFormSubmit = (e, handleSubmit) => {
     e.preventDefault()
+   if (e.target[0].value && e.target[1].value && (e.target[2].checked || e.target[3].checked)) {
     handleSubmit()
 
-    var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-      
-        // Տվեք այստեղ ձեր մեյլի հասցեն
-        var yourEmail = "poghosyan.01@list.ru";
-      
-        // այստեղ տվեք ձեր հաղորդագրման պառածած հասցեն
-        var subject = "Նոր կոնտակտ";
-      
-        var mailtoLink = "mailto:" + yourEmail + "?subject=" + subject + "&body=" + message;
-      console.log(mailtoLink);
-        window.location.href = mailtoLink;
+    var yourEmail = "poghosyan.01@list.ru";
+
+    const name = e.target[0].value
+    const phone = e.target[1].value
+    const type = e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value: ''
+
+    const body = `ԱՆուն Ազգանուն: ${name}\nՀեռախոսահամար: ${phone}\n Տեսակ: ${type}`
+
+    const mailtoLink = `mailto:${yourEmail}?subject=New Contact&body=${encodeURIComponent(body)}`
+  
+    window.location.href = mailtoLink;
+   }
   }
   return (
     <div className="course-registration-page">
