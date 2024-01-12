@@ -1,5 +1,10 @@
-.container {
-  max-width: 1140px;
+*{
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+}
+.container{
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 50px;
   box-sizing: border-box;
@@ -13,8 +18,33 @@ a {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 @media (max-width: 1440px) {
   .container {
+=======
+:root {
+  --main_color: #010526;
+  --main_font_color: #d5d5d5;
+}
+
+
+
+ /* @font-face {
+  font-family:font-1;
+  src: url(./fonts/RobotoFlex-Regular.ttf);
+} 
+
+
+ @media(min-width: 1920px){
+  .container{
+    max-width: 100%;
+    padding: 0 100px;
+  }
+} 
+
+ @media(max-width: 1440px){
+  .container{
+>>>>>>> 1956c246caaf87e90f4a5000fcacf18b08b0dd92
     max-width: 1440px;
   }
 }
@@ -23,18 +53,25 @@ a {
   .container {
     max-width: 1920px;
   }
-}
+} */
+
+
+
 
 @media (max-width: 1140px) {
   .container {
     max-width: 1140px;
     padding: 0 20px;
   }
-}
+} 
 
+<<<<<<< HEAD
 @media (min-width: 1920px) {
   .container {
     max-width: 100%;
     padding: 0 100px;
   }
 }
+=======
+
+>>>>>>> 1956c246caaf87e90f4a5000fcacf18b08b0dd92

@@ -11,10 +11,12 @@
     flex-direction: column;
     row-gap: 100px;
     position: relative;
-    color: white;
+    color: var(--main_font_color);
 }
 
-
+.react-multi-carousel-track {
+    padding: 0;
+}
 .react-multi-carousel-track > li:nth-child(odd) .courses-registration-slide-item .courses-registration-slide-item-bootom{
     background-color: #4E3584CC;
 }

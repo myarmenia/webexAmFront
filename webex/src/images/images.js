@@ -192,3 +192,23 @@ export const Payment = <svg width="30" height="30" viewBox="0 0 30 30" fill="non
  </svg>
  
  // ============================ =======
+
+
+// =======================co-workers========================
+
+export const co_workers_image1 = require('./zinanshan.png')
+export const co_workers_image2 = require('./PN-removebg-preview (1) 1.png')
+export const co_workers_image3 = require('./LGG_Logo2-removebg-preview 1.png')
+export const co_workers_image4 = require('./elnarti_logo 3.png')
+export const co_workers_image5 = require('./police-removebg-preview 1.png')
+export const co_workers_image6 = require('./AICA_logo-removebg-preview 2.png')
+export const co_workers_image7 = require('./nerdrumneri_kentron-removebg-preview 3.png')
+export const co_workers_image8 = require('./com 1.png')
+export const co_workers_image9 = require('./fanarjyan.png')
+export const co_workers_image10 = require('./Vector (1).png')
+export const co_workers_image11 = require('./breast_logo-removebg-preview (2) 1 (1).png')
+export const co_workers_image12 = require('./breast_logo-removebg-preview (2) 1 (1).png')
+export const co_workers_image13 = require('./LigaUslug_Logo-removebg-preview 2.png')
+export const co_workers_image14 = require('./erit_logo-removebg-preview 1.png')
+export const co_workers_image15 = require('./hemofolia_logo-removebg-preview 4.png')
+export const co_workers_image16 = require('./prisma_logo-removebg-preview 1.png')

@@ -1,7 +1,6 @@
 .footer{
-    background-color: #010526;
+    background-color: var(--main_color);
     max-width: 100%;
-    height: 300px;
 }
 
 .footer-content{
@@ -25,7 +24,7 @@
 }
 
 .footer-menu li span{
-    color: white
+    color: var(--main_font_color);
 }
 
 .footer-menu li{
@@ -37,7 +36,7 @@
 }
 
 .footer-right-div span{
-    color: white;
+    color: var(--main_font_color);
 }
 
 .footer-icons{

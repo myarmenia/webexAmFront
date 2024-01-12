@@ -17,7 +17,12 @@ return new class extends Migration {
             $table->string('password');
             $table->boolean('status')->default(1);
             $table->string('avatar')->nullable();
+            $table->boolean('passport')->default(0);
             $table->string('phone');
+            $table->integer('lesson_quantity')->default(0);
+            $table->boolean('payment_status')->default(0);
+            $table->string('ip')->nullable();
+            $table->timestamp('login_at')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,5 @@
  a{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 15px;
     font-style: normal;
     font-weight: 700;

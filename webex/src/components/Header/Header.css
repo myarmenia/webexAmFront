@@ -1,6 +1,9 @@
+.header-title{
+    width: 50%;
+}
+
 .header .header-title h2{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
@@ -9,8 +12,7 @@
 }
 
 .header .header-title h4{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -21,9 +23,9 @@
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* padding: 100px 30px; */
-    column-gap: 50px;
+    column-gap: 10%;
 }
 
 .btns-div{
@@ -33,9 +35,84 @@
     margin: 30px 0;
 }
 
+
+
+.animation-container {
+    position: relative;
+  }
+
+  .animation-badge {
+    display: block;
+    position: relative;
+    width: 30rem; /* Increased width */
+    height: 30rem; /* Increased height */
+    background: url('../../images/Frame.png')
+      no-repeat 100% 50%;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    
+    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
+  }
+
+  .animation-badge:hover {
+     box-shadow: 0px 0.5rem 2rem #4A2B72;
+    /* background: #9944C0; */
+    background-position: 0% 50%;
+  }
+
+  .animation-badge:hover .badge-text {
+    transform: rotate(-45deg) translate(0) rotate(-315deg);
+    background: rgba(128, 128, 128, 0.188);
+    width: 30rem; /* Increased width */
+    height: 30rem; /* Increased height */
+    letter-spacing: 2rem;
+    line-height: 30rem; /* Increased line-height */
+    margin-top: -15rem; /* Adjusted margin-top */
+    margin-left: -15rem; /* Adjusted margin-left */
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+      letter-spacing 1.5s ease-out;
+      font-size: 35px;
+      font-weight: bold;
+  }
+
+  .animation-badge .badge-text {
+    display: block;
+    position: absolute;
+    line-height: 9rem; /* Increased line-height */
+    text-align: center;
+    letter-spacing: 0.25rem;
+    padding-left: 0.25rem;
+    box-sizing: border-box;
+    font-weight: 400;
+    color: var(--main_font_color);
+    border-radius: 20px;
+    width: 9rem; /* Increased width */
+    height: 9rem; /* Increased height */
+    background: rgba(128, 128, 128, 0.188);
+    left: 50%;
+    top: 50%;
+    margin-top: -4.5rem; /* Adjusted margin-top */
+    margin-left: -4.5rem; /* Adjusted margin-left */
+    transform: rotate(-135deg) translate(-7.5rem) rotate(135deg); /* Adjusted transform */
+    box-shadow: 0px 0.3125rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    backdrop-filter: blur(10px);
+  }
+
+/* ============================================================= */
 @media (max-width: 1440px){
-    .header img{
-        width: 500px;
+    .animation-badge{
+        width: 20rem;
+        height: 20rem;
+    }
+    
+    .animation-badge .badge-text{
+        width: 7rem;
+        height: 7rem;
+        line-height: 7rem;
     }
     .header .header-title h2{
         font-size: 45px;
@@ -43,11 +120,16 @@
     .header .header-title h4{
         font-size: 25px;
     }
+
+    .animation-badge:hover .badge-text{
+        margin-left: -14rem;
+    }
 }
 
 @media (max-width: 1140px){
-    .header img{
-        width: 500px;
+    .animation-badge{
+        width: 18rem;
+        height: 18rem;
     }
     .header .header-title h2{
         font-size: 40px;
@@ -59,15 +141,28 @@
 
 
 @media (max-width: 1024px){
-    .header img{
-        width: 300px;
+    .animation-badge{
+        width: 15rem;
+        height: 15rem;
     }
+
+    .animation-badge .badge-text{
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        font-size: 13px;
+    }
+
     .header .header-title h2{
         font-size: 35px;
     }
 
     .header .header-title h4{
         font-size: 17px;
+    }
+
+    .animation-badge:hover .badge-text{
+        font-size: 20px;
     }
 }
 
@@ -78,6 +173,10 @@
         flex-direction: column-reverse;
         align-items: center;
         row-gap: 40px;
+    }
+    .header-title{
+        align-items: center;
+        width: 100%;
     }
 }
 
@@ -92,3 +191,6 @@
         row-gap: 40px;
     }
 }
+
+/* Header.css */
+

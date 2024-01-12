@@ -16,12 +16,13 @@
 }
 
 .courses-registration-info-item-text h5{
-    color: var(--Withe, #FFF);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 

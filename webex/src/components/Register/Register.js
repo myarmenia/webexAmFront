@@ -8,6 +8,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import { eyeIcon } from "../../iconFolder/icon.js";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
 
 function Registre({setUser, setPage, user}) {
 
@@ -17,17 +19,30 @@ function Registre({setUser, setPage, user}) {
     const { t, i18n } = useTranslation();
 
     const {pathname} = useLocation()
+
+    const dispatch = useDispatch()
     
+    function handleLogSub(e,handleSubmit) {
+        e.preventDefault()
+        handleSubmit()
+        dispatch(postRegister({
+                            name: e.target[0].value,
+                            email: e.target[1].value,
+                            phone: e.target[2].value,
+                            password: e.target[3].value,
+                            confirmPassword: e.target[4].value,
+                             }))
+    }
 
     const  validationSchema = yup.object().shape({
-        name: yup.string().required('Պարտադիր գրել անուն'),
+        name: yup.string().required(t('validation_reg_log.' + '0')),
         phone: yup.string(),
-        email: yup.string().email('Գրե՜ք ճիշտ Էլ. հասցե').required('Պարտադիր գրել Էլ. հասցե'),
+        email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
-        .matches(/[0-9]/, 'Գաղտնաբառը պետք է պարունակի թվանշան')
-        .matches(/[a-z]/, 'Գաղտնաբառը պետք է պարունակի  Փոքրատառ')
-        .required('Պարտադիր գրել գաղտնաբառը'),
-        confirmPassword: yup.string().oneOf([yup.ref('password')], 'Գաղտնաբառները չեն համնկնում').required('Պարտադիր գրել գաղտնաբառը'),
+        .matches(/[0-9]/, t('validation_reg_log.'+ '2'))
+        .matches(/[a-z]/, t('validation_reg_log.'+ '3'))
+        .required(t('validation_reg_log.'+ '0')),
+        confirmPassword: yup.string().oneOf([yup.ref('password')], t('validation_reg_log.'+ '4')).required(t('validation_reg_log.'+ '0')),
 
     })
     return (    
@@ -42,13 +57,13 @@ function Registre({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                setUser([
-                    ...user,
-                    {
-                        ...values
-                    }
-                ])
-                setPage('log')
+                // setUser([
+                //     ...user,
+                //     {
+                //         ...values
+                //     }
+                // ])
+                // setPage('log')
                 resetForm()
             }}
 
@@ -61,7 +76,7 @@ function Registre({setUser, setPage, user}) {
             ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
                 <div className="register">
                     <div className="container">
-                            <form className="reg-form"  onSubmit={handleSubmit}>
+                            <form className="reg-form"   onSubmit={(e)=>handleLogSub(e,handleSubmit)}>
                                 <SectionTitle title={t('reg_and_log.'+ '0')}/>
                             <div className="name-inp">
                                 <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>

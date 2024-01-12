@@ -22,16 +22,29 @@ function BurgerMenu() {
               <div className='logo-image'>
               <NavLink to={'/'}>{logoImage}</NavLink>
               </div>
-              {/* <div className="title">Side Menu</div> */}
 
               <ul className="list-items">
-                <NavMenuItem index = "1" path="/programing"/>
+              <div className='drop-item'>
+                    <NavMenuItem index="1"/>
+                    <ul className='drop-menu'>
+                         <NavMenuItem index="8" path="/1"/>
+                         <NavMenuItem index="9" path="/2"/>
+                         <NavMenuItem index="10" path="/3"/>     
+                         <NavMenuItem index="11" path="/3"/>     
+                         <NavMenuItem index="12" path="/3"/>     
+                         <NavMenuItem index="13" path="/3"/>     
+                    </ul> 
+
+                </div>
                 <NavMenuItem index = "2" path="/projects"/>
+                <NavMenuItem index="7" path="/news"/>
                 <NavMenuItem index = "3" path="/aboteus"/>
                 <NavMenuItem index = "4" path="/contact"/>
               </ul>
 
-              <Button index = "0" path="/registr"/>
+              {/* <Button index = "0" path="/registr"/>
+              <Button index = "2" path="/courses-registration"/> */}
+
 
               <div className="icons">
                   <div className='my-reg_log_class'>

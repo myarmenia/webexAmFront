@@ -18,6 +18,37 @@
       ]
     },
     {
+
+      "name": "Courses",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "form-layouts",
+      "submenu": [
+        {
+          "url": "/course/course-language",
+          "name": "Course Languages list",
+          "slug": "course-language"
+        },
+        {
+          "url": "/lesson/lesson-list",
+          "name": "Lessons",
+          "slug": "lesson-list"
+        },
+        {
+          "url": "/task/task-list",
+          "name": "Tasks",
+          "slug": "task-list"
+        }
+      ]
+    },
+    {
+      "name": "Project",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "project",
+      "url": "project"
+    },
+
+    {
+
       "menuHeader": "Apps & Pages"
     },
     {
@@ -43,6 +74,7 @@
       ]
     },
     {
+
       "name": "Authentications",
       "icon": "menu-icon tf-icons bx bx-lock-open-alt",
       "slug": "auth",
@@ -68,6 +100,7 @@
       ]
     },
     {
+
       "menuHeader": "Components"
     },
     {
@@ -248,4 +281,6 @@
       "menuHeader": "Misc"
     }
   ]
+
 }
+
