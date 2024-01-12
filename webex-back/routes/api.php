@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
 use App\Http\Controllers\API\Lessons\LessonController;
+use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ Route::group(['middleware' => 'api'], function ($router) {
         // Route::apiResource('course-language', 'CourseLanguagesController');
         Route::get('course-language',[CourseLanguagesController::class,'index']);
         Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
+        Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
     });
 
 });
