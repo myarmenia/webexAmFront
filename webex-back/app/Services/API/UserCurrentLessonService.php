@@ -10,7 +10,7 @@ class UserCurrentLessonService
 {
   public  function getcurrentlesson(){
 
-    $user_id = 1;
+    $user_id = auth('api')->user()->id;
     $current_lesson = UserCourseMenegment::where('user_id', 1)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
 
 

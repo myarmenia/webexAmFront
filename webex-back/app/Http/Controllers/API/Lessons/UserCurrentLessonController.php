@@ -19,15 +19,9 @@ class UserCurrentLessonController extends Controller
 
   }
     public function index(Request $request){
-// dd(444);
-// dd($request->lang);
-      // dd(Auth::user());
-        $user_current_lesson = $this->userCurrentLessonService->getcurrentlesson();
-        // dd($user_current_lesson);
-        return new UserCurrentLessonResource($user_current_lesson);
-        // $user_id = 1;
-        // $current_lesson = UserCourseMenegment::where('user_id', 1)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
-        // return new UserCurrentLessonResource($current_lesson);
 
+        $user_current_lesson = $this->userCurrentLessonService->getcurrentlesson();
+
+        return new UserCurrentLessonResource($user_current_lesson);
     }
 }
