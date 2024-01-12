@@ -6,10 +6,14 @@ import { Formik } from 'formik';
 import SectionTitle from '../SectionTitle/SectionTitle.js';
 import * as yup from 'yup';
 import AnimLogo from '../AnimLogo/AnimLogo.tsx'
+import { useDispatch } from 'react-redux';
+import { postTrialCourse } from '../../store/slices/TrialCourseSlice/TrialCourseApi.js';
 function CourseRegistrationPage({ setUser, setPage, user }) {
   const [changeForm, setChangeForm] = useState({ regForm: false, logForm: true });
   const [activeBtn, setactiveBtn] = useState({online: false, ofline: false});
   const { t, i18n } = useTranslation();
+
+  const dispatch = useDispatch()
 
   
   const validationSchema = yup.object().shape({
@@ -23,18 +27,12 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
     e.preventDefault()
    if (e.target[0].value && e.target[1].value && (e.target[2].checked || e.target[3].checked)) {
     handleSubmit()
+    dispatch(postTrialCourse({
+      name: e.target[0].value,
+      phone: e.target[1].value,
+      type: e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value : ''
+    }))
 
-    var yourEmail = "poghosyan.01@list.ru";
-
-    const name = e.target[0].value
-    const phone = e.target[1].value
-    const type = e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value: ''
-
-    const body = `ԱՆուն Ազգանուն: ${name}\nՀեռախոսահամար: ${phone}\n Տեսակ: ${type}`
-
-    const mailtoLink = `mailto:${yourEmail}?subject=New Contact&body=${encodeURIComponent(body)}`
-  
-    window.location.href = mailtoLink;
    }
   }
   return (
