@@ -11,9 +11,6 @@ use Mail;
 
 class TrialCourseService
 {
-  public function trialCourse($data)
-  {
-    Mail::send(new SendForgotToken($email, $token));
-  }
+
 
 }

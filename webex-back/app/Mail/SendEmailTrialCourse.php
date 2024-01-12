@@ -13,7 +13,7 @@ class SendEmailTrialCourse extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public string $data;
+    public array $data;
 
     /**
      * Create a new message instance.
@@ -64,7 +64,6 @@ class SendEmailTrialCourse extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    ->to('tradingtrader@mail.ru');
-                    // ->to('webexprojects@gmail.com');
+                    ->to('webexprojects@gmail.com');
     }
 }
