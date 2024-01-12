@@ -6,12 +6,18 @@ import Register from './components/Register/Register';
 import LoginPage from './components/LoginPage/LoginPage';
 import CourseRegistrationPage from './components/CourseRegistrationPage/CourseRegistrationPage';
 import ProjectsPage from './components/ProjectsPage/ProjectsPage';
+import ProfilePage from './components/profilePage/ProfilePage';
+import { Dashboard } from './components/profilePage/Dashboard/Dashboard';
+import CurrentLessons from './components/profilePage/Current_lessons/CurrentLessons';
+
+import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
+
 
 function App() {
-
   return (
     <div className="App">
       <Routes>
+
           <Route path='/' element={<HomeWraper/>}>
               <Route index element={<HomePage/>}/>
               <Route path='programing'element={<h1>programing</h1>}/>
@@ -23,8 +29,15 @@ function App() {
               <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
               <Route path='registr' element={<Register/>}/>
               <Route path='login' element={<LoginPage  />}/> 
-          </Route>
-        </Routes>
+              <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
+              <Route path="profilePage" element={<ProfilePage />}>
+                  <Route path="Dashboard" element={<Dashboard />} />
+                  <Route  path="Currentlessons" element={<CurrentLessons />} />
+              </Route>
+        </Route>
+
+        <Route path="*" element={<div>ejy chka</div>} />
+      </Routes>
     </div>
   );
 }

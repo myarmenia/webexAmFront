@@ -1,0 +1,15 @@
+.containerProfilePage{
+    /* max-width: 1140px; */
+    margin: 0 auto;
+    padding: 0 29px;
+    box-sizing: border-box;
+  
+  background-color: rgb(45, 101, 80);
+  /* #010526 */
+}
+
+
+.ProfilePage_bigDiv{
+  display: flex;
+  padding-top: 51px;
+}

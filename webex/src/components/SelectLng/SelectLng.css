@@ -1,8 +1,8 @@
 #lng{
     outline: none;
-    background-color: #010526;
+    background-color: var(--main_color);
     border: none;
-    color: white;
+    color: var(--main_font_color);
     font-size: 15px;
 }
 

@@ -1,0 +1,116 @@
+.nav-top{
+    background-color: var(--main_color);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.503);
+}
+
+.nav-top .container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+
+.nav_top_phone{
+    display: flex;
+    gap: 20px;
+    color: var(--main_font_color);
+    position: relative;
+}
+
+.mail-block{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.nav_top_phone .tel{
+    display: flex;
+    column-gap: 20px;
+}
+
+.nav_top_phone .tel span:nth-of-type(1){
+    border-right: 1px solid gray;
+    padding-right: 20px;
+}
+.contact{
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav_top_icons{
+    display: flex;
+    gap: 10px;
+}
+
+
+@media (max-width: 1024px){
+    .nav-top .container{
+        gap: 30px;
+    }
+    .contact{
+        gap: 30px;
+    }
+
+    .nav-top .container{
+        padding-left: 100px;
+    }
+}
+
+
+@media (max-width: 720px){
+    .nav-top .container{
+        gap: 30px;
+    }
+    .contact{
+        gap: 30px;
+    }
+
+    .nav-top .container{
+        padding-left: 100px;
+    }
+
+    .nav_top_phone .tel{
+        position: absolute;
+        left: -20px;
+        top: 40px;
+        width: 160px;
+        background-color:  #1A1A42;
+        backdrop-filter: blur(50px);
+        transform: rotateX(90deg);
+        transition: all .3s;
+        transform-origin: top center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav_top_phone .tel span:nth-of-type(1){
+        border-right: none;
+        padding: none;
+    }
+
+    .nav_top_phone .tel span{
+        padding: 10px;
+    }
+
+    .nav_top_phone .tel span:hover{
+        background-color: #091156bb;
+    }
+
+    .nav_top_phone:hover .tel{
+        transform: rotateX(0);
+    }
+}
+
+
+
+@media (max-width: 480px){
+    .mail-block, .contact .nav_top_phone{
+        display: none;
+    }
+
+    .contact{
+        justify-content: flex-end;
+    }
+}

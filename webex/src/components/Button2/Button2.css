@@ -1,6 +1,5 @@
 .btn2{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
@@ -17,7 +16,7 @@
 }
 
 .btn2:hover{
-    color: white;
+    color: var(--main_font_color);
     background: #9944C0;
     box-shadow:0 0 10px  #9944C0, 0 0 40px #9944C0, 0 0 80px #9944C0;
     transition-delay: 1s;

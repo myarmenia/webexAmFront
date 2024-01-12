@@ -19,19 +19,16 @@ function VideoCoursesSection() {
               
               if (el.type === "free_package") {
                 el.txt = packageTxts[el.type].txt
-                el.value = packageTxts[el.type].value
                 el._id = packageTxts[el.type]._id
                 el.icon = packageTxts[el.type].icon
               }
               else if(el.type === "standart_package"){
                 el.txt = packageTxts[el.type].txt
-                el.value = packageTxts[el.type].value
                 el._id = packageTxts[el.type]._id
                 el.icon = packageTxts[el.type].icon
               }
               else if(el.type === "profesional_package"){
                 el.txt = packageTxts[el.type].txt
-                el.value = packageTxts[el.type].value
                 el._id = packageTxts[el.type]._id
                 el.icon = packageTxts[el.type].icon
               }

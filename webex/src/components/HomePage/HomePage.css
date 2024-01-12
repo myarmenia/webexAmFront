@@ -1,4 +1,4 @@
 .home-page{
-    background-color: #010526;
+    background-color: var(--main_color);
     padding: 100px 0;
 }

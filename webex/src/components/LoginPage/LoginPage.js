@@ -15,11 +15,13 @@ import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
 import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
 import { selectLogin, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
-function LoginPage({setUser, setPage, user}) {
+import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
+function LoginPage() {
 
     const fref = useRef(null)
 
     const [viewPassword, setViewPassword] = useState(true)
+    const [openModal, setOpenModal] = useState(false)
 
     const { t, i18n } = useTranslation();
 
@@ -30,13 +32,9 @@ function LoginPage({setUser, setPage, user}) {
     const log = useSelector(selectLogin)
     
     const  validationSchema = yup.object().shape({
-        email: yup.string().email('Գրե՜ք ճիշտ Էլ. հասցե').required('Պարտադիր գրել Էլ. հասցե'),
+        email: yup.string().email(t('validation.'+ '1')).required(t('validation.'+ '0')),
         password: yup.string()
-        .matches(/[0-9]/, 'Գաղտնաբառը պետք է պարունակի թվանշան')
-        .matches(/[a-z]/, 'Գաղտնաբառը պետք է պարունակի  Փոքրատառ')
-        .required('Պարտադիր գրել գաղտնաբառը'),
-        confirmPassword: yup.string().oneOf([yup.ref('password')], 'Գաղտնաբառները չեն համնկնում').required('Պարտադիր գրել գաղտնաբառը'),
-
+        .required(t('validation.'+ '0')),
     })
 
     function handleLogSub(e,handleSubmit) {
@@ -52,13 +50,8 @@ function LoginPage({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                setUser([
-                    ...user,
-                    {
-                        ...values
-                    }
-                ])
-                // setPage('log')
+               
+            
                 resetForm()
             }}
 
@@ -89,11 +82,17 @@ function LoginPage({setUser, setPage, user}) {
 
                             <SubmitBtn index= "0"/>
                             <h6>{t('reg_and_log.'+ '8')}  <NavLink to={'/registr'}>{t('reg_and_log.'+ '10')}</NavLink></h6>
+                            <h5>{t('reg_and_log.'+ '14')} <span onClick={()=> setOpenModal(true)}>{t('reg_and_log.'+ '15')}</span></h5>
                         </form>
                         {pathname === '/login' && 
                             <div className="log_img_div">
                                 <AnimLogo/>
                              </div>}
+
+
+                            {
+                                openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal}/>
+                            }
                     </div>
                 </div>
             )

@@ -1,0 +1,108 @@
+.allDashboard {
+  width: 58vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+}
+
+.account {
+  width: 304px;
+  height: 200px;
+  background: linear-gradient(114.9deg, #4542bf 10.66%, #2c2a96 99.42%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  padding-left: 45px;
+  border-radius: 20px;
+}
+.account_div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.account_img {
+  width: 45px;
+  height: 45px;
+  /* background-color: greenyellow; */
+  background: linear-gradient(
+    132.56deg,
+    rgba(72, 29, 96, 0.59) 0.09%,
+    rgba(46, 32, 228, 0) 163.87%
+  );
+  border-radius: 50%;
+  object-fit: none;
+  box-shadow: 2px 10px 21px -7px rgba(0, 0, 0, 0.75);
+}
+.account_name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.3px;
+}
+.allDashboard_title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.83px;
+  color: #ffffff;
+}
+.account_name_profile {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+}
+.account_button {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #09099c52;
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.purchaseHistory {
+  width: 304px;
+  height: 200px;
+  /* background-color: goldenrod; */
+  background: linear-gradient(117.58deg, #9352b7 2.04%, #7b36a1 108.32%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  border-radius: 20px;
+}
+.lesson_count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+.lesson_count_number {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48.83px;
+}
+.lesson_count_name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.3px;
+}
+.lesson_total {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.53px;
+  color: #ffffff;
+}
+.purchaseHistory_down {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+.purchaseHistory_lessCount {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

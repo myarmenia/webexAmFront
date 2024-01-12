@@ -1,7 +1,12 @@
 .course-registration-page{
-    background-color: #010526;
+    background-color: var(--main_color);
     padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 .change-form-div{
     display: flex;
@@ -27,13 +32,13 @@
     width: 100%;
     height: 40px;
     background-color: transparent;
-    color: white;
+    color: var(--main_font_color);
     outline: none;
     border: 1px solid white;
 }
 
 #courses option{
-    background-color: #010526;
+    background-color: var(--main_color);
 }
 
 .radio-inp{
@@ -68,9 +73,16 @@
 }
 
 
+
 .online-btn, .ofline-btn{
     width: 175px;
     height: 30px;
+}
+
+
+
+.course-registration-page .container .reg-form input{
+    width: 440px;
 }
 
 

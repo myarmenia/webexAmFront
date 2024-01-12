@@ -65,8 +65,7 @@ img{
 
 
 .projects-page-item h4{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -75,8 +74,7 @@ img{
 
 
 .projects-page-item p{
-    color: #FFF;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

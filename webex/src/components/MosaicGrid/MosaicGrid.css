@@ -41,7 +41,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 20px;
   transform: rotateY(90deg);
   transition: all 1s;
@@ -54,6 +54,7 @@ img {
  
 .mosaic-grid-item-text-div p{
   font-size: 13px;
+  width: 300px;
 }
 
 @media(max-width:1024px){

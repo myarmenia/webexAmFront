@@ -10,19 +10,18 @@
 }
 
 .tools-info-item p{
-    color: #FFF;
-    text-align: center;
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-align: center;
 }
 
 @media (max-width: 1440px){
     .tools-info-item{
-        width: 155px;
-        height: 155px;
+        width: 122px;
+        height: 122px;
     }
     .tools-info-item p{
         font-size: 15px;
@@ -32,8 +31,8 @@
 
 @media (max-width: 1140px){
     .tools-info-item{
-        width: 135px;
-        height: 135px;
+        width: 110px;
+        height: 110px;
     }
     .tools-info-item p{
         font-size: 13px;

@@ -1,6 +1,6 @@
 .login{
-    background-color:#010526;
-    min-height: 100vh;
+    background-color: var(--main_color);
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,15 +20,18 @@
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    align-items: center;
 }
+
+
 .login .container form input {
     width: 383px;
     height: 40px;
     border: 1px solid white;
     background-color: transparent;
-    padding: 10px;
+    padding: 0 10px;
     outline: none;
-    color: white;
+    color: var(--main_font_color);
 }
 
 .login .container form p{
@@ -38,29 +41,29 @@
 
 
 .login .container form h2{
-    color: var(--Withe, #FFF);
-    font-family: Calibri;
+    color: var(--main_font_color);
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.login .container form h6{
-    color: #FFF;
-    font-family: Calibri;
+.login .container form h6, .login .container form h5{
+    color: var(--main_font_color);
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.login .container form h6 a, .login .container form h5 span {
+    color: var(--main_font_color);
     font-size: 18px;
     font-style: normal;
     line-height: normal;
-}
-
-.login .container form h6 a{
-    color: #FFF;
-    font-family: Calibri;
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
     text-decoration-line: underline;
+    cursor: pointer;
 }
 
 .log_img_div{
@@ -107,6 +110,7 @@
     }
     .login .container{
         flex-direction: column-reverse;
+        padding: 0;
     }
 
     .login .container form h2{
