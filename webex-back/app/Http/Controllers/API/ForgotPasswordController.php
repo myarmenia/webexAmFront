@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\API\ForgotPasswordRequest;
+use App\Http\Requests\ChangeNewPasswordRequest;
+use App\Http\Requests\ForgotPasswordRequest;
 use App\Services\API\ForgotPasswordService;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class ForgotPasswordController extends Controller
        return response()->json(['message' => $message]);
     }
 
-    public function checkForgotToken(Request $request)
+    public function checkForgotToken(ForgotPasswordRequest $request)
     {
         $haveOrNot = $this->forgotPasswordService->checkForgotToken($request->all());
 
@@ -33,6 +34,16 @@ class ForgotPasswordController extends Controller
         }
 
         return response()->json(['success' => false]);
+    }
 
+    public function sendNewPassword(ChangeNewPasswordRequest $request)
+    {
+        $changed = $this->forgotPasswordService->sendNewPassword($request->all());
+
+        if($changed){
+            return response()->json(['success' => true, 'message' => 'Password changed successfully']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Password not changed']);
     }
 }

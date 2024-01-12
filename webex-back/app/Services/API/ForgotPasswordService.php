@@ -41,4 +41,18 @@ class ForgotPasswordService
 
     return false;
   }
+
+  public function sendNewPassword($data)
+  {
+    $updated = User::where('email', $data['email'])->update([
+        'password' => bcrypt($data['password']),
+    ]);
+
+    if($updated){
+      PasswordReset::where('email', $data['email'])->delete();
+      return true;
+    }
+
+    return false;
+  }
 }
