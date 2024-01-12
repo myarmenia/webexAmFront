@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import customAxios from "../../../axios";
+import instance from "../../../axios";
 
 export const postNewPassword = createAsyncThunk(
     'newPassword/postNewPassword',
@@ -19,7 +19,7 @@ export const postNewPassword = createAsyncThunk(
             data: newPasswordData,
           };
     
-          const response = await customAxios(config);
+          const response = await instance(config);
           
           return response?.data;
         } catch (error) {

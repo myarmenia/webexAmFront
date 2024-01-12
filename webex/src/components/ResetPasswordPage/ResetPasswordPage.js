@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import './ResetPasswordPage.css'
-import customAxios from '../../axios'
+import instance from '../../axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { postResetPasswordPage } from '../../store/slices/PasswordResetPageSlice/PasswordResetPageApi'
 import { selectResetPasswordPage } from '../../store/slices/PasswordResetPageSlice/PasswordResetPageSlice'

@@ -7,7 +7,10 @@ function SelectLng() {
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
+        localStorage.setItem('lang', lng)
       };
+
+
 
   return (
     <select name="lng" id="lng" onChange={(e) =>changeLanguage(e.target.value)}>
