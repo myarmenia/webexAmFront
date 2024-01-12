@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import LoginPage from './components/LoginPage/LoginPage';
 import CourseRegistrationPage from './components/CourseRegistrationPage/CourseRegistrationPage';
 import ProjectsPage from './components/ProjectsPage/ProjectsPage';
+import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
               <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
               <Route path='registr' element={<Register/>}/>
               <Route path='login' element={<LoginPage  />}/> 
+              <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
           </Route>
         </Routes>
     </div>
