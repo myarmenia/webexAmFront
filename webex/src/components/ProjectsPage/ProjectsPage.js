@@ -5,6 +5,7 @@ import { projectsPageData } from '../../data';
 import ProjectsPageItem from '../ProjectsPageItem/ProjectsPageItem';
 import { d_3_icon, game_icon, mobile_icon, see_all_icon, web_icon } from '../../iconFolder/icon';
 import './ProjectsPage.css';
+import { Helmet } from 'react-helmet-async';
 
 const projectMenuList = [
   {
@@ -38,7 +39,15 @@ function ProjectsPage() {
   };
 
   return (
-    <div className='projects-page'>
+    <>
+      <Helmet>
+        <title>Project</title>
+        <meta name="description" content="Our services include, Portfolio websites, e-commerce websites, information portals, turnkey creation for online store, a personal website or a blog."/>
+        <meta name="keywords" content="3d model, unity, games, 3D մոդել, խաղեր, 3d модель, unity, игры, portfolio"/>
+        <link rel="canonical" href="/projects"/>
+     </Helmet>
+
+      <div className='projects-page'>
       <div className='container'>
         <ul className='filter-menu-projects'>
             {
@@ -59,6 +68,7 @@ function ProjectsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

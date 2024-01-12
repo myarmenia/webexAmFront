@@ -6,12 +6,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import '../src/translateFolder/i18n';
 import store from './store/store';
+import {HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter >
         <Provider store={store}>
-            <App />
+            <HelmetProvider>
+                <App />
+            </HelmetProvider>
         </Provider>
     </BrowserRouter>
 );
