@@ -42,11 +42,17 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
+            'password' => 'required|same:confirm-password|min:8',
+            'phone' => 'required',
             'roles' => 'required'
         ]);
 
         $input = $request->all();
+        $input['status'] = isset($request->status) ? true : null;
+        $input['status'] = isset($request->status) ? true : null;
+        $input['status'] = isset($request->status) ? true : null;
+
+
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
