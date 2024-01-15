@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
-    protected $guarded=[];
 
+    protected $guarded=[];
+    protected $hidden = ["created_at", "updated_at"];
 
 
     public function course_languages(){
@@ -26,4 +27,15 @@ class Lesson extends Model
       return  $this->hasMany(Task::class);
 
     }
+    public function user_course_menegments(){
+
+      return  $this->hasOne(UserCourseMenegment::class);
+
+    }
+    public function translation($lang){
+      
+      return $this->hasOne(LessonTranslation::class)->where('lang', $lang)->first();
+   }
+
+
 }

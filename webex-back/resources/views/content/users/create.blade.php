@@ -87,7 +87,7 @@
 
             <div class="mb-3 row">
 
-                <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">Роли</label>
+                <label for="role" class="col-md-2 col-form-label">Роли</label>
                 <div class="col-md-10">
                     <select class="form-select" id="roles" name="roles">
                         <option value="">Роли</option>
@@ -99,13 +99,6 @@
                     </select>
                 </div>
             </div>
-            @error('roles')
-
-            <div class="mb-3 row justify-content-end">
-                <div class="col-sm-10 text-danger fts-14">{{$message}}
-                </div>
-            </div>
-            @enderror
 
             <div class="mb-3 row">
                 <label for="html5-text-input" class="col-md-2 col-form-label"></label>
