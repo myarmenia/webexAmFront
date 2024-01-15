@@ -1,11 +1,19 @@
 <?php
 namespace App\Services\API;
 use App\Models\User;
+use Translation;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Arr;
 
 class AuthService
 {
+    public $translation;
+    public function __construct()
+    {
+        $lang = session('languages', 'am');
+        $this->translation = new Translation($lang);
+    }
+
 
     public function signup($data)
     {
@@ -21,7 +29,7 @@ class AuthService
         $credentials = Arr::only($data, ['email', 'password']);
 
         if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => 'Something went wrong'], 401);
+            return response()->json(['error' => $this->translation->get('user-not-found')], 401);
         }
 
         return [
@@ -36,11 +44,12 @@ class AuthService
             $credentials = $request->only('email', 'password');
 
             if (!$token = JWTAuth::attempt($credentials)) {
-                throw new \Exception('Unauthorized', 401);
+                throw new \Exception($this->translation->get('user-not-found'), 401);
             }
-             if (auth()->user()->status === 0) {
-                        return response()->json(['error' => 'User is blocked'], 403);
-              }
+            
+            if (auth()->user()->status === 0) {
+                throw new \Exception($this->translation->get('user-blocked'), 401);
+            }
 
             auth()->user()->update([
                 'ip' => request()->ip(),

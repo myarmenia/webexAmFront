@@ -18,10 +18,10 @@ class AuthController extends BaseController
     protected $translation;
     public $authService;
 
-    public function __construct(Request $request, AuthService $authService)
+    public function __construct(AuthService $authService)
     {
         $this->authService = $authService;
-        $lang = $request->header('Accept-language');
+        $lang = session('languages', 'am');
         $this->translation = new Translation($lang);
         // $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
@@ -51,7 +51,7 @@ class AuthController extends BaseController
     {
         auth()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(['message' => $this->translation->get('logged-out')]);
     }
 
     public function signup(SingupRequest $request)
