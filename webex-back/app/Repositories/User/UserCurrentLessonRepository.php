@@ -15,6 +15,7 @@ class UserCurrentLessonRepository implements UserCurrentLessonInterface
   {
 
     $user_id = auth('api')->user()->id;
+    dd($user_id);
 
     $user_current_lesson = UserCourseMenegment::where('user_id',$user_id)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
 
