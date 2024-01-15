@@ -35,7 +35,8 @@ i18n
             reg_log: [
               'Sign in',
               'Register',
-              'Confirm'
+              'Confirm',
+              'Send',
             ],
 
             // ====================toolsInfo========================================
@@ -98,7 +99,8 @@ i18n
               'To order',
               'Online',
               'Offline',
-              'Perform'
+              'Perform',
+              'Ok',
             ],
             // =============header==================================
             headerTitlePart1: 'With us, you can conquer the whole world.',
@@ -198,7 +200,9 @@ i18n
             'Password must contain a lowercase letter',
             'Passwords do not match',
             
-          ]
+          ],
+
+          resetPasswordModalError_message: 'Something is wrong',
         },
       },
       am: {
@@ -230,7 +234,8 @@ i18n
           reg_log: [
             'Մուտք',
             'Գրանցվել',
-            'Հաստատել'
+            'Հաստատել',
+            'Ուղարկել',
           ],
 
             // ====================toolsInfo========================================
@@ -304,7 +309,8 @@ i18n
             'Պատվիրել',
             'Օնլայն',
             'Օֆլայն',
-            'Կատարել'
+            'Կատարել',
+            'Լավ',
           ],
 
             // =============header==================================
@@ -412,7 +418,9 @@ i18n
             'Գաղտնաբառը պետք է պարունակի  Փոքրատառ',
             'Գաղտնաբառները չեն համնկնում',
   
-          ]
+          ],
+
+          resetPasswordModalError_message: 'Ինչ որ բան այն չէ',
  
         }
 
@@ -449,7 +457,8 @@ i18n
           reg_log: [
             'Войти',
             'Регистрация',
-            'Подтверждать'
+            'Подтверждать',
+            'Отправлять',
           ],
            // ====================toolsInfo========================================
 
@@ -514,7 +523,8 @@ i18n
             'Заказать проект',
             'онлайн',
             'оффлайн',
-            'Выполнять'
+            'Выполнять',
+            'Ок',
           ],
 
           // ====================header=============================
@@ -631,13 +641,15 @@ i18n
             'Пароль должен содержать строчные буквы',
             'Пароли не совпадают',
             
-          ]
+          ],
+
+          resetPasswordModalError_message: 'Что-то не так',
         }
       },
       // Add more languages as needed
     },
-    lng: 'am', // Default language
-    fallbackLng: 'am', // Fallback language
+    lng: localStorage.getItem('lang') ? localStorage.getItem('lang') : 'am', // Default language
+    fallbackLng: localStorage.getItem('lang'), // Fallback language
     interpolation: {
       escapeValue: false,
     },

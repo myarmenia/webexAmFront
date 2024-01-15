@@ -1,66 +1,46 @@
 
-
 .mosaic-grid {
-  column-count: 4;
-  column-gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 100px 0;
 }
 
 
-.mosaic-grid-item{
-  
-    margin: 0;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    margin-bottom: 10px;
-    break-inside: avoid;
-    position: relative;
+.mosaic-grid-item {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.512);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
 }
+
+.mosaic-grid :nth-of-type(odd) .mosaic-grid-item{
+  flex-direction: column-reverse; 
+}
+
+
+
 
 
 .mosaic-grid-item > img {
-  grid-row: 1 / -1;
-  grid-column: 1;
-  border-radius: 20px;
-}
-
-img {
-  max-width: 100%;
-  display: block;
+ width: 100%;
+ height: 70%;
 }
 
 
-.mosaic-grid-item-text-div{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 66;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.451);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* padding: 20px; */
-  border-radius: 20px;
-  transform: rotateY(90deg);
-  transition: all 1s;
-}
-
-
-.mosaic-grid-item:hover .mosaic-grid-item-text-div{
-  transform: rotateY(0);
-}
- 
 .mosaic-grid-item-text-div p{
   font-size: 13px;
   width: 300px;
 }
 
 @media(max-width:1024px){
-  .mosaic-grid{
-    column-count: 3;
-  }
+  
   .mosaic-grid-item-text-div p{
     font-size: 11px;
   }
