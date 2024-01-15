@@ -21,7 +21,7 @@ class AuthService
         $credentials = Arr::only($data, ['email', 'password']);
 
         if (!$token = JWTAuth::attempt($credentials)) {
-            return responsgite()->json(['error' => 'Something went wrong'], 401);
+            return response()->json(['error' => 'Something went wrong'], 401);
         }
 
         return [
