@@ -19,8 +19,8 @@ class CurrentLessonResource extends JsonResource
           'number' => $this->number,
           'video'=> $this->video,
           'duration' => $this->duration,
-          'title' => $this->translation($request->lang)->title,
-          'description' => $this->translation($request->lang)->description,
+          'title' => $this->translation(session('languages'))->title,
+          'description' => $this->translation(session('languages'))->description,
           'tasks'=>TasksResource::collection($this->tasks),
 
         ];

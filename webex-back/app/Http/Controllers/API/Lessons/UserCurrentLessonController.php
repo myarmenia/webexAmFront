@@ -37,8 +37,8 @@ class UserCurrentLessonController extends BaseController
   }
   public function index(Request $request){
 
-// dd(session()->get('languages'));
-    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson($request->all());
+
+    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson();
     return $this->sendResponse($current_lesson, 'success');
   }
 
