@@ -25,7 +25,7 @@ class User extends Authenticatable implements JWTSubject
         'ip',
     ];
 
-    protected $hidden = ['password']; 
+    protected $hidden = ['password'];
 
     // protected $casts = [
     //     'password' => 'hashed',
@@ -39,6 +39,12 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function user_course_menegments(){
+
+      return  $this->hasMany(UserCourseMenegment::class);
+
     }
 
     public function isAdmin() {

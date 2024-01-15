@@ -1,10 +1,10 @@
 import React from 'react'
 import './Button2.css'
 import { useTranslation } from 'react-i18next';
-function Button2({index}) {
+function Button2({index, setOpenOrderModal}) {
   const { t, i18n } = useTranslation();
   return (
-    <a href="#" className='btn2'>
+    <a  className='btn2' onClick={() => setOpenOrderModal(true)}>
     <span></span>
     <span></span>
     <span></span>

@@ -10,17 +10,19 @@ use App\Services\API\AuthService;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Translation;
 use Tymon\JWTAuth\Facades\JWTAuth;
-
 
 class AuthController extends BaseController
 {
-
+    protected $translation;
     public $authService;
 
-    public function __construct(AuthService $authService)
+    public function __construct(Request $request, AuthService $authService)
     {
         $this->authService = $authService;
+        $lang = $request->header('Accept-language');
+        $this->translation = new Translation($lang);
         // $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
