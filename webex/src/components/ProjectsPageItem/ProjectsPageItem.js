@@ -17,7 +17,7 @@ function ProjectsPageItem({_id,_img, img, description, txt, nameTitle, name, lng
     const divRef = useRef()
     useEffect(() => {
         if(divRef.current.id === idd){
-              window.scrollTo({top: (divRef.current.offsetTop - 30), behavior: 'smooth'}) 
+              window.scrollTo({top: (divRef.current.offsetTop - 150), behavior: 'smooth'}) 
 
         }
     }, []);
