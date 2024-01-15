@@ -14,9 +14,9 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(5);
+        $data = User::orderBy('id', 'DESC')->paginate(10);
         return view('content.users.index', compact('data'))
-        ->with('i', ($request->input('page', 1) - 1) * 5);
+        ->with('i', ($request->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        
+
         return view('content.users.create', compact('roles'));
     }
 
@@ -42,11 +42,17 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
+            'password' => 'required|same:confirm-password|min:8',
+            'phone' => 'required',
             'roles' => 'required'
         ]);
 
         $input = $request->all();
+        $input['status'] = isset($request->status) ? true : null;
+        $input['status'] = isset($request->status) ? true : null;
+        $input['status'] = isset($request->status) ? true : null;
+
+
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
@@ -117,6 +123,7 @@ class UserController extends Controller
         return redirect()->route('users.index')
         ->with('success', 'User updated successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -126,8 +133,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-        ->with('success', 'User deleted successfully');
+        // User::find($id)->delete();
+        // return redirect()->route('users.index')
+        // ->with('success', 'User deleted successfully');
     }
 }
