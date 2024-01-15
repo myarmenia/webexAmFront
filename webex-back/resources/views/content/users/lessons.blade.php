@@ -2,9 +2,7 @@
 
 @section('title', 'Account settings - Account')
 @section('page-script')
-    <script src="{{ asset('assets/js/change-status.js') }}"></script>
-    <script src="{{ asset('assets/js/111.js') }}"></script>
-    <script src="{{ asset('assets/js/delete-item.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/111.js') }}"></script> --}}
 @endsection
 
 @section('content')
@@ -15,75 +13,87 @@
                 <li class="breadcrumb-item">
                     <a href="javascript:void(0);">Пользователи</a>
                 </li>
-                <li class="breadcrumb-item active">Список</li>
+                <li class="breadcrumb-item active">Уроки студента</li>
             </ol>
         </nav>
     </h5>
     <div class="card">
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <h5 class="card-header">Список пользователей</h5>
-            </div>
-            <div>
-                <a href="{{ route('users.create') }}" class="btn btn-primary mx-4">Создать нового пользователя </a>
-            </div>
-        </div>
-        <div class="card-body">
 
-            <div class="table-responsive text-nowrap">
+        <div class="card-body">
+            <div class="row d-flex justify-content-between">
+                <div class="demo-inline-spacing col-md-4">
+
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Имя
+                            <span>{{ $student->name }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Э. почта
+                            <span>{{ $student->email }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Телефон
+                            <span>{{ $student->phone ?? '' }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Статус
+                            @if ($student->status)
+                                <span class="badge bg-label-success me-1">Активный</span>
+                            @else
+                                <span class="badge bg-label-danger me-1">Не активный</span>
+                            @endif
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Роли
+                            <span>
+                                @if (!empty($student->getRoleNames()))
+                                    @foreach ($student->getRoleNames() as $v)
+                                        <label>{{ $v }}</label>
+                                    @endforeach
+                                @endif
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="w-100 ">
+                        <form>
+                            <div class="d-flex justify-content-between ">
+                                <div class=" ">
+                                    <label for="course_languages" class="col-form-label">Добавить язык
+                                        программирования</label>
+                                    <select class="form-select" id="course_languages" name="course_languages">
+
+                                        <option>Роли</option>
+                                        @foreach ($course_languages as $language)
+                                            @if (in_array($language->id, $user_course_langages))
+                                                <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                            @endif
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                                <button class="ml-3 align-self-end">sssss</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive text-nowrap mt-3">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Имя</th>
-                            <th>Э. почта</th>
-                            <th>Телефон</th>
-                            <th>Статус</th>
-                            <th>Пасспорт</th>
-                            <th>Роли</th>
+                            <th>Язык прг.</th>
                             <th>Кол. уроков</th>
-                            <th>Статус платежа</th>
+                            <th>Номер текущего урока</th>
                             <th>Действия</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $key => $user)
+                        @foreach ($student->user_course_menegments as $key => $item)
                             <tr>
-                                <td>{{ ++$i }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td class="status">
-                                    @if ($user->status)
-                                        <span class="badge bg-label-success me-1">Активный</span>
-                                    @else
-                                        <span class="badge bg-label-danger me-1">Не активный</span>
-                                    @endif
-                                </td>
-                                <td class="passport">
-                                    @if ($user->passport)
-                                        <span class="badge bg-label-success me-1">Активный</span>
-                                    @else
-                                        <span class="badge bg-label-danger me-1">Не активный</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if (!empty($user->getRoleNames()))
-                                        @foreach ($user->getRoleNames() as $v)
-                                            <label>{{ $v }}</label>
-                                        @endforeach
-                                    @endif
-                                </td>
-                                <td class="lesson_quantity">{{ $user->lesson_quantity }}</td>
+                                <td>{{ ++$key }}</td>
+                                <td>{{ $item->lessons->name }}</td>
+                                <td>{{ $item->lessons->count() }}</td>
+                                <td>{{ $item->lesson_number }}</td>
 
-
-                                <td class="payment_status">
-                                    @if ($user->payment_status)
-                                        <span class="badge bg-label-success me-1">Оплачено</span>
-                                    @else
-                                        <span class="badge bg-label-danger me-1">Не оплачено</span>
-                                    @endif
-                                </td>
                                 <td>
                                     <div class="dropdown action" data-id="{{ $user->id }}" data-tb-name="users">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -91,11 +101,11 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
+                                            {{-- <a class="dropdown-item present" href="{{route('users.lessons')}}">
+                                              <i class="tf-icons bx bx-task"></i> Присутствует
+                                          </a> --}}
                                             <a class="dropdown-item present" href="javascript:void(0);">
-                                                <i class="tf-icons bx bx-task"></i> Присутствует
-                                            </a>
-                                            <a class="dropdown-item present" href="{{route('users.info', $user->id)}}">
-                                                <i class="tf-icons bx bx-task"></i> Управление уроками
+                                                <i class="tf-icons bx bx-task"></i> Открить урок
                                             </a>
                                             <a class="dropdown-item d-flex" href="javascript:void(0);">
                                                 <div class="form-check form-switch">
@@ -125,8 +135,8 @@
                                                     class="bx bx-trash me-1"></i>
                                                 Удалить</button>
                                             {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#smallModal">
-                                                      Small
-                                                    </button> --}}
+                                                    Small
+                                                  </button> --}}
                                         </div>
                                     </div>
                                 </td>
@@ -135,20 +145,10 @@
                     </tbody>
                 </table>
             </div>
-            <div class="demo-inline-spacing">
-                {{ $data->links() }}
-            </div>
         </div>
+
+
     </div>
 
 
 @endsection
-
-<x-modal-delete></x-modal-delete>
-{{-- <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a> --}}
-
-
-{{-- {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!} --}}

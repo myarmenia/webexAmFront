@@ -36,6 +36,9 @@
     "files": [
       "app/Helpers/common.php",
       "app/helpers.php"
+    ],
+    "classmap": [
+     "Library"
     ]
 
   },

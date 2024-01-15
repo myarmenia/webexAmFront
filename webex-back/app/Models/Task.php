@@ -21,4 +21,8 @@ class Task extends Model
       return  $this->hasMany(TaskTranslation::class);
 
     }
+    public function translation($lang){
+
+      return $this->hasOne(TaskTranslation::class)->where('lang', $lang)->first();
+   }
 }
