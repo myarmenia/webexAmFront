@@ -20,8 +20,7 @@ class UserCurrentLessonController extends BaseController
 
   }
     public function index(Request $request){
- 
-// dd(auth('api')->user());
+
         $user_current_lesson = $this->userCurrentLessonService->getcurrentlesson();
 
         $current_lesson = new UserCurrentLessonResource($user_current_lesson);

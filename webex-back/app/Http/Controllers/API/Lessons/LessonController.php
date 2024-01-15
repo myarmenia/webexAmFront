@@ -36,6 +36,7 @@ class LessonController extends BaseController
                       'duration' => $item->duration,
                       'title' => $item->lesson_translations[0]->title,
                       'description' => $item->lesson_translations[0]->description,
+                      'video'=>$item->video,
                       'tasks'=> TasksResource::collection($item->tasks),
                     ];
                     array_push($lessons_array,$first_elem);
