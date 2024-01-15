@@ -3,11 +3,13 @@ import './Dashboard.css';
 import Student from '../../../images/Student.svg';
 import Purchase from '../../../images/Purchase.svg';
 import ProfPic from '../../../images/profile.png';
+import Training from './Training/Training';
 
 export const Dashboard = () => {
   return (
     <>
-      <p className="allDashboard_title">Dashboard</p>
+    <div style={{padding:"40px"}}>
+    <p className="allDashboard_title">Dashboard</p>
       <div className="allDashboard">
         <div className="account">
           <div className="account_div">
@@ -37,6 +39,9 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+      <p className="allDashboard_title2">My Training</p>
+        <Training/>
+    </div>
     </>
   );
 };
