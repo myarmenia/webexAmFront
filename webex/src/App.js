@@ -1,4 +1,7 @@
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import qs from 'qs'
+import { Route, Routes, useNavigate, useSearchParams} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './App.css';
 import HomeWraper from './page/HomeWraper';
 import HomePage from './components/HomePage/HomePage';
@@ -14,11 +17,38 @@ import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage'
 
 
 function App() {
+  // const navigate = useNavigate()
+   const leng = localStorage.getItem('lang') 
+  //  const { i18n } = useTranslation();
+  //  const [searchParams, setSearchParams] = useSearchParams();
+ 
+  //  const lang = searchParams.get('lang');
+
+   
+  // useEffect(() => {
+  //   if (!lang) {
+  //     searchParams.set('lang', i18n.language);
+  //     setSearchParams(searchParams, { replace: true });
+  //   }
+  // }, [lang]);
+  
+
+  // const { i18n } = useTranslation();
+  // const queryParam = new URLSearchParams(window.location.search);
+  // const lang = queryParam.get('lang');
+
+  // useEffect(() => {
+  //   if (!lang) {
+  //     queryParam.set('lang', i18n.language);
+  //     window.history.replaceState({}, '', `?${queryParam}`);
+  //   }
+  // });
+// console.log(leng);
   return (
     <div className="App">
       <Routes>
 
-          <Route path='/' element={<HomeWraper/>}>
+          <Route path={'/'} element={<HomeWraper/>}>
               <Route index element={<HomePage/>}/>
               <Route path='programing'element={<h1>programing</h1>}/>
               <Route path='projects'element={<ProjectsPage/>}>

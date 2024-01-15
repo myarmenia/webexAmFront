@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 import './Header.css';
 import Button from '../Button/Button';
 import Button2 from '../Button2/Button2';
+import OrderModal from '../OrderModal/OrderModal';
 
 function Header() {
   const { t, i18n } = useTranslation();
   const [animatedTextH2, setAnimatedTextH2] = useState('');
   const [animatedTextH4, setAnimatedTextH4] = useState('');
+  const [openOrderModal, setOpenOrderModal] = useState(false)
 
   const startH2Animation = () => {
     const textH4 = t('headerTitlePart2');
@@ -45,7 +47,7 @@ function Header() {
         </div>
         <div className='btns-div'>
           <Button index='1' path='/registr' />
-          <Button2 index='2' />
+          <Button2 index='2' {...{setOpenOrderModal}}/>
         </div>
       </div>
 
@@ -54,6 +56,7 @@ function Header() {
           <div className='badge-text'>WEBEX</div>
         </div>
       </div>
+      {openOrderModal && <OrderModal {...{setOpenOrderModal}}/>}
     </div>
   );
 }
