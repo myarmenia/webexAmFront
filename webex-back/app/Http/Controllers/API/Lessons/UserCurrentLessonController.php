@@ -33,11 +33,12 @@ class UserCurrentLessonController extends BaseController
   public function __construct(UserCurrentLessonInterface $userCurrentLessonRepository){
 
     $this->userCurrentLessonRepository = $userCurrentLessonRepository;
-   
+
   }
   public function index(Request $request){
 
-    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson($request->all());
+
+    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson();
     return $this->sendResponse($current_lesson, 'success');
   }
 

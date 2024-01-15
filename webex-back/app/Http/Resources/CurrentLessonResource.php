@@ -14,15 +14,15 @@ class CurrentLessonResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-      return [
-        'id' => $this->id,
-        'number' => $this->number,
-        'video'=> $this->video,
-        'duration' => $this->duration,
-        'title' => $this->translation($request->lang)->title,
-        'description' => $this->lesson_translations[0]->description,
-        'tasks'=>TasksResource::collection($this->tasks),
+        return [
+          'id' => $this->id,
+          'number' => $this->number,
+          'video'=> $this->video,
+          'duration' => $this->duration,
+          'title' => $this->translation(session('languages'))->title,
+          'description' => $this->translation(session('languages'))->description,
+          'tasks'=>TasksResource::collection($this->tasks),
 
-      ];
+        ];
     }
 }

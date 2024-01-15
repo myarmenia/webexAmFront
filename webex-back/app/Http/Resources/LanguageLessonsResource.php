@@ -19,8 +19,8 @@ class LanguageLessonsResource extends JsonResource
           'id' => $this->id,
           'number' => $this->number,
           'duration' => $this->duration,
-          'title' =>$this->translation($request->lang)->title,
-          'description' => $this->translation($request->lang)->description,
+          'title' =>$this->translation(session('languages'))->title,
+          'description' => $this->translation(session('languages'))->description,
 
         ];
 
