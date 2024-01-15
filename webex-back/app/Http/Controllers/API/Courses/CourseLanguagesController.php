@@ -16,8 +16,8 @@ class CourseLanguagesController extends BaseController
     public function index()
     {
 
-        $course_languages=CourseLanguage::all();
-        
+        $course_languages = CourseLanguage::all();
+
         return  $this->sendResponse(CourseLanguageResource::collection($course_languages), 'success');
 
     }

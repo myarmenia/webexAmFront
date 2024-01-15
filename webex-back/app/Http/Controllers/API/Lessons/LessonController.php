@@ -23,7 +23,7 @@ class LessonController extends BaseController
       $lessons = Lesson::where('course_language_id',$request->id)
                 ->with('lesson_translations')
                 ->get();
-
+// dd($lessons);
                 $lessons_array=[];
 
                 foreach ($lessons as $key => $item) {
@@ -34,8 +34,9 @@ class LessonController extends BaseController
                       'id' => $item->id,
                       'number' => $item->number,
                       'duration' => $item->duration,
-                      'title' => $item->lesson_translations[0]->title,
-                      'description' => $item->lesson_translations[0]->description,
+                      'title' => $item->translation($request->lang)->title,
+                      'description' => $item->translation($request->lang)->description,
+                      'video'=>$item->video,
                       'tasks'=> TasksResource::collection($item->tasks),
                     ];
                     array_push($lessons_array,$first_elem);
