@@ -19,7 +19,7 @@ function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
             <p>{t('videoCoursesSectionTxt.' + txt)}</p>
             </div>
             
-            {txt == 0 ? <Button index="1" path="registr"/> : <Button index="1" path="/courses-registration"/>}
+            {txt !== 0 ? <Button index="1" path="registr"/> : <Button index="1" path="/courses-registration"/>}
         </div>
     </div>
   )

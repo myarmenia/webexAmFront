@@ -19,4 +19,9 @@ class UserCourseMenegment extends Model
 
       return  $this->belongsTo(Lesson::class, 'lesson_id');
     }
+
+    public function users(){
+
+      return  $this->belongsTo(User::class, 'user_id');
+    }
 }

@@ -83,7 +83,7 @@ return [
     |
     */
 
-  'locale' => 'en',
+  'locale' => 'ru',
 
   /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-  'fallback_locale' => 'en',
+  'fallback_locale' => 'ru',
 
   /*
     |--------------------------------------------------------------------------
@@ -170,6 +170,7 @@ return [
     App\Providers\RouteServiceProvider::class,
     App\Providers\MenuServiceProvider::class,
     Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+    App\Providers\RepositoryServiceProvider::class,
   ])->toArray(),
 
   /*
