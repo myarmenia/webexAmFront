@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './CurrentLessons.css';
 import kodVideo from '../../../videos/kodVideo.mp4';
 import { allVideoLessons } from '../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
@@ -7,11 +7,18 @@ import vector222 from '../../../images/Vector222.svg';
 import Line from '../../../images/Line.svg';
 import Button from '../../Button/Button';
 import Homeworkes from './Homeworkes/Homeworkes';
+import { useDispatch } from 'react-redux';
+import { getCurrentLesson } from '../../../store/slices/CurrentLessons/CurrentLessonsApi';
 
 function CurrentLessons() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCurrentLesson());
+  }, []);
+
   return (
     <div className="allSide">
-      <div className="leftSide" style={{ padding: '20px' }}>
+      <div className="leftSide" style={{ padding: '40px 20px' }}>
         <div style={{ width: '58vw' }} className="leftSideTop">
           <p className="title_name">HTML/HTML 5</p>
           <p className="Introduction">1 Ներածություն</p>
@@ -37,7 +44,7 @@ function CurrentLessons() {
         </div>
         <div style={{ width: '58vw' }}>
           <p className="HomeworkList">Տնային աշխատանքների ցանկ</p>
-          <Homeworkes/>
+          <Homeworkes />
         </div>
       </div>
       <div className="rightSide">
@@ -45,7 +52,7 @@ function CurrentLessons() {
         <div className="allvideoLessons_div">
           {allVideoLessons.map((el, index) => (
             <div key={index} className="allvideoLessons">
-              <img src={vector222} alt="vector222" className="vector222"/>
+              <img src={vector222} alt="vector222" className="vector222" />
               <span className="nameAllVideo">{el}</span>
             </div>
           ))}

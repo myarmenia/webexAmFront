@@ -46,6 +46,17 @@
   font-weight: 700;
   line-height: 48.83px;
   color: #ffffff;
+  margin: 0;
+  padding-bottom: 40px;
+}
+.allDashboard_title2{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.83px;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 40px;
+  padding-top: 80px;
 }
 .account_name_profile {
   font-size: 18px;
