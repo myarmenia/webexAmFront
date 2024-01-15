@@ -53,23 +53,27 @@
                 </div>
                 <div class="col-md-4 d-flex align-items-end">
                     <div class="w-100 ">
-                        <form>
+                        <form action={{route('')}} method="post"> 
                             <div class="d-flex justify-content-between ">
                                 <div class=" ">
                                     <label for="course_languages" class="col-form-label">Добавить язык
                                         программирования</label>
-                                    <select class="form-select" id="course_languages" name="course_languages">
+                                    <select class="form-select" id="course_languages" name="course_language_id">
 
-                                        <option>Роли</option>
+                                        <option> Языки</option>
+
+                                        @if($course_languages != null && count($course_languages) > 0)
+
                                         @foreach ($course_languages as $language)
                                             @if (in_array($language->id, $user_course_langages))
                                                 <option value="{{ $language->id }}">{{ $language->name }}</option>
                                             @endif
                                         @endforeach
+                                        @endif
 
                                     </select>
                                 </div>
-                                <button class="ml-3 align-self-end">sssss</button>
+                                <button class="ml-3 align-self-end">Добавить</button>
                             </div>
                         </form>
                     </div>

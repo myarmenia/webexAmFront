@@ -18,16 +18,19 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::post('check-verify-token', [AuthController::class, 'checkVerifyToken']);
         Route::post('me', [AuthController::class, 'me']);
-        // =================================================================
-        // Route::apiResource('course-language', 'CourseLanguagesController');
-        Route::get('course-language',[CourseLanguagesController::class,'index']);
-        Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
-        Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
+
     });
+
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
     Route::post('check-forgot-token', [ForgotPasswordController::class, 'checkForgotToken']);
     Route::post('send-new-password', [ForgotPasswordController::class, 'sendNewPassword']);
     Route::post('trial-course', [TrialCourseController::class, 'trialCourse']);
+
+    Route::get('course-language',[CourseLanguagesController::class,'index']);
+    Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
+    Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
+
+
 
 });
