@@ -1,9 +1,14 @@
 <?php
 namespace App\Services\API;
+
+use App\Models\API\VerifyUser;
 use App\Models\User;
 use Translation;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Arr;
+use App\Mail\SendVerifyToken;
+use Mail;
+use Illuminate\Support\Str;
 
 class AuthService
 {
@@ -21,21 +26,37 @@ class AuthService
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'status' => 0,
             'password' => bcrypt($data['password']),
         ]);
 
         $user->assignRole('student');
 
-        $credentials = Arr::only($data, ['email', 'password']);
+        if ($user) {
+            $token = sha1(Str::random(80));
+            $email = $user->email;
+            $verify = VerifyUser::create([
+                'email' => $email,
+                'verify_token' => $token
+            ]);
 
-        if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => $this->translation->get('user-not-found')], 401);
+            Mail::send(new SendVerifyToken($email, $token));
+
+            return true;
         }
 
-        return [
-            'authUser' => $user->toArray(),
-            'token' => $token
-        ];
+        return false;
+
+        // $credentials = Arr::only($data, ['email', 'password']);
+
+        // if (!$token = JWTAuth::attempt($credentials)) {
+        //     return response()->json(['error' => $this->translation->get('user-not-found')], 401);
+        // }
+
+        // return [
+        //     'authUser' => $user->toArray(),
+        //     'token' => $token
+        // ];
     }
 
     public function login($request)
@@ -46,7 +67,7 @@ class AuthService
             if (!$token = JWTAuth::attempt($credentials)) {
                 throw new \Exception($this->translation->get('user-not-found'), 401);
             }
-            
+
             if (auth()->user()->status === 0) {
                 throw new \Exception($this->translation->get('user-blocked'), 401);
             }
@@ -65,6 +86,26 @@ class AuthService
         }
 
 
+    }
+
+    public function checkVerifyToken($data)
+    {
+      $haveOrNot = VerifyUser::where('email', $data['email'])->where('token', $data['token'])->first();
+  
+      if($haveOrNot){
+        $statusapproved = User::where('email', $data['email'])->update([
+          'status' => 1
+        ]);
+
+        if($statusapproved){
+            VerifyUser::where('email', $data['email'])->delete();
+            return true;
+        }
+
+        return false;
+      }
+  
+      return false;
     }
 
 }

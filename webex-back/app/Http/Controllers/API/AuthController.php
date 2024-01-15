@@ -58,12 +58,17 @@ class AuthController extends BaseController
     {
         $data = $this->authService->signup($request->all());
 
-        $readyData = [
-            'authUser' => $data['authUser'],
-            'access_token' => $data['token'],
-        ];
+        if($data){
+           return response()->json(['success' => true, 'message' => $this->translation->get('email_verified')]);
+        }
 
-        return response()->json($readyData);
+        return response()->json(['success' => false, 'message' => $this->translation->get('something-went-wrong')]);
+        // $readyData = [
+        //     'authUser' => $data['authUser'],
+        //     'access_token' => $data['token'],
+        // ];
+
+        // return response()->json($readyData);
     }
 
     public function refresh()
@@ -78,5 +83,17 @@ class AuthController extends BaseController
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
+    }
+
+    public function checkVerifyToken(Request $request)
+    {
+        $haveOrNot = $this->authService->checkVerifyToken($request->all());
+
+        if($haveOrNot){
+            return response()->json(['success' => true, 'message' => $this->translation->get('status-active')]);
+         }
+ 
+         return response()->json(['success' => false, 'message' => $this->translation->get('something-went-wrong')]);
+
     }
 }

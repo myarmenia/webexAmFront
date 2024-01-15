@@ -5,7 +5,9 @@
     "user-blocked": "User is blocked",
     "user-not-found": "User not found",
     "logged-out": "Successfully logged out",
-    "unauthorized": "Unauthorized"
+    "unauthorized": "Unauthorized",
+    "email_verified": "Confirm email address to activate",
+    "status-active": "User successfully activated"
 
     
 
