@@ -139,7 +139,7 @@ Route::post('change-status', [ChangeStatusController::class,'change_status'])->n
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
 Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
-
+Route::post('open-course/{user_id}', [StudentInfoController::class,'index'])->name('users.open_course');
 
 
 //Project

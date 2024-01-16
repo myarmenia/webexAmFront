@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-4 d-flex align-items-end">
                     <div class="w-100 ">
-                        <form action={{route('')}} method="post"> 
+                        <form action={{route('open_course', $student->id)}} method="post">
                             <div class="d-flex justify-content-between ">
                                 <div class=" ">
                                     <label for="course_languages" class="col-form-label">Добавить язык
@@ -73,7 +73,7 @@
 
                                     </select>
                                 </div>
-                                <button class="ml-3 align-self-end">Добавить</button>
+                                <button class="ml-3 align-self-end">Открыть курс</button>
                             </div>
                         </form>
                     </div>
