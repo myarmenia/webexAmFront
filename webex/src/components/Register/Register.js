@@ -8,8 +8,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import { eyeIcon } from "../../iconFolder/icon.js";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
+import { selectRegister } from "../../store/slices/RegisterSlice/RegisterSlice.js";
 
 function Registre({setUser, setPage, user}) {
 
@@ -18,9 +19,11 @@ function Registre({setUser, setPage, user}) {
 
     const { t, i18n } = useTranslation();
 
-    const {pathname} = useLocation()
-
     const dispatch = useDispatch()
+
+    const leng = localStorage.getItem('lang')
+
+    const registreResp = useSelector(selectRegister)
     
     function handleLogSub(e,handleSubmit) {
         e.preventDefault()
@@ -108,12 +111,14 @@ function Registre({setUser, setPage, user}) {
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
                             <SubmitBtn index= "1"/>
-                            <h6>{t('reg_and_log.'+ '7')}  <NavLink to={'/login'}>{t('reg_and_log.'+ '9')}</NavLink></h6>
+                            <h6>{t('reg_and_log.'+ '7')}  <NavLink to={`/${leng}/login`}>{t('reg_and_log.'+ '9')}</NavLink></h6>
+
+                            {registreResp?.message && <p style={{color: registreResp.success ? 'green' : 'red'}}>{registreResp.message}</p>}
                         </form>
-                        {pathname === '/registr' && 
+                        
                             <div className="log_img_div">
                                 <AnimLogo/>
-                             </div>}
+                             </div>
                     </div>
                 </div>
             )

@@ -6,6 +6,10 @@ function OrderModal({setOpenOrderModal}) {
 
     const handleCloseModal = (e) =>{
         e.preventDefault()
+
+        
+        console.dir(e.target);
+
         setOpenOrderModal(false)
     }
     return (
@@ -30,52 +34,52 @@ function OrderModal({setOpenOrderModal}) {
                         <div className='checkobox-items'>
                             <div>
                                 <input id='check1' type="checkbox" />
-                                <label for="check1">Corporate website development</label>
+                                <label htmlFor="check1">Corporate website development</label>
                             </div>
 
                             <div>
                                 <input id='check2' type="checkbox" />
-                                <label for="check2">Online stores development</label>
+                                <label htmlFor="check2">Online stores development</label>
                             </div>
 
                             <div>
                                 <input id='check3' type="checkbox" />
-                                <label for="check3">Search engine optimization (SEO)</label>
+                                <label htmlFor="check3">Search engine optimization (SEO)</label>
                             </div>
 
                             <div>
                                 <input id='check4' type="checkbox" />
-                                <label for="check4">Contextual advertising</label>
+                                <label htmlFor="check4">Contextual advertising</label>
                             </div>
 
                             <div>
                                 <input id='check5' type="checkbox" />
-                                <label for="check5">Website development</label>
+                                <label htmlFor="check5">Website development</label>
                             </div>
 
                             <div>
                                 <input id='check6' type="checkbox" />
-                                <label for="check6">Technical website support</label>
+                                <label htmlFor="check6">Technical website support</label>
                             </div>
 
                             <div>
                                 <input id='check7' type="checkbox" />
-                                <label for="check7">E-mail marketing</label>
+                                <label htmlFor="check7">E-mail marketing</label>
                             </div>
 
                             <div>
                                 <input id='check8' type="checkbox" />
-                                <label for="check8">Yandex Market</label>
+                                <label htmlFor="check8">Yandex Market</label>
                             </div>
 
                             <div>
                                 <input id='check9' type="checkbox" />
-                                <label for="check9">Google analytics</label>
+                                <label htmlFor="check9">Google analytics</label>
                             </div>
 
                             <div>
                                 <input id='check10' type="checkbox" />
-                                <label for="check10">Business process automation</label>
+                                <label htmlFor="check10">Business process automation</label>
                             </div>
                         </div>
 

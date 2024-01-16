@@ -25,11 +25,11 @@ function LoginPage() {
 
     const { t, i18n } = useTranslation();
 
-    const {pathname} = useLocation()
-
     const dispatch = useDispatch()
 
     const log = useSelector(selectLogin)
+
+    const leng = localStorage.getItem('lang')
     
     const  validationSchema = yup.object().shape({
         email: yup.string().email(t('validation.'+ '1')).required(t('validation.'+ '0')),
@@ -81,13 +81,13 @@ function LoginPage() {
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
                             <SubmitBtn index= "0"/>
-                            <h6>{t('reg_and_log.'+ '8')}  <NavLink to={'/registr'}>{t('reg_and_log.'+ '10')}</NavLink></h6>
+                            <h6>{t('reg_and_log.'+ '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.'+ '10')}</NavLink></h6>
                             <h5>{t('reg_and_log.'+ '14')} <span onClick={()=> setOpenModal(true)}>{t('reg_and_log.'+ '15')}</span></h5>
                         </form>
-                        {pathname === '/login' && 
+                        
                             <div className="log_img_div">
                                 <AnimLogo/>
-                             </div>}
+                             </div>
 
 
                             {

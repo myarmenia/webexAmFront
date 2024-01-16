@@ -10,6 +10,8 @@ import LoginButton from '../LoginButton/LoginButton'
 import { NavLink } from 'react-router-dom'
 
 function BurgerMenu() {
+
+  const leng = localStorage.getItem('lang')
   return (
     <div className='burger-menu'>
           <div className="wrapper">
@@ -20,7 +22,7 @@ function BurgerMenu() {
             </label>
             <nav id="sidebar">
               <div className='logo-image'>
-              <NavLink to={'/'}>{logoImage}</NavLink>
+              <NavLink to={'/' + leng}>{logoImage}</NavLink>
               </div>
 
               <ul className="list-items">
@@ -49,12 +51,12 @@ function BurgerMenu() {
               <div className="icons">
                   <div className='my-reg_log_class'>
                       <a href="#" id='registre'>{loginIcon}</a>
-                      <LoginButton path= "/login"/>
+                      <LoginButton path= {leng + "/login"}/>
                   </div>
 
                   <div className='my-reg_log_class'>
                       <a href="#" id='login'>{RegistreIcon}</a>
-                      <RegistreButton path="/registr"/>
+                      <RegistreButton path={leng + "/registr"}/>
                   </div>
                   
                   <div className='my-leng_class'>
