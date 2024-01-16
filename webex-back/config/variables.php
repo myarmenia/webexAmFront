@@ -1,8 +1,8 @@
 <?php
   // Variables
   return [
-    "creatorName" => "ThemeSelection",
-    "creatorUrl" => "https://themeselection.com",
+    "creatorName" => "Webex",
+    "creatorUrl" => "https://webex.com",
     "templateName" => "Sneat",
     "templateSuffix" => "Bootstrap 5 HTML Laravel Free Admin Template",
     "templateVersion" => "1.1.0",

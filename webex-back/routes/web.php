@@ -146,6 +146,8 @@ Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('u
 Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
+  Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
+  
 });
 
 });
