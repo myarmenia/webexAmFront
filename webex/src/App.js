@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import qs from 'qs'
-import { Route, Routes, useNavigate, useSearchParams} from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Route, Routes, useLocation, useNavigate, useParams} from 'react-router-dom';
 import './App.css';
 import HomeWraper from './page/HomeWraper';
 import HomePage from './components/HomePage/HomePage';
@@ -14,55 +13,44 @@ import { Dashboard } from './components/profilePage/Dashboard/Dashboard';
 import CurrentLessons from './components/profilePage/Current_lessons/CurrentLessons';
 
 import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
+import VerifyAccount from './components/VerifyAccount/VerifyAccount';
 
 
 function App() {
-  // const navigate = useNavigate()
-   const leng = localStorage.getItem('lang') 
-  //  const { i18n } = useTranslation();
-  //  const [searchParams, setSearchParams] = useSearchParams();
- 
-  //  const lang = searchParams.get('lang');
 
+  const leng = localStorage.getItem('lang')
+
+  const navigate = useNavigate()
+
+  const {pathname} = useLocation()
+
+  useEffect(()=>{
+    pathname == '/' && navigate(`/${leng}/`)
+  },[])
    
-  // useEffect(() => {
-  //   if (!lang) {
-  //     searchParams.set('lang', i18n.language);
-  //     setSearchParams(searchParams, { replace: true });
-  //   }
-  // }, [lang]);
-  
-
-  // const { i18n } = useTranslation();
-  // const queryParam = new URLSearchParams(window.location.search);
-  // const lang = queryParam.get('lang');
-
-  // useEffect(() => {
-  //   if (!lang) {
-  //     queryParam.set('lang', i18n.language);
-  //     window.history.replaceState({}, '', `?${queryParam}`);
-  //   }
-  // });
-// console.log(leng);
   return (
     <div className="App">
       <Routes>
 
-          <Route path={'/'} element={<HomeWraper/>}>
-              <Route index element={<HomePage/>}/>
-              <Route path='programing'element={<h1>programing</h1>}/>
-              <Route path='projects'element={<ProjectsPage/>}>
-                <Route path=':idd'element={<ProjectsPage/>}/>
-              </Route>
-              <Route path='aboteus'element={<h1>aboteus</h1>}/>
-              <Route path='contact'element={<h1>contact</h1>}/>
-              <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
-              <Route path='registr' element={<Register/>}/>
-              <Route path='login' element={<LoginPage  />}/> 
-              <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
-              <Route path="profilePage" element={<ProfilePage />}>
-                  <Route path="Dashboard" element={<Dashboard />} />
-                  <Route  path="Currentlessons" element={<CurrentLessons />} />
+          <Route path='/' element={<HomeWraper/>}>
+              <Route path=':leng'>
+                <Route index element={<HomePage/>}/>
+                
+                <Route path='programing'element={<h1>programing</h1>}/>
+                <Route path='projects'element={<ProjectsPage/>}>
+                  <Route path=':idd'element={<ProjectsPage/>}/>
+                </Route>
+                <Route path='aboteus'element={<h1>aboteus</h1>}/>
+                <Route path='contact'element={<h1>contact</h1>}/>
+                <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
+                <Route path='registr' element={<Register/>}/>
+                <Route path='login' element={<LoginPage  />}/> 
+                <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
+                <Route path='verifyAccount/:token/:email' element={<VerifyAccount/>}/>
+                <Route path="profilePage" element={<ProfilePage />}>
+                    <Route path="Dashboard" element={<Dashboard />} />
+                    <Route  path="Currentlessons" element={<CurrentLessons />} />
+                </Route>
               </Route>
         </Route>
 

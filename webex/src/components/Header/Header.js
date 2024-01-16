@@ -11,6 +11,8 @@ function Header() {
   const [animatedTextH4, setAnimatedTextH4] = useState('');
   const [openOrderModal, setOpenOrderModal] = useState(false)
 
+  
+
   const startH2Animation = () => {
     const textH4 = t('headerTitlePart2');
     animateText(textH4, setAnimatedTextH4);
