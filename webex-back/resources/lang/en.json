@@ -7,7 +7,9 @@
     "logged-out": "Successfully logged out",
     "unauthorized": "Unauthorized",
     "email_verified": "Confirm email address to activate",
-    "status-active": "User successfully activated"
+    "status-active": "User successfully activated",
+    "email-unique": "The user with this email already exists"
+
 
     
 
