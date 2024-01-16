@@ -38,4 +38,11 @@ class SingupRequest extends FormRequest
             'errors' => $validator->errors(),
         ], 422));
     }
+
+    public function messages(): array
+{
+    return [
+        'email.unique' => translateMessageApi('email-unique'),
+    ];
+}
 }

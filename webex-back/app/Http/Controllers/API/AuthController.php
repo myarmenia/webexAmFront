@@ -10,19 +10,15 @@ use App\Services\API\AuthService;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Translation;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends BaseController
 {
-    protected $translation;
     public $authService;
 
     public function __construct(AuthService $authService)
     {
         $this->authService = $authService;
-        $lang = session('languages', 'am');
-        $this->translation = new Translation($lang);
         // $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
@@ -51,7 +47,7 @@ class AuthController extends BaseController
     {
         auth()->logout();
 
-        return response()->json(['message' => $this->translation->get('logged-out')]);
+        return response()->json(['message' => translateMessageApi('logged-out')]);
     }
 
     public function signup(SingupRequest $request)
@@ -59,10 +55,10 @@ class AuthController extends BaseController
         $data = $this->authService->signup($request->all());
 
         if($data){
-           return response()->json(['success' => true, 'message' => $this->translation->get('email_verified')]);
+           return response()->json(['success' => true, 'message' => translateMessageApi('email_verified')]);
         }
 
-        return response()->json(['success' => false, 'message' => $this->translation->get('something-went-wrong')]);
+        return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')]);
         // $readyData = [
         //     'authUser' => $data['authUser'],
         //     'access_token' => $data['token'],
@@ -90,10 +86,10 @@ class AuthController extends BaseController
         $haveOrNot = $this->authService->checkVerifyToken($request->all());
 
         if($haveOrNot){
-            return response()->json(['success' => true, 'message' => $this->translation->get('status-active')]);
+            return response()->json(['success' => true, 'message' => translateMessageApi('status-active')]);
          }
  
-         return response()->json(['success' => false, 'message' => $this->translation->get('something-went-wrong')]);
+         return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')]);
 
     }
 }
