@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Lessons\LessonController;
 use App\Http\Controllers\Admin\Project\ProjectController;
 use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Users\OpenCourseLaanguageForStudentController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Auth\AuthController;
@@ -139,7 +140,7 @@ Route::post('change-status', [ChangeStatusController::class,'change_status'])->n
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
 Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
-Route::post('open-course/{user_id}', [StudentInfoController::class,'index'])->name('users.open_course');
+Route::post('open-course/{user_id}', [OpenCourseLaanguageForStudentController::class,'index'])->name('users.open_course');
 
 
 //Project

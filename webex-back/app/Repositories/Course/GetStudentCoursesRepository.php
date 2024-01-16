@@ -7,8 +7,8 @@ use App\Models\UserCourseMenegment;
 
 class GetStudentCoursesRepository implements GetStudentCoursesInterface
 {
-  public function GetStudentCoursess(int $id){
+  public function GetStudentCoursess(int $id, int $course_language_id){
 
-    return UserCourseMenegment::where('user_id', $id)->get();
+    return UserCourseMenegment::where(['user_id' => $id, 'course_language_id' => $course_language_id])->first();
   }
 }
