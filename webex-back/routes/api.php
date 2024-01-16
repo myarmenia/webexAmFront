@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\Lessons\LessonController;
+use App\Http\Controllers\API\SendOrderController;
 use App\Http\Controllers\API\TrialCourseController;
 use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
 use Illuminate\Http\Request;
@@ -26,6 +27,8 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::post('check-forgot-token', [ForgotPasswordController::class, 'checkForgotToken']);
     Route::post('send-new-password', [ForgotPasswordController::class, 'sendNewPassword']);
     Route::post('trial-course', [TrialCourseController::class, 'trialCourse']);
+    Route::post('send-order', SendOrderController::class);
+    
 
     Route::get('course-language',[CourseLanguagesController::class,'index']);
     Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
