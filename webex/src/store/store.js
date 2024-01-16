@@ -5,6 +5,7 @@ import { resetPasswordReducer } from "./slices/ResetEmailSlice/ResetEmailSlice";
 import { resetPasswordPageReducer } from "./slices/PasswordResetPageSlice/PasswordResetPageSlice";
 import { newPasswordReducer } from "./slices/NewPasswordeSlise/NewPasswordeSlise";
 import { trialCourseReducer } from "./slices/TrialCourseSlice/TrialCourseSlice";
+import { verifyAccountReducer } from "./slices/VerifyAccountSlice/VerifyAccountSlice";
 import { currentLessonReducer } from './slices/CurrentLessons/CurrentLessonsSlice';
 
 const store = configureStore({
@@ -15,6 +16,7 @@ const store = configureStore({
         resetPasswordPage: resetPasswordPageReducer,
         newPassword: newPasswordReducer,
         trialCourse: trialCourseReducer,
+        verifyAccount: verifyAccountReducer,
         currentLesson: currentLessonReducer,
 
     },

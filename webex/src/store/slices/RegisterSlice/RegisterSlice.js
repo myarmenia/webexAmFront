@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postRegister } from "./RegisterApi";
 
 const initialState = {
-   authUser: {},
+   message: {},
    status: 'idle',
    error: null,
    };
@@ -22,7 +22,7 @@ const registerSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postRegister.fulfilled, (state, action) => {
-            state.authUser = action.payload.authUser
+            state.message = action.payload
              state.status = 'succes';
           })
           .addCase(postRegister.rejected, (state, action) => {

@@ -14,6 +14,7 @@ import LoginButton from '../LoginButton/LoginButton'
 
 function NavBar() {
 
+  const leng = localStorage.getItem('lang')
   return (
     <div className='nav-bar'>
 
@@ -24,8 +25,8 @@ function NavBar() {
             <Button index = "2" path="/courses-registration"/> */}
 
             <div className='navbar-rigth-div'>
-                <RegistreButton path="/registr"/>
-                <LoginButton path = "/login"/>
+                <RegistreButton path={leng + "/registr"}/>
+                <LoginButton path = {leng +"/login"}/>
                 <SelectLng/>
 
             </div>

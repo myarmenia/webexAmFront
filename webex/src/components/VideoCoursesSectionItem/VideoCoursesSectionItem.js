@@ -4,6 +4,7 @@ import './VideoCoursesSectionItem.css'
 import { useTranslation } from 'react-i18next'
 
 function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
+  const leng = localStorage.getItem('lang')
   const {t, i18n} = useTranslation()
   return (
     <div className='video-courses-section-item'>
@@ -19,7 +20,8 @@ function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
             <p>{t('videoCoursesSectionTxt.' + txt)}</p>
             </div>
             
-            {txt !== 0 ? <Button index="1" path="registr"/> : <Button index="1" path="/courses-registration"/>}
+            {txt !== 0 ? <Button index="1" path={`/${leng}/registr`}/> : <Button index="1" path={`/${leng}/courses-registration`}/>}
+            
         </div>
     </div>
   )

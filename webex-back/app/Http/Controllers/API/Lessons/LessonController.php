@@ -34,8 +34,8 @@ class LessonController extends BaseController
                       'id' => $item->id,
                       'number' => $item->number,
                       'duration' => $item->duration,
-                      'title' => $item->translation($request->lang)->title,
-                      'description' => $item->translation($request->lang)->description,
+                      'title' => $item->translation(session('languages'))->title,
+                      'description' => $item->translation(session('languages'))->description,
                       'video'=>$item->video,
                       'tasks'=> TasksResource::collection($item->tasks),
                     ];

@@ -10,9 +10,13 @@ function NavMenu() {
     
      const { t, i18n } = useTranslation();
 
+     const leng = localStorage.getItem('lang')
+
+     // const leng = 
+
   return (
        <div className='nav-menu-div'>
-            <NavLink to={'/'}>{logoImage}</NavLink>
+            <NavLink to={'/' + leng}>{logoImage}</NavLink>
              <ul className='nav-menu'>
                 <div className='drop-item'>
                     <li className='programing'>{t('navMenu.'+ '1')} {dropIcon}</li>
@@ -29,7 +33,7 @@ function NavMenu() {
                 <NavMenuItem index="2" path="/projects"/>
                 <NavMenuItem index="7" path="/news"/>
                 <NavMenuItem index="3" path="/aboteus"/>
-                <NavMenuItem index="4" path="contact"/>
+                <NavMenuItem index="4" path="/contact"/>
             </ul>
              
        </div>
