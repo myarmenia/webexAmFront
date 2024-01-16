@@ -1,4 +1,14 @@
 {
-    "welcome": "Բարի գալուստ"
+    "welcome": "Բարի գալուստ",
+    "success-logged": "You have successfully logged in",
+    "something-went-wrong": "Something went wrong",
+    "user-blocked": "User is blocked",
+    "user-not-found": "User not found",
+    "logged-out": "Successfully logged out",
+    "unauthorized": "Unauthorized",
+    "email_verified": "Confirm email address to activate",
+    "status-active": "User successfully activated"
+
+    
 
 }

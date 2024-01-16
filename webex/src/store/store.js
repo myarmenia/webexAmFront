@@ -6,6 +6,8 @@ import { resetPasswordPageReducer } from "./slices/PasswordResetPageSlice/Passwo
 import { newPasswordReducer } from "./slices/NewPasswordeSlise/NewPasswordeSlise";
 import { trialCourseReducer } from "./slices/TrialCourseSlice/TrialCourseSlice";
 import { verifyAccountReducer } from "./slices/VerifyAccountSlice/VerifyAccountSlice";
+import { currentLessonReducer } from './slices/CurrentLessons/CurrentLessonsSlice';
+
 const store = configureStore({
     reducer: {
         login: loginReducer,
@@ -15,12 +17,13 @@ const store = configureStore({
         newPassword: newPasswordReducer,
         trialCourse: trialCourseReducer,
         verifyAccount: verifyAccountReducer,
+        currentLesson: currentLessonReducer,
+
     },
     // middleware: (getDefaultMiddlware)=>[
     //     ...getDefaultMiddlware(),
         
     // ]
-})
+});
 
-
-export default store
+export default store;

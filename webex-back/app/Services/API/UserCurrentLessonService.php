@@ -11,11 +11,9 @@ class UserCurrentLessonService
   public  function getcurrentlesson(){
 // dd(auth('api')->user());
     $user_id = auth('api')->user()->id;
-    $current_lesson = UserCourseMenegment::where('user_id', 1)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
-
+    $current_lesson = UserCourseMenegment::where('user_id',$user_id)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
 
     return $current_lesson;
-
 
   }
 
