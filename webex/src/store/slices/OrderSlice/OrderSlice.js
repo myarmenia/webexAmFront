@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { postLogin } from "./LoginApi";
+import { postOrder } from "./OrderApi";
 
 const initialState = {
    data: {
-      authUser: {name: 'barev'},
-      token: ''
+      success: false,
+      message: ""
    },
    status: 'idle',
    error: null,
    };
 
-const loginSlice = createSlice({
-    name: 'login',
+const ordertSlice = createSlice({
+    name: 'order',
     initialState,
     reducers: {
       
@@ -21,14 +21,14 @@ const loginSlice = createSlice({
  
     extraReducers: (builder) => {
        builder
-          .addCase(postLogin.pending, (state) => {
+          .addCase(postOrder.pending, (state) => {
              state.status = 'loading';
           })
-          .addCase(postLogin.fulfilled, (state, action) => {
+          .addCase(postOrder.fulfilled, (state, action) => {
             state.data = action.payload
              state.status = 'succes';
           })
-          .addCase(postLogin.rejected, (state, action) => {
+          .addCase(postOrder.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
           });
@@ -36,8 +36,8 @@ const loginSlice = createSlice({
  });
  
 
-export const selectLogin = (state) => state.login
+export const selectOrder = (state) => state.order
 
- export const {setLogin} = loginSlice.actions
+ export const {} = ordertSlice.actions
 
-export const loginReducer =  loginSlice.reducer
+export const orderReducer =  ordertSlice.reducer

@@ -27,7 +27,6 @@ export const postLogin = createAsyncThunk(
     
           const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
-          window.location.href ='/users';
           return true;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);

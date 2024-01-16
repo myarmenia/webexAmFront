@@ -22,6 +22,6 @@ class TrialCourseController extends Controller
     {
         Mail::send(new SendEmailTrialCourse($request->all()));
 
-       return response()->json(['message' => 'Message sended successfully']);
+       return response()->json(['message' => translateMessageApi('email-send')]);
     }
 }

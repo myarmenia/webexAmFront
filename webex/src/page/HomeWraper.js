@@ -6,14 +6,19 @@ import BottomMenu from '../components/BottomMenu/BottomMenu'
 import Footer from '../components/Footer/Footer'
 import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton'
 import NavTop from '../components/NavTop/NavTop'
+import { useSelector } from 'react-redux'
+import { selectLogin } from '../store/slices/LoginSlice/LoginSlice'
+import NavBarForUser from '../components/NavBarForUser/NavBarForUser'
 
 function HomeWraper() {
+
+  const respLogin = useSelector(selectLogin)
 
   return (
     <div>
       <BurgerMenu/>
-      <NavTop/>
-      <NavBar/> 
+      {Object.keys(respLogin?.data.authUser || {}).length === 0 && (<NavTop/>)}
+      {Object.keys(respLogin?.data.authUser || {}).length === 0 ? <NavBar/> : <NavBarForUser/>} 
       <Outlet/>
       <ScrollUpButton/>
       <Footer/>

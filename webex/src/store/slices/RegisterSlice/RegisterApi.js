@@ -24,7 +24,7 @@ export const postRegister = createAsyncThunk(
     
           const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
-          window.location.href ='/users';
+        // window.location.href ='/users';
           return response.data;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);

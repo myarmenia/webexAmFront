@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { botomMailIcon, botomtelIcon, homeIcon, orderIcon, videoIcon } from '../../iconFolder/icon';
+import { botomMailIcon, botomtelIcon, homeIcon, orderIcon, userIcon, videoIcon } from '../../iconFolder/icon';
 import { NavLink } from 'react-router-dom';
 import { elips } from '../../images/images';
 import './BottomMenu.css'
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice';
 
 const BottomMenu = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,6 +13,8 @@ const BottomMenu = () => {
   const leng = localStorage.getItem('lang')
 
   const { t, i18n } = useTranslation();
+  
+  const respLogin = useSelector(selectLogin)
 
 
   function callPhoneNumber(e) {
@@ -44,7 +48,7 @@ const BottomMenu = () => {
         <li className={`list ${activeIndex === 2 ? 'active' : ''}`} onClick={() => handleItemClick(2)}>
         <NavLink to={leng +"/courses-registration"}>
             <span className="icon">
-            {videoIcon}
+            {Object.keys(respLogin?.data.authUser || {}).length === 0 ? videoIcon : userIcon}
             </span>
             <span className="text">{t('navMenu.' + '0')}</span>
           </NavLink>
