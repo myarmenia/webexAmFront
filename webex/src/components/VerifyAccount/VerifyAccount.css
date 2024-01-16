@@ -1,0 +1,18 @@
+.verify-account{
+    background-color: var(--main_color);
+    height: 60vh;
+}
+
+
+.verify-account .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.verify-account .container p{
+    color: var(--main_font_color);
+}

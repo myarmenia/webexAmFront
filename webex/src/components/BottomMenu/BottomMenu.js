@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 const BottomMenu = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const leng = localStorage.getItem('lang')
+
   const { t, i18n } = useTranslation();
 
 
@@ -24,7 +26,7 @@ const BottomMenu = () => {
     <div className="navigation">
       <ul>
         <li className={`list ${activeIndex === 0 ? 'active' : ''}`} onClick={() => handleItemClick(0)}>
-          <NavLink to="/">
+          <NavLink to={leng +"/"}>
             <span className="icon">
               {homeIcon}
             </span>
@@ -32,7 +34,7 @@ const BottomMenu = () => {
           </NavLink>
         </li>
         <li className={`list ${activeIndex === 1 ? 'active' : ''}`} onClick={() => handleItemClick(1)}>
-          <NavLink to="/programing">
+          <NavLink to={leng + "/programing"}>
             <span className="icon">
             {orderIcon}
             </span>
@@ -40,7 +42,7 @@ const BottomMenu = () => {
           </NavLink>
         </li>
         <li className={`list ${activeIndex === 2 ? 'active' : ''}`} onClick={() => handleItemClick(2)}>
-        <NavLink to="/courses-registration">
+        <NavLink to={leng +"/courses-registration"}>
             <span className="icon">
             {videoIcon}
             </span>
@@ -58,7 +60,7 @@ const BottomMenu = () => {
         </li>
 
         <li className={`list ${activeIndex === 4 ? 'active' : ''}`} onClick={() => handleItemClick(4)}>
-        <NavLink to="/courses-registration">
+        <NavLink to={leng + "/"}>
             <div className='nav_top_phone'>
                     <span className='icon'>{botomtelIcon}</span>
                     <div className='tel'>
