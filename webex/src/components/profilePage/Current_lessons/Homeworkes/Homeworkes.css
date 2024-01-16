@@ -1,4 +1,4 @@
-.allLIne {
+/* .allLIne {
   display: flex;
   align-items: normal;
   justify-content: space-between;
@@ -41,7 +41,7 @@
 .blockImg {
   width: 26px;
   height: 26px;
-}
+} */
 
 /* .lineRight {
   position: relative;
@@ -56,7 +56,24 @@
   background-color: #ffffff;
   width: 100%;
 } */
-.lineRightTime {
+/* .lineRightTime {
   color: #ffffff;
   font-size: 20px;
+} */
+
+.homeworkes_linne_div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5F5F60;
+  border-bottom: 1px solid #5F5F60;
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  
+}
+
+.homeworkes_text{
+  font-size: 18px;
+  line-height: 24.41px;
+  font-weight: 400;
 }
