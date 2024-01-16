@@ -8,11 +8,11 @@ export const getCurrentLesson = createAsyncThunk(
         try {
           const config = {
             method: "get",
-            url: "auth/user-current-lesson",
+            url: "/user-current-lesson",
           };
     
           const response = await instance(config);
-console.log(response);
+            console.log(response);
           return response?.data;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);
