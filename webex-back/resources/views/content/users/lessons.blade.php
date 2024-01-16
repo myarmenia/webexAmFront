@@ -51,7 +51,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4 d-flex align-items-end">
+
+
+                <div class="col-md-5 d-flex align-items-end">
                     <div class="w-100 ">
                         <form action={{route('open_course', $student->id)}} method="post">
                             <div class="d-flex justify-content-between ">
@@ -65,7 +67,8 @@
                                         @if($course_languages != null && count($course_languages) > 0)
 
                                         @foreach ($course_languages as $language)
-                                            @if (in_array($language->id, $user_course_langages))
+
+                                            @if (!in_array($language->id, $user_course_langages))
                                                 <option value="{{ $language->id }}">{{ $language->name }}</option>
                                             @endif
                                         @endforeach
@@ -99,7 +102,8 @@
                                 <td>{{ $item->lesson_number }}</td>
 
                                 <td>
-                                    <div class="dropdown action" data-id="{{ $user->id }}" data-tb-name="users">
+                                    <div class="dropdown action" data-id="{{ $student->id }}" data-tb-name="users">
+
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
                                             <i class="bx bx-dots-vertical-rounded"></i>
@@ -111,7 +115,7 @@
                                             <a class="dropdown-item present" href="javascript:void(0);">
                                                 <i class="tf-icons bx bx-task"></i> Открить урок
                                             </a>
-                                            <a class="dropdown-item d-flex" href="javascript:void(0);">
+                                            {{-- <a class="dropdown-item d-flex" href="javascript:void(0);">
                                                 <div class="form-check form-switch">
                                                     <input class="form-check-input change_status" type="checkbox"
                                                         role="switch" data-field-name="payment_status"
@@ -131,7 +135,7 @@
                                                         role="switch" data-field-name="status"
                                                         {{ $user->status ? 'checked' : null }}>
                                                 </div>Статус
-                                            </a>
+                                            </a> --}}
                                             <a class="dropdown-item" href="javascript:void(0);"><i
                                                     class="bx bx-edit-alt me-1"></i>Редактировать</a>
                                             <button type="button" class="dropdown-item click_delete_item"
