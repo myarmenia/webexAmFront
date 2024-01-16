@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCurrentLesson } from './CurrentLessonsApi';
 
 const initialState = {
-  types: [],
-  typeLoading: false,
+  // types: [],
+  // typeLoading: false,
 };
 
 export const currentLessonSlice = createSlice({
@@ -24,6 +24,7 @@ export const currentLessonSlice = createSlice({
         console.log("pending")
       })
       .addCase(getCurrentLesson.rejected, (state, action) => {
+        console.log("chdarav");
       });
   },
 });
@@ -35,3 +36,7 @@ export const currentLessonSlice = createSlice({
 // export const getAllType = (state) => state.adminType.types;
 
 export const currentLessonReducer = currentLessonSlice.reducer;
+
+
+
+

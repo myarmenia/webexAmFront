@@ -8,7 +8,7 @@ import Training from './Training/Training';
 export const Dashboard = () => {
   return (
     <>
-    <div style={{padding:"40px"}}>
+    <div style={{padding:"40px", backgroundColor:"green"}}>
     <p className="allDashboard_title">Dashboard</p>
       <div className="allDashboard">
         <div className="account">
