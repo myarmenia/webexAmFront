@@ -90,7 +90,7 @@ class AuthService
 
     public function checkVerifyToken($data)
     {
-      $haveOrNot = VerifyUser::where('email', $data['email'])->where('token', $data['token'])->first();
+      $haveOrNot = VerifyUser::where('email', $data['email'])->where('verify_token', $data['token'])->first();
   
       if($haveOrNot){
         $statusapproved = User::where('email', $data['email'])->update([
