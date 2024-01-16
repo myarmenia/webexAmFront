@@ -5,6 +5,7 @@ import { resetPasswordReducer } from "./slices/ResetEmailSlice/ResetEmailSlice";
 import { resetPasswordPageReducer } from "./slices/PasswordResetPageSlice/PasswordResetPageSlice";
 import { newPasswordReducer } from "./slices/NewPasswordeSlise/NewPasswordeSlise";
 import { trialCourseReducer } from "./slices/TrialCourseSlice/TrialCourseSlice";
+import { verifyAccountReducer } from "./slices/VerifyAccountSlice/VerifyAccountSlice";
 const store = configureStore({
     reducer: {
         login: loginReducer,
@@ -12,7 +13,8 @@ const store = configureStore({
         resetPassword: resetPasswordReducer,
         resetPasswordPage: resetPasswordPageReducer,
         newPassword: newPasswordReducer,
-        trialCourse: trialCourseReducer
+        trialCourse: trialCourseReducer,
+        verifyAccount: verifyAccountReducer,
     },
     // middleware: (getDefaultMiddlware)=>[
     //     ...getDefaultMiddlware(),

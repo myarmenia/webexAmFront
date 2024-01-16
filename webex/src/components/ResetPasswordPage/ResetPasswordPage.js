@@ -23,8 +23,8 @@ function ResetPasswordPage() {
     useEffect(() => {
         const window_token = window.location.href.split('/')
         const renderObj = {
-            token: window_token[4],
-            email: window_token[5]
+            token: window_token[5],
+            email: window_token[6]
         }
 
         dispatch(postResetPasswordPage(renderObj))
@@ -42,6 +42,7 @@ function ResetPasswordPage() {
             password: password.value,
             confirmPassword: confirmPassword.value
         }
+
 
         if (password.value === confirmPassword.value) {
             dispatch(postNewPassword(newPasswordeObj))
