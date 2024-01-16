@@ -21,14 +21,14 @@ function VerifyAccount() {
 
     dispatch(postVerifyAccount(renderObj))
 
-    accountResp.success && navigate(`/${leng}/login`)
+    accountResp?.data.success && navigate(`/${leng}/login`)
 }, [])
 
   return (
     <div className='verify-account'>
         <div className='container'>
             {logoImage}
-            <p>{(!accountResp.success) && accountResp?.message}</p> 
+            <p>{(!accountResp?.data.success) && accountResp?.data.message}</p> 
         </div>
     </div>
   )
