@@ -10,8 +10,9 @@ export const postOrder = createAsyncThunk(
             name: body.name,
             phone: body.phone,
             email: body.email,
+            domian: body.domain,
             comment: body.comment,
-            checkBoxArr: body.checkboxArr
+            projectType: body.checkboxArr
           };
           
           console.log(orderData);

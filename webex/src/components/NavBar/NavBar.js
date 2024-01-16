@@ -8,6 +8,8 @@ import Button from '../Button/Button'
 import SelectLng from '../SelectLng/SelectLng'
 import RegistreButton from '../RegistreButton/RegistreButton'
 import LoginButton from '../LoginButton/LoginButton'
+import { useSelector } from 'react-redux'
+import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice'
 
 
 
@@ -15,6 +17,8 @@ import LoginButton from '../LoginButton/LoginButton'
 function NavBar() {
 
   const leng = localStorage.getItem('lang')
+
+  const respLogin = useSelector(selectLogin)
   return (
     <div className='nav-bar'>
 
@@ -25,8 +29,8 @@ function NavBar() {
             <Button index = "2" path="/courses-registration"/> */}
 
             <div className='navbar-rigth-div'>
-                <RegistreButton path={leng + "/registr"}/>
-                <LoginButton path = {leng +"/login"}/>
+            {Object.keys(respLogin?.data.authUser || {}).length === 0 && (<RegistreButton path={leng + '/registr'} />)}
+              {Object.keys(respLogin?.data.authUser || {}).length === 0 && (<LoginButton path={leng + '/login'} />)}
                 <SelectLng/>
 
             </div>

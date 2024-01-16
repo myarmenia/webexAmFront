@@ -1,12 +1,17 @@
 import React from 'react'
 import "./OrderModal.css"
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { postOrder } from '../../store/slices/OrderSlice/OrderApi'
+import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
 
 function OrderModal({setOpenOrderModal}) {
 
     const dispatch = useDispatch()
+
+    const respOrder = useSelector(selectOrder)
+
+
 
     const handleCloseModal = (e) =>{
         e.preventDefault()
@@ -20,10 +25,11 @@ function OrderModal({setOpenOrderModal}) {
             phone: phone.value,
             email: email.value,
             comment: comment.value,
+            domain: domain.value,
             checkboxArr: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
         }
 
-        
+
         dispatch(postOrder(ordeObj))
         e.target.reset()
     }
@@ -101,6 +107,8 @@ function OrderModal({setOpenOrderModal}) {
                     </div>
 
                     <SubmitBtn index="3"/>
+
+                    <p>{respOrder?.data.message}</p>
                 </form>
             </div>
         </div>
