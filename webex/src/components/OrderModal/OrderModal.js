@@ -25,7 +25,7 @@ function OrderModal({setOpenOrderModal}) {
             phone: phone.value,
             email: email.value,
             comment: comment.value,
-            domain: domain.value,
+            domain: site.value,
             checkboxArr: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
         }
 
