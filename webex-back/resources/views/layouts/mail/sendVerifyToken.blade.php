@@ -9,7 +9,7 @@
 
     <p>Link</p>
 
-    <p>Link to the password reset: <a href="{{env('BASE_CLIENT_URL').'/verifyAccount/'.$token.'/'.$email}}">Click here</a></p>
+    <p>Link to the password reset: <a href="{{env('BASE_CLIENT_URL').session('languages').'/verifyAccount/'.$token.'/'.$email}}">Click here</a></p>
 
    <p> Welcome to the Team!</p>
    <p> Webex </p>
