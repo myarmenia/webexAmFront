@@ -124,3 +124,9 @@
   }
  
 
+
+  @media(max-width: 780px){
+    .nav-menu-div{
+        column-gap: 50px !important;
+    }
+  }

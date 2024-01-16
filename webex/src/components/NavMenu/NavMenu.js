@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import NavMenuItem from '../NavMenuItem/NavMenuItem'
 import { dropIcon, navIcon } from '../../iconFolder/icon'
 import './NavMenu.css'
-import { logoImage } from '../../images/images'
+import { logoImage, logoImage_2 } from '../../images/images'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice'
 
 function NavMenu() {
     
@@ -12,11 +14,14 @@ function NavMenu() {
 
      const leng = localStorage.getItem('lang')
 
-     // const leng = 
+     const respLogin = useSelector(selectLogin)
+
 
   return (
-       <div className='nav-menu-div'>
-            <NavLink to={'/' + leng}>{logoImage}</NavLink>
+       <div className='nav-menu-div' style={{columnGap: Object.keys(respLogin?.data.authUser || {}).length === 0  ? '30px' : '110px'}}>
+
+          {Object.keys(respLogin?.data.authUser || {}).length === 0  ? <NavLink to={'/' + leng}>{logoImage}</NavLink> : <NavLink to={'/' + leng}>{logoImage_2}</NavLink>}
+            
              <ul className='nav-menu'>
                 <div className='drop-item'>
                     <li className='programing'>{t('navMenu.'+ '1')} {dropIcon}</li>

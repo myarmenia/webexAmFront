@@ -69,10 +69,7 @@ function BurgerMenu() {
 
             </nav>
           </div>
-          {/* <div className="content">
-            <div className="header">Animated Side Navigation Menu</div>
-            <p>using only HTML and CSS</p>
-          </div> */}
+         
 </div>
 
   )

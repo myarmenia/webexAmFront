@@ -3,7 +3,7 @@ import { postLogin } from "./LoginApi";
 
 const initialState = {
    data: {
-      authUser: {},
+      authUser: {name: 'barev'},
       token: ''
    },
    status: 'idle',
