@@ -6,20 +6,13 @@ export const postOrder = createAsyncThunk(
 
     async (body, thunkAPI) => {
         try {
-          const orderData = {
-            name: body.name,
-            phone: body.phone,
-            email: body.email,
-            domian: body.domain,
-            comment: body.comment,
-            projectType: body.checkboxArr
-          };
           
-          console.log(orderData);
+          
+          console.log(body);
           const config = {
             method: "post",
             url: "/send-order",
-            data: orderData,
+            data: body,
           };
     
           const response = await instance(config);

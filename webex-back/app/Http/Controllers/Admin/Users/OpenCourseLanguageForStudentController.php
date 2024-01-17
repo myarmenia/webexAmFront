@@ -27,6 +27,7 @@ class OpenCourseLanguageForStudentController extends Controller
       $course = $this->getStudentCourseRepository->getCourseLanguage($request->course_language_id);
 
       $add_course_for_student = AddCourseForStudentService::add_course($student, $hasCourse, $course);
-      return redirect()->back()->with('error', $add_course_for_student);
+      
+      return redirect()->back()->with('message', $add_course_for_student);
   }
 }

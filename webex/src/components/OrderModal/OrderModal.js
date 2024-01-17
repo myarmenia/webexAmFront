@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./OrderModal.css"
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import { useDispatch, useSelector } from 'react-redux'
 import { postOrder } from '../../store/slices/OrderSlice/OrderApi'
 import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
+import axios from 'axios'
+import { fileIcon } from '../../iconFolder/icon'
 
 function OrderModal({setOpenOrderModal}) {
 
@@ -11,6 +13,18 @@ function OrderModal({setOpenOrderModal}) {
 
     const respOrder = useSelector(selectOrder)
 
+    const [file, setFile] = useState(null);
+    const [textValue, setTextValue] = useState('');
+
+    const handleFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        setFile(selectedFile);
+        setTextValue(selectedFile ? selectedFile.name : '');
+    };
+
+    const handleTextChange = (e) => {
+        setTextValue(e.target.value);
+    };
 
 
     const handleCloseModal = (e) =>{
@@ -19,26 +33,30 @@ function OrderModal({setOpenOrderModal}) {
         const [name, phone, email, site, comment, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ] = e.target
 
         const checkArr = [check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ]
-
-        const ordeObj = {
+         
+        const orderObj = {
             name: name.value,
             phone: phone.value,
             email: email.value,
             comment: comment.value,
             domain: site.value,
-            checkboxArr: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
+            projectType: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
         }
 
+            const jsonOrderObj = JSON.stringify(orderObj)
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('data', jsonOrderObj);
 
-        dispatch(postOrder(ordeObj))
-        e.target.reset()
+             dispatch(postOrder(formData))
+            e.target.reset()
     }
     return (
         <div className='order-modal' onClick={()=> setOpenOrderModal(false)}>
             <div className='order-modal-block' onClick={(e)=> e.stopPropagation()}>
                 <div className='order-modal-block-info-div'>
-                    <h3>Website Development Cost</h3>
-                    <p>If you want to find out the prices - send a request now. Our web studio specialists will prepare and offer you the best solutions with a description of the options available to you. We will respond to your requests within 24 hours.</p>
+                    <h3>Tell us</h3>
+                    <p>about your project</p>
                 </div>
                 <form className='order-modal-form' onSubmit={handleCloseModal}>
                     <div className='input-text-div'>
@@ -48,7 +66,13 @@ function OrderModal({setOpenOrderModal}) {
                         <input type="text" placeholder='site' />
                     </div>
 
-                    <textarea cols="30" rows="5" ></textarea>
+                    <textarea cols="30" rows="5" placeholder='Comment' ></textarea>
+
+                    <div className='input-text-div upload-file-div'>
+                        <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
+                        <input style={{display: 'none'}} type="file" id="fileInput" onChange={handleFileChange} />
+                       <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder='Choose File'/>
+                    </div>
 
                     <div className='checkbox-div'>
                         <span>Choose services</span>
@@ -102,11 +126,15 @@ function OrderModal({setOpenOrderModal}) {
                                 <input id='check10' type="checkbox" name='Business process automation'/>
                                 <label htmlFor="check10">Business process automation</label>
                             </div>
+                            
+                            
                         </div>
 
                     </div>
 
+                    <div className='submit-div'>
                     <SubmitBtn index="3"/>
+                    </div>
 
                     <p>{respOrder?.data.message}</p>
                 </form>

@@ -46,11 +46,11 @@ const BottomMenu = () => {
           </NavLink>
         </li>
         <li className={`list ${activeIndex === 2 ? 'active' : ''}`} onClick={() => handleItemClick(2)}>
-        <NavLink to={leng +"/courses-registration"}>
+        <NavLink to={ Object.keys(respLogin?.data.authUser || {}).length === 0 ? leng +"/courses-registration" : leng + "/profilePage"}>
             <span className="icon">
             {Object.keys(respLogin?.data.authUser || {}).length === 0 ? videoIcon : userIcon}
             </span>
-            <span className="text">{t('navMenu.' + '0')}</span>
+            <span className="text">{Object.keys(respLogin?.data.authUser || {}).length === 0 ? t('navMenu.' + '0') : respLogin.data.authUser.name}</span>
           </NavLink>
         </li>
 

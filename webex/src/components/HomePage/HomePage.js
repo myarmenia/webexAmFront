@@ -47,7 +47,8 @@ function handleResize(){
       <meta name="keywords" content="website, development, promotion, service and support, SEO, HTML, CSS, javaScript, 3d, unity, games, mobile, aplication, treinig, search, engine, optimization, internet advertising, design, builder, react, redux, informative,razrabotka, site, разработка, веб студия, заказать, создание, сайтов, продвижение, оптимизация, реклама, дизайн, kayqi patrastum, tsragravorum, armenia."/>
       <link rel="canonical" href="/"/>
      </Helmet>
-      <div className='home-page'>
+      
+     <div className='home-page'>
           <div className='container'>
               <Header/>
               <WebexInfo/>
