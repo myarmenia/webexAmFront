@@ -3,7 +3,7 @@
   return [
     "creatorName" => "Webex",
     "creatorUrl" => "https://webex.com",
-    "templateName" => "Sneat",
+    "templateName" => "WebEx",
     "templateSuffix" => "Bootstrap 5 HTML Laravel Free Admin Template",
     "templateVersion" => "1.1.0",
     "templateFree" => true,

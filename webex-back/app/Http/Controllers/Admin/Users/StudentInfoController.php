@@ -11,19 +11,11 @@ use Illuminate\Http\Request;
 
 class StudentInfoController extends Controller
 {
-  private StudentInfoInterface $studentInmfoRepository;
-  // private ?LanguageInterface $languageRepository = null;
-  // private ?UserCourseLanguagesInterface $courseLangagesRepository = null;
-  // function __construct(UserInterface $userRepository, LanguageInterface $languageRepository, UserCourseLanguagesInterface $courseLangagesRepository)
+  private StudentInfoInterface $studentInmfoRepository; 
 
   function __construct(StudentInfoInterface $studentInmfoRepository)
-
   {
-    return $this->studentInmfoRepository = $studentInmfoRepository;
-
-    // return $this->userRepository = $userRepository;
-    // return $this->languageRepository = $languageRepository;
-    // return $this->courseLangagesRepository = $courseLangagesRepository;
+    return $this->studentInmfoRepository = $studentInmfoRepository;    
   }
 
 

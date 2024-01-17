@@ -10,14 +10,24 @@ class AddCourseForStudentService
   {
 
     if ($user && $hasCourse == null) {
-      $create =  UserCourseMenegment::create([
-        'user_id' => $user->id,
-        'course_language_id' => $course->id,
-        'lesson_id' => $course->lessons->first()->id,
-        'lesson_number' => $course->lessons->first()->number
-      ]);
+      try {
+          $create =  UserCourseMenegment::create([
+            'user_id' => $user->id,
+            'course_language_id' => $course->id,
+            'lesson_id' => $course->lessons->first()->id,
+            'lesson_number' => $course->lessons->first()->number
+          ]);
 
-      return $create ? true : false;
+          return 'Урок открит!';
+
+      } catch (\Exception $exception) {
+          
+          $errorInfo = $exception->getMessage();
+
+          return  $errorInfo;
+      }
+
+
     }
   }
 }
