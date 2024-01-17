@@ -4,9 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap-reverse;
 }
 
-
+.course-registration-page .register{
+    padding: 0;
+}
 
 .change-form-div{
     display: flex;
@@ -53,7 +56,7 @@
 
 .label-btns{
     display: flex;
-    column-gap: 30px;
+    gap: 85px;
 }
 
 
@@ -86,11 +89,8 @@
 }
 
 
-@media(max-width:480px){
 
-    .select{
-        width: 300px;
-    }
+@media(max-width:480px){
 
     .online-btn, .ofline-btn{
         width: 135px;
@@ -98,4 +98,15 @@
     
 }
 
+.course-registration-page .container .reg-form input{
+    width: 300px;
+}
+
+.label-btns{
+    gap: 27px;
+}
+
+.course-registration-page .reg-form > .btn{
+    width: 89%;
+}
 }
