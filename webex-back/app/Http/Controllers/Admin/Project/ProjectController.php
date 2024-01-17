@@ -32,6 +32,7 @@ class ProjectController extends Controller
 
     public function addProject(Request $request)
     {
+        dd($request->all(), $request->hasFile('project_photos'));
         // $this->validate($request, [
         //     'name' => 'required',
         //     'email' => 'required|email|unique:users,email',
