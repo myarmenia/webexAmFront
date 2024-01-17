@@ -2,7 +2,7 @@
 
 @section('title', 'Account settings - Account')
 @section('page-script')
-    {{-- <script src="{{ asset('assets/js/111.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/admin/users/open-next-lesson.js') }}"></script>
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
     </h5>
     <div class="card">
 
-        <div class="card-body">
+        <div class="card-body" id="user_id" data-id="{{ $student->id }}">
             <div class="row d-flex justify-content-between">
                 <div class="demo-inline-spacing col-md-4">
 
@@ -55,23 +55,20 @@
 
                 <div class="col-md-5 d-flex align-items-end">
                     <div class="w-100 ">
-                        <form action={{route('open_course', $student->id)}} method="post">
+                        <form action={{ route('open_course', $student->id) }} method="post">
                             <div class="d-flex justify-content-between ">
                                 <div class=" ">
                                     <label for="course_languages" class="col-form-label">Добавить язык
                                         программирования</label>
                                     <select class="form-select" id="course_languages" name="course_language_id">
+                                        <option disabled selected> Языки</option>
+                                        @if ($course_languages != null && count($course_languages) > 0)
 
-                                        <option> Языки</option>
-
-                                        @if($course_languages != null && count($course_languages) > 0)
-
-                                        @foreach ($course_languages as $language)
-
-                                            @if (!in_array($language->id, $user_course_langages))
-                                                <option value="{{ $language->id }}">{{ $language->name }}</option>
-                                            @endif
-                                        @endforeach
+                                            @foreach ($course_languages as $language)
+                                                @if (!in_array($language->id, $user_course_langages))
+                                                    <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                                @endif
+                                            @endforeach
                                         @endif
 
                                     </select>
@@ -80,6 +77,12 @@
                             </div>
                         </form>
                     </div>
+                    @if (isset($error))
+                        <div class="mb-3 row justify-content-end">
+                            <div class="col-sm-10 text-danger fts-14">Что то пошло не так
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="table-responsive text-nowrap mt-3">
@@ -97,12 +100,12 @@
                         @foreach ($student->user_course_menegments as $key => $item)
                             <tr>
                                 <td>{{ ++$key }}</td>
-                                <td>{{ $item->lessons->name }}</td>
-                                <td>{{ $item->lessons->count() }}</td>
-                                <td>{{ $item->lesson_number }}</td>
+                                <td>{{ $item->course_languages->name }}</td>
+                                <td>{{ $item->course_languages->lessons->count() }}</td>
+                                <td class="lesson_number">{{ $item->lesson_number }}</td>
 
                                 <td>
-                                    <div class="dropdown action" data-id="{{ $student->id }}" data-tb-name="users">
+                                    <div class="dropdown action" data-id="{{ $item->course_languages->id }}" >
 
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
@@ -112,39 +115,22 @@
                                             {{-- <a class="dropdown-item present" href="{{route('users.lessons')}}">
                                               <i class="tf-icons bx bx-task"></i> Присутствует
                                           </a> --}}
-                                            <a class="dropdown-item present" href="javascript:void(0);">
-                                                <i class="tf-icons bx bx-task"></i> Открить урок
-                                            </a>
-                                            {{-- <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input change_status" type="checkbox"
-                                                        role="switch" data-field-name="payment_status"
-                                                        {{ $user->payment_status ? 'checked' : null }}>
-                                                </div>Статус платежа
-                                            </a>
-                                            <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input change_status" type="checkbox"
-                                                        role="switch" data-field-name="passport"
-                                                        {{ $user->passport ? 'checked' : null }}>
-                                                </div>Пасспорт
-                                            </a>
-                                            <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input change_status" type="checkbox"
-                                                        role="switch" data-field-name="status"
-                                                        {{ $user->status ? 'checked' : null }}>
-                                                </div>Статус
-                                            </a> --}}
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                    class="bx bx-edit-alt me-1"></i>Редактировать</a>
-                                            <button type="button" class="dropdown-item click_delete_item"
-                                                data-bs-toggle="modal" data-bs-target="#smallModal"><i
-                                                    class="bx bx-trash me-1"></i>
-                                                Удалить</button>
-                                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#smallModal">
-                                                    Small
-                                                  </button> --}}
+                                            @if ($item->course_languages->lessons->count() != $item->lesson_number)
+                                                <a class="dropdown-item open-next-lesson" href="javascript:void(0);">
+                                                    <i class="tf-icons bx bx-task"></i> Открить следующий урок
+                                                </a>
+                                            @else<a class="dropdown-item " href="javascript:void(0);">
+                                                    <i class="tf-icons bx bx-task"></i> Все уроки открыты
+                                                </a>
+                                            @endif
+
+                                            <a class="dropdown-item" href="javascript:void(0);">
+                                              <i class="bx bx-edit-alt me-1"></i>Редактировать</a>
+                                              <button type="button" class="dropdown-item click_delete_item"
+                                                data-bs-toggle="modal" data-bs-target="#smallModal">
+                                                <i class="bx bx-trash me-1"></i>
+                                                Удалить
+                                              </button>
                                         </div>
                                     </div>
                                 </td>

@@ -3,7 +3,7 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
-    <script src="{{ asset('assets/js/111.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/users/student-is-present.js') }}"></script>
     <script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 

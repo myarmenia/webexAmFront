@@ -1,8 +1,8 @@
 <?php
-namespace App\Traits;
+namespace App\Traits\Users;
 use App\Models\User;
 
-trait GetUser
+trait GetUserTrait
 {
     public function getUser(int $id)
     {
