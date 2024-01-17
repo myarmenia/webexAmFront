@@ -19,13 +19,16 @@
 
 .leftSidebar{
 display: flex;
+background-color: #1A1A42;
+/* height: 100vh; */
+padding: 23px;
 }
-.line{
+/* .line{
   height: 520px;
   margin-left: 30px;
-}
+} */
 .nameSideBar{
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24.41px;
 }
@@ -45,7 +48,7 @@ display: flex;
   overflow: hidden;
 }
 .leftSidebar_divs:hover{
-  width: 220px;
+  width: 216px;
   cursor: pointer;
 }
 

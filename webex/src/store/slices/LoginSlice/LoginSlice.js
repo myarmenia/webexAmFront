@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postLogin } from "./LoginApi";
 
 const initialState = {
-   authUser: {},
+   data: {
+      authUser: {name: 'barev'},
+      token: ''
+   },
    status: 'idle',
    error: null,
    };
@@ -22,7 +25,7 @@ const loginSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postLogin.fulfilled, (state, action) => {
-            state.authUser = action.payload.authUser
+            state.data = action.payload
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {

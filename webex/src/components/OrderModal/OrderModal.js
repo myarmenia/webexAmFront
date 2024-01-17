@@ -1,16 +1,37 @@
 import React from 'react'
 import "./OrderModal.css"
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
+import { useDispatch, useSelector } from 'react-redux'
+import { postOrder } from '../../store/slices/OrderSlice/OrderApi'
+import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
 
 function OrderModal({setOpenOrderModal}) {
 
+    const dispatch = useDispatch()
+
+    const respOrder = useSelector(selectOrder)
+
+
+
     const handleCloseModal = (e) =>{
         e.preventDefault()
-
-        
         console.dir(e.target);
+        const [name, phone, email, site, comment, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ] = e.target
 
-        setOpenOrderModal(false)
+        const checkArr = [check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ]
+
+        const ordeObj = {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            comment: comment.value,
+            domain: site.value,
+            checkboxArr: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
+        }
+
+
+        dispatch(postOrder(ordeObj))
+        e.target.reset()
     }
     return (
         <div className='order-modal' onClick={()=> setOpenOrderModal(false)}>
@@ -21,9 +42,9 @@ function OrderModal({setOpenOrderModal}) {
                 </div>
                 <form className='order-modal-form' onSubmit={handleCloseModal}>
                     <div className='input-text-div'>
-                        <input type="text" placeholder='name' />
-                        <input type="text" placeholder='phone' />
-                        <input type="email" placeholder='email' />
+                        <input type="text" placeholder='name' required/>
+                        <input type="text" placeholder='phone' required/>
+                        <input type="email" placeholder='email' required/>
                         <input type="text" placeholder='site' />
                     </div>
 
@@ -33,52 +54,52 @@ function OrderModal({setOpenOrderModal}) {
                         <span>Choose services</span>
                         <div className='checkobox-items'>
                             <div>
-                                <input id='check1' type="checkbox" />
+                                <input id='check1' type="checkbox" name='Corporate website development'/>
                                 <label htmlFor="check1">Corporate website development</label>
                             </div>
 
                             <div>
-                                <input id='check2' type="checkbox" />
+                                <input id='check2' type="checkbox" name='Search engine optimization (SEO)'/>
                                 <label htmlFor="check2">Online stores development</label>
                             </div>
 
                             <div>
-                                <input id='check3' type="checkbox" />
+                                <input id='check3' type="checkbox" name='Website development'/>
                                 <label htmlFor="check3">Search engine optimization (SEO)</label>
                             </div>
 
                             <div>
-                                <input id='check4' type="checkbox" />
+                                <input id='check4' type="checkbox" name='E-mail marketing'/>
                                 <label htmlFor="check4">Contextual advertising</label>
                             </div>
 
                             <div>
-                                <input id='check5' type="checkbox" />
+                                <input id='check5' type="checkbox" name='Google analytics'/>
                                 <label htmlFor="check5">Website development</label>
                             </div>
 
                             <div>
-                                <input id='check6' type="checkbox" />
+                                <input id='check6' type="checkbox" name='Online stores development'/>
                                 <label htmlFor="check6">Technical website support</label>
                             </div>
 
                             <div>
-                                <input id='check7' type="checkbox" />
+                                <input id='check7' type="checkbox" name='Contextual advertising'/>
                                 <label htmlFor="check7">E-mail marketing</label>
                             </div>
 
                             <div>
-                                <input id='check8' type="checkbox" />
+                                <input id='check8' type="checkbox" name='Technical website support'/>
                                 <label htmlFor="check8">Yandex Market</label>
                             </div>
 
                             <div>
-                                <input id='check9' type="checkbox" />
+                                <input id='check9' type="checkbox" name='Yandex Market'/>
                                 <label htmlFor="check9">Google analytics</label>
                             </div>
 
                             <div>
-                                <input id='check10' type="checkbox" />
+                                <input id='check10' type="checkbox" name='Business process automation'/>
                                 <label htmlFor="check10">Business process automation</label>
                             </div>
                         </div>
@@ -86,6 +107,8 @@ function OrderModal({setOpenOrderModal}) {
                     </div>
 
                     <SubmitBtn index="3"/>
+
+                    <p>{respOrder?.data.message}</p>
                 </form>
             </div>
         </div>

@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postVerifyAccount } from "./VerifyAccountApi";
 
 const initialState = {
-   massage: '',
+   data: {
+      success: false,
+      message: ""
+   },
    status: 'idle',
    error: null,
    };
@@ -22,7 +25,7 @@ const verifyAccountSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postVerifyAccount.fulfilled, (state, action) => {
-            state.massage = action.payload
+            state.data = action.payload
              state.status = 'succes';
           })
           .addCase(postVerifyAccount.rejected, (state, action) => {

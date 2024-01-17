@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\Lessons\LessonController;
 use App\Http\Controllers\Admin\Project\ProjectController;
 use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Users\OpenCourseLanguageForStudentController;
+use App\Http\Controllers\Admin\Users\OpenNextLessonController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Auth\AuthController;
@@ -139,6 +141,8 @@ Route::post('change-status', [ChangeStatusController::class,'change_status'])->n
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
 Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
+Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::class,'index'])->name('open_course');
+Route::post('open-next-lesson', [OpenNextLessonController::class,'index']);
 
 
 
@@ -147,7 +151,7 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
-  
+
 });
 
 });

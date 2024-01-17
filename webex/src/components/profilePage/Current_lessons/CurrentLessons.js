@@ -18,10 +18,10 @@ function CurrentLessons() {
 
   return (
     <div className="allSide">
-      <div className="leftSide" style={{ padding: '40px 20px' }}>
-        <div style={{ width: '58vw' }} className="leftSideTop">
-          <p className="title_name">HTML/HTML 5</p>
-          <p className="Introduction">1 Ներածություն</p>
+      <div className="leftSide" style={{ padding: '0 0 0 40px' }}>
+          <p className="Introduction">HTML/HTML 5</p>
+        <div style={{ width: '58vw'}} className="leftSideTop">
+          {/* <p className="title_name">HTML/HTML 5</p> */}
           <video width="100%" height="auto" controls>
             <source src={kodVideo} type="video/mp4" />
           </video>
@@ -34,20 +34,40 @@ function CurrentLessons() {
             </p>
             <p className="description_more">․․․more</p>
           </div>
-          <div className="homework_line">
+          {/* <div className="homework_line">
             <p className="homework_line_p">Կատարել տնային առաջադրանքները</p>
             <span>
               <img src={Line} alt="Line" />
             </span>
             <Button index="5" />
+          </div> */}
+          <div className="homework_linne">
+            <p className="homework_title">Կատարել տնային առաջադրանքները</p>
+            <div className="homework_linne_div">
+              <p className="homework_text">
+                Lesson 1. Lorem Ipsum is simply dummy text of the printing
+              </p>
+              <p>120 minutes</p>
+            </div>
+            <div className="homework_linne_div">
+              <p className="homework_text">
+                Lesson 2. Lorem Ipsum is simply dummy text of the printing
+              </p>
+              <p>90 minutes</p>
+            </div>
+          </div>
+          <div className="homework_side">
+            <p className="HomeworkList">Տնային աշխատանքների ցանկ</p>
+            <Homeworkes />
           </div>
         </div>
-        <div style={{ width: '58vw' }}>
+        {/* <div style={{ width: '58vw' }}>
           <p className="HomeworkList">Տնային աշխատանքների ցանկ</p>
           <Homeworkes />
-        </div>
+        </div> */}
       </div>
       <div className="rightSide">
+        {/* <div style={{ width: '18vw' }}> */}
         <p className="titleAllVideo">Բոլոր վիդեոդասերը</p>
         <div className="allvideoLessons_div">
           {allVideoLessons.map((el, index) => (
@@ -57,8 +77,9 @@ function CurrentLessons() {
             </div>
           ))}
         </div>
+        </div>
       </div>
-    </div>
+    // </div>
   );
 }
 
