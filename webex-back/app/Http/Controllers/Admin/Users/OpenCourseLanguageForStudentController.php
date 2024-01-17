@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Users;
 
 use App\Http\Controllers\Controller;
-use App\Interfaces\Course\GetStudentCoursesInterface;
+use App\Interfaces\Course\GetStudentCourseInterface;
 use App\Interfaces\User\UserInterface;
 use App\Services\Users\AddCourseForStudentService;
 use Illuminate\Http\Request;
@@ -11,21 +11,22 @@ use Illuminate\Http\Request;
 
 class OpenCourseLanguageForStudentController extends Controller
 {
-  private GetStudentCoursesInterface $getStudentCoursesRepository;
+  private GetStudentCourseInterface $getStudentCourseRepository;
 
-  function __construct(GetStudentCoursesInterface $getStudentCoursesRepository)
+  function __construct(GetStudentCourseInterface $getStudentCourseRepository)
   {
-    return $this->getStudentCoursesRepository = $getStudentCoursesRepository;
+    return $this->getStudentCourseRepository = $getStudentCourseRepository;
 
   }
 
   public function index(Request $request, $user_id)
   {
 
-      $student = $this->getStudentCoursesRepository->getUser($user_id);
-      $course = $this->getStudentCoursesRepository->GetStudentCoursess($user_id, $request->course_language_id);
-      dd($course);
-      AddCourseForStudentService::add_course($student, $course, $request->language_id);
+      $student = $this->getStudentCourseRepository->getUser($user_id);
+      $hasCourse = $this->getStudentCourseRepository->getStudentCourse($user_id, $request->course_language_id);
+      $course = $this->getStudentCourseRepository->getCourseLanguage($request->course_language_id);
 
+      $add_course_for_student = AddCourseForStudentService::add_course($student, $hasCourse, $course);
+      return redirect()->back()->with('error', $add_course_for_student);
   }
 }
