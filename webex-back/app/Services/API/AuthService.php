@@ -56,7 +56,7 @@ class AuthService
             $credentials = $request->only('email', 'password');
 
             if (!$token = JWTAuth::attempt($credentials)) {
-                throw new \Exception(translateMessageApi('user-not-found'), 401);
+                throw new \Exception(translateMessageApi('user-email-or-password-not-found'), 401);
             }
 
             if (auth()->user()->status === 0) {
