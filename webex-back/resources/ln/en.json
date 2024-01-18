@@ -9,7 +9,8 @@
     "email_verified": "Confirm email address to activate",
     "status-active": "User successfully activated",
     "email-unique": "The user with this email already exists",
-    "email-send": "Letter sent"
+    "email-send": "Letter sent",
+    "user-email-or-password-not-found": "Incorrect login or password"
     
 
 
