@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h5 class="py-3 mb-4">
+<h4 class="py-3 mb-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -16,7 +16,7 @@
             <li class="breadcrumb-item active">Уроки студента</li>
         </ol>
     </nav>
-</h5>
+</h4>
 <div class="card">
 
     <div class="card-body" id="user_id" data-id="{{ $student->id }}">

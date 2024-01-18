@@ -14,7 +14,7 @@
 
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h5 class="card-header">Создать нового пользователя</h5>
+            <h4 class="card-header">Создать нового пользователя</h4>
         </div>
 
     </div>
