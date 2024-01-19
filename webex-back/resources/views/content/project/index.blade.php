@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-
+    @include('includes.alert')
     <h4 class="py-3 mb-4">
         <span class="text-muted fw-light">Проекты /</span> Список
     </h4>
@@ -35,6 +35,8 @@
                             <th>Ссылка app store</th>
                             <th>Ссылка play market</th>
                             <th>Тип</th>
+                            <th>Действия</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +50,22 @@
                                 <td>{{ $project->link_app_store }}</td>
                                 <td>{{ $project->link_play_market }}</td>
                                 <td>{{ $project->type }}</td>
+                                <td>
+                                    <div class="dropdown action" data-id="{{ $project->id }}" data-tb-name="users">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-edit-alt me-1"></i>Редактировать</a>
+                                            <button type="button" class="dropdown-item click_delete_item"
+                                                data-bs-toggle="modal" data-bs-target="#smallModal"><i
+                                                    class="bx bx-trash me-1"></i>
+                                                Удалить</button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

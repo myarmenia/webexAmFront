@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('link_project')->nullable();
             $table->string('link_app_store')->nullable();
             $table->string('link_play_market')->nullable();
+            $table->string('project_language')->nullable();
             $table->string('type');
             $table->timestamps();
         });

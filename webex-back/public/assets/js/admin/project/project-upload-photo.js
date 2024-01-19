@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
     fileInput.onchange = () => {
       if (fileInput.files.length > 0) {
-        console.log(fileInput.files, "fileInput.files")
+        if (fileInput.files.length > 4) {
+          alert('Вы можете загрузить только 4 файла.');
+          this.preventDefault();
+        }
+      
         uploadedImages.length = 0;
 
         // uploadedImagesContainer.innerHTML = '';
@@ -16,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             url: window.URL.createObjectURL(fileInput.files[i]),
             fileName: fileInput.files[i].name
           };
+          console.log(fileInput.files, 5555555555555)
           uploadedImages.push(imageData);
 
           const imageContainer = document.createElement('div');
@@ -30,30 +35,55 @@ document.addEventListener('DOMContentLoaded', function (e) {
           const removeButton = document.createElement('button');
           removeButton.type = 'button';
           removeButton.className = 'btn btn-outline-danger btn-sm mt-2';
+          removeButton.id = fileInput.files[i].lastModified;
           removeButton.textContent = 'Remove';
-          removeButton.onclick = () => {
-console.log(imageContainer.files, imageContainer, 5555888)
-            const index = uploadedImages.indexOf(imageData);
-            let fileInputtest = document.querySelector('.account-file-input');
 
-            if (index !== -1) {
-              uploadedImages.splice(index, 1);
-            }
-            console.log(uploadedImages, uploadedImagesContainer.files , "before")
-            console.log( document.querySelector('.account-file-input').files, "QQQQQQQQQQQQQ")
+          // removeButton.onclick = () => {
 
-            // document.querySelector('.account-file-input').files.splice(index, 1);
+          //   const index = uploadedImages.indexOf(imageData);
+          //   let fileInputtest = document.querySelector('.account-file-input');
 
-            uploadedImagesContainer.removeChild(imageContainer);
-console.log(imageContainer.files, imageContainer, 7778888)
-           
+          //   if (index !== -1) {
+          //     uploadedImages.splice(index, 1);
+          //   }
 
-          };
+          //   // document.querySelector('.account-file-input').files.splice(index, 1);
+
+          //   uploadedImagesContainer.removeChild(imageContainer);
+          // };
+
           imageContainer.appendChild(removeButton);
 
           uploadedImagesContainer.appendChild(imageContainer);
         }
+        document.querySelectorAll('.btn-outline-danger').forEach((btn) => btn.addEventListener('click', removeFile))
+
       }
     };
   })();
+
+
+  const removeFile = (e) => {
+              let dt = new DataTransfer();
+              let key = e.target.id
+              let delfile = document.querySelector('.account-file-input')
+              console.log(delfile)
+              for (let file of delfile.files) {
+          
+            dt.items.add(file);
+           }
+          
+           delfile.files = dt.files;
+          
+              for(let i = 0; i < dt.files.length; i++){
+             if(key == dt.files[i].lastModified){
+              dt.items.remove(i);
+              continue;
+             }
+           }
+              delfile.files = dt.files
+                  console.log(delfile.files)
+          
+              e.target.parentNode.remove()
+          }
 });
