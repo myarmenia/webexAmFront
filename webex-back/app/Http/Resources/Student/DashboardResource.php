@@ -5,6 +5,7 @@ namespace App\Http\Resources\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Traits\Course\CourseLanguagesTrait;
+use App\Http\Resources\CourseLanguageResource;
 
 class DashboardResource extends JsonResource
 {
@@ -32,13 +33,19 @@ class DashboardResource extends JsonResource
             'active_languages_quantity' => $this->user_course_menegments->count()
         ];
 
-$user_course_menegments = $this->user_course_menegments;
-foreach ($user_course_menegments as $key => $value) {
-    $k = $value->course_languages->name;
-    // dd($k);
-    $languages[$k] = $value;
-}
-$languages['all_courses'] =  $all_courses;
+        $languages['all_courses'] =  $all_courses;
+
+        $user_course_menegments = $this->user_course_menegments;
+        foreach ($user_course_menegments as $key => $value) {
+            $k = $value->course_languages->name;
+            // dd($k);
+            // $languages[$k]['total_lessons'] = $value->course_languages->lessons->count();
+
+            $languages[$k] = new CourseLanguageResource($value->course_languages);
+            $languages[$k]['88'] = ['total_lessons'=>222] ;
+
+        }
+
 
         return [
             'dashboard' => [
@@ -47,15 +54,13 @@ $languages['all_courses'] =  $all_courses;
             ],
 
             'my_training'=>[
-                // 'all_courses' => $all_courses,
-                $languages
-                // 'course_languages' => $this->user_course_menegments
+          
+                $languages,
+                
+                
             ]
         
-        //   'duration' => $this->duration,
-        //   'title' => $this->translation(session('languages'))->title,
-        //   'description' => $this->translation(session('languages'))->description,
-        //   'tasks'=>TasksResource::collection($this->tasks),
+       
 
         ];
     }
