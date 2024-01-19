@@ -10,6 +10,7 @@ import { selectNewPassword } from '../../store/slices/NewPasswordeSlise/NewPassw
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Button from '../Button/Button'
+import MessageModal from '../MessageModal/MessageModal'
 
 function ResetPasswordPage() {
     const { t, i18n } = useTranslation();
@@ -18,6 +19,8 @@ function ResetPasswordPage() {
     const navigate = useNavigate()
     const respResetPass = useSelector(selectResetPasswordPage)
     const respNewPass = useSelector(selectNewPassword)
+
+    const leng = localStorage.getItem('lang')
 
 
     useEffect(() => {
@@ -61,18 +64,7 @@ function ResetPasswordPage() {
                         <SubmitBtn index={'2'} />
                     </form>
                 </div> :
-
-                    <div className="resset-pass-modal">
-                        <div className='container'>
-                            <div className='reset-pass-modal-block'>
-                                <p>{t('resetPasswordModalError_message')}</p>
-                                <Button index="6" path="/login"/>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                <MessageModal txt={t('resetPasswordModalError_message')} path={`/${leng}/login`} />
 
             }
         </div>

@@ -1,4 +1,4 @@
-.change-password-modal{
+.message-modal{
     display: flex;
     justify-content: center;
     align-items: center;                                                         
@@ -13,7 +13,7 @@
     padding: 100px 0;
 }
 
-.change-password-modal-block{
+.message-modal-block{
     width: 40%;
     background-color: #010526;
     border-radius: 50px;
@@ -27,24 +27,18 @@
     gap: 30px;
 }
 
-
-
-
-.change-password-modal-block  h5{
+.message-modal-block p{
     color: var(--main_font_color);
-    font-size: 18px;
-    font-style: normal;
-    line-height: normal;
 }
 
 @media(max-width: 1140px){
-    .change-password-modal-block{
+    .message-modal-block{
         width: 70%;
     }
 }
 
 @media(max-width: 720px){
-    .change-password-modal-block{
+    .message-modal-block{
         width: 90%;
     }
-}
+}   

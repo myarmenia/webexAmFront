@@ -605,7 +605,7 @@ export const projectsPageData = [
         period_month: '9 month',
         dateTitle: 'Date of creation',
         date: '2022',
-        type: 'WebSite'
+        type: 'mobile'
     },
 
     {
@@ -622,7 +622,7 @@ export const projectsPageData = [
         period_month: '9 month',
         dateTitle: 'Date of creation',
         date: '2022',
-        type: 'WebSite'
+        type: '3d'
     },
 ]
 

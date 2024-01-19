@@ -14,6 +14,7 @@ import CurrentLessons from './components/profilePage/Current_lessons/CurrentLess
 
 import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
 import VerifyAccount from './components/VerifyAccount/VerifyAccount';
+import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
 import Profile from './components/profilePage/profile/Profile';
 
 function App() {

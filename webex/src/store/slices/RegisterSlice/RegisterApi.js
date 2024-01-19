@@ -24,10 +24,13 @@ export const postRegister = createAsyncThunk(
     
           const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
-        // window.location.href ='/users';
+          
           return response.data;
         } catch (error) {
-          return thunkAPI.rejectWithValue(error.response.data.error.both);
+          console.log(error.response.data.errors)
+          console.log(thunkAPI.rejectWithValue(error.response.data.errors.email),  5555)
+          //  return error.response.data
+          return thunkAPI.rejectWithValue(error.response.data.errors);
         }
       }
 )

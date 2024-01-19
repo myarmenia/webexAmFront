@@ -11,10 +11,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
 import { selectRegister } from "../../store/slices/RegisterSlice/RegisterSlice.js";
+import MessageModal from "../MessageModal/MessageModal.js";
 
 function Registre({setUser, setPage, user}) {
     const [viewPassword, setViewPassword] = useState(true)
     const [viewConfirmPassword, setConfirmViewPassword] = useState(true)
+    const [messageModal, setMessageModal] = useState(false)
 
     const { t, i18n } = useTranslation();
 
@@ -34,6 +36,8 @@ function Registre({setUser, setPage, user}) {
                             password: e.target[3].value,
                             confirmPassword: e.target[4].value,
                              }))
+
+            setMessageModal(true)
     }
 
     const  validationSchema = yup.object().shape({
@@ -59,14 +63,8 @@ function Registre({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                // setUser([
-                //     ...user,
-                //     {
-                //         ...values
-                //     }
-                // ])
-                // setPage('log')
-                resetForm()
+               
+                // resetForm()
             }}
 
             validateOnBlur
@@ -111,13 +109,15 @@ function Registre({setUser, setPage, user}) {
 
                             <SubmitBtn index= "1"/>
                             <h6>{t('reg_and_log.'+ '7')}  <NavLink to={`/${leng}/login`}>{t('reg_and_log.'+ '9')}</NavLink></h6>
-                            {registreResp?.data && <p style={{color: registreResp.data?.success ? 'green' : 'red'}}>{registreResp.data.message}</p>}
+                            
                         </form>
                         
                             <div className="log_img_div">
                                 <AnimLogo/>
                              </div>
                     </div>
+
+                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/login`}/>}
                 </div>
             )
         }

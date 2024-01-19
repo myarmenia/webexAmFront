@@ -4,14 +4,20 @@ import './Header.css';
 import Button from '../Button/Button';
 import Button2 from '../Button2/Button2';
 import OrderModal from '../OrderModal/OrderModal';
+import MessageModal from '../MessageModal/MessageModal';
+import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const { t, i18n } = useTranslation();
   const [animatedTextH2, setAnimatedTextH2] = useState('');
   const [animatedTextH4, setAnimatedTextH4] = useState('');
   const [openOrderModal, setOpenOrderModal] = useState(false)
+  const [messageModal, setMessageModal] = useState(false)
+  const leng = localStorage.getItem('lang')
 
   
+  const respOrder = useSelector(selectOrder)
 
   const startH2Animation = () => {
     const textH4 = t('headerTitlePart2');
@@ -58,8 +64,9 @@ function Header() {
           <div className='badge-text'>WEBEX</div>
         </div>
       </div>
-      {openOrderModal && <OrderModal {...{setOpenOrderModal}}/>}
+      {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
       {openOrderModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto')}
+      {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} />}
     </div>
   );
 }
