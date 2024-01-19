@@ -2,15 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCurrentLanguageLesson, getCurrentLesson } from './CurrentLessonsApi';
 
 const initialState = {
-  allData: [],
-  courses: [],
+  DataAll: [],
   loading: true,
   // types: [],
   // typeLoading: false,
 };
 
-export const currentLessonSlice = createSlice({
-  name: 'currentLesson',
+export const DashboardSlice = createSlice({
+  name: 'dashboard',
   initialState,
   reducers: {
     // setType: (state, action) => {
@@ -20,15 +19,9 @@ export const currentLessonSlice = createSlice({
   
   extraReducers: (builder) => {
     builder
-      .addCase(getCurrentLesson.fulfilled, (state, action) => {
-        console.log(action.payload, 999999)
-        state.courses = action.payload.all_courses
-        state.allData = action.payload
-        state.loading = false
-      })
       .addCase(getCurrentLanguageLesson.fulfilled, (state, action) => {
         console.log(action.payload, 999999)
-        state.allData = action.payload
+        state.DataAll = action.payload
         state.loading = false
       })
       .addCase(getCurrentLesson.pending, (state, action) => {
@@ -44,12 +37,11 @@ export const currentLessonSlice = createSlice({
 //   //   setErrorMessage,
 // } = currentLessonSlice.actions;
 
-export const getAllCourses = (state) => state.currentLesson.courses;
-export const getAllData = (state) => state.currentLesson.allData;
-export const getLoading = (state) => state.currentLesson.loading;
+export const getDataAll = (state) => state.dashboard.DataAll;
 
 
-export const currentLessonReducer = currentLessonSlice.reducer;
+
+export const DashboardReducer = DashboardSlice.reducer;
 
 
 

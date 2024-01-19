@@ -8,6 +8,7 @@ import { trialCourseReducer } from "./slices/TrialCourseSlice/TrialCourseSlice";
 import { verifyAccountReducer } from "./slices/VerifyAccountSlice/VerifyAccountSlice";
 import { currentLessonReducer } from './slices/CurrentLessons/CurrentLessonsSlice';
 import { orderReducer } from "./slices/OrderSlice/OrderSlice";
+import { DashboardReducer } from "./slices/Dashboard/DashboardSlice";
 
 const store = configureStore({
     reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
         verifyAccount: verifyAccountReducer,
         currentLesson: currentLessonReducer,
         order: orderReducer,
+        dashboard : DashboardReducer
 
     },
     // middleware: (getDefaultMiddlware)=>[

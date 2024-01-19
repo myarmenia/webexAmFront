@@ -32,7 +32,15 @@ class ProjectController extends Controller
 
     public function addProject(Request $request)
     {
-        dd($request->all(), $request->hasFile('project_photos'));
+
+        $createProj = $this->projectService->createProject($request->all());
+        if($createProj){
+            $data = Project::orderBy('id', 'DESC')->paginate(5);
+
+            return redirect()->route('project')
+                  ->with('i', ($request->input('page', 1) - 1) * 5);
+        }
+  
         // $this->validate($request, [
         //     'name' => 'required',
         //     'email' => 'required|email|unique:users,email',

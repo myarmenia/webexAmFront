@@ -16,6 +16,7 @@ class Project extends Model
         'link_project',
         'link_app_store',
         'link_play_market',
+        'project_language',
         'type',
     ];
 

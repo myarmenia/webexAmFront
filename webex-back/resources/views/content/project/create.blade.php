@@ -170,7 +170,7 @@
                 <div class="mb-3 row">
                     <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                     <div class="col-md-10">
-                        <select id="defaultSelect" class="form-select">
+                        <select id="defaultSelect" name="type" class="form-select">
                             <option>Выберите тип проекта</option>
                             <option value="web">Web</option>
                             <option value="mobile">Mobile</option>
