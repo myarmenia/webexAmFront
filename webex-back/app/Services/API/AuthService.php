@@ -89,7 +89,7 @@ class AuthService
         ]);
 
         if($statusapproved){
-            VerifyUser::where('email', $data['email'])->delete();
+             VerifyUser::where('email', $data['email'])->delete();
             return true;
         }
 

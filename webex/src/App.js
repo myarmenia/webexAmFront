@@ -14,6 +14,7 @@ import CurrentLessons from './components/profilePage/Current_lessons/CurrentLess
 
 import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
 import VerifyAccount from './components/VerifyAccount/VerifyAccount';
+import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
 
 
 function App() {
@@ -40,14 +41,14 @@ function App() {
                 <Route path='projects'element={<ProjectsPage/>}>
                   <Route path=':idd'element={<ProjectsPage/>}/>
                 </Route>
-                <Route path='aboteus'element={<h1>aboteus</h1>}/>
+                <Route path='aboteus'element={<AbouteUsPage/>}/>
                 <Route path='contact'element={<h1>contact</h1>}/>
                 <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
                 <Route path='registr' element={<Register/>}/>
                 <Route path='login' element={<LoginPage  />}/> 
                 <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
                 <Route path='verifyAccount/:token/:email' element={<VerifyAccount/>}/>
-                <Route path="profilePage" element={<ProfilePage />}>
+                <Route path=" " element={<ProfilePage />}>
                     <Route path="Dashboard" element={<Dashboard />} />
                     <Route  path="Currentlessons" element={<CurrentLessons />} />
                 </Route>

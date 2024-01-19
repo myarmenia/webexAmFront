@@ -37,6 +37,7 @@ const verifyAccountSlice = createSlice({
  
 
 export const selectVerifyAccount = (state) => state.verifyAccount
+export const getData = (state) => state.verifyAccount.data
 
  export const {} = verifyAccountSlice.actions
 

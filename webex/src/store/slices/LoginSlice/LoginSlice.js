@@ -26,6 +26,7 @@ const loginSlice = createSlice({
           })
           .addCase(postLogin.fulfilled, (state, action) => {
             state.data = action.payload
+            console.log(state.data, 5555);
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {

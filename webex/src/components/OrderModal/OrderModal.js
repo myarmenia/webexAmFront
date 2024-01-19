@@ -7,14 +7,15 @@ import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
 import axios from 'axios'
 import { fileIcon } from '../../iconFolder/icon'
 
-function OrderModal({setOpenOrderModal}) {
+function OrderModal({setOpenOrderModal, setMessageModal}) {
+
+    const [file, setFile] = useState(null);
+    const [textValue, setTextValue] = useState('');
+
 
     const dispatch = useDispatch()
 
     const respOrder = useSelector(selectOrder)
-
-    const [file, setFile] = useState(null);
-    const [textValue, setTextValue] = useState('');
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -29,7 +30,7 @@ function OrderModal({setOpenOrderModal}) {
 
     const handleCloseModal = (e) =>{
         e.preventDefault()
-        console.dir(e.target);
+
         const [name, phone, email, site, comment, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ] = e.target
 
         const checkArr = [check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 ]
@@ -49,6 +50,9 @@ function OrderModal({setOpenOrderModal}) {
             formData.append('data', jsonOrderObj);
 
              dispatch(postOrder(formData))
+
+             setOpenOrderModal(false)
+             setMessageModal(true)
             e.target.reset()
     }
     return (
@@ -135,8 +139,6 @@ function OrderModal({setOpenOrderModal}) {
                     <div className='submit-div'>
                     <SubmitBtn index="3"/>
                     </div>
-
-                    <p>{respOrder?.data.message}</p>
                 </form>
             </div>
         </div>

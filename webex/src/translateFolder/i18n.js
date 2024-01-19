@@ -89,8 +89,14 @@ i18n
               'Home Page',
               'Projects',
               'News',
+              'Application Development',
+              'Site Promotion',
+              'Service and Support',
+              'Development of 3D modeling',
+              'Mobile Application Development',
+              'Making Games',
+              'E-mail',
               'Phone',
-              'E-mail'
             ],
             // =======================buttons=========================
             button: [
@@ -203,6 +209,30 @@ i18n
           ],
 
           resetPasswordModalError_message: 'Something is wrong',
+
+          abouteUs_Header: [
+            'Aboute US',
+           'Webex Technologies LLC is specialized in creating websites. Most common programming languages that are used at work are, HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES6, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS , MySQL etc. WebEx Tech has been working for 20 years.'
+          ],
+
+          abouteUS_info_block: [
+            'Why is it convenient and effective to cooperate with "WebEx Technologies" center',
+            'Transparency of actions at any stage of the website creation. We provide regular reports and ensure full awareness of the work. Individual approach to each client. Careful study of the specifics of the client’s business at the preparatory stage of the creation of the website contributes to obtaining the maximum effect in the shortest possible time. Creating a website is a creative process for us. We not only use well-known and widespread solutions in the development of the website, but also new and unexpected solutions that make the website unique and memorable.When creating websites, we use only licensed (commercial and non-commercial) CMS, modules, components, designs.'
+          ],
+
+          abouteUs_training: [
+            'Webex technologies / training',
+            'Webex Tech, in cooperation with Webex Technologies, conducts individual web, android technology training courses.',
+            'Training is conducted by experienced programmers.',
+            'Individual courses.',
+            'Educational videos are the basis of knowledge.',
+            'Training can be done online.',
+            'Technology and programming languages research.HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES8, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS , MySQL etc.',
+            'Reliable partner.',
+            'A strong team.',
+            'Years of experience.',
+            'Webex Technologies LLC is specialized in creating websites. Most common programming languages that are used at work are, HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES9, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS , MySQL etc. WebEx Tech has been working for 20 years. People who work with us are grateful for the quality of work we perform. We build successful and inspirational sites. Already have a website? So you need - optimization and promotion of sites, advertising on the Internet, support, and maintenance of sites. We create internet solutions for our clients that will make the project development simple and functional.'
+          ],
         },
       },
       am: {
@@ -421,6 +451,30 @@ i18n
           ],
 
           resetPasswordModalError_message: 'Ինչ որ բան այն չէ',
+
+          abouteUs_Header: [
+            'Մեր մասին',
+           'Webex Technologies ՍՊԸ-ն մասնագիտացած է կայքերի ստեղծման գործում: Ծրագրավորման ամենատարածված լեզուներն են՝ HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES6, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL և այլն: աշխատում է արդեն 20 տարի։'
+          ],
+
+          abouteUS_info_block: [
+            'Ինչու՞ է հարմար և արդյունավետ համագործակցել «WebEx Technologies» կենտրոնի հետ',
+            'Կայքի ստեղծման ցանկացած փուլում գործողությունների թափանցիկություն. Մենք պարբերաբար հաշվետվություններ ենք տրամադրում և ապահովում ենք աշխատանքի լիարժեք իրազեկում: Անհատական ​​մոտեցում յուրաքանչյուր հաճախորդին։ Կայքի ստեղծման նախապատրաստական ​​փուլում հաճախորդի բիզնեսի առանձնահատկությունների մանրակրկիտ ուսումնասիրությունը նպաստում է հնարավորինս սեղմ ժամկետում առավելագույն էֆեկտի ձեռքբերմանը: Կայքի ստեղծումը մեզ համար ստեղծագործական գործընթաց է։ Մենք ոչ միայն օգտագործում ենք հայտնի և լայն տարածում գտած լուծումներ կայքի մշակման համար, այլ նաև նոր և անսպասելի լուծումներ, որոնք դարձնում են կայքը յուրահատուկ և հիշվող: Կայքեր ստեղծելիս մենք օգտագործում ենք միայն լիցենզավորված (առևտրային և ոչ առևտրային) CMS, մոդուլներ, բաղադրիչներ, դիզայն։'
+          ],
+
+          abouteUs_training: [
+            'Webex Technologies / ուսուցում',
+            'Webex Tech-ը Webex Technologies-ի հետ համատեղ անցկացնում է անհատական վեբ, android տեխնոլոգիաների ուսուցման դասընթացներ։',
+            'Դասընթացն անցկացվում է փորձառու ծրագրավորողների կողմից։',
+            'Անհատական դասընթացներ։',
+            'Ուսումնական տեսանյութերը գիտելիքների հիմքն են։',
+            'Դասընթացը կարող է իրականացվել առցանց։',
+            'Տեխնոլոգիաների և ծրագրավորման լեզուների հետազոտություն: HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES8, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL և այլն:',
+            'Վստահելի գործընկեր։',
+            'Ուժեղ թիմ։',
+            'Տարիների փորձ։',
+            'WebEx Tech-ն աշխատում է արդեն 20 տարի: Մարդիկ, ովքեր աշխատում են մեզ հետ, երախտապարտ են մեր կատարած աշխատանքի որակի համար: Մենք կառուցում ենք հաջողակ և ոգեշնչող կայքեր: Արդեն ունե՞ք կայք: Այսպիսով, ձեզ անհրաժեշտ է - կայքերի օպտիմալացում և առաջխաղացում, գովազդ ինտերնետում, կայքերի աջակցություն և սպասարկում: Մենք ստեղծում ենք ինտերնետային լուծումներ մեր հաճախորդների համար, որոնք կդարձնեն ծրագրի մշակումը պարզ և ֆունկցիոնալ:'
+          ],
  
         }
 
@@ -512,6 +566,12 @@ i18n
             'Главная страница',
             'Проекты',
             'Новости',
+            'Разработка веб-приложений',
+            'Продвижение сайта',
+            'Сервис и поддержка',
+            'Развитие 3D моделирования',
+            'Разработка мобильных приложений',
+            'Создание игр',
             'Эл. адрес',
             'Телефон'
           ],
@@ -644,6 +704,31 @@ i18n
           ],
 
           resetPasswordModalError_message: 'Что-то не так',
+
+          abouteUs_Header: [
+            'О нас',
+           '«Webex Technologies» специализируется на создании веб-сайтов. Наиболее распространенными языками программирования, которые используются в работе, являются HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES6, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL и др. WebEx Tech работает уже 20 лет.'
+          ],
+
+          abouteUS_info_block: [
+            'Почему сотрудничать с центром «WebEx Technologies» удобно и эффективно',
+            'Прозрачность действий на любом этапе создания сайта. Мы предоставляем регулярные отчеты и обеспечиваем полную осведомленность о работе. Индивидуальный подход к каждому клиенту. Тщательное изучение специфики бизнеса клиента на подготовительном этапе создания сайта способствует получению максимального эффекта в кратчайшие сроки. Создание сайта для нас – творческий процесс. Мы используем не только известные и распространённые решения при разработке сайта, но и новые и неожиданные решения, которые делают сайт уникальным и запоминающимся.При создании сайтов мы используем только лицензионные (коммерческие и некоммерческие) CMS, модули, компоненты, конструкции.'
+          ],
+
+          abouteUs_training: [
+            'Webex technologies / Обучение',
+            'Webex Tech в сотрудничестве с Webex Technologies проводит индивидуальные курсы обучения веб-технологиям и технологиям Android.',
+            'Обучение проводят опытные программисты.',
+            'Индивидуальные курсы.',
+            'Обучающие видеоролики – основа знаний.',
+            'Обучение можно пройти онлайн.',
+            'Исследование технологий и языков программирования.HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES8, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL и т. д.',
+            'Надежный партнер.',
+            'Сильная команда.',
+            'Многолетний опыт.',
+            '«Webex Technologies» специализируется на создании веб-сайтов. Наиболее распространенными языками программирования, которые используются в работе, являются HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES9, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL и т. д. WebEx Tech имеет работаю 20 лет. Люди, которые с нами работают, благодарны за качество выполняемой нами работы. Мы создаем успешные и вдохновляющие сайты. У вас уже есть сайт? Итак, Вам необходимо - оптимизация и продвижение сайтов, реклама в Интернете, поддержка и обслуживание сайтов. Мы создаем интернет-решения для наших клиентов, которые сделают разработку проекта простой и функциональной.'
+          ],
+
         }
       },
       // Add more languages as needed

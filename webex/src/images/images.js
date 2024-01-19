@@ -230,3 +230,11 @@ export const co_workers_image13 = require('./LigaUslug_Logo-removebg-preview 2.p
 export const co_workers_image14 = require('./erit_logo-removebg-preview 1.png')
 export const co_workers_image15 = require('./hemofolia_logo-removebg-preview 4.png')
 export const co_workers_image16 = require('./prisma_logo-removebg-preview 1.png')
+
+
+
+
+
+// =================================================================================
+
+export const bottomLine = require('./takigic.png')
