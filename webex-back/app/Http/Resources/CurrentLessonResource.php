@@ -17,7 +17,7 @@ class CurrentLessonResource extends JsonResource
         return [
           'id' => $this->id,
           'number' => $this->number,
-          'video'=> $this->video,
+          'video'=> route('get-file',['path'=>$this->video]),
           'duration' => $this->duration,
           'title' => $this->translation(session('languages'))->title,
           'description' => $this->translation(session('languages'))->description,

@@ -7,6 +7,7 @@
   color: #FFFFFF;
 }
 .line_divActive{
+  
   /* color: #4340BB !important; */
   filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
 }

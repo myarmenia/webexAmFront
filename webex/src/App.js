@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import qs from 'qs'
-import { Route, Routes, useLocation, useNavigate, useParams} from 'react-router-dom';
+import qs from 'qs';
+import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './App.css';
 import HomeWraper from './page/HomeWraper';
 import HomePage from './components/HomePage/HomePage';
@@ -15,44 +15,44 @@ import CurrentLessons from './components/profilePage/Current_lessons/CurrentLess
 import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
 import VerifyAccount from './components/VerifyAccount/VerifyAccount';
 import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
-
+import Profile from './components/profilePage/profile/Profile';
 
 function App() {
+  const leng = localStorage.getItem('lang');
 
-  const leng = localStorage.getItem('lang')
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  const { pathname } = useLocation();
 
-  const {pathname} = useLocation()
+  useEffect(() => {
+    pathname == '/' && navigate(`/${leng}/`);
+  }, []);
 
-  useEffect(()=>{
-    pathname == '/' && navigate(`/${leng}/`)
-  },[])
-   
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<HomeWraper />}>
+          <Route path=":leng">
+            <Route index element={<HomePage />} />
 
-          <Route path='/' element={<HomeWraper/>}>
-              <Route path=':leng'>
-                <Route index element={<HomePage/>}/>
-                
-                <Route path='programing'element={<h1>programing</h1>}/>
-                <Route path='projects'element={<ProjectsPage/>}>
-                  <Route path=':idd'element={<ProjectsPage/>}/>
-                </Route>
-                <Route path='aboteus'element={<AbouteUsPage/>}/>
-                <Route path='contact'element={<h1>contact</h1>}/>
-                <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
-                <Route path='registr' element={<Register/>}/>
-                <Route path='login' element={<LoginPage  />}/> 
-                <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
-                <Route path='verifyAccount/:token/:email' element={<VerifyAccount/>}/>
-                <Route path=" " element={<ProfilePage />}>
-                    <Route path="Dashboard" element={<Dashboard />} />
-                    <Route  path="Currentlessons" element={<CurrentLessons />} />
-                </Route>
-              </Route>
+            <Route path="programing" element={<h1>programing</h1>} />
+            <Route path="projects" element={<ProjectsPage />}>
+              <Route path=":idd" element={<ProjectsPage />} />
+            </Route>
+            <Route path="aboteus" element={<h1>aboteus</h1>} />
+            <Route path="contact" element={<h1>contact</h1>} />
+            <Route path="courses-registration" element={<CourseRegistrationPage />} />
+            <Route path="registr" element={<Register />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="resetPassword/:token/:email" element={<ResetPasswordPage />} />
+            <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
+            <Route path="profilePage" element={<ProfilePage />}>
+              <Route index element={<Dashboard />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="currentlessons" element={<CurrentLessons />} />
+              <Route path="profile" element={<Profile />} />
+            </Route>
+          </Route>
         </Route>
 
         <Route path="*" element={<div>ejy chka</div>} />

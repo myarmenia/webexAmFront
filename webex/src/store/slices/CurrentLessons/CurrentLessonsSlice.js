@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCurrentLesson } from './CurrentLessonsApi';
+import { getCurrentLanguageLesson, getCurrentLesson } from './CurrentLessonsApi';
 
 const initialState = {
+  allData: [],
+  courses: []
   // types: [],
   // typeLoading: false,
 };
@@ -14,11 +16,17 @@ export const currentLessonSlice = createSlice({
     //   state.types = action.payload;
     // },
   },
-
+  
   extraReducers: (builder) => {
     builder
       .addCase(getCurrentLesson.fulfilled, (state, action) => {
-        console.log("verj")
+        console.log(action.payload, 999999)
+        state.courses = action.payload.all_courses
+        state.allData = action.payload
+      })
+      .addCase(getCurrentLanguageLesson.fulfilled, (state, action) => {
+        console.log(action.payload, 999999)
+        state.allData = action.payload
       })
       .addCase(getCurrentLesson.pending, (state, action) => {
         console.log("pending")
@@ -33,7 +41,8 @@ export const currentLessonSlice = createSlice({
 //   //   setErrorMessage,
 // } = currentLessonSlice.actions;
 
-// export const getAllType = (state) => state.adminType.types;
+export const getAllCourses = (state) => state.currentLesson.courses;
+export const getAllData = (state) => state.currentLesson.allData;
 
 export const currentLessonReducer = currentLessonSlice.reducer;
 

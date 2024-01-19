@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Users\OpenNextLessonController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
@@ -153,6 +154,6 @@ Route::group(['prefix' => 'project'], function () {
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
 
 });
-
+Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');
 });
 

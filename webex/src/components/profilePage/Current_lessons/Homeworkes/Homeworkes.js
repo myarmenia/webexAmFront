@@ -3,15 +3,16 @@ import './Homeworkes.css';
 import { homeworkes } from '../../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import Block from '../../../../images/Block.svg';
 
-function Homeworkes() {
+function Homeworkes({lessons}) {
+  console.log(lessons);
   return (
     <>
-      {homeworkes.map((el, index) => (
+      {lessons?.map((el, index) => (
         <div className="homeworkes_linne_div" key={index}>
           <p className="homeworkes_text">
-            Lesson {el.id}. Lorem Ipsum is simply dummy text of the printing
+            Lesson {el.id}: {el.description}
           </p>
-          <p>{el.time}</p>
+          <p>{el.duration} minutes</p>
         </div>
         // <div className="allLIne" key={index}>
         //   <div className="lineLeft">

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Student;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CourseLanguageRequest extends FormRequest
+class CourseMenegmenRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,10 +22,7 @@ class CourseLanguageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'translate.*.description'=>'required',
-            'upload_file' => 'required|max:8000|mimes:png,jpeg,jpg,PNG,JPEG,JPG',
-
+            //
         ];
     }
 }

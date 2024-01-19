@@ -19,12 +19,16 @@ class LessonController extends BaseController
 
     public function languageLessons(Request $request,$id)
     {
+      $course_language=CourseLanguage::where('id',$request->id)->first();
 
       $lessons = Lesson::where('course_language_id',$request->id)
                 ->with('lesson_translations')
                 ->get();
-// dd($lessons);
+
                 $lessons_array=[];
+                $data_lessons = [];
+                $lessons_array['course_language_name']=$course_language->name;
+                $lessons_array['course_language_id']=$course_language->id;
 
                 foreach ($lessons as $key => $item) {
 
@@ -39,14 +43,16 @@ class LessonController extends BaseController
                       'video'=>$item->video,
                       'tasks'=> TasksResource::collection($item->tasks),
                     ];
-                    array_push($lessons_array,$first_elem);
+                    array_push($data_lessons,$first_elem);
 
                   }else{
                     $element = new LanguageLessonsResource($item);
-                    array_push($lessons_array,$element);
+                    array_push($data_lessons,$element);
                   }
                 }
 
+                $lessons_array['lessons'] = $data_lessons;
+                
                 return $this->sendResponse($lessons_array, 'success');
 
 
