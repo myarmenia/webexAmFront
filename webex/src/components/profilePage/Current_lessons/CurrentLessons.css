@@ -48,6 +48,7 @@
    align-items: center;
    gap: 28px;
    padding-top: 24px;
+   cursor: pointer;
 }
 .rightSide{
   background-color: rgb(152, 106, 198);
