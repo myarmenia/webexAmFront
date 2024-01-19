@@ -5,9 +5,14 @@ import { Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 
 function ProfilePage() {
   const navigate = useNavigate();
+  const lang = localStorage.getItem('lang')
+  // useEffect(() => {
+  //   navigate(`${lang}/profilePage/Dashboard`);
+  // }, []);
   useEffect(() => {
-    navigate('/profilePage/Dashboard');
+    navigate(`dashboard`, { replace: true });
   }, []);
+  
   return (
     <div className="containerProfilePage">
       <div className="ProfilePage_bigDiv">

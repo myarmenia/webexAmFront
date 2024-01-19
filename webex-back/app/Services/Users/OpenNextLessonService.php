@@ -25,7 +25,6 @@ class OpenNextLessonService
                 ]);
             }
            
-
             return $next_lesson_number;
 
         } catch (\Exception $exception) {
