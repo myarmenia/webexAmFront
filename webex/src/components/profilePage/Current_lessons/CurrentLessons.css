@@ -42,7 +42,6 @@
   margin-top: 0px;
   margin-bottom: 12px;
   color: #000000;
-  padding-bottom: 25px;
 }
 .allvideoLessons{
    display: flex;
@@ -69,9 +68,12 @@
 
 .nameAllVideo{
   line-height: 24.41px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #A7A7A7;
+}
+.nameAllVideo-Active{
+  color: #4D4BA4;
 }
 
 .description{
@@ -84,8 +86,8 @@
 
 }
 .description_title{
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 29.3px;
   color: #000000;
   margin-bottom: 20px;
@@ -114,8 +116,8 @@
   box-shadow: 0px 2px 6px 0px #0000001A;
 }
 .homework_title{
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 29.3px;
   color: #000000;
   margin-bottom: 20px;
@@ -147,8 +149,8 @@
   box-shadow: 0px 2px 6px 0px #0000001A;
 }
 .HomeworkList{
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 29.3px;
   color: #000000;
   margin-bottom: 20px;
@@ -173,4 +175,13 @@
 .vector222{
   width: 24px;
   height: 30px;
+}
+.vector222Down{
+  width: 18px;
+  height: 17px;
+}
+.vector222Down-Active{
+  width: 24px;
+  height: 23px;
+  filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
 }
