@@ -68,7 +68,7 @@ function BurgerMenu() {
                   </div>}
 
                   <div className='user-div' onClick={()=> navigate('/profilePage')}>
-                    <span>{respLogin?.data.authUser.name}</span>
+                    {/* <span>{respLogin?.data.authUser.name}</span> */}
                     <img src={projectImg_1} alt="avatar" />
                   </div>
                   
