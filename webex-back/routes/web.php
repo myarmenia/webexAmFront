@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
@@ -147,6 +148,6 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
 });
-
+Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');
 });
 

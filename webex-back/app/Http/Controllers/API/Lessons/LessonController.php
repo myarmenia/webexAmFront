@@ -19,13 +19,13 @@ class LessonController extends BaseController
 
     public function languageLessons(Request $request,$id)
     {
-
+      $course_language=CourseLanguage::where('id',$request->id)->first();
       $lessons = Lesson::where('course_language_id',$request->id)
                 ->with('lesson_translations')
                 ->get();
-// dd($lessons);
-                $lessons_array=[];
 
+                $lessons_array=[];
+                $lessons_array['lesson_name']=$course_language->name;
                 foreach ($lessons as $key => $item) {
 
                   if($key==0){
