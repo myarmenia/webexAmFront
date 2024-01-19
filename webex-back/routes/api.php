@@ -7,6 +7,7 @@ use App\Http\Controllers\API\Lessons\LessonController;
 use App\Http\Controllers\API\SendOrderController;
 use App\Http\Controllers\API\TrialCourseController;
 use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
+use App\Http\Controllers\API\Student\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,6 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
     Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
 
-
+    Route::get('dashboard',[DashboardController::class,'index']);
 
 });
