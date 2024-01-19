@@ -59,6 +59,7 @@ function Header() {
         </div>
       </div>
       {openOrderModal && <OrderModal {...{setOpenOrderModal}}/>}
+      {openOrderModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto')}
     </div>
   );
 }

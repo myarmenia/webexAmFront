@@ -3,7 +3,6 @@ namespace App\Services\API;
 
 use App\Models\API\VerifyUser;
 use App\Models\User;
-use Translation;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Arr;
 use App\Mail\SendVerifyToken;
@@ -12,14 +11,6 @@ use Illuminate\Support\Str;
 
 class AuthService
 {
-    public $translation;
-    public function __construct()
-    {
-        $lang = session('languages', 'am');
-        $this->translation = new Translation($lang);
-    }
-
-
     public function signup($data)
     {
         $user = User::create([
@@ -50,7 +41,7 @@ class AuthService
         // $credentials = Arr::only($data, ['email', 'password']);
 
         // if (!$token = JWTAuth::attempt($credentials)) {
-        //     return response()->json(['error' => $this->translation->get('user-not-found')], 401);
+        //     return response()->json(['error' => translateMessageApi('user-not-found')], 401);
         // }
 
         // return [
@@ -65,11 +56,11 @@ class AuthService
             $credentials = $request->only('email', 'password');
 
             if (!$token = JWTAuth::attempt($credentials)) {
-                throw new \Exception($this->translation->get('user-not-found'), 401);
+                throw new \Exception(translateMessageApi('user-email-or-password-not-found'), 401);
             }
 
             if (auth()->user()->status === 0) {
-                throw new \Exception($this->translation->get('user-blocked'), 401);
+                throw new \Exception(translateMessageApi('user-blocked'), 401);
             }
 
             auth()->user()->update([
@@ -90,7 +81,7 @@ class AuthService
 
     public function checkVerifyToken($data)
     {
-      $haveOrNot = VerifyUser::where('email', $data['email'])->where('token', $data['token'])->first();
+      $haveOrNot = VerifyUser::where('email', $data['email'])->where('verify_token', $data['token'])->first();
   
       if($haveOrNot){
         $statusapproved = User::where('email', $data['email'])->update([

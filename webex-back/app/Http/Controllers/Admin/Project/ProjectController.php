@@ -30,26 +30,27 @@ class ProjectController extends Controller
         return view('content.project.create');
     }
 
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'name' => 'required',
-    //         'email' => 'required|email|unique:users,email',
-    //         'password' => 'required|same:confirm-password',
-    //         'roles' => 'required'
-    //     ]);
+    public function addProject(Request $request)
+    {
+        dd($request->all(), $request->hasFile('project_photos'));
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users,email',
+        //     'password' => 'required|same:confirm-password',
+        //     'roles' => 'required'
+        // ]);
 
-    //     $input = $request->all();
-    //     $input['password'] = Hash::make($input['password']);
+        // $input = $request->all();
+        // $input['password'] = Hash::make($input['password']);
 
-    //     $user = User::create($input);
-    //     $user->assignRole($request->input('roles'));
-    //     $user->assignRole(['student']);
+        // $user = User::create($input);
+        // $user->assignRole($request->input('roles'));
+        // $user->assignRole(['student']);
 
 
-    //     return redirect()->route('users.index')
-    //     ->with('success', 'User created successfully');
-    // }
+        // return redirect()->route('users.index')
+        // ->with('success', 'User created successfully');
+    }
 
     // public function show($id)
     // {

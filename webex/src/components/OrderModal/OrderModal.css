@@ -1,27 +1,34 @@
+
+
 .order-modal{
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 9999999;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.463);
-    overflow-y: scroll;
+    align-items: center;                                                         
+    position: fixed;                                                             
+    z-index: 999999999999999999999;                         
+    left: 0;                                                                                           
+    top: 0;                                                                                            
+    width: 100%; /* Full width */                                                                      
+    height: 100%; /* Full height */                                                                    
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.64);
+    /* overflow-y: scroll; */
+    padding: 100px 0;
 }
 
 
 .order-modal-block{
+    margin-top: 300px;
     width: 60%;
-    background-color: rgb(56, 60, 162);
+    background-color: #010526;
+    border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px;
+    padding: 20px 100px;
     animation: modalOrderAnim .5s;
+    overflow-y: auto;
 }
 
 .order-modal-block-info-div{
@@ -29,9 +36,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--main_font_color);
     text-align: center;
-    padding: 0 20px;
+}
+
+.order-modal-block-info-div h3{
+    color: #FFF;
+    font-family: 'TitleFont';
+    font-size: 54px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.order-modal-block-info-div p{
+    color: #6644BC;
+    font-family: 'TitleFont';
+    font-size: 54px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+    /* width: 381px;;+ */
 }
 
 .order-modal-form{
@@ -40,7 +66,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 30px;
 }
 
 .input-text-div{
@@ -52,9 +78,10 @@
 }
 
 .input-text-div input{
-    width: 45%;
-    height: 30px;
-    border: 1px solid white;
+    width: 70%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid white;
     background-color: transparent;
     padding: 0 10px;
     outline: none;
@@ -62,25 +89,58 @@
 }
 
 .order-modal-block textarea{
-    min-width: 94.5%;
-    max-width: 94.5%;
+    min-width: 70%;
+    max-width: 70%;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid white;
     background-color: transparent;
-    border: 1px solid white;
-    padding: 10px;
+    padding: 0 10px;
     outline: none;
     color: var(--main_font_color);
 }
+
+.upload-file-div{
+    position: relative;
+}
+
+.upload-file-div .fileIcon{
+    position: absolute;
+    right: 16%;
+    top: 0;
+    color: gray;
+}
+
+
+.upload-file-div .fileIcon:hover svg path{
+    stroke: var(--main_font_color);
+}
+
 .checkbox-div{
-    width: 97%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-div > span{
+    color: var(--main_font_color);
+    font-family: 'TitleFont';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 .checkobox-items{
     display: flex;
     width: 100%;
-    gap: 10px;
+    column-gap: 50px;
+    row-gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -88,13 +148,62 @@
     width: 45%;
     display: flex;
     align-items: center;
-    gap: 10px;
+
 }
 
 .checkobox-items div input{
     width: 20px;
     height: 20px;
 }
+
+.checkobox-items input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+    font-family: 'Arial'
+  }
+  
+ .checkobox-items input[type=checkbox] {
+    display: none;
+  }
+  
+  .checkobox-items input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.8em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+    border-color: var(--main_font_color);
+  }
+  
+ .checkobox-items input[type=checkbox] + label:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+    background-color: #6644BC;
+    border-color: #6644BC;
+    color: #fff;
+  }
+  
+  input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+  }
+  
+  input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #6644BC;
+    border-color:#6644BC;
+  }
 
 .checkobox-items div label{
     color: var(--main_font_color);
@@ -105,30 +214,76 @@
 }
 
 .order-modal-form .btn{
-    width: 300px;
+    width: 100px;
 }
+
+
+ @media(max-width: 1440px){
+    .order-modal-block{
+        width: 75%;
+    }
+    
+} 
 
 
 @media(max-width: 1140px){
     .order-modal-block{
-        width: 80%;
+        width: 85%;
     }
-    .input-text-div input{
-        width: 40%;
-    }
-    .order-modal-block textarea{
-        height: 40px;
-    }
+    
 }
 
-@media(max-width: 720px){
+@media(max-width: 1024px){
+    .order-modal{
+        overflow-y: hidden;
+    }
+
+    .order-modal-block{
+        width: 60%;
+        height: 700px;
+        margin-top: 0;
+    }
+
     .checkobox-items div{
+        width: 75%;
+    }
+
+    .order-modal-block{
+        padding: 20px;
+    }
+
+    .submit-div {
+        width: 60%;
+        position: fixed;
+        top: 670px;
+        background-color: #010526;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        padding: 20px 0;
+    }
+
+    .order-modal-form{
+        padding-bottom: 100px;
+    }
+    
+} 
+
+ @media(max-width: 720px){
+    .order-modal-block{
+        height: 500px;
+    }
+
+    .order-modal-block{
         width: 80%;
     }
 
-    .order-modal-block p{
-        font-size: 12px;
+    .submit-div {
+       width: 80%;
+       top: 580px;
     }
+
 }
 
 @media(max-width: 480px){
@@ -139,7 +294,11 @@
     .order-modal-block p{
         font-size: 10px;
     }
-}
+
+    .order-modal-block{
+        width: 90%;
+    }
+}  
 
 
 @keyframes modalOrderAnim {
@@ -150,3 +309,5 @@
         transform: scale(0);
     }
 }
+
+

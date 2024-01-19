@@ -64,6 +64,6 @@ class SendEmailTrialCourse extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    ->to('webexprojects@gmail.com');
+                    ->to(config('project.webex_email'));
     }
 }

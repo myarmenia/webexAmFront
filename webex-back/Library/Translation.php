@@ -6,8 +6,7 @@ class Translation
 
     public function __construct($lang)
     {
-        $path = resource_path("lang/{$lang}.json");
-        // dd(json_decode(file_get_contents($path), true));
+        $path = resource_path("ln/{$lang}.json");
         $this->translation = json_decode(file_get_contents($path), true);
     }
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Courses;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseLanguageRequest;
 use App\Models\CourseLanguage;
+use App\Models\CourseLanguageTranslation;
+use App\Services\FileUploadService;
 use Illuminate\Http\Request;
 
 class CourseLanguageController extends Controller
@@ -32,9 +34,26 @@ class CourseLanguageController extends Controller
      */
     public function store(CourseLanguageRequest $request)
     {
-     
-      CourseLanguage::create($request->only(['name']));
-      return back();
+    
+      $cours_language = CourseLanguage::create($request->only(['name']));
+
+      if($cours_language){
+        $path = FileUploadService::upload($request->upload_file,'course_language_logo/'.$cours_language->id);
+        $cours_language->logo = $path;
+        $cours_language->save();
+
+        foreach($request->translate as $key => $lang){
+
+            $request['course_language_id'] = $cours_language->id;
+            $request['description'] = $lang['description'];
+            $request['lang'] = $key;
+
+            $cours_language_tranlate = CourseLanguageTranslation::create($request->only(['course_language_id','description','lang']));
+
+          }
+      }
+      
+      return redirect()->route('course-language');
     }
 
     /**

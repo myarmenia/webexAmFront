@@ -3,13 +3,13 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
-    <script src="{{ asset('assets/js/111.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/users/student-is-present.js') }}"></script>
     <script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 
 @section('content')
 
-    <h5 class="py-3 mb-4">
+    <h4 class="py-3 mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -18,7 +18,7 @@
                 <li class="breadcrumb-item active">Список</li>
             </ol>
         </nav>
-    </h5>
+    </h4>
     <div class="card">
         <div class="d-flex justify-content-between align-items-center">
             <div>
