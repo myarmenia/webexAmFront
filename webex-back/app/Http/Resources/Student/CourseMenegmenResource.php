@@ -15,7 +15,11 @@ class CourseMenegmenResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            
+          "id" => $this->course_languages->id,
+          "name" => $this->course_languages->name,
+          "logo" => $this->course_languages->logo,
+          "total_lessons" => $this->course_languages->lessons->count(),
+          "current_lesson_number" => $this->lesson_number
         ];
     }
 }
