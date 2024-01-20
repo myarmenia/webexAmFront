@@ -2,8 +2,10 @@
 
 namespace App\Models\Project;
 
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Project extends Model
 {
@@ -25,4 +27,10 @@ class Project extends Model
     const TYPE_WEB = 'web';
     const TYPE_MOBILE = 'mobile';
     const TYPE_3D = '3d';
+
+    public function images(): MorphMany
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
+
 }
