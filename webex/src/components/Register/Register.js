@@ -117,7 +117,7 @@ function Registre({setUser, setPage, user}) {
                              </div>
                     </div>
 
-                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/login`}/>}
+                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/registr`} {...{setMessageModal}}/>}
                 </div>
             )
         }

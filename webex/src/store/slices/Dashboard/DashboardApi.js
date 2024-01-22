@@ -8,7 +8,7 @@ export const getDashboard = createAsyncThunk(
         try {
           const config = {
             method: "get",
-            url: "/",
+            url: "/dashboard",
           };
           
           const response = await instance(config);

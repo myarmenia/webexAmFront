@@ -19,7 +19,7 @@ export const postOrder = createAsyncThunk(
           
           return response?.data;
         } catch (error) {
-          return thunkAPI.rejectWithValue(error.response.data.error.both);
+          return thunkAPI.rejectWithValue(error.response.data.error);
         }
       }
 )

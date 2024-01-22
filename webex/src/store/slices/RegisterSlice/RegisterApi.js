@@ -27,9 +27,6 @@ export const postRegister = createAsyncThunk(
           
           return response.data;
         } catch (error) {
-          console.log(error.response.data.errors)
-          console.log(thunkAPI.rejectWithValue(error.response.data.errors.email),  5555)
-          //  return error.response.data
           return thunkAPI.rejectWithValue(error.response.data.errors);
         }
       }

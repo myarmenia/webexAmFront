@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 function NavBarForUser() {
 
     const navigate = useNavigate()
-
+    const leng = localStorage.getItem('lang')
     const respLogin = useSelector(selectLogin)
   return (
     <div className='nav-bar-for-user'>
@@ -21,7 +21,7 @@ function NavBarForUser() {
             <NavMenu/>
 
             <div className='navbar-rigth-div-for-user'>
-                <div className='user-div' onClick={()=> navigate('/profilePage')}>
+                <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
                     <span>{respLogin?.data.authUser.name}</span>
                     <img src={projectImg_1} alt="avatar" />
                 </div>
