@@ -4,8 +4,14 @@ import Student from '../../../images/Student.svg';
 import Purchase from '../../../images/Purchase.svg';
 import ProfPic from '../../../images/profile.png';
 import Training from './Training/Training';
+import { useSelector } from 'react-redux';
+import { authUser, getAuthUser } from '../../../store/slices/Auth/AuthSlice';
 
 export const Dashboard = () => {
+  const getAuth = useSelector(getAuthUser) 
+
+  console.log(getAuth, 88888888888888)
+
   return (
     <>
     <div style={{padding:"40px", backgroundColor:"green"}}>

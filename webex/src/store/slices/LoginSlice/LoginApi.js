@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import instance from "../../../axios";
+import { setAuth } from "../Auth/AuthSlice";
 
 export const postLogin = createAsyncThunk(
     'login/postLogin',

@@ -12,7 +12,7 @@ const ScrollerComponent = () => {
                 {
                     co_workers_data.map(el =>
                         <div key={el._id}>
-                            <img  src={el.img} alt="" />
+                                {/* <img  src={el.img} alt="" /> */}
                             <span>{el.txt}</span>
                         </div>
                     )
