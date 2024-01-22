@@ -4,34 +4,33 @@
 
 @section('content')
 
+
 <h4 class="py-3 mb-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{route('users.index')}}">Пользователи</a>
             </li>
-            <li class="breadcrumb-item active">Создать нового пользователя</li>
-
+            <li class="breadcrumb-item active">Редактировать пользователя</li>
         </ol>
     </nav>
 </h4>
 
 <div class="card">
-
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h4 class="card-header">Создать нового пользователя</h4>
+            <h4 class="card-header">Редактировать пользователя</h4>
         </div>
 
     </div>
     <div class="card-body">
 
-        <form action="{{route('users.store')}}" method="post">
-
+        <form action="{{route('users.update', $user->id)}}" method="post">
+            @method('patch')
             <div class="mb-3 row">
                 <label for="name" class="col-md-2 col-form-label">Имя</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Имя" id="name" name="name" value="{{old('name')}}">
+                    <input class="form-control" type="text" placeholder="Имя" id="name" name="name" value="{{$user->name}}">
                 </div>
             </div>
             @error('name')
@@ -44,7 +43,8 @@
             <div class="mb-3 row">
                 <label for="email" class="col-md-2 col-form-label">Э. почта</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="search" placeholder="Э. почта" id="email" name="email" value="{{old('email')}}">
+                    <input class="form-control" type="search" placeholder="Э. почта" id="email" name="email" value="{{$user->email}}">
+
                 </div>
             </div>
             @error('email')
@@ -57,10 +57,11 @@
             <div class="mb-3 row">
                 <label for="phone" class="col-md-2 col-form-label">Телефон</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Телефон" id="phone" name="phone" value="{{old('phone')}}">
+                    <input class="form-control" type="text" placeholder="Телефон" id="phone" name="phone" value="{{$user->phone}}">
+
                 </div>
             </div>
-            
+
             <div class="mb-3 row form-password-toggle">
 
                 <label class="col-md-2 col-form-label" for="password">Пароль</label>
@@ -79,16 +80,16 @@
             </div>
             @enderror
 
-             <div class="mb-3 row form-password-toggle">
-                 <label class="col-md-2 col-form-label" for="confirm-password">Подтвердите пароль</label>
-                 <div class="col-md-10 ">
-                     <div class="input-group">
-                         <input type="password" class="form-control" id="confirm-password" placeholder="Подтвердите пароль" aria-describedby="basic-default-confirm-password2" name="confirm-password">
+            <div class="mb-3 row form-password-toggle">
+                <label class="col-md-2 col-form-label" for="confirm-password">Подтвердите пароль</label>
+                <div class="col-md-10 ">
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="confirm-password" placeholder="Подтвердите пароль" aria-describedby="basic-default-confirm-password2" name="confirm-password">
 
-                         <span id="basic-default-confirm-password2" class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                     </div>
-                 </div>
-             </div>
+                        <span id="basic-default-confirm-password2" class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    </div>
+                </div>
+            </div>
 
 
             <div class="mb-3 row">
@@ -126,7 +127,7 @@
                         <label class="form-check-label" for="passport_status">Пасспорт</label>
                     </div>
                     <div class="col-md-4 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="payment_status" name="payment_status" >
+                        <input class="form-check-input" type="checkbox" id="payment_status" name="payment_status">
                         <label class="form-check-label" for="payment_status">Статус платежа</label>
                     </div>
                 </div>
@@ -146,3 +147,4 @@
 
 
 @endsection
+
