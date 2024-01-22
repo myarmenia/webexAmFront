@@ -713,3 +713,74 @@ export const co_workers_data = [
         txt: 'Erita.am'
     },
 ]
+
+
+
+// =========Out teem=================================
+
+
+export const ourt_teem_data = [
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+    {
+        _id: '1',
+        name: 'name surname',
+        img: co_workers_image1,
+        stack: 'Front-end',
+        experience: '5years'
+    },
+]

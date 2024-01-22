@@ -30,8 +30,10 @@ const loginSlice = createSlice({
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {
-            state.status = 'failed';
-            state.error = action.error.message;
+             if(action.payload){
+                state.data.message = action.payload
+               }
+               state.status = 'failed'; 
           });
     },
  });

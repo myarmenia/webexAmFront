@@ -19,7 +19,6 @@ import {
 } from '../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
-import ReactPlayer from 'react-player';
 import Plyr from 'plyr-react';
 // import 'plyr-react/dist/plyr.css';
 
