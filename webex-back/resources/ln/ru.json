@@ -10,6 +10,8 @@
     "status-active": "Пользователь успешно активирован",
     "email-unique": "Пользователь с этим электронным письмом уже существует",
     "email-send": "Письмо отправлено",
-    "user-email-or-password-not-found": "Неправильный логин или пароль"
+    "user-email-or-password-not-found": "Неправильный логин или пароль",
+    "password-changed": "Пароль успешно изменен"
+
 
 }
