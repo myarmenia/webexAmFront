@@ -5,6 +5,7 @@ namespace App\Models\Project;
 use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Project extends Model
@@ -32,5 +33,15 @@ class Project extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    public function translation(): HasMany
+    {
+        return $this->hasMany(ProjectTranslation::class);
+    }
+
+    // public function translation($lang){
+    //     return $this->hasOne(ProjectTranslation::class)->where('lang', $lang)->first();
+    // }
+
 
 }

@@ -118,7 +118,7 @@
                                                         {{ $user->status ? 'checked' : null }}>
                                                 </div>Статус
                                             </a>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                            <a class="dropdown-item" href="{{route('users.edit', $user->id)}}"><i
                                                     class="bx bx-edit-alt me-1"></i>Редактировать</a>
                                             <button type="button" class="dropdown-item click_delete_item"
                                                 data-bs-toggle="modal" data-bs-target="#smallModal"><i

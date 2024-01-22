@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Project;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CourseLanguageResource extends JsonResource
+class CreateImagePathResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,9 @@ class CourseLanguageResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-     
         return [
-          "id" => $this->id,
-          "name" => $this->name,
-          "logo" => $this->logo          
+            'id' => $this->id,
+            'path' => $this->path
         ];
     }
 }

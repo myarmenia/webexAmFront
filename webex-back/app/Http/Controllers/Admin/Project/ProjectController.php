@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Project;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Project\ProjectResource;
 use App\Models\Project\Project;
 use App\Services\ProjectService;
 use Illuminate\Http\Request;
@@ -59,6 +60,15 @@ class ProjectController extends Controller
         // return redirect()->route('users.index')
         // ->with('success', 'User created successfully');
     }
+
+    public function getProject()
+    {
+        $project = $this->projectService->getProject();
+
+        return ProjectResource::collection($project);
+    }
+
+    
 
     // public function show($id)
     // {
