@@ -16,6 +16,7 @@ export const Dashboard = () => {
     dispatch(getDashboard());
   }, []);
   console.log('DataAll', DataAll);
+
   return (
     <>
       {loading ? (

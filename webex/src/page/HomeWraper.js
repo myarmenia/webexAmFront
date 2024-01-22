@@ -9,16 +9,16 @@ import NavTop from '../components/NavTop/NavTop'
 import { useSelector } from 'react-redux'
 import { selectLogin } from '../store/slices/LoginSlice/LoginSlice'
 import NavBarForUser from '../components/NavBarForUser/NavBarForUser'
+import { getIsAuth } from '../store/slices/Auth/AuthSlice'
 
 function HomeWraper() {
-
-  const respLogin = useSelector(selectLogin)
+  const isAuth = useSelector(getIsAuth)
 
   return (
     <div>
       <BurgerMenu/>
-      {Object.keys(respLogin?.data.authUser || {}).length === 0 && (<NavTop/>)}
-      {Object.keys(respLogin?.data.authUser || {}).length === 0 ? <NavBar/> : <NavBarForUser/>} 
+      {!isAuth && (<NavTop/>)}
+      {!isAuth ? <NavBar/> : <NavBarForUser/>} 
       <Outlet/>
       <ScrollUpButton/>
       <Footer/>
