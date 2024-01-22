@@ -8,6 +8,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Storage;
+
 
 class SendOrderEmail extends Mailable
 {
@@ -60,6 +62,7 @@ class SendOrderEmail extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
+                    ->attach(public_path(Storage::url($this->data['file'])))
                     ->to(config('project.webex_email'));
     }
 }
