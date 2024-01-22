@@ -20,6 +20,7 @@ class User extends Authenticatable implements JWTSubject
         'passport',
         'phone',
         'lesson_quantity',
+        'lessons_quantity_per_month',
         'payment_status',
         'password',
         'ip',
