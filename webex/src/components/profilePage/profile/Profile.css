@@ -1,7 +1,7 @@
 .allProfile {
   /* background-color: #F4F7F9; */
-  width: 40%;
-  padding-left: 137px;
+  width: 44vw;
+  padding-left: 13%;
 }
 .your-profile-title{
   font-size: 24px;
@@ -15,12 +15,33 @@
 .profile-name {
   /* text-align: center;
   margin-left: 50px; */
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: start;
   gap: 164px;
-  margin-bottom: 30px;
+  margin-bottom: 30px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20%; /* Подстраивайте по мере необходимости */
+  margin-bottom: 2%;
+
 }
+.profile-name-title{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.profile-img-img{
+  min-width: 140px;
+}
+.profile-img img,
+.profile-name img,
+.input-edit img {
+  max-width: 100%;
+  height: auto;
+}
+
 .fill-details-title {
   font-style: 20px;
   font-weight: 400;
@@ -35,12 +56,14 @@
 }
 .fill-details-nameInpEmail {
   margin-top: 30px;
+  min-width: 180px;
 }
 .input-container {
   position: relative;
   padding: 0;
   margin: 0;
   padding-top: 30px;
+  min-width: 180px;
   /* margin-bottom: 32px; */
 }
 .input-edit {
@@ -78,4 +101,83 @@
   border-radius: 10px;
   border: 1px solid #6644BC;
   cursor: pointer;
+}
+
+.change-password-title{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #525C76;
+  margin-bottom: 4px;
+}
+
+.change-password-input{
+  width: 80%;
+  border: 1px solid #9ca3af;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 180px;
+}
+.change-password{
+  padding-top: 41px;
+}
+.change-password-div2{
+  padding-top: 25px;
+}
+.button-save-down{
+  margin-top: 33px;
+}
+@media screen and (max-width: 768px) {
+  .your-profile-title {
+    font-size: 18px;
+  }
+  .profile-name-title{
+    font-size: 18px;
+    line-height: 28px;
+  }
+.change-password-title {
+  font-size: 17px;
+}
+
+  .fill-details-title {
+    font-size: 16px;
+  }
+  .button-save,
+  .button-cancel {
+    /* Adjust the padding and font size for smaller screens */
+    padding: 10px 20px; /* You can adjust this value as needed */
+    font-size: 14px; /* You can adjust this value as needed */
+  }
+  /* .profile-img-img{
+      width: 80%;
+  } */
+}
+
+@media screen and (max-width: 505px) {
+  .your-profile-title {
+    font-size: 16px;
+  }
+.buttons-for-fill{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.change-password-title {
+  font-size: 15px;
+  width: 120%;
+}
+.profile-name-title{
+  font-size: 15px;
+  line-height: 28px;
+}
+.fill-details-title {
+  font-size: 14px;
+}
+.input-container {
+  padding-top: 20px;
+}
+.profile-name {
+  width: 120%;
+}
 }

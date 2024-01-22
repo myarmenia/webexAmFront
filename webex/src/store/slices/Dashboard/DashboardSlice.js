@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getDashboard } from './DashboardApi';
 
+
 const initialState = {
   DataAll: [],
   loading: true,
@@ -38,6 +39,7 @@ export const DashboardSlice = createSlice({
 // } = currentLessonSlice.actions;
 
 export const getDataAll = (state) => state.dashboard.DataAll;
+export const getLoadingDashboard = (state) => state.dashboard.loading;
 
 
 
