@@ -17,8 +17,10 @@ class ProjectTranslation extends Model
 
     protected $table = 'project_translations';
 
-    
 
+    public function project(){
+        return $this->belongsTo(Project::class, 'project_id');
+    }
     
 
 }
