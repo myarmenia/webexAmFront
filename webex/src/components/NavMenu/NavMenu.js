@@ -17,6 +17,7 @@ function NavMenu() {
      const respLogin = useSelector(selectLogin)
 
 
+
   return (
        <div className='nav-menu-div' style={{columnGap: Object.keys(respLogin?.data.authUser || {}).length === 0  ? '30px' : '110px'}}>
 

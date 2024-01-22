@@ -45,6 +45,14 @@ function Header() {
     }, 100);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = openOrderModal ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [openOrderModal]);
+
   return (
     <div className='header'>
       <h1 style={{display:'none'}}>Software development and web courses</h1>
@@ -65,8 +73,7 @@ function Header() {
         </div>
       </div>
       {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
-      {openOrderModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto')}
-      {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} />}
+      {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>}
     </div>
   );
 }

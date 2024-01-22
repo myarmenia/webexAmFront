@@ -17,6 +17,7 @@ import VerifyAccount from './components/VerifyAccount/VerifyAccount';
 import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
 import Profile from './components/profilePage/profile/Profile';
 
+
 function App() {
   const leng = localStorage.getItem('lang');
 
@@ -28,6 +29,7 @@ function App() {
     pathname == '/' && navigate(`/${leng}/`);
   }, []);
 
+  
   return (
     <div className="App">
       <Routes>
@@ -39,7 +41,7 @@ function App() {
             <Route path="projects" element={<ProjectsPage />}>
               <Route path=":idd" element={<ProjectsPage />} />
             </Route>
-            <Route path="aboteus" element={<h1>aboteus</h1>} />
+            <Route path="aboteus" element={<AbouteUsPage/>} />
             <Route path="contact" element={<h1>contact</h1>} />
             <Route path="courses-registration" element={<CourseRegistrationPage />} />
             <Route path="registr" element={<Register />} />

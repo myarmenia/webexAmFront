@@ -26,11 +26,14 @@ const ordertSlice = createSlice({
           })
           .addCase(postOrder.fulfilled, (state, action) => {
             state.data = action.payload
+            // console.log(state.data);
              state.status = 'succes';
           })
           .addCase(postOrder.rejected, (state, action) => {
             state.status = 'failed';
-            state.error = action.error.message;
+            if(action.payload){
+               state.data.message = action.payload
+              } 
           });
     },
  });
