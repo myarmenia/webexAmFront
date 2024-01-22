@@ -12,7 +12,7 @@ class ProjectService
     {
         $project = Project::create($data);
 
-        return $project->id;
+        return $project;
     }
 
     public function createProject($data)
@@ -31,8 +31,9 @@ class ProjectService
                     'type'  => $data['type'],
                 ];
         
-                $projectId = $this->addProject($createProjectData);
-        
+                $createdProj = $this->addProject($createProjectData);
+                $projectId = $createdProj->id;
+
                 $translationData = [
                     ['description' => $data['proj-am'], 'lang' => 'am', 'project_id' => $projectId],
                     ['description' => $data['proj-ru'], 'lang' => 'ru', 'project_id' => $projectId],
@@ -47,13 +48,15 @@ class ProjectService
                     foreach($photos as $photo){
                         $path = FileUploadService::upload($photo, 'projects/'.$projectId);
                         $projectPhotoInsert[] = [
-                            'project_id' => $projectId,
+                            // 'project_id' => $projectId,
                             'path' => $path,
                             'name' => $photo->getClientOriginalName() 
                         ];
                     }
 
-                    ProjectPhoto::insert($projectPhotoInsert);
+                    $createdProj->images()->createMany($projectPhotoInsert);
+
+                    // ProjectPhoto::insert($projectPhotoInsert);
                 }
 
                 session(['success' => 'Операция выполнена успешно']);
