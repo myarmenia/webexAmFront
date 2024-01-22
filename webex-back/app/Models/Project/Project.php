@@ -39,4 +39,9 @@ class Project extends Model
         return $this->hasMany(ProjectTranslation::class);
     }
 
+    // public function translation($lang){
+    //     return $this->hasOne(ProjectTranslation::class)->where('lang', $lang)->first();
+    // }
+
+
 }

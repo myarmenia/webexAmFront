@@ -25,16 +25,8 @@ class ProjectResource extends JsonResource
             "project_language" => $this->project_language,
             "type" => $this->type,
             "images" =>  CreateImagePathResource::collection($this->images),
-            "translation" => $this->getDescription()
+            "translation" => getProjectDescription($this->translation),
         ];
-    }
-
-    public function getDescription()
-    {
-        $lang = session('languages');
-        $descriptoin = $this->translation->where('lang', $lang)->first()->description;
-
-        return $descriptoin;
     }
 
 }
