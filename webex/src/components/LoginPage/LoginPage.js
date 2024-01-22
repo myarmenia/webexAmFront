@@ -10,7 +10,7 @@ import AnimLogo from "../AnimLogo/AnimLogo.tsx";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { eyeIcon } from "../../iconFolder/icon.js";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
 import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
@@ -21,6 +21,7 @@ function LoginPage() {
 
     const [viewPassword, setViewPassword] = useState(true)
     const [openModal, setOpenModal] = useState(false)
+    const [messageModal, setMessageModal] = useState(false)
 
     const { t, i18n } = useTranslation();
 
@@ -29,7 +30,6 @@ function LoginPage() {
     const navigate = useNavigate()
 
     const respLogin = useSelector(selectLogin)
-    console.log(respLogin)
     const leng = localStorage.getItem('lang')
     
     const  validationSchema = yup.object().shape({
@@ -42,11 +42,17 @@ function LoginPage() {
         e.preventDefault()
         if (e.target[0].value && e.target[1].value){
             handleSubmit()
-            Object.keys(respLogin?.data.authUser || {}).length == 0  && navigate('/profilePage')
-            console.log(Object.keys(respLogin?.data.authUser || {}).length !== 0,555555555555);
             dispatch(postLogin({email: e.target[0].value, password: e.target[1].value}))
         }
+        Object.keys(respLogin?.data.authUser || {}).length === 0 && setMessageModal(true) 
     }
+
+    
+
+
+    useEffect(()=>{
+        Object.keys(respLogin?.data.authUser || {}).length !== 0  && navigate(`/${leng}/profilePage`)
+    },[respLogin.data.authUser])
     return (
         <Formik
             initialValues={{
@@ -98,6 +104,8 @@ function LoginPage() {
                             {
                                 openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal}/>
                             }
+
+                            {messageModal && <MessageModal txt={respLogin.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>}
                     </div>
                 </div>
             )

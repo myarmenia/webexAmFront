@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCurrentLanguageLesson, getCurrentLesson } from './CurrentLessonsApi';
+import { getDashboard } from './DashboardApi';
 
 const initialState = {
   DataAll: [],
@@ -19,15 +19,15 @@ export const DashboardSlice = createSlice({
   
   extraReducers: (builder) => {
     builder
-      .addCase(getCurrentLanguageLesson.fulfilled, (state, action) => {
+      .addCase(getDashboard.fulfilled, (state, action) => {
         console.log(action.payload, 999999)
         state.DataAll = action.payload
         state.loading = false
       })
-      .addCase(getCurrentLesson.pending, (state, action) => {
+      .addCase(getDashboard.pending, (state, action) => {
         console.log("pending")
       })
-      .addCase(getCurrentLesson.rejected, (state, action) => {
+      .addCase(getDashboard.rejected, (state, action) => {
         console.log("chdarav");
       });
   },
