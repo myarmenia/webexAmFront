@@ -20,3 +20,11 @@ function translateMessageApi($message, $lang=null)
 
     return $translation->get($message);
 }
+
+function getProjectDescription($translation)
+{
+    $lang = session('languages');
+    $descriptoin = $translation->where('lang', $lang)->first()->description;
+
+    return $descriptoin;
+}
