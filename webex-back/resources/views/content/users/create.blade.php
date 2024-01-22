@@ -90,6 +90,19 @@
                  </div>
              </div>
 
+             <div class="mb-3 row">
+                 <label for="lessons_quantity_per_month" class="col-md-2 col-form-label">Количество уроков в месяц</label>
+                 <div class="col-md-10">
+                     <input class="form-control" type="text" placeholder="количество уроков в месяц" id="lessons_quantity_per_month" name="lessons_quantity_per_month" value="12">
+                 </div>
+             </div>
+              @error('lessons_quantity_per_month')
+              <div class="mb-3 row justify-content-end">
+                  <div class="col-sm-10 text-danger fts-14">{{$message}}
+                  </div>
+              </div>
+              @enderror
+
 
             <div class="mb-3 row">
 
@@ -117,13 +130,13 @@
                 <label for="html5-text-input" class="col-md-2 col-form-label"></label>
                 <div class="d-flex col-md-10">
                     <div class="col-md-2 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="status" checked name="status">
+                        <input class="form-check-input" type="checkbox" id="status" name="status">
 
                         <label class="form-check-label" for="status">Статус</label>
                     </div>
                     <div class="col-md-2 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="passport_status" name="passport_status">
-                        <label class="form-check-label" for="passport_status">Пасспорт</label>
+                        <input class="form-check-input" type="checkbox" id="passport" name="passport">
+                        <label class="form-check-label" for="passport">Пасспорт</label>
                     </div>
                     <div class="col-md-4 form-check form-switch mb-2">
                         <input class="form-check-input" type="checkbox" id="payment_status" name="payment_status" >

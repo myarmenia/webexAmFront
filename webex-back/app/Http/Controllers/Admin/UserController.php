@@ -48,6 +48,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password|min:8',
+            'lessons_quantity_per_month' => 'required',
             'phone' => 'required',
             'roles' => 'required'
         ]);
@@ -119,10 +120,16 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
+            'lessons_quantity_per_month' => 'required',
+            'phone' => 'required',
             'roles' => 'required'
         ]);
 
         $input = $request->all();
+        $input['status'] = isset($request->status) ? true : 0;
+        $input['payment_status'] = isset($request->payment_status) ? true : 0;
+        $input['passport'] = isset($request->passport) ? true : 0;
+
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
