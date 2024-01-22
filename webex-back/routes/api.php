@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Project\ProjectController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
 use App\Http\Controllers\API\ForgotPasswordController;
@@ -41,6 +42,10 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::group(['prefix' => 'user'], function ($router) {
         Route::post('edit', [UserController::class, 'login']);
 
+    });
+
+    Route::group(['prefix' => 'project'], function ($router) {
+        Route::get('getProject', [ProjectController::class, 'getProject']);
     });
 
 });
