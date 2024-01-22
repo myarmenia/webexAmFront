@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\HomeController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\Lessons\LessonController;
@@ -37,6 +38,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
 
     Route::get('dashboard',[DashboardController::class,'index']);
+    Route::get('home',[HomeController::class,'home']);
 
     Route::group(['prefix' => 'user'], function ($router) {
         Route::post('edit', [UserController::class, 'login']);

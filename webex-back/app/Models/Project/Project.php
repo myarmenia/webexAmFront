@@ -33,4 +33,9 @@ class Project extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function translation($lang){
+        return $this->hasOne(ProjectTranslation::class)->where('lang', $lang)->first();
+    }
+
+
 }

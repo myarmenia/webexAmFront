@@ -47,9 +47,7 @@ class DashboardResource extends JsonResource
                 'visit_history' => $visit_history
             ],
 
-            'my_training'=>[                
-                $languages             
-            ]
+            'my_training'=> $languages
 
         ];
     }
