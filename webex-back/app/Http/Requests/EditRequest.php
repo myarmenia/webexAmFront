@@ -25,7 +25,6 @@ class EditRequest extends FormRequest
     {
         return [        
             'name' => 'required',
-            'email' => 'required|max:255',
             'phone' => 'required',
         ];
     }
