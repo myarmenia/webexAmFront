@@ -632,87 +632,105 @@ export const co_workers_data = [
     {
         _id: '1',
         img: co_workers_image1,
-        txt: 'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն'
+        txt: 'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն'
     },
 
     {
         _id: '2',
-        img: co_workers_image1,
-        txt: 'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն'
+       img: co_workers_image1,
+        txt: 'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն'
     },
     
     {
         _id: '3',
-        img: co_workers_image2,
-        txt: 'Պաշտպանության նախարարություն'
-    },
-
-    {
-        _id: '4',
         img: co_workers_image1,
         txt: 'ՀՀ բարձր տեխնոլոգիական արդյունաբերության նախարարություն'
     },
 
     {
+        _id: '4',
+       img: co_workers_image1,
+        txt: 'ՀՀ տարածքային կառավարման եվ զարգացման միգրացիոն ծառայություն'
+    },
+
+    {
         _id: '5',
-        img: co_workers_image3,
-        txt: 'LGG foundation'
-    },
-
-    {
-        _id: '6',
-        img: co_workers_image4,
-        txt: 'Elinarti'
-    },
-
-    {
-        _id: '7',
-        img: co_workers_image5,
-        txt: 'ՀՀ ոստիկանություն'
-    },
-
-    {
-        _id: '8',
-        img: co_workers_image6,
-        txt: 'Angel investor Club of Armenia'
-    },
-
-    {
-        _id: '9',
-        img: co_workers_image7,
-        txt: 'Com.lussen'
-    },
-
-    {
-        _id: '10',
-        img: co_workers_image8,
+       img: co_workers_image2,
         txt: 'Վ․Ա․ Ֆանարջյանի անվան ուռուցքաբանության ազգային կենտրոն ՓԲԸ'
     },
 
     {
+        _id: '6',
+       img: co_workers_image1,
+        txt: 'ՀՀ Հանրային ծառայությունները կարգավորող հանձնաժողով'
+    },
+
+    {
+        _id: '7',
+       img: co_workers_image1,
+        txt: 'Գույքի գնահատման և աճուրդի կենտրոն'
+    },
+
+    {
+        _id: '8',
+        img: co_workers_image3,
+        txt: 'ՀՀ Պաշտպանության նախարարություն'
+    },
+
+    {
+        _id: '9',
+       img: co_workers_image4,
+        txt: 'ՈՒռուցքաբանության ազգային կենտրոն'
+    },
+
+    {
+        _id: '10',
+       img: co_workers_image5,
+        txt: 'ԿԳՄՍՆ երիտասարդական կենտրոն'
+    },
+
+    {
+        _id: '11',
+       img: co_workers_image6,
+        txt: 'Հեմոֆիլիայի և թրոմբոֆիլիայի հայկական կենտրոն'
+    },
+
+    {
         _id: '12',
-        img: co_workers_image9,
-        txt: 'Armenian center of hemophilia and thrombophilia'
+       img: co_workers_image7,
+        txt: 'Պրիզմա հետազոտության և վերլուծության կենտրոն'
     },
 
     {
         _id: '13',
-        img: co_workers_image10,
-        txt: 'Bresta.am'
+        img: co_workers_image8,
+        txt: 'Օրբելի վերլուծական - հետազոտական կենտրոն'
     },
 
     {
         _id: '14',
-        img: co_workers_image13,
-        txt: 'Лига услуг'
+       img: co_workers_image9,
+        txt: 'ՀՀ ոստիկանություն'
     },
 
     {
         _id: '15',
-        img: co_workers_image14,
-        txt: 'Erita.am'
+       img: co_workers_image10,
+        txt: 'LGG foundation'
     },
-]
+
+    {
+        _id: '16',
+       img: co_workers_image11,
+        txt: 'Էլնարտի ՍՊԸ'
+    },
+    {
+        _id: '17',
+       img: co_workers_image12,
+        txt: 'Angel investor Club of Armenia'
+    },
+
+]   
 
 
 

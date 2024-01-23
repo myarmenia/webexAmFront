@@ -18,6 +18,10 @@
     height: 100%;
 }
 
+.loop-slide > div > div  img{
+    background-color: red;
+}
+
 .loop-slide > div > div span{
    text-align: center;
    color: var(--main_font_color);
