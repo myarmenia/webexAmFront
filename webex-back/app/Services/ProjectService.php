@@ -3,10 +3,18 @@ namespace App\Services;
 use App\Models\Project\Project;
 use App\Models\Project\ProjectPhoto;
 use App\Models\Project\ProjectTranslation;
+use App\Repositories\Project\ProjectRepository;
 use Illuminate\Support\Facades\DB;
 
 class ProjectService
 {
+
+    protected $projectRepository;
+
+    public function __construct(ProjectRepository $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
+    }
 
     public function addProject($data)
     {
@@ -71,5 +79,12 @@ class ProjectService
  
 
     }
+
+    public function getProject()
+    {
+       return $this->projectRepository->getProject();  
+
+    }
+
   
 }

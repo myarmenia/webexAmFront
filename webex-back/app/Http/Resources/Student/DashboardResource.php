@@ -38,7 +38,6 @@ class DashboardResource extends JsonResource
         $user_course_menegments = $this->user_course_menegments;
 
         foreach ($user_course_menegments as $key => $value) {
-            $k = strtolower($value->course_languages->name);
             $languages[] = new CourseMenegmenResource($value);
         }
            
@@ -48,7 +47,8 @@ class DashboardResource extends JsonResource
                 'visit_history' => $visit_history
             ],
 
-            'my_training'=> $languages
+            'my_training' => $languages             
+            
 
         ];
     }

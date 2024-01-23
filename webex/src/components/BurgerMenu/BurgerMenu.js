@@ -10,6 +10,7 @@ import LoginButton from '../LoginButton/LoginButton'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice'
+import { getAuthUser, getIsAuth } from '../../store/slices/Auth/AuthSlice'
 
 function BurgerMenu() {
 
@@ -17,7 +18,9 @@ function BurgerMenu() {
 
   const navigate = useNavigate()
 
-  const respLogin = useSelector(selectLogin)
+  const isAuth = useSelector(getIsAuth)
+  const authUser = useSelector(getAuthUser)
+
   return (
     <div className='burger-menu'>
           <div className="wrapper">
@@ -50,12 +53,10 @@ function BurgerMenu() {
                 <NavMenuItem index = "4" path="/contact"/>
               </ul>
 
-              {/* <Button index = "0" path="/registr"/>
-              <Button index = "2" path="/courses-registration"/> */}
 
 
               <div className="icons">
-                  { Object.keys(respLogin?.data.authUser || {}).length === 0 && <div className='registr_and_login_buttons_div'>
+                  { !isAuth && <div className='registr_and_login_buttons_div'>
                     <div className='my-reg_log_class'>
                         <a href="#" id='registre'>{loginIcon}</a>
                         <LoginButton path= {leng + "/login"}/>
@@ -68,8 +69,7 @@ function BurgerMenu() {
                   </div>}
 
                   <div className='user-div' onClick={()=> navigate('/profilePage')}>
-                    {/* <span>{respLogin?.data.authUser.name}</span> */}
-                    <img src={projectImg_1} alt="avatar" />
+                    <img src={authUser.avatar} alt="avatar" />
                   </div>
                   
                   <div className='my-leng_class'>

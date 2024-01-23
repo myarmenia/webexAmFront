@@ -19,7 +19,7 @@ export const Dashboard = () => {
   }, []);
 
   console.log('DataAll', DataAll);
-  
+
   return (
     <>
       {loading ? (

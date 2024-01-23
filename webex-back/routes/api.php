@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Project\ProjectController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\HomeController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
@@ -21,7 +22,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         Route::post('signup', [AuthController::class, 'signup']);
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::post('check-verify-token', [AuthController::class, 'checkVerifyToken']);
-        Route::post('me', [AuthController::class, 'me']);
+        Route::get('me', [AuthController::class, 'me']);
 
     });
 
@@ -43,6 +44,10 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::group(['prefix' => 'user'], function ($router) {
         Route::post('edit', [UserController::class, 'login']);
 
+    });
+
+    Route::group(['prefix' => 'project'], function ($router) {
+        Route::get('getProject', [ProjectController::class, 'getProject']);
     });
 
 });

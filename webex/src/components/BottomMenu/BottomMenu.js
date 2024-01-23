@@ -5,7 +5,7 @@ import { elips } from '../../images/images';
 import './BottomMenu.css'
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice';
+import { getAuthUser, getIsAuth } from '../../store/slices/Auth/AuthSlice';
 
 const BottomMenu = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,9 +13,9 @@ const BottomMenu = () => {
   const leng = localStorage.getItem('lang')
 
   const { t, i18n } = useTranslation();
-  
-  const respLogin = useSelector(selectLogin)
 
+  const isAuth = useSelector(getIsAuth)
+  const authUser = useSelector(getAuthUser)
 
   function callPhoneNumber(e) {
     window.location.href = 'tel:' + e.target.innerText
@@ -46,11 +46,11 @@ const BottomMenu = () => {
           </NavLink>
         </li>
         <li className={`list ${activeIndex === 2 ? 'active' : ''}`} onClick={() => handleItemClick(2)}>
-        <NavLink to={ Object.keys(respLogin?.data.authUser || {}).length === 0 ? leng +"/courses-registration" : leng + "/profilePage"}>
+        <NavLink to={!isAuth ? leng +"/courses-registration" : leng + "/profilePage"}>
             <span className="icon">
-            {Object.keys(respLogin?.data.authUser || {}).length === 0 ? videoIcon : userIcon}
+            {!isAuth ? videoIcon : userIcon}
             </span>
-            <span className="text">{Object.keys(respLogin?.data.authUser || {}).length === 0 ? t('navMenu.' + '0') : respLogin.data.authUser.name}</span>
+            <span className="text">{!isAuth ? t('navMenu.' + '0') : authUser.name}</span>
           </NavLink>
         </li>
 
