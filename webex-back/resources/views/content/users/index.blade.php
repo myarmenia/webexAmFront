@@ -94,7 +94,7 @@
                                             <a class="dropdown-item present" href="javascript:void(0);">
                                                 <i class="tf-icons bx bx-task"></i> Присутствует
                                             </a>
-                                            <a class="dropdown-item present" href="{{route('users.info', $user->id)}}">
+                                            <a class="dropdown-item" href="{{route('users.info', $user->id)}}">
                                                 <i class="tf-icons bx bx-task"></i> Управление уроками
                                             </a>
                                             <a class="dropdown-item d-flex" href="javascript:void(0);">
@@ -145,10 +145,3 @@
 @endsection
 
 <x-modal-delete></x-modal-delete>
-{{-- <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a> --}}
-
-
-{{-- {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!} --}}

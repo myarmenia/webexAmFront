@@ -23,9 +23,22 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::post('check-verify-token', [AuthController::class, 'checkVerifyToken']);
         Route::get('me', [AuthController::class, 'me']);
-
     });
 
+    Route::group(['middleware' => 'apiAuthCheck'], function ($router) {
+        Route::get('course-language',[CourseLanguagesController::class,'index']);
+        Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
+        Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
+
+        Route::group(['prefix' => 'user'], function ($router) {
+            Route::post('edit', [UserController::class, 'login']);
+    
+        });
+
+        Route::group(['prefix' => 'project'], function ($router) {
+            Route::get('getProject', [ProjectController::class, 'getProject']);
+        });
+    });
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
     Route::post('check-forgot-token', [ForgotPasswordController::class, 'checkForgotToken']);
@@ -34,20 +47,8 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::post('send-order', SendOrderController::class);
     
 
-    Route::get('course-language',[CourseLanguagesController::class,'index']);
-    Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
-    Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
 
     Route::get('dashboard',[DashboardController::class,'index']);
     Route::get('home',[HomeController::class,'home']);
-
-    Route::group(['prefix' => 'user'], function ($router) {
-        Route::post('edit', [UserController::class, 'login']);
-
-    });
-
-    Route::group(['prefix' => 'project'], function ($router) {
-        Route::get('getProject', [ProjectController::class, 'getProject']);
-    });
 
 });
