@@ -49,12 +49,13 @@ function App() {
             <Route path="aboteus" element={<PrivateRoute><AbouteUsPage /></PrivateRoute>} />
             <Route path="contact" element={<h1>contact</h1>} />
             <Route path="courses-registration" element={<PrivateRoute><CourseRegistrationPage /></PrivateRoute>} />
+            
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
               <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
               <Route path="profile" element={<Profile />} />
-              </Route>
+            </Route>
           </Route>
         </Route>
 
