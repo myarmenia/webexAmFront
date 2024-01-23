@@ -17,7 +17,7 @@ class CourseMenegmenResource extends JsonResource
         return [
           "id" => $this->course_languages->id,
           "name" => $this->course_languages->name,
-          "logo" => $this->course_languages->logo,
+          "logo" => route('get-file', ['path' => $this->course_languages->logo]),
           "total_lessons" => $this->course_languages->lessons->count(),
           "current_lesson_number" => $this->lesson_number
         ];

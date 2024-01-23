@@ -10,6 +10,7 @@ use App\Http\Controllers\API\SendOrderController;
 use App\Http\Controllers\API\TrialCourseController;
 use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
 use App\Http\Controllers\API\Student\DashboardController;
+use App\Http\Controllers\API\Student\VisitHistoryController;
 use App\Http\Controllers\API\User\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,8 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
 
     Route::get('dashboard',[DashboardController::class,'index']);
     Route::get('home',[HomeController::class,'home']);
+    Route::get('visit-history',[VisitHistoryController::class,'index']);
+
 
     Route::group(['prefix' => 'user'], function ($router) {
         Route::post('edit', [UserController::class, 'login']);
