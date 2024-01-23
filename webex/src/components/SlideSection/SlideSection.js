@@ -11,9 +11,9 @@ import { selectProgramingLang } from '../../store/slices/HomePageSlice/HomePageS
 function SlideSection() {
 
   const programingLang = useSelector(selectProgramingLang)
-
+  console.log(programingLang);
   const product = 
-  slideData.map(el => {
+  programingLang.map(el => {
         el = {
           ...el,
           img: programingLengImg
@@ -21,11 +21,10 @@ function SlideSection() {
       
      return <SlideSectionItem key={el._id}
               id = {el._id}
-              title = {el.title}
-              timeLine = {el.timeLine} 
-              txt = {el.txt}
+              title = {el.name}
+              txt = {el.description}
               img = {el.img} 
-              icon = {el.icon}/>
+              icon = {el.logo}/>
     }
 
     )

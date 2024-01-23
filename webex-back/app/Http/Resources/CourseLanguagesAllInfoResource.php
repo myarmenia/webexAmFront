@@ -17,8 +17,8 @@ class CourseLanguagesAllInfoResource extends JsonResource
         return [
           "id" => $this->id,
           "name" => $this->name,
-          "logo" => $this->logo,
-          "description" => $this->description        
+          "logo" => route('get-file', ['path' => $this->logo]),
+          "description" => getCourseLanguagesDescription($this->translation)        
         ];
     }
 }
