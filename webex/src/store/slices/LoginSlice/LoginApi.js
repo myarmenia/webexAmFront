@@ -28,7 +28,7 @@ export const postLogin = createAsyncThunk(
     
           const response = await instance(config);
           sessionStorage.setItem("token", response.data.access_token);
-          sessionStorage.setItem("info", JSON.stringify(response.data.authUser));
+          sessionStorage.setItem("isAuth", true);
           return response?.data
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error);

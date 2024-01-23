@@ -8,36 +8,9 @@ function AbouteUsPage() {
 
     const { t, i18n } = useTranslation()
 
-    // const [scrollPosition, setScrollPosition] = useState(0);
-
-    // useEffect(() => {
-    //     const scrollContainer = document.getElementById('scrollContent');
-
-    //     const handleScroll = () => {
-    //         setScrollPosition(scrollContainer.scrollLeft);
-    //     };
-
-    //     scrollContainer.addEventListener('scroll', handleScroll);
-
-    //     // Cleanup the event listener on component unmount
-    //     return () => {
-    //         scrollContainer.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
-
-    // // Check if the scrollPosition has reached the end and reset to the beginning
-    // useEffect(() => {
-    //     const scrollContainer = document.getElementById('scrollContent');
-    //     const containerWidth = scrollContainer.clientWidth;
-    //     const contentWidth = scrollContainer.scrollWidth;
-
-    //     if (scrollPosition >= contentWidth - containerWidth) {
-    //         scrollContainer.scrollLeft = 0;
-    //     }
-    // }, [scrollPosition]);
-
     return (
         <div className='aboute-us-page'>
+            <div className='abote_us_order_modal_btn'>mjbhfgxdfchj</div>
             <div className='aboute-us-top-div'>
                 <div className='container'>
                     <h2>{t('abouteUs_Header.0')}</h2>
@@ -72,7 +45,7 @@ function AbouteUsPage() {
 
                 <div className='our-partners'>
                     <div className='our_partner_title'>
-                        <h4>Our partners</h4>
+                        <h4>{t('abouteUs_ourPartnersTitle')}</h4>
                         <img src={bottomLine} alt="img" />
                     </div>
                     <ScrollerComponent/>
