@@ -82,6 +82,7 @@ class Kernel extends HttpKernel
     'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     'setlang' => \App\Http\Middleware\SetLanguageMiddleware::class,
+    'apiAuthCheck' => \App\Http\Middleware\CheckAuthUserMiddleware::class,
     // 'authCheck' => \App\Http\Middleware\RedirectIfNotAuthenticated::class,
 
   ];
