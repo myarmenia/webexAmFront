@@ -1,4 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import qs from 'qs';
+import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './App.css';
 import HomeWraper from './page/HomeWraper';
 import HomePage from './components/HomePage/HomePage';
@@ -11,29 +13,51 @@ import { Dashboard } from './components/profilePage/Dashboard/Dashboard';
 import CurrentLessons from './components/profilePage/Current_lessons/CurrentLessons';
 
 import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage';
+import VerifyAccount from './components/VerifyAccount/VerifyAccount';
+import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
+import Profile from './components/profilePage/profile/Profile';
+import PrivateRoute from './privateRoute/PrivateRoute';
+import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
+import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
 
 
 function App() {
+  const leng = localStorage.getItem('lang');
+
+  const navigate = useNavigate();
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    pathname == '/' && navigate(`/${leng}/`);
+  }, []);
+
+
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<HomeWraper />}>
+          <Route path=":leng">
+            <Route path="registr" element={<PrivateRouteForRegAndLog><Register /></PrivateRouteForRegAndLog>} />
+            <Route path="login" element={<PrivateRouteForRegAndLog><LoginPage /> </PrivateRouteForRegAndLog>} />
+            <Route path="resetPassword/:token/:email" element={<ResetPasswordPage />} />
+            <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
 
-          <Route path='/' element={<HomeWraper/>}>
-              <Route index element={<HomePage/>}/>
-              <Route path='programing'element={<h1>programing</h1>}/>
-              <Route path='projects'element={<ProjectsPage/>}>
-                <Route path=':idd'element={<ProjectsPage/>}/>
+            <Route index element={<PrivateRouteForOutSider><HomePage /></PrivateRouteForOutSider>} />
+            <Route path="programing" element={<h1>programing</h1>} />
+            <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
+              <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
+            </Route>
+            <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
+            <Route path="contact" element={<h1>contact</h1>} />
+            <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
+            <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
+              <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
+              <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
               </Route>
-              <Route path='aboteus'element={<h1>aboteus</h1>}/>
-              <Route path='contact'element={<h1>contact</h1>}/>
-              <Route path='courses-registration' element={<CourseRegistrationPage/>}/>
-              <Route path='registr' element={<Register/>}/>
-              <Route path='login' element={<LoginPage  />}/> 
-              <Route path='resetPassword/:token/:email' element={<ResetPasswordPage/>}/>
-              <Route path="profilePage" element={<ProfilePage />}>
-                  <Route path="Dashboard" element={<Dashboard />} />
-                  <Route  path="Currentlessons" element={<CurrentLessons />} />
-              </Route>
+          </Route>
         </Route>
 
         <Route path="*" element={<div>ejy chka</div>} />

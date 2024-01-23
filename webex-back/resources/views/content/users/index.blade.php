@@ -3,16 +3,23 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
-    <script src="{{ asset('assets/js/111.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/users/student-is-present.js') }}"></script>
+    <script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 
 @section('content')
 
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Пользователи /</span> Список
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Пользователи</a>
+                </li>
+                <li class="breadcrumb-item active">Список</li>
+            </ol>
+        </nav>
     </h4>
     <div class="card">
-
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <h5 class="card-header">Список пользователей</h5>
@@ -87,6 +94,9 @@
                                             <a class="dropdown-item present" href="javascript:void(0);">
                                                 <i class="tf-icons bx bx-task"></i> Присутствует
                                             </a>
+                                            <a class="dropdown-item" href="{{route('users.info', $user->id)}}">
+                                                <i class="tf-icons bx bx-task"></i> Управление уроками
+                                            </a>
                                             <a class="dropdown-item d-flex" href="javascript:void(0);">
                                                 <div class="form-check form-switch">
                                                     <input class="form-check-input change_status" type="checkbox"
@@ -108,11 +118,15 @@
                                                         {{ $user->status ? 'checked' : null }}>
                                                 </div>Статус
                                             </a>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                    class="bx bx-trash me-1"></i> Delete</a>
-
+                                            <a class="dropdown-item" href="{{route('users.edit', $user->id)}}"><i
+                                                    class="bx bx-edit-alt me-1"></i>Редактировать</a>
+                                            <button type="button" class="dropdown-item click_delete_item"
+                                                data-bs-toggle="modal" data-bs-target="#smallModal"><i
+                                                    class="bx bx-trash me-1"></i>
+                                                Удалить</button>
+                                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#smallModal">
+                                                      Small
+                                                    </button> --}}
                                         </div>
                                     </div>
                                 </td>
@@ -121,17 +135,13 @@
                     </tbody>
                 </table>
             </div>
+            <div class="demo-inline-spacing">
+                {{ $data->links() }}
+            </div>
         </div>
     </div>
 
 
 @endsection
 
-
-{{-- <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a> --}}
-
-
-{{-- {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!} --}}
+<x-modal-delete></x-modal-delete>

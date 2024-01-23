@@ -17,7 +17,7 @@ function ProfileSidebar() {
   };
 
   return (
-    <div>
+    <div style={{height:"100%"}}>
       <div className="leftSidebar">
         <div
           className="leftSidebar_divs"
@@ -34,8 +34,8 @@ function ProfileSidebar() {
               {/* <img src={el.icon} alt={el.name} className="iconss" /> */}
               {/* <span className="iconss">{el.icon}</span> */}
               <svg
-                width="30"
-                height="30"
+                width="24"
+                height="24"
                 viewBox="0 0 30 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -45,9 +45,9 @@ function ProfileSidebar() {
             </div>
           ))}
         </div>
-        <div>
+        {/* <div>
           <img src={Line} alt="Line" className="line" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

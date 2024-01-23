@@ -11,7 +11,8 @@ function ChangePasswordModal({openModal, setOpenModal}) {
 
   function handleResetPass(e) {
     e.preventDefault()
-    dispatch(postResetPassword({email: e.target[0].value}))
+    setOpenModal(false)
+   dispatch(postResetPassword({email: e.target[0].value}))
 }
 
   return (
@@ -19,7 +20,7 @@ function ChangePasswordModal({openModal, setOpenModal}) {
         <div onClick={(e) => e.stopPropagation()}  className='change-password-modal-block' style={{transform: openModal ? 'scale(1)' : 'scale(0)'}}>
             <h5>{t('reg_and_log.'+ '16')}</h5>
             <form onSubmit={handleResetPass}>
-                <input type="mail" placeholder={t('reg_and_log.'+ '3')}/>
+                <input type="email" placeholder={t('reg_and_log.'+ '3')} required/>
                 <button type='submit' className="btn">
                         <span></span>
                         <span></span>

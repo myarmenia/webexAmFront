@@ -17,8 +17,6 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('lang')->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
 

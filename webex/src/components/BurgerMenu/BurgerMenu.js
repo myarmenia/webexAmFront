@@ -1,15 +1,26 @@
 import React from 'react'
 import './BurgerMenu.css'
 import { RegistreIcon, burger, closeBurgerIcon, lengIcon, loginIcon } from '../../iconFolder/icon'
-import { logoImage } from '../../images/images'
+import { logoImage, projectImg_1 } from '../../images/images'
 import NavMenuItem from '../NavMenuItem/NavMenuItem'
 import Button from '../Button/Button'
 import SelectLng from '../SelectLng/SelectLng'
 import RegistreButton from '../RegistreButton/RegistreButton'
 import LoginButton from '../LoginButton/LoginButton'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice'
+import { getAuthUser, getIsAuth } from '../../store/slices/Auth/AuthSlice'
 
 function BurgerMenu() {
+
+  const leng = localStorage.getItem('lang')
+
+  const navigate = useNavigate()
+
+  const isAuth = useSelector(getIsAuth)
+  const authUser = useSelector(getAuthUser)
+
   return (
     <div className='burger-menu'>
           <div className="wrapper">
@@ -20,7 +31,7 @@ function BurgerMenu() {
             </label>
             <nav id="sidebar">
               <div className='logo-image'>
-              <NavLink to={'/'}>{logoImage}</NavLink>
+              <NavLink to={'/' + leng}>{logoImage}</NavLink>
               </div>
 
               <ul className="list-items">
@@ -42,19 +53,23 @@ function BurgerMenu() {
                 <NavMenuItem index = "4" path="/contact"/>
               </ul>
 
-              {/* <Button index = "0" path="/registr"/>
-              <Button index = "2" path="/courses-registration"/> */}
 
 
               <div className="icons">
-                  <div className='my-reg_log_class'>
-                      <a href="#" id='registre'>{loginIcon}</a>
-                      <LoginButton path= "/login"/>
-                  </div>
+                  { !isAuth && <div className='registr_and_login_buttons_div'>
+                    <div className='my-reg_log_class'>
+                        <a href="#" id='registre'>{loginIcon}</a>
+                        <LoginButton path= {leng + "/login"}/>
+                    </div>
 
-                  <div className='my-reg_log_class'>
-                      <a href="#" id='login'>{RegistreIcon}</a>
-                      <RegistreButton path="/registr"/>
+                    <div className='my-reg_log_class'>
+                        <a href="#" id='login'>{RegistreIcon}</a>
+                        <RegistreButton path={leng + "/registr"}/>
+                    </div>
+                  </div>}
+
+                  <div className='user-div' onClick={()=> navigate('/profilePage')}>
+                    <img src={authUser.avatar} alt="avatar" />
                   </div>
                   
                   <div className='my-leng_class'>
@@ -67,10 +82,7 @@ function BurgerMenu() {
 
             </nav>
           </div>
-          {/* <div className="content">
-            <div className="header">Animated Side Navigation Menu</div>
-            <p>using only HTML and CSS</p>
-          </div> */}
+         
 </div>
 
   )

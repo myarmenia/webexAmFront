@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postResetPassword } from "./ResetEmailApi";
 
 const initialState = {
-   massage: '',
+   data: {
+      success: false,
+      message: ""
+   },
    status: 'idle',
    error: null,
    };

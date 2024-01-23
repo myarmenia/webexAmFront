@@ -1,0 +1,318 @@
+
+
+.order-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;                                                         
+    position: fixed;                                                             
+    z-index: 999999999999999999999;                         
+    left: 0;                                                                                           
+    top: 0;                                                                                            
+    width: 100%; /* Full width */                                                                      
+    height: 100%; /* Full height */                                                                    
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.64);
+    padding: 100px 0;
+}
+
+
+.order-modal-block{
+    margin-top: 300px;
+    width: 60%;
+    background-color: #010526;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 100px;
+    animation: modalOrderAnim .5s;
+    overflow-y: auto;
+}
+
+.order-modal-block-info-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.order-modal-block-info-div h3{
+    color: #FFF;
+    font-family: 'TitleFont';
+    font-size: 54px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.order-modal-block-info-div p{
+    color: #6644BC;
+    font-family: 'TitleFont';
+    font-size: 54px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+    /* width: 381px;;+ */
+}
+
+.order-modal-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.input-text-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-text-div input{
+    width: 70%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+.order-modal-block textarea{
+    min-width: 70%;
+    max-width: 70%;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+.upload-file-div{
+    position: relative;
+}
+
+.upload-file-div .fileIcon{
+    position: absolute;
+    right: 16%;
+    top: 0;
+    color: gray;
+}
+
+
+.upload-file-div .fileIcon:hover svg path{
+    stroke: var(--main_font_color);
+}
+
+.checkbox-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-div > span{
+    color: var(--main_font_color);
+    font-family: 'TitleFont';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.checkobox-items{
+    display: flex;
+    width: 100%;
+    column-gap: 50px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.checkobox-items div{
+    width: 45%;
+    display: flex;
+    align-items: center;
+
+}
+
+.checkobox-items div input{
+    width: 20px;
+    height: 20px;
+}
+
+.checkobox-items input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+    font-family: 'Arial'
+  }
+  
+ .checkobox-items input[type=checkbox] {
+    display: none;
+  }
+  
+  .checkobox-items input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.8em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+    border-color: var(--main_font_color);
+  }
+  
+ .checkobox-items input[type=checkbox] + label:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+    background-color: #6644BC;
+    border-color: #6644BC;
+    color: #fff;
+  }
+  
+  input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+  }
+  
+  input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #6644BC;
+    border-color:#6644BC;
+  }
+
+.checkobox-items div label{
+    color: var(--main_font_color);
+}
+
+.checkbox-div span{
+    color: var(--main_font_color);
+}
+
+.order-modal-form .btn{
+    width: 150px;
+    font-size: 14px;
+}
+
+
+ @media(max-width: 1440px){
+    .order-modal-block{
+        width: 75%;
+    }
+    
+} 
+
+
+@media(max-width: 1140px){
+    .order-modal-block{
+        width: 85%;
+    }
+    
+}
+
+@media(max-width: 1024px){
+    .order-modal{
+        overflow-y: hidden;
+    }
+
+    .order-modal-block{
+        width: 60%;
+        height: 700px;
+        margin-top: 0;
+    }
+
+    .checkobox-items div{
+        width: 75%;
+    }
+
+    .order-modal-block{
+        padding: 20px;
+    }
+
+    .submit-div {
+        width: 60%;
+        position: fixed;
+        top: 670px;
+        background-color: #010526;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        padding: 20px 0;
+    }
+
+    .order-modal-form{
+        padding-bottom: 100px;
+    }
+    
+} 
+
+ @media(max-width: 720px){
+    .order-modal-block{
+        height: 500px;
+    }
+
+    .order-modal-block{
+        width: 80%;
+    }
+
+    .submit-div {
+       width: 80%;
+       top: 570px;
+    }
+
+}
+
+@media(max-width: 480px){
+    .order-modal-block textarea{
+        height: 20px;
+    }
+
+    .order-modal-block p{
+        font-size: 10px;
+    }
+
+    .order-modal-block{
+        width: 90%;
+    }
+
+    .submit-div {
+        width: 80%;
+        top: 580px;
+     }
+}  
+
+
+@keyframes modalOrderAnim {
+    to{
+        transform: scale(1);
+    }
+    from{
+        transform: scale(0);
+    }
+}
+
+

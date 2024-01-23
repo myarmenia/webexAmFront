@@ -22,7 +22,10 @@ class CourseLanguageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required',
+            'name' => 'required',
+            'translate.*.description'=>'required',
+            'upload_file' => 'required|max:8000|mimes:png,jpeg,jpg,PNG,JPEG,JPG',
+
         ];
     }
 }

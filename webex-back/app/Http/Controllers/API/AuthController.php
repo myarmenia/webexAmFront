@@ -12,10 +12,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
-
 class AuthController extends BaseController
 {
-
     public $authService;
 
     public function __construct(AuthService $authService)
@@ -42,26 +40,36 @@ class AuthController extends BaseController
 
     public function me()
     {
-        return response()->json(auth('api')->user());
+        $me = auth('api')->user();
+        if($me){
+            return response()->json(auth('api')->user());
+        }
+
+        return response()->json(['error' => translateMessageApi('user-not-found')], 401);
     }
 
     public function logout()
     {
         auth()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(['message' => translateMessageApi('logged-out')]);
     }
 
     public function signup(SingupRequest $request)
     {
         $data = $this->authService->signup($request->all());
 
-        $readyData = [
-            'authUser' => $data['authUser'],
-            'access_token' => $data['token'],
-        ];
+        if($data){
+           return response()->json(['success' => true, 'message' => translateMessageApi('email_verified')]);
+        }
 
-        return response()->json($readyData);
+        return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')]);
+        // $readyData = [
+        //     'authUser' => $data['authUser'],
+        //     'access_token' => $data['token'],
+        // ];
+
+        // return response()->json($readyData);
     }
 
     public function refresh()
@@ -76,5 +84,17 @@ class AuthController extends BaseController
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
+    }
+
+    public function checkVerifyToken(Request $request)
+    {
+        $haveOrNot = $this->authService->checkVerifyToken($request->all());
+
+        if($haveOrNot){
+            return response()->json(['success' => true, 'message' => translateMessageApi('status-active')]);
+         }
+ 
+         return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')]);
+
     }
 }

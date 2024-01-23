@@ -8,19 +8,23 @@ import { NavLink, useLocation } from "react-router-dom";
 import { eyeIcon } from "../../iconFolder/icon.js";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
+import { selectRegister } from "../../store/slices/RegisterSlice/RegisterSlice.js";
+import MessageModal from "../MessageModal/MessageModal.js";
 
 function Registre({setUser, setPage, user}) {
-
     const [viewPassword, setViewPassword] = useState(true)
     const [viewConfirmPassword, setConfirmViewPassword] = useState(true)
+    const [messageModal, setMessageModal] = useState(false)
 
     const { t, i18n } = useTranslation();
 
-    const {pathname} = useLocation()
-
     const dispatch = useDispatch()
+
+    const leng = localStorage.getItem('lang')
+
+    const registreResp = useSelector(selectRegister)
     
     function handleLogSub(e,handleSubmit) {
         e.preventDefault()
@@ -32,6 +36,8 @@ function Registre({setUser, setPage, user}) {
                             password: e.target[3].value,
                             confirmPassword: e.target[4].value,
                              }))
+
+            setMessageModal(true)
     }
 
     const  validationSchema = yup.object().shape({
@@ -57,14 +63,8 @@ function Registre({setUser, setPage, user}) {
             }}
 
             onSubmit={(values, {resetForm})=>{
-                // setUser([
-                //     ...user,
-                //     {
-                //         ...values
-                //     }
-                // ])
-                // setPage('log')
-                resetForm()
+               
+                // resetForm()
             }}
 
             validateOnBlur
@@ -79,28 +79,28 @@ function Registre({setUser, setPage, user}) {
                             <form className="reg-form"   onSubmit={(e)=>handleLogSub(e,handleSubmit)}>
                                 <SectionTitle title={t('reg_and_log.'+ '0')}/>
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('reg_and_log.'+ '3')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="email" name="email" placeholder={t('reg_and_log.'+ '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 
                             <div className="tel-inp">
-                                <input type="" name="phone" placeholder={t('reg_and_log.'+ '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="" name="phone" placeholder={t('reg_and_log.'+ '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                             </div>
 
                             <div className="password-inp">
-                                <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.'+ '5')} value={values.password} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.'+ '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} required/>
                                 <span onClick={()=> setViewPassword(!viewPassword)}>{eyeIcon}</span>
                                 {touched.password && errors.password && <p className="error">{errors.password}</p>}
                             </div>
 
                             <div className="confirmPassword-inp">
-                                <input type={viewConfirmPassword ? 'password' : 'text'} name="confirmPassword" placeholder={t('reg_and_log.'+ '6')} value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type={viewConfirmPassword ? 'password' : 'text'} name="confirmPassword" placeholder={t('reg_and_log.'+ '6')} value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} required/>
                                 <span onClick={()=> setConfirmViewPassword(!viewConfirmPassword)}>{eyeIcon}</span>
                                 {touched.confirmPassword && errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
                             </div>
@@ -108,13 +108,16 @@ function Registre({setUser, setPage, user}) {
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
                             <SubmitBtn index= "1"/>
-                            <h6>{t('reg_and_log.'+ '7')}  <NavLink to={'/login'}>{t('reg_and_log.'+ '9')}</NavLink></h6>
+                            <h6>{t('reg_and_log.'+ '7')}  <NavLink to={`/${leng}/login`}>{t('reg_and_log.'+ '9')}</NavLink></h6>
+                            
                         </form>
-                        {pathname === '/registr' && 
+                        
                             <div className="log_img_div">
                                 <AnimLogo/>
-                             </div>}
+                             </div>
                     </div>
+
+                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/registr`} {...{setMessageModal}}/>}
                 </div>
             )
         }

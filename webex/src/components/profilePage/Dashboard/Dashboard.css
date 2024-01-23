@@ -1,5 +1,6 @@
 .allDashboard {
-  width: 58vw;
+  /* hanel */
+  /* width: 58vw;  */
   display: flex;
   flex-wrap: wrap;
   gap: 42px;
@@ -20,7 +21,10 @@
 .account_div {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: start;
+  gap: 12px;
+  width: 100%;
+  padding-left: 37px;
 }
 .account_img {
   width: 45px;
@@ -46,6 +50,17 @@
   font-weight: 700;
   line-height: 48.83px;
   color: #ffffff;
+  margin: 0;
+  padding-bottom: 40px;
+}
+.allDashboard_title2{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.83px;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 40px;
+  padding-top: 80px;
 }
 .account_name_profile {
   font-size: 18px;
@@ -105,4 +120,16 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+@media screen and (max-width: 798px) {
+  .allDashboard_title2{
+    text-align: center;
+  }
+  .allDashboard_title{
+    text-align: center;
+  }
+  .allDashboard {
+    justify-content: center;
+  }
 }

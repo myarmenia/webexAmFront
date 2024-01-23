@@ -6,14 +6,19 @@ import BottomMenu from '../components/BottomMenu/BottomMenu'
 import Footer from '../components/Footer/Footer'
 import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton'
 import NavTop from '../components/NavTop/NavTop'
+import { useSelector } from 'react-redux'
+import { selectLogin } from '../store/slices/LoginSlice/LoginSlice'
+import NavBarForUser from '../components/NavBarForUser/NavBarForUser'
+import { getIsAuth } from '../store/slices/Auth/AuthSlice'
 
 function HomeWraper() {
-
+  const isAuth = useSelector(getIsAuth)
+console.log(isAuth, 5555)
   return (
     <div>
       <BurgerMenu/>
-      <NavTop/>
-      <NavBar/> 
+      {!isAuth && (<NavTop/>)}
+      {!isAuth ? <NavBar/> : <NavBarForUser/>} 
       <Outlet/>
       <ScrollUpButton/>
       <Footer/>

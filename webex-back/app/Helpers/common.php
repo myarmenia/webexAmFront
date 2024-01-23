@@ -12,3 +12,19 @@
 //         'updated_at' => $data->updated_at,
 //     ];
 // }
+
+function translateMessageApi($message, $lang=null)
+{
+    $lang = $lang ? $lang : session('languages', 'am');
+    $translation = new Translation($lang);
+
+    return $translation->get($message);
+}
+
+function getProjectDescription($translation)
+{
+    $lang = session('languages');
+    $descriptoin = $translation->where('lang', $lang)->first()->description;
+
+    return $descriptoin;
+}

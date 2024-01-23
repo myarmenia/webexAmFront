@@ -7,41 +7,52 @@ import { globImg } from "../../images/images";
 import SectionTitle from "../SectionTitle/SectionTitle";
 // import ParticleSliderComponent from "../AnimLogo/AnimLogo";
 import AnimLogo from "../AnimLogo/AnimLogo.tsx";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { eyeIcon } from "../../iconFolder/icon.js";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
 import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
 import { selectLogin, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
 import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
+import MessageModal from "../MessageModal/MessageModal.js";
 function LoginPage() {
-
-    const fref = useRef(null)
 
     const [viewPassword, setViewPassword] = useState(true)
     const [openModal, setOpenModal] = useState(false)
+    const [messageModal, setMessageModal] = useState(false)
 
     const { t, i18n } = useTranslation();
 
-    const {pathname} = useLocation()
-
     const dispatch = useDispatch()
 
-    const log = useSelector(selectLogin)
+    const navigate = useNavigate()
+
+    const respLogin = useSelector(selectLogin)
+    const leng = localStorage.getItem('lang')
     
     const  validationSchema = yup.object().shape({
-        email: yup.string().email(t('validation.'+ '1')).required(t('validation.'+ '0')),
+        email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
-        .required(t('validation.'+ '0')),
+        .required(t('validation_reg_log.'+ '0')),
     })
 
-    function handleLogSub(e,handleSubmit) {
+    function handleLogSub(e,handleSubmit, isValid , dirty) {
         e.preventDefault()
-        handleSubmit()
-        dispatch(postLogin({email: e.target[0].value, password: e.target[1].value}))
+        if (e.target[0].value && e.target[1].value){
+            handleSubmit()
+            dispatch(postLogin({email: e.target[0].value, password: e.target[1].value}))
+        }
+        Object.keys(respLogin?.data.authUser || {}).length === 0 && setMessageModal(true) 
     }
+
+    
+
+
+    useEffect(()=>{
+        Object.keys(respLogin?.data.authUser || {}).length !== 0  && navigate(`/${leng}/profilePage`)
+    },[respLogin.data.authUser])
     return (
         <Formik
             initialValues={{
@@ -64,7 +75,7 @@ function LoginPage() {
             ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
                 <div className="login">
                     <div className="container">
-                            <form className="log-form"  onSubmit={(e)=>handleLogSub(e,handleSubmit)}>
+                            <form className="log-form"  onSubmit={(e)=>handleLogSub(e,handleSubmit, isValid, dirty)}>
                                 <SectionTitle title={t('reg_and_log.'+ '1')}/>
 
                             <div className="email-inp">
@@ -81,18 +92,20 @@ function LoginPage() {
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
                             <SubmitBtn index= "0"/>
-                            <h6>{t('reg_and_log.'+ '8')}  <NavLink to={'/registr'}>{t('reg_and_log.'+ '10')}</NavLink></h6>
+                            <h6>{t('reg_and_log.'+ '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.'+ '10')}</NavLink></h6>
                             <h5>{t('reg_and_log.'+ '14')} <span onClick={()=> setOpenModal(true)}>{t('reg_and_log.'+ '15')}</span></h5>
                         </form>
-                        {pathname === '/login' && 
+                        
                             <div className="log_img_div">
                                 <AnimLogo/>
-                             </div>}
+                             </div>
 
 
                             {
                                 openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal}/>
                             }
+
+                            {messageModal && <MessageModal txt={respLogin.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>}
                     </div>
                 </div>
             )

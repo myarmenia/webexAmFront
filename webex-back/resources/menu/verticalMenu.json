@@ -18,7 +18,6 @@
       ]
     },
     {
-
       "name": "Courses",
       "icon": "menu-icon tf-icons bx bx-detail",
       "slug": "form-layouts",
@@ -46,9 +45,13 @@
       "slug": "project",
       "url": "project"
     },
-
     {
-
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "users",
+      "url": "users"
+    },
+    {
       "menuHeader": "Apps & Pages"
     },
     {
@@ -74,7 +77,6 @@
       ]
     },
     {
-
       "name": "Authentications",
       "icon": "menu-icon tf-icons bx bx-lock-open-alt",
       "slug": "auth",
@@ -100,7 +102,6 @@
       ]
     },
     {
-
       "menuHeader": "Components"
     },
     {
@@ -281,6 +282,4 @@
       "menuHeader": "Misc"
     }
   ]
-
 }
-
