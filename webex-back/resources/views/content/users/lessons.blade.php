@@ -2,7 +2,19 @@
 
 @section('title', 'Account settings - Account')
 @section('page-script')
+<script>
+    let student_id = {{ $student->id }}
+</script>
 <script src="{{ asset('assets/js/admin/users/open-next-lesson.js') }}"></script>
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+<script src="{{ asset('assets/js/admin/calendar.js') }}"></script>
+{{-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'> --}}
+<link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.10/index.global.min.js'></script>
+<link href="{{ asset('assets/css/admin/calendar.css') }}" rel='stylesheet' />
+
+
 @endsection
 
 @section('content')
@@ -11,7 +23,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="javascript:void(0);">Пользователи</a>
+                <a href="{{route('users.index')}}">Пользователи</a>
             </li>
             <li class="breadcrumb-item active">Уроки студента</li>
         </ol>
@@ -40,6 +52,10 @@
                         <span class="badge bg-label-danger me-1">Не активный</span>
                         @endif
                     </li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">Количество уроков в месяц
+                         <span>{{ $student->lessons_quantity_per_month ?? '' }}</span>
+                     </li>
+
                     <li class="list-group-item d-flex justify-content-between align-items-center">Роли
                         <span>
                             @if (!empty($student->getRoleNames()))
@@ -63,11 +79,11 @@
                                 <select class="form-select" id="course_languages" name="course_language_id">
                                     <option disabled selected> Языки</option>
                                     @if ($course_languages != null && count($course_languages) > 0)
-                                        @foreach ($course_languages as $language)
-                                            @if (!in_array($language->id, $user_course_langages))
-                                                <option value="{{ $language->id }}">{{ $language->name }}</option>
-                                            @endif
-                                        @endforeach
+                                    @foreach ($course_languages as $language)
+                                    @if (!in_array($language->id, $user_course_langages))
+                                    <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                    @endif
+                                    @endforeach
                                     @endif
 
                                 </select>
@@ -112,9 +128,6 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    {{-- <a class="dropdown-item present" href="{{route('users.lessons')}}">
-                                    <i class="tf-icons bx bx-task"></i> Присутствует
-                                    </a> --}}
                                     @if ($item->course_languages->lessons->count() != $item->lesson_number)
                                     <a class="dropdown-item open-next-lesson" href="javascript:void(0);">
                                         <i class="tf-icons bx bx-task"></i> Открить следующий урок
@@ -123,13 +136,6 @@
                                         <i class="tf-icons bx bx-task"></i> Все уроки открыты
                                     </a>
                                     @endif
-
-                                    <a class="dropdown-item" href="javascript:void(0);">
-                                        <i class="bx bx-edit-alt me-1"></i>Редактировать</a>
-                                    <button type="button" class="dropdown-item click_delete_item" data-bs-toggle="modal" data-bs-target="#smallModal">
-                                        <i class="bx bx-trash me-1"></i>
-                                        Удалить
-                                    </button>
                                 </div>
                             </div>
                         </td>
@@ -138,10 +144,15 @@
                 </tbody>
             </table>
         </div>
+
+        {{-- =============================== --}}
+        <div id='calendar'></div>
+
+
     </div>
 
 
 </div>
 
-
+{{-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dc4641f860664c6e824b093274f50291"}'></script><!-- Cloudflare Pages Analytics --> --}}
 @endsection

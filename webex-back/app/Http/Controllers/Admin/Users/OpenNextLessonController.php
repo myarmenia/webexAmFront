@@ -8,6 +8,7 @@ use App\Traits\Users\GetUserTrait;
 use App\Traits\Course\CourseLanguageTrait;
 use App\Traits\Users\UserCourseMenegmentTrait;
 use Illuminate\Http\Request;
+use App\Http\Resources\Student\DashboardResource;
 
 class OpenNextLessonController extends Controller
 {
