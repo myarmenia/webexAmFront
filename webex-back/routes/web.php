@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Users\OpenCourseLanguageForStudentController;
 use App\Http\Controllers\Admin\Users\OpenNextLessonController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
+use App\Http\Controllers\Admin\Users\StudentAttendancesController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Auth;
@@ -143,7 +144,9 @@ Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index'
 Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
 Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::class,'index'])->name('open_course');
-Route::post('open-next-lesson', [OpenNextLessonController::class,'index']);
+Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
+
+Route::get('student-attendances/{id}', [StudentAttendancesController::class,'index']);
 
 
 
