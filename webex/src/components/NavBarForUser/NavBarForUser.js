@@ -6,6 +6,7 @@ import { selectLogin } from '../../store/slices/LoginSlice/LoginSlice'
 import { useSelector } from 'react-redux'
 import { projectImg_1, projectImg_4 } from '../../images/images'
 import { useNavigate } from 'react-router-dom'
+import { getAuthUser } from '../../store/slices/Auth/AuthSlice'
 
 
 
@@ -13,7 +14,8 @@ function NavBarForUser() {
 
     const navigate = useNavigate()
     const leng = localStorage.getItem('lang')
-    const respLogin = useSelector(selectLogin)
+    const authUser = useSelector(getAuthUser)
+  
   return (
     <div className='nav-bar-for-user'>
 
@@ -22,8 +24,8 @@ function NavBarForUser() {
 
             <div className='navbar-rigth-div-for-user'>
                 <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
-                    <span>{respLogin?.data.authUser.name}</span>
-                    <img src={projectImg_1} alt="avatar" />
+                    <span>{authUser.name}</span>
+                    <img src={authUser.avatar} alt="avatar" />
                 </div>
                 
                 <SelectLng/>

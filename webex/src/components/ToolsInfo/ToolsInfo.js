@@ -2,10 +2,14 @@ import React from 'react'
 import ToolsInfoItem from '../ToolsInfoItem/ToolsInfoItem'
 
 import './ToolsInfo.css'
-import { packageTools, toolsData } from '../../data'
+import {toolsData } from '../../data'
+import { useSelector } from 'react-redux'
+import { selectToolsCalc } from '../../store/slices/HomePageSlice/HomePageSlice'
 
 
 function ToolsInfo() {
+
+  const respToolsdata = useSelector(selectToolsCalc)
 
   return (
     <div className='tools-info'>
@@ -14,13 +18,13 @@ function ToolsInfo() {
             {
                 toolsData.map((el,index) =>{
 
-                      if (el.type == 'user') {
-                        el.count = packageTools[0].count
-                        el._id = packageTools[0]._id
+                      if (el.type == 'students') {
+                        el.count = respToolsdata[el.type].count
+                        el._id = respToolsdata[el.type].id
                       }
-                      if (el.type == 'project') {
-                        el.count = packageTools[1].count
-                        el._id = packageTools[1]._id
+                      if (el.type == 'projects') {
+                        el.count = respToolsdata[el.type].count
+                        el._id = respToolsdata[el.type].id
                       }
 
 

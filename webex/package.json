@@ -11,6 +11,7 @@
     "axios": "^1.5.1",
     "dat.gui": "^0.7.9",
     "formik": "^2.4.5",
+    "framer-motion": "^10.18.0",
     "i18next": "^23.6.0",
     "i18next-xhr-backend": "^3.2.2",
     "ionicons": "^7.2.1",
