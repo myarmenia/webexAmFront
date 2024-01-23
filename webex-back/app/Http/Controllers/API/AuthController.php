@@ -40,7 +40,12 @@ class AuthController extends BaseController
 
     public function me()
     {
-        return response()->json(auth('api')->user());
+        $me = auth('api')->user();
+        if($me){
+            return response()->json(auth('api')->user());
+        }
+
+        return response()->json(['error' => translateMessageApi('user-not-found')], 401);
     }
 
     public function logout()
