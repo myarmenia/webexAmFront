@@ -41,11 +41,15 @@ function Profile() {
         </div>
         <div className="change-password">
           <div className="change-password-div">
-            <p className="change-password-title">փոխիր գաղտնաբառը</p>
+            <p className="change-password-title">գրիր գործող գաղտնաբառը</p>
             <input type="text" placeholder="Placeholder Text" className="change-password-input" />
           </div>
           <div className="change-password-div2">
-            <p className="change-password-title">կրկնիր գաղտնաբառը</p>
+            <p className="change-password-title">գրիր նոր գաղտնաբառը</p>
+            <input type="text" placeholder="Placeholder Text" className="change-password-input" />
+          </div>
+          <div className="change-password-div2">
+            <p className="change-password-title">կրկնիր նոր գաղտնաբառը</p>
             <input type="text" placeholder="Placeholder Text" className="change-password-input" />
           </div>
           <button className="button-save button-save-down">Պահպանել</button>
