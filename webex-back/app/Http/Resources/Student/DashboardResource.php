@@ -29,6 +29,7 @@ class DashboardResource extends JsonResource
         ];
 
         $all_courses = [
+            'name' => 'My courses',
             'total_languages' => $this->getAllCourseLanguages()->count(),
             'active_languages_quantity' => $this->user_course_menegments->count()
         ];
@@ -37,7 +38,6 @@ class DashboardResource extends JsonResource
         $user_course_menegments = $this->user_course_menegments;
 
         foreach ($user_course_menegments as $key => $value) {
-            $k = $value->course_languages->name;
             $languages[] = new CourseMenegmenResource($value);
         }
            
