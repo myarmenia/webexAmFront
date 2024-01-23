@@ -5,7 +5,8 @@ import { setAuth } from "../Auth/AuthSlice";
 const initialState = {
    data: {
       authUser: {},
-      token: ''
+      token: '',
+      isAuth: false
    },
    status: 'idle',
    error: null,
@@ -28,6 +29,7 @@ const loginSlice = createSlice({
           })
           .addCase(postLogin.fulfilled, (state, action) => {
             state.data = action.payload
+            state.isAuth = true
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {

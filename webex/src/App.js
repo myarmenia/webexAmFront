@@ -17,6 +17,8 @@ import VerifyAccount from './components/VerifyAccount/VerifyAccount';
 import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
 import Profile from './components/profilePage/profile/Profile';
 import PrivateRoute from './privateRoute/PrivateRoute';
+import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
+import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
 
 
 function App() {
@@ -36,24 +38,24 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeWraper />}>
           <Route path=":leng">
-            <Route path="registr" element={<Register />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="registr" element={<PrivateRouteForRegAndLog><Register /></PrivateRouteForRegAndLog>} />
+            <Route path="login" element={<PrivateRouteForRegAndLog><LoginPage /> </PrivateRouteForRegAndLog>} />
             <Route path="resetPassword/:token/:email" element={<ResetPasswordPage />} />
             <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
 
-            <Route index element={<PrivateRoute><HomePage /></PrivateRoute>} />
+            <Route index element={<PrivateRouteForOutSider><HomePage /></PrivateRouteForOutSider>} />
             <Route path="programing" element={<h1>programing</h1>} />
-            <Route path="projects" element={<PrivateRoute><ProjectsPage /></PrivateRoute>}>
-              <Route path=":idd" element={<PrivateRoute><ProjectsPage /></PrivateRoute>} />
+            <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
+              <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
-            <Route path="aboteus" element={<PrivateRoute><AbouteUsPage /></PrivateRoute>} />
+            <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
             <Route path="contact" element={<h1>contact</h1>} />
-            <Route path="courses-registration" element={<PrivateRoute><CourseRegistrationPage /></PrivateRoute>} />
+            <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
               <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
-              <Route path="profile" element={<Profile />} />
+              <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
               </Route>
           </Route>
         </Route>
