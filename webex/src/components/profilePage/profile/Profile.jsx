@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Profile.css';
 import profileImg from '../../../images/profileImg.png';
 import pencleEdit from '../../../images/pencle-edit.png';
+import { useSelector } from 'react-redux';
+import { getAuthUser } from '../../../store/slices/Auth/AuthSlice';
 
 function Profile() {
+  const authUser = useSelector(getAuthUser)
+  const [nameSur, setNameSur] = useState(authUser?.authUser?.name)
+
+  console.log(authUser, 5555555555)
+  console.log("nameSur",nameSur);
   return (
     <div style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>
       <p className="your-profile-title">Քո Պրոֆիլը</p>
@@ -22,7 +29,7 @@ function Profile() {
         <div className="fill-details">
           <p className="fill-details-title">Լրացրու տվյալներդ</p>
           <div className="input-container">
-            <input type="text" className="fill-details-nameInp" placeholder="Անուն Ազգանուն" />
+            <input type="text" className="fill-details-nameInp" placeholder="Անուն Ազգանուն" value={nameSur} onChange={(e)=>setNameSur(e.target.value)} />
             <img src={pencleEdit} alt="pencleEdit" className="input-edit" />
           </div>
           <input

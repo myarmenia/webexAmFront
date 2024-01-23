@@ -31,7 +31,7 @@ const PrivateRouteForRegAndLog = ({ children }) => {
     
 
    if (sesionIsAuth) {
-    return <Navigate to={`/${lang}/profilePage`}/>
+    return <Navigate to={`/${lang}/profilePage/dashboard`}/>
    }
    else{
     return children

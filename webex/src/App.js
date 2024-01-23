@@ -56,9 +56,9 @@ function App() {
               <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
               <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+            </Route>
               </Route>
           </Route>
-        </Route>
 
         <Route path="*" element={<div>ejy chka</div>} />
       </Routes>
