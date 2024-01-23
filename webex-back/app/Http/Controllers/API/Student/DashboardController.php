@@ -15,9 +15,7 @@ class DashboardController extends BaseController
     public function index(){
      
         $user = auth('api')->user();
-        // dd($user);
-        // $course_languages = CourseLanguage::all();
-
+       
         return  $this->sendResponse(new DashboardResource($user), 'success');
     }
 }
