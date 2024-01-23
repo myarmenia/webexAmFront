@@ -12,7 +12,7 @@ export const getCurrentUser = createAsyncThunk(
         };
         
         const response = await instance(config);
-        return true;
+        return response?.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data.error.both);
       }

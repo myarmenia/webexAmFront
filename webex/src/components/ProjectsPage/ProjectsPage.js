@@ -47,7 +47,6 @@ function ProjectsPage() {
    
   };
   
-
   return (
     <>
       <Helmet>

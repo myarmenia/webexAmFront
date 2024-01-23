@@ -47,6 +47,8 @@ const homePageSlice = createSlice({
  
 
 export const selectHomePage = (state) => state.homePage
+export const selectToolsCalc = (state) => state.homePage.data.calculator
+export const selectProgramingLang = (state) => state.homePage.data.course_languages
 
  export const {} = homePageSlice.actions
 

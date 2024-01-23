@@ -226,12 +226,13 @@ export const co_workers_image9 = require('./Frame 1000001291 (8).png')
 export const co_workers_image10 = require('./Frame 1000001291 (9).png')
 export const co_workers_image11 = require('./Frame 1000001291 (10).png')
 export const co_workers_image12 = require('./Frame 1000001291 (12).png')
-// export const co_workers_image14 = require('./erit_logo-removebg-preview 1.png')
-// export const co_workers_image15 = require('./hemofolia_logo-removebg-preview 4.png')
-// export const co_workers_image16 = require('./prisma_logo-removebg-preview 1.png')
+export const co_workers_image13 = require('./Frame 1000001291 (13).png')
+export const co_workers_image14 = require('./Frame 1000001291 (15).png')
 
 
+// ==========our_teem=================
 
+export const our_teemImage = require('./IMAGE.png')
 
 
 // =================================================================================
