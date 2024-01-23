@@ -18,12 +18,12 @@ class StudentIsPresentService
 
         if ($lesson_quantity <=  $lessons_quantity_per_month) {
 
-            $stage_number = $student_attendance->count() > 0 ? $student_attendance->stage_number : 1;
+            $stage_number = $student_attendance != null && $student_attendance->count() > 0 ? $student_attendance->stage_number : 1;
             $user->update(['lesson_quantity' => $lesson_quantity]);
         }
         else{
             $lesson_quantity = 1;
-            $stage_number = $student_attendance->count() > 0 ? $student_attendance->stage_number + 1 : 1;
+            $stage_number = $student_attendance != null && $student_attendance->count() > 0 ? $student_attendance->stage_number + 1 : 1;
 
           $user->update(['lesson_quantity' => $lesson_quantity, 'payment_status' => 0]);
         }

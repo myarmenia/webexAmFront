@@ -9,4 +9,9 @@ trait StudentAttendanceTrait
   {
     return StudentAttendance::where('user_id', $id)->latest()->first();
   }
+
+  public function getAll(int $id)
+  {
+    return StudentAttendance::where('user_id', $id)->get();
+  }
 }
