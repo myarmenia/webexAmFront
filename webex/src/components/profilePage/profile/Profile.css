@@ -34,14 +34,21 @@
 }
 .profile-img-img{
   min-width: 140px;
+
 }
-.profile-img img,
+.profile-img-img,
 .profile-name img,
 .input-edit img {
   max-width: 100%;
   height: auto;
 }
-
+.img-other{
+  width: 230px;
+  /* height: 230px; */
+  min-height: 150px;
+  border-radius: 50%;
+  object-fit: fill;
+}
 .fill-details-title {
   font-style: 20px;
   font-weight: 400;

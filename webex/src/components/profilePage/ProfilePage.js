@@ -9,9 +9,9 @@ function ProfilePage() {
   // useEffect(() => {
   //   navigate(`${lang}/profilePage/Dashboard`);
   // }, []);
-  useEffect(() => {
-    navigate(`dashboard`, { replace: true });
-  }, []);
+  // useEffect(() => {
+  //   navigate({ replace: true });
+  // }, []);
   
   return (
     <div className="containerProfilePage">

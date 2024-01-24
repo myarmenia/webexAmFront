@@ -13,7 +13,7 @@ const PrivateRouteForRegAndLog = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const sesionIsAuth  = sessionStorage.getItem('isAuth')
     const token  = sessionStorage.getItem('token')
- 
+
     useEffect(() => {
       const fetchData = async () => {
         if (sesionIsAuth && token) {
@@ -22,20 +22,20 @@ const PrivateRouteForRegAndLog = ({ children }) => {
         setLoading(false); 
       };
       fetchData();
-    }, [dispatch, isAuth]);
+    }, []);
   
     if (loading) {
       return <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
     }
-
     
+    return !isAuth ? children : <Navigate to={`/${lang}/profilePage/dashboard`} />;
 
-   if (sesionIsAuth) {
-    return <Navigate to={`/${lang}/profilePage`}/>
-   }
-   else{
-    return children
-   }
+  //  if (sesionIsAuth) {
+  //   return <Navigate to={`/${lang}/profilePage/dashboard`}/>
+  //  }
+  //  else{
+  //   return children
+  //  }
   };
   
 

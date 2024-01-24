@@ -15,26 +15,32 @@ export const ProfileSidebarArr = [
   {
     icon: Dashboard,
     name: 'Dashboard',
+    slug: 'dashboard'
   },
   {
     icon: Currentlessons,
     name: 'Current lessons',
+    slug: 'currentLessons'
   },
   {
     icon: Student,
     name: 'Profile',
+    slug: 'profile'
   },
   {
     icon: Help,
     name: 'Help',
+    slug: 'help'
   },
   {
     icon: Payment,
     name: 'Payment',
+    slug: 'visithistory'
   },
   {
     icon: LogOut,
     name: 'Log out',
+    slug: 'logOut'
   },
 ];
 

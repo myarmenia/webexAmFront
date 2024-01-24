@@ -19,6 +19,7 @@ import Profile from './components/profilePage/profile/Profile';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
 import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
+import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
 
 
 function App() {
@@ -56,9 +57,10 @@ function App() {
               <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
               <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+              <Route path="visithistory" element={<PrivateRoute><VisitHistory /></PrivateRoute>} />
+            </Route>
               </Route>
           </Route>
-        </Route>
 
         <Route path="*" element={<div>ejy chka</div>} />
       </Routes>

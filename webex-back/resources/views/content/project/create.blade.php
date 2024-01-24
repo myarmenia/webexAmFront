@@ -20,7 +20,6 @@
             <div>
                 <h5 class="card-header">Создать нового проект</h5>
             </div>
-
         </div>
         <div class="card-body">
 

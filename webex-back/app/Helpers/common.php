@@ -36,3 +36,10 @@ function getCourseLanguagesDescription($translation)
 
     return $descriptoin;
 }
+
+function getProjectDescriptionForAdmin($translation, $lang)
+{
+    $descriptoin = $translation->where('lang', $lang)->first()->description;
+
+    return $descriptoin;
+}
