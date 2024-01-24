@@ -16,28 +16,31 @@ $(function () {
     let url = $(this).attr('data-url')
     let id = url.split("/").pop();
     let row = $(`.action[data-id="${id}"]`).parents('tr')
+    let image_div = $(this).parent('.uploaded-image-div')
+    let image_divs = $('.uploaded-image-div')
+    console.log(image_div)
+    if ((image_divs.length > 1 && row.length == 0) || (image_divs.length == 0 && row.length > 0)) {
+      $.ajax({
+        type: "GET",
+        url: url,
+        cache: false,
+        success: function (data) {
+          let message = ''
+          let type = ''
+          if (data.result) {
+            message = 'Действия подтвержден'
+            type = 'success'
+            row.remove()
+            image_div.remove()
+          }
+          else {
+            message = 'Ошибка'
+            type = 'danger'
+          }
 
-
-    $.ajax({
-      type: "GET",
-      url: url,
-      cache: false,
-      success: function (data) {
-        let message = ''
-        let type = ''
-        if (data.result) {
-          message = 'Действия подтвержден'
-          type = 'success'
-          row.remove()
+          $('.message_cont').html(`<span class="text-${type}">${message}</span>`)
         }
-        else {
-          message = 'Ошибка'
-          type = 'danger'
-        }
-
-        $('.message_cont').html(`<span class="text-${type}">${message}</span>`)
-      }
-    });
-
+      });
+    }
   })
 })

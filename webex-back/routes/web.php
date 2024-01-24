@@ -141,7 +141,7 @@ Route::post('/task/task-store', [TaskController::class,'store'])->name('task-sto
 
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
-Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
+Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index'])->name('delete_item');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
 Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::class,'index'])->name('open_course');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
@@ -155,7 +155,13 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
+<<<<<<< HEAD
   Route::get('/getProject',[ProjectController::class, 'getProject']);
+=======
+  Route::get('/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+  Route::post('/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+
+>>>>>>> aa26ac1d0664c0681fd0e11c39a0560e3ac89e58
 
 });
 });
