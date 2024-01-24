@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { postLogin } from '../LoginSlice/LoginApi';
-import { getCurrentUser } from './AuthApi';
+import { editUser } from './ProfileApi';
+
 
 const initialState = {
   authUser: {},
   isAuth: false
 };
 
-export const authSlice = createSlice({
+export const profileSLice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -21,11 +22,11 @@ export const authSlice = createSlice({
   
   extraReducers: (builder) => {
     builder
-     .addCase(postLogin.fulfilled, (state, action) => {
-          state.authUser = action.payload.authUser
-          state.isAuth = true
-      })
-      .addCase(getCurrentUser.fulfilled, (state, action) => {
+    //  .addCase(postLogin.fulfilled, (state, action) => {
+    //       state.authUser = action.payload.authUser
+    //       state.isAuth = true
+    //   })
+      .addCase(editUser.fulfilled, (state, action) => {
           state.authUser = action.payload
           state.isAuth = true
       })
@@ -41,14 +42,14 @@ export const authSlice = createSlice({
 export const {
   setAuth,
   setIsAuth
-} = authSlice.actions;
+} = profileSLice.actions;
 
 // export const {getAuthUser} = loginSlice.actions
 export const getAuthUser = (state) => state.auth.authUser;
 export const getIsAuth = (state) => state.auth.isAuth;
 
 
-export const authReduser = authSlice.reducer;
+export const profileReduser = profileSLice.reducer;
 
 
 
