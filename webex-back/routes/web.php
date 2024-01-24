@@ -141,7 +141,7 @@ Route::post('/task/task-store', [TaskController::class,'store'])->name('task-sto
 
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
-Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
+Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index'])->name('delete_item');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
 Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::class,'index'])->name('open_course');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');

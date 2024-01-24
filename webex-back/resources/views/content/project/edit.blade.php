@@ -3,6 +3,7 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
 <script src="{{ asset('assets/js/admin\project\project-upload-photo.js') }}"></script>
+<script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 
 @section('page-style')
@@ -197,21 +198,24 @@
                             <i class="bx bx-upload d-block d-sm-none"></i>
                             <input type="file" id="upload" name="project_photos[]" class="account-file-input" multiple hidden accept="image/png, image/jpeg" />
                         </label>
-                        <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer">
+                        <div class="uploaded-images-container  uploaded-photo-project" id="uploadedImagesContainer">
+
                             @foreach($project->images as $key => $image)
-                            <div class="uploaded-image-container mx-2">
+                            <div class="uploaded-image-div mx-2">
                                 <img src="{{route('get-file', ['path' => $image->path])}}" class="d-block rounded uploaded-image uploaded-photo-project">
+                                <button type="button" class="btn btn-outline-danger btn-sm mt-2 delete_item" data-url="{{route('delete_item',['images',$image->id ])}}">Remove</button>
 
-                                <button type="button" class="btn btn-outline-danger btn-sm mt-2" id="1704720042044">Remove</button>
                             </div>
-
-
                             @endforeach
                         </div>
 
                     </div>
+                    <div class='message_cont'></div>
+
+
                 </div>
             </div>
+
             @error('project_photos')
             <div class="mb-3 mt-5 row justify-content-end">
                 <div class="col-sm-10 text-danger fts-14">{{ $message }}
