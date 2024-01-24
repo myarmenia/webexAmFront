@@ -6,175 +6,70 @@
 @endsection
 
 @section('page-style')
-    <link rel="stylesheet" href="{{asset('assets/css/admin/project/project.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/project/project.css') }}">
 @endsection
 
 @section('content')
 
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Проекты /</span> Создать нового проект
+        <span class="text-muted fw-light">Новости /</span> Создать нового новость
     </h4>
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <h5 class="card-header">Создать нового проект</h5>
+                <h5 class="card-header">Создать новость</h5>
             </div>
 
         </div>
         <div class="card-body">
 
-            <form action="{{ route('project.add') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('news-create') }}" method="post" enctype="multipart/form-data">
+                'news_category_id',
+
+
 
                 <div class="mb-3 row">
-                    <label for="name" class="col-md-2 col-form-label">Имя проекта</label>
+                    <label for="title" class="col-md-2 col-form-label">Имя Новости</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Имя" id="name" name="name"
-                            value="{{ old('name') }}">
+                        <input class="form-control" type="text" placeholder="Имя" id="title" name="title"
+                            value="{{ old('title') }}">
                     </div>
                 </div>
-                @error('name')
+                @error('title')
                     <div class="mb-3 row justify-content-end">
                         <div class="col-sm-10 text-danger fts-14">{{ $message }}
                         </div>
                     </div>
                 @enderror
 
-                <div class="mb-3 row">
-                    <label for="proj-am" class="col-md-2 col-form-label">Описание Арм.</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Арм."
-                            id="proj-am" name="proj-am" value="{{ old('proj-am') }}"></textarea>
-                    </div>
-                </div>
-                @error('proj-am')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
+                @foreach (languages() as $lang)
+                    <div class="mb-3 row">
+                        <label for="description-{{ $lang }}" class="col-md-2 col-form-label">Названия
+                            {{ $lang }}</label>
 
-                <div class="mb-3 row">
-                    <label for="proj-ru" class="col-md-2 col-form-label">Описание Ру.</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Ру." id="proj-ru"
-                            name="proj-ru" value="{{ old('proj-ru') }}"></textarea>
-                    </div>
-                </div>
-                @error('proj-ru')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                        <div class="col-md-10">
+                            <input class="form-control" placeholder="Названия"
+                                value="{{ old("translate.$lang.description") }}" id="description-{{ $lang }}"
+                                name="translate[{{ $lang }}]" />
                         </div>
                     </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="proj-en" class="col-md-2 col-form-label">Описание Анг.</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Анг."
-                            id="proj-en" name="proj-en" value="{{ old('proj-en') }}"></textarea>
-                    </div>
-                </div>
-                @error('proj-en')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                    @error("translate.$lang.description")
+                        <div class="mb-3 row justify-content-end">
+                            <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                            </div>
                         </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="lang" class="col-md-2 col-form-label">Языки програм.</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Языки программирования" id="lang"
-                            name="lang" value="{{ old('lang') }}">
-                    </div>
-                </div>
-                @error('lang')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="process_time" class="col-md-2 col-form-label">Время процесса</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="number"
-                            placeholder="Время процесса изготовления программы (месяц)" id="process_time"
-                            name="process_time" value="{{ old('process_time') }}">
-                    </div>
-                </div>
-                @error('process_time')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="creation_date_at" class="col-md-2 col-form-label">Начало процесса</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="number" placeholder="Начало процесса (год)" id="creation_date_at"
-                            name="creation_date_at" value="{{ old('creation_date_at') }}">
-                    </div>
-                </div>
-                @error('creation_date_at')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="link_project" class="col-md-2 col-form-label">Ссилка проекта</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Ссилка проекта" id="link_project"
-                            name="link_project" value="{{ old('link_project') }}">
-                    </div>
-                </div>
-                @error('link_project')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="link_app_store" class="col-md-2 col-form-label">Ссилка проекта в App Store</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Ссилка проекта в App Store"
-                            id="link_app_store" name="link_app_store" value="{{ old('link_app_store') }}">
-                    </div>
-                </div>
-                @error('link_app_store')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
-
-                <div class="mb-3 row">
-                    <label for="link_play_market" class="col-md-2 col-form-label">Ссилка проекта в Play Market</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Ссилка проекта в Play Market"
-                            id="link_play_market" name="link_play_market" value="{{ old('link_play_market') }}">
-                    </div>
-                </div>
-                @error('link_play_market')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
-                        </div>
-                    </div>
-                @enderror
+                    @enderror
+                @endforeach
 
                 <div class="mb-3 row">
                     <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                     <div class="col-md-10">
                         <select id="defaultSelect" name="type" class="form-select">
                             <option>Выберите тип проекта</option>
-                            <option value="web">Web</option>
-                            <option value="mobile">Mobile</option>
-                            <option value="3d">3d</option>
+                            @foreach ($categoryList as $category)
+                                <option value="{{ $category['id'] }}">{{ $category['translations'] }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -193,11 +88,12 @@
                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photos</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" name="project_photos[]" class="account-file-input" multiple hidden
-                                    accept="image/png, image/jpeg" />
+                                <input type="file" id="upload" name="project_photos[]" class="account-file-input"
+                                    multiple hidden accept="image/png, image/jpeg" />
                             </label>
-                            <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer"></div>
-                            
+                            <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer">
+                            </div>
+
                         </div>
                     </div>
                 </div>

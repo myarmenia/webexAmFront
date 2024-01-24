@@ -43,4 +43,25 @@ class NewsCategoryService
         return $readyResource;
     }
 
+    public function getCategoryListAdmin()
+    {
+        return $this->newsCategoryRepository->getCategoryListAdmin();
+    }
+
+    public function customCategoryResAdmin($data)
+    {
+        $readyResource = [];
+
+        foreach ($data as $key => $val) {
+
+            $readyResource[] = [
+                'id' => $val->id,
+                'type' => $val->type,
+                'translations' => $val->translations[0]->name
+            ];
+        }
+
+        return $readyResource;
+    }
+
 }

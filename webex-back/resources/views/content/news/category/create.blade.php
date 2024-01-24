@@ -53,7 +53,7 @@
                                         name="translate[{{ $lang }}]" />
                                 </div>
                             </div>
-                            @error("translate.$lang.description")
+                            @error("translate.$lang")
                                 <div class="mb-3 row justify-content-end">
                                     <div class="col-sm-10 text-danger fts-14">{{ $message }}
                                     </div>

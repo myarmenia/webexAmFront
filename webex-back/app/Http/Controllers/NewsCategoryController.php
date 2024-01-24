@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsCategoryRequest;
 use App\Http\Resources\News\Category\NewsCategoryResource;
 use App\Models\News\NewsCategory;
 use App\Models\News\NewsCategoryTranslations;
@@ -31,7 +32,7 @@ class NewsCategoryController extends Controller
         return view('content.news.category.create');
     }
 
-    public function createCategory(Request $request)
+    public function createCategory(NewsCategoryRequest $request)
     {
         $this->newsCategoryService->createCategory($request->all());
 

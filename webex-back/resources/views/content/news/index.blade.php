@@ -9,16 +9,16 @@
 @section('content')
     @include('includes.alert')
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Проекты /</span> Список
+        <span class="text-muted fw-light">Новости /</span> Список
     </h4>
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <h5 class="card-header">Список проектов</h5>
+                <h5 class="card-header">Список новостей</h5>
             </div>
             <div>
-                <a href="{{ route('create-project') }}" class="btn btn-primary mx-4">Создать нового проект </a>
+                <a href="{{ route('news-create-page') }}" class="btn btn-primary mx-4">Создать новость </a>
             </div>
         </div>
         <div class="card-body">

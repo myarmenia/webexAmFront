@@ -8,7 +8,9 @@ use App\Models\News\NewsCategoryTranslations;
 class NewsCategoryRepository implements NewsCategoryInterface{
     public function createNewsCategory($type)
     {
-        $type = NewsCategory::create(['type' => $type]);
+        $readyType = preg_replace('/\s+/', '', strtolower($type));
+
+        $type = NewsCategory::create(['type' => $readyType]);
         return $type->id;
     }
 
@@ -33,5 +35,12 @@ class NewsCategoryRepository implements NewsCategoryInterface{
         }
 
         return false;
+    }
+
+    public function getCategoryListAdmin()
+    {
+       return NewsCategory::with(['translations' => function ($query) {
+                $query->where('lang', app()->getLocale())->get()->toArray();
+              }])->get();
     }
 }

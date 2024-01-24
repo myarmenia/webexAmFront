@@ -5,7 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectResource;
 use App\Models\News\News;
-use App\Services\NewsService;
+use App\Models\News\NewsCategory;
+use App\Services\News\NewsService;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -23,6 +24,13 @@ class NewsController extends Controller
 
         return view('content.news.index', compact('data'))
                ->with('i', ($request->input('page', 1) - 1) * 5);
+    }
+
+    public function createNewsPage()
+    {
+        $categoryList = $this->newsService->getCategoryList();
+       
+        return view('content.news.create', compact('categoryList'));
     }
 
     // public function create()
