@@ -4,8 +4,13 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from 'react-multi-carousel';
 import './MosaicGridSlide.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectallProjects } from '../../store/slices/HomePageSlice/HomePageSlice';
 
 function MosaicGridSlide() {
+
+  const allProjects = useSelector(selectallProjects)
+
   const prod = projectSectionData.map(el => (
     <Link to={`/projects/${el._id}`} key={el._id}>
       <div className='mosaic-slide-grid-item'>

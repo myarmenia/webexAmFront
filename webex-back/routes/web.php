@@ -173,6 +173,6 @@ Route::group(['prefix' => 'news'], function () {
   // Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
 
 });
-Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');
 });
 
+Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');

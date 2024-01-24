@@ -28,3 +28,11 @@ function getProjectDescription($translation)
 
     return $descriptoin;
 }
+
+function getCourseLanguagesDescription($translation)
+{
+    $lang = session('languages');
+    $descriptoin = $translation->where('lang', $lang)->first()->description;
+
+    return $descriptoin;
+}

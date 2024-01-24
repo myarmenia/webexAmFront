@@ -7,12 +7,13 @@ export const getHomePage = createAsyncThunk(
         try {
           const config = {
             method: "get",
-            url: "/Home",
+            url: "/home",
           };
           
           const response = await instance(config);
-            console.log(response);
-          return response?.data;
+            console.log(response,333333333333333);
+          return response?.data.data;
+         
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);
         }

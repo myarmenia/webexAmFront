@@ -6,7 +6,7 @@ function SlideSectionItem({id, title, timeLine, txt, img, icon}) {
         <div className='top-div'>
           <div className="slide-section-item-img-div">
               {img}
-              {icon}
+              <img src={icon} alt="" />
           </div>
           <h4>{title}</h4>
         </div>
