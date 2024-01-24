@@ -12,7 +12,9 @@ use App\Http\Controllers\Admin\Users\OpenNextLessonController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Admin\Users\StudentAttendancesController;
+use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\NewsCategoryController;
 use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -155,13 +157,22 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
-<<<<<<< HEAD
-  Route::get('/getProject',[ProjectController::class, 'getProject']);
-=======
   Route::get('/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
   Route::post('/update/{id}', [ProjectController::class, 'update'])->name('project.update');
 
->>>>>>> aa26ac1d0664c0681fd0e11c39a0560e3ac89e58
+
+});
+
+//News
+Route::group(['prefix' => 'news'], function () {
+  Route::get('/news', [NewsController::class, 'index'])->name('news');
+  Route::get('/news-create', [NewsController::class, 'createNewsPage'])->name('news-create-page');
+  Route::post('/news-create', [NewsController::class,'createNews'])->name('news-create');
+  
+  Route::get('/news-category', [NewsCategoryController::class, 'index'])->name('news-category');
+  Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
+  Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
+
 
 });
 });

@@ -32,11 +32,15 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
 
         Route::group(['prefix' => 'user'], function ($router) {
-            Route::post('edit', [UserController::class, 'login']);
+            Route::post('edit', [UserController::class, 'edit']);
+            Route::post('editPassword', [UserController::class, 'editPassword']);
     
         });
 
+
+
     });
+
     
     Route::group(['prefix' => 'project'], function ($router) {
         Route::get('getProject', [ProjectController::class, 'getProject']);
