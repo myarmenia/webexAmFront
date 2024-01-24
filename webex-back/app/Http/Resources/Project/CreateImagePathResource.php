@@ -16,7 +16,7 @@ class CreateImagePathResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'path' => $this->path
+            'path' => route('get-file', ['path' => $this->path]),
         ];
     }
 }

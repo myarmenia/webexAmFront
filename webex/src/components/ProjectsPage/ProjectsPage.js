@@ -45,12 +45,12 @@ function ProjectsPage() {
   
   const dispatch = useDispatch()
   
+  const [filterData, setFilterData] = useState([...respProject])
   
   useEffect(()=>{
     dispatch(getProjectPage())
   },[])
 
-  const [filterData, setFilterData] = useState([...respProject])
 
 
   console.log(respProject,858);
@@ -61,13 +61,20 @@ function ProjectsPage() {
   const handleItemClick = (index, type) => {
     setSelectedItem(index);
 
-   setFilterData( type !== 'all' ?  projectsPageData.filter(el => el.type == type) : [...respProject])
+    if (type !== 'all') {
+      setFilterData(respProject.filter(el => el.type == type))
+    }
+    
+    else{
+      setFilterData([...respProject])
+    }
+    
    
   };
 
-  
-  console.log(filterData,111);
-
+ useEffect(()=>{
+  setFilterData([...respProject])
+ },[respProject])
 
 
   return (
@@ -86,8 +93,7 @@ function ProjectsPage() {
               projectMenuList.map((el,index)=>
               <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid #9944C0' : ''}}>
                 <span className='filter-menu-projects-title'>{el.title}</span>
-                <span title='Խաղեր և 3D' className='filter-menu-projects-icon'>{el.icon}</span> 
-                {index === 3 && <span title='Խաղեր և 3D' className='filter-menu-projects-icon'>{d_3_icon}</span> }
+                <span title='Խաղեր և 3D' className='filter-menu-projects-icon'>{el.icon}</span>
             </li>
               )
             }

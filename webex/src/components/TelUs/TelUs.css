@@ -1,0 +1,96 @@
+.tel-us{
+    background-image: url('../../images/postive-caring-relationships-teachers 2.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.tel-us-form-div  form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: flex-start;
+}
+
+.tel-us-form-div h4{
+    color: var(--main_font_color);
+    text-align: center;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    /* width: 850px; */
+}
+
+
+.tel-us-form-div  form input {
+    width: 383px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+.tel-us-form-div  form textarea {
+    min-width: 383px;
+    max-width: 383px;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+
+.tel-us-form-div form p{
+    color: red;
+    font-size: 13px;
+}
+
+
+.tel-us-form-div .upload-file-div{
+    position: relative;
+}
+
+.tel-us-form-div .upload-file-div .fileIcon{
+    position: absolute;
+    right: 2%;
+    top: 0;
+    color: gray;
+}
+
+
+.tel-us .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 180px;
+}
+
+.tel-us .container .tel-us-title h3{
+    color: var(--main_font_color);
+    font-family: "TitleFont";
+    font-size: 98px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144px; /* 146.939% */
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+
+.tel-us .container .tel-us-title h5{
+    color: #6644BC;
+    font-family: "TitleFont";
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144px; /* 146.939% */
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}

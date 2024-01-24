@@ -32,9 +32,6 @@ const registerSlice = createSlice({
             if(action.payload.email){
                state.data.message = action.payload.email[0]
             }
-            // Object.keys(action.payload).map((error) => {
-            //    console.log(action.payload[error][0], 66333)
-            // })
             state.status = 'failed';
           });
     },
