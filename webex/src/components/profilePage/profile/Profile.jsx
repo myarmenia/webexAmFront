@@ -4,7 +4,7 @@ import profileImgg from '../../../images/profileImg.png';
 import pencleEdit from '../../../images/pencle-edit.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuthUser } from '../../../store/slices/Auth/AuthSlice';
-import { editUser } from '../../../store/slices/Profile/ProfileApi';
+import { editPassword, editUser } from '../../../store/slices/Profile/ProfileApi';
 
 function Profile() {
   const authUser = useSelector(getAuthUser);
@@ -30,32 +30,52 @@ function Profile() {
 
     }
   };
+  const [defaultData, setDefaultData] = useState()
   const [data, setData] = useState({
     name: '',
     phone: '',
     email: '',
   });
 
+  const [changePass, setChangePass] = useState({
+    old_password: '',
+    password: '',
+    password_confirmation: '',
+  })
+
   useEffect(() => {
     let userInfo = { name: authUser.name, phone: authUser.phone, email: authUser.email};
     setData(userInfo);
-  }, [authUser, setData]);
+    setDefaultData(userInfo)
+  }, [authUser, setData,setDefaultData]);
   // const [nameSur, setNameSur] = useState(authUser?.authUser?.name)
 
   const changeUserInfo = (e, key) => {
     setData({ ...data, [key]: e.target.value });
   };
+  const changeUserPassword = (e, key) => {
+    setChangePass({ ...changePass, [key]: e.target.value });
+  };
 
-  const sendUserInfo = () => {
+const sendUserPassword = () =>{
+  dispatch(editPassword(changePass))
+}
+const sendUserInfo = () => {
     const formData = new FormData()
     formData.append('data', JSON.stringify(data))
-    formData.append('avatar', changedImg)
+    if(changedImg.size){
+      formData.append('avatar', changedImg)
+    }
 
     dispatch(editUser(formData))
-  }
+}
+const cancelFunc = () => {
+  setData(defaultData)
+}
 
   console.log(data, 8888888888);
   console.log(authUser, 5555555555);
+  console.log("changePass",changePass);
   // console.log("nameSur",nameSur);
   return (
     <div
@@ -79,7 +99,7 @@ function Profile() {
             <label htmlFor="fileInput">
               <img src={pencleEdit} alt="pencilEdit" style={{ cursor: 'pointer' }} />
             </label>
-            <span className="profile-name-title">Maria Brown</span>
+            {/* <span className="profile-name-title">Maria Brown</span> */}
           </div>
         </div>
         <div className="fill-details">
@@ -113,23 +133,23 @@ function Profile() {
           </div>
           <div className="buttons-for-fill">
             <button className="button-save" onClick={sendUserInfo}>Պահպանել</button>
-            <button className="button-cancel">Չեղարկել</button>
+            <button className="button-cancel" onClick={cancelFunc}>Չեղարկել</button>
           </div>
         </div>
         <div className="change-password">
           <div className="change-password-div">
             <p className="change-password-title">գրիր գործող գաղտնաբառը</p>
-            <input type="text" placeholder="Placeholder Text" className="change-password-input" />
+            <input type="text" placeholder="Placeholder Text" className="change-password-input" onChange={(e) => changeUserPassword(e, 'old_password')}/>
           </div>
           <div className="change-password-div2">
             <p className="change-password-title">գրիր նոր գաղտնաբառը</p>
-            <input type="text" placeholder="Placeholder Text" className="change-password-input" />
+            <input type="text" placeholder="Placeholder Text" className="change-password-input" onChange={(e) => changeUserPassword(e, 'password')}/>
           </div>
           <div className="change-password-div2">
             <p className="change-password-title">կրկնիր նոր գաղտնաբառը</p>
-            <input type="text" placeholder="Placeholder Text" className="change-password-input" />
+            <input type="text" placeholder="Placeholder Text" className="change-password-input" onChange={(e) => changeUserPassword(e, 'password_confirmation')}/>
           </div>
-          <button className="button-save button-save-down">Պահպանել</button>
+          <button className="button-save button-save-down" onClick={sendUserPassword}>Պահպանել</button>
         </div>
       </div>
     </div>

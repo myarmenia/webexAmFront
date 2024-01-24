@@ -20,3 +20,22 @@ export const editUser = createAsyncThunk(
       }
     }
 )
+
+export const editPassword = createAsyncThunk(
+  'profile/editPassword',
+  async (data, thunkAPI) => {
+
+      try {
+        const config = {
+          method: "post",
+          data: data,
+          url: 'user/editPassword',
+        };
+        
+        const response = await instance(config);
+        return response?.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.response.data.error.both);
+      }
+    }
+)
