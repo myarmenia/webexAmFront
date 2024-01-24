@@ -1,48 +1,118 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Profile.css';
-import profileImg from '../../../images/profileImg.png';
+import profileImgg from '../../../images/profileImg.png';
 import pencleEdit from '../../../images/pencle-edit.png';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAuthUser } from '../../../store/slices/Auth/AuthSlice';
+import { editUser } from '../../../store/slices/Profile/ProfileApi';
 
 function Profile() {
-  const authUser = useSelector(getAuthUser)
-  const [nameSur, setNameSur] = useState(authUser?.authUser?.name)
+  const authUser = useSelector(getAuthUser);
+  const [profileImg, setProfileImg] = useState(profileImgg);
+  const [changedImg, setChangedImage] = useState({});
+  const fileInputRef = useRef();
+  const dispatch = useDispatch()
 
-  console.log(authUser, 5555555555)
-  console.log("nameSur",nameSur);
+
+  const handleFileChange = (event) => {
+    // const file = event.target.files[0];
+    const file = fileInputRef.current.files[0];
+
+    if (file) {
+      setChangedImage(file)
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const newProfileImg = reader.result;
+        setProfileImg(newProfileImg);
+      };
+      reader.readAsDataURL(file);
+
+
+    }
+  };
+  const [data, setData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+  });
+
+  useEffect(() => {
+    let userInfo = { name: authUser.name, phone: authUser.phone, email: authUser.email};
+    setData(userInfo);
+  }, [authUser, setData]);
+  // const [nameSur, setNameSur] = useState(authUser?.authUser?.name)
+
+  const changeUserInfo = (e, key) => {
+    setData({ ...data, [key]: e.target.value });
+  };
+
+  const sendUserInfo = () => {
+    const formData = new FormData()
+    formData.append('data', JSON.stringify(data))
+    formData.append('avatar', changedImg)
+
+    dispatch(editUser(formData))
+  }
+
+  console.log(data, 8888888888);
+  console.log(authUser, 5555555555);
+  // console.log("nameSur",nameSur);
   return (
-    <div style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>
+    <div
+      style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>
       <p className="your-profile-title">Քո Պրոֆիլը</p>
       <div className="allProfile">
         <div className="profile-picture">
           <div className="profile-img">
-            <img src={profileImg} alt="profile" className="profile-img-img"/>
+            <img src={profileImg} alt="profile" className="profile-img-img img-other" />
           </div>
           <div className="profile-name">
-            <img src={pencleEdit} alt="pencleEdit" />
-            <span className="profile-name-title">
-              Maria Brown
-            </span>
+            {/* <img src={pencleEdit} alt="pencleEdit" onClick={()=>console.log("Aaaaaaaa")}/> */}
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              style={{ display: 'none' }}
+              id="fileInput" 
+              ref={fileInputRef}
+            />
+            <label htmlFor="fileInput">
+              <img src={pencleEdit} alt="pencilEdit" style={{ cursor: 'pointer' }} />
+            </label>
+            <span className="profile-name-title">Maria Brown</span>
           </div>
         </div>
         <div className="fill-details">
           <p className="fill-details-title">Լրացրու տվյալներդ</p>
           <div className="input-container">
-            <input type="text" className="fill-details-nameInp" placeholder="Անուն Ազգանուն" value={nameSur} onChange={(e)=>setNameSur(e.target.value)} />
+            <input
+              type="text"
+              className="fill-details-nameInp"
+              placeholder="Անուն Ազգանուն"
+              value={data.name ?? ""}
+              onChange={(e) => changeUserInfo(e, 'name')}
+            />
             <img src={pencleEdit} alt="pencleEdit" className="input-edit" />
           </div>
           <input
             type="text"
             className="fill-details-nameInp fill-details-nameInpEmail"
             placeholder="Էլ. հասցե"
+            value={data.email ?? ""}
+            readOnly
           />
           <div className="input-container">
-            <input type="text" className="fill-details-nameInp" placeholder="հեռախոսի համար" />
+            <input
+              type="text"
+              className="fill-details-nameInp"
+              placeholder="հեռախոսի համար"
+              value={data.phone?? ""}
+              onChange={(e) => changeUserInfo(e, 'phone')}
+            />
             <img src={pencleEdit} alt="pencleEdit" className="input-edit" />
           </div>
           <div className="buttons-for-fill">
-            <button className="button-save">Պահպանել</button>
+            <button className="button-save" onClick={sendUserInfo}>Պահպանել</button>
             <button className="button-cancel">Չեղարկել</button>
           </div>
         </div>

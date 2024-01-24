@@ -35,7 +35,7 @@ export const ProfileSidebarArr = [
   {
     icon: Payment,
     name: 'Payment',
-    slug: 'payment'
+    slug: 'visithistory'
   },
   {
     icon: LogOut,
