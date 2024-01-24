@@ -20,11 +20,10 @@ class UserController extends Controller
 
     public function edit(EditRequest $request)
     {
-        dd($request->validate());
-        $user = $this->userService->edit($request);
+        $user = $this->userService->edit($request->all());
 
         if($user){
-            return response()->json(['authUser' => $user, 'success' => true], 200);
+            return response()->json(['user' => $user, 'success' => true], 200);
         }
 
         return response()->json(translateMessageApi('something-went-wrong'), 500);
@@ -32,7 +31,7 @@ class UserController extends Controller
 
     public function editPassword(ChangePasswordRequest $request)
     {
-        dd($request->validate());
+        dd($request->all());
         $change = $this->userService->editPassword($request);
 
         if($change){

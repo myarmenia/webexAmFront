@@ -1,6 +1,7 @@
 <?php
 namespace App\Services\API;
 
+use App\Services\FileUploadService;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Hash;
 
@@ -10,7 +11,15 @@ class UserService
     public function edit($data)
     {
         $user = JWTAuth::parseToken()->authenticate();
-        $user->update($data);
+        $updateData = $data['data'];
+
+        if (array_key_exists('avatar', $data)) {
+            $path = FileUploadService::upload($data['avatar'], 'user/'.$user->id);
+            $updateData['avatar'] = $path;
+        }
+
+        $user->update($updateData);
+
         return $user;
     }
 

@@ -24,9 +24,18 @@ class EditRequest extends FormRequest
     public function rules(): array
     {
         return [        
-            'name' => 'required',
-            'phone' => 'required',
+            'data.name' => 'required',
+            'data.phone' => 'required',
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $data = json_decode($this->data, true);
+
+        $this->merge([
+            'data' => ["name" => $data['name'], "phone" => $data['phone']],
+        ]);
     }
 
     protected function failedValidation(Validator|\Illuminate\Contracts\Validation\Validator $validator)
