@@ -37,9 +37,11 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     
         });
 
-        Route::group(['prefix' => 'project'], function ($router) {
-            Route::get('getProject', [ProjectController::class, 'getProject']);
-        });
+
+    });
+
+    Route::group(['prefix' => 'project'], function ($router) {
+        Route::get('getProject', [ProjectController::class, 'getProject']);
     });
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);

@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Interfaces\News\NewsCategoryInterface;
 use App\Interfaces\Project\ProjectRepositoryInterface;
-use App\Repositories\User\ProjectRepository;
+use App\Repositories\News\NewsCategoryRepository;
+use App\Repositories\Project\ProjectRepository;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
   public function register(): void
   {
     $this->app->bind(ProjectRepositoryInterface::class, ProjectRepository::class);
+    $this->app->bind(NewsCategoryInterface::class, NewsCategoryRepository::class);
   }
 
   /**
