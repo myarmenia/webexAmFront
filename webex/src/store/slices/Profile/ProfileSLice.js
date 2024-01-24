@@ -1,53 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { postLogin } from '../LoginSlice/LoginApi';
 import { editUser } from './ProfileApi';
 
 
 const initialState = {
-  authUser: {},
-  isAuth: false
+  message: "",
 };
 
 export const profileSLice = createSlice({
-  name: 'auth',
+  name: 'profile',
   initialState,
   reducers: {
-    setAuth: (state, action) => {
-      state.authUser = action.payload;
-    },
-    setIsAuth: (state, action) => {
-      state.isAuth = action.payload;
-    },
+
   },
   
   extraReducers: (builder) => {
     builder
-    //  .addCase(postLogin.fulfilled, (state, action) => {
-    //       state.authUser = action.payload.authUser
-    //       state.isAuth = true
-    //   })
       .addCase(editUser.fulfilled, (state, action) => {
-          state.authUser = action.payload
-          state.isAuth = true
+        state.message = action.payload.message
       })
-      // .addCase(getCurrentLesson.pending, (state, action) => {
-      //   console.log("pending")
-      // })
-      // .addCase(getCurrentLesson.rejected, (state, action) => {
-      //   console.log("rejected");
-      // });
   },
 });
 
 export const {
-  setAuth,
-  setIsAuth
+  // setIsAuth
 } = profileSLice.actions;
 
-// export const {getAuthUser} = loginSlice.actions
-export const getAuthUser = (state) => state.auth.authUser;
-export const getIsAuth = (state) => state.auth.isAuth;
-
+export const getMessage = (state) => state.profile.message;
 
 export const profileReduser = profileSLice.reducer;
 
