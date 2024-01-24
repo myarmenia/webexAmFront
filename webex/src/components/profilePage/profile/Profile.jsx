@@ -5,9 +5,11 @@ import pencleEdit from '../../../images/pencle-edit.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuthUser } from '../../../store/slices/Auth/AuthSlice';
 import { editPassword, editUser } from '../../../store/slices/Profile/ProfileApi';
+import { getMessage } from '../../../store/slices/Profile/ProfileSLice';
 
 function Profile() {
   const authUser = useSelector(getAuthUser);
+  const getMes = useSelector(getMessage)
   const [profileImg, setProfileImg] = useState(profileImgg);
   const [changedImg, setChangedImage] = useState({});
   const fileInputRef = useRef();
@@ -73,10 +75,11 @@ const cancelFunc = () => {
   setData(defaultData)
 }
 
-  console.log(data, 8888888888);
-  console.log(authUser, 5555555555);
-  console.log("changePass",changePass);
+  // console.log(data, 8888888888);
+  console.log(authUser, "555555555ggggg5");
+  // console.log("changePass",changePass);
   // console.log("nameSur",nameSur);
+  console.log("getMes",getMes);
   return (
     <div
       style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>

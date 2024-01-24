@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { postLogin } from '../LoginSlice/LoginApi';
 import { getCurrentUser } from './AuthApi';
+import { editUser } from '../Profile/ProfileApi';
 
 const initialState = {
   authUser: {},
@@ -25,6 +26,10 @@ export const authSlice = createSlice({
           state.authUser = action.payload.authUser
           state.isAuth = true
       })
+      .addCase(editUser.fulfilled, (state, action) => {
+        state.authUser = action.payload.user
+        state.isAuth = true
+    })
       .addCase(getCurrentUser.fulfilled, (state, action) => {
           state.authUser = action.payload
           state.isAuth = true
