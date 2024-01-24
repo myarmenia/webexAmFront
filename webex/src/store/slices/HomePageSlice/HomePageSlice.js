@@ -6,15 +6,13 @@ const initialState = {
     course_languages: [],
     calculator: {
         projects: {
-            id: 0,
-            count: 0
+            
         },
         students: {
-            id: 1,
-            count: 0
+           
         },
     },
-    allProjects: []
+    all_projects: []
 },
    status: 'idle',
    error: null,
@@ -35,6 +33,7 @@ const homePageSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(getHomePage.fulfilled, (state, action) => {
+            
             state.data = action.payload
              state.status = 'succes';
           })
@@ -49,6 +48,7 @@ const homePageSlice = createSlice({
 export const selectHomePage = (state) => state.homePage
 export const selectToolsCalc = (state) => state.homePage.data.calculator
 export const selectProgramingLang = (state) => state.homePage.data.course_languages
+export const selectallProjects = (state) => state.homePage.data.all_projects
 
  export const {} = homePageSlice.actions
 

@@ -9,8 +9,8 @@ import { selectToolsCalc } from '../../store/slices/HomePageSlice/HomePageSlice'
 
 function ToolsInfo() {
 
-  const respToolsdata = useSelector(selectToolsCalc)
-
+  const respTools =  useSelector(selectToolsCalc)
+  
   return (
     <div className='tools-info'>
         
@@ -19,12 +19,12 @@ function ToolsInfo() {
                 toolsData.map((el,index) =>{
 
                       if (el.type == 'students') {
-                        el.count = respToolsdata[el.type].count
-                        el._id = respToolsdata[el.type].id
+                        el.count = respTools[el.type].count
+                        el._id = respTools[el.type].id
                       }
                       if (el.type == 'projects') {
-                        el.count = respToolsdata[el.type].count
-                        el._id = respToolsdata[el.type].id
+                        el.count = respTools[el.type].count
+                        el._id = respTools[el.type].id
                       }
 
 
