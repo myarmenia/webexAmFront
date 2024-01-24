@@ -15,7 +15,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{route('project.index')}}">Проекты</a>
+                <a href="{{route('project')}}">Проекты</a>
             </li>
             <li class="breadcrumb-item active">Редактировать проект</li>
 
@@ -32,7 +32,6 @@
     <div class="card-body">
 
         <form action="{{ route('project.update', $project->id) }}" method="post" enctype="multipart/form-data">
-            @method('patch')
 
             <div class="mb-3 row">
                 <label for="name" class="col-md-2 col-form-label">Имя проекта</label>
@@ -51,8 +50,7 @@
             <div class="mb-3 row">
                 <label for="proj-am" class="col-md-2 col-form-label">Описание Арм.</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Арм." id="proj-am" name="proj-am" value="{{  $project->translation('am') }}"></textarea>
-
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Арм." id="proj-am" name="proj-am">{{ getProjectDescriptionForAdmin($project->translation, 'am') }}</textarea>
                 </div>
             </div>
             @error('proj-am')
@@ -65,8 +63,7 @@
             <div class="mb-3 row">
                 <label for="proj-ru" class="col-md-2 col-form-label">Описание Ру.</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Ру." id="proj-ru" name="proj-ru" value="{{ $project->translation('ru') }}"></textarea>
-
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Ру." id="proj-ru" name="proj-ru">{{ getProjectDescriptionForAdmin($project->translation, 'ru') }}</textarea>
                 </div>
             </div>
             @error('proj-ru')
@@ -79,7 +76,7 @@
             <div class="mb-3 row">
                 <label for="proj-en" class="col-md-2 col-form-label">Описание Анг.</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Анг." id="proj-en" name="proj-en" value="{{ $project->translation('en') }}"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Анг." id="proj-en" name="proj-en">{{getProjectDescriptionForAdmin($project->translation, 'en') }}</textarea>
                 </div>
             </div>
             @error('proj-en')
@@ -92,7 +89,7 @@
             <div class="mb-3 row">
                 <label for="lang" class="col-md-2 col-form-label">Языки програм.</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Языки программирования" id="lang" name="lang" value="{{ old('lang') }}">
+                    <input class="form-control" type="text" placeholder="Языки программирования" id="lang" name="lang" value="{{ $project->project_language }}">
                 </div>
             </div>
             @error('lang')
@@ -105,7 +102,9 @@
             <div class="mb-3 row">
                 <label for="process_time" class="col-md-2 col-form-label">Время процесса</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="number" placeholder="Время процесса изготовления программы (месяц)" id="process_time" name="process_time" value="{{ old('process_time') }}">
+                    <input class="form-control" type="number" placeholder="Время процесса изготовления программы (месяц)" id="process_time" name="process_time" value="{{ $project->process_time }}">
+
+
                 </div>
             </div>
             @error('process_time')
@@ -118,7 +117,9 @@
             <div class="mb-3 row">
                 <label for="creation_date_at" class="col-md-2 col-form-label">Начало процесса</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="number" placeholder="Начало процесса (год)" id="creation_date_at" name="creation_date_at" value="{{ old('creation_date_at') }}">
+                    <input class="form-control" type="number" placeholder="Начало процесса (год)" id="creation_date_at" name="creation_date_at" value="{{ $project->creation_date_at }}">
+
+
                 </div>
             </div>
             @error('creation_date_at')
@@ -131,7 +132,7 @@
             <div class="mb-3 row">
                 <label for="link_project" class="col-md-2 col-form-label">Ссилка проекта</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Ссилка проекта" id="link_project" name="link_project" value="{{ old('link_project') }}">
+                    <input class="form-control" type="text" placeholder="Ссилка проекта" id="link_project" name="link_project" value="{{ $project->link_project }}">
                 </div>
             </div>
             @error('link_project')
@@ -144,7 +145,7 @@
             <div class="mb-3 row">
                 <label for="link_app_store" class="col-md-2 col-form-label">Ссилка проекта в App Store</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Ссилка проекта в App Store" id="link_app_store" name="link_app_store" value="{{ old('link_app_store') }}">
+                    <input class="form-control" type="text" placeholder="Ссилка проекта в App Store" id="link_app_store" name="link_app_store" value="{{ $project->link_app_store }}">
                 </div>
             </div>
             @error('link_app_store')
@@ -157,7 +158,8 @@
             <div class="mb-3 row">
                 <label for="link_play_market" class="col-md-2 col-form-label">Ссилка проекта в Play Market</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="text" placeholder="Ссилка проекта в Play Market" id="link_play_market" name="link_play_market" value="{{ old('link_play_market') }}">
+                    <input class="form-control" type="text" placeholder="Ссилка проекта в Play Market" id="link_play_market" name="link_play_market" value="{{ $project->link_play_market }}">
+
                 </div>
             </div>
             @error('link_play_market')
@@ -171,10 +173,10 @@
                 <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                 <div class="col-md-10">
                     <select id="defaultSelect" name="type" class="form-select">
-                        <option>Выберите тип проекта</option>
-                        <option value="web">Web</option>
-                        <option value="mobile">Mobile</option>
-                        <option value="3d">3d</option>
+                        <option disabled selected>Выберите тип проекта</option>
+                        <option value="web" {{$project->type == 'web' ? 'selected' : ''}}>Web</option>
+                        <option value="mobile" {{$project->type == 'mobile' ? 'selected' : ''}}>Mobile</option>
+                        <option value="3d" {{$project->type == '3d' ? 'selected' : ''}}>3d</option>
                     </select>
                 </div>
             </div>
@@ -195,22 +197,36 @@
                             <i class="bx bx-upload d-block d-sm-none"></i>
                             <input type="file" id="upload" name="project_photos[]" class="account-file-input" multiple hidden accept="image/png, image/jpeg" />
                         </label>
-                        <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer"></div>
+                        <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer">
+                            @foreach($project->images as $key => $image)
+                            <div class="uploaded-image-container mx-2">
+                                <img src="{{route('get-file', ['path' => $image->path])}}" class="d-block rounded uploaded-image uploaded-photo-project">
+
+                                <button type="button" class="btn btn-outline-danger btn-sm mt-2" id="1704720042044">Remove</button>
+                            </div>
+
+
+                            @endforeach
+                        </div>
 
                     </div>
                 </div>
             </div>
-            @error('type')
-            <div class="mb-3 row justify-content-end">
+            @error('project_photos')
+            <div class="mb-3 mt-5 row justify-content-end">
                 <div class="col-sm-10 text-danger fts-14">{{ $message }}
                 </div>
             </div>
             @enderror
 
+            <div class="mt-5 row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
 
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
             </div>
+
+
     </div>
 
     </form>
