@@ -26,6 +26,7 @@ class UserService
     public function editPassword($data)
     {
         $hashedPassword = auth('api')->user()->password;
+
         if(Hash::check($data['old_password'], $hashedPassword)){
             auth('api')->user()->update([
                 'password' => Hash::make($data['password'])
