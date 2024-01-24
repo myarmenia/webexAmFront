@@ -5,7 +5,7 @@ namespace App\Models\News;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NewsCategories extends Model
+class NewsCategory extends Model
 {
     use HasFactory;
 
@@ -14,4 +14,9 @@ class NewsCategories extends Model
     protected $fillable = [
         'type',
     ];
+
+    public function translations()
+    {
+        return $this->hasMany(NewsCategoryTranslations::class, 'news_category_id', 'id');
+    }
 }
