@@ -19,8 +19,8 @@ function SlideSection() {
           img: programingLengImg
         }
       
-     return <SlideSectionItem key={el._id}
-              id = {el._id}
+     return <SlideSectionItem key={el.id}
+              id = {el.id}
               title = {el.name}
               txt = {el.description}
               img = {el.img} 
