@@ -37,12 +37,14 @@ export const Dashboard = () => {
                 {DataAll.dashboard.account.avatar === null ? (
                   <img src={ProfPic} alt="ProfPic" />
                 ) : (
-                  <img src={DataAll.dashboard.account.avatar} alt="ProfPic" />
+                  <img src={DataAll.dashboard.account.avatar} alt="ProfPic" className="userPhoto"/>
                 )}
 
                 <span className="account_name_profile">{DataAll.dashboard.account.name}</span>
               </div>
+              <div className="account_div">
               <button className="account_button">Edit profile</button>
+              </div>
             </div>
             <div className="purchaseHistory">
               <div className="account_div">
