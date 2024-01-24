@@ -38,12 +38,13 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         });
 
 
+
     });
 
+    
     Route::group(['prefix' => 'project'], function ($router) {
         Route::get('getProject', [ProjectController::class, 'getProject']);
     });
-
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
     Route::post('check-forgot-token', [ForgotPasswordController::class, 'checkForgotToken']);
     Route::post('send-new-password', [ForgotPasswordController::class, 'sendNewPassword']);

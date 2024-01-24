@@ -19,7 +19,9 @@ import Profile from './components/profilePage/profile/Profile';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
 import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
+import ContactUsPage from './components/ContactUsPage/ContactUsPage';
 import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
+
 
 
 function App() {
@@ -50,7 +52,7 @@ function App() {
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
-            <Route path="contact" element={<h1>contact</h1>} />
+            <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
               <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />

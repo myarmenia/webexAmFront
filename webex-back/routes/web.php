@@ -157,9 +157,9 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
-  Route::get('/getProject', [ProjectController::class, 'getProject']);
   Route::get('/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
   Route::post('/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+
 
 });
 
@@ -172,6 +172,7 @@ Route::group(['prefix' => 'news'], function () {
   Route::get('/news-category', [NewsCategoryController::class, 'index'])->name('news-category');
   Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
   Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
+
 
 });
 });

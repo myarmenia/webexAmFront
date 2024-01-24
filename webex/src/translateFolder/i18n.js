@@ -258,6 +258,16 @@ i18n
             'Masis community',
             'Liga uslug LLC'
           ],
+
+          order_now: 'Order now',
+
+          projectPage_translation: [
+            'Description',
+            'Project Name',
+            'Programming languages',
+            'Creation period',
+            'Date of creation'
+          ]
         },
       },
       am: {
@@ -525,7 +535,16 @@ i18n
             'Մասիսի համայնք',
             'Լիգա ուսլուգ ՍՊԸ'
           ],
- 
+
+          order_now: 'Պատվիրե՛ք  հիմա',
+
+          projectPage_translation: [
+            'Նկարագրություն',
+            'Նախագծի անվանումը',
+            'Ծրագրավորման լեզուներ',
+            'Ստեղծման ժամանակհատված',
+            'Ստեղծման տարեթիվը'
+          ],
         }
 
       },
@@ -804,6 +823,15 @@ i18n
             'ООО «Лига услуг»'
           ],
 
+          order_now: 'Заказать сейчас',
+
+          projectPage_translation: [
+            'Описание',
+            'Название проекта:',
+            'Языки программирования',
+            'Период создания',
+            'Дата создания'
+          ],
         }
       },
       // Add more languages as needed

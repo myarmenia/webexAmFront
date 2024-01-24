@@ -4,13 +4,21 @@ import { bottomLine } from '../../images/images'
 import { useTranslation } from 'react-i18next'
 import { co_workers_data, ourt_teem_data } from '../../data'
 import ScrollerComponent from '../ScrollerComponent/ScrollerComponent'
+import { useSelector } from 'react-redux'
+import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
+import OrderModal from '../OrderModal/OrderModal'
 function AbouteUsPage() {
 
+    const [openOrderModal, setOpenOrderModal] = useState(false)
+    const [messageModal, setMessageModal] = useState(false)
+     const respOrder = useSelector(selectOrder)
+
+     console.log(respOrder);
     const { t, i18n } = useTranslation()
 
     return (
         <div className='aboute-us-page'>
-            <div className='abote_us_order_modal_btn'>mjbhfgxdfchj</div>
+            <div className='abote_us_order_modal_btn' onClick={()=> setOpenOrderModal(true)}>{t('order_now')}</div>
             <div className='aboute-us-top-div'>
                 <div className='container'>
                     <h2>{t('abouteUs_Header.0')}</h2>
@@ -73,9 +81,9 @@ function AbouteUsPage() {
                         }
                      </div>
                 </div>
-
-
             </div>
+            {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
+            {/* {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>} */}
         </div >
     )
 }
