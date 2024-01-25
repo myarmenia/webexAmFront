@@ -11,7 +11,11 @@
     "email-unique": "The user with this email already exists",
     "email-send": "Letter sent",
     "user-email-or-password-not-found": "Incorrect login or password",
-    "password-changed": "Password successfully changed"
+    "password-changed": "Password successfully changed",
+    "user-edit": "Data saved successfully",
+    "wrong-password": "Wrong password"
+
+
 
     
 

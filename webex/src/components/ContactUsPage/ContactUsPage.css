@@ -1,0 +1,158 @@
+.contuct-us-page{
+    background-color: var(--main_color);
+}
+
+.contuct-us-page .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    overflow: hidden;
+    padding: 50px 180px;
+}
+
+.contuct-us-page  .contact-us-top-div{
+    height: 300px;
+    background-image: url('../../images/postive-caring-relationships-teachers 1 (3).png');
+    background-position: center center;
+    background-size: cover;
+}
+
+.contuct-us-page  .contact-us-top-div .container{
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.contuct-us-page h2{
+    color: var(--main_font_color);
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: "TitleFont";
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #010526 29%,
+      #7C1DC9 67%,
+      white 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+    display: inline-block;
+        font-size: 190px;
+}
+
+
+
+/* ================================================ */
+
+
+.feedback  form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: flex-start;
+}
+
+.feedback h4{
+    color: var(--main_font_color);
+    text-align: center;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    /* width: 850px; */
+}
+
+
+.feedback  form input {
+    width: 383px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+.feedback  form textarea {
+    min-width: 383px;
+    max-width: 383px;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0 10px;
+    outline: none;
+    color: var(--main_font_color);
+}
+
+.feedback form p{
+    color: red;
+    font-size: 13px;
+}
+
+
+.feedback_map_block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media(max-width: 780px){
+    .contuct-us-page p , .contuct-us-page ul, .contuct-us-page  .contuct-us-page .container p{
+        font-size: 14px;
+    }
+
+    .contuct-us-page h2{
+        font-size: 130px;
+    }
+
+    .contuct-us-page h4{
+        font-size: 24px;
+        width: 400px;
+    }
+
+    .contuct-us-page h5{
+        font-size: 16px;
+    }
+}
+
+
+
+@media(max-width: 480px){
+    .contuct-us-page p , .contuct-us-page ul, .contuct-us-page  .contuct-us-page .container p{
+        font-size: 14px;
+    }
+
+    .contuct-us-page h2{
+        font-size: 100px;
+    }
+
+    .contuct-us-page h4{
+        font-size: 16px;
+        width: 350px;
+    }
+
+    .contuct-us-page h5{
+        font-size: 16px;
+    }
+}
+
+@keyframes textclip {
+    to {
+      background-position: -200% center;
+    }
+  }

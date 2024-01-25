@@ -95,7 +95,7 @@
                                             <a class="dropdown-item present" href="javascript:void(0);">
                                                 <i class="tf-icons bx bx-task"></i> Присутствует
                                             </a>
-                                            <a class="dropdown-item present" href="{{route('users.info', $user->id)}}">
+                                            <a class="dropdown-item" href="{{route('users.info', $user->id)}}">
                                                 <i class="tf-icons bx bx-task"></i> Управление уроками
                                             </a>
                                             <a class="dropdown-item d-flex" href="javascript:void(0);">
@@ -119,7 +119,7 @@
                                                         {{ $user->status ? 'checked' : null }}>
                                                 </div>Статус
                                             </a>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                            <a class="dropdown-item" href="{{route('users.edit', $user->id)}}"><i
                                                     class="bx bx-edit-alt me-1"></i>Редактировать</a>
                                             <button type="button" class="dropdown-item click_delete_item"
                                                 data-bs-toggle="modal" data-bs-target="#smallModal"><i
@@ -146,10 +146,3 @@
 @endsection
 
 <x-modal-delete></x-modal-delete>
-{{-- <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a> --}}
-
-
-{{-- {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!} --}}

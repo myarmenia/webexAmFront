@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\API\VerifyUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use App\Mail\SendVerifyToken;
+use Mail;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -44,22 +48,32 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password|min:8',
+            'lessons_quantity_per_month' => 'required',
             'phone' => 'required',
             'roles' => 'required'
         ]);
 
         $input = $request->all();
-        $input['status'] = isset($request->status) ? true : null;
-        $input['status'] = isset($request->status) ? true : null;
-        $input['status'] = isset($request->status) ? true : null;
+        $input['status'] = isset($request->status) ? true : 0;
+        $input['payment_status'] = isset($request->payment_status) ? true : 0;
+        $input['passport'] = isset($request->passport) ? true : 0;
 
 
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
-        $user->assignRole(['student']);
+        // $user->assignRole(['student']);
+        if ($user) {
+            $token = sha1(Str::random(80));
+            $email = $user->email;
+            $verify = VerifyUser::create([
+                'email' => $email,
+                'verify_token' => $token
+            ]);
 
+            Mail::send(new SendVerifyToken($email, $token));
+        }
 
         return redirect()->route('users.index')
         ->with('success', 'User created successfully');
@@ -89,7 +103,7 @@ class UserController extends Controller
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
 
-        return view('users.edit', compact('user', 'roles', 'userRole'));
+        return view('content.users.edit', compact('user', 'roles', 'userRole'));
     }
 
     /**
@@ -101,14 +115,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
+            'lessons_quantity_per_month' => 'required',
+            'phone' => 'required',
             'roles' => 'required'
         ]);
 
         $input = $request->all();
+        $input['status'] = isset($request->status) ? true : 0;
+        $input['payment_status'] = isset($request->payment_status) ? true : 0;
+        $input['passport'] = isset($request->passport) ? true : 0;
+
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {

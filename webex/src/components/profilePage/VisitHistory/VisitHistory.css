@@ -1,0 +1,33 @@
+.payment-title{
+  font-size: 24px;
+  line-height: 29.3px;
+  font-weight: 700;
+  padding-bottom: 25px;
+}
+.allPayment {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1.969px 6.475px 0px rgba(0, 0, 0, 0.02), 0px 9px 18.2px 0px rgba(0, 0, 0, 0.03),
+  0px 22.781px 48.825px 0px rgba(0, 0, 0, 0.04), 0px 45px 112px 0px rgba(0, 0, 0, 0.06);
+}
+.tableStyle {
+  width: 100%;
+  border-collapse: collapse;
+}
+.thead {
+  background-color: #f5f5f5;
+}
+th {
+  text-align: start;
+  color: #0f1419;
+  padding: 8px;
+  border-bottom: 1px solid #e1cfff;
+}
+.trStyle {
+  background-color: #ffffff;
+}
+td {
+  color: #333333;
+  padding: 8px;
+  border-bottom: 1px solid #e1cfff;
+}

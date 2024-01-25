@@ -85,3 +85,10 @@
 }
 
 
+.slide-section-item-img-div img{
+    width: 50px;
+    height: 50px;
+    z-index: 99999999;
+    position: absolute;
+}
+

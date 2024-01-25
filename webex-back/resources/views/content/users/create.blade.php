@@ -1,15 +1,21 @@
 @extends('layouts/contentNavbarLayout')
 
 @section('title', 'Account settings - Account')
-@section('page-script')
-{{-- <script src="{{ asset('assets/js/111.js') }}"></script> --}}
-@endsection
 
 @section('content')
 
 <h4 class="py-3 mb-4">
-    <span class="text-muted fw-light">Пользователи /</span> Создать нового пользователя
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{route('users.index')}}">Пользователи</a>
+            </li>
+            <li class="breadcrumb-item active">Создать нового пользователя</li>
+
+        </ol>
+    </nav>
 </h4>
+
 <div class="card">
 
     <div class="d-flex justify-content-between align-items-center">
@@ -84,14 +90,26 @@
                  </div>
              </div>
 
+             <div class="mb-3 row">
+                 <label for="lessons_quantity_per_month" class="col-md-2 col-form-label">Количество уроков в месяц</label>
+                 <div class="col-md-10">
+                     <input class="form-control" type="text" placeholder="количество уроков в месяц" id="lessons_quantity_per_month" name="lessons_quantity_per_month" value="12">
+                 </div>
+             </div>
+              @error('lessons_quantity_per_month')
+              <div class="mb-3 row justify-content-end">
+                  <div class="col-sm-10 text-danger fts-14">{{$message}}
+                  </div>
+              </div>
+              @enderror
+
 
             <div class="mb-3 row">
 
                 <label for="role" class="col-md-2 col-form-label">Роли</label>
                 <div class="col-md-10">
-                    <select class="form-select" id="roles" name="roles">
-                        <option value="">Роли</option>
-
+                    <select class="form-select" id="roles" name="roles[]" multiple>
+                        <option value="" disabled>Роли</option>
                         @foreach ($roles as $role)
                         <option value="{{ $role}}">{{ $role}}</option>
                         @endforeach
@@ -100,17 +118,25 @@
                 </div>
             </div>
 
+            @error('roles')
+            <div class="mb-3 row justify-content-end">
+                <div class="col-sm-10 text-danger fts-14">{{$message}}
+                </div>
+            </div>
+            @enderror
+
+
             <div class="mb-3 row">
                 <label for="html5-text-input" class="col-md-2 col-form-label"></label>
                 <div class="d-flex col-md-10">
                     <div class="col-md-2 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="status" checked name="status">
+                        <input class="form-check-input" type="checkbox" id="status" name="status">
 
                         <label class="form-check-label" for="status">Статус</label>
                     </div>
                     <div class="col-md-2 form-check form-switch mb-2">
-                        <input class="form-check-input" type="checkbox" id="passport_status" name="passport_status">
-                        <label class="form-check-label" for="passport_status">Пасспорт</label>
+                        <input class="form-check-input" type="checkbox" id="passport" name="passport">
+                        <label class="form-check-label" for="passport">Пасспорт</label>
                     </div>
                     <div class="col-md-4 form-check form-switch mb-2">
                         <input class="form-check-input" type="checkbox" id="payment_status" name="payment_status" >

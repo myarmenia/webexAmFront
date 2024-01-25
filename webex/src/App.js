@@ -16,6 +16,12 @@ import ResetPasswordPage from './components/ResetPasswordPage/ResetPasswordPage'
 import VerifyAccount from './components/VerifyAccount/VerifyAccount';
 import AbouteUsPage from './components/AbouteUsPage/AbouteUsPage';
 import Profile from './components/profilePage/profile/Profile';
+import PrivateRoute from './privateRoute/PrivateRoute';
+import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
+import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
+import ContactUsPage from './components/ContactUsPage/ContactUsPage';
+import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
+
 
 
 function App() {
@@ -29,33 +35,34 @@ function App() {
     pathname == '/' && navigate(`/${leng}/`);
   }, []);
 
-  
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<HomeWraper />}>
           <Route path=":leng">
-            <Route index element={<HomePage />} />
-
-            <Route path="programing" element={<h1>programing</h1>} />
-            <Route path="projects" element={<ProjectsPage />}>
-              <Route path=":idd" element={<ProjectsPage />} />
-            </Route>
-            <Route path="aboteus" element={<AbouteUsPage/>} />
-            <Route path="contact" element={<h1>contact</h1>} />
-            <Route path="courses-registration" element={<CourseRegistrationPage />} />
-            <Route path="registr" element={<Register />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="registr" element={<PrivateRouteForRegAndLog><Register /></PrivateRouteForRegAndLog>} />
+            <Route path="login" element={<PrivateRouteForRegAndLog><LoginPage /> </PrivateRouteForRegAndLog>} />
             <Route path="resetPassword/:token/:email" element={<ResetPasswordPage />} />
             <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
-            <Route path="profilePage" element={<ProfilePage />}>
-              <Route index element={<Dashboard />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="currentlessons" element={<CurrentLessons />} />
-              <Route path="profile" element={<Profile />} />
+
+            <Route index element={<PrivateRouteForOutSider><HomePage /></PrivateRouteForOutSider>} />
+            <Route path="programing" element={<h1>programing</h1>} />
+            <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
+              <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
+            <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
+            <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
+            <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
+            <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
+              <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
+              <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+              <Route path="visithistory" element={<PrivateRoute><VisitHistory /></PrivateRoute>} />
+            </Route>
+              </Route>
           </Route>
-        </Route>
 
         <Route path="*" element={<div>ejy chka</div>} />
       </Routes>

@@ -16,8 +16,8 @@ class ProjectsForHomePageResource extends JsonResource
     {
         return [
           "id" => $this->id,
-          "image" => $this->images()->first('path'),
-          "description" => $this->translation(session('languages'))->description,        
+          "path" => route('get-file', ['path' => $this->images()->first()->path]),
+          "description" => getProjectDescription($this->translation),        
         ];
     }
 }

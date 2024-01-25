@@ -233,6 +233,41 @@ i18n
             'Years of experience.',
             'Webex Technologies LLC is specialized in creating websites. Most common programming languages that are used at work are, HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES9, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS , MySQL etc. WebEx Tech has been working for 20 years. People who work with us are grateful for the quality of work we perform. We build successful and inspirational sites. Already have a website? So you need - optimization and promotion of sites, advertising on the Internet, support, and maintenance of sites. We create internet solutions for our clients that will make the project development simple and functional.'
           ],
+
+          abouteUs_ourPartnersTitle: 'Our partners',
+          abouteUs_ourPartners: [
+            'RA Ministry of Education, Science, Culture and Sports',
+            'RA Ministry of Territorial Administration and Infrastructures',
+            'RA Ministry of High-tech Industry',
+            'Migration Service of RA Territorial Administration and Development',
+            'V.A. Fanarjyan National Oncology Center CJSC',
+            'RA Public Services Regulatory Commission',
+            'Property Appraisal and Auction Center',
+            'RA Ministry of Defense',
+            'National Oncology Center',
+            'Youth center of KGSMN',
+            'Armenian Center of Hemophilia and Thrombophilia',
+            'Prism Center for Research and Analysis',
+            'Orbel Analytical - Research Center',
+            'RA police',
+            'LGG foundation',
+            'Elnarti LLC',
+            'Angel investor Club of Armenia',
+            'Investment Support Center',
+            'Cadastre Committee',
+            'Masis community',
+            'Liga uslug LLC'
+          ],
+
+          order_now: 'Order now',
+
+          projectPage_translation: [
+            'Description',
+            'Project Name',
+            'Programming languages',
+            'Creation period',
+            'Date of creation'
+          ]
         },
       },
       am: {
@@ -475,7 +510,41 @@ i18n
             'Տարիների փորձ։',
             'WebEx Tech-ն աշխատում է արդեն 20 տարի: Մարդիկ, ովքեր աշխատում են մեզ հետ, երախտապարտ են մեր կատարած աշխատանքի որակի համար: Մենք կառուցում ենք հաջողակ և ոգեշնչող կայքեր: Արդեն ունե՞ք կայք: Այսպիսով, ձեզ անհրաժեշտ է - կայքերի օպտիմալացում և առաջխաղացում, գովազդ ինտերնետում, կայքերի աջակցություն և սպասարկում: Մենք ստեղծում ենք ինտերնետային լուծումներ մեր հաճախորդների համար, որոնք կդարձնեն ծրագրի մշակումը պարզ և ֆունկցիոնալ:'
           ],
- 
+
+          abouteUs_ourPartnersTitle: 'Մեր գործընկերները',
+          abouteUs_ourPartners: [
+            'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն',
+            'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն',
+            'ՀՀ բարձր տեխնոլոգիական արդյունաբերության նախարարություն',
+            'ՀՀ տարածքային կառավարման եվ զարգացման միգրացիոն ծառայություն',
+            'Վ․Ա․ Ֆանարջյանի անվան ուռուցքաբանության ազգային կենտրոն ՓԲԸ',
+            'ՀՀ Հանրային ծառայությունները կարգավորող հանձնաժողով',
+            'Գույքի գնահատման և աճուրդի կենտրոն',
+            'ՀՀ Պաշտպանության նախարարություն',
+            'ՈՒռուցքաբանության ազգային կենտրոն',
+            'ԿԳՄՍՆ երիտասարդական կենտրոն',
+            'Հեմոֆիլիայի և թրոմբոֆիլիայի հայկական կենտրոն',
+            'Պրիզմա հետազոտության և վերլուծության կենտրոն',
+            'Օրբելի վերլուծական - հետազոտական կենտրոն',
+            'ՀՀ ոստիկանություն',
+            'LGG foundation',
+            'Էլնարտի ՍՊԸ',
+            'Angel investor Club of Armenia',
+            'Ներդրումների աջակցման կենտրոն',
+            'Կադաստրի Կոմիտե',
+            'Մասիսի համայնք',
+            'Լիգա ուսլուգ ՍՊԸ'
+          ],
+
+          order_now: 'Պատվիրե՛ք  հիմա',
+
+          projectPage_translation: [
+            'Նկարագրություն',
+            'Նախագծի անվանումը',
+            'Ծրագրավորման լեզուներ',
+            'Ստեղծման ժամանակհատված',
+            'Ստեղծման տարեթիվը'
+          ],
         }
 
       },
@@ -729,6 +798,40 @@ i18n
             '«Webex Technologies» специализируется на создании веб-сайтов. Наиболее распространенными языками программирования, которые используются в работе, являются HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES9, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS, MySQL и т. д. WebEx Tech имеет работаю 20 лет. Люди, которые с нами работают, благодарны за качество выполняемой нами работы. Мы создаем успешные и вдохновляющие сайты. У вас уже есть сайт? Итак, Вам необходимо - оптимизация и продвижение сайтов, реклама в Интернете, поддержка и обслуживание сайтов. Мы создаем интернет-решения для наших клиентов, которые сделают разработку проекта простой и функциональной.'
           ],
 
+          abouteUs_ourPartnersTitle: 'Наши партнеры',
+          abouteUs_ourPartners: [
+            'Министерство образования, науки, культуры и спорта РА',
+            'Министерство территориального управления и инфраструктур РА',
+            'Министерство высокотехнологичной промышленности РА',
+            'Миграционная служба Территориального управления и развития РА',
+            'В.А. ЗАО Национальный онкологический центр Фанарджяна',
+            'Комиссия по регулированию общественных услуг РА',
+            'Центр оценки недвижимости и аукционов',
+            'Министерство Обороны РА',
+            'Национальный онкологический центр',
+            'Молодежный центр КГСМН',
+            'Армянский центр гемофилии и тромбофилии',
+            'Центр исследований и анализа «Призма»',
+            'Орбел Аналитикал - Исследовательский центр',
+            'Полиция РА',
+            'LGG foundation',
+            'ООО «Элнарти»',
+            'Angel investor Club of Armenia',
+            'Центр поддержки инвестиций',
+            'Кадастровый комитет',
+            'Сообщество Масиси',
+            'ООО «Лига услуг»'
+          ],
+
+          order_now: 'Заказать сейчас',
+
+          projectPage_translation: [
+            'Описание',
+            'Название проекта:',
+            'Языки программирования',
+            'Период создания',
+            'Дата создания'
+          ],
         }
       },
       // Add more languages as needed

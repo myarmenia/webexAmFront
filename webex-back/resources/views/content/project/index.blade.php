@@ -57,7 +57,7 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                            <a class="dropdown-item" href="{{route('project.edit', $project->id)}}"><i
                                                     class="bx bx-edit-alt me-1"></i>Редактировать</a>
                                             <button type="button" class="dropdown-item click_delete_item"
                                                 data-bs-toggle="modal" data-bs-target="#smallModal"><i

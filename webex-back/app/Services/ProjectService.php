@@ -3,10 +3,18 @@ namespace App\Services;
 use App\Models\Project\Project;
 use App\Models\Project\ProjectPhoto;
 use App\Models\Project\ProjectTranslation;
+use App\Repositories\Project\ProjectRepository;
 use Illuminate\Support\Facades\DB;
 
 class ProjectService
 {
+
+    protected $projectRepository;
+
+    public function __construct(ProjectRepository $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
+    }
 
     public function addProject($data)
     {
@@ -71,5 +79,48 @@ class ProjectService
  
 
     }
+
+    public function getProject()
+    {
+       return $this->projectRepository->getProject();  
+
+    }
+
+    public function updateProject($data, $id){
+
+        $project = Project::find($id);
+
+        $project->update([
+            "name" => $data['name'],        
+            "project_language" => $data['lang'],
+            "process_time" => $data['process_time'],
+            "creation_date_at" => $data['creation_date_at'],            
+            "type" => $data['type']]);
+        
+
+        foreach ( $project->translation as $key => $value) {
+           $value->where('lang', $value->lang)->update(['description' => $data["proj-$value->lang"]]);
+        }
+
+        if($data['project_photos']){
+            $projectPhotoInsert = [];
+            $photos = $data['project_photos'];
+            foreach($photos as $photo){
+                $path = FileUploadService::upload($photo, 'projects/'.$project->id);
+                $projectPhotoInsert[] = [
+                    'path' => $path,
+                    'name' => $photo->getClientOriginalName() 
+                ];
+            }
+
+            $project->images()->createMany($projectPhotoInsert);
+
+        }
+
+        return $project;
+        
+
+    }
+
   
 }

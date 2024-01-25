@@ -2,18 +2,24 @@ import React from 'react';
 import './MosaicGrid.css';
 import { projectSectionData } from '../../data';
 import { Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectallProjects } from '../../store/slices/HomePageSlice/HomePageSlice';
 
 const MosaicGrid = () => {
 
+  const allProjects = useSelector(selectallProjects)
+
+
+  console.log(allProjects,6666666);
   const leng = localStorage.getItem('lang')
   return (
     <div className="mosaic-grid">
-      {projectSectionData.map((el) => (
-        <Link key={el._id} to={`/${leng}/projects/${el._id}`}>
+      {allProjects.map((el) => (
+        <Link key={el.id} to={`/${leng}/projects/${el.id}`}>
           <div  className='mosaic-grid-item' >
-          <img src={el.img} alt="" />
+          <img src={el.path} alt="" />
           <div className='mosaic-grid-item-text-div'>
-            <p >{el.txt}</p>
+            <p >oiuhgy tfrdt esdgfyuhi  jokpijhu gytfredrf tgyhuiopo iuytfrdf tgyhujiokp lokugf drf tgyhu jiokp lfdfgty hujikolpkh gfdrfgthujk uhygtfcg. ughjbgjb hufvhj vgvgfhg gv fvgvgh fhgvfhg gvhgv gvghvhgv gfvhgvh gfhgv kjujhbgyuhfg ghfvghcvgf cvghcvghc gfcvc vgfcgfc xcfdxcfg gcfgfvc gcgfvc cgfcgf gfcfgc gygfyty fytgfgc gcggvcgv hgcgfcgfc gcfgc fgv</p>
           </div>
         </div>
         </Link>

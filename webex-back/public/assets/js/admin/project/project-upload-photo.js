@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           uploadedImages.push(imageData);
 
           const imageContainer = document.createElement('div');
-          imageContainer.className = 'uploaded-image-container';
+          imageContainer.className = 'uploaded-image-container-div mx-2';
 
           const image = document.createElement('img');
           image.src = imageData.url;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
           const removeButton = document.createElement('button');
           removeButton.type = 'button';
-          removeButton.className = 'btn btn-outline-danger btn-sm mt-2';
+          removeButton.className = 'btn btn-outline-danger remove_file btn-sm mt-2';
           removeButton.id = fileInput.files[i].lastModified;
           removeButton.textContent = 'Remove';
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
           uploadedImagesContainer.appendChild(imageContainer);
         }
-        document.querySelectorAll('.btn-outline-danger').forEach((btn) => btn.addEventListener('click', removeFile))
+        document.querySelectorAll('.remove_file').forEach((btn) => btn.addEventListener('click', removeFile))
 
       }
     };

@@ -1,5 +1,5 @@
 import { angularJsIcon, closeLockIcon, cssIcon, jQueryIcon, javaScriptIcon, mySqlIcon, openLockIcon, reactIcon, slide_AngularJSIcon, slide_JQueryIcon, slide_ReactIcon, slide_htaccessIcon, slide_jsIcon, toolsIcon1, toolsIcon2, toolsIcon3, toolsIcon4, toolsIcon5, toolsIcon6, wordPressIcon } from './iconFolder/icon'
-import { co_workers_image1, co_workers_image10, co_workers_image11, co_workers_image12, co_workers_image13, co_workers_image14, co_workers_image2, co_workers_image3, co_workers_image4, co_workers_image5, co_workers_image6, co_workers_image7, co_workers_image8, co_workers_image9, projectImg_1, projectImg_2, projectImg_3, projectImg_4, projectImg_5, projectImg_6, projectImg_7, projectImg_8, servicesLine_1, servicesLine_2, servicesLine_3, servicesLine_4, servicesLine_5, servicesLine_6, servicesLine_7, servicesLine_8, slideItemImg } from '../src/images/images'
+import { co_workers_image1, co_workers_image10, co_workers_image11, co_workers_image12, co_workers_image13, co_workers_image14, co_workers_image15, co_workers_image2, co_workers_image3, co_workers_image4, co_workers_image5, co_workers_image6, co_workers_image7, co_workers_image8, co_workers_image9, our_teemImage, projectImg_1, projectImg_2, projectImg_3, projectImg_4, projectImg_5, projectImg_6, projectImg_7, projectImg_8, servicesLine_1, servicesLine_2, servicesLine_3, servicesLine_4, servicesLine_5, servicesLine_6, servicesLine_7, servicesLine_8, slideItemImg } from '../src/images/images'
 
 // ===================tools-Info====================================
 
@@ -30,13 +30,13 @@ export const toolsData = [
      {
         icon: toolsIcon2,
         color: '#7A77A3',
-        type: 'user'
+        type: 'students'
     },
 
      {
         icon: toolsIcon3,
         color: '#315A93',
-        type: 'project'
+        type: 'projects'
 
     },
 
@@ -253,36 +253,9 @@ export const VideoCoursesSectionData = [
 
 
 // ============================slide=========================================
-export const packageSlideItem = {
-    htaccess_package: {
-        img: slideItemImg,
-    },
 
-    JavaScript_package: {
-        img: slideItemImg,
-    },
 
-    REACT_package: {
-        img: slideItemImg,
-    },
-
-    JQuery_package: {
-        img: slideItemImg,
-    },
-
-    AngularJs_package: {
-        img: slideItemImg,
-    },
-
-    AngularJs_package: {
-        img: slideItemImg,
-    },
-
-    AngularJs_package: {
-        img: slideItemImg,
-    },
-
-}
+export const programingLengImg = slideItemImg
 
 export const slideData = [
     {   _id: '1',
@@ -632,87 +605,128 @@ export const co_workers_data = [
     {
         _id: '1',
         img: co_workers_image1,
-        txt: 'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն'
+        txt: 'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն'
     },
 
     {
         _id: '2',
-        img: co_workers_image1,
-        txt: 'ՀՀ Կրթության գիտության, մշակույթի եվ սպորտի նախարարություն'
+       img: co_workers_image1,
+        txt: 'ՀՀ տարածքային կառավարման եվ ենթակառուցվածքների նախարարություն'
     },
     
     {
         _id: '3',
-        img: co_workers_image2,
-        txt: 'Պաշտպանության նախարարություն'
-    },
-
-    {
-        _id: '4',
         img: co_workers_image1,
         txt: 'ՀՀ բարձր տեխնոլոգիական արդյունաբերության նախարարություն'
     },
 
     {
+        _id: '4',
+       img: co_workers_image1,
+        txt: 'ՀՀ տարածքային կառավարման եվ զարգացման միգրացիոն ծառայություն'
+    },
+
+    {
         _id: '5',
-        img: co_workers_image3,
-        txt: 'LGG foundation'
-    },
-
-    {
-        _id: '6',
-        img: co_workers_image4,
-        txt: 'Elinarti'
-    },
-
-    {
-        _id: '7',
-        img: co_workers_image5,
-        txt: 'ՀՀ ոստիկանություն'
-    },
-
-    {
-        _id: '8',
-        img: co_workers_image6,
-        txt: 'Angel investor Club of Armenia'
-    },
-
-    {
-        _id: '9',
-        img: co_workers_image7,
-        txt: 'Com.lussen'
-    },
-
-    {
-        _id: '10',
-        img: co_workers_image8,
+       img: co_workers_image2,
         txt: 'Վ․Ա․ Ֆանարջյանի անվան ուռուցքաբանության ազգային կենտրոն ՓԲԸ'
     },
 
     {
+        _id: '6',
+       img: co_workers_image1,
+        txt: 'ՀՀ Հանրային ծառայությունները կարգավորող հանձնաժողով'
+    },
+
+    {
+        _id: '7',
+       img: co_workers_image1,
+        txt: 'Գույքի գնահատման և աճուրդի կենտրոն'
+    },
+
+    {
+        _id: '8',
+        img: co_workers_image3,
+        txt: 'ՀՀ Պաշտպանության նախարարություն'
+    },
+
+    {
+        _id: '9',
+       img: co_workers_image4,
+        txt: 'ՈՒռուցքաբանության ազգային կենտրոն'
+    },
+
+    {
+        _id: '10',
+       img: co_workers_image5,
+        txt: 'ԿԳՄՍՆ երիտասարդական կենտրոն'
+    },
+
+    {
+        _id: '11',
+       img: co_workers_image6,
+        txt: 'Հեմոֆիլիայի և թրոմբոֆիլիայի հայկական կենտրոն'
+    },
+
+    {
         _id: '12',
-        img: co_workers_image9,
-        txt: 'Armenian center of hemophilia and thrombophilia'
+       img: co_workers_image7,
+        txt: 'Պրիզմա հետազոտության և վերլուծության կենտրոն'
     },
 
     {
         _id: '13',
-        img: co_workers_image10,
-        txt: 'Bresta.am'
+        img: co_workers_image8,
+        txt: 'Օրբելի վերլուծական - հետազոտական կենտրոն'
     },
 
     {
         _id: '14',
-        img: co_workers_image13,
-        txt: 'Лига услуг'
+       img: co_workers_image9,
+        txt: 'ՀՀ ոստիկանություն'
     },
 
     {
         _id: '15',
-        img: co_workers_image14,
-        txt: 'Erita.am'
+       img: co_workers_image10,
+        txt: 'LGG foundation'
     },
-]
+
+    {
+        _id: '16',
+       img: co_workers_image11,
+        txt: 'Էլնարտի ՍՊԸ'
+    },
+    {
+        _id: '17',
+       img: co_workers_image12,
+        txt: 'Angel investor Club of Armenia'
+    },
+
+    {
+        _id: '18',
+       img: co_workers_image13,
+        txt: 'Ներդրումների աջակցման կենտրոն'
+    },
+
+    {
+        _id: '19',
+       img: co_workers_image1,
+        txt: 'Կադաստրի Կոմիտե'
+    },
+
+    {
+        _id: '20',
+       img: co_workers_image1,
+        txt: 'Մասիսի համայնք'
+    },
+
+    {
+        _id: '21',
+       img: co_workers_image14,
+        txt: 'Լիգա ուսլուգ ՍՊԸ'
+    },
+]   
 
 
 
@@ -723,63 +737,63 @@ export const ourt_teem_data = [
     {
         _id: '1',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '2',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '3',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '4',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '5',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '6',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '7',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '8',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '9',
         name: 'name surname',
-        img: co_workers_image1,
+        img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },

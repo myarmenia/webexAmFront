@@ -1,42 +1,30 @@
 import React from 'react'
-import { packageSlideItem, responsive, slideData } from '../../data'
+import {programingLengImg, responsive, slideData } from '../../data'
 import SlideSectionItem from '../SlideSectionItem/SlideSectionItem'
 import "react-multi-carousel/lib/styles.css";
 import './SlideSection.css'
 
 import Carousel from 'react-multi-carousel';
+import { useSelector } from 'react-redux';
+import { selectProgramingLang } from '../../store/slices/HomePageSlice/HomePageSlice';
 
 function SlideSection() {
 
+  const programingLang = useSelector(selectProgramingLang)
+  console.log(programingLang);
   const product = 
-    slideData.map(el => {
-
-      if (el.type === "htaccess_package") {
-        el.img = packageSlideItem[el.type].img
-      }
-      else if (el.type === "JavaScript_package") {
-        el.img = packageSlideItem[el.type].img
-      }
-
-      else if (el.type === "REACT_package") {
-        el.img = packageSlideItem[el.type].img
-      }
-
-      else if (el.type === "JQuery_package") {
-        el.img = packageSlideItem[el.type].img
-      }
-
-      else if (el.type === "AngularJs_package") {
-        el.img = packageSlideItem[el.type].img
-      }
+  programingLang.map(el => {
+        el = {
+          ...el,
+          img: programingLengImg
+        }
       
-     return <SlideSectionItem key={el._id}
-              id = {el._id}
-              title = {el.title}
-              timeLine = {el.timeLine} 
-              txt = {el.txt}
+     return <SlideSectionItem key={el.id}
+              id = {el.id}
+              title = {el.name}
+              txt = {el.description}
               img = {el.img} 
-              icon = {el.icon}/>
+              icon = {el.logo}/>
     }
 
     )
