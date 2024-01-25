@@ -6,17 +6,19 @@ use App\Http\Controllers\API\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CourseLanguageResource;
 use App\Models\CourseLanguage;
+use App\Traits\Course\CourseLanguagesTrait;
 use Illuminate\Http\Request;
 
 class CourseLanguagesController extends BaseController
 {
+  use CourseLanguagesTrait;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
 
-        $course_languages = CourseLanguage::all();
+        $course_languages =$this->getAllCourseLanguages();
 
         return  $this->sendResponse(CourseLanguageResource::collection($course_languages), 'success');
 
