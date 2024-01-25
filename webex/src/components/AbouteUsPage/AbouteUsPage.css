@@ -248,6 +248,7 @@
     background: #6644BC;
     transform: rotate(-90deg);
     color: var(--main_font_color);
+    cursor: pointer;
   }
   
 @media(max-width: 1440px){

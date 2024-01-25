@@ -82,7 +82,7 @@ function ContactUsPage() {
             )
         }
         </Formik>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d897.7073378246694!2d44.493651319745936!3d40.195670606292595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd1372989f13%3A0x249c4e8abc0ba1f6!2s79%20Marshal%20Baghramyan%20Ave%2C%20Yerevan%200033!5e0!3m2!1sru!2sam!4v1706089718751!5m2!1sru!2sam" width={700} height={400} style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d897.7073378246694!2d44.493651319745936!3d40.195670606292595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd1372989f13%3A0x249c4e8abc0ba1f6!2s79%20Marshal%20Baghramyan%20Ave%2C%20Yerevan%200033!5e0!3m2!1sru!2sam!4v1706089718751!5m2!1sru!2sam" width={650} height={400} style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                     </div>
 
 

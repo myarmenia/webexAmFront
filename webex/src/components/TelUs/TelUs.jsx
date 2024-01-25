@@ -34,7 +34,21 @@ function TelUs() {
 
   function handleSub(e,handleSubmit, isValid , dirty) {
     e.preventDefault()
-    const [name, phone, email, webSiteAddres,  message, file] = e.target
+    const [name, phone, email, webSiteAddres,  message] = e.target
+
+    const orderObj = {
+        name: name.value,
+        phone: phone.value,
+        email: email.value,
+        message: message.value,
+        domain: webSiteAddres.value,
+    }
+
+    const jsonOrderObj = JSON.stringify(orderObj)
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('data', jsonOrderObj);
+
     if (e.target[0].value && e.target[1].value && e.target[2].value){
         handleSubmit()
         
