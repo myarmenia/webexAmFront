@@ -10,6 +10,12 @@ function ProfileSidebar() {
   const [sidebar, setSidebar] = useState(false);
   // const params = useParams();
 
+  const logOut = (e) =>{
+    e.preventDefault()
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('isAuth')
+    window.location.pathname = '/home'
+  }
   // console.log(location, navigate, location.pathname, 555);
   // const [active, setAvtive] = useState('dashboard');
 
@@ -31,7 +37,9 @@ function ProfileSidebar() {
             // <>
             <NavLink
               className={({ isActive }) => (isActive ? 'line_div line_divActive' : 'line_div')}
-              to={el.slug}>
+              to={el.slug}
+              onClick={(e)=>el.slug === 'logOut'? logOut(e):e.preventDefault }
+              >
               <svg
                 width="24"
                 height="24"

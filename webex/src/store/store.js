@@ -12,6 +12,7 @@ import { DashboardReducer } from "./slices/Dashboard/DashboardSlice";
 import { homePageReducer } from "./slices/HomePageSlice/HomePageSlice";
 import { authReduser } from "./slices/Auth/AuthSlice";
 import { profileReduser } from "./slices/Profile/ProfileSLice";
+import { VisitHistoryReducer } from "./slices/VisitHistory/VisitHistorySlice";
 
 const store = configureStore({
     reducer: {
@@ -27,7 +28,8 @@ const store = configureStore({
         dashboard : DashboardReducer,
         homePage: homePageReducer,
         auth: authReduser,
-        profile: profileReduser
+        profile: profileReduser,
+        visithistory:VisitHistoryReducer
 
     },
     // middleware: (getDefaultMiddlware)=>[

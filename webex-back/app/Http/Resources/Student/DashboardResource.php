@@ -25,7 +25,8 @@ class DashboardResource extends JsonResource
 
         $visit_history = [
                     'total_lesson_days' => 12,
-                    'lesson_quantity' => $this->lesson_quantity
+                    'lesson_quantity' => $this->lesson_quantity,
+                    'status' => $this->payment_status
         ];
 
         $all_courses = [

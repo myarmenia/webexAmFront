@@ -81,10 +81,24 @@
 }
 
 .purchaseHistory {
+  color: #ffffff;
   width: 304px;
   height: 200px;
   /* background-color: goldenrod; */
   background: linear-gradient(117.58deg, #9352b7 2.04%, #7b36a1 108.32%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  border-radius: 20px;
+}
+.purchaseHistoryRed {
+  color: #ffffff;
+  width: 304px;
+  height: 200px;
+  /* background-color: goldenrod; */
+  background: linear-gradient(114.9deg, #D82626 10.66%, #962A8B 99.42%);
   display: flex;
   flex-direction: column;
   justify-content: center;

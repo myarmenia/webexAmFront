@@ -20,6 +20,7 @@ import PrivateRoute from './privateRoute/PrivateRoute';
 import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
 import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
 import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
+import Help from './components/profilePage/Help/Help';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
               <Route path="currentlessons" element={<PrivateRoute><CurrentLessons /></PrivateRoute>} />
               <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
               <Route path="visithistory" element={<PrivateRoute><VisitHistory /></PrivateRoute>} />
+              <Route path="help" element={<PrivateRoute><Help /></PrivateRoute>} />
             </Route>
               </Route>
           </Route>
