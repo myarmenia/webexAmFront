@@ -134,6 +134,18 @@
 .button-save-down{
   margin-top: 33px;
 }
+
+.acceptMes {
+  display: block;
+  color: forestgreen;
+  padding-top: 15px;
+}
+.refuseMes{
+  display: none;
+  color: red;
+  padding-top: 15px;
+}
+
 @media screen and (max-width: 768px) {
   .your-profile-title {
     font-size: 18px;
