@@ -62,7 +62,11 @@ class SendOrderEmail extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    ->attach(public_path(Storage::url($this->data['file'])))
+                    // ->attach(public_path(Storage::url($this->data['file'])))
+                    ->when(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file']))),
+                    function ($message) {
+                        $message->attach(public_path(Storage::url($this->data['file'])));
+                    })
                     ->to(config('project.webex_email'));
     }
 }

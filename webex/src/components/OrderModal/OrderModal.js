@@ -10,7 +10,7 @@ import MessageModal from '../MessageModal/MessageModal'
 
 function OrderModal({setOpenOrderModal, setMessageModal}) {
 
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState("");
     const [textValue, setTextValue] = useState('');
 
 
