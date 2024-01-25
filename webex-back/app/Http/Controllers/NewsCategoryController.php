@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NewsCategoryRequest;
+use App\Http\Requests\News\NewsCategoryRequest;
 use App\Http\Resources\News\Category\NewsCategoryResource;
 use App\Models\News\NewsCategory;
 use App\Models\News\NewsCategoryTranslations;
