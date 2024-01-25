@@ -25,23 +25,24 @@
         <div class="card-body">
 
             <form action="{{ route('news-create') }}" method="post" enctype="multipart/form-data">
-                'news_category_id',
+                @foreach (languages() as $lang)
+                    <div class="mb-3 row">
+                        <label for="lang-{{ $lang }}" class="col-md-2 col-form-label">Заголовок
+                            {{ $lang }}</label>
 
-
-
-                <div class="mb-3 row">
-                    <label for="title" class="col-md-2 col-form-label">Имя Новости</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" placeholder="Имя" id="title" name="title"
-                            value="{{ old('title') }}">
-                    </div>
-                </div>
-                @error('title')
-                    <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                        <div class="col-md-10">
+                            <input class="form-control" placeholder="Заголовок"
+                                value="{{ old("title.$lang") }}" id="title-{{ $lang }}"
+                                name="title[{{ $lang }}]" />
                         </div>
                     </div>
-                @enderror
+                    @error("title.$lang")
+                        <div class="mb-3 row justify-content-end">
+                            <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                            </div>
+                        </div>
+                    @enderror
+                @endforeach
 
                 @foreach (languages() as $lang)
                     <div class="mb-3 row">
@@ -50,11 +51,11 @@
 
                         <div class="col-md-10">
                             <input class="form-control" placeholder="Названия"
-                                value="{{ old("translate.$lang.description") }}" id="description-{{ $lang }}"
-                                name="translate[{{ $lang }}]" />
+                                value="{{ old("description.$lang") }}" id="description-{{ $lang }}"
+                                name="description[{{ $lang }}]" />
                         </div>
                     </div>
-                    @error("translate.$lang.description")
+                    @error("description.$lang")
                         <div class="mb-3 row justify-content-end">
                             <div class="col-sm-10 text-danger fts-14">{{ $message }}
                             </div>
@@ -65,7 +66,7 @@
                 <div class="mb-3 row">
                     <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                     <div class="col-md-10">
-                        <select id="defaultSelect" name="type" class="form-select">
+                        <select id="defaultSelect" name="category" class="form-select">
                             <option>Выберите тип проекта</option>
                             @foreach ($categoryList as $category)
                                 <option value="{{ $category['id'] }}">{{ $category['translations'] }}</option>
@@ -73,7 +74,7 @@
                         </select>
                     </div>
                 </div>
-                @error('type')
+                @error('category')
                     <div class="mb-3 row justify-content-end">
                         <div class="col-sm-10 text-danger fts-14">{{ $message }}
                         </div>
@@ -82,14 +83,14 @@
 
 
                 <div class="mb-3 row">
-                    <label for="project_photos" class="col-md-2 col-form-label">Проект фото</label>
+                    <label for="photo" class="col-md-2 col-form-label">Проект фото</label>
                     <div class="col-md-10">
                         <div class="d-flex flex-wrap align-items-start align-items-sm-center">
                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photos</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" name="project_photos[]" class="account-file-input"
-                                    multiple hidden accept="image/png, image/jpeg" />
+                                <input type="file" id="upload" name="photo" class="account-file-input"
+                                    hidden accept="image/png, image/jpeg" />
                             </label>
                             <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer">
                             </div>
@@ -97,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                @error('type')
+                @error('photo')
                     <div class="mb-3 row justify-content-end">
                         <div class="col-sm-10 text-danger fts-14">{{ $message }}
                         </div>

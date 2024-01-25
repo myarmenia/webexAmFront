@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\News\CreateNewsRequest;
 use App\Http\Resources\Project\ProjectResource;
 use App\Models\News\News;
 use App\Models\News\NewsCategory;
@@ -31,6 +32,17 @@ class NewsController extends Controller
         $categoryList = $this->newsService->getCategoryList();
        
         return view('content.news.create', compact('categoryList'));
+    }
+
+    public function createNews(CreateNewsRequest $request)
+    {
+        $createNews = $this->newsService->createNews($request->all());
+
+        $data = News::orderBy('id', 'DESC')->paginate(5);
+
+        return view('content.news.index', compact('data'))
+               ->with('i', ($request->input('page', 1) - 1) * 5);
+
     }
 
     // public function create()

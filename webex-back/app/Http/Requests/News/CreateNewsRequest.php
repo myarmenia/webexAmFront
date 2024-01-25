@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\News;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class NewsCategoryRequest extends FormRequest
+class CreateNewsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +22,11 @@ class NewsCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'type' => 'required',
-            'translate.*' => 'required',
+            'title' => 'required',
+            'category' => 'required',
+            'description.*' => 'required',
+            'title.*' => 'required',
+            'photo' => 'nullable|image',
         ];
     }
-
 }
