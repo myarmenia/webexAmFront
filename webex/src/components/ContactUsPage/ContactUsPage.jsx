@@ -6,14 +6,17 @@ import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import * as yup from 'yup';
 import WebexMap from '../WebexMap/WebexMap'
 import TelUs from '../TelUs/TelUs'
+import { useTranslation } from 'react-i18next'
 
 function ContactUsPage() {
 
+    const {t, i18n} = useTranslation()
+
     const  validationSchema = yup.object().shape({
-        name: yup.string().required('այս դաշտը պարտադիր է'),
-        email: yup.string().email('գրել ճիշտ էլ հասցե').required('այս դաշտը պարտադիր է'),
+        name: yup.string().required(t('validation_reg_log.' + '0')),
+        email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
         message: yup.string()
-        .required('այս դաշտը պարտադիր է'),
+        .required(t('validation_reg_log.' + '0')),
     })
 
 
@@ -29,7 +32,7 @@ function ContactUsPage() {
 
             <div className='contact-us-top-div'>
                 <div className='container'>
-                    <h2>Contact Us</h2>
+                    <h2>{t('contact_us_title.0')}</h2>
                 </div>
             </div>
 
@@ -57,26 +60,26 @@ function ContactUsPage() {
             ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
                 <div className="feedback">
                             <form className="feedback-form"  onSubmit={(e)=>handleLogSub(e,handleSubmit, isValid, dirty)}>
-                                <h4>Feedback</h4>
+                                <h4>{t('contact_us_title.1')}</h4>
 
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={'name'} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="text" name="name" placeholder={t('feedback.0')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={'email'} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="email" name="email" placeholder={t('feedback.1')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 
                             <div className="message-inp">
-                                <textarea  name="message" placeholder={'message'} value={values.message} onChange={handleChange} onBlur={handleBlur}/>
+                                <textarea  name="message" placeholder={t('feedback.2')} value={values.message} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.message && errors.message && <p className="error">{errors.message}</p>}
                             </div>
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "0"/>
+                            <SubmitBtn index= "3"/>
                         </form>
                 </div>
             )

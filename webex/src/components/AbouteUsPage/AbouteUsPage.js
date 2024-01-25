@@ -7,6 +7,7 @@ import ScrollerComponent from '../ScrollerComponent/ScrollerComponent'
 import { useSelector } from 'react-redux'
 import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
 import OrderModal from '../OrderModal/OrderModal'
+import MessageModal from '../MessageModal/MessageModal'
 function AbouteUsPage() {
 
     const [openOrderModal, setOpenOrderModal] = useState(false)
@@ -63,7 +64,7 @@ function AbouteUsPage() {
 
                 <div className='our_teem'>
                     <div className='our_teem_title'>
-                        <h4>Our teem</h4>
+                        <h4>{t('our_teem_title')}</h4>
                         <img src={bottomLine} alt="img" />
                     </div>
                      <div className='our_teem_items'>
@@ -83,7 +84,7 @@ function AbouteUsPage() {
                 </div>
             </div>
             {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
-            {/* {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>} */}
+            {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}}/>}
         </div >
     )
 }

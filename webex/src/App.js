@@ -21,6 +21,7 @@ import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
 import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
 import ContactUsPage from './components/ContactUsPage/ContactUsPage';
 import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
+import ServicesPage from './components/ServicesPage/ServicesPage';
 
 
 
@@ -47,7 +48,7 @@ function App() {
             <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
 
             <Route index element={<PrivateRouteForOutSider><HomePage /></PrivateRouteForOutSider>} />
-            <Route path="programing" element={<h1>programing</h1>} />
+            <Route path="programing" element={<PrivateRouteForOutSider><ServicesPage/></PrivateRouteForOutSider>} />
             <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>

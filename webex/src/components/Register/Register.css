@@ -35,7 +35,8 @@
 
 .register .container form p{
     color: red;
-    font-size: 13px;
+    font-size: 12px;
+    padding-top: 10px;
 }
 
 
