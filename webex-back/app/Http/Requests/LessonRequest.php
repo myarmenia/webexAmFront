@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class LessonRequest extends FormRequest
 {
@@ -21,14 +22,19 @@ class LessonRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+      $lastSegment = Request::segment(count(request()->segments()));
+        $array = [
             'course_language_id'=>'required',
             'duration' =>'required',
             'translate.*.title'=>'required',
             'translate.*.description'=>'required',
-            'video'=>'required',
-
+            'number'=>'required',
         ];
+        if($lastSegment=="lesson-create"){
+          $array['video']='required';
+        }
+
+        return  $array;
 
     }
 }

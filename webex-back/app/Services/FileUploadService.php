@@ -12,7 +12,8 @@ class FileUploadService
     public static function upload(array|object $data, string $folder_path)
     {
 
-        $filename = md5(microtime()). '.' .$data->getClientOriginalExtension();
+        // $filename = md5(microtime()). '.' .$data->getClientOriginalExtension();
+        $filename = $data->getClientOriginalName(). '.' .$data->getClientOriginalExtension();
 
         $path = Storage::disk('local')->putFileAs(
           'public/' . $folder_path,
@@ -29,5 +30,14 @@ class FileUploadService
         $path = $request['path'] ?? 'public/null_image.png';
         return response()->file(Storage::path($path));
     }
+    public function videoUpload(Request $request ){
+      if ($request->hasFile('video')) {
+        $file = $request->file('video');
+        dd($file);
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $file->storeAs('videos', $fileName, 'public');
+      }
+    }
+
 
 }

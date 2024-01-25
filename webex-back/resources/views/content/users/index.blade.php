@@ -47,6 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    
                         @foreach ($data as $key => $user)
                             <tr>
                                 <td>{{ ++$i }}</td>

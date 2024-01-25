@@ -123,20 +123,34 @@ Route::group(['middleware' => ['auth']], function () {
 
 
   // course-language
-Route::get('/course/course-language', [CourseLanguageController::class,'index'])->name('course-language');
-Route::get('/course/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
-Route::post('/course/course-language-store', [CourseLanguageController::class,'store'])->name('course-language-store');
+Route::group(['prefix'=>'course'],function(){
+  Route::get('/course-language', [CourseLanguageController::class,'index'])->name('course-language');
+  Route::get('/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
+  Route::post('/course-language-store', [CourseLanguageController::class,'store'])->name('course-language-store');
+  Route::get('/course-language-edit/{id}',[CourseLanguageController::class,'edit'])->name('course-language-edit');
+  Route::put('/course-language-update/{id}',[CourseLanguageController::class,'update'])->name('course-language-update');
+});
 
 // lessons
-Route::get('/lesson/lesson-list', [LessonController::class,'index'])->name('lesson-list');
-Route::get('/lesson/lesson-create', [LessonController::class,'create'])->name('lesson-create');
-Route::post('/lesson/lesson-store', [LessonController::class,'store'])->name('lesson-store');
-Route::get('/lesson/lesson-edit/{id}', [LessonController::class,'edit'])->name('lesson-edit');
+Route::group(['prefix'=>'lesson'],function(){
+  Route::get('/lesson-list', [LessonController::class,'index'])->name('lesson-list');
+  Route::get('/lesson-create', [LessonController::class,'create'])->name('lesson-create');
+  Route::post('/lesson-store', [LessonController::class,'store'])->name('lesson-store');
+  Route::get('/lesson-edit/{id}', [LessonController::class,'edit'])->name('lesson-edit');
+  Route::put('/lesson-update/{id}',[LessonController::class,'update'])->name('lesson-update');
+});
+
 
 //tasks
-Route::get('/task/task-list', [TaskController::class,'index'])->name('task-list');
-Route::get('/task/task-create', [TaskController::class,'create'])->name('task-create');
-Route::post('/task/task-store', [TaskController::class,'store'])->name('task-store');
+Route::group(['prefix'=>'task'],function(){
+  Route::get('/task-list', [TaskController::class,'index'])->name('task-list');
+  Route::get('/task-create', [TaskController::class,'create'])->name('task-create');
+  Route::post('/task-store', [TaskController::class,'store'])->name('task-store');
+  Route::get('/task-edit/{id}',[TaskController::class,'edit'])->name('task-edit');
+  Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
+  Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
+});
+
 
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
@@ -155,5 +169,6 @@ Route::group(['prefix' => 'project'], function () {
 
 });
 Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');
+Route::post('video-upload', [FileUploadService::class, 'videoUpload'])->name('video-upload');
 });
 

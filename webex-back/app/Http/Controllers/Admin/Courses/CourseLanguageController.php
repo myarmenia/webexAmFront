@@ -7,16 +7,18 @@ use App\Http\Requests\CourseLanguageRequest;
 use App\Models\CourseLanguage;
 use App\Models\CourseLanguageTranslation;
 use App\Services\FileUploadService;
+use App\Traits\Course\CourseLanguagesTrait;
 use Illuminate\Http\Request;
 
 class CourseLanguageController extends Controller
 {
+  use CourseLanguagesTrait;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $course_language = CourseLanguage::all();
+        $course_language = $this->getAllCourseLanguages()->sortByDesc('id');
 
         return view('content.courses.course-language',compact('course_language'));
     }
@@ -34,7 +36,7 @@ class CourseLanguageController extends Controller
      */
     public function store(CourseLanguageRequest $request)
     {
-    
+dd($request->all());
       $cours_language = CourseLanguage::create($request->only(['name']));
 
       if($cours_language){
@@ -52,7 +54,7 @@ class CourseLanguageController extends Controller
 
           }
       }
-      
+
       return redirect()->route('course-language');
     }
 
@@ -69,15 +71,45 @@ class CourseLanguageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $course_language=CourseLanguage::where('id',$id)->first();
+        return view('content.courses.edit',compact('course_language'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CourseLanguageRequest $request, string $id)
     {
-        //
+
+      $course_language=CourseLanguage::where('id',$id)->first();
+
+      if($course_language){
+        if($request->has('upload_file')){
+
+            $path = FileUploadService::upload($request->upload_file,'course_language_logo/'.$course_language->id);
+            $course_language->logo = $path;
+            $course_language->save();
+
+        }
+        $course_language->name=$request->name;
+        $course_language->save();
+
+
+        foreach($request->translate as $key => $lang){
+            $request['course_language_id'] = $course_language->id;
+            $request['description'] = $lang['description'];
+            $request['lang'] = $key;
+
+            $course_language_translate = CourseLanguageTranslation::where([
+              ['course_language_id','=', $id],
+              ['lang','=',$key]
+            ])->first();
+
+            $course_language_translate->description =  $lang['description'];
+            $course_language_translate->save();
+        }
+        return redirect()->back();
+      }
     }
 
     /**
