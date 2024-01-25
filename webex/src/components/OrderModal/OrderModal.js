@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next'
 function OrderModal({setOpenOrderModal, setMessageModal}) {
     const {t, i18n} = useTranslation()
 
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState("");
     const [textValue, setTextValue] = useState('');
 
 
