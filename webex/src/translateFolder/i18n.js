@@ -258,6 +258,75 @@ i18n
             'Masis community',
             'Liga uslug LLC'
           ],
+
+          order_now: 'Order now',
+
+          projectPage_translation: [
+            'Description',
+            'Project Name',
+            'Programming languages',
+            'Creation period',
+            'Date of creation'
+          ],
+
+          orderFormTitle:[
+            'Tell us',
+            'about your project',
+            'Choose services',
+          ],
+
+          orderForm: [
+            'Name*',
+            'Phone number*',
+            'E-mail*',
+            'Website address',
+            'Message',
+            'Choose file',
+            'Corporate website development',
+            'Online stores development',
+            'Search engine optimization (SEO)',
+            'Contextual advertising',
+            'Website development',
+            'Technical website support',
+            'E-mail marketing',
+            'Yandex Market',
+            'Google analytics',
+            'Business process automation'
+          ],
+
+          contact_us_title: [
+            'Contact Us',
+            'Feedback'
+          ],
+
+          feedback: [
+            'Name*',
+            'Email address*',
+            'Message'
+          ],
+
+          our_teem_title: 'Our Teem',
+
+
+
+          servicesPagesItemsTitle: [
+            'Web Application development',
+            'Website Promotion',
+            'Service and Support',
+            '3D Modeling Development',
+            'Unity Game Development',
+            'Mobile App Development',
+          ],
+
+          servicesPagesItems_small_txt: [
+            'We offer a wide range of web development services with using the most popular server languages ​​and frameworks.',
+            'Website optimization and promotion. Integrated Website Promotion. Search Engine Website Promotion Advertising on the Internet.',
+            'They include both technical and informational support, as well as comprehensive website maintenance. Choose the best option.',
+            'This is a sufficiently complex area, which is associated with many industries, from the production of games and films to architecture and engineering projects.',
+            'If you want to grow your online business quickly then creating online stores will bring traffic to your business.',
+            'Original projects. Android and IOS development.',
+          ],
+
         },
       },
       am: {
@@ -525,7 +594,76 @@ i18n
             'Մասիսի համայնք',
             'Լիգա ուսլուգ ՍՊԸ'
           ],
- 
+
+          order_now: 'Պատվիրե՛ք  հիմա',
+
+          projectPage_translation: [
+            'Նկարագրություն',
+            'Նախագծի անվանումը',
+            'Ծրագրավորման լեզուներ',
+            'Ստեղծման ժամանակհատված',
+            'Ստեղծման տարեթիվը'
+          ],
+
+          orderFormTitle:[
+            'Գրիր մեզ',
+            'ձեր նախագծի մասին',
+            'Ընտրեք ծառայություններ',
+          ],
+
+          orderForm: [
+            'Անուն*',
+            'Հեռախոսահամար*',
+            'Էլ.փոստ*',
+            'Կայքի հասցեն',
+            'Հաղորդագրություն',
+            'Ընտրել ֆայլը',
+            'Կորպորատիվ վեբ կայքի մշակում',
+            'Առցանց խանութների մշակում',
+            'Որոնման համակարգի օպտիմալացում (SEO)',
+            'Համատեքստային գովազդ',
+            'Կայքի մշակում',
+            'Կայքի տեխնիկական աջակցություն',
+            'E-mail marketing',
+            'Yandex Market',
+            'Google analytics',
+            'Բիզնես գործընթացների ավտոմատացում'
+          ],
+
+          contact_us_title: [
+            'Կապ',
+            'Հետադարձ կապ'
+          ],
+
+          feedback: [
+            'Անուն*',
+            'Էլ․ հասցե*',
+            'Հաղորթագրություն'
+          ],
+
+
+          our_teem_title: 'Մեր Թիմը',
+
+
+          servicesPagesItemsTitle: [
+            'Վեբ ծրագրի մշակում',
+            'Կայքի առաջխաղացում',
+            'Տեխնիկական աջակցություն',
+            '3D մոդելավորում',
+            'Խաղերի եւ Unity-ի ստեղծում',
+            'Բջջային հավելվածներ',
+          ],
+
+          servicesPagesItems_small_txt: [
+            'Վեբ ծրագրի մշակման ծառայություններ՝ սերվերի ամենատարածված լեզուներով:',
+            'Կայքերի օպտիմալացում և առաջխաղացում: Կայքերի որոնման առաջխաղացման: Գովազդ համացանցում:',
+            'Այն իր մեջ նեռառում է ինչպես տեխնիկական, այնպես էլ տեղեկատվական աջակցություն, ինչպես նաև կոմպլեքսային կայքի սպասարկում:',
+            'Բավականին բարդ տարածք է, որը կապված է տարբեր ոլորտների հետ՝ սկսած խաղերի և ֆիլմերի արտադրությունից մինչև ճարտ․ նախագծեր:',
+            'Unity-ի առավելություններն են վիզուալ զարգացման միջավայրի, խաչաձև հարթակներ աջակցության և մոդուլային համակարգի առկայությունը:',
+            'Բջջային ծառայությունների տարբերակները․ այս ամենը բացարձակապես անհրաժեշտ է iOS-ի և Android-ի բջջային սարքի սեփականատիրոջ համար:',
+          ],
+
+
         }
 
       },
@@ -804,6 +942,74 @@ i18n
             'ООО «Лига услуг»'
           ],
 
+          order_now: 'Заказать сейчас',
+
+          projectPage_translation: [
+            'Описание',
+            'Название проекта:',
+            'Языки программирования',
+            'Период создания',
+            'Дата создания'
+          ],
+
+          orderFormTitle:[
+            'Расскажи нам',
+            'о вашем проекте',
+            'Выберите услуги',
+          ],
+
+
+
+          orderForm: [
+            'Имя*',
+            'Телефон*',
+            'Эл. адрес*',
+            'Адрес веб-сайта',
+            'Сообщение',
+            'Выберите файл',
+            'Разработка корпоративного сайта',
+            'Разработка интернет-магазинов',
+            'Поисковая оптимизация (SEO)',
+            'Контекстная реклама',
+            'Разработка веб-сайтов',
+            'Техническая поддержка сайта',
+            'E-mail marketing',
+            'Yandex Market',
+            'Google analytics',
+            'Автоматизация бизнес-процессов'
+          ],
+
+          contact_us_title: [
+            'Контакт',
+            'Обратная связь'
+          ],
+
+          feedback: [
+            'Имя*',
+            'Эл. адрес*',
+            'Сообщение'
+          ],
+
+          our_teem_title: 'Наша команда',
+
+          servicesPagesItemsTitle: [
+            'Разработка веб-приложений',
+            'Продвижение сайтов',
+            'Обслуживание и поддержка',
+            '3D моделирование на заказ',
+            'Разработка Unity Игр',
+            'Мобильные приложения',
+          ],
+
+
+          servicesPagesItems_small_txt: [
+            'Мы предлагаем широкий спектр услуг в области веб-разработки с использованием самых популярных серверных языков и фреймворков.',
+            'Оптимизация и продвижение сайтов. Комплексное продвижение сайтов. Поисковое продвижение сайтов. Реклама в интернете.',
+            'Включает в себя как техническую так и информационную поддержку, так и комплексное обслуживание сайта.',
+            'Это достаточно сложная сфера, которая связана с множеством отраслей, от производства игр и фильмов до архитектуры и инженерных проектов.',
+            'Преимуществами Unity наличие визуальной среды разработки, межплатформенной поддержки и модульной системы.',
+            'Оригинальные проекты, мобильные версии служб – всё это совершенно необходимо владельцу мобильного устройства на IOS и Android.',
+          ],
         }
       },
       // Add more languages as needed

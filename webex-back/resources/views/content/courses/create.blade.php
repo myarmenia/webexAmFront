@@ -10,7 +10,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="javascript:void(0);">Языки программирования</a>
+                <a href="{{route('course-language')}}">Языки программирования</a>
             </li>
             <li class="breadcrumb-item active">Список</li>
         </ol>
@@ -21,10 +21,7 @@
     <!-- Basic Layout -->
     <div class="col-xxl">
         <div class="card mb-4">
-            {{-- <div class="card-header d-flex align-items-center justify-content-between">
-                <h5 class="mb-0"> Добавить новый язык программирования</h5>
-                <small class="text-muted float-end">Default label</small>
-            </div> --}}
+
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <h5 class="card-header"> Добавить новый язык программирования</h5>
@@ -49,23 +46,20 @@
 
 
                             </label>
-                            <button type="button" class="btn btn-outline-secondary file-reset mb-4">
-                                <i class="bx bx-reset d-block d-sm-none"></i>
-                                <span class="d-none d-sm-block">Удалить</span>
-
-                            </button>
 
                             <p class="text-muted mb-0">Разрешены JPG, GIF или PNG. Максимальный размер: 800 КБ.</p>
 
                         </div>
+
+
                     </div>
                     @error('upload_file')
-
                     <div class="mb-3 row justify-content-end">
                         <div class="col-sm-10 text-danger fts-14">{{$message}}
                         </div>
                     </div>
-                    @enderror
+                  @enderror
+
 
 
 
@@ -101,54 +95,6 @@
                     @enderror
 
                     @endforeach
-                    {{-- <div class="mb-3 row">
-                        <label for="description" class="col-md-2 col-form-label">Описания AM</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" placeholder="Описания" id="description" name="description" value="{{old('description')}}">
-            </div>
-        </div>
-        @error('description')
-        <div class="mb-3 row justify-content-end">
-            <div class="col-sm-10 text-danger fts-14">{{$message}}
-            </div>
-        </div>
-        @enderror
-
-        <div class="mb-3 row">
-            <label for="description" class="col-md-2 col-form-label">Описания RU</label>
-            <div class="col-md-10">
-                <input class="form-control" type="text" placeholder="Описания" id="description" name="description" value="{{old('description')}}">
-            </div>
-        </div>
-        @error('description')
-        <div class="mb-3 row justify-content-end">
-            <div class="col-sm-10 text-danger fts-14">{{$message}}
-            </div>
-        </div>
-        @enderror
-
-
-        <div class="mb-3 row">
-            <label for="description" class="col-md-2 col-form-label">Описания EN</label>
-            <div class="col-md-10">
-                <input class="form-control" type="text" placeholder="Описания" id="description" name="description" value="{{old('description')}}">
-            </div>
-        </div>
-        @error('description')
-        <div class="mb-3 row justify-content-end">
-            <div class="col-sm-10 text-danger fts-14">{{$message}}
-            </div>
-        </div>
-        @enderror --}}
-
-
-        {{-- <div class="mb-3 row">
-                        <label for="logo" class="col-md-2 col-form-label">Логотип</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="file" id="logo" name="logo" placeholder="Описания" accept="image/png, image/jpeg">
-
-                        </div>
-                    </div> --}}
 
 
         <div class="row justify-content-end mt-3">

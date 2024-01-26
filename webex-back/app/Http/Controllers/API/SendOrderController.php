@@ -16,14 +16,17 @@ class SendOrderController extends Controller
     public function __invoke(Request $request)
     {
         $data = $request->all();
+        $path = "";
         $dataElement = json_decode($data['data'], true);
         $readyArray = array_merge($dataElement, $data);
         unset($readyArray['data']);
-        $path = FileUploadService::upload($readyArray['file'], 'order');
-        $readyArray['file'] = $path;
+        if($readyArray['file']){
+            $path = FileUploadService::upload($readyArray['file'], 'order');
+            $readyArray['file'] = $path;
+        }
         $readyArray['projectType'] = Arr::join($readyArray['projectType'], ', ', ' и ');
         $result = Mail::send(new SendOrderEmail($readyArray));
-        if($readyArray){
+        if(file_exists(storage_path($path))){
             Storage::delete($path);
         }
         if($result){

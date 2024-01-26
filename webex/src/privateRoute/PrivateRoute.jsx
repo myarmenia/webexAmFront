@@ -9,13 +9,12 @@ const PrivateRoute = ({ children }) => {
     const lang = localStorage.getItem('lang');
     const dispatch = useDispatch();
     const isAuth = useSelector(getIsAuth);
-    const authUser = useSelector(getAuthUser);
     const [loading, setLoading] = useState(true);
- const sesionIsAuth  = sessionStorage.getItem('isAuth')
+    const sesionIsAuth  = sessionStorage.getItem('isAuth')
  
     useEffect(() => {
       const fetchData = async () => {
-        if (isAuth == false && sesionIsAuth == true) {
+        if (!isAuth && sesionIsAuth) {
           await dispatch(getCurrentUser());
         }
         setLoading(false); 
@@ -24,7 +23,7 @@ const PrivateRoute = ({ children }) => {
     }, [dispatch, isAuth]);
   
     if (loading) {
-      return <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      return <div class="lds-ring">Loader</div>
     }
   
     return isAuth ? children : <Navigate to={`/${lang}/login`} />;

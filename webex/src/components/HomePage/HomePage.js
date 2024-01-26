@@ -12,12 +12,15 @@ import SlideSection from '../SlideSection/SlideSection'
 import MosaicGrid from '../MosaicGrid/MosaicGrid'
 import MosaicGridSlide from '../MosaicGridSlide/MosaicGridSlide'
 import { Helmet } from 'react-helmet-async'
+import { useDispatch } from 'react-redux'
+import { getHomePage } from '../../store/slices/HomePageSlice/HomePageApi'
 
 
 
 function HomePage() {
 const [activeProject, setActiveProject] = useState(false)
 
+const dispatch = useDispatch()
 
 function handleResize(){
 
@@ -38,7 +41,11 @@ function handleResize(){
     }
   },[])
   
- 
+
+  useEffect(()=>{
+    dispatch(getHomePage()) 
+  },[]) 
+  
   return (
     <>
      <Helmet>

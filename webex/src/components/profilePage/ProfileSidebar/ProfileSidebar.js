@@ -2,37 +2,44 @@ import React, { useEffect, useState } from 'react';
 import { ProfileSidebarArr } from '../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import './ProfileSidebar.css';
 import Line from '../../../images/Line.png';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
 
 function ProfileSidebar() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  // const location = useLocation();
   const [sidebar, setSidebar] = useState(false);
-  const [active, setAvtive] = useState(0);
+  // const params = useParams();
 
-  const navigatePage = (name) => {
-    navigate(name.replace(/\s/g, ''));
-  };
-  const changeActive = (idx) => {
-    setAvtive(idx);
-  };
+  const logOut = (e) =>{
+    e.preventDefault()
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('isAuth')
+    window.location.pathname = '/home'
+  }
+  // console.log(location, navigate, location.pathname, 555);
+  // const [active, setAvtive] = useState('dashboard');
+
+  // const navigatePage = (slug) => {
+  //   navigate(slug);
+  // };
+  // const changeActive = (idx) => {
+  //   setAvtive(idx);
+  // };
 
   return (
-    <div style={{height:"100%"}}>
+    <div style={{ height: '100%' }}>
       <div className="leftSidebar">
         <div
           className="leftSidebar_divs"
           onMouseEnter={() => setSidebar(true)}
           onMouseLeave={() => setSidebar(false)}>
           {ProfileSidebarArr.map((el, index) => (
-            <div
-              key={index}
-              className={active === index ? 'line_div line_divActive' : 'line_div'}
-              onClick={() => {
-                navigatePage(el.name);
-                changeActive(index);
-              }}>
-              {/* <img src={el.icon} alt={el.name} className="iconss" /> */}
-              {/* <span className="iconss">{el.icon}</span> */}
+            // <>
+            <NavLink
+              className={({ isActive }) => (isActive ? 'line_div line_divActive' : 'line_div')}
+              to={el.slug}
+              onClick={(e)=>el.slug === 'logOut'? logOut(e):e.preventDefault }
+              >
               <svg
                 width="24"
                 height="24"
@@ -42,7 +49,28 @@ function ProfileSidebar() {
                 {el.icon}
               </svg>
               <span className="nameSideBar">{el.name}</span>
-            </div>
+            </NavLink>
+
+            // </>
+            //   <div
+            //   key={index}
+            //   className={active === el.slug ? 'line_div line_divActive' : 'line_div'}
+            //   onClick={() => {
+            //     navigatePage(el.slug);
+            //     changeActive(el.slug);
+            //   }}>
+            //   {/* <img src={el.icon} alt={el.name} className="iconss" /> */}
+            //   {/* <span className="iconss">{el.icon}</span> */}
+            //   <svg
+            //     width="24"
+            //     height="24"
+            //     viewBox="0 0 30 30"
+            //     fill="none"
+            //     xmlns="http://www.w3.org/2000/svg">
+            //     {el.icon}
+            //   </svg>
+            //   <span className="nameSideBar">{el.name}</span>
+            // </div>
           ))}
         </div>
         {/* <div>

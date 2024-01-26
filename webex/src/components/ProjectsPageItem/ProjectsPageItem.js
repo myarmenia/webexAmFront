@@ -1,19 +1,31 @@
 import {useRef, useEffect, useState} from 'react'
 import {useParams} from "react-router-dom"
 import './ProjectsPageItem.css'
+import { useTranslation } from 'react-i18next'
+import { appStoreIcon, play_market, webSiteIcon } from '../../iconFolder/icon'
 
-function ProjectsPageItem({_id,_img, img, description, txt, nameTitle, name, lngTitle, lng, periodTitle, period_month, dateTitle, date, type}) {
+function ProjectsPageItem({id, images, translation, name, project_language, process_time, creation_date_at, type, link_project, link_play_market,
+    link_app_store}) {
 
   const {idd} = useParams()
 
-  const [bigImage, setBigImage] = useState({imgjan: img , id: '1'})
+  const {t, i18n} = useTranslation()
+
+  const [bigImage, setBigImage] = useState({imgjan: images[0]?.path , img_id: '1'})
+
+  console.log();
+    
+  const img1 = images[1]?.path
+  const img2 = images[2]?.path
+  const img3 = images[3]?.path
 
   const [allImgs, setAllImg] = useState([
-    {imgjan: img , id: '2'},
-    {imgjan: _img , id: '3'},
-    {imgjan: img , id: '4'},
-    {imgjan: img , id: '5'},
+    {imgjan: img1 , img_id: '2'},
+    {imgjan: img2 , img_id: '3'},
+    {imgjan: img3, img_id: '4'},
   ])
+
+  console.log(allImgs,'jjjj');
     const divRef = useRef()
     useEffect(() => {
         if(divRef.current.id === idd){
@@ -30,7 +42,7 @@ function ProjectsPageItem({_id,_img, img, description, txt, nameTitle, name, lng
         
     }
   return (
-    <div ref={divRef} id={_id} className='projects-page-item'>
+    <div ref={divRef}  id={id} className='projects-page-item'>
        <div className='projects-page-item-imgs'>
             <div className='projects-page-item-imgs-div-1'>
                 <img src={bigImage.imgjan}/>
@@ -38,7 +50,7 @@ function ProjectsPageItem({_id,_img, img, description, txt, nameTitle, name, lng
             <div className='projects-page-item-imgs-div-2'>
                 {
                     allImgs.map((el, index) =>{
-                       return <img key={el.id} src={el.imgjan} onClick={()=> renderImg(el, index)}/>
+                       return <img key={el.img_id} src={el.imgjan} onClick={()=> renderImg(el, index)}/>
                     })
                 }
             </div>
@@ -46,31 +58,36 @@ function ProjectsPageItem({_id,_img, img, description, txt, nameTitle, name, lng
        </div>
        <div className='projects-page-item-info-div'>
             <div>
-                <h4>{description}</h4>
-                <p>{txt}</p>
+                <h4>{t('projectPage_translation.0')}</h4>
+                <p>{translation}</p>
             </div>
             <div>
-                <h4>{nameTitle}</h4>
+                <h4>{t('projectPage_translation.1')}</h4>
                 <p>{name}</p>
             </div>
             <div>
-                <h4>{lngTitle}</h4>
-                <p>{lng}</p>
+                <h4>{t('projectPage_translation.2')}</h4>
+                <p>{project_language}</p>
             </div>
             <div className='projects-page-item-bottom-div'>
                 <div>
-                    <h4>{periodTitle}</h4>
-                    <p>{period_month}</p>
+                    <h4>{t('projectPage_translation.3')}</h4>
+                    <p>{creation_date_at}</p>
                 </div>
 
                 <div>
-                    <h4>{dateTitle}</h4>
-                    <p>{date}</p>
+                    <h4>{t('projectPage_translation.4')}</h4>
+                    <p>{process_time}</p>
                 </div>
 
             </div>
 
-            <h4>{type}</h4>
+            <div className='link_icon'>
+                {link_project !== null && <a href={link_project} target="_blank">{webSiteIcon}</a>}
+                {link_app_store !== null && <a href={link_app_store} target="_blank">{appStoreIcon}</a>}
+                {link_play_market !== null && <a href={link_play_market} target="_blank">{play_market}</a> }
+                
+            </div>
        </div>
 
     </div>

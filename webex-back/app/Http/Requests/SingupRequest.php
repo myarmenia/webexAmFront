@@ -40,9 +40,9 @@ class SingupRequest extends FormRequest
     }
 
     public function messages(): array
-{
-    return [
-        'email.unique' => translateMessageApi('email-unique'),
-    ];
-}
+    {
+        return [
+            'email.unique' => translateMessageApi('email-unique'),
+        ];
+    }
 }

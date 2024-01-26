@@ -1,0 +1,206 @@
+.services-page{
+    background-color: var(--main_color);
+}
+
+.services-page .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    overflow: hidden;
+    padding: 50px 180px;
+}
+
+.tel-us .container{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 180px;
+
+}
+
+.services-page  .services-page-top-div{
+    height: 300px;
+    background-image: url('../../images/postive-caring-relationships-teachers 1 (4).png');
+    background-position: center center;
+    background-size: cover;
+}
+
+.services-page  .services-page-top-div .container{
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.services-page  h2{
+    color: var(--main_font_color);
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: "TitleFont";
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #010526 29%,
+      #7C1DC9 67%,
+      white 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+    display: inline-block;
+        font-size: 190px;
+}
+
+
+.services-items-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.services-items-block-item{
+    width: 354px;
+    height: 290px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: #000015;
+    padding: 20px;
+    color: var(--main_font_color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+
+.services-items-block-item h6{
+    color: var(--main_font_color);
+    font-family: 'TitleFont';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}
+
+.services-items-block-item p{
+    color: var(--main_font_color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.36px;
+}
+
+.services-items-block-item button{
+    border-radius: 8px;
+    background: #6644BC;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    color: var(--main_font_color);
+}
+
+
+
+.order-full-text-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 5, 38, 0.667);
+    z-index: 99999999999999999;
+    display: flex;
+    align-items: center;
+}
+
+.order-full-text-modal-block{
+    background-color: black;
+    width: 700px;
+    height: 400px;
+    transform: translateX(300%);
+    animation: order-full-text-animation 2s , linear;
+}
+
+
+@media(max-width: 1440px){
+    .services-page .container{
+        padding: 50px 100px;
+    }
+}
+
+
+@media(max-width: 1024px){
+    .services-page .container{
+        padding: 50px;
+    }
+
+    .tel-us .container{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 780px){
+    .services-page p , .services-page ul, .services-page  .services-page-top-div .container p{
+        font-size: 14px;
+    }
+
+    .services-page h2{
+        font-size: 130px;
+    }
+
+    .services-page h4{
+        font-size: 24px;
+        width: 400px;
+    }
+
+    .services-page h5{
+        font-size: 16px;
+    }
+}
+
+
+
+@media(max-width: 480px){
+    .services-page p , .services-page ul, .services-page  .services-page-top-div .container p{
+        font-size: 14px;
+    }
+
+    .services-page h2{
+        font-size: 100px;
+    }
+
+    .services-page h4{
+        font-size: 16px;
+        width: 350px;
+    }
+
+    .services-page h5{
+        font-size: 16px;
+    }
+}
+
+
+@keyframes textclip {
+    to {
+      background-position: -200% center;
+    }
+  }
+
+
+
+  @keyframes order-full-text-animation {
+    to {
+        transform: translateX(300%);
+      }
+  }

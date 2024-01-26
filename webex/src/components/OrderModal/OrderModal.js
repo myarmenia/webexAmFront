@@ -7,12 +7,18 @@ import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice'
 import axios from 'axios'
 import { fileIcon } from '../../iconFolder/icon'
 import MessageModal from '../MessageModal/MessageModal'
+import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
 
-function OrderModal({setOpenOrderModal, setMessageModal}) {
+function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
+    const {t, i18n} = useTranslation()
 
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState("");
     const [textValue, setTextValue] = useState('');
 
+    const {pathname} = useLocation()
+
+    const leng = localStorage.getItem('lang')
 
     const dispatch = useDispatch()
 
@@ -45,10 +51,29 @@ function OrderModal({setOpenOrderModal, setMessageModal}) {
             projectType: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
         }
 
+        const orderObj2 = {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            comment: comment.value,
+            domain: site.value,
+            projectType: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false),
+            project: currentProject
+        }
+
+        
+
             const jsonOrderObj = JSON.stringify(orderObj)
+            const jsonOrderObj2 = JSON.stringify(orderObj2)
             const formData = new FormData();
+            
             formData.append('file', file);
-            formData.append('data', jsonOrderObj);
+            if (pathname == `/${leng}/programing`) {
+                formData.append('data', jsonOrderObj2);
+            }
+            else{
+                formData.append('data', jsonOrderObj);
+            }
 
              dispatch(postOrder(formData))
 
@@ -60,76 +85,76 @@ function OrderModal({setOpenOrderModal, setMessageModal}) {
         <div className='order-modal' onClick={()=> setOpenOrderModal(false)}>
             <div className='order-modal-block' onClick={(e)=> e.stopPropagation()}>
                 <div className='order-modal-block-info-div'>
-                    <h3>Tell us</h3>
-                    <p>about your project</p>
+                    <h3>{t('orderFormTitle.0')}</h3>
+                    <p>{t('orderFormTitle.1')}</p>
                 </div>
                 <form className='order-modal-form' onSubmit={handleCloseModal}>
                     <div className='input-text-div'>
-                        <input type="text" placeholder='name' required/>
-                        <input type="text" placeholder='phone' required/>
-                        <input type="email" placeholder='email' required/>
-                        <input type="text" placeholder='site' />
+                        <input type="text" placeholder={t('orderForm.0')} required/>
+                        <input type="text" placeholder={t('orderForm.1')} required/>
+                        <input type="email" placeholder={t('orderForm.2')} required/>
+                        <input type="text" placeholder={t('orderForm.3')} />
                     </div>
 
-                    <textarea cols="30" rows="5" placeholder='Comment' ></textarea>
+                    <textarea cols="30" rows="5" placeholder={t('orderForm.4')} ></textarea>
 
                     <div className='input-text-div upload-file-div'>
                         <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
                         <input style={{display: 'none'}} type="file" id="fileInput" onChange={handleFileChange} />
-                       <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder='Choose File'/>
+                       <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')}/>
                     </div>
 
                     <div className='checkbox-div'>
-                        <span>Choose services</span>
+                        <span>{t('orderFormTitle.2')}</span>
                         <div className='checkobox-items'>
                             <div>
                                 <input id='check1' type="checkbox" name='Corporate website development'/>
-                                <label htmlFor="check1">Corporate website development</label>
+                                <label htmlFor="check1">{t('orderForm.6')}</label>
                             </div>
 
                             <div>
                                 <input id='check2' type="checkbox" name='Search engine optimization (SEO)'/>
-                                <label htmlFor="check2">Online stores development</label>
+                                <label htmlFor="check2">{t('orderForm.7')}</label>
                             </div>
 
                             <div>
                                 <input id='check3' type="checkbox" name='Website development'/>
-                                <label htmlFor="check3">Search engine optimization (SEO)</label>
+                                <label htmlFor="check3">{t('orderForm.8')}</label>
                             </div>
 
                             <div>
                                 <input id='check4' type="checkbox" name='E-mail marketing'/>
-                                <label htmlFor="check4">Contextual advertising</label>
+                                <label htmlFor="check4">{t('orderForm.9')}</label>
                             </div>
 
                             <div>
                                 <input id='check5' type="checkbox" name='Google analytics'/>
-                                <label htmlFor="check5">Website development</label>
+                                <label htmlFor="check5">{t('orderForm.10')}</label>
                             </div>
 
                             <div>
                                 <input id='check6' type="checkbox" name='Online stores development'/>
-                                <label htmlFor="check6">Technical website support</label>
+                                <label htmlFor="check6">{t('orderForm.11')}</label>
                             </div>
 
                             <div>
                                 <input id='check7' type="checkbox" name='Contextual advertising'/>
-                                <label htmlFor="check7">E-mail marketing</label>
+                                <label htmlFor="check7">{t('orderForm.12')}</label>
                             </div>
 
                             <div>
                                 <input id='check8' type="checkbox" name='Technical website support'/>
-                                <label htmlFor="check8">Yandex Market</label>
+                                <label htmlFor="check8">{t('orderForm.13')}</label>
                             </div>
 
                             <div>
                                 <input id='check9' type="checkbox" name='Yandex Market'/>
-                                <label htmlFor="check9">Google analytics</label>
+                                <label htmlFor="check9">{t('orderForm.14')}</label>
                             </div>
 
                             <div>
                                 <input id='check10' type="checkbox" name='Business process automation'/>
-                                <label htmlFor="check10">Business process automation</label>
+                                <label htmlFor="check10">{t('orderForm.15')}</label>
                             </div>
                             
                             

@@ -3,3 +3,9 @@
         {{ $success }}
     </div>
 @endif
+
+@if ($errorMessage = session()->pull('errorMessage'))
+    <div class="alert alert-danger">
+        {{ $errorMessage }}
+    </div>
+@endif

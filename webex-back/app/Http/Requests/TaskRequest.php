@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class TaskRequest extends FormRequest
 {
@@ -21,12 +22,17 @@ class TaskRequest extends FormRequest
      */
     public function rules(): array
     {
-      return [
-        'lesson_id'=>'required',
-        'duration' =>'required',
-        'translate.*.description'=>'required',
-        'video'=>'required',
 
-    ];
+   $lastSegment = Request::segment(count(request()->segments()));
+        $array = [
+          'lesson_id'=>'required',
+          'duration' =>'required',
+          'translate.*.description'=>'required',
+      ];
+      if($lastSegment=="task-store"){
+          $array['video']='required';
+      }
+      
+      return $array;
     }
 }
