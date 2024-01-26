@@ -12,10 +12,17 @@ function ServicesPage() {
 
     const [openOrderModal, setOpenOrderModal] = useState(false)
     const [messageModal, setMessageModal] = useState(false)
+    const [currentProject, setCurrentProject] = useState(null)
 
     const respOrder = useSelector(selectOrder)
 
     const {t, i18n} = useTranslation()
+
+
+    const hadndleModalBtnClick = (project) =>{
+        setCurrentProject(project)
+        setOpenOrderModal(true)
+    }
 
   return (
     <div className='services-page'>
@@ -31,15 +38,21 @@ function ServicesPage() {
                             <div key={el.id} className='services-items-block-item'>
                                 <h6>{t('servicesPagesItemsTitle.' + index)}</h6>
                                 <p>{t('servicesPagesItems_small_txt.' + index)}</p>
-                                <button className='services-items-block-item-btn' onClick={()=> setOpenOrderModal(true)}>{t('order_now')}</button>
+                                <button className='services-items-block-item-btn' onClick={()=> hadndleModalBtnClick(t('servicesPagesItemsTitle.' + index))}>{t('order_now')}</button>
                             </div>
                         )
                     }
                 </div>
             </div>
             <TelUs/>
-
-            {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
+            
+            <div className='order-full-text-modal'>
+                <div className='order-full-text-modal-block'>
+                    <h3>web developmnt</h3>
+                    <p>jfsbv hb hbef hgbufebh hbjhe fedhbejh hjbjfsbv hb hbef hgbufebh hbjhe fedhbejh hjbjfsbv hb hbef hgbufebh hbjhe fedhbejh hjbjfsbv hb hbef hgbufebh hbjhe fedhbejh hjbjfsbv hb hbef hgbufebh hbjhe fedhbejh hjb</p>
+                </div>
+            </div>
+            {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal, currentProject}}/>}
             {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}}/>}
     </div>
   )

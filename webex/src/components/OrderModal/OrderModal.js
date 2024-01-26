@@ -8,13 +8,17 @@ import axios from 'axios'
 import { fileIcon } from '../../iconFolder/icon'
 import MessageModal from '../MessageModal/MessageModal'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
 
-function OrderModal({setOpenOrderModal, setMessageModal}) {
+function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
     const {t, i18n} = useTranslation()
 
     const [file, setFile] = useState("");
     const [textValue, setTextValue] = useState('');
 
+    const {pathname} = useLocation()
+
+    const leng = localStorage.getItem('lang')
 
     const dispatch = useDispatch()
 
@@ -47,10 +51,29 @@ function OrderModal({setOpenOrderModal, setMessageModal}) {
             projectType: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false)
         }
 
+        const orderObj2 = {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            comment: comment.value,
+            domain: site.value,
+            projectType: checkArr.map(el => el.checked  &&  el.name ).filter(el => el !== false),
+            project: currentProject
+        }
+
+        
+
             const jsonOrderObj = JSON.stringify(orderObj)
+            const jsonOrderObj2 = JSON.stringify(orderObj2)
             const formData = new FormData();
+            
             formData.append('file', file);
-            formData.append('data', jsonOrderObj);
+            if (pathname == `/${leng}/programing`) {
+                formData.append('data', jsonOrderObj2);
+            }
+            else{
+                formData.append('data', jsonOrderObj);
+            }
 
              dispatch(postOrder(formData))
 
