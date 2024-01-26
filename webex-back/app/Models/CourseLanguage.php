@@ -17,7 +17,7 @@ class CourseLanguage extends Model
     public function lessons(){
       return  $this->hasMany(Lesson::class);
     }
-    public function translation($lang){
+    public function coursetranslation($lang){
 
       return $this->hasOne(CourseLanguageTranslation::class)->where('lang', $lang)->first();
    }
