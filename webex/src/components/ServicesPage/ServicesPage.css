@@ -111,6 +111,28 @@
 }
 
 
+
+.order-full-text-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 5, 38, 0.667);
+    z-index: 99999999999999999;
+    display: flex;
+    align-items: center;
+}
+
+.order-full-text-modal-block{
+    background-color: black;
+    width: 700px;
+    height: 400px;
+    transform: translateX(300%);
+    animation: order-full-text-animation 2s , linear;
+}
+
+
 @media(max-width: 1440px){
     .services-page .container{
         padding: 50px 100px;
@@ -173,4 +195,12 @@
     to {
       background-position: -200% center;
     }
+  }
+
+
+
+  @keyframes order-full-text-animation {
+    to {
+        transform: translateX(300%);
+      }
   }
