@@ -13,6 +13,7 @@ import { homePageReducer } from "./slices/HomePageSlice/HomePageSlice";
 import { authReduser } from "./slices/Auth/AuthSlice";
 import { projectPageReducer } from "./slices/ProjectPageSlice/ProjectPageSlice";
 import { profileReduser } from "./slices/Profile/ProfileSLice";
+import { VisitHistoryReducer } from "./slices/VisitHistory/VisitHistorySlice";
 
 
 const store = configureStore({
@@ -29,8 +30,9 @@ const store = configureStore({
         dashboard : DashboardReducer,
         homePage: homePageReducer,
         auth: authReduser,
-        projectPage: projectPageReducer,
-        profile: profileReduser
+        profile: profileReduser,
+        visithistory:VisitHistoryReducer,
+        projectPage: projectPageReducer
 
 
     },
