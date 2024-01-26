@@ -22,4 +22,14 @@ class News extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    public function translations()
+    {
+        return $this->hasMany(NewsTranslations::class, 'news_id', 'id');
+    }
+
+    public function category()
+    {
+        return $this->hasOne(NewsCategory::class, 'id', 'news_category_id');
+    }
 }

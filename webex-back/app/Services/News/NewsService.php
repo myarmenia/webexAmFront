@@ -44,7 +44,7 @@ class NewsService
 
         $newsData = $this->newsRepository->createNewsData($dataNews);
 
-        if($photo = $data['photo']){
+        if($photo = $data['photo'] ?? null){
             $path = FileUploadService::upload($photo, 'news/'.$news->id);
 
             $photoData = [
@@ -64,6 +64,24 @@ class NewsService
         session(['errorMessage' => 'Что то пошло не так. Попробуйте еще раз.']);
 
         return false;
+    }
+
+    public function customNewsResource($data)
+    {
+        $readyResource = [];
+        foreach ($data as $key => $val) {
+
+            $readyResource[] = [
+                'id' => $val->id,
+                'images' => isset($val->images) && count($val->images) > 0? route('get-file', ['path' => $val->images[0]->path]) : null,
+                'title' => $val->translations[0]->title,
+                'category' => $val->category->type,
+                'created_at'=> $val->created_at,
+            ];
+        }
+
+        return $readyResource;
+
     }
 
 }
