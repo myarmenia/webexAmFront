@@ -52,6 +52,24 @@
       "url": "users"
     },
     {
+      "name": "News",
+      "icon": "menu-icon tf-icons bx bx-box",
+      "slug": "general-news",
+      "submenu": [
+        {
+          "url": "/news/news",
+          "name": "News",
+          "slug": "news"
+        },
+        {
+          "url": "/news/news-category",
+          "name": "News category",
+          "slug": "news-category"
+        }
+      ]
+    },
+    
+    {
       "menuHeader": "Apps & Pages"
     },
     {

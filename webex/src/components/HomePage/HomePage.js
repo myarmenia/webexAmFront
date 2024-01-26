@@ -44,7 +44,7 @@ function handleResize(){
 
   useEffect(()=>{
     dispatch(getHomePage()) 
-  },[])
+  },[]) 
   
   return (
     <>

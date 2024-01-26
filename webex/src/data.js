@@ -742,59 +742,88 @@ export const ourt_teem_data = [
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '2',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '3',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '4',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '5',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '6',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '7',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '8',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
     {
-        _id: '1',
+        _id: '9',
         name: 'name surname',
         img: our_teemImage,
         stack: 'Front-end',
         experience: '5years'
     },
+]
+
+
+
+
+// ==================servicesPAge===========================
+
+
+export const servicesPageItemsData= [
+    {
+        id: '1',
+    },
+
+    {
+        id: '2',
+    },
+    {
+        id: '3',
+    },
+    {
+        id: '4',
+    },
+    {
+        id: '5',
+    },
+    {
+        id: '6',
+    },
+    
 ]

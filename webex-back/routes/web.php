@@ -12,7 +12,9 @@ use App\Http\Controllers\Admin\Users\OpenNextLessonController;
 use App\Http\Controllers\Admin\Users\StudentInfoController;
 use App\Http\Controllers\Admin\Users\StudentIsPresentController;
 use App\Http\Controllers\Admin\Users\StudentAttendancesController;
+use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\NewsCategoryController;
 use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -124,24 +126,38 @@ Route::group(['middleware' => ['auth']], function () {
 
 
   // course-language
-Route::get('/course/course-language', [CourseLanguageController::class,'index'])->name('course-language');
-Route::get('/course/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
-Route::post('/course/course-language-store', [CourseLanguageController::class,'store'])->name('course-language-store');
+Route::group(['prefix'=>'course'],function(){
+  Route::get('/course-language', [CourseLanguageController::class,'index'])->name('course-language');
+  Route::get('/course-language-create', [CourseLanguageController::class,'create'])->name('course-language-create');
+  Route::post('/course-language-store', [CourseLanguageController::class,'store'])->name('course-language-store');
+  Route::get('/course-language-edit/{id}',[CourseLanguageController::class,'edit'])->name('course-language-edit');
+  Route::put('/course-language-update/{id}',[CourseLanguageController::class,'update'])->name('course-language-update');
+});
 
 // lessons
-Route::get('/lesson/lesson-list', [LessonController::class,'index'])->name('lesson-list');
-Route::get('/lesson/lesson-create', [LessonController::class,'create'])->name('lesson-create');
-Route::post('/lesson/lesson-store', [LessonController::class,'store'])->name('lesson-store');
-Route::get('/lesson/lesson-edit/{id}', [LessonController::class,'edit'])->name('lesson-edit');
+Route::group(['prefix'=>'lesson'],function(){
+  Route::get('/lesson-list', [LessonController::class,'index'])->name('lesson-list');
+  Route::get('/lesson-create', [LessonController::class,'create'])->name('lesson-create');
+  Route::post('/lesson-store', [LessonController::class,'store'])->name('lesson-store');
+  Route::get('/lesson-edit/{id}', [LessonController::class,'edit'])->name('lesson-edit');
+  Route::put('/lesson-update/{id}',[LessonController::class,'update'])->name('lesson-update');
+});
+
 
 //tasks
-Route::get('/task/task-list', [TaskController::class,'index'])->name('task-list');
-Route::get('/task/task-create', [TaskController::class,'create'])->name('task-create');
-Route::post('/task/task-store', [TaskController::class,'store'])->name('task-store');
+Route::group(['prefix'=>'task'],function(){
+  Route::get('/task-list', [TaskController::class,'index'])->name('task-list');
+  Route::get('/task-create', [TaskController::class,'create'])->name('task-create');
+  Route::post('/task-store', [TaskController::class,'store'])->name('task-store');
+  Route::get('/task-edit/{id}',[TaskController::class,'edit'])->name('task-edit');
+  Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
+  Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
+});
+
 
 Route::post('change-status', [ChangeStatusController::class,'change_status'])->name('change_status');
 Route::get('student-is-present/{id}', [StudentIsPresentController::class,'index']);
-Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index']);
+Route::get('delete-item/{tb_name}/{id}', [DeleteItemController::class,'index'])->name('delete_item');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
 Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::class,'index'])->name('open_course');
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
@@ -155,8 +171,28 @@ Route::group(['prefix' => 'project'], function () {
   Route::get('/', [ProjectController::class, 'index'])->name('project');
   Route::get('/create', [ProjectController::class, 'create'])->name('create-project');
   Route::post('/add-project', [ProjectController::class, 'addProject'])->name('project.add');
+  Route::get('/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+  Route::post('/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+
 
 });
+
+//News
+Route::group(['prefix' => 'news'], function () {
+  Route::get('/news', [NewsController::class, 'index'])->name('news');
+  Route::get('/news-create', [NewsController::class, 'createNewsPage'])->name('news-create-page');
+  Route::post('/news-create', [NewsController::class,'createNews'])->name('news-create');
+
+  Route::get('/news-category', [NewsCategoryController::class, 'index'])->name('news-category');
+  Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
+  Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
+
+
+});
+
+
+Route::post('video-upload', [FileUploadService::class, 'videoUpload'])->name('video-upload');
+
 });
 
 Route::get('get-file', [FileUploadService::class, 'get_file'])->name('get-file');

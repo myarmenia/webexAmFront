@@ -19,6 +19,7 @@ function Header() {
   
   const respOrder = useSelector(selectOrder)
 
+
   const startH2Animation = () => {
     const textH4 = t('headerTitlePart2');
     animateText(textH4, setAnimatedTextH4);
@@ -27,6 +28,8 @@ function Header() {
   useEffect(() => {
     const textH2 = t('headerTitlePart1');
     animateText(textH2, setAnimatedTextH2, startH2Animation);
+
+    console.log(respOrder.data,999);
   }, [t]);
   
  
@@ -73,7 +76,7 @@ function Header() {
         </div>
       </div>
       {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
-      {messageModal && <MessageModal txt={respOrder?.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>}
+      {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}}/>}
     </div>
   );
 }

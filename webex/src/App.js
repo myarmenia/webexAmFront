@@ -19,8 +19,11 @@ import Profile from './components/profilePage/profile/Profile';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import PrivateRouteForOutSider from './privateRoute/PrivateRouteForOutSider';
 import PrivateRouteForRegAndLog from './privateRoute/PrivateRouteForRegAndLog';
+import ContactUsPage from './components/ContactUsPage/ContactUsPage';
 import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
 import Help from './components/profilePage/Help/Help';
+import ServicesPage from './components/ServicesPage/ServicesPage';
+
 
 
 function App() {
@@ -46,12 +49,12 @@ function App() {
             <Route path="verifyAccount/:token/:email" element={<VerifyAccount />} />
 
             <Route index element={<PrivateRouteForOutSider><HomePage /></PrivateRouteForOutSider>} />
-            <Route path="programing" element={<h1>programing</h1>} />
+            <Route path="programing" element={<PrivateRouteForOutSider><ServicesPage/></PrivateRouteForOutSider>} />
             <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
-            <Route path="contact" element={<h1>contact</h1>} />
+            <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
               <Route index element={<PrivateRoute><Dashboard /></PrivateRoute>} />

@@ -13,24 +13,39 @@
 }
 
 
-.mosaic-slide-grid-item-text-div{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 66;
-    width: 80%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.451);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
-    transform: rotateY(90deg);
-    transition: all 1s;
-  }
   
-  
-  .mosaic-slide-grid-item:hover .mosaic-slide-grid-item-text-div{
-    transform: rotateY(0);
-  }
+.mosaic-grid-item > img {
+  width: 100%;
+  height: 70%;
+ }
+ 
+ .mosaic-grid-item-text-div{
+   padding: 20px;
+ }
+ .mosaic-grid-item-text-div p {
+   font-size: 15px;
+   width: 100%;
+   margin: 0;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* Number of lines to show before truncating with ellipsis */
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   position: relative;
+   line-height: 20px;
+ }
+ 
+ .mosaic-grid-item-text-div p::after {
+   content: "...";
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   width: 100%;
+   height: 1.5em; /* Adjust the height as needed for the fade effect */
+ }
+ 
+ @media(max-width:1024px){
+   
+   .mosaic-grid-item-text-div p{
+     font-size: 11px;
+   }
+ }

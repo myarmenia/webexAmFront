@@ -4,22 +4,35 @@ namespace App\Http\Controllers\Admin\Tasks;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TaskRequest;
+use App\Interfaces\Task\TaskRepositoryInterface;
+use App\Models\CourseLanguage;
 use App\Models\Lesson;
 use App\Models\Task;
 use App\Models\TaskTranslation;
 use App\Services\FileUploadService;
+use App\Traits\Lesson\LessonsTrait;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+  use LessonsTrait;
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    private $taskRepository;
+    public function __construct(TaskRepositoryInterface $taskRepository){
+
+      $this->taskRepository = $taskRepository;
+
+    }
+
+    public function index(Request $request)
     {
-      $tasks=Task::with('task_translations')->get();
-      // dd($tasks);
-      return view('content.tasks.index',compact('tasks'));
+
+      $tasks = $this->taskRepository->allTasks($request->all());
+
+      return view('content.tasks.index',compact('tasks'))->with('i',($request->input('page', 1) - 1) * 10);
+
     }
 
     /**
@@ -28,7 +41,6 @@ class TaskController extends Controller
     public function create()
     {
       $lessons = Lesson::with('lesson_translations')->get();
-// dd($lessons[0]->lesson_translations);
       return view('content.tasks.create',compact('lessons'));
     }
 
@@ -38,28 +50,14 @@ class TaskController extends Controller
     // ---------------
     public function store(TaskRequest $request)
     {
-      // dd($request->all());
-      $task = Task::create($request->only(['lesson_id','duration']));
-      if($request->has('video')){
-        $path=FileUploadService::upload($request->video,$request->lesson_id.'/tasks/'.$task->id);
-        $task->video=$path;
-        $task->save();
+
+      $storeTask = $this->taskRepository->storeTask($request);
+
+      if($storeTask){
+
+        return redirect()->route('task-list');
       }
 
-      if($task){
-        foreach($request->translate as $key => $lang){
-
-          $request['task_id'] = $task->id;
-
-          $request['description'] = $lang['description'];
-          $request['lang'] = $key;
-
-          $task_translation = TaskTranslation::create($request->only(['task_id','description','lang']));
-
-        }
-        return back();
-
-      }
     }
 
     /**
@@ -75,15 +73,23 @@ class TaskController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+      $lessons = $this->getAllLesson();
+      $task =$this->taskRepository->editTask($id);
+
+      return view('content.tasks.edit',compact('task','lessons'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TaskRequest $request, string $id)
     {
-        //
+
+        $task = $this->taskRepository->updateTasks( $request, $id);
+        if($task){
+          return redirect()->back();
+        }
     }
 
     /**
