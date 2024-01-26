@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\News;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\News\NewsCategoryRequest;
 use App\Http\Resources\News\Category\NewsCategoryResource;
 use App\Models\News\NewsCategory;
 use App\Models\News\NewsCategoryTranslations;
 use App\Services\News\NewsCategoryService;
 use Illuminate\Http\Request;
+
 
 class NewsCategoryController extends Controller
 {
