@@ -31,9 +31,8 @@
                             {{ $lang }}</label>
 
                         <div class="col-md-10">
-                            <input class="form-control" placeholder="Заголовок"
-                                value="{{ old("title.$lang") }}" id="title-{{ $lang }}"
-                                name="title[{{ $lang }}]" />
+                            <input class="form-control" placeholder="Заголовок" value="{{ old("title.$lang") }}"
+                                id="title-{{ $lang }}" name="title[{{ $lang }}]" />
                         </div>
                     </div>
                     @error("title.$lang")
@@ -50,9 +49,8 @@
                             {{ $lang }}</label>
 
                         <div class="col-md-10">
-                            <input class="form-control" placeholder="Названия"
-                                value="{{ old("description.$lang") }}" id="description-{{ $lang }}"
-                                name="description[{{ $lang }}]" />
+                            <textarea id="description-{{ $lang }}" class="form-control" placeholder="Названия"
+                                name="description[{{ $lang }}]">{{ old("description.$lang") }}</textarea>
                         </div>
                     </div>
                     @error("description.$lang")
@@ -64,10 +62,10 @@
                 @endforeach
 
                 <div class="mb-3 row">
-                    <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
+                    <label for="category" class="col-md-2 col-form-label">Тип проекта</label>
                     <div class="col-md-10">
                         <select id="defaultSelect" name="category" class="form-select">
-                            <option>Выберите тип проекта</option>
+                            <option value="">Выберите тип проекта</option>
                             @foreach ($categoryList as $category)
                                 <option value="{{ $category['id'] }}">{{ $category['translations'] }}</option>
                             @endforeach
@@ -89,8 +87,8 @@
                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photos</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" name="photo" class="account-file-input"
-                                    hidden accept="image/png, image/jpeg" />
+                                <input type="file" id="upload" name="photo" class="account-file-input" hidden
+                                    accept="image/png, image/jpeg" />
                             </label>
                             <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer">
                             </div>

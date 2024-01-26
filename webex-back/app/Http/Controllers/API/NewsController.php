@@ -21,7 +21,10 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-        $data = News::orderBy('id', 'DESC')->paginate(5);
+        $data = News::orderBy('id', 'DESC')->with(['translations', 'category', 'images'])->paginate(5);
+        // $data = News::orderBy('id', 'DESC')->with(['translations'])->paginate(5);
+
+        $data = $this->newsService->customNewsResource($data);
 
         return view('content.news.index', compact('data'))
                ->with('i', ($request->input('page', 1) - 1) * 5);
@@ -38,10 +41,13 @@ class NewsController extends Controller
     {
         $createNews = $this->newsService->createNews($request->all());
 
-        $data = News::orderBy('id', 'DESC')->paginate(5);
+        $data = News::orderBy('id', 'DESC')->with(['translations', 'category', 'images'])->paginate(5);
 
-        return view('content.news.index', compact('data'))
-               ->with('i', ($request->input('page', 1) - 1) * 5);
+        $data = $this->newsService->customNewsResource($data);
+
+        return redirect()->route('news')
+            ->with('i', ($request->input('page', 1) - 1) * 5)
+            ->with('data', $data);
 
     }
 
