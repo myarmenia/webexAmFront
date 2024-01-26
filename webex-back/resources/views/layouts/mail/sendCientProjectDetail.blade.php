@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Новый заказ</title>
+    <title>Клиент проект детали</title>
 </head>
 <body>
    <p>Имя: {{$data['name']}} </p>
@@ -16,12 +16,5 @@
     @if($data['projectType'] )
         <p>Проект: {{$data['projectType']}} </p>
     @endif
-    @if($data['projectType'] )
-        <p>Услуги: {{$data['projectType']}} </p>
-    @endif
-    @if(isset($data['project']) &&  $data['project'] )
-        <p>Проект: {{$data['project']}} </p>
-    @endif
-   
 </body>
 </html>
