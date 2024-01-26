@@ -3,7 +3,7 @@
 @section('title', 'Account settings - Account')
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
-    <script src="{{ asset('assets/js/111.js') }}"></script>
+    <script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 
 @section('content')
@@ -51,7 +51,7 @@
                                 <td>{{ $project->link_play_market }}</td>
                                 <td>{{ $project->type }}</td>
                                 <td>
-                                    <div class="dropdown action" data-id="{{ $project->id }}" data-tb-name="users">
+                                    <div class="dropdown action" data-id="{{ $project->id }}" data-tb-name="projects">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
                                             <i class="bx bx-dots-vertical-rounded"></i>
@@ -76,3 +76,5 @@
 
 
 @endsection
+<x-modal-delete></x-modal-delete>
+

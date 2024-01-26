@@ -87,7 +87,7 @@ const cancelFunc = () => {
       <div className="allProfile">
         <div className="profile-picture">
           <div className="profile-img">
-            <img src={profileImg} alt="profile" className="profile-img-img img-other" />
+            <img src={profileImg || authUser.avatar} alt="profile" className="profile-img-img img-other" />
           </div>
           <div className="profile-name">
             {/* <img src={pencleEdit} alt="pencleEdit" onClick={()=>console.log("Aaaaaaaa")}/> */}
@@ -139,6 +139,7 @@ const cancelFunc = () => {
             <button className="button-cancel" onClick={cancelFunc}>Չեղարկել</button>
           </div>
         </div>
+        <p className={getMes ? "acceptMes" : "refuseMes"}>{getMes.length > 1 ? `${getMes}` : "chdarav"}</p>
         <div className="change-password">
           <div className="change-password-div">
             <p className="change-password-title">գրիր գործող գաղտնաբառը</p>

@@ -4,23 +4,34 @@ namespace App\Http\Controllers\Admin\Lessons;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LessonRequest;
+use App\Interfaces\Lesson\LessonRepositoryInterface;
 use App\Models\CourseLanguage;
 use App\Models\Lesson;
 use App\Models\LessonTranslation;
 use App\Services\FileUploadService;
+use App\Traits\Course\CourseLanguagesTrait;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
+  use CourseLanguagesTrait;
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    private $lessonRepository;
+
+    public function __construct(LessonRepositoryInterface $lessonRepository){
+
+      $this->lessonRepository = $lessonRepository;
+
+    }
+
+    public function index(Request $request)
     {
 
-      $lessons=Lesson::with(['course_languages','lesson_translations'])->get();
+      $lessons = $this->lessonRepository->allLessons();
 
-      return view('content.lessons.index',compact('lessons'));
+      return view('content.lessons.index',compact('lessons'))->with('i', ($request->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -38,28 +49,11 @@ class LessonController extends Controller
      */
     public function store(LessonRequest $request)
     {
-// dd($request->all());
-      $lesson = Lesson::create($request->only(['course_language_id','duration','number']));
 
-      if($request->has('video')){
+      $lesson=$this->lessonRepository->storeLesson($request);
 
-        $path = FileUploadService::upload($request->video,'lessons/'.$lesson->id);
-        $lesson->video = $path;
-        $lesson->save();
-        if($lesson){
-          foreach($request->translate as $key => $lang){
-
-            $request['lesson_id'] = $lesson->id;
-            $request['title'] = $lang['title'];
-            $request['description'] = $lang['description'];
-            $request['lang'] = $key;
-            $lessontranlate = LessonTranslation::create($request->only(['lesson_id','title','description','lang']));
-
-          }
-          return back();
-
-        }
-
+      if($lesson){
+        return redirect()->route('lesson-list');
       }
 
     }
@@ -78,8 +72,9 @@ class LessonController extends Controller
     public function edit(string $id)
     {
 
-        $lesson = Lesson::where('id',$id)->with(['lesson_translations','course_languages'])->first();
-        $course_language = CourseLanguage::all();
+      $lesson = $this->lessonRepository->editLesson($id);
+
+      $course_language = $this->getAllCourseLanguages();
 
         return view('content.lessons.edit',compact('lesson','course_language'));
 
@@ -88,9 +83,14 @@ class LessonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(LessonRequest $request, string $id)
     {
-        //
+
+      $updateLesson=$this->lessonRepository->updateLesson($request,$id);
+      if($updateLesson){
+        return back();
+      }
+
     }
 
     /**
@@ -98,6 +98,6 @@ class LessonController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // 
     }
 }
