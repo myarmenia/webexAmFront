@@ -28,30 +28,27 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Фото</th>
                             <th>Названия</th>
-                            <th>Время изготов.</th>
+                            <th>Категория</th>
                             <th>Дата создания</th>
-                            <th>Ссылка проект</th>
-                            <th>Ссылка app store</th>
-                            <th>Ссылка play market</th>
-                            <th>Тип</th>
                             <th>Действия</th>
-
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $key => $project)
+                        @foreach ($data as $key => $news)
                             <tr>
                                 <td>{{ ++$i }}</td>
-                                <td>{{ $project->name }}</td>
-                                <td>{{ $project->process_time }}<span>месяца</span></td>
-                                <td>{{ $project->creation_date_at }}</td>
-                                <td>{{ $project->link_project }}</td>
-                                <td>{{ $project->link_app_store }}</td>
-                                <td>{{ $project->link_play_market }}</td>
-                                <td>{{ $project->type }}</td>
                                 <td>
-                                    <div class="dropdown action" data-id="{{ $project->id }}" data-tb-name="users">
+                                    @if($news['images'])
+                                        <img width="50" height="50" src="{{ $news['images'] }}" >
+                                    @endif
+                                </td>
+                                <td>{{ $news['title'] }}</td>
+                                <td>{{ $news['category'] }}
+                                <td>{{ $news['created_at'] }}</td>
+                                <td>
+                                    <div class="dropdown action" data-id="{{ $news['id'] }}" data-tb-name="users">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
                                             <i class="bx bx-dots-vertical-rounded"></i>

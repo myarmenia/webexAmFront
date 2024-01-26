@@ -63,7 +63,7 @@
                 {{-- <i class="bx bxl-angular bx-sm text-danger me-3"></i> --}}
                  <span class="fw-medium">{{$item->name}}</span></td>
               {{-- <td><span class="badge bg-label-primary me-1">Active</span></td> --}}
-              <td>{{ $item->translation('ru')->description }}</td>
+              <td>{{ $item->coursetranslation('ru')->description }}</td>
               <td>
                 <div class="dropdown action" data-id="{{ $item->id }}" data-tb-name="course_languages">
                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>

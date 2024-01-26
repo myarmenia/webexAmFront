@@ -84,7 +84,7 @@
 
                         <div class="col-md-10">
                             <textarea class="form-control" placeholder="Описания" id="description-{{$lang}}" name="translate[{{$lang}}][description]">
-                              {{$course_language->translation($lang)->description? $course_language->translation($lang)->description : old("translate.$lang.description")}}
+                              {{$course_language->coursetranslation($lang)->description? $course_language->coursetranslation($lang)->description : old("translate.$lang.description")}}
                             </textarea>
                         </div>
                     </div>

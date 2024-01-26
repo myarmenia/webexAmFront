@@ -34,13 +34,13 @@ export const ProfileSidebarArr = [
   },
   {
     icon: Payment,
-    name: 'Payment',
+    name: 'Visit history',
     slug: 'visithistory'
   },
   {
     icon: LogOut,
     name: 'Log out',
-    slug: 'logOut'
+    slug: 'logOut',
   },
 ];
 
