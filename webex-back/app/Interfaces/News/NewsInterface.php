@@ -8,4 +8,8 @@ interface NewsInterface
 
     public function createNewsData($data);
 
+    public function editNews($id);
+
+  
+
 }

@@ -22,6 +22,7 @@ class NewsRepository implements NewsInterface{
         return NewsTranslations::insert($data);
     }
 
+
     public function getNewsByCategories()
     {
         return News::with(['images', 'category','translations'])
@@ -29,5 +30,15 @@ class NewsRepository implements NewsInterface{
         ->groupBy('news_category_id');
     }
    
+
+    public function editNews($id){
+      $news = News::where('id',$id)->with('translations')->first();
+
+
+      return $news;
+    }
+
+  
+
 
 }
