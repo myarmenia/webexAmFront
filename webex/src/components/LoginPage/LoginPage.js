@@ -14,14 +14,16 @@ import { useEffect, useRef, useState } from "react";
 import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
 import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
-import { selectLogin, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
+import { selectLogin, selectLoginError, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
 import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
 import MessageModal from "../MessageModal/MessageModal.js";
+import { getIsAuth } from "../../store/slices/Auth/AuthSlice.js";
 function LoginPage() {
 
     const [viewPassword, setViewPassword] = useState(true)
     const [openModal, setOpenModal] = useState(false)
     const [messageModal, setMessageModal] = useState(false)
+    const isAuth = useSelector(getIsAuth)
 
     const { t, i18n } = useTranslation();
 
@@ -30,29 +32,35 @@ function LoginPage() {
     const navigate = useNavigate()
 
     const respLogin = useSelector(selectLogin)
-    const leng = localStorage.getItem('lang')
     
-    const  validationSchema = yup.object().shape({
-        email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
+    const leng = localStorage.getItem('lang')
+
+    const validationSchema = yup.object().shape({
+        email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
         password: yup.string()
-        .required(t('validation_reg_log.'+ '0')),
+            .required(t('validation_reg_log.' + '0')),
     })
 
-    function handleLogSub(e,handleSubmit, isValid , dirty) {
+    function handleLogSub(e, handleSubmit, isValid, dirty) {
         e.preventDefault()
-        if (e.target[0].value && e.target[1].value){
+        if (e.target[0].value && e.target[1].value) {
             handleSubmit()
-            dispatch(postLogin({email: e.target[0].value, password: e.target[1].value}))
+            dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
         }
-        Object.keys(respLogin?.data.authUser || {}).length === 0 && setMessageModal(true) 
+
     }
 
-    
+    useEffect(() => {
+        if (respLogin.data.isAuth === false) {
+            setMessageModal(true)
+        }
+
+    }, [respLogin.data.isAuth])
 
 
-    useEffect(()=>{
-        Object.keys(respLogin?.data.authUser || {}).length !== 0  && navigate(`/${leng}/profilePage`)
-    },[respLogin.data.authUser])
+    useEffect(() => {
+        isAuth && navigate(`/${leng}/profilePage`)
+    }, [isAuth])
     return (
         <Formik
             initialValues={{
@@ -60,9 +68,9 @@ function LoginPage() {
                 password: '',
             }}
 
-            onSubmit={(values, {resetForm})=>{
-               
-            
+            onSubmit={(values, { resetForm }) => {
+
+
                 resetForm()
             }}
 
@@ -70,46 +78,46 @@ function LoginPage() {
 
             validationSchema={validationSchema}
         >
-        
-        {
-            ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
-                <div className="login">
-                    <div className="container">
-                            <form className="log-form"  onSubmit={(e)=>handleLogSub(e,handleSubmit, isValid, dirty)}>
-                                <SectionTitle title={t('reg_and_log.'+ '1')}/>
 
-                            <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('reg_and_log.'+ '3')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
-                                {touched.email && errors.email && <p className="error">{errors.email}</p>}
-                            </div>
+            {
+                ({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+                    <div className="login">
+                        <div className="container">
+                            <form className="log-form" onSubmit={(e) => handleLogSub(e, handleSubmit, isValid, dirty)}>
+                                <SectionTitle title={t('reg_and_log.' + '1')} />
 
-                            <div className="password-inp">
-                                <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.'+ '5')} value={values.password} onChange={handleChange} onBlur={handleBlur}/>
-                                <span onClick={()=> setViewPassword(!viewPassword)}>{eyeIcon}</span>
-                                {touched.password && errors.password && <p className="error">{errors.password}</p>}
-                            </div>
+                                <div className="email-inp">
+                                    <input type="email" name="email" placeholder={t('reg_and_log.' + '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                                    {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                                </div>
 
-                            {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
+                                <div className="password-inp">
+                                    <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} />
+                                    <span onClick={() => setViewPassword(!viewPassword)}>{eyeIcon}</span>
+                                    {touched.password && errors.password && <p className="error">{errors.password}</p>}
+                                </div>
 
-                            <SubmitBtn index= "0"/>
-                            <h6>{t('reg_and_log.'+ '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.'+ '10')}</NavLink></h6>
-                            <h5>{t('reg_and_log.'+ '14')} <span onClick={()=> setOpenModal(true)}>{t('reg_and_log.'+ '15')}</span></h5>
-                        </form>
-                        
+                                {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
+
+                                <SubmitBtn index="0" />
+                                <h6>{t('reg_and_log.' + '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.' + '10')}</NavLink></h6>
+                                <h5>{t('reg_and_log.' + '14')} <span onClick={() => setOpenModal(true)}>{t('reg_and_log.' + '15')}</span></h5>
+                            </form>
+
                             <div className="log_img_div">
-                                <AnimLogo/>
-                             </div>
+                                <AnimLogo />
+                            </div>
 
 
                             {
-                                openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal}/>
+                                openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal} />
                             }
 
-                            {messageModal && <MessageModal txt={respLogin.data.message} path={`/${leng}/login`} {...{setMessageModal}}/>}
+                            {messageModal && <MessageModal txt={respLogin.data.error} path={`/${leng}/login`} {...{ setMessageModal }} />}
+                        </div>
                     </div>
-                </div>
-            )
-        }
+                )
+            }
         </Formik>
     )
 }

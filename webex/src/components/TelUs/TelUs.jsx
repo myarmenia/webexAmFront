@@ -4,11 +4,16 @@ import * as yup from 'yup';
 import { Formik } from 'formik'
 import './TelUs.css'
 import { fileIcon } from '../../iconFolder/icon';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { postTellUs } from '../../store/slices/TellUsSlice/TellUsApi';
+import { selectTellUs } from '../../store/slices/TellUsSlice/TellUsSlice';
+import MessageModal from '../MessageModal/MessageModal';
 
 function TelUs() {
+    const [messageModal, setMessageModal] = useState(false)
 
+    const respTellUs = useSelector(selectTellUs)
     const {t, i18n} = useTranslation()
 
     const [file, setFile] = useState(null);
@@ -39,6 +44,7 @@ function TelUs() {
     e.preventDefault()
     const [name, phone, email, webSiteAddres,  message] = e.target
 
+    console.dir(e.target);
     const orderObj = {
         name: name.value,
         phone: phone.value,
@@ -55,6 +61,10 @@ function TelUs() {
     if (e.target[0].value && e.target[1].value && e.target[2].value){
         handleSubmit()
         
+
+        dispatch(postTellUs(formData))
+        setMessageModal(true)
+        setTextValue('')
     }
 }
 
@@ -108,7 +118,7 @@ function TelUs() {
                             </div>
 
                             <div className="webSite-inp">
-                                <input type="email" name="webSiteAddres" placeholder={t('orderForm.3')} value={values.webSiteAddres} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="text" name="webSiteAddres" placeholder={t('orderForm.3')} value={values.webSiteAddres} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.webSiteAddres && errors.webSiteAddres && <p className="error">{errors.webSiteAddres}</p>}
                             </div>
 
@@ -130,6 +140,7 @@ function TelUs() {
         }
         </Formik>
         </div>
+        {messageModal && <MessageModal txt={respTellUs?.data?.message} {...{setMessageModal}}/>}
     </div>
   )
 }

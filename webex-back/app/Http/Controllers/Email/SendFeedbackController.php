@@ -12,6 +12,7 @@ class SendFeedbackController extends Controller
     public function __invoke(Request $request)
     {
         $data = $request->all();
+        
         $result = Mail::send(new SendFeedbackEmail($data));
 
         if($result){
