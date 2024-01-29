@@ -22,7 +22,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
 
     Route::group(['prefix' => 'auth'], function ($router) {
         Route::post('login', [AuthController::class, 'login']);
-        Route::post('logout', [AuthController::class, 'logout']);
+        Route::get('logout', [AuthController::class, 'logout']);
         Route::post('signup', [AuthController::class, 'signup']);
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::post('check-verify-token', [AuthController::class, 'checkVerifyToken']);
