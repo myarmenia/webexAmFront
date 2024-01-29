@@ -8,19 +8,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Storage;
 
-
-class SendOrderEmail extends Mailable
+class ClientProjectEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public array $data;
-
     /**
      * Create a new message instance.
-     *
-     * @return void
      */
     public function __construct($data)
     {
@@ -33,7 +27,7 @@ class SendOrderEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Send Order Email',
+            subject: 'Клиент проект',
         );
     }
 
@@ -43,7 +37,7 @@ class SendOrderEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'layouts.mail.sendorder',
+            view: 'layouts.mail.sendCientProjectDetail',
         );
     }
 
@@ -54,11 +48,6 @@ class SendOrderEmail extends Mailable
      */
     public function attachments(): array
     {
-        if(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file'])))){
-            return [
-                public_path(Storage::url($this->data['file']))
-            ];
-        }
         return [];
     }
 
@@ -67,11 +56,6 @@ class SendOrderEmail extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    // ->attach(public_path(Storage::url($this->data['file'])))
-                    // ->when(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file']))),
-                    // function ($message) {
-                    //     $message->attach(public_path(Storage::url($this->data['file'])));
-                    // })
                     ->to('tradingtrader@mail.ru');
                     // ->to(config('project.webex_email'));
     }
