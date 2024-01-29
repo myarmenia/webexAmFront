@@ -16,4 +16,19 @@ class NewsService
        
     }
 
+    public function getNewsByCategoryType($id)
+    {
+        return $this->newsRepository->getNewsByCategoryType($id);
+    }
+
+    public function getCategoryNameById($id)
+    {
+        return $this->newsRepository->getCategoryNameById($id);
+    }
+
+    public function getNewsById($id)
+    {
+        return $this->newsRepository->getNewsById($id);
+    }
+
 }
