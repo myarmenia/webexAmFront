@@ -43,7 +43,7 @@ class ProjectController extends Controller
             return redirect()->route('project')
                   ->with('i', ($request->input('page', 1) - 1) * 5);
         }
-  
+
         // $this->validate($request, [
         //     'name' => 'required',
         //     'email' => 'required|email|unique:users,email',
@@ -70,7 +70,7 @@ class ProjectController extends Controller
         return ProjectResource::collection($project);
     }
 
-    
+
 
     // public function show($id)
     // {
@@ -87,11 +87,11 @@ class ProjectController extends Controller
 
     public function update( ProjectAddOrCreateRequest $request, $id)
     {
-                
+
         $createProj = $this->projectService->updateProject($request->all(), $id);
-        
+
         return redirect()->back();
-       
+
     }
 
     // public function destroy($id)

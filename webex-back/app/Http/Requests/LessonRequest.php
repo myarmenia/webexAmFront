@@ -37,4 +37,15 @@ class LessonRequest extends FormRequest
         return  $array;
 
     }
+    public function messages(): array
+    {
+        return [
+          'duration' => 'Поле продолжительность обязательно для заполнения',
+          'translate.*.title'=>'Поле название  обязательно для заполнения.',
+          'translate.*.description'=>'Поле описание обязательно для заполнения.',
+          'number'=>'Поле номер урока обязательно для заполнения.',
+          'video'=>'Поле видео обязательно для заполнения.'
+        ];
+    }
+
 }
