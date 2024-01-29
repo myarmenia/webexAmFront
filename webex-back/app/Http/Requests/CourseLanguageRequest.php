@@ -36,4 +36,12 @@ class CourseLanguageRequest extends FormRequest
       return $array;
 
     }
+    public function messages(): array
+    {
+        return [
+          'name' => 'Поле имя обязательно для заполнения',
+          'translate.*.description'=>'Поле описание обязательно для заполнения.',
+          'upload_file'=>'Поле загрузить файл обязательно для заполнения.'
+        ];
+    }
 }

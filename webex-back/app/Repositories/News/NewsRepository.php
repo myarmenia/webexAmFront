@@ -24,6 +24,7 @@ class NewsRepository implements NewsInterface
         return NewsTranslations::insert($data);
     }
 
+
     public function getNewsByCategories()
     {
         return News::with(['images', 'category', 'translations' ])
@@ -59,6 +60,16 @@ class NewsRepository implements NewsInterface
                 }
             ])->first();
     }
+
+
+    public function editNews($id){
+      $news = News::where('id',$id)->with('translations')->first();
+
+
+      return $news;
+    }
+
+  
 
 
 }

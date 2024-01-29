@@ -10,9 +10,9 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="javascript:void(0);">Языки программирования</a>
+                <a href="{{route('course-language')}}">Языки программирования</a>
             </li>
-            <li class="breadcrumb-item active">Список</li>
+            <li class="breadcrumb-item active">Редактировать</li>
         </ol>
     </nav>
 </h4>
@@ -67,7 +67,7 @@
                     <div class="mb-3 row">
                         <label for="name" class="col-md-2 col-form-label">Названия</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" placeholder="Названия" id="name" name="name" value="{{ $course_language->name? $course_language->name: old('name')}}">
+                            <input class="form-control" type="text" placeholder="Названия" id="name" name="name" value="{{ $course_language->name ? $course_language->name: old('name') }}">
 
                         </div>
                     </div>
@@ -84,7 +84,7 @@
 
                         <div class="col-md-10">
                             <textarea class="form-control" placeholder="Описания" id="description-{{$lang}}" name="translate[{{$lang}}][description]">
-                              {{$course_language->coursetranslation($lang)->description? $course_language->coursetranslation($lang)->description : old("translate.$lang.description")}}
+                              {{$course_language->coursetranslation($lang)->description ? $course_language->coursetranslation($lang)->description : old("translate.$lang.description")}}
                             </textarea>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
 
                   <div class="row justify-content-end mt-3">
                       <div class="col-sm-10">
-                          <button type="submit" class="btn btn-primary">Добавить</button>
+                          <button type="submit" class="btn btn-primary">Сохранить</button>
                       </div>
                   </div>
                 </form>

@@ -34,7 +34,7 @@ class SendFeedbackEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'layouts.mail.sendorder',
+            view: 'layouts.mail.sendFeedback',
         );
     }
 

@@ -6,12 +6,16 @@ import { Formik } from 'formik';
 import SectionTitle from '../SectionTitle/SectionTitle.js';
 import * as yup from 'yup';
 import AnimLogo from '../AnimLogo/AnimLogo.tsx'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { postTrialCourse } from '../../store/slices/TrialCourseSlice/TrialCourseApi.js';
-function CourseRegistrationPage({ setUser, setPage, user }) {
-  const [changeForm, setChangeForm] = useState({ regForm: false, logForm: true });
+import MessageModal from '../MessageModal/MessageModal.js';
+import { selectTrialCourse } from '../../store/slices/TrialCourseSlice/TrialCourseSlice.js';
+function CourseRegistrationPage() {
   const [activeBtn, setactiveBtn] = useState({online: false, ofline: false});
+  const [messageModal, setMessageModal] = useState(false)
   const { t, i18n } = useTranslation();
+
+  const respTrialCourse = useSelector(selectTrialCourse)
 
   const dispatch = useDispatch()
 
@@ -33,6 +37,7 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
       type: e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value : ''
     }))
 
+    setMessageModal(true)
    }
   }
   return (
@@ -96,9 +101,11 @@ function CourseRegistrationPage({ setUser, setPage, user }) {
             )}
           </Formik>
 
-          <div className="log_img_div">
+                      <div className="log_img_div">
                                 <AnimLogo/>
                              </div>
+
+                   {messageModal && <MessageModal txt={respTrialCourse?.massage} {...{setMessageModal}}/>}
         </div>
       
   );

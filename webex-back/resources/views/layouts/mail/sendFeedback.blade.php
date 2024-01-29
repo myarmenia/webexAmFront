@@ -5,7 +5,7 @@
 </head>
 <body>
    <p>Имя: {{$data['name']}} </p>
-   <p>Телефон: {{$data['phone']}} </p>
+   <p>Писмо: {{$data['message']}} </p>
    <p>Маил: {{$data['email']}} </p>
 </body>
 </html>

@@ -12,8 +12,15 @@
 @section('content')
 
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Новости /</span> Создать нового новость
-    </h4>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <a href="{{route('news')}}">Новости </a>
+              </li>
+              <li class="breadcrumb-item active">Создать нового новость</li>
+          </ol>
+      </nav>
+  </h4>
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -102,11 +109,12 @@
                         </div>
                     </div>
                 @enderror
+                <div class="mt-5 row justify-content-end">
+                  <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary">Сохранить</button>
 
-
-                <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
-                </div>
+                  </div>
+              </div>
         </div>
 
         </form>

@@ -10,11 +10,8 @@
     @if($data['domain'] )
         <p>Сайт: {{$data['domain']}} </p>
     @endif
-    @if($data['comment'] )
-        <p>Коментария: {{$data['comment']}} </p>
-    @endif
-    @if($data['projectType'] )
-        <p>Проект: {{$data['projectType']}} </p>
+    @if($data['message'] )
+        <p>Сообщения: {{$data['message']}} </p>
     @endif
 </body>
 </html>
