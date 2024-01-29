@@ -21,7 +21,6 @@ function VideoCoursesSectionItem({id, title, value, timeLine, icon, txt}) {
             </div>
             
             {txt !== 0 ? <Button index="1" path={`/${leng}/registr`}/> : <Button index="1" path={`/${leng}/courses-registration`}/>}
-            
         </div>
     </div>
   )

@@ -22,7 +22,7 @@ const trialCourseSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postTrialCourse.fulfilled, (state, action) => {
-            state.massage = action.payload.success
+            state.massage = action.payload.message
              state.status = 'succes';
           })
           .addCase(postTrialCourse.rejected, (state, action) => {

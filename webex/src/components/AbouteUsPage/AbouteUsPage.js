@@ -14,8 +14,16 @@ function AbouteUsPage() {
     const [messageModal, setMessageModal] = useState(false)
      const respOrder = useSelector(selectOrder)
 
-     console.log(respOrder);
     const { t, i18n } = useTranslation()
+
+
+    useEffect(() => {
+        document.body.style.overflow = openOrderModal ? 'hidden' : 'auto';
+    
+        return () => {
+          document.body.style.overflow = 'auto';
+        };
+      }, [openOrderModal]);
 
     return (
         <div className='aboute-us-page'>

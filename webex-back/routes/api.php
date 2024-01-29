@@ -45,7 +45,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
 
     Route::group(['prefix' => 'email'], function ($router) {
         Route::post('feedback', SendFeedbackController::class);
-        Route::post('clientProjectr', SendClientProjectDetController::class);
+        Route::post('clientProject', SendClientProjectDetController::class);
     });
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);

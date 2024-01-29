@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ServicesPage.css'
 import TelUs from '../TelUs/TelUs'
 import { servicesPageItemsData } from '../../data'
@@ -30,6 +30,14 @@ function ServicesPage() {
             setOpenFullTextModal(true)
         }
     }
+
+    useEffect(() => {
+        document.body.style.overflow = openOrderModal ? 'hidden' : 'auto';
+    
+        return () => {
+          document.body.style.overflow = 'auto';
+        };
+      }, [openOrderModal]);
 
   return (
     <div className='services-page'>

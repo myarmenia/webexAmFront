@@ -17,7 +17,7 @@
 
 
 .order-modal-block{
-    margin-top: 300px;
+    margin-top: 600px;
     width: 60%;
     background-color: #010526;
     border-radius: 50px;
@@ -181,6 +181,7 @@
     color: transparent;
     transition: .2s;
     border-color: var(--main_font_color);
+    box-sizing: content-box
   }
   
  .checkobox-items input[type=checkbox] + label:active:before {
@@ -255,7 +256,7 @@
     .submit-div {
         width: 60%;
         position: fixed;
-        top: 670px;
+        top: 680px;
         background-color: #010526;
         display: flex;
         justify-content: center;
@@ -281,7 +282,7 @@
 
     .submit-div {
        width: 80%;
-       top: 570px;
+       top: 580px;
     }
 
 }
