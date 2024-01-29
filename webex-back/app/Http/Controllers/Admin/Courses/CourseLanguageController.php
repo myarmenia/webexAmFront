@@ -9,6 +9,7 @@ use App\Models\CourseLanguageTranslation;
 use App\Services\FileUploadService;
 use App\Traits\Course\CourseLanguagesTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CourseLanguageController extends Controller
 {
@@ -85,6 +86,10 @@ dd($request->all());
 
       if($course_language){
         if($request->has('upload_file')){
+          if(Storage::exists($course_language->logo)){
+            Storage::delete($course_language->logo);
+
+          }
 
             $path = FileUploadService::upload($request->upload_file,'course_language_logo/'.$course_language->id);
             $course_language->logo = $path;
@@ -101,9 +106,9 @@ dd($request->all());
             $request['lang'] = $key;
 
             $course_language_translate = CourseLanguageTranslation::where([
-              ['course_language_id','=', $id],
-              ['lang','=',$key]
-            ])->first();
+                                                                    ['course_language_id','=', $id],
+                                                                    ['lang','=',$key]
+                                                                  ])->first();
 
             $course_language_translate->description =  $lang['description'];
             $course_language_translate->save();

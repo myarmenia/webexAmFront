@@ -30,7 +30,7 @@ class NewsCategoryRepository implements NewsCategoryInterface{
 
             if($addedLanguages){
                 return true;
-            } 
+            }
 
         }
 
