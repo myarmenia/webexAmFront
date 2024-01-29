@@ -21,8 +21,19 @@ class NewsRepository implements NewsInterface{
     {
         return NewsTranslations::insert($data);
     }
+
+
+    public function getNewsByCategories()
+    {
+        return News::with(['images', 'category','translations'])
+        ->paginate(10)
+        ->groupBy('news_category_id');
+    }
+   
+
     public function editNews($id){
       $news = News::where('id',$id)->with('translations')->first();
+
 
       return $news;
     }
