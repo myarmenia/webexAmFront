@@ -13,6 +13,8 @@ use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
 use App\Http\Controllers\API\Student\DashboardController;
 use App\Http\Controllers\API\Student\VisitHistoryController;
 use App\Http\Controllers\API\User\UserController;
+use App\Http\Controllers\Email\SendFeedbackController;
+use App\Http\Controllers\SendClientProjectDetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,17 +37,18 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
         Route::group(['prefix' => 'user'], function ($router) {
             Route::post('edit', [UserController::class, 'edit']);
             Route::post('editPassword', [UserController::class, 'editPassword']);
-    
         });
-
-
-
     });
-
     
     Route::group(['prefix' => 'project'], function ($router) {
         Route::get('getProject', [ProjectController::class, 'getProject']);
     });
+
+    Route::group(['prefix' => 'email'], function ($router) {
+        Route::post('feedback', SendFeedbackController::class);
+        Route::post('clientProjectr', SendClientProjectDetController::class);
+    });
+
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
     Route::post('check-forgot-token', [ForgotPasswordController::class, 'checkForgotToken']);
     Route::post('send-new-password', [ForgotPasswordController::class, 'sendNewPassword']);
