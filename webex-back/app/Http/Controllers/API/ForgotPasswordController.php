@@ -44,6 +44,6 @@ class ForgotPasswordController extends Controller
             return response()->json(['success' => true, 'message' => translateMessageApi('password-changed-successfully')]);
         }
 
-        return response()->json(['success' => false, 'message' => translateMessageApi('password-not-changed')]);
+        return response()->json(['success' => false, 'message' => translateMessageApi('password-not-changed')], 500);
     }
 }
