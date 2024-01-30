@@ -72,7 +72,6 @@ class SendOrderEmail extends Mailable
                     // function ($message) {
                     //     $message->attach(public_path(Storage::url($this->data['file'])));
                     // })
-                    ->to('tradingtrader@mail.ru');
-                    // ->to(config('project.webex_email'));
+                    ->to(config('project.webex_email'));
     }
 }
