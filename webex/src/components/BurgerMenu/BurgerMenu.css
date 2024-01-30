@@ -237,9 +237,9 @@
 
 
 @media (max-width: 480px){
-  .my-reg_log_class{
+  /* .my-reg_log_class{
     display: none;
-  }
+  } */
   .burger-menu .user-div{
     display: none;
   }

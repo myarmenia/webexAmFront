@@ -13,7 +13,12 @@
     "user-email-or-password-not-found": "Incorrect login or password",
     "password-changed": "Password successfully changed",
     "user-edit": "Data saved successfully",
-    "wrong-password": "Wrong password"
+    "wrong-password": "Wrong password",
+    "user-email-not-found": "User with this email address not found",
+    "password-reset-link-sent": "Please check your email address",
+    "password-changed-successfully": "Password changed successfully",
+    "password-not-changed": "Password not changed"
+
 
 
 

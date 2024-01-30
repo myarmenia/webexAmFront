@@ -13,7 +13,12 @@
     "user-email-or-password-not-found": "Սխալ մուտքանուն կամ գաղտնաբառ",
     "password-changed": "Գաղտնաբառը հաջողությամբ փոփոխվել է",
     "user-edit": "Տվյալները հաջողությամբ պահպանված են",
-    "wrong-password": "Գաղտնաբառը սխալ է"
+    "wrong-password": "Գաղտնաբառը սխալ է",
+    "user-email-not-found": "Այս էլփոստի հասցեով օգտվողը չի գտնվել",
+    "password-reset-link-sent": "Խնդրում ենք ստուգել Ձեր էլ․ հասցեն",
+    "password-changed-successfully": "Գաղտնաբառը փոփոխված է հաջողությամբ",
+    "password-not-changed": "Գաղտնաբառը չի փոփոխվել"
+
 
 
 

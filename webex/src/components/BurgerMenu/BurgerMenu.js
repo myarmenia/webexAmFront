@@ -68,9 +68,10 @@ function BurgerMenu() {
                     </div>
                   </div>}
 
-                  <div className='user-div' onClick={()=> navigate('/profilePage')}>
+                  {isAuth && <div className='user-div' onClick={()=> navigate('/profilePage')}>
                     <img src={authUser.avatar} alt="avatar" />
-                  </div>
+                    <span>{authUser.name}</span>
+                  </div>}
                   
                   <div className='my-leng_class'>
                       <a href="#" id='login'>{lengIcon}</a>
