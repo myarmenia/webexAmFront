@@ -4,7 +4,7 @@ import { postRegister } from "./RegisterApi";
 const initialState = {
    data: {
       succes: false,
-      message: null
+      message: null,
    },
    status: 'idle',
    error: null,
@@ -26,14 +26,13 @@ const registerSlice = createSlice({
             state.status = 'loading';
           })
           .addCase(postRegister.fulfilled, (state, action) => {
-            state.data = action.payload
+            state.data.message = {message:[action.payload.message]}
             state.loading = false
              state.status = 'succes';
           })
           .addCase(postRegister.rejected, (state, action) => {
-            // if(action.payload.email){
                state.data.message = action.payload
-            // }
+               state.error = true
             console.log(state.data.message,'pppppp');
             state.loading = false
             state.status = 'failed';
@@ -44,6 +43,7 @@ const registerSlice = createSlice({
 
 export const selectRegister = (state) => state.register
 export const selectRegisterLoading = (state) => state.register.loading
+export const selectRegisterError = (state) => state.register.error
 
  export const {} = registerSlice.actions
 

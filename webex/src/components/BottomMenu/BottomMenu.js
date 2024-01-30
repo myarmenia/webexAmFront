@@ -68,7 +68,7 @@ const BottomMenu = () => {
             <div className='nav_top_phone'>
                     <span className='icon'>{botomtelIcon}</span>
                     <div className='tel'>
-                        <span onClick={(e)=>callPhoneNumber(e)}>+7 958 401 54 07</span>
+                        <span onClick={(e)=>callPhoneNumber(e)}>+374 96-10-10-17</span>
                         <span onClick={(e)=>callPhoneNumber(e)}>+374 96 40 00 73</span>
                     </div>
                 </div>
