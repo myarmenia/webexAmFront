@@ -40,9 +40,8 @@ class AuthController extends BaseController
 
     public function me()
     {
-        $me = auth('api')->user();
-        if($me){
-            return response()->json(auth('api')->user());
+        if($me = auth('api')->user()){
+            return response()->json($me);
         }
 
         return response()->json(['error' => translateMessageApi('user-not-found')], 401);
@@ -72,10 +71,10 @@ class AuthController extends BaseController
         // return response()->json($readyData);
     }
 
-    public function refresh()
-    {
-        return $this->respondWithToken(auth('api')->refresh());
-    }
+    // public function refresh()
+    // {
+    //     return $this->respondWithToken(auth('api')->refresh());
+    // }
 
     protected function respondWithToken($token)
     {
