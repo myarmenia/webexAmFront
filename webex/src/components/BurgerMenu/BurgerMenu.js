@@ -36,7 +36,7 @@ function BurgerMenu() {
 
               <ul className="list-items">
               <div className='drop-item'>
-                    <NavMenuItem index="1"/>
+                    <NavMenuItem index="1" path={"/programing"}/>
                     <ul className='drop-menu'>
                          <NavMenuItem index="8" path="/1"/>
                          <NavMenuItem index="9" path="/2"/>
@@ -68,9 +68,10 @@ function BurgerMenu() {
                     </div>
                   </div>}
 
-                  <div className='user-div' onClick={()=> navigate('/profilePage')}>
+                  {isAuth && <div className='user-div' onClick={()=> navigate('/profilePage')}>
                     <img src={authUser.avatar} alt="avatar" />
-                  </div>
+                    <span>{authUser.name}</span>
+                  </div>}
                   
                   <div className='my-leng_class'>
                       <a href="#" id='login'>{lengIcon}</a>

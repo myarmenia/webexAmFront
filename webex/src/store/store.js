@@ -14,6 +14,9 @@ import { authReduser } from "./slices/Auth/AuthSlice";
 import { projectPageReducer } from "./slices/ProjectPageSlice/ProjectPageSlice";
 import { profileReduser } from "./slices/Profile/ProfileSLice";
 import { VisitHistoryReducer } from "./slices/VisitHistory/VisitHistorySlice";
+import { ClientQuestionSlice, clientQuestionReducer } from "./slices/Help/HelpSlice";
+import { feedBackReducer } from "./slices/FeedbackSlice/FeedbackSlice";
+import { tellUsReducer } from "./slices/TellUsSlice/TellUsSlice";
 
 
 const store = configureStore({
@@ -32,8 +35,10 @@ const store = configureStore({
         auth: authReduser,
         profile: profileReduser,
         visithistory:VisitHistoryReducer,
-        projectPage: projectPageReducer
-
+        projectPage: projectPageReducer,
+        clientquestion:clientQuestionReducer,
+        feedBack: feedBackReducer,
+        tellUs: tellUsReducer,
 
     },
     // middleware: (getDefaultMiddlware)=>[

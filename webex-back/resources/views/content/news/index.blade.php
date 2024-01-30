@@ -4,13 +4,22 @@
 @section('page-script')
     <script src="{{ asset('assets/js/change-status.js') }}"></script>
     <script src="{{ asset('assets/js/111.js') }}"></script>
+    <script src="{{ asset('assets/js/delete-item.js') }}"></script>
 @endsection
 
 @section('content')
     @include('includes.alert')
+
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Новости /</span> Список
-    </h4>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <a href="{{route('news')}}">Новости </a>
+              </li>
+              <li class="breadcrumb-item active">Список</li>
+          </ol>
+      </nav>
+  </h4>
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -36,6 +45,7 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach ($data as $key => $news)
                             <tr>
                                 <td>{{ ++$i }}</td>
@@ -48,13 +58,13 @@
                                 <td>{{ $news['category'] }}
                                 <td>{{ $news['created_at'] }}</td>
                                 <td>
-                                    <div class="dropdown action" data-id="{{ $news['id'] }}" data-tb-name="users">
+                                    <div class="dropdown action" data-id="{{ $news['id'] }}" data-tb-name="news">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                            <a class="dropdown-item" href="{{route('news-edit',$news['id'])}}"><i
                                                     class="bx bx-edit-alt me-1"></i>Редактировать</a>
                                             <button type="button" class="dropdown-item click_delete_item"
                                                 data-bs-toggle="modal" data-bs-target="#smallModal"><i
@@ -73,3 +83,4 @@
 
 
 @endsection
+<x-modal-delete></x-modal-delete>

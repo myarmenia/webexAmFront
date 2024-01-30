@@ -151,7 +151,6 @@ Route::group(['prefix'=>'task'],function(){
   Route::post('/task-store', [TaskController::class,'store'])->name('task-store');
   Route::get('/task-edit/{id}',[TaskController::class,'edit'])->name('task-edit');
   Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
-  Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
 });
 
 
@@ -187,6 +186,8 @@ Route::group(['prefix' => 'news'], function () {
   Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
   Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
 
+  Route::get('/news-edit/{id}', [NewsController::class,'editNews'])->name('news-edit');
+  Route::put('/news-update/{id}', [NewsController::class,'updateNews'])->name('news-update');
 
 });
 

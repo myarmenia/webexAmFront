@@ -58,6 +58,7 @@
   flex-direction: column;
   row-gap: 40px;
   padding: 30px 0;
+  overflow-y: auto;
 }
 #btn:checked ~ #sidebar{
   left: 0;
@@ -86,6 +87,7 @@
   border-top: 1px solid ;
   border-bottom: 1px solid #31348E;
   transition: all 0.3s ease;
+  width: 100%;
 }
 #sidebar .list-items li:hover{
   border-top: 1px solid transparent;
@@ -235,9 +237,9 @@
 
 
 @media (max-width: 480px){
-  .my-reg_log_class{
+  /* .my-reg_log_class{
     display: none;
-  }
+  } */
   .burger-menu .user-div{
     display: none;
   }

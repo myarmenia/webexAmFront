@@ -54,6 +54,11 @@ class SendOrderEmail extends Mailable
      */
     public function attachments(): array
     {
+        if(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file'])))){
+            return [
+                public_path(Storage::url($this->data['file']))
+            ];
+        }
         return [];
     }
 
@@ -63,10 +68,10 @@ class SendOrderEmail extends Mailable
                         'data' => $this->data,
                     ])
                     // ->attach(public_path(Storage::url($this->data['file'])))
-                    ->when(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file']))),
-                    function ($message) {
-                        $message->attach(public_path(Storage::url($this->data['file'])));
-                    })
+                    // ->when(isset($this->data['file']) && file_exists(public_path(Storage::url($this->data['file']))),
+                    // function ($message) {
+                    //     $message->attach(public_path(Storage::url($this->data['file'])));
+                    // })
                     ->to(config('project.webex_email'));
     }
 }

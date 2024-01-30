@@ -1,8 +1,35 @@
 import React from 'react';
 import './Help.css';
 import Accordion from 'react-bootstrap/Accordion';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { sendClientQuestion } from '../../../store/slices/Help/HelpApi';
+import { getMessage } from '../../../store/slices/Help/HelpSlice';
+
+const validationSchema = yup.object({
+  email: yup.string().email('Անվանման սխալ').required('Էլ. հասցեն պարտադիր է'),
+  message: yup.string().required('Հաղորդագրությունը պարտադիր է'),
+});
 
 function Help() {
+  const dispatch = useDispatch();
+  const messageAnswer = useSelector(getMessage);
+  console.log('messageAnswer', messageAnswer);
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      dispatch(sendClientQuestion(values));
+      // Handle form submission logic here
+      console.log('Form submitted with values:', values);
+    },
+  });
   return (
     <div
       style={{
@@ -17,7 +44,7 @@ function Help() {
         <p className="often-asked-question">
           Ամենահաճախ տրվող հարցերի պատասխաններն ընդամենը մեկ սեղմումով:
         </p>
-        <Accordion >
+        <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Որո՞նք են դասավանդման մեթոդները:</Accordion.Header>
             <Accordion.Body>
@@ -52,14 +79,54 @@ function Help() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <div className="write-your-question">
-          <p className="write-your-question-title">Գրեք ձեր հարցը </p>
-          <input type="text" placeholder='Անուն Ազգանուն' className="write-your-question-input"/>
-          <input type="text" placeholder='Էլ. հասցե' className="write-your-question-input"/>
-          <input type="text" placeholder='հեռախոսի համար' className="write-your-question-input"/>
-          <textarea cols="52" rows="8" placeholder='հաղորդագրություն' className="write-your-question-textarea"></textarea>
-          <button className="button-save">Ուղարկել</button>
-        </div>
+        <form onSubmit={formik.handleSubmit}>
+          <div className="write-your-question">
+            <p className="write-your-question-title">Գրեք ձեր հարցը </p>
+            <input
+              type="text"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+              placeholder="Անուն Ազգանուն"
+              className="write-your-question-input"
+            />
+            <input
+              type="text"
+              name="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              placeholder="Էլ. հասցե"
+              className="write-your-question-input"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <span style={{ color: 'red', marginTop: '-20px' }}>{formik.errors.email}</span>
+            ) : null}
+            <input
+              type="text"
+              name='phone'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.phone}
+              placeholder="հեռախոսի համար"
+              className="write-your-question-input"
+            />
+            <textarea
+              name="message"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
+              cols="52"
+              rows="8"
+              placeholder="հաղորդագրություն"
+              className="write-your-question-textarea"></textarea>
+            {formik.touched.message && formik.errors.message ? (
+              <span style={{ color: 'red', marginTop: '-20px' }}>{formik.errors.message}</span>
+            ) : null}
+            <button className="button-save">Ուղարկել</button>
+          </div>
+        </form>
       </div>
     </div>
   );

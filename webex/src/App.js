@@ -34,6 +34,7 @@ function App() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    console.log(leng,55555);
     pathname == '/' && navigate(`/${leng}/`);
   }, []);
 

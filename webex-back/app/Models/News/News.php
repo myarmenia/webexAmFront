@@ -32,4 +32,10 @@ class News extends Model
     {
         return $this->hasOne(NewsCategory::class, 'id', 'news_category_id');
     }
+    public function newstranslation($lang){
+
+      return $this->hasOne(NewsTranslations::class)->where('lang', $lang)->first();
+   }
+
+
 }

@@ -5,12 +5,14 @@ import { setAuth } from "../Auth/AuthSlice";
 const initialState = {
    data: {
       authUser: {},
-      token: '',
-      isAuth: false
+      access_token: '',
+      isAuth: null,
+      error: null
    },
    status: 'idle',
    error: null,
-   authUser:false
+   authUser:false,
+   loading: true,
    };
 
 const loginSlice = createSlice({
@@ -30,12 +32,15 @@ const loginSlice = createSlice({
           .addCase(postLogin.fulfilled, (state, action) => {
             state.data = action.payload
             state.isAuth = true
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {
              if(action.payload){
-                state.data.message = action.payload
+                state.data.error = action.payload
+                state.data.isAuth = false
                }
+               state.loading = false
                state.status = 'failed'; 
           });
     },
@@ -43,6 +48,8 @@ const loginSlice = createSlice({
  
 
 export const selectLogin = (state) => state.login
+
+export const selectLoginLoading = (state) => state.login.loading
 
 
  export const {setLogin} = loginSlice.actions

@@ -21,12 +21,23 @@ class CreateNewsRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            'title' => 'required',
+        
             'category' => 'required',
             'description.*' => 'required',
             'title.*' => 'required',
             'photo' => 'nullable|image',
         ];
     }
+    public function messages(): array
+    {
+        return [
+          'title.*'=>'Поле заголовок обязательно для заполнения.',
+          'description.*'=>'Поле название обязательно для заполнения.',
+          'category' => 'Поле тип проекта обязательно для заполнения',
+          'photo'=>'Поле фото обязательно для заполнения.'
+        ];
+    }
+
 }

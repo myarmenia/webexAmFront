@@ -48,7 +48,7 @@
         <tbody>
           @if (count($course_language)>0)
           @php
-          $i=1;
+          $i=0;
 
           @endphp
 
@@ -56,7 +56,7 @@
 
             <tr>
               <td style="width:30px">
-                @php echo $i++; @endphp
+                @php echo ++$i; @endphp
               </td>
               <td >
                 <img src="{{route('get-file',['path'=>$item->logo])}}" alt="user-avatar" class="rounded" height="50" width="50" id="uploadedFile">

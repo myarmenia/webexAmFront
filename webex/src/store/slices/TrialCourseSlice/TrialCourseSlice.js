@@ -5,6 +5,7 @@ const initialState = {
    massage: '',
    status: 'idle',
    error: null,
+   loading: true,
    };
 
 const trialCourseSlice = createSlice({
@@ -22,11 +23,13 @@ const trialCourseSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postTrialCourse.fulfilled, (state, action) => {
-            state.massage = action.payload.success
+            state.massage = action.payload.message
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(postTrialCourse.rejected, (state, action) => {
             state.status = 'failed';
+            state.loading = false
             state.error = action.error.message;
           });
     },
@@ -34,6 +37,7 @@ const trialCourseSlice = createSlice({
  
 
 export const selectTrialCourse = (state) => state.trialCourse
+export const selectTrialCourseLoading = (state) => state.trialCourse.loading
 
  export const {} = trialCourseSlice.actions
 

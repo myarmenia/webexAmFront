@@ -17,16 +17,16 @@ class ForgotPasswordService
     if ($user) {
         $token = sha1(Str::random(80));
         $email = $user->email;
-        $newPasswordReset = PasswordReset::create([
+        $newPasswordReset = PasswordReset::updateOrCreate([
             'email' => $email,
             'token'=> $token
         ]);
 
         Mail::send(new SendForgotToken($email, $token));
 
-        return response()->json(['success' => true]);
+        return response()->json(['success' => true, 'message' => translateMessageApi('password-reset-link-sent')], 200);
     } else {
-        return response()->json(['error' => 'User with this email address not found'], 400);
+        return response()->json(['error' => translateMessageApi('user-email-not-found')], 500);
     }
     
   }
