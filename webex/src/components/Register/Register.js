@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
-import { selectRegister, selectRegisterIsActive, selectRegisterLoading } from "../../store/slices/RegisterSlice/RegisterSlice.js";
+import { selectRegister, selectRegisterError, selectRegisterIsActive, selectRegisterLoading } from "../../store/slices/RegisterSlice/RegisterSlice.js";
 import MessageModal from "../MessageModal/MessageModal.js";
 
 function Registre() {
@@ -27,7 +27,7 @@ function Registre() {
     const registreResp = useSelector(selectRegister)
     let arrayFromObject 
     if (registreResp && registreResp.data && registreResp.data.message) {
-         arrayFromObject = Object.values(registreResp.data.message);
+        arrayFromObject = Object.values(registreResp.data.message)
       }
 
     const loading = useSelector(selectRegisterLoading)

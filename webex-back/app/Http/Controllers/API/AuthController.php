@@ -41,7 +41,9 @@ class AuthController extends BaseController
     public function me()
     {
         if($me = auth('api')->user()){
+
             $me->avatar = route('get-file', ['path' => $me->avatar]);
+
             return response()->json($me);
         }
 
@@ -72,10 +74,10 @@ class AuthController extends BaseController
         // return response()->json($readyData);
     }
 
-    public function refresh()
-    {
-        return $this->respondWithToken(auth('api')->refresh());
-    }
+    // public function refresh()
+    // {
+    //     return $this->respondWithToken(auth('api')->refresh());
+    // }
 
     protected function respondWithToken($token)
     {

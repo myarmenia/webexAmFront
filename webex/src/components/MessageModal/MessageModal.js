@@ -3,7 +3,7 @@ import './MessageModal.css'
 import Button from '../Button/Button'
 
 function MessageModal({txt, path, setMessageModal, loading}) {
-    console.log(path,'gggggg');
+    console.log(txt,'gggggg');
 
     const leng = localStorage.getItem('lang')
 
@@ -12,7 +12,7 @@ function MessageModal({txt, path, setMessageModal, loading}) {
                 {loading ?
                 <span class="loader"></span>:
                 <div className='message-modal-block'>
-                    {path === `/${leng}/registr` ? txt.map(el =>
+                    {path === `/${leng}/registr` && Array.isArray(txt)? txt.map(el =>
                         <p>{el[0]}</p>
                     ): <p>{txt}</p>
                     }
