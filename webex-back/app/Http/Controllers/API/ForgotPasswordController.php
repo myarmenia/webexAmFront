@@ -41,9 +41,9 @@ class ForgotPasswordController extends Controller
         $changed = $this->forgotPasswordService->sendNewPassword($request->all());
 
         if($changed){
-            return response()->json(['success' => true, 'message' => 'Password changed successfully']);
+            return response()->json(['success' => true, 'message' => translateMessageApi('password-changed-successfully')]);
         }
 
-        return response()->json(['success' => false, 'message' => 'Password not changed']);
+        return response()->json(['success' => false, 'message' => translateMessageApi('password-not-changed')]);
     }
 }
