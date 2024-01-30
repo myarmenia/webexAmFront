@@ -13,7 +13,11 @@
     "user-email-or-password-not-found": "Неправильный логин или пароль",
     "password-changed": "Пароль успешно изменен",
     "user-edit": "Данные успешно сохранены",
-    "wrong-password": "неправильный пароль"
+    "wrong-password": "неправильный пароль",
+    "user-email-not-found": "Пользователь с этим адресом электронной почты не найден",
+    "password-reset-link-sent": "Пожалуйста, проверьте свою электронную почту",
+    "password-changed-successfully": "Пароль успешно изменен",
+    "password-not-changed": "Пароль не был изменен"
 
 
 
