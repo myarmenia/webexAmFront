@@ -3,12 +3,31 @@ import './Training.css';
 import Purchase from '../../../../images/Purchase.svg';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useNavigate } from 'react-router-dom';
+import { getCurrentLanguageLesson } from '../../../../store/slices/CurrentLessons/CurrentLessonsApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIsCurrentLessonReq, setIsCurrentLessonReq } from '../../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 
 function Training({ DataAll }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isCurrentLessonReq  = useSelector(getIsCurrentLessonReq)
+  const lang = localStorage.getItem('lang');
+  console.log(isCurrentLessonReq)
+  const goToCurrenPage = (id) => {
+    dispatch(setIsCurrentLessonReq(false))
+    dispatch(getCurrentLanguageLesson(id));
+    navigate(`/${lang}/profilePage/currentLessons`);
+  };
+
   return (
     <div className="training-cards-all">
       {DataAll.my_training.map((el, index) => (
-        <div className={index % 2 == 0 ? 'training-cards-blue' : 'training-cards'} key={index}>
+        <div
+          className={index % 2 == 0 ? 'training-cards-blue' : 'training-cards'}
+          key={index}
+
+          onClick={(e) => el.name !=="My courses"? goToCurrenPage(el.id): e.preventDefault()}>
           <div className="account_div">
             <img src={Purchase} alt="Student" className="account_img" />
             <span className="account_name">{el.name}</span>

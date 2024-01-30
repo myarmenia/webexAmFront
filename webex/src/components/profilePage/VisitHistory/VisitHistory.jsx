@@ -6,11 +6,22 @@ import {
   getAllVisitDate,
   getLoadingVisitHistory,
 } from '../../../store/slices/VisitHistory/VisitHistorySlice';
+import RightArrow from '../../../images/RightArrow.png'
+import { setIsCurrentLessonReq } from '../../../store/slices/CurrentLessons/CurrentLessonsSlice';
+import { getCurrentLanguageLesson } from '../../../store/slices/CurrentLessons/CurrentLessonsApi';
+import { useNavigate } from 'react-router-dom';
 
 function VisitHistory() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const AllVisitDate = useSelector(getAllVisitDate);
   const loading = useSelector(getLoadingVisitHistory);
+  const lang = localStorage.getItem('lang');
+  const goToLessonPage = (id) => {
+    dispatch(setIsCurrentLessonReq(false))
+    dispatch(getCurrentLanguageLesson(id));
+    navigate(`/${lang}/profilePage/currentLessons`);
+  };
 
 
   const [hoveredRows, setHoveredRows] = useState(new Set());
@@ -75,7 +86,7 @@ function VisitHistory() {
                     <td>{item.name}</td>
                     <td>{item.total_lessons}</td>
                     <td>{item.current_lesson_number}</td>
-                    <td>icon</td>
+                    <td><img src={RightArrow} alt="RightArrow" className="RightArrow" onClick={()=>goToLessonPage(item.id)}/></td>
                   </tr>
                 ))}
               </tbody>

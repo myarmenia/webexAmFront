@@ -11,7 +11,8 @@ const initialState = {
    },
    status: 'idle',
    error: null,
-   authUser:false
+   authUser:false,
+   loading: true,
    };
 
 const loginSlice = createSlice({
@@ -31,14 +32,15 @@ const loginSlice = createSlice({
           .addCase(postLogin.fulfilled, (state, action) => {
             state.data = action.payload
             state.isAuth = true
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(postLogin.rejected, (state, action) => {
              if(action.payload){
-               console.log(action.payload,'gggggg');
                 state.data.error = action.payload
                 state.data.isAuth = false
                }
+               state.loading = false
                state.status = 'failed'; 
           });
     },
@@ -46,6 +48,8 @@ const loginSlice = createSlice({
  
 
 export const selectLogin = (state) => state.login
+
+export const selectLoginLoading = (state) => state.login.loading
 
 
  export const {setLogin} = loginSlice.actions

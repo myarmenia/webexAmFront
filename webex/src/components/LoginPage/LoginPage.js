@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
 import { postLogin } from "../../store/slices/LoginSlice/LoginApi.js";
 import { useSelector, useDispatch } from 'react-redux'
 import './LoginPage.css'
-import { selectLogin, selectLoginError, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
+import { selectLogin, selectLoginError, selectLoginLoading, setLogin } from "../../store/slices/LoginSlice/LoginSlice.js";
 import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
 import MessageModal from "../MessageModal/MessageModal.js";
 import { getIsAuth } from "../../store/slices/Auth/AuthSlice.js";
@@ -32,7 +32,8 @@ function LoginPage() {
     const navigate = useNavigate()
 
     const respLogin = useSelector(selectLogin)
-    
+
+    const loading = useSelector(selectLoginLoading)
     const leng = localStorage.getItem('lang')
 
     const validationSchema = yup.object().shape({
@@ -46,16 +47,10 @@ function LoginPage() {
         if (e.target[0].value && e.target[1].value) {
             handleSubmit()
             dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
-        }
-
-    }
-
-    useEffect(() => {
-        if (respLogin.data.isAuth === false) {
             setMessageModal(true)
         }
 
-    }, [respLogin.data.isAuth])
+    }
 
 
     useEffect(() => {
@@ -87,19 +82,19 @@ function LoginPage() {
                                 <SectionTitle title={t('reg_and_log.' + '1')} />
 
                                 <div className="email-inp">
-                                    <input type="email" name="email" placeholder={t('reg_and_log.' + '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                                    <input type="email" name="email" placeholder={t('reg_and_log.' + '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
                                     {touched.email && errors.email && <p className="error">{errors.email}</p>}
                                 </div>
 
                                 <div className="password-inp">
-                                    <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} />
+                                    <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} required />
                                     <span onClick={() => setViewPassword(!viewPassword)}>{eyeIcon}</span>
                                     {touched.password && errors.password && <p className="error">{errors.password}</p>}
                                 </div>
 
                                 {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                                <SubmitBtn index="0" isValid={isValid} dirty={dirty} />
+                                <SubmitBtn index="0"/>
                                 <h6>{t('reg_and_log.' + '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.' + '10')}</NavLink></h6>
                                 <h5>{t('reg_and_log.' + '14')} <span onClick={() => setOpenModal(true)}>{t('reg_and_log.' + '15')}</span></h5>
                             </form>
@@ -113,7 +108,7 @@ function LoginPage() {
                                 openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal} />
                             }
 
-                            {messageModal && <MessageModal txt={respLogin.data.error} path={`/${leng}/login`} {...{ setMessageModal }} />}
+                            {messageModal && <MessageModal txt={respLogin.data.error} path={`/${leng}/login`} {...{ setMessageModal }} loading={loading}/>}
                         </div>
                     </div>
                 )
