@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import "./OrderModal.css"
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,6 +9,7 @@ import { fileIcon } from '../../iconFolder/icon'
 import MessageModal from '../MessageModal/MessageModal'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
+import ReCAPTCHA from "react-google-recaptcha";
 
 function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
     const {t, i18n} = useTranslation()
@@ -23,6 +24,8 @@ function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
     const dispatch = useDispatch()
 
     const respOrder = useSelector(selectOrder)
+
+    const captchaRef = useRef(null)
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -61,7 +64,6 @@ function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
             project: currentProject
         }
 
-        
 
             const jsonOrderObj = JSON.stringify(orderObj)
             const jsonOrderObj2 = JSON.stringify(orderObj2)
@@ -75,21 +77,30 @@ function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
                 formData.append('data', jsonOrderObj);
             }
 
-             dispatch(postOrder(formData))
+            const token = captchaRef.current.getValue();
+            
 
-             setOpenOrderModal(false)
-             setMessageModal(true)
-            e.target.reset()
+             if (token) {
+                dispatch(postOrder(formData))
+                setOpenOrderModal(false)
+                setMessageModal(true)
+                e.target.reset()
+                captchaRef.current.reset();
+             }
     }
     return (
         <div className='order-modal' onClick={()=> setOpenOrderModal(false)}>
             <div className='order-modal-block' onClick={(e)=> e.stopPropagation()}>
-                <div className='order-modal-block-info-div'>
-                    <h3>{t('orderFormTitle.0')}</h3>
-                    <p>{t('orderFormTitle.1')}</p>
-                </div>
+                
                 <form className='order-modal-form' onSubmit={handleCloseModal}>
-                    <div className='input-text-div'>
+                   <div className='order-modal-form-full-div'>
+
+                   <div className='order-modal-block-info-div'>
+                        <h3>{t('orderFormTitle.0')}</h3>
+                        <p>{t('orderFormTitle.1')}</p>
+                    </div>
+
+                   <div className='input-text-div'>
                         <input type="text" placeholder={t('orderForm.0')} required/>
                         <input type="text" placeholder={t('orderForm.1')} required/>
                         <input type="email" placeholder={t('orderForm.2')} required/>
@@ -162,8 +173,14 @@ function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
 
                     </div>
 
+                        <ReCAPTCHA
+                        ref={captchaRef}
+                            sitekey="6Lcc1l8pAAAAAI_bws4kEJ478msd2uBdRfZT4m2e"
+                        />
+                   </div>
+
                     <div className='submit-div'>
-                    <SubmitBtn index="3"/>
+                    <SubmitBtn index="3" isValid={true} dirty={true}/>
                     </div>
                 </form>
             </div>

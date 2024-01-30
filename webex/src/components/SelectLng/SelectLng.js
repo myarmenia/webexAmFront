@@ -20,7 +20,8 @@ function SelectLng() {
         window.location.href = hhhh
       };
 
-// console.log(localStorage.getItem('lang',45555555));
+
+      
 
   return (
     <select value={localStorage.getItem('lang')} name="lng" id="lng" onChange={(e) =>changeLanguage(e.target.value)}>

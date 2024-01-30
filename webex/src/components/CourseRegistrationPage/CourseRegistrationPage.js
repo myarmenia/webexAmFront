@@ -93,7 +93,7 @@ function CourseRegistrationPage() {
                       {touched.type && errors.type && <p className="error">{errors.type}</p>}
                     </div>
 
-                    <SubmitBtn index="1" />
+                    <SubmitBtn index="1" isValid={isValid} dirty={dirty}/>
                     
                   </form>
                 </div>

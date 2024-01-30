@@ -6,6 +6,7 @@
     line-height: normal;
     cursor: pointer;
     transition: all .4s;
+    padding-bottom: 5px;
 }
 
 .nav-menu-item{
@@ -16,7 +17,6 @@
 }
 .nav-menu-item a:hover{
     border-bottom: 1px solid white;
-    padding-bottom: 5px;
 }
 
 .active-item{

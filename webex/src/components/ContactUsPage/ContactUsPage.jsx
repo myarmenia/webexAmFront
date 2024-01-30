@@ -99,7 +99,7 @@ function ContactUsPage() {
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "3"/>
+                            <SubmitBtn index= "3" isValid={isValid} dirty={dirty}/>
                         </form>
                 </div>
             )
