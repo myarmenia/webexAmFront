@@ -8,13 +8,14 @@ use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\Lessons\LessonController;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\SendOrderController;
+use App\Http\Controllers\Email\SendYourQuestionController;
 use App\Http\Controllers\API\TrialCourseController;
 use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
 use App\Http\Controllers\API\Student\DashboardController;
 use App\Http\Controllers\API\Student\VisitHistoryController;
 use App\Http\Controllers\API\User\UserController;
 use App\Http\Controllers\Email\SendFeedbackController;
-use App\Http\Controllers\SendClientProjectDetController;
+use App\Http\Controllers\Email\SendClientProjectDetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::group(['prefix' => 'email'], function ($router) {
         Route::post('feedback', SendFeedbackController::class);
         Route::post('clientProject', SendClientProjectDetController::class);
+        Route::post('clientQuestion', SendYourQuestionController::class);
     });
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
