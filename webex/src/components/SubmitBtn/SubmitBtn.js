@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import './SubmitBtn.css'
-function SubmitBtn({index, isValid, dirty}) {
+function SubmitBtn({index}) {
     const { t, i18n } = useTranslation();
   return (
-    <button disabled={!isValid || !dirty} type='submit' className='btn'>
+    <button type='submit' className='btn'>
         <span></span>
         <span></span>
         <span></span>

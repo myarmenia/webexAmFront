@@ -7,13 +7,13 @@ import AnimLogo from "../AnimLogo/AnimLogo.tsx";
 import { NavLink, useLocation } from "react-router-dom";
 import { eyeIcon } from "../../iconFolder/icon.js";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postRegister } from "../../store/slices/RegisterSlice/RegisterApi.js";
-import { selectRegister } from "../../store/slices/RegisterSlice/RegisterSlice.js";
+import { selectRegister, selectRegisterIsActive, selectRegisterLoading } from "../../store/slices/RegisterSlice/RegisterSlice.js";
 import MessageModal from "../MessageModal/MessageModal.js";
 
-function Registre({setUser, setPage, user}) {
+function Registre() {
     const [viewPassword, setViewPassword] = useState(true)
     const [viewConfirmPassword, setConfirmViewPassword] = useState(true)
     const [messageModal, setMessageModal] = useState(false)
@@ -25,6 +25,12 @@ function Registre({setUser, setPage, user}) {
     const leng = localStorage.getItem('lang')
 
     const registreResp = useSelector(selectRegister)
+    let arrayFromObject 
+    if (registreResp && registreResp.data && registreResp.data.message) {
+         arrayFromObject = Object.values(registreResp.data.message);
+      }
+
+    const loading = useSelector(selectRegisterLoading)
     
     function handleLogSub(e,handleSubmit, isValid, dirty) {
         e.preventDefault()
@@ -39,6 +45,8 @@ function Registre({setUser, setPage, user}) {
 
             setMessageModal(true)
     }
+
+
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
@@ -107,7 +115,7 @@ function Registre({setUser, setPage, user}) {
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "1" isValid={isValid} dirty={dirty}/>
+                            <SubmitBtn index= "1"/>
                             <h6>{t('reg_and_log.'+ '7')}  <NavLink to={`/${leng}/login`}>{t('reg_and_log.'+ '9')}</NavLink></h6>
                             
                         </form>
@@ -117,7 +125,7 @@ function Registre({setUser, setPage, user}) {
                              </div>
                     </div>
 
-                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/registr`} {...{setMessageModal}}/>}
+                    {messageModal && <MessageModal txt={arrayFromObject} path={`/${leng}/registr`} {...{setMessageModal}} loading={loading}/>}
                 </div>
             )
         }

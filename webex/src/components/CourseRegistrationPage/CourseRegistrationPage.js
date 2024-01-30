@@ -9,13 +9,15 @@ import AnimLogo from '../AnimLogo/AnimLogo.tsx'
 import { useDispatch, useSelector } from 'react-redux';
 import { postTrialCourse } from '../../store/slices/TrialCourseSlice/TrialCourseApi.js';
 import MessageModal from '../MessageModal/MessageModal.js';
-import { selectTrialCourse } from '../../store/slices/TrialCourseSlice/TrialCourseSlice.js';
+import { selectTrialCourse, selectTrialCourseLoading } from '../../store/slices/TrialCourseSlice/TrialCourseSlice.js';
 function CourseRegistrationPage() {
   const [activeBtn, setactiveBtn] = useState({online: false, ofline: false});
   const [messageModal, setMessageModal] = useState(false)
   const { t, i18n } = useTranslation();
 
   const respTrialCourse = useSelector(selectTrialCourse)
+
+  const loading = useSelector(selectTrialCourseLoading)
 
   const dispatch = useDispatch()
 
@@ -93,7 +95,7 @@ function CourseRegistrationPage() {
                       {touched.type && errors.type && <p className="error">{errors.type}</p>}
                     </div>
 
-                    <SubmitBtn index="1" isValid={isValid} dirty={dirty}/>
+                    <SubmitBtn index="1"/>
                     
                   </form>
                 </div>
@@ -105,7 +107,7 @@ function CourseRegistrationPage() {
                                 <AnimLogo/>
                              </div>
 
-                   {messageModal && <MessageModal txt={respTrialCourse?.massage} {...{setMessageModal}}/>}
+                   {messageModal && <MessageModal txt={respTrialCourse?.massage} {...{setMessageModal}} loading={loading}/>}
         </div>
       
   );
