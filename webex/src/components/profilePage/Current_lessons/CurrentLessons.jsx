@@ -15,7 +15,9 @@ import {
 import {
   getAllCourses,
   getAllData,
+  getIsCurrentLessonReq,
   getLoading,
+  setIsCurrentLessonReq,
 } from '../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
@@ -24,14 +26,20 @@ import Plyr from 'plyr-react';
 
 function CurrentLessons() {
   const allCourses = useSelector(getAllCourses);
+  const [allCoursesState, setallCoursesState] = useState(allCourses);
   const allData = useSelector(getAllData);
+  // const {all_courses} = useSelector(getAllData);
   const loading = useSelector(getLoading);
   const [description, setDescription] = useState('');
-
+  const isCurrentLessonReq = useSelector(getIsCurrentLessonReq);
+  console.log('isCurrentLessonReq', isCurrentLessonReq);
   const dispatch = useDispatch();
+  console.log(allCourses, "allCoursesallCourses");
   useEffect(() => {
-    dispatch(getCurrentLesson());
-  }, [getCurrentLesson]);
+    // if (isCurrentLessonReq) {
+      dispatch(getCurrentLesson());
+    // }
+  }, []);
 
   useEffect(() => {
     let des = '';
@@ -46,6 +54,8 @@ function CurrentLessons() {
   // console.log(typeof allData.lessons, 996966);
   // let hhh = allData?.lessons[0]?.description
   // console.log("hhh",hhh);
+  console.log('allCourses', allCourses);
+  // console.log("all_courses",all_courses);
   return (
     <>
       {loading ? (
@@ -159,7 +169,7 @@ function CurrentLessons() {
               {/* <div style={{ width: '18vw' }}> */}
               <p className="titleAllVideo">Բոլոր վիդեոդասերը</p>
               <div className="allvideoLessons_div">
-                {allCourses?.map((el, index) => (
+                {(allCourses || allCoursesState).map((el, index) => (
                   <div
                     key={index}
                     className="allvideoLessons"
