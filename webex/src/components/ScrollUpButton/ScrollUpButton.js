@@ -6,7 +6,7 @@ function ScrollUpButton() {
   const [scrolBtn, setScrolBtn] = useState(false)
 
   function handleScroll() {
-    if (window.scrollY > 1200) {
+    if (window.scrollY > 200) {
       setScrolBtn(true)
     } else {
       setScrolBtn(false)

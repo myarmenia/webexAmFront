@@ -99,7 +99,7 @@ function LoginPage() {
 
                                 {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                                <SubmitBtn index="0" />
+                                <SubmitBtn index="0" isValid={isValid} dirty={dirty} />
                                 <h6>{t('reg_and_log.' + '8')}  <NavLink to={`/${leng}/registr`}>{t('reg_and_log.' + '10')}</NavLink></h6>
                                 <h5>{t('reg_and_log.' + '14')} <span onClick={() => setOpenModal(true)}>{t('reg_and_log.' + '15')}</span></h5>
                             </form>

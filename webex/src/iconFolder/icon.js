@@ -480,7 +480,7 @@ export const scroll_Up_Icon = (
     xmlns="http://www.w3.org/2000/svg"
     width={60}
     height={60}
-    fill="currentColor"
+    fill="white"
     className="bi bi-chevron-compact-up"
     viewBox="0 0 16 16">
     <path

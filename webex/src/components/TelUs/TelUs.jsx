@@ -133,7 +133,7 @@ function TelUs() {
                               <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')}/>
                             </div>
 
-                            <SubmitBtn index= "3"/>
+                            <SubmitBtn index= "3" isValid={isValid} dirty={dirty}/>
                         </form>
                 </div>
             )
