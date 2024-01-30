@@ -55,7 +55,6 @@ class SendQuestionEmail extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    ->to('tradingtrader@mail.ru');
-                    // ->to(config('project.webex_email'));
+                    ->to(config('project.webex_email'));
     }
 }
