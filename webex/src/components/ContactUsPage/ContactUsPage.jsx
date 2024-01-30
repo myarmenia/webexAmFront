@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ContactUsPage.css'
 import { Formik } from 'formik'
-import SectionTitle from '../SectionTitle/SectionTitle'
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import * as yup from 'yup';
-import WebexMap from '../WebexMap/WebexMap'
 import TelUs from '../TelUs/TelUs'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { postFeedBack } from '../../store/slices/FeedbackSlice/FeedbackApi'
+import MessageModal from '../MessageModal/MessageModal';
+import { selectFeedBAck } from '../../store/slices/FeedbackSlice/FeedbackSlice';
 
 function ContactUsPage() {
 
+    const [messageModal, setMessageModal] = useState(false)
+
+    const respFeedBack = useSelector(selectFeedBAck)
+    console.log(respFeedBack.data);
     const {t, i18n} = useTranslation()
+
+    const dispatch = useDispatch()
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
@@ -25,8 +33,20 @@ function ContactUsPage() {
         if (e.target[0].value && e.target[1].value && e.target[2].value){
             handleSubmit()
             
+            const feedBackObj = {
+                name: e.target[0].value,
+                email: e.target[1].value,
+                message: e.target[2].value
+            }
+
+            dispatch(postFeedBack(feedBackObj))
+
+            setMessageModal(true)
         }
     }
+
+
+    
     return (
         <div className='contuct-us-page'>
 
@@ -79,7 +99,7 @@ function ContactUsPage() {
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "3"/>
+                            <SubmitBtn index= "3" isValid={isValid} dirty={dirty}/>
                         </form>
                 </div>
             )
@@ -92,6 +112,8 @@ function ContactUsPage() {
                 </div>
 
                 <TelUs/>
+
+                {messageModal && <MessageModal txt={respFeedBack?.data?.message} {...{setMessageModal}}/>}
         </div>
     )
 }

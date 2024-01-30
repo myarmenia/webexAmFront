@@ -6,6 +6,7 @@ use App\Http\Controllers\API\HomeController;
 use App\Http\Controllers\API\Courses\CourseLanguagesController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\Lessons\LessonController;
+use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\SendOrderController;
 use App\Http\Controllers\API\TrialCourseController;
 use App\Http\Controllers\API\Lessons\UserCurrentLessonController;
@@ -21,7 +22,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
 
     Route::group(['prefix' => 'auth'], function ($router) {
         Route::post('login', [AuthController::class, 'login']);
-        Route::post('logout', [AuthController::class, 'logout']);
+        Route::get('logout', [AuthController::class, 'logout']);
         Route::post('signup', [AuthController::class, 'signup']);
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::post('check-verify-token', [AuthController::class, 'checkVerifyToken']);
@@ -45,7 +46,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
 
     Route::group(['prefix' => 'email'], function ($router) {
         Route::post('feedback', SendFeedbackController::class);
-        Route::post('clientProjectr', SendClientProjectDetController::class);
+        Route::post('clientProject', SendClientProjectDetController::class);
     });
 
     Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
@@ -59,6 +60,12 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::get('dashboard',[DashboardController::class,'index']);
     Route::get('home',[HomeController::class,'home']);
     Route::get('visit-history',[VisitHistoryController::class,'index']);
+
+    Route::group(['prefix' => 'news'], function ($router) {
+        Route::get('getNewsByCategories', [NewsController::class, 'getNewsByCategories']);
+        Route::get('getNewsByCategoryType/{id}', [NewsController::class, 'getNewsByCategoryType']);
+        Route::get('getNews/{id}', [NewsController::class, 'getNews']);
+    });
 
 
 });

@@ -41,7 +41,7 @@ function ResetPasswordPage() {
 
         const [password, confirmPassword] = formRef.current
         const newPasswordeObj = {
-            email: window_token[5],
+            email: window_token[6],
             password: password.value,
             confirmPassword: confirmPassword.value
         }

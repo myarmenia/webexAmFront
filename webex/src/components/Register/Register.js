@@ -26,7 +26,7 @@ function Registre({setUser, setPage, user}) {
 
     const registreResp = useSelector(selectRegister)
     
-    function handleLogSub(e,handleSubmit) {
+    function handleLogSub(e,handleSubmit, isValid, dirty) {
         e.preventDefault()
         handleSubmit()
         dispatch(postRegister({
@@ -76,7 +76,7 @@ function Registre({setUser, setPage, user}) {
             ({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
                 <div className="register">
                     <div className="container">
-                            <form className="reg-form"   onSubmit={(e)=>handleLogSub(e,handleSubmit)}>
+                            <form className="reg-form"   onSubmit={(e)=>handleLogSub(e,handleSubmit, isValid, dirty)}>
                                 <SectionTitle title={t('reg_and_log.'+ '0')}/>
                             <div className="name-inp">
                                 <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
@@ -107,7 +107,7 @@ function Registre({setUser, setPage, user}) {
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "1"/>
+                            <SubmitBtn index= "1" isValid={isValid} dirty={dirty}/>
                             <h6>{t('reg_and_log.'+ '7')}  <NavLink to={`/${leng}/login`}>{t('reg_and_log.'+ '9')}</NavLink></h6>
                             
                         </form>

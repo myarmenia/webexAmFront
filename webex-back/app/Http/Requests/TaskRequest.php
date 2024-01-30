@@ -23,7 +23,7 @@ class TaskRequest extends FormRequest
     public function rules(): array
     {
 
-   $lastSegment = Request::segment(count(request()->segments()));
+        $lastSegment = Request::segment(count(request()->segments()));
         $array = [
           'lesson_id'=>'required',
           'duration' =>'required',
@@ -32,7 +32,15 @@ class TaskRequest extends FormRequest
       if($lastSegment=="task-store"){
           $array['video']='required';
       }
-      
+
       return $array;
+    }
+    public function messages(): array
+    {
+        return [
+          'duration' => 'Поле продолжительность обязательно для заполнения',
+          'translate.*.description'=>'Поле описание обязательно для заполнения.',
+          'video'=>'Поле видео обязательно для заполнения.'
+        ];
     }
 }

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;                                                         
     position: fixed;                                                             
-    z-index: 999999999999999999999;                         
+    z-index: 99999999999;                         
     left: 0;                                                                                           
     top: 0;                                                                                            
     width: 100%; /* Full width */                                                                      
@@ -17,8 +17,8 @@
 
 
 .order-modal-block{
-    margin-top: 300px;
-    width: 60%;
+    margin-top: 600px;
+    width: 70%;
     background-color: #010526;
     border-radius: 50px;
     display: flex;
@@ -90,7 +90,8 @@
 .order-modal-block textarea{
     min-width: 70%;
     max-width: 70%;
-    height: 60px;
+    min-height: 40px;
+    height: 40px;
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent;
@@ -181,6 +182,7 @@
     color: transparent;
     transition: .2s;
     border-color: var(--main_font_color);
+    box-sizing: content-box
   }
   
  .checkobox-items input[type=checkbox] + label:active:before {
@@ -218,9 +220,19 @@
 }
 
 
+
+.order-modal-form-full-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
  @media(max-width: 1440px){
     .order-modal-block{
         width: 75%;
+        margin-top: 600px;
     }
     
 } 
@@ -234,14 +246,13 @@
 }
 
 @media(max-width: 1024px){
-    .order-modal{
-        overflow-y: hidden;
-    }
+    
 
     .order-modal-block{
-        width: 60%;
-        height: 700px;
-        margin-top: 0;
+        width: 70%;
+        height: 570px;
+        margin-top: 100px;
+        overflow: hidden;
     }
 
     .checkobox-items div{
@@ -254,18 +265,14 @@
 
     .submit-div {
         width: 60%;
-        position: fixed;
-        top: 670px;
-        background-color: #010526;
         display: flex;
         justify-content: center;
-        align-items: center;
-        border-radius: 50px;
-        padding: 20px 0;
     }
 
-    .order-modal-form{
-        padding-bottom: 100px;
+
+    .order-modal-form-full-div{
+        height: 450px;
+        overflow-y: auto;
     }
     
 } 
@@ -277,11 +284,17 @@
 
     .order-modal-block{
         width: 80%;
+        height: 470px;
     }
 
     .submit-div {
        width: 80%;
-       top: 570px;
+       /* top: 470px; */
+    }
+
+    .order-modal-form-full-div{
+        height: 350px;
+        overflow-y: auto;
     }
 
 }
@@ -301,7 +314,7 @@
 
     .submit-div {
         width: 80%;
-        top: 580px;
+        /* top: 470px; */
      }
 }  
 

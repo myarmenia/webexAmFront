@@ -33,7 +33,7 @@ class NewsController extends Controller
     public function createNewsPage()
     {
         $categoryList = $this->newsService->getCategoryList();
-       
+
         return view('content.news.create', compact('categoryList'));
     }
 
@@ -50,29 +50,22 @@ class NewsController extends Controller
             ->with('data', $data);
 
     }
+    public function editNews($id){
 
-    // public function create()
-    // {
-    //     return view('content.project.create');
-    // }
+      $news = $this->newsService->editNews($id);
+      $categoryList = $this->newsService->getCategoryList();
 
-    // public function addProject(Request $request)
-    // {
 
-    //     $createProj = $this->projectService->createProject($request->all());
-    //     if($createProj){
-    //         $data = Project::orderBy('id', 'DESC')->paginate(5);
+      return view('content.news.edit', compact('news','categoryList'));
+    }
+    public function updateNews(CreateNewsRequest $request, $id){
 
-    //         return redirect()->route('project')
-    //               ->with('i', ($request->input('page', 1) - 1) * 5);
-    //     }
-    // }
+      $news = $this->newsService->updateNews($request->all(),$id);
 
-    // public function getProject()
-    // {
-    //     $project = $this->projectService->getProject();
 
-    //     return ProjectResource::collection($project);
-    // }
+      return redirect()->back();
+     
+    }
+
 
 }

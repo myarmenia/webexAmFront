@@ -50,7 +50,7 @@ class AuthController extends BaseController
 
     public function logout()
     {
-        auth()->logout();
+        auth('api')->logout();
 
         return response()->json(['message' => translateMessageApi('logged-out')]);
     }

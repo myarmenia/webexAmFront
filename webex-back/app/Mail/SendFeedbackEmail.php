@@ -34,7 +34,7 @@ class SendFeedbackEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'layouts.mail.sendorder',
+            view: 'layouts.mail.sendFeedback',
         );
     }
 
@@ -43,8 +43,7 @@ class SendFeedbackEmail extends Mailable
         return $this->with([
                         'data' => $this->data,
                     ])
-                    ->to('tradingtrader@mail.ru');
-                    // ->to(config('project.webex_email'));
+                    ->to(config('project.webex_email'));
     }
 }
 

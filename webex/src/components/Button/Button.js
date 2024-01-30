@@ -5,7 +5,7 @@ function Button({index, path, setMessageModal}) {
   const { t, i18n } = useTranslation();
   
   return (
-    <NavLink  to={path} className="btn_" onClick={()=> setMessageModal(false)}>
+    <NavLink  to={path} className="btn_" onClick={()=> setMessageModal && setMessageModal(false)}>
         <span></span>
         <span></span>
         <span></span>
