@@ -5,6 +5,7 @@ const initialState = {
   allData: [],
   courses: [],
   loading: true,
+  isCurrentLessonReq : true
   // types: [],
   // typeLoading: false,
 };
@@ -13,21 +14,25 @@ export const currentLessonSlice = createSlice({
   name: 'currentLesson',
   initialState,
   reducers: {
-    // setType: (state, action) => {
-    //   state.types = action.payload;
-    // },
+    setIsCurrentLessonReq: (state, action) => {
+      state.isCurrentLessonReq = action.payload;
+    },
   },
-  
+
   extraReducers: (builder) => {
     builder
       .addCase(getCurrentLesson.fulfilled, (state, action) => {
-        console.log(action.payload, 999999)
+        console.log(action.payload, 'ppppppppppppppppppppppp')
         state.courses = action.payload.all_courses
-        state.allData = action.payload
-        state.loading = false
+        if(state.isCurrentLessonReq){
+          state.allData = action.payload
+          state.loading = false
+        }
+        state.isCurrentLessonReq = true
       })
       .addCase(getCurrentLanguageLesson.fulfilled, (state, action) => {
         console.log(action.payload, 999999)
+        // state.isCurrentLessonReq = true
         state.allData = action.payload
         state.loading = false
       })
@@ -40,13 +45,14 @@ export const currentLessonSlice = createSlice({
   },
 });
 
-// export const {
-//   //   setErrorMessage,
-// } = currentLessonSlice.actions;
+export const {
+  setIsCurrentLessonReq
+} = currentLessonSlice.actions;
 
 export const getAllCourses = (state) => state.currentLesson.courses;
 export const getAllData = (state) => state.currentLesson.allData;
 export const getLoading = (state) => state.currentLesson.loading;
+export const getIsCurrentLessonReq = (state) => state.currentLesson.isCurrentLessonReq;
 
 
 export const currentLessonReducer = currentLessonSlice.reducer;

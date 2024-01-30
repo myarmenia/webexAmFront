@@ -14,6 +14,7 @@ import { authReduser } from "./slices/Auth/AuthSlice";
 import { projectPageReducer } from "./slices/ProjectPageSlice/ProjectPageSlice";
 import { profileReduser } from "./slices/Profile/ProfileSLice";
 import { VisitHistoryReducer } from "./slices/VisitHistory/VisitHistorySlice";
+import { ClientQuestionSlice, clientQuestionReducer } from "./slices/Help/HelpSlice";
 
 
 const store = configureStore({
@@ -32,8 +33,8 @@ const store = configureStore({
         auth: authReduser,
         profile: profileReduser,
         visithistory:VisitHistoryReducer,
-        projectPage: projectPageReducer
-
+        projectPage: projectPageReducer,
+        clientquestion:clientQuestionReducer
 
     },
     // middleware: (getDefaultMiddlware)=>[

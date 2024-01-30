@@ -31,3 +31,9 @@ td {
   padding: 8px;
   border-bottom: 1px solid #e1cfff;
 }
+
+.RightArrow{
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+}
