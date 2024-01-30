@@ -20,7 +20,7 @@ class SendYourQuestionController extends Controller
             return response()->json(['success' => true, 'message' => translateMessageApi('email-send')]);
         }
 
-        return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')]);
+        return response()->json(['success' => false, 'message' => translateMessageApi('something-went-wrong')],500);
 
     }
 }
