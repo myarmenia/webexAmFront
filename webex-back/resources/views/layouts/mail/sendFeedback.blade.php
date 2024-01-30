@@ -6,6 +6,6 @@
 <body>
    <p>Имя: {{$data['name']}} </p>
    <p>Писмо: {{$data['message']}} </p>
-   <p>Маил: {{$data['email']}} </p>
+   <p>Майл: {{$data['email']}} </p>
 </body>
 </html>
