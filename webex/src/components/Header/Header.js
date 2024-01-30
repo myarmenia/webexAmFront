@@ -65,7 +65,7 @@ function Header() {
           <h4>{animatedTextH4}</h4>
         </div>
         <div className='btns-div'>
-          <Button index='1' path='/registr' />
+          <Button index='1' path={`/${leng}/registr`} />
           <Button2 index='2' {...{setOpenOrderModal}}/>
         </div>
       </div>

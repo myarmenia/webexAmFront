@@ -7,13 +7,15 @@ import { fileIcon } from '../../iconFolder/icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { postTellUs } from '../../store/slices/TellUsSlice/TellUsApi';
-import { selectTellUs } from '../../store/slices/TellUsSlice/TellUsSlice';
+import { selectTellUs, selectTellUsLoading } from '../../store/slices/TellUsSlice/TellUsSlice';
 import MessageModal from '../MessageModal/MessageModal';
 
 function TelUs() {
     const [messageModal, setMessageModal] = useState(false)
 
     const respTellUs = useSelector(selectTellUs)
+
+    const loading = useSelector(selectTellUsLoading)
     const {t, i18n} = useTranslation()
 
     const [file, setFile] = useState(null);
@@ -133,14 +135,14 @@ function TelUs() {
                               <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')}/>
                             </div>
 
-                            <SubmitBtn index= "3" isValid={isValid} dirty={dirty}/>
+                            <SubmitBtn index= "3"/>
                         </form>
                 </div>
             )
         }
         </Formik>
         </div>
-        {messageModal && <MessageModal txt={respTellUs?.data?.message} {...{setMessageModal}}/>}
+        {messageModal && <MessageModal txt={respTellUs?.data?.message} {...{setMessageModal}} loading={loading}/>}
     </div>
   )
 }

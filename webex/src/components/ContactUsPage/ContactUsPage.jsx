@@ -8,13 +8,14 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { postFeedBack } from '../../store/slices/FeedbackSlice/FeedbackApi'
 import MessageModal from '../MessageModal/MessageModal';
-import { selectFeedBAck } from '../../store/slices/FeedbackSlice/FeedbackSlice';
+import { selectFeedBAck, selectFeedBAckLoading } from '../../store/slices/FeedbackSlice/FeedbackSlice';
 
 function ContactUsPage() {
 
     const [messageModal, setMessageModal] = useState(false)
 
     const respFeedBack = useSelector(selectFeedBAck)
+    const loading = useSelector(selectFeedBAckLoading)
     console.log(respFeedBack.data);
     const {t, i18n} = useTranslation()
 
@@ -99,7 +100,7 @@ function ContactUsPage() {
 
                             {/* <button className="reg-btn" disabled={!isValid || !dirty}>Registre</button> */}
 
-                            <SubmitBtn index= "3" isValid={isValid} dirty={dirty}/>
+                            <SubmitBtn index= "3"/>
                         </form>
                 </div>
             )
@@ -113,7 +114,7 @@ function ContactUsPage() {
 
                 <TelUs/>
 
-                {messageModal && <MessageModal txt={respFeedBack?.data?.message} {...{setMessageModal}}/>}
+                {messageModal && <MessageModal txt={respFeedBack?.data?.message} {...{setMessageModal}} loading={loading}/>}
         </div>
     )
 }
