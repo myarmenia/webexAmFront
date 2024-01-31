@@ -19,8 +19,7 @@ class UserService
         }
 
         $user->update($updateData);
-        $user->avatar = route('get-file', ['path' => $user->avatar]);
-        dd($user);
+        $user->avatar = $user->avatar? route('get-file', ['path' => $user->avatar]) : "";
 
         return $user;
     }
