@@ -37,7 +37,7 @@ class CourseLanguageController extends Controller
      */
     public function store(CourseLanguageRequest $request)
     {
-dd($request->all());
+// dd($request->all());
       $cours_language = CourseLanguage::create($request->only(['name']));
 
       if($cours_language){

@@ -19,7 +19,7 @@ class TasksResource extends JsonResource
           'id' => $this->id,
           'lesson_id' => $this->lesson_id,
           'duration' => $this->duration,
-          'video' => $this->video,
+          'video' => route('get-file', ['path' => $this->video ]),
           'description'=>$this->translation(session('languages'))->description,
         ];
     }

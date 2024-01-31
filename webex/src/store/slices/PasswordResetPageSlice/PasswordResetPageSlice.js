@@ -2,9 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postResetPasswordPage } from "./PasswordResetPageApi";
 
 const initialState = {
-   message: false,
+   data: {
+      message: '',
+      success:  null
+   },
    status: 'idle',
    error: null,
+   loading: true,
    };
 
 const resetPasswordPageSlice = createSlice({
@@ -22,17 +26,21 @@ const resetPasswordPageSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postResetPasswordPage.fulfilled, (state, action) => {
-            state.message = action.payload.success
+            state.data.success = action.payload.success
+            state.loading = false
+            
           })
           .addCase(postResetPasswordPage.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
+            state.loading = false
           });
     },
  });
  
 
 export const selectResetPasswordPage = (state) => state.resetPasswordPage
+export const selectResetPasswordPageLoading = (state) => state.resetPasswordPage.loading
 
  export const {} = resetPasswordPageSlice.actions
 

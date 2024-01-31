@@ -5,6 +5,7 @@ use App\Interfaces\Lesson\LessonRepositoryInterface;
 use App\Models\Lesson;
 use App\Models\LessonTranslation;
 use App\Services\FileUploadService;
+use Illuminate\Support\Facades\Storage;
 
 class LessonRepository implements LessonRepositoryInterface
 {
@@ -52,6 +53,12 @@ class LessonRepository implements LessonRepositoryInterface
   {
       $lesson = $this->editLesson($id);
       if($request->has('video')){
+
+        if(Storage::exists($lesson->video)){
+          // dd($image->path);
+          Storage::delete($lesson->video);
+         
+        }
         $path = FileUploadService::upload($request->video,'lessons/'.$lesson->id);
         $lesson->video = $path;
         $lesson->save();

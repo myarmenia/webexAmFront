@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { postResetPassword } from '../../store/slices/ResetEmailSlice/ResetEmailApi';
 
-function ChangePasswordModal({openModal, setOpenModal}) {
+function ChangePasswordModal({openModal, setOpenModal, setMessageModalResetPass}) {
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch()
@@ -12,7 +12,8 @@ function ChangePasswordModal({openModal, setOpenModal}) {
   function handleResetPass(e) {
     e.preventDefault()
     setOpenModal(false)
-   dispatch(postResetPassword({email: e.target[0].value}))
+    dispatch(postResetPassword({email: e.target[0].value}))
+    setMessageModalResetPass(true)
 }
 
   return (

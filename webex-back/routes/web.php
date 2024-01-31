@@ -162,6 +162,7 @@ Route::post('open-course/{user_id}', [OpenCourseLanguageForStudentController::cl
 Route::get('srudent-info/{id}', [StudentInfoController::class,'index'])->name('users.info');
 
 Route::get('student-attendances/{id}', [StudentAttendancesController::class,'index']);
+Route::post('open-next-lesson', [OpenNextLessonController::class,'index'])->name('open_next_lesson');
 
 
 
