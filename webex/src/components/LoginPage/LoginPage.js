@@ -18,11 +18,13 @@ import { selectLogin, selectLoginError, selectLoginLoading, setLogin } from "../
 import ChangePasswordModal from "../ChangePasswordModal/ChangePasswordModal.js";
 import MessageModal from "../MessageModal/MessageModal.js";
 import { getIsAuth } from "../../store/slices/Auth/AuthSlice.js";
+import { selectResetPassword, selectResetPasswordLoading } from "../../store/slices/ResetEmailSlice/ResetEmailSlice.js";
 function LoginPage() {
 
     const [viewPassword, setViewPassword] = useState(true)
     const [openModal, setOpenModal] = useState(false)
     const [messageModal, setMessageModal] = useState(false)
+    const [messageModalResetPass, setMessageModalResetPass] = useState(false)
     const isAuth = useSelector(getIsAuth)
 
     const { t, i18n } = useTranslation();
@@ -32,8 +34,12 @@ function LoginPage() {
     const navigate = useNavigate()
 
     const respLogin = useSelector(selectLogin)
+    const respEmail = useSelector(selectResetPassword)
 
     const loading = useSelector(selectLoginLoading)
+
+    const loading_for_reset_email = useSelector(selectResetPasswordLoading)
+
     const leng = localStorage.getItem('lang')
 
     const validationSchema = yup.object().shape({
@@ -47,7 +53,7 @@ function LoginPage() {
         if (e.target[0].value && e.target[1].value) {
             handleSubmit()
             dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
-            setMessageModal(true)
+             !respLogin.data.isAuth && setMessageModal(true)
         }
 
     }
@@ -105,9 +111,10 @@ function LoginPage() {
 
 
                             {
-                                openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal} />
+                                openModal && <ChangePasswordModal setOpenModal={setOpenModal} openModal={openModal} {...{ setMessageModalResetPass }}/>
                             }
-
+                            
+                            {messageModalResetPass && <MessageModal txt={respEmail.data.message ? respEmail.data.message : respEmail.data.error} path={`/${leng}/login`} {...{ setMessageModalResetPass }} loading={loading_for_reset_email}/>}
                             {messageModal && <MessageModal txt={respLogin.data.error} path={`/${leng}/login`} {...{ setMessageModal }} loading={loading}/>}
                         </div>
                     </div>

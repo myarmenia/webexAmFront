@@ -20,8 +20,8 @@
 }
 
 
-/* @media(max-width: 480px){
+@media(max-width: 480px){
     .create-website-mobile-app-items{
-        max-width: 380px;
+        padding: 50px 20px;
     }
-} */
+}
