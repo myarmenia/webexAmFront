@@ -16,7 +16,7 @@ export const sendClientQuestion = createAsyncThunk(
         
         const response = await instance(config);
           console.log(response);
-        return response?.data?.data;
+        return response?.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data.error.both);
       }

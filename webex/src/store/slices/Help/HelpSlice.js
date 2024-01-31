@@ -19,6 +19,7 @@ export const ClientQuestionSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(sendClientQuestion.fulfilled, (state, action) => {
+        console.log(action.payload)
         state.message = action.payload.message
         state.loading = false
       })
