@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   (function () {
     const fileInput = document.querySelector('.account-file-input');
     const uploadedImagesContainer = document.getElementById('uploadedImagesContainer');
-    const uploadedImages = []; 
+    const uploadedImages = [];
 
     fileInput.onchange = () => {
       if (fileInput.files.length > 0) {
@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
           alert('Вы можете загрузить только 4 файла.');
           this.preventDefault();
         }
-      
+
         uploadedImages.length = 0;
 
         // uploadedImagesContainer.innerHTML = '';
-
+console.log(fileInput.files.length+"888888")
         for (let i = 0; i < Math.min(fileInput.files.length, 4); i++) {
           const imageData = {
             url: window.URL.createObjectURL(fileInput.files[i]),
@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
           image.src = imageData.url;
           image.alt = 'uploaded-image';
           image.className = 'd-block rounded uploaded-image uploaded-photo-project';
+
           imageContainer.appendChild(image);
+
 
           const removeButton = document.createElement('button');
           removeButton.type = 'button';
@@ -55,6 +57,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
           imageContainer.appendChild(removeButton);
 
           uploadedImagesContainer.appendChild(imageContainer);
+       
+          if(document.getElementById('photos_div')!=null){
+
+            document.getElementById('photos_div').innerHTML!=='' ? document.getElementById('photos_div').innerHTML='' : null
+
+          }
         }
         document.querySelectorAll('.remove_file').forEach((btn) => btn.addEventListener('click', removeFile))
 
@@ -69,12 +77,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
               let delfile = document.querySelector('.account-file-input')
               console.log(delfile)
               for (let file of delfile.files) {
-          
+
             dt.items.add(file);
            }
-          
+
            delfile.files = dt.files;
-          
+
               for(let i = 0; i < dt.files.length; i++){
              if(key == dt.files[i].lastModified){
               dt.items.remove(i);
@@ -83,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
            }
               delfile.files = dt.files
                   console.log(delfile.files)
-          
+
               e.target.parentNode.remove()
           }
 });

@@ -5,6 +5,7 @@ use App\Interfaces\Task\TaskRepositoryInterface;
 use App\Models\Task;
 use App\Models\TaskTranslation;
 use App\Services\FileUploadService;
+use Illuminate\Support\Facades\Storage;
 
 class TaskRepository implements TaskRepositoryInterface
 {
@@ -54,9 +55,14 @@ class TaskRepository implements TaskRepositoryInterface
   }
   public function updateTasks($request, $id)
   {
-    
+
     $task = Task::where('id',$id)->with('task_translations')->first();
     if($request->has('video')){
+      if(Storage::exists($task->video)){
+       
+        Storage::delete($task->video);
+
+      }
       $path=FileUploadService::upload($request->video,'lessons/'.$request->lesson_id.'/tasks/'.$task->id);
       $task->video=$path;
       $task->save();
