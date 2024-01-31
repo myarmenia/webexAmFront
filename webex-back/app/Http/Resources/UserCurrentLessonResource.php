@@ -21,7 +21,7 @@ class UserCurrentLessonResource extends JsonResource
           "course_language_id"=>$this->course_language_id,
           "course_language_name" => $this->course_languages->name,
           "current_lesson" =>new CurrentLessonResource($this->lessons),
-          "lessons"=>$this->course_languages->lessons,
+          // "lessons"=>$this->course_languages->lessons,
           "lessons"=>LanguageLessonsResource::collection($this->course_languages->lessons),
           "active_cource"=>$this->course_language_id,
           "all_courses"=> CourseLanguage::all(),
