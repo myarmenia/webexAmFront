@@ -64,7 +64,7 @@ class LessonRepository implements LessonRepositoryInterface
         $lesson->save();
       }
 
-    $lesson->update($request->only(['course_language_id','duration']));
+    $lesson->update($request->only(['course_language_id','duration','number']));
 
     if($lesson){
 

@@ -333,7 +333,68 @@ i18n
             'Mobile',
             'Games and 3D'
           ],
+          dashboard_name: 'Dashboard',  
 
+          account_Box: [
+            'Account',
+            'Edit profile',
+          ],
+          purchase_history: [
+            'Purchase history',
+            'Lessons',
+            'of total'
+          ],
+          my_Training: 'My Training',
+
+          description: 'description',
+
+          homework_linne: [
+            'Do homework',
+            'Lesson',
+            'minutes',
+          ],
+
+          cordial:'Contents',
+
+          all_video_lessons: "All video lessons",
+
+          profile: [
+            'Your Profile',
+            'Fill in your details',
+            'Save',
+            'Cancel',
+            'write the current password',
+            'write the new password',
+            'repeat the new password'
+          ],
+          help: [
+            'Help',
+            'Fast support',
+            'Answers to the most frequently asked questions are just one click away.',
+            'Write your question',
+            'Name Surname',
+            'Email address',
+            'phone number',
+            'message',
+            'Send'
+          ],
+
+          visitHistory: [
+            'Visit history',
+            'Number',
+            'Lessons',
+            'Total lessons',
+            'Number lessons',
+            'Payment'
+          ],
+          
+            dashboard_name: "Dashboard",
+            current_lessons: "Current lessons",
+            profile: "Profile",
+            help: "Help",
+            visit_history: "Visit history",
+            log_out: "Log out"
+          
         },
       },
       am: {
@@ -676,8 +737,68 @@ i18n
             'Բջջային',
             'Խաղեր և 3D'
           ],
+          dashboard_name: 'Վահանակ',
 
+          account_Box: [
+            'Հաշիվ',
+            'Խմբագրել պրոֆիլը',
+          ],
 
+          purchase_history: [
+            'Գնումների պատմություն',
+            'Դասեր',
+            'ընդհանուրից'
+          ],
+          my_Training: 'Իմ Թրեյնինգը',
+
+          description: 'Նկարագրություն',
+
+          homework_linne: [
+            'Կատարել տնային առաջադրանքները',
+            'Դաս',
+            'րոպե',
+          ],
+
+          cordial:'Բովանդակություն',
+
+          all_video_lessons: "Բոլոր վիդեոդասերը",
+
+          profile: [
+            'Քո Պրոֆիլը',
+            'Լրացրու տվյալներդ',
+            'Պահպանել',
+            'Չեղարկել',
+            'գրիր գործող գաղտնաբառը',
+            'գրիր նոր գաղտնաբառը',
+            'կրկնիր նոր գաղտնաբառը'
+          ],
+
+          help: [
+            'Օգնություն',
+            'Արագ աջակցություն',
+            'Ամենահաճախ տրվող հարցերի պատասխաններն ընդամենը մեկ սեղմումով:',
+            'Գրեք ձեր հարցը',
+            'Անուն Ազգանուն',
+            'Էլ. հասցե',
+            'հեռախոսի համար',
+            'հաղորդագրություն',
+            'Ուղարկել'
+          ],
+
+          visitHistory: [
+            'Այցելեք պատմություն',
+            'Թիվ',
+            'Դասեր',
+            'Ընդհանուր դասեր',
+            'Թվերի դասեր',
+            'Վճարում'
+          ],
+          dashboard_name: "Գլխավոր էջ",
+          current_lessons: "Ընթացիկ դասեր",
+          profile: "Անձնական էջ",
+          help: "Օգնություն",
+          visit_history: "Այցելության պատմություն",
+          log_out: "Դուրս գալ"
         }
 
       },
@@ -1031,6 +1152,61 @@ i18n
             'Мобильный',
             'Игры и 3D'
           ],
+          dashboard_name: 'Панель приборов',
+          account_Box: [
+            'Счет',
+            'Редактировать профиль',
+          ],
+
+          purchase_history: [
+            'История покупки',
+            'Уроки',
+            'с общего'
+          ],
+          my_Training: 'Моя тренировка',
+
+          description: 'Описание',
+
+          homework_linne: [
+            'Делать домашнюю работу',
+            'Урок',
+            'минуты',
+          ],
+
+          cordial:'Содержание',
+
+          all_video_lessons: "Все видео уроки",
+
+          profile: [
+            'Ваш профиль',
+            'Заполните свои данные',
+            'Сохранять',
+            'Отмена',
+            'напиши текущий пароль',
+            'напиши новый пароль',
+            'повторите новый пароль'
+          ],
+
+          help: [
+            'Помощь',
+            'Быстрая поддержка',
+            'Ответы на наиболее часто задаваемые вопросы находятся всего в одном клике.',
+            'Напишите свой вопрос',
+            'Имя Фамилия',
+            'Адрес электронной почты',
+            'номер телефона',
+            'сообщение',
+            'Отправлять'
+          ],
+
+          visitHistory: [
+            'История посещений',
+            'Число',
+            'Уроки',
+            'Всего уроков',
+            'Количество уроков',
+            'Оплата'
+          ]
         }
       },
       // Add more languages as needed
