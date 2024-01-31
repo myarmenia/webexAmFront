@@ -180,7 +180,7 @@ function OrderModal({setOpenOrderModal, setMessageModal, currentProject}) {
                    </div>
 
                     <div className='submit-div'>
-                    <SubmitBtn index="3" isValid={true} dirty={true}/>
+                    <SubmitBtn index="3"/>
                     </div>
                 </form>
             </div>

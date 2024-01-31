@@ -23,11 +23,12 @@ import ContactUsPage from './components/ContactUsPage/ContactUsPage';
 import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
 import Help from './components/profilePage/Help/Help';
 import ServicesPage from './components/ServicesPage/ServicesPage';
+import WebProjectPage from './components/WebProjectPage/WebProjectPage';
 
 
 
 function App() {
-  const leng = localStorage.getItem('lang');
+ const leng = localStorage.getItem('lang') != null ? localStorage.getItem('lang')  : 'am';
 
   const navigate = useNavigate();
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
+            <Route path='webProject' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
             <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />

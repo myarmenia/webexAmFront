@@ -8,6 +8,7 @@ const initialState = {
    },
    status: 'idle',
    error: null,
+   loading: true,
    };
 
 const ordertSlice = createSlice({
@@ -28,18 +29,21 @@ const ordertSlice = createSlice({
             state.data = action.payload
             // console.log(state.data);
              state.status = 'succes';
+             state.loading = false
           })
           .addCase(postOrder.rejected, (state, action) => {
             state.status = 'failed';
             if(action.payload){
                state.data.message = action.payload
-              } 
+              }
+              state.loading = false
           });
     },
  });
  
 
 export const selectOrder = (state) => state.order
+export const selectOrderLoading = (state) => state.order.loading
 
  export const {} = ordertSlice.actions
 

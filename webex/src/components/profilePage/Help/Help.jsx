@@ -16,6 +16,7 @@ function Help() {
   const dispatch = useDispatch();
   const messageAnswer = useSelector(getMessage);
   console.log('messageAnswer', messageAnswer);
+  
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -24,10 +25,11 @@ function Help() {
       message: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       dispatch(sendClientQuestion(values));
       // Handle form submission logic here
       console.log('Form submitted with values:', values);
+      resetForm();
     },
   });
   return (
@@ -124,7 +126,10 @@ function Help() {
             {formik.touched.message && formik.errors.message ? (
               <span style={{ color: 'red', marginTop: '-20px' }}>{formik.errors.message}</span>
             ) : null}
-            <button className="button-save">Ուղարկել</button>
+            <div className='succesMessge'> 
+            <button type="submit" className="button-save">Ուղարկել</button> 
+              <span>{messageAnswer ? messageAnswer : ''}</span>
+            </div>
           </div>
         </form>
       </div>

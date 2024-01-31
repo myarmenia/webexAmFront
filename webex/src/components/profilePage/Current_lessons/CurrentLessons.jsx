@@ -89,7 +89,8 @@ function CurrentLessons() {
                     sources: [
                       {
                         // src: 'https://www.example.com/your-video.mp4',
-                        src: kodVideo,
+                        src : allData?.current_lesson?.video || allData?.lessons[0]?.video,
+                        // src: kodVideo,
                         type: 'video/mp4',
                       },
                     ],
