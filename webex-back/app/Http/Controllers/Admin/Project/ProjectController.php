@@ -33,7 +33,8 @@ class ProjectController extends Controller
         return view('content.project.create');
     }
 
-    public function addProject(Request $request)
+    public function addProject(ProjectAddOrCreateRequest $request)
+
     {
 
         $createProj = $this->projectService->createProject($request->all());
@@ -44,23 +45,7 @@ class ProjectController extends Controller
                   ->with('i', ($request->input('page', 1) - 1) * 5);
         }
 
-        // $this->validate($request, [
-        //     'name' => 'required',
-        //     'email' => 'required|email|unique:users,email',
-        //     'password' => 'required|same:confirm-password',
-        //     'roles' => 'required'
-        // ]);
-
-        // $input = $request->all();
-        // $input['password'] = Hash::make($input['password']);
-
-        // $user = User::create($input);
-        // $user->assignRole($request->input('roles'));
-        // $user->assignRole(['student']);
-
-
-        // return redirect()->route('users.index')
-        // ->with('success', 'User created successfully');
+      
     }
 
     public function getProject()

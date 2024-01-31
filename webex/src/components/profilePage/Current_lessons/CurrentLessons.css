@@ -57,6 +57,7 @@
   border-radius: 6px;
   box-shadow: 0px 2px 6px 0px #0000001A;
   background-color: #FFFFFF;
+  width: 22vw;
 }
 .titleAllVideo{
   color: #000000;
@@ -185,4 +186,24 @@
   width: 24px;
   height: 23px;
   filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
+}
+
+@media screen and (max-width: 900px) {
+  .allSide {
+    gap: 20px;
+  }
+  .titleAllVideo{
+    line-height: 24.3px;
+    font-size: 17px;
+  }
+  .rightSide{
+    padding: 21px 22px;
+    width: 20vw;
+  }
+  .nameAllVideo{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 700px) {
+
 }

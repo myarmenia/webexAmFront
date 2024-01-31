@@ -42,7 +42,7 @@ class AuthController extends BaseController
     {
         if($me = auth('api')->user()){
 
-            $me->avatar = route('get-file', ['path' => $me->avatar]);
+            $me->avatar = $me->avatar?route('get-file', ['path' => $me->avatar]): "";
 
             return response()->json($me);
         }
