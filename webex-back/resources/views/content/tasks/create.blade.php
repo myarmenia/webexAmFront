@@ -80,9 +80,7 @@
               @if($errors->has("video"))
                 <div class="text-danger mt-2">{{ $errors->first("video")  }}</div>
               @endif
-              <video width="240" height="240" controls>
-                <source src="" type="video/mp4">
-              </video>
+             
             </div>
 
           </div>

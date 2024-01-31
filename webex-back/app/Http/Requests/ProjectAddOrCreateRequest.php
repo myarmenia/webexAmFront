@@ -22,24 +22,28 @@ class ProjectAddOrCreateRequest extends FormRequest
      */
     public function rules(): array
     {
+// dd($this->id);
         $project = Project::find($this->id);
 
         $data =  [
-            'name' => 'required',            
+            'name' => 'required',
             "proj-am" => 'required',
             "proj-ru" => 'required',
             "proj-en" => 'required',
             "lang" => 'required',
             "process_time" => 'required',
-            "creation_date_at" => 'required',            
+            "creation_date_at" => 'required',
             "type" => 'required',
-            
+            "project_photos"=>'required',
+
         ];
 
- 
+
         if(isset($this->project_photos)){
+
+          if(isset($this->id)){
             $images_count = count($this->project_photos) + $project->images->count();
-            
+
             if($images_count >= 4){
                 $count = 4 - $project->images->count();
                 $data["project_photos"] = "required|array|max:$count";
@@ -47,8 +51,9 @@ class ProjectAddOrCreateRequest extends FormRequest
             else{
                 $data["project_photos"] = 'required';
             }
+          }
         }
-       
+
        return $data;
     }
 }

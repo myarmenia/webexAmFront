@@ -1,6 +1,9 @@
 @extends('layouts/contentNavbarLayout')
 
 @section('title', ' Horizontal Layouts - Forms')
+@section('page-script')
+<script src="{{ asset('assets/js/delete-file.js') }}"></script>
+@endsection
 
 @section('content')
 
@@ -88,14 +91,14 @@
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label" for="basic-default-name">видео</label>
             <div class="col-sm-10">
-              <input type="file" class="form-control" name="video" value="{{old('video')}}" id="description" placeholder="видео" />
+              <input type="file" class="form-control " id="uploadedFile" name="video" value="{{old('video')}}" id="description" placeholder="видео" />
 
               @if($errors->has("video"))
                 <div class="text-danger mt-2">{{ $errors->first("video")  }}</div>
               @endif
-              <video class="mt-2" width="240" height="240" controls>
-                <source src="" type="video/mp4">
-              </video>
+              {{-- <video class="mt-2" width="240" height="240" controls>
+                <source src="" type="video/mp4" id="videoF">
+              </video> --}}
             </div>
           </div>
           <div class="row mb-3">

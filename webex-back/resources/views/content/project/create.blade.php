@@ -179,7 +179,7 @@
                 </div>
                 @error('type')
                     <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                        <div class="col-sm-10 text-danger fts-14" >{{ $message }}
                         </div>
                     </div>
                 @enderror
@@ -196,20 +196,21 @@
                                     accept="image/png, image/jpeg" />
                             </label>
                             <div class="uploaded-images-container uploaded-photo-project" id="uploadedImagesContainer"></div>
-                            
+
                         </div>
                     </div>
                 </div>
-                @error('type')
+                @error('project_photos')
                     <div class="mb-3 row justify-content-end">
-                        <div class="col-sm-10 text-danger fts-14">{{ $message }}
+                        <div class="col-sm-10 text-danger fts-14" id="photos_div">{{ $message }}
                         </div>
                     </div>
                 @enderror
 
-
-                <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                <div class="mt-5 row justify-content-end">
+                  <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary">Сохранить</button>
+                  </div>
                 </div>
         </div>
 
