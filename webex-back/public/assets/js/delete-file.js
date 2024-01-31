@@ -13,9 +13,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
             resetFileInput = document.querySelector('.file-reset');
 
         if (file) {
+
             const resetFile = file.src;
             fileInput.onchange = () => {
+
                 if (fileInput.files[0]) {
+                  // document.getElementById('videoF').src=window.URL.createObjectURL(fileInput.files[0])
                     file.src = window.URL.createObjectURL(fileInput.files[0]);
                 }
             };

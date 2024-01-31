@@ -49,6 +49,7 @@
 
           @if (count($lessons)>0)
             @foreach ($lessons as $item )
+          
               <tr>
                 <td>{{++$i}}</td>
                 <td>

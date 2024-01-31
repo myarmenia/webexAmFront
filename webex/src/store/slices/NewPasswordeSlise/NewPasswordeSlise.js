@@ -2,9 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { postNewPassword } from "./NewPasswordeApi";
 
 const initialState = {
-   massage: '',
+   data: {
+      message: '',
+      success: null,
+   },
    status: 'idle',
    error: null,
+   loading: true
    };
 
 const newPasswordSlice = createSlice({
@@ -22,18 +26,21 @@ const newPasswordSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postNewPassword.fulfilled, (state, action) => {
-            state.massage = action.payload.success
+            state.data = action.payload
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(postNewPassword.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
+            state.loading = false
           });
     },
  });
  
 
 export const selectNewPassword = (state) => state.newPassword
+export const selectNewPasswordLoading = (state) => state.newPassword.loading
 
  export const {} = newPasswordSlice.actions
 
