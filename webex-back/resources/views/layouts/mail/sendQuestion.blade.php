@@ -10,7 +10,7 @@
     @if($data['phone'] )
         <p>Телефон: {{$data['phone']}} </p>
     @endif
-   <p>Маил: {{$data['email']}} </p>
+   <p>Майл: {{$data['email']}} </p>
    <p>Сообщение: {{$data['message']}} </p>
 </body>
 </html>

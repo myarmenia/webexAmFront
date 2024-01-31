@@ -6,7 +6,7 @@
 <body>
    <p>Имя: {{$data['name']}} </p>
    <p>Телефон: {{$data['phone']}} </p>
-   <p>Маил: {{$data['email']}} </p>
+   <p>Майл: {{$data['email']}} </p>
     @if($data['domain'] )
         <p>Сайт: {{$data['domain']}} </p>
     @endif
