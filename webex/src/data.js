@@ -827,3 +827,172 @@ export const servicesPageItemsData= [
     },
     
 ]
+
+
+
+// ==============KeyWord-Component============================================
+
+
+export const keyWordData = [
+    {
+        id: '1',
+        path: '/websitePromotion',
+        txt: 'Комплексное продвижение сайтов,',
+    },
+
+    {
+        id: '2',
+        path: '/websitePromotion',
+        txt: 'Бюджетное продвижение,',
+    },
+
+    {
+        id: '3',
+        path: '/support',
+        txt: 'Реклама в интернете,',
+    },
+
+    {
+        id: '4',
+        path: '/websitePromotion',
+        txt: 'Поисковое продвижение сайта,',
+    },
+
+    {
+        id: '5',
+        path: '/webProject',
+        txt: 'Оптимизация сайта,',
+    },
+
+    {
+        id: '6',
+        path: '/websitePromotion',
+        txt: 'SEO - поисковая оптимизация,',
+    },
+
+    {
+        id: '7',
+        path: '/websitePromotion',
+        txt: 'Контекстная реклама,',
+    },
+
+    {
+        id: '8',
+        path: '/websitePromotion',
+        txt: 'Продвижение в соцсетях, блогах, сервиса,',
+    },
+
+    {
+        id: '9',
+        path: '/support',
+        txt: ' Бесплатный экспресс-аудит сайта,',
+    },
+
+    {
+        id: '10',
+        path: '/webProject',
+        txt: '  Бесплатная установка счетчика,',
+    },
+
+    {
+        id: '11',
+        path: '/websitePromotion',
+        txt: 'Продвижение и оптимизация сайтов: вопрос-ответ,',
+    },
+
+    {
+        id: '12',
+        path: '/websitePromotion',
+        txt: 'Статьи о продвижении сайтов,',
+    },
+
+    {
+        id: '13',
+        path: '/websitePromotion',
+        txt: 'Стоимость продвижения сайтов,',
+    },
+
+    {
+        id: '14',
+        path: '/webProject',
+        txt: ' Создание бренд-страниц и групп в соцсетях,',
+    },
+
+    {
+        id: '15',
+        path: '/3dModeling',
+        txt: ' Трехмерное моделирование,',
+    },
+
+    {
+        id: '16',
+        path: '/3dModeling',
+        txt: ' Blender,',
+    },
+
+    {
+        id: '17',
+        path: '/3dModeling',
+        txt: ' Gimp,',
+    },
+
+    {
+        id: '18',
+        path: '/3dModeling',
+        txt: ' 3D Визуализация коттеджа с территорией,',
+    },
+
+    {
+        id: '19',
+        path: '/3dModeling',
+        txt: ' 3D моделирование,',
+    },
+
+    {
+        id: '20',
+        path: '/3dModeling',
+        txt: ' 3D Визуализация интерьеров,',
+    },
+
+    {
+        id: '21',
+        path: '/mobile',
+        txt: 'ИТ-консалтинг,',
+    },
+
+    {
+        id: '22',
+        path: '/mobile',
+        txt: 'iOS,',
+    },
+
+    {
+        id: '23',
+        path: '/mobile',
+        txt: 'Android,',
+    },
+
+    {
+        id: '24',
+        path: '/mobile',
+        txt: ' Дизайн,',
+    },
+
+    {
+        id: '25',
+        path: '/unity_games',
+        txt: 'Unity разработкиа,',
+    },
+
+    {
+        id: '26',
+        path: '/unity_games',
+        txt: 'UI/UX дизайн,',
+    },
+
+    {
+        id: '27',
+        path: '/unity_games',
+        txt: '2D и 3D разработка игр',
+    },
+]

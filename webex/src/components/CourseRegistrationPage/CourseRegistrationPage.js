@@ -25,13 +25,13 @@ function CourseRegistrationPage() {
   const validationSchema = yup.object().shape({
     name: yup.string().required(t('validation_reg_log.0')),
     phone: yup.string().required(t('validation_reg_log.0')),
-    type: yup.string().required(t('validation_reg_log.0')),
+    type: yup.string()
   });
 
 
   const handleFormSubmit = (e, handleSubmit) => {
     e.preventDefault()
-   if (e.target[0].value && e.target[1].value && (e.target[2].checked || e.target[3].checked)) {
+   
     handleSubmit()
     dispatch(postTrialCourse({
       name: e.target[0].value,
@@ -40,7 +40,6 @@ function CourseRegistrationPage() {
     }))
 
     setMessageModal(true)
-   }
   }
   return (
     <div className="course-registration-page">
@@ -67,12 +66,12 @@ function CourseRegistrationPage() {
                   <form className="reg-form" onSubmit={(e) => handleFormSubmit(e, handleSubmit)}>
                     <SectionTitle title={t('reg_and_log.' + '11')} />
                     <div className="name-inp">
-                      <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} />
+                      <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
                       {touched.name && errors.name && <p className="error">{errors.name}</p>}
                     </div>
 
                     <div className="tel-inp">
-                      <input type="text" name="phone" placeholder={t('reg_and_log.' + '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur} />
+                      <input type="text" name="phone" placeholder={t('reg_and_log.' + '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
                       {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                     </div>
 

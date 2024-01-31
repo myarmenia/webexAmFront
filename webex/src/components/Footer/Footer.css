@@ -15,7 +15,13 @@
     padding: 60px 0;
 }
 
-
+.footer-menu{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .footer-right-div{
     height: 100%;
     display: flex;
@@ -68,6 +74,7 @@
     .footer-content{
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
     .footer-right-div span{
         font-size: 10px;
@@ -80,4 +87,16 @@
     .footer-right-div {
         margin-bottom: 50px;
     }
+    .footer-right-div{
+        flex-direction: column;
+        gap: 10px;
+        width: 60%;
+        align-items: flex-start;
+    }
+
+    .footer-menu{
+        width: 60%;
+    }
+   
+
 }
