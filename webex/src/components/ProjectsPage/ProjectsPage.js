@@ -7,45 +7,48 @@ import { d_3_icon, game_icon, mobile_icon, see_all_icon, web_icon } from '../../
 import './ProjectsPage.css';
 import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
-import {selectProjectPageData } from '../../store/slices/ProjectPageSlice/ProjectPageSlice';
+import {selectProjectPageData, selectProjectPageLoading } from '../../store/slices/ProjectPageSlice/ProjectPageSlice';
 import { getProjectPage } from '../../store/slices/ProjectPageSlice/ProjectPageApi';
-
-const projectMenuList = [
-  {
-    title: 'Բոլորը',
-    icon: see_all_icon,
-    type: 'all'
-  },
-
-  {
-    title: 'Վեբ',
-    icon: web_icon,
-    type: 'WebSite'
-  },
-
-  {
-    title: 'Բջջային',
-    icon: mobile_icon,
-    type: 'mobile'
-  },
-
-  {
-    title: 'Խաղեր և 3D',
-    icon: game_icon,
-    type: '3d'
-  },
-
-]
+import { useTranslation } from 'react-i18next';
 
 
 function ProjectsPage() {
+  const {t, i18n} = useTranslation()
   const [selectedItem, setSelectedItem] = useState(0);
 
-  const respProject = useSelector(selectProjectPageData) 
+  const respProject = useSelector(selectProjectPageData)
+  const loading = useSelector(selectProjectPageLoading)
   
   const dispatch = useDispatch()
   
   const [filterData, setFilterData] = useState([...respProject])
+
+  const projectMenuList = [
+    {
+      title: t('projectType.0'),
+      icon: see_all_icon,
+      type: 'all'
+    },
+  
+    {
+      title: t('projectType.1'),
+      icon: web_icon,
+      type: 'WebSite'
+    },
+  
+    {
+      title: t('projectType.2'),
+      icon: mobile_icon,
+      type: 'mobile'
+    },
+  
+    {
+      title: t('projectType.3'),
+      icon: game_icon,
+      type: '3d'
+    },
+  
+  ]
   
   useEffect(()=>{
     dispatch(getProjectPage())
@@ -93,17 +96,18 @@ function ProjectsPage() {
               projectMenuList.map((el,index)=>
               <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid #9944C0' : ''}}>
                 <span className='filter-menu-projects-title'>{el.title}</span>
-                <span title='Խաղեր և 3D' className='filter-menu-projects-icon'>{el.icon}</span>
+                <span title={t('projectType.' + index)} className='filter-menu-projects-icon'>{el.icon}</span>
             </li>
               )
             }
 
             </ul>
+        {loading ? <span class="loader"></span>: 
         <div className='project-page-items'>
           {filterData.map((el) => (
             <ProjectsPageItem key={el.id} {...el} />
           ))}
-        </div>
+        </div>}
       </div>
     </div>
     </>

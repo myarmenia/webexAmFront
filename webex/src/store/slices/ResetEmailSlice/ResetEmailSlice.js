@@ -8,6 +8,7 @@ const initialState = {
    },
    status: 'idle',
    error: null,
+   loading: true
    };
 
 const resetPasswordSlice = createSlice({
@@ -25,18 +26,21 @@ const resetPasswordSlice = createSlice({
              state.status = 'loading';
           })
           .addCase(postResetPassword.fulfilled, (state, action) => {
-            state.massage = action.payload.massage
+            state.data = action.payload.message.original
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(postResetPassword.rejected, (state, action) => {
             state.status = 'failed';
-            state.error = action.error.message;
+            state.data.message = action.error.message;
+            state.loading = false
           });
     },
  });
  
 
 export const selectResetPassword = (state) => state.resetPassword
+export const selectResetPasswordLoading = (state) => state.resetPassword.loading
 
  export const {} = resetPasswordSlice.actions
 

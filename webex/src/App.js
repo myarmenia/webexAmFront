@@ -27,7 +27,7 @@ import ServicesPage from './components/ServicesPage/ServicesPage';
 
 
 function App() {
-  const leng = localStorage.getItem('lang');
+ const leng = localStorage.getItem('lang') != null ? localStorage.getItem('lang')  : 'am';
 
   const navigate = useNavigate();
 
