@@ -55,6 +55,12 @@ class AuthService
         try {
             $credentials = $request->only('email', 'password');
 
+            $getUserVerificate = VerifyUser::where('email', $credentials['email'])->first();
+  
+            if($getUserVerificate){
+                throw new \Exception(translateMessageApi('email_verified'), 401);
+            }
+
             if (!$token = JWTAuth::attempt($credentials)) {
                 throw new \Exception(translateMessageApi('user-email-or-password-not-found'), 401);
             }
@@ -67,9 +73,12 @@ class AuthService
                 'ip' => request()->ip(),
                 'login_at' => now(),
             ]);
+            
+            $authUser = auth()->user()->toArray();
+            $authUser['avatar'] = $authUser['avatar']?route('get-file', ['path' => $authUser['avatar']]): "";
 
             return [
-                'authUser' => auth()->user()->toArray(),
+                'authUser' => $authUser,
                 'token' => $token
             ];
         } catch (\Exception $e) {

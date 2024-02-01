@@ -15,28 +15,28 @@ class ForgotPasswordService
   {
     $user = User::where('email', $email)->first();
     if ($user) {
-        $token = sha1(Str::random(80));
-        $email = $user->email;
-        $newPasswordReset = PasswordReset::updateOrCreate([
-            'email' => $email,
-            'token'=> $token
-        ]);
+      $token = sha1(Str::random(80));
+      $email = $user->email;
+      PasswordReset::updateOrCreate(
+        ["email" => $email],
+        ["token" => $token]
+      );
 
-        Mail::send(new SendForgotToken($email, $token));
+      Mail::send(new SendForgotToken($email, $token));
 
-        return response()->json(['success' => true, 'message' => translateMessageApi('password-reset-link-sent')], 200);
+      return response()->json(['success' => true, 'message' => translateMessageApi('password-reset-link-sent')], 200);
     } else {
-        return response()->json(['error' => translateMessageApi('user-email-not-found')], 500);
+      return response()->json(['error' => translateMessageApi('user-email-not-found')], 500);
     }
-    
+
   }
 
   public function checkForgotToken($data)
   {
     $haveOrNot = PasswordReset::where('email', $data['email'])->where('token', $data['token'])->first();
 
-    if($haveOrNot){
-        return true;
+    if ($haveOrNot) {
+      return true;
     }
 
     return false;
@@ -45,10 +45,10 @@ class ForgotPasswordService
   public function sendNewPassword($data)
   {
     $updated = User::where('email', $data['email'])->update([
-        'password' => bcrypt($data['password']),
+      'password' => bcrypt($data['password']),
     ]);
 
-    if($updated){
+    if ($updated) {
       PasswordReset::where('email', $data['email'])->delete();
       return true;
     }

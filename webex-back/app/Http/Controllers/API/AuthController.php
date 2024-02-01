@@ -54,7 +54,7 @@ class AuthController extends BaseController
     {
         auth('api')->logout();
 
-        return response()->json(['message' => translateMessageApi('logged-out')]);
+        return response()->json(['success' => true]);
     }
 
     public function signup(SingupRequest $request)

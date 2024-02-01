@@ -33,15 +33,17 @@ function ContactUsPage() {
         e.preventDefault()
             handleSubmit()
             
-            const feedBackObj = {
-                name: e.target[0].value,
-                email: e.target[1].value,
-                message: e.target[2].value
+            if (e.target[0].value && e.target[1].value && e.target[2].value) {
+                const feedBackObj = {
+                    name: e.target[0].value,
+                    email: e.target[1].value,
+                    message: e.target[2].value
+                }
+    
+                dispatch(postFeedBack(feedBackObj))
+    
+                setMessageModal(true)
             }
-
-            dispatch(postFeedBack(feedBackObj))
-
-            setMessageModal(true)
     }
 
 
@@ -82,17 +84,17 @@ function ContactUsPage() {
                                 <h4>{t('contact_us_title.1')}</h4>
 
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={t('feedback.0')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="text" name="name" placeholder={t('feedback.0')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('feedback.1')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="email" name="email" placeholder={t('feedback.1')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 
                             <div className="message-inp">
-                                <textarea  name="message" placeholder={t('feedback.2')} value={values.message} onChange={handleChange} onBlur={handleBlur} required/>
+                                <textarea  name="message" placeholder={t('feedback.2')} value={values.message} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.message && errors.message && <p className="error">{errors.message}</p>}
                             </div>
 

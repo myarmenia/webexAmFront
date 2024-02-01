@@ -33,13 +33,15 @@ function CourseRegistrationPage() {
     e.preventDefault()
    
     handleSubmit()
-    dispatch(postTrialCourse({
-      name: e.target[0].value,
-      phone: e.target[1].value,
-      type: e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value : ''
-    }))
-
-    setMessageModal(true)
+    if(e.target[0].value && e.target[1].value){
+      dispatch(postTrialCourse({
+        name: e.target[0].value,
+        phone: e.target[1].value,
+        type: e.target[2].checked ? e.target[2].value : e.target[3].checked ? e.target[3].value : ''
+      }))
+  
+      setMessageModal(true)
+    }
   }
   return (
     <div className="course-registration-page">
@@ -66,12 +68,12 @@ function CourseRegistrationPage() {
                   <form className="reg-form" onSubmit={(e) => handleFormSubmit(e, handleSubmit)}>
                     <SectionTitle title={t('reg_and_log.' + '11')} />
                     <div className="name-inp">
-                      <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
+                      <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
                       {touched.name && errors.name && <p className="error">{errors.name}</p>}
                     </div>
 
                     <div className="tel-inp">
-                      <input type="text" name="phone" placeholder={t('reg_and_log.' + '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
+                      <input type="text" name="phone" placeholder={t('reg_and_log.' + '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur}/>
                       {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                     </div>
 
