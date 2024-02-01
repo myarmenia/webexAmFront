@@ -11,8 +11,10 @@ import { getDataAll, getLoadingDashboard } from '../../../store/slices/Dashboard
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 
 export const Dashboard = () => {
+  const { t, i18n } = useTranslation()
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const DataAll = useSelector(getDataAll);
@@ -32,12 +34,12 @@ export const Dashboard = () => {
         <div>Loading</div>
       ) : (
         <div style={{ padding: '40px', backgroundColor: '#010526' }}>
-          <p className="allDashboard_title">Dashboard</p>
+          <p className="allDashboard_title">{t('dashboard_name')}</p>
           <div className="allDashboard">
             <div className="account">
               <div className="account_div">
                 <img src={Student} alt="Student" className="account_img" />
-                <span className="account_name">Account</span>
+                <span className="account_name">{t('account_Box.0')}</span>
               </div>
               <div className="account_div">
                 {DataAll.dashboard.account.avatar === null ? (
@@ -52,7 +54,7 @@ export const Dashboard = () => {
                 <button
                   className="account_button"
                   onClick={() => navigate(`/${lang}/profilePage/profile`)}>
-                  Edit profile
+                  {t('account_Box.1')}
                 </button>
               </div>
             </div>
@@ -60,7 +62,7 @@ export const Dashboard = () => {
               {console.log('statussssss', DataAll.dashboard.visit_history.status)}
               <div className="account_div">
                 <img src={Purchase} alt="Student" className="account_img" />
-                <span className="account_name">Purchase history</span>
+                <span className="account_name">{t('purchase_history.0')}</span>
               </div>
               <div className="purchaseHistory_down">
                 <div className="purchaseHistory_lessCount">
@@ -68,10 +70,10 @@ export const Dashboard = () => {
                     <span className="lesson_count_number">
                       {DataAll.dashboard.visit_history.lesson_quantity}
                     </span>
-                    <span className="lesson_count_name">Lessons</span>
+                    <span className="lesson_count_name">{t('purchase_history.1')}</span>
                   </div>
                   <div className="lesson_total">
-                    of total {DataAll.dashboard.visit_history.total_lesson_days}
+                  {t('purchase_history.2')} {DataAll.dashboard.visit_history.total_lesson_days}
                   </div>
                 </div>
                 <div className="purchaseHistory_procent">
@@ -109,7 +111,7 @@ export const Dashboard = () => {
               </div>
             </div>
           </div>
-          <p className="allDashboard_title2">My Training</p>
+          <p className="allDashboard_title2">{t('my_Training')}</p>
           <Training DataAll={DataAll} />
         </div>
       )}

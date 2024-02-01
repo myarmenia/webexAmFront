@@ -10,8 +10,10 @@ import RightArrow from '../../../images/RightArrow.png'
 import { setIsCurrentLessonReq } from '../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 import { getCurrentLanguageLesson } from '../../../store/slices/CurrentLessons/CurrentLessonsApi';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 
 function VisitHistory() {
+  const { t, i18n } = useTranslation()
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const AllVisitDate = useSelector(getAllVisitDate);
@@ -62,16 +64,16 @@ function VisitHistory() {
             padding: '2%',
             boxSizing: 'border-box',
           }}>
-          <p className="payment-title">Visit history</p>
+          <p className="payment-title">{t('visitHistory.0')}</p>
           <div className="allPayment">
             <table className="tableStyle">
               <thead className="thead">
                 <tr>
-                  <th>Number</th>
-                  <th>Lessons</th>
-                  <th>Total lessons</th>
-                  <th>Number lessons</th>
-                  <th>Payment</th>
+                  <th>{t('visitHistory.1')}</th>
+                  <th>{t('visitHistory.2')}</th>
+                  <th>{t('visitHistory.3')}</th>
+                  <th>{t('visitHistory.4')}</th>
+                  <th>{t('visitHistory.5')}</th>
                 </tr>
               </thead>
               <tbody>

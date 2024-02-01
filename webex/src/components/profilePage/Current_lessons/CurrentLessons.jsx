@@ -22,9 +22,11 @@ import {
 import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
 import Plyr from 'plyr-react';
+import { useTranslation } from 'react-i18next'
 // import 'plyr-react/dist/plyr.css';
 
 function CurrentLessons() {
+  const { t, i18n } = useTranslation()
   const allCourses = useSelector(getAllCourses);
   const [allCoursesState, setallCoursesState] = useState(allCourses);
   const allData = useSelector(getAllData);
@@ -114,7 +116,7 @@ function CurrentLessons() {
                   }}
                 />
                 <div className="description">
-                  <p className="description_title">Նկարագրություն</p>
+                  <p className="description_title">{t('description')}</p>
                   <p className="description_text">
                     {description}
 
@@ -137,27 +139,27 @@ function CurrentLessons() {
              <Button index="5" />
            </div> */}
                 <div className="homework_linne">
-                  <p className="homework_title">Կատարել տնային առաջադրանքները</p>
+                  <p className="homework_title">{t('homework_linne.0')}</p>
                   {allData?.current_lesson?.tasks
                     ? allData?.current_lesson?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index}>
                           <p className="homework_text">
-                            Lesson {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
                           </p>
-                          <p>{el.duration} minutes</p>
+                          <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
                       ))
                     : allData.lessons[0]?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index}>
                           <p className="homework_text">
-                            Lesson {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
                           </p>
-                          <p>{el.duration} minutes</p>
+                          <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
                       ))}
                 </div>
                 <div className="homework_side">
-                  <p className="HomeworkList">Բովանդակություն</p>
+                  <p className="HomeworkList">{t('cordial')}</p>
                   <Homeworkes lessons={allData?.lessons} />
                 </div>
               </div>
@@ -168,7 +170,7 @@ function CurrentLessons() {
             </div>
             <div className="rightSide">
               {/* <div style={{ width: '18vw' }}> */}
-              <p className="titleAllVideo">Բոլոր վիդեոդասերը</p>
+              <p className="titleAllVideo">{t('all_video_lessons')}</p>
               <div className="allvideoLessons_div">
                 {(allCourses || allCoursesState).map((el, index) => (
                   <div
