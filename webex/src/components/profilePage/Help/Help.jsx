@@ -6,6 +6,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendClientQuestion } from '../../../store/slices/Help/HelpApi';
 import { getMessage } from '../../../store/slices/Help/HelpSlice';
+import { useTranslation } from 'react-i18next'
 
 const validationSchema = yup.object({
   email: yup.string().email('Անվանման սխալ').required('Էլ. հասցեն պարտադիր է'),
@@ -13,6 +14,7 @@ const validationSchema = yup.object({
 });
 
 function Help() {
+  const { t, i18n } = useTranslation()
   const dispatch = useDispatch();
   const messageAnswer = useSelector(getMessage);
   console.log('messageAnswer', messageAnswer);
@@ -40,11 +42,11 @@ function Help() {
         padding: '2%',
         boxSizing: 'border-box',
       }}>
-      <p className="help-title">Օգնություն</p>
+      <p className="help-title">{t('help.0')}</p>
       <div className="AllHelp">
-        <p className="fast-support">Արագ աջակցություն</p>
+        <p className="fast-support">{t('help.1')}</p>
         <p className="often-asked-question">
-          Ամենահաճախ տրվող հարցերի պատասխաններն ընդամենը մեկ սեղմումով:
+        {t('help.2')}
         </p>
         <Accordion>
           <Accordion.Item eventKey="0">
@@ -83,14 +85,14 @@ function Help() {
         </Accordion>
         <form onSubmit={formik.handleSubmit}>
           <div className="write-your-question">
-            <p className="write-your-question-title">Գրեք ձեր հարցը </p>
+            <p className="write-your-question-title">{t('help.3')} </p>
             <input
               type="text"
               name="name"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
-              placeholder="Անուն Ազգանուն"
+              placeholder={t('help.4')}
               className="write-your-question-input"
             />
             <input
@@ -99,7 +101,7 @@ function Help() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
-              placeholder="Էլ. հասցե"
+              placeholder={t('help.5')}
               className="write-your-question-input"
             />
             {formik.touched.email && formik.errors.email ? (
@@ -111,7 +113,7 @@ function Help() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.phone}
-              placeholder="հեռախոսի համար"
+              placeholder={t('help.6')}
               className="write-your-question-input"
             />
             <textarea
@@ -121,13 +123,13 @@ function Help() {
               value={formik.values.message}
               cols="52"
               rows="8"
-              placeholder="հաղորդագրություն"
+              placeholder={t('help.7')}
               className="write-your-question-textarea"></textarea>
             {formik.touched.message && formik.errors.message ? (
               <span style={{ color: 'red', marginTop: '-20px' }}>{formik.errors.message}</span>
             ) : null}
             <div className='succesMessge'> 
-            <button type="submit" className="button-save">Ուղարկել</button> 
+            <button type="submit" className="button-save">{t('help.8')}</button> 
               <span>{messageAnswer ? messageAnswer : ''}</span>
             </div>
           </div>

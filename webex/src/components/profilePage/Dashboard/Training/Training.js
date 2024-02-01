@@ -7,8 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import { getCurrentLanguageLesson } from '../../../../store/slices/CurrentLessons/CurrentLessonsApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsCurrentLessonReq, setIsCurrentLessonReq } from '../../../../store/slices/CurrentLessons/CurrentLessonsSlice';
+import { useTranslation } from 'react-i18next'
 
 function Training({ DataAll }) {
+  const { t, i18n } = useTranslation()
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isCurrentLessonReq  = useSelector(getIsCurrentLessonReq)
@@ -38,9 +40,9 @@ function Training({ DataAll }) {
                 <span className="lesson_count_number">
                   {el.active_languages_quantity || el.current_lesson_number}
                 </span>
-                <span className="lesson_count_name">Lessons</span>
+                <span className="lesson_count_name">{t('purchase_history.1')}</span>
               </div>
-              <div className="lesson_total">of total {el.total_languages || el.total_lessons}</div>
+              <div className="lesson_total">{t('purchase_history.2')} {el.total_languages || el.total_lessons}</div>
             </div>
             <div className="purchaseHistory_procent">
               {/* {el.active_languages_quantity ? 
