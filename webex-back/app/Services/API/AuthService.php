@@ -55,6 +55,12 @@ class AuthService
         try {
             $credentials = $request->only('email', 'password');
 
+            $getUserVerificate = VerifyUser::where('email', $credentials['email'])->first();
+  
+            if($getUserVerificate){
+                throw new \Exception(translateMessageApi('email_verified'), 401);
+            }
+
             if (!$token = JWTAuth::attempt($credentials)) {
                 throw new \Exception(translateMessageApi('user-email-or-password-not-found'), 401);
             }
