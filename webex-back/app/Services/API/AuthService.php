@@ -73,9 +73,12 @@ class AuthService
                 'ip' => request()->ip(),
                 'login_at' => now(),
             ]);
+            
+            $authUser = auth()->user()->toArray();
+            $authUser['avatar'] = $authUser['avatar']?route('get-file', ['path' => $authUser['avatar']]): "";
 
             return [
-                'authUser' => auth()->user()->toArray(),
+                'authUser' => $authUser,
                 'token' => $token
             ];
         } catch (\Exception $e) {
