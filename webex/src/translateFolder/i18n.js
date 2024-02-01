@@ -335,6 +335,51 @@ i18n
           ],
           dashboard_name: 'Dashboard',  
 
+
+          web_project_page_top_div_title: 'Web App Development',
+
+          KeyWordComponent: 'Keywords',
+
+          KeyWordComponentItem: [
+            'Integrated website promotion,',
+            'Budget Promotion,',
+            'Internet advertising,',
+            'Search Engine,',
+            'Promotion Site Optimization,',
+            ' SEO - Search Engine Optimization,',
+            ' Contextual Advertising,',
+            'Promotion on social networks, blogs, service,',
+            ' Free Site Audit,',
+            'Free counter installation,',
+            ' Website promotion and optimization: question - answer,',
+            ' Articles about website promotion,',
+            ' Cost of website promotion,',
+            '  Price Brand Pages Creation and Groups in Social Networks,',
+            ' 3D modeling,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Visualization of the general plan,',
+            ' 3D modeling,',
+            '  3D interior visualization,',
+            '  ИТ-consulting,',
+            ' iOS,',
+            ' Android,',
+            'Design,',
+            'Unity development,',
+            'UI/UX design,',
+            ' 2D and 3D game development'
+          ],
+
+          web_project_page_web_development_title: 'Web App Development',
+
+          web_project_page_web_development_info: [
+            'Webex Technologies is operating for over 15 years. Our company has extensive experience in web application development, outsourcing, software development and web development, IT consulting, application integration, business process analysis, software testing, maintenance and support.',
+            "Let's take a look at what the services provided by Webex Technologies are."
+          ],
+
+
+
+
           account_Box: [
             'Account',
             'Edit profile',
@@ -394,7 +439,7 @@ i18n
             help: "Help",
             visit_history: "Visit history",
             log_out: "Log out"
-          
+
         },
       },
       am: {
@@ -753,6 +798,48 @@ i18n
 
           description: 'Նկարագրություն',
 
+
+          web_project_page_top_div_title: 'Վեբ ծրագրի մշակում',
+
+          KeyWordComponent: 'Բանալի բառեր',
+
+          KeyWordComponentItem: [
+            'Ինտեգրված կայքի առաջխաղացում,',
+            'Բյուջեի առաջխաղացում,',
+            'Ինտերնետ գովազդ,',
+            'Որոնման համակարգ,',
+            'Կայքի օպտիմզացում,',
+            ' SEO - Որոնման համակարգի օպտիմալացում,',
+            'Համատեքստային գովազդ,',
+            'Սոցիալական ցանցերում առաջխաղացում, բլոգեր, ծառայություններ,',
+            ' Կայքերի ազատ աուդիտ,',
+            'Հաշվի անվճար տեղադրում,',
+            ' Կայքերի առաջխաղացում և օպտիմալացում. հարց / պատասխան,',
+            ' Հոդվածների կայքի առաջխաղացման մասին,',
+            ' Կայքի առաջխաղացման արժեք,',
+            'Գներ Բրենդային էջերի ստեղծումը սոցիալական ցանցերում,',
+            'Եռաչափ մոդելավորում,',
+            ' Blender,',
+            'Gimp,',
+            ' Քոթեջի և իր տարածքի 3D վիզուալացում,',
+            ' 3D մոդելավորում,',
+            'Ինտերիերի 3D վիզուալիզացիում,',
+            ' ՏՏ - խորհրդատվություն,',
+            ' iOS,',
+            ' Android,',
+            ' Դիզայն,',
+            'Unity-ով ստեղծում,',
+            ' UI / UX դիզայն,',
+            ' 2D և 3D խաղերի ստեղծում'
+          ],
+
+          web_project_page_web_development_title: 'Վեբ ծրագրի մշակում',
+
+          web_project_page_web_development_info: [
+            'Webex technologies ընկերությունը գործում է ավելի քան 15 տարի։ Մեր ընկերությունը ունի մեծ փորձ վեբ ծրագրերի մշակման, աութսորսինգի, ծրագրային ապահովման և վեբ ծրագրերի մշակման, ՏՏ խորհրդատվության, հավելվածների ինտեգրման, բիզնես գործընթացների վերլուծության, ծրագրային ապահովման փորձարկման, պահպանման և աջակցության ոլորտում։',
+            'Եկեք նայենք, թե որոնք են Webex Technologies-ի մատուցած ծառայությունները:'
+          ]
+
           homework_linne: [
             'Կատարել տնային առաջադրանքները',
             'Դաս',
@@ -799,6 +886,7 @@ i18n
           help: "Օգնություն",
           visit_history: "Այցելության պատմություն",
           log_out: "Դուրս գալ"
+
         }
 
       },
@@ -1152,6 +1240,47 @@ i18n
             'Мобильный',
             'Игры и 3D'
           ],
+
+          web_project_page_top_div_title: 'Разработка веб приложений',
+
+          KeyWordComponent: 'Ключевые слова',
+
+          KeyWordComponentItem: [
+            'Комплексное продвижение сайтов,',
+            'Бюджетное продвижение,',
+            'Реклама в интернете,',
+            'Поисковое продвижение сайта,',
+            'Оптимизация сайта,',
+            'SEO - поисковая оптимизация,',
+            'Контекстная реклама,',
+            'Продвижение в соцсетях, блогах, сервисах,',
+            'Бесплатный экспресс-аудит сайта,',
+            'Бесплатная установка счетчика,',
+            'Продвижение и оптимизация сайтов: вопрос-ответ,',
+            'Статьи о продвижении сайтов,',
+            ' Стоимость продвижения сайтов,',
+            ' Создание бренд-страниц и групп в соцсетях,',
+            'Трехмерное моделирование,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Визуализация коттеджа с территорией,',
+            ' 3D моделирование,',
+            ' 3D Визуализация интерьеров,',
+            ' ИТ-консалтинг,',
+            ' iOS,',
+            ' Android,',
+            'Дизайн,',
+            ' Unity разработкиа,',
+            'UI/UX дизайн,',
+            ' 2D и 3D разработка игр'
+          ],
+
+          web_project_page_web_development_title: 'Разработка веб приложений',
+
+          web_project_page_web_development_info: [
+            'Компания ВэбЕкс Технолоджис была основана в ноябре 2007 года. Наша компания имеет большой опыт в области разработки веб-приложении, аутсорсинга разработки программного обеспечения и веб-разработки, ИТ-консалтинга, интеграции приложений, анализа бизнес-процессов, тестирования ПО, сопровождения и поддержки.',
+            'Давайте разберем, что из себя представляют услуги, которые оказывает компания ВебЭкс Технолоджис.'
+
           dashboard_name: 'Панель приборов',
           account_Box: [
             'Счет',
@@ -1206,6 +1335,7 @@ i18n
             'Всего уроков',
             'Количество уроков',
             'Оплата'
+
           ]
         }
       },
