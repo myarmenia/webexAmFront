@@ -44,16 +44,17 @@ function LoginPage() {
 
     const validationSchema = yup.object().shape({
         email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
-        password: yup.string()
-            .required(t('validation_reg_log.' + '0')),
+        password: yup.string().required(t('validation_reg_log.' + '0')),
     })
 
     function handleLogSub(e, handleSubmit, isValid, dirty) {
         e.preventDefault()
+        handleSubmit()
         if (e.target[0].value && e.target[1].value) {
-            handleSubmit()
-            dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
-             !respLogin.data.isAuth && setMessageModal(true)
+            if (e.target[0].value && e.target[1].value) {
+                dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
+                !respLogin.data.isAuth && setMessageModal(true)
+            }
         }
 
     }
@@ -88,12 +89,12 @@ function LoginPage() {
                                 <SectionTitle title={t('reg_and_log.' + '1')} />
 
                                 <div className="email-inp">
-                                    <input type="email" name="email" placeholder={t('reg_and_log.' + '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
+                                    <input type="email" name="email" placeholder={t('reg_and_log.' + '3')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                                     {touched.email && errors.email && <p className="error">{errors.email}</p>}
                                 </div>
 
                                 <div className="password-inp">
-                                    <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} required />
+                                    <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} />
                                     <span onClick={() => setViewPassword(!viewPassword)}>{eyeIcon}</span>
                                     {touched.password && errors.password && <p className="error">{errors.password}</p>}
                                 </div>
