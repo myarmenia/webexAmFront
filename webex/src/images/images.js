@@ -238,3 +238,8 @@ export const our_teemImage = require('./IMAGE.png')
 // =================================================================================
 
 export const bottomLine = require('./takigic.png')
+
+
+// =======userDefault avatar==================
+
+export const defaultAvatar = require('./Rectangle.png')

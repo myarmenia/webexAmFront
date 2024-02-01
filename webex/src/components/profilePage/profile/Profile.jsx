@@ -93,7 +93,7 @@ function Profile() {
   return (
     <div
       style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>
-      <p className="your-profile-title">{t('profile.0')}</p>
+      <p className="your-profile-title">{t('profileArr.0')}</p>
       <div className="allProfile">
         <div className="profile-picture">
           <div className="profile-img">
@@ -121,7 +121,7 @@ function Profile() {
           </div>
         </div>
         <div className="fill-details">
-          <p className="fill-details-title">{t('profile.1')}</p>
+          <p className="fill-details-title">{t('profileArr.1')}</p>
           <div className="input-container">
             <input
               type="text"
@@ -151,10 +151,10 @@ function Profile() {
           </div>
           <div className="buttons-for-fill">
             <button className="button-save" onClick={sendUserInfo}>
-            {t('profile.2')}
+            {t('profileArr.2')}
             </button>
             <button className="button-cancel" onClick={cancelFunc}>
-            {t('profile.3')}
+            {t('profileArr.3')}
             </button>
           </div>
         </div>
@@ -163,7 +163,7 @@ function Profile() {
         </p>
         <div className="change-password">
           <div className="change-password-div">
-            <p className="change-password-title">{t('profile.4')}</p>
+            <p className="change-password-title">{t('profileArr.4')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -172,7 +172,7 @@ function Profile() {
             />
           </div>
           <div className="change-password-div2">
-            <p className="change-password-title">{t('profile.5')}</p>
+            <p className="change-password-title">{t('profileArr.5')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -181,7 +181,7 @@ function Profile() {
             />
           </div>
           <div className="change-password-div2">
-            <p className="change-password-title">{t('profile.6')}</p>
+            <p className="change-password-title">{t('profileArr.6')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -190,7 +190,7 @@ function Profile() {
             />
           </div>
           <button className="button-save button-save-down" onClick={sendUserPassword}>
-          {t('profile.2')}
+          {t('profileArr.2')}
           </button>
         </div>
       </div>
