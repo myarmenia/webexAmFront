@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAuthUser } from '../../../store/slices/Auth/AuthSlice';
 import { editPassword, editUser } from '../../../store/slices/Profile/ProfileApi';
 import { getMessage } from '../../../store/slices/Profile/ProfileSLice';
+import { useTranslation } from 'react-i18next'
 
 function Profile() {
+  const { t, i18n } = useTranslation()
   const authUser = useSelector(getAuthUser);
   const getMes = useSelector(getMessage);
   const [profileImg, setProfileImg] = useState(profileImgg);
@@ -91,7 +93,7 @@ function Profile() {
   return (
     <div
       style={{ backgroundColor: '#F4F7F9', width: '100%', padding: '2%', boxSizing: 'border-box' }}>
-      <p className="your-profile-title">Քո Պրոֆիլը</p>
+      <p className="your-profile-title">{t('profile.0')}</p>
       <div className="allProfile">
         <div className="profile-picture">
           <div className="profile-img">
@@ -119,7 +121,7 @@ function Profile() {
           </div>
         </div>
         <div className="fill-details">
-          <p className="fill-details-title">Լրացրու տվյալներդ</p>
+          <p className="fill-details-title">{t('profile.1')}</p>
           <div className="input-container">
             <input
               type="text"
@@ -149,10 +151,10 @@ function Profile() {
           </div>
           <div className="buttons-for-fill">
             <button className="button-save" onClick={sendUserInfo}>
-              Պահպանել
+            {t('profile.2')}
             </button>
             <button className="button-cancel" onClick={cancelFunc}>
-              Չեղարկել
+            {t('profile.3')}
             </button>
           </div>
         </div>
@@ -161,7 +163,7 @@ function Profile() {
         </p>
         <div className="change-password">
           <div className="change-password-div">
-            <p className="change-password-title">գրիր գործող գաղտնաբառը</p>
+            <p className="change-password-title">{t('profile.4')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -170,7 +172,7 @@ function Profile() {
             />
           </div>
           <div className="change-password-div2">
-            <p className="change-password-title">գրիր նոր գաղտնաբառը</p>
+            <p className="change-password-title">{t('profile.5')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -179,7 +181,7 @@ function Profile() {
             />
           </div>
           <div className="change-password-div2">
-            <p className="change-password-title">կրկնիր նոր գաղտնաբառը</p>
+            <p className="change-password-title">{t('profile.6')}</p>
             <input
               type="text"
               placeholder="Placeholder Text"
@@ -188,7 +190,7 @@ function Profile() {
             />
           </div>
           <button className="button-save button-save-down" onClick={sendUserPassword}>
-            Պահպանել
+          {t('profile.2')}
           </button>
         </div>
       </div>

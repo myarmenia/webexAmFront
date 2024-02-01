@@ -2,17 +2,19 @@ import React from 'react';
 import './Homeworkes.css';
 import { homeworkes } from '../../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import Block from '../../../../images/Block.svg';
+import { useTranslation } from 'react-i18next'
 
 function Homeworkes({lessons}) {
+  const { t, i18n } = useTranslation()
   console.log(lessons);
   return (
     <>
       {lessons?.map((el, index) => (
         <div className="homeworkes_linne_div" key={index}>
           <p className="homeworkes_text">
-            Lesson {el.id}: {el.description}
+          {t('homework_linne.1')} {el.id}: {el.description}
           </p>
-          <p>{el.duration} minutes</p>
+          <p>{el.duration} {t('homework_linne.2')}</p>
         </div>
         // <div className="allLIne" key={index}>
         //   <div className="lineLeft">

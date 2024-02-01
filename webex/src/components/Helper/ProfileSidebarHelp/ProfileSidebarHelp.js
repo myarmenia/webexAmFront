@@ -5,11 +5,13 @@ import Notification from '../../../images/Notification.svg';
 import Selectedlessons from '../../../images/Selectedlessons.svg';
 import Homework from '../../../images/Homework.svg';
 import CurrentHomework from '../../../images/CurrentHomework.svg';
+
 // import Payment from '../../../images/Payment.svg';
 // import Help from '../../../images/Help.svg';
 // import Student from '../../../images/Student.svg';
 // import Lesson from '../../../images/Lesson.svg';
 // import LogOut from '../../../images/LogOut.svg';
+
 
 export const ProfileSidebarArr = [
   {
@@ -84,3 +86,6 @@ export const homeworkes = [
     time: '20։04 sec.',
   },
 ];
+
+
+
