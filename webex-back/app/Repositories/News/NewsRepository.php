@@ -55,6 +55,9 @@ class NewsRepository implements NewsInterface
         return News::where('id', $id)
             ->with([
                 'images',
+                'category.translations' => function ($q) {
+                    $q->where('lang', session('languages'));
+                },
                 'translations' => function ($q) {
                     $q->where('lang', session('languages'));
                 }

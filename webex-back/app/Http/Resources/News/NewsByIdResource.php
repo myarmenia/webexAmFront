@@ -21,6 +21,7 @@ class NewsByIdResource extends JsonResource
             'image' => isset($this->images[0])?route('get-file',['path'=>$this->images[0]->path]):null,
             'description' => $this->translations->first()->description,
             'title' => $this->translations->first()->title,
+            'categoryName' => $this->category->translations->first()->name
         ];
     }
 }
