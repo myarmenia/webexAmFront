@@ -25,6 +25,7 @@ import Help from './components/profilePage/Help/Help';
 import ServicesPage from './components/ServicesPage/ServicesPage';
 import WebProjectPage from './components/WebProjectPage/WebProjectPage';
 import NewsMainPage from './components/NewsMainPage/NewsMainPage';
+import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
 
 
 
@@ -60,8 +61,8 @@ function App() {
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
             <Route path='news'>
               <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
-               <Route path=':id' element={<h1>amen news</h1>}/>
-               <Route path=':category/:id' element={<h1>category</h1>}/>
+               <Route path=':id' element={<NewsUniquePage/>}/>
+               <Route path='category/:id' element={<h1>category</h1>}/>
             </Route>
             <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
