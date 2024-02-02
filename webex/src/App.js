@@ -24,6 +24,7 @@ import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
 import Help from './components/profilePage/Help/Help';
 import ServicesPage from './components/ServicesPage/ServicesPage';
 import WebProjectPage from './components/WebProjectPage/WebProjectPage';
+import NewsMainPage from './components/NewsMainPage/NewsMainPage';
 
 
 
@@ -57,6 +58,7 @@ function App() {
             </Route>
             <Route path='webProject' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
+            <Route path="news" element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>} />
             <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
