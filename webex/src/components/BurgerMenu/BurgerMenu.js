@@ -1,7 +1,7 @@
 import React from 'react'
 import './BurgerMenu.css'
 import { RegistreIcon, burger, closeBurgerIcon, lengIcon, loginIcon } from '../../iconFolder/icon'
-import { logoImage, projectImg_1 } from '../../images/images'
+import { defaultAvatar, logoImage, projectImg_1 } from '../../images/images'
 import NavMenuItem from '../NavMenuItem/NavMenuItem'
 import Button from '../Button/Button'
 import SelectLng from '../SelectLng/SelectLng'
@@ -69,7 +69,7 @@ function BurgerMenu() {
                   </div>}
 
                   {isAuth && <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
-                    <img src={authUser.avatar} alt="avatar" />
+                    <img src={authUser.avatar !== null ? authUser.avatar : defaultAvatar} alt="avatar" />
                     <span>{authUser.name}</span>
                   </div>}
                   

@@ -17,6 +17,7 @@ import { VisitHistoryReducer } from "./slices/VisitHistory/VisitHistorySlice";
 import { ClientQuestionSlice, clientQuestionReducer } from "./slices/Help/HelpSlice";
 import { feedBackReducer } from "./slices/FeedbackSlice/FeedbackSlice";
 import { tellUsReducer } from "./slices/TellUsSlice/TellUsSlice";
+import { newsMainPageReducer } from "./slices/NewsMainSlice/NewsMainSlice";
 
 
 const store = configureStore({
@@ -39,6 +40,7 @@ const store = configureStore({
         clientquestion:clientQuestionReducer,
         feedBack: feedBackReducer,
         tellUs: tellUsReducer,
+        newsMainPage: newsMainPageReducer,
 
     },
     // middleware: (getDefaultMiddlware)=>[
