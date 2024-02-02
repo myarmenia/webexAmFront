@@ -5,6 +5,7 @@ const initialState = {
   data: [],
    status: 'idle',
    error: null,
+   loading: true, 
    };
 
 const newsMainPageSlice = createSlice({
@@ -24,13 +25,13 @@ const newsMainPageSlice = createSlice({
           .addCase(getNewsMainPage.fulfilled, (state, action) => {
             
             state.data = action.payload
-
-            console.log(state.data,'gggg');
+            state.loading = false
              state.status = 'succes';
           })
           .addCase(getNewsMainPage.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
+            state.loading = false
           });
     },
  });
@@ -38,6 +39,7 @@ const newsMainPageSlice = createSlice({
 
 export const selectNewsMainPage = (state) => state.newsMainPage
 export const selectNewsMainPageData = (state) => state.newsMainPage.data
+export const selectNewsMainPageLoading = (state) => state.newsMainPage.loading
 
  export const {} = newsMainPageSlice.actions
 

@@ -102,7 +102,7 @@ function ProjectsPage() {
             }
 
             </ul>
-        {loading ? <span class="loader"></span>: 
+        {loading ? <span className="loader"></span>: 
         <div className='project-page-items'>
           {filterData.map((el) => (
             <ProjectsPageItem key={el.id} {...el} />
