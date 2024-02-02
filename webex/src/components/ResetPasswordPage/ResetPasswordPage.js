@@ -72,7 +72,7 @@ function ResetPasswordPage() {
         <div className='reset-password-page'>
             {
                 loading ? (
-                    <span class="loader"></span>
+                    <span className="loader"></span>
                 ) : respResetPass.data.success ? (
                     <div className='container'>
                         <h5>{t('reg_and_log.' + '18')}</h5>
