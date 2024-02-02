@@ -58,7 +58,11 @@ function App() {
             </Route>
             <Route path='webProject' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
-            <Route path="news" element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>} />
+            <Route path='news'>
+              <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
+               <Route path=':id' element={<h1>amen news</h1>}/>
+               <Route path=':category/:id' element={<h1>category</h1>}/>
+            </Route>
             <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />
             <Route path="profilePage" element={<PrivateRoute><ProfilePage /></PrivateRoute>}>

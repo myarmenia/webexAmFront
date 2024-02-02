@@ -38,7 +38,7 @@ function BurgerMenu() {
               <div className='drop-item'>
                     <NavMenuItem index="1" path={"/programing"}/>
                     <ul className='drop-menu'>
-                         <NavMenuItem index="8" path="/1"/>
+                         <NavMenuItem index="8" path="/webProject"/>
                          <NavMenuItem index="9" path="/2"/>
                          <NavMenuItem index="10" path="/3"/>     
                          <NavMenuItem index="11" path="/3"/>     

@@ -22,9 +22,9 @@ function Footer() {
                     <span>{t('footerMenu.'+ '5')}</span>
                     <div className='footer-icons'>
                         {arrowIcon}
-                        <a href="#">{fbIcon}</a>
-                        <a href="#">{instaIcon}</a>
-                        <a href="#">{linkedinIcon}</a>
+                        <a href="https://www.facebook.com/webexarmenia" target='_blanc'>{fbIcon}</a>
+                        <a href="https://www.instagram.com/webex.am/" target='_blanc'>{instaIcon}</a>
+                        <a href="https://www.linkedin.com/groups/13856890/" target='_blanc'>{linkedinIcon}</a>
 
                     </div>
                 </div>
