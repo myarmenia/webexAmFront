@@ -14,7 +14,7 @@
     "user-edit": "Data successfully saved",
     "wrong-password": "Incorrect password",
     "user-email-not-found": "User with this email address not found",
-    "password-reset-link-sent": "Please check your email",
+    "password-reset-link-sent": "If you filled your email right, please check it",
     "password-changed-successfully": "Password successfully changed",
     "activated-email": "To complete the registration, you need to activate your email."
 }
