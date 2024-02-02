@@ -222,13 +222,13 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
 
                                     </div>
 
-                                    
-                                    </div>
-
                                     <ReCAPTCHA
+                                        style={{alignItems: 'center'}}
                                         ref={captchaRef}
                                         sitekey="6Lcc1l8pAAAAAI_bws4kEJ478msd2uBdRfZT4m2e"
                                     />
+                                    
+                                    </div>
 
                                     <SubmitBtn index="3" />
                                 </form>
