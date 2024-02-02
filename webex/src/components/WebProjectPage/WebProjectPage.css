@@ -1,5 +1,6 @@
 .web-project-page{
     background-color: var(--main_color);
+    min-height: 100vh;
 }
 
 .web-project-page .container {

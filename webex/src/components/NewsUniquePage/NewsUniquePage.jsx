@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getNewsUniquePage } from '../../store/slices/NewsUniqueSlice/NewsUniqueApi'
 import { selectNewsUniquePageData, selectNewsUniquePageLoading } from '../../store/slices/NewsUniqueSlice/NewsUniqueSlice'
+import ShareComponent from '../ShareComponent/ShareComponent'
+
+
 
 function NewsUniquePage() {
     const {id} = useParams()
@@ -39,12 +42,13 @@ function NewsUniquePage() {
             {
                 loading ? <h1>fhvgfrjhfjhbfhjfbh</h1> : 
                 <div className='news_unique-page-item'>
-                    <h3>category</h3>
+                    <h3>{respUniquePage.categoryName}</h3>
                     <div className='img_and_info_div'>
                         <img src={respUniquePage.image} alt="" />
                         <h4>{respUniquePage.title}</h4>
-                        <div>
+                        <div className='share_and_date'>
                             <span>{formatCreatedAt(respUniquePage.created_at)}</span>
+                            <ShareComponent/>
                         </div>
                     </div>
                     <p>{respUniquePage.description}</p>
