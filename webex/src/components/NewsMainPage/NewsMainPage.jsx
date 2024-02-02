@@ -4,18 +4,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getNewsMainPage } from '../../store/slices/NewsMainSlice/NewsMainApi'
 import { selectNewsMainPageData, selectNewsMainPageLoading } from '../../store/slices/NewsMainSlice/NewsMainSlice'
 import NewsMainPageCategory from '../NewsMainPageCategory/NewsMainPageCategory'
+import { useNavigate } from 'react-router-dom'
 
 function NewsMainPage() {
     const responsNews = useSelector(selectNewsMainPageData)
     const loading = useSelector(selectNewsMainPageLoading)
     const category1 = responsNews[0]
+    const leng = localStorage.getItem('lang')
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(getNewsMainPage())
     },[])
 
     const formatCreatedAt = (createdAt) => {
-        const leng = localStorage.getItem('lang')
         const date = new Date(createdAt);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         if (leng == "am") {
@@ -38,12 +40,12 @@ function NewsMainPage() {
             loading ? <div className='load-div'><span className="loader"></span> </div> :
             (<div className='container'>
             <div className='category-top-div'>
-                <h3>{category1.category}</h3>
+                <h3 onClick={()=>navigate(`/${leng}/news/category/${category1.category.categoryId}`)}>{category1.category.categoryName}</h3>
                 
                 <div className='category-top-div-block'>
-                    <div className='category-top-div-big-div'>
+                    <div className='category-top-div-big-div' onClick={()=>navigate(`/${leng}/news/${category1.items[0].id}`)}>
                         <div className='category-top-div-big-div-img-div'>
-                            <img src={category1.items[0].image} alt="nkar" />
+                            <img src={category1.items[0].image} alt="nkar"/>
                         </div>
                         <div className='category-top-div-big-div-info'>
                             <h4>{category1.items[0].title}</h4>
@@ -55,7 +57,7 @@ function NewsMainPage() {
                     <div className='category-top-div--small-div'>
                         {
                             category1.items.map(el => 
-                                <div key={el.id} className='category-top-div-small-div-item'>
+                                <div key={el.id} className='category-top-div-small-div-item' onClick={()=>navigate(`/${leng}/news/${el.id}`)}>
                                     <div className='category-top-div-small-div-item-img-div'>
                                         <img src={el.image} alt="nkar"/>
                                     </div>
