@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import qs from 'qs';
 import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './App.css';
 import HomeWraper from './page/HomeWraper';
@@ -25,6 +24,8 @@ import Help from './components/profilePage/Help/Help';
 import ServicesPage from './components/ServicesPage/ServicesPage';
 import WebProjectPage from './components/WebProjectPage/WebProjectPage';
 import NewsMainPage from './components/NewsMainPage/NewsMainPage';
+import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
+import NewsCategoryPage from './components/NewsCategoryPage/NewsCategoryPage';
 
 
 
@@ -35,10 +36,12 @@ function App() {
 
   const { pathname } = useLocation();
 
+
   useEffect(() => {
     console.log(leng,55555);
     pathname == '/' && navigate(`/${leng}/`);
   }, []);
+
 
 
   return (
@@ -56,12 +59,12 @@ function App() {
             <Route path="projects" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>}>
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
-            <Route path='webProject' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
+            <Route path='web-project' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
             <Route path='news'>
               <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
-               <Route path=':id' element={<h1>amen news</h1>}/>
-               <Route path=':category/:id' element={<h1>category</h1>}/>
+               <Route path=':id' element={<PrivateRouteForOutSider><NewsUniquePage/></PrivateRouteForOutSider>}/>
+               <Route path='category/:id' element={<PrivateRouteForOutSider><NewsCategoryPage/></PrivateRouteForOutSider>}/>
             </Route>
             <Route path="contact" element={<PrivateRouteForOutSider><ContactUsPage/></PrivateRouteForOutSider>} />
             <Route path="courses-registration" element={<PrivateRouteForOutSider><CourseRegistrationPage /></PrivateRouteForOutSider>} />

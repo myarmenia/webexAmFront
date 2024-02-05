@@ -69,7 +69,7 @@ function BurgerMenu() {
                   </div>}
 
                   {isAuth && <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
-                    <img src={authUser.avatar !== null ? authUser.avatar : defaultAvatar} alt="avatar" />
+                    <img src={(authUser.avatar !== null && authUser.avatar !== "") ? authUser.avatar : defaultAvatar} alt="avatar" />
                     <span>{authUser.name}</span>
                   </div>}
                   

@@ -32,7 +32,9 @@
       <a href="{{route('task-create')}}" class="btn btn-primary mx-4">Создавать </a>
     </div>
   </div>
+
   <div class="card-body">
+    @include('includes.alert')
 
     <div class="table-responsive text-nowrap">
       <table class="table table-bordered">

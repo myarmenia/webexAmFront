@@ -25,7 +25,7 @@ function NavBarForUser() {
             <div className='navbar-rigth-div-for-user'>
                 <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
                     <span>{authUser.name}</span>
-                    <img src={authUser.avatar !== null ? authUser.avatar : defaultAvatar} alt="avatar" />
+                    <img src={(authUser.avatar !== null && authUser.avatar !== "")  ? authUser.avatar : defaultAvatar} alt="avatar" />
                 </div>
                 
                 <SelectLng/>

@@ -147,7 +147,7 @@ i18n
               'ERP-system',
               'Unity 3D',
               'Support',
-              'CMR system'
+              'CRM system'
             ],
 
             servicesCentreDivTitle: 'Services',
@@ -205,7 +205,8 @@ i18n
             'Password must contain a number',
             'Password must contain a lowercase letter',
             'Passwords do not match',
-            
+            'Write only a number',
+            'Password must contain at least 8 characters'
           ],
 
           resetPasswordModalError_message: 'Something is wrong',
@@ -593,7 +594,7 @@ i18n
             'ERP-համակարգ ',
             'Unity 3D',
             'Սպասարկում',
-            'CMR համակարգեր'
+            'CRM համակարգեր'
           ],
 
           servicesCentreDivTitle: 'Ծառայություններ',
@@ -654,7 +655,8 @@ i18n
             'Գաղտնաբառը պետք է պարունակի թվանշան',
             'Գաղտնաբառը պետք է պարունակի  Փոքրատառ',
             'Գաղտնաբառները չեն համնկնում',
-  
+            'Գրե՜ք միայն թվանշան',
+            'Գաղտնաբառը ամենաքիչ պետք է պարունակի 8 նիշ',
           ],
 
           resetPasswordModalError_message: 'Ինչ որ բան այն չէ',
@@ -991,7 +993,7 @@ i18n
           button: [
             'Курсы',
             'Регистрация',
-            'Заказать проект',
+            'Заказать',
             'онлайн',
             'оффлайн',
             'Выполнять',
@@ -1107,11 +1109,12 @@ i18n
 
           validation_reg_log: [
             'Это поле является обязательным',
-            'Напишите правильный E-mail!',
+            'Пишите правильный E-mail!',
             'Пароль должен содержать цифру',
             'Пароль должен содержать строчные буквы',
-            'Пароли не совпадают',
-            
+            'Пароль не совпадают',
+            'Пишите только цифру',
+            'Пароль должен содержать не менее 8 символов'
           ],
 
           resetPasswordModalError_message: 'Что-то не так',

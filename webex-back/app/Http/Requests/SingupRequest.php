@@ -26,7 +26,7 @@ class SingupRequest extends FormRequest
         return [        
             'name' => 'required',
             'email' => 'required|unique:users|max:255',
-            'password' => 'required',
+            'password' => 'required|min:8',
             'password_confirmation' => 'same:password',
             'phone' => 'required',
         ];

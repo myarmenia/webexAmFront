@@ -26,7 +26,8 @@ class ForgotPasswordService
 
       return response()->json(['success' => true, 'message' => translateMessageApi('password-reset-link-sent')], 200);
     } else {
-      return response()->json(['error' => translateMessageApi('user-email-not-found')], 500);
+      return response()->json(['error' => translateMessageApi('password-reset-link-sent')], 500);
+      // return response()->json(['error' => translateMessageApi('user-email-not-found')], 500);
     }
 
   }

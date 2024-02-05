@@ -24,16 +24,16 @@ function CourseRegistrationPage() {
   
   const validationSchema = yup.object().shape({
     name: yup.string().required(t('validation_reg_log.0')),
-    phone: yup.string().required(t('validation_reg_log.0')),
+    phone: yup.string().matches(/^\+?[1-9][0-9]{7,14}$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
     type: yup.string()
   });
 
 
-  const handleFormSubmit = (e, handleSubmit) => {
+  const handleFormSubmit = (e, handleSubmit, isValid) => {
     e.preventDefault()
    
     handleSubmit()
-    if(e.target[0].value && e.target[1].value){
+    if(e.target[0].value && e.target[1].value && isValid){
       dispatch(postTrialCourse({
         name: e.target[0].value,
         phone: e.target[1].value,
@@ -65,7 +65,7 @@ function CourseRegistrationPage() {
             {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
               <div className="register">
                 <div className="container">
-                  <form className="reg-form" onSubmit={(e) => handleFormSubmit(e, handleSubmit)}>
+                  <form className="reg-form" onSubmit={(e) => handleFormSubmit(e, handleSubmit, isValid)}>
                     <SectionTitle title={t('reg_and_log.' + '11')} />
                     <div className="name-inp">
                       <input type="text" name="name" placeholder={t('reg_and_log.' + '2')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>

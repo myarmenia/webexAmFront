@@ -18,6 +18,8 @@ import { ClientQuestionSlice, clientQuestionReducer } from "./slices/Help/HelpSl
 import { feedBackReducer } from "./slices/FeedbackSlice/FeedbackSlice";
 import { tellUsReducer } from "./slices/TellUsSlice/TellUsSlice";
 import { newsMainPageReducer } from "./slices/NewsMainSlice/NewsMainSlice";
+import { newsUniquePageReducer } from "./slices/NewsUniqueSlice/NewsUniqueSlice";
+import { newsCategoryPageReducer } from "./slices/NewsCategorySlice/NewsCategorySlice";
 
 
 const store = configureStore({
@@ -41,7 +43,8 @@ const store = configureStore({
         feedBack: feedBackReducer,
         tellUs: tellUsReducer,
         newsMainPage: newsMainPageReducer,
-
+        newsUniquePage: newsUniquePageReducer,
+        newsCategoryPage: newsCategoryPageReducer,
     },
     // middleware: (getDefaultMiddlware)=>[
     //     ...getDefaultMiddlware(),
