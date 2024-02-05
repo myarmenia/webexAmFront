@@ -27,7 +27,7 @@
 
 .nav-menu .drop-menu{
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 0;
     background-color:  #050a3abb;
     backdrop-filter: blur(50px);

@@ -12,12 +12,12 @@
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
-    outline: 2px solid white;
+    /* outline: 2px solid white; */
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    outline: 2px solid white;
-    border: none;
+    /* outline: ; */
+    border: 1px solid white;
     width: 100%;
     border-radius: 0 !important;
 }
@@ -27,7 +27,7 @@
     background: #0090BB;
     box-shadow:0 0 10px  #0090BB, 0 0 40px #0090BB, 0 0 80px #0090BB;
     transition-delay: 1s;
-    outline: none;
+    border: none;
 }
 
 .btn span{

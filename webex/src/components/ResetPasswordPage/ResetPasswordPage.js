@@ -31,6 +31,7 @@ function ResetPasswordPage() {
         password: yup.string()
             .matches(/[0-9]/, t('validation_reg_log.' + '2'))
             .matches(/[a-z]/, t('validation_reg_log.' + '3'))
+            .min(8, t('validation_reg_log.'+ '6'))
             .required(t('validation_reg_log.' + '0')),
         confirmPassword: yup.string().oneOf([yup.ref('password')], t('validation_reg_log.' + '4')).required(t('validation_reg_log.' + '0')),
 
@@ -49,7 +50,7 @@ function ResetPasswordPage() {
     }, [])
 
 
-    const handleResetPass = (e, handleSubmit) => {
+    const handleResetPass = (e, handleSubmit, dirty, isValid) => {
         e.preventDefault();
         handleSubmit();
         const window_token = window.location.href.split('/');
@@ -62,7 +63,7 @@ function ResetPasswordPage() {
                 confirmPassword: confirmPassword.value
             }
             
-            if(password.value && confirmPassword.value){
+            if(password.value && confirmPassword.value && (password.value === confirmPassword.value) && isValid){
                 dispatch(postNewPassword(newPasswordeObj));
                 setMessageModal(true);
             }
@@ -95,7 +96,7 @@ function ResetPasswordPage() {
 
                             {
                                 ({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
-                                    <form className="reset-password-form" onSubmit={(e) => handleResetPass(e, handleSubmit)}>
+                                    <form className="reset-password-form" onSubmit={(e) => handleResetPass(e, handleSubmit, dirty, isValid)}>
 
                                         <div className="reset-password-inp">
                                             <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.' + '5')} value={values.email} onChange={handleChange} onBlur={handleBlur} />

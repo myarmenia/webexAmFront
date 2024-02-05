@@ -17,6 +17,9 @@
     align-items: flex-start;
 }
 
+.news_main_page_categorys_div h3{
+    cursor: pointer;
+}
 .news_main_page_categorys_div_content {
     width: 100%;
     max-width: 100%;
@@ -72,4 +75,10 @@
 
 .news_main_page_categorys_div_content span {
     color: gray;
+}
+
+.news_main_page_categorys_div_content_item_share_and_date_div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
