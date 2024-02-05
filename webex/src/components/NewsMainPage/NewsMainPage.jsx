@@ -5,6 +5,7 @@ import { getNewsMainPage } from '../../store/slices/NewsMainSlice/NewsMainApi'
 import { selectNewsMainPageData, selectNewsMainPageLoading } from '../../store/slices/NewsMainSlice/NewsMainSlice'
 import NewsMainPageCategory from '../NewsMainPageCategory/NewsMainPageCategory'
 import { useNavigate } from 'react-router-dom'
+import ShareComponent from '../ShareComponent/ShareComponent'
 
 function NewsMainPage() {
     const responsNews = useSelector(selectNewsMainPageData)
@@ -49,7 +50,10 @@ function NewsMainPage() {
                         </div>
                         <div className='category-top-div-big-div-info'>
                             <h4>{category1.items[0].title}</h4>
-                            <span>{formatCreatedAt(category1.items[0].created_at)}</span>
+                            <div className='category-top-div-big-div-info-share-and-date-div'>
+                                <span>{formatCreatedAt(category1.items[0].created_at)}</span>
+                                <ShareComponent url={`${window.location.href}/${category1.items[0].id}`}/>
+                            </div>
                             <p>{category1.items[0].description}</p>
                         </div>
                     </div>
@@ -63,7 +67,10 @@ function NewsMainPage() {
                                     </div>
                                     <div className='category-top-div-small-div-item-info'>
                                         <p>{el.description}</p>
-                                        <span>{formatCreatedAt(el.created_at)}</span>
+                                        <div className='category-top-div-small-div-item-info-share-and-date-div'>
+                                            <span>{formatCreatedAt(el.created_at)}</span>
+                                            <ShareComponent url={`${window.location.href}/${el.id}`}/>
+                                        </div>
                                     </div>
                                 </div>
                             )

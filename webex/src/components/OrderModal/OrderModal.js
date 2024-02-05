@@ -18,7 +18,7 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
-        phone: yup.number().required(t('validation_reg_log.' + '0')),
+        phone: yup.string().matches(/^\+?[1-9][0-9]{7,14}$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
         email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
         webSiteAddres: yup.string(),
         message: yup.string(),
@@ -49,7 +49,7 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
     };
 
 
-    const handleCloseModal = (e, handleSubmit) => {
+    const handleCloseModal = (e, handleSubmit, isValid) => {
         e.preventDefault()
         handleSubmit()
         const [name, phone, email, site, comment, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10] = e.target
@@ -90,7 +90,7 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
         const token = captchaRef.current.getValue();
 
 
-        if (name.value && phone.value && email.value && token) {
+        if (name.value && phone.value && email.value && token && isValid) {
             dispatch(postOrder(formData))
             setOpenOrderModal(false)
             setMessageModal(true)
