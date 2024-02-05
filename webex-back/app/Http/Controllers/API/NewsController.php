@@ -30,6 +30,7 @@ class NewsController extends Controller
     {
         $news = $this->newsService->getNewsByCategoryType($id);
         $getCategoryNameById = $this->newsService->getCategoryNameById($id);
+
         $data = [
             'news' => $news,
             'categoryName' => $getCategoryNameById
