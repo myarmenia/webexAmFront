@@ -1,30 +1,20 @@
 {
-    "welcome": "Բարի գալուստ",
-    "success-logged": "You have successfully logged in",
-    "something-went-wrong": "Something went wrong",
-    "user-blocked": "User is blocked",
+    "welcome": "Welcome",
+    "success-logged": "Congratulations, you have successfully completed the registration!",
+    "something-went-wrong": "Something went wrong :(",
+    "user-blocked": "User blocked",
     "user-not-found": "User not found",
-    "logged-out": "Successfully logged out",
     "unauthorized": "Unauthorized",
-    "email_verified": "Confirm email address to activate",
+    "email_verified": "Please confirm your email address to activate",
     "status-active": "User successfully activated",
-    "email-unique": "The user with this email already exists",
-    "email-send": "Letter sent",
+    "email-unique": "This email is already registered",
+    "email-send": "Email sent successfully",
     "user-email-or-password-not-found": "Incorrect login or password",
     "password-changed": "Password successfully changed",
-    "user-edit": "Data saved successfully",
-    "wrong-password": "Wrong password",
+    "user-edit": "Data successfully saved",
+    "wrong-password": "Incorrect password",
     "user-email-not-found": "User with this email address not found",
-    "password-reset-link-sent": "Please check your email address",
-    "password-changed-successfully": "Password changed successfully",
-    "password-not-changed": "Password not changed"
-
-
-
-
-    
-
-
-    
-
+    "password-reset-link-sent": "If you filled your email right, please check it",
+    "password-changed-successfully": "Password successfully changed",
+    "activated-email": "To complete the registration, you need to activate your email."
 }

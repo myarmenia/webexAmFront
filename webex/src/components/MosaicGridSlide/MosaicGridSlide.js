@@ -11,12 +11,14 @@ function MosaicGridSlide() {
 
   const allProjects = useSelector(selectallProjects)
 
+  const leng = localStorage.getItem('lang')
+
   const prod = allProjects.map(el => (
-    <Link to={`/projects/${el._id}`} key={el._id}>
+    <Link to={`/${leng}/projects/${el.id}`} key={el._id}>
       <div  className='mosaic-grid-item' >
             <img src={el.path} alt="" />
             <div className='mosaic-grid-item-text-div'>
-              <p >oiuhgy tfrdt esdgfyuhi  jokpijhu gytfredrf tgyhuiopo iuytfrdf tgyhujiokp lokugf drf tgyhu jiokp lfdfgty hujikolpkh gfdrfgthujk uhygtfcg. ughjbgjb hufvhj vgvgfhg gv fvgvgh fhgvfhg gvhgv gvghvhgv gfvhgvh gfhgv kjujhbgyuhfg ghfvghcvgf cvghcvghc gfcvc vgfcgfc xcfdxcfg gcfgfvc gcgfvc cgfcgf gfcfgc gygfyty fytgfgc gcggvcgv hgcgfcgfc gcfgc fgv</p>
+              <p>{el.description}</p>
             </div>
         </div>
     </Link>

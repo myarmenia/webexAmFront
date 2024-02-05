@@ -26,16 +26,15 @@ const registerSlice = createSlice({
             state.status = 'loading';
           })
           .addCase(postRegister.fulfilled, (state, action) => {
-            state.data.message = {message:[action.payload.message]}
+               state.data.message = action.payload.message
             state.loading = false
              state.status = 'succes';
           })
           .addCase(postRegister.rejected, (state, action) => {
-               state.data.message = action.payload
+               state.data.message = action.payload.email[0]
                state.error = true
-            console.log(state.data.message,'pppppp');
-            state.loading = false
-            state.status = 'failed';
+               state.loading = false
+               state.status = 'failed';
           });
     },
  });

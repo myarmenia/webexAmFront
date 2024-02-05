@@ -147,7 +147,7 @@ i18n
               'ERP-system',
               'Unity 3D',
               'Support',
-              'CMR system'
+              'CRM system'
             ],
 
             servicesCentreDivTitle: 'Services',
@@ -205,7 +205,8 @@ i18n
             'Password must contain a number',
             'Password must contain a lowercase letter',
             'Passwords do not match',
-            
+            'Write only a number',
+            'Password must contain at least 8 characters'
           ],
 
           resetPasswordModalError_message: 'Something is wrong',
@@ -333,6 +334,112 @@ i18n
             'Mobile',
             'Games and 3D'
           ],
+          dashboard_name: 'Dashboard',  
+
+
+          web_project_page_top_div_title: 'Web App Development',
+
+          KeyWordComponent: 'Keywords',
+
+          KeyWordComponentItem: [
+            'Integrated website promotion,',
+            'Budget Promotion,',
+            'Internet advertising,',
+            'Search Engine,',
+            'Promotion Site Optimization,',
+            ' SEO - Search Engine Optimization,',
+            ' Contextual Advertising,',
+            'Promotion on social networks, blogs, service,',
+            ' Free Site Audit,',
+            'Free counter installation,',
+            ' Website promotion and optimization: question - answer,',
+            ' Articles about website promotion,',
+            ' Cost of website promotion,',
+            '  Price Brand Pages Creation and Groups in Social Networks,',
+            ' 3D modeling,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Visualization of the general plan,',
+            ' 3D modeling,',
+            '  3D interior visualization,',
+            '  ИТ-consulting,',
+            ' iOS,',
+            ' Android,',
+            'Design,',
+            'Unity development,',
+            'UI/UX design,',
+            ' 2D and 3D game development'
+          ],
+
+          web_project_page_web_development_title: 'Web App Development',
+
+          web_project_page_web_development_info: [
+            'Webex Technologies is operating for over 15 years. Our company has extensive experience in web application development, outsourcing, software development and web development, IT consulting, application integration, business process analysis, software testing, maintenance and support.',
+            "Let's take a look at what the services provided by Webex Technologies are."
+          ],
+
+
+
+
+          account_Box: [
+            'Account',
+            'Edit profile',
+          ],
+          purchase_history: [
+            'Purchase history',
+            'Lessons',
+            'of total'
+          ],
+          my_Training: 'My Training',
+
+          description: 'description',
+
+          homework_linne: [
+            'Do homework',
+            'Lesson',
+            'minutes',
+          ],
+
+          cordial:'Contents',
+
+          all_video_lessons: "All video lessons",
+
+          profileArr: [
+            'Your Profile',
+            'Fill in your details',
+            'Save',
+            'Cancel',
+            'write the current password',
+            'write the new password',
+            'repeat the new password'
+          ],
+          help: [
+            'Help',
+            'Fast support',
+            'Answers to the most frequently asked questions are just one click away.',
+            'Write your question',
+            'Name Surname',
+            'Email address',
+            'phone number',
+            'message',
+            'Send'
+          ],
+
+          visitHistory: [
+            'Visit history',
+            'Number',
+            'Lessons',
+            'Total lessons',
+            'Number lessons',
+            'Payment'
+          ],
+          
+            dashboard_name: "Dashboard",
+            current_lessons: "Current lessons",
+            profile: "Profile",
+            help: "Help",
+            visit_history: "Visit history",
+            log_out: "Log out"
 
         },
       },
@@ -487,7 +594,7 @@ i18n
             'ERP-համակարգ ',
             'Unity 3D',
             'Սպասարկում',
-            'CMR համակարգեր'
+            'CRM համակարգեր'
           ],
 
           servicesCentreDivTitle: 'Ծառայություններ',
@@ -548,7 +655,8 @@ i18n
             'Գաղտնաբառը պետք է պարունակի թվանշան',
             'Գաղտնաբառը պետք է պարունակի  Փոքրատառ',
             'Գաղտնաբառները չեն համնկնում',
-  
+            'Գրե՜ք միայն թվանշան',
+            'Գաղտնաբառը ամենաքիչ պետք է պարունակի 8 նիշ',
           ],
 
           resetPasswordModalError_message: 'Ինչ որ բան այն չէ',
@@ -676,7 +784,110 @@ i18n
             'Բջջային',
             'Խաղեր և 3D'
           ],
+          dashboard_name: 'Վահանակ',
 
+          account_Box: [
+            'Հաշիվ',
+            'Խմբագրել պրոֆիլը',
+          ],
+
+          purchase_history: [
+            'Գնումների պատմություն',
+            'Դասեր',
+            'ընդհանուրից'
+          ],
+          my_Training: 'Իմ Թրեյնինգը',
+
+          description: 'Նկարագրություն',
+
+
+          web_project_page_top_div_title: 'Վեբ ծրագրի մշակում',
+
+          KeyWordComponent: 'Բանալի բառեր',
+
+          KeyWordComponentItem: [
+            'Ինտեգրված կայքի առաջխաղացում,',
+            'Բյուջեի առաջխաղացում,',
+            'Ինտերնետ գովազդ,',
+            'Որոնման համակարգ,',
+            'Կայքի օպտիմզացում,',
+            ' SEO - Որոնման համակարգի օպտիմալացում,',
+            'Համատեքստային գովազդ,',
+            'Սոցիալական ցանցերում առաջխաղացում, բլոգեր, ծառայություններ,',
+            ' Կայքերի ազատ աուդիտ,',
+            'Հաշվի անվճար տեղադրում,',
+            ' Կայքերի առաջխաղացում և օպտիմալացում. հարց / պատասխան,',
+            ' Հոդվածների կայքի առաջխաղացման մասին,',
+            ' Կայքի առաջխաղացման արժեք,',
+            'Գներ Բրենդային էջերի ստեղծումը սոցիալական ցանցերում,',
+            'Եռաչափ մոդելավորում,',
+            ' Blender,',
+            'Gimp,',
+            ' Քոթեջի և իր տարածքի 3D վիզուալացում,',
+            ' 3D մոդելավորում,',
+            'Ինտերիերի 3D վիզուալիզացիում,',
+            ' ՏՏ - խորհրդատվություն,',
+            ' iOS,',
+            ' Android,',
+            ' Դիզայն,',
+            'Unity-ով ստեղծում,',
+            ' UI / UX դիզայն,',
+            ' 2D և 3D խաղերի ստեղծում'
+          ],
+
+          web_project_page_web_development_title: 'Վեբ ծրագրի մշակում',
+
+          web_project_page_web_development_info: [
+            'Webex technologies ընկերությունը գործում է ավելի քան 15 տարի։ Մեր ընկերությունը ունի մեծ փորձ վեբ ծրագրերի մշակման, աութսորսինգի, ծրագրային ապահովման և վեբ ծրագրերի մշակման, ՏՏ խորհրդատվության, հավելվածների ինտեգրման, բիզնես գործընթացների վերլուծության, ծրագրային ապահովման փորձարկման, պահպանման և աջակցության ոլորտում։',
+            'Եկեք նայենք, թե որոնք են Webex Technologies-ի մատուցած ծառայությունները:'
+          ],
+
+          homework_linne: [
+            'Կատարել տնային առաջադրանքները',
+            'Դաս',
+            'րոպե',
+          ],
+
+          cordial:'Բովանդակություն',
+
+          all_video_lessons: "Բոլոր վիդեոդասերը",
+
+          profileArr: [
+            'Քո Պրոֆիլը',
+            'Լրացրու տվյալներդ',
+            'Պահպանել',
+            'Չեղարկել',
+            'գրիր գործող գաղտնաբառը',
+            'գրիր նոր գաղտնաբառը',
+            'կրկնիր նոր գաղտնաբառը'
+          ],
+
+          help: [
+            'Օգնություն',
+            'Արագ աջակցություն',
+            'Ամենահաճախ տրվող հարցերի պատասխաններն ընդամենը մեկ սեղմումով:',
+            'Գրեք ձեր հարցը',
+            'Անուն Ազգանուն',
+            'Էլ. հասցե',
+            'հեռախոսի համար',
+            'հաղորդագրություն',
+            'Ուղարկել'
+          ],
+
+          visitHistory: [
+            'Այցելեք պատմություն',
+            'Թիվ',
+            'Դասեր',
+            'Ընդհանուր դասեր',
+            'Թվերի դասեր',
+            'Վճարում'
+          ],
+          dashboard_name: "Գլխավոր էջ",
+          current_lessons: "Ընթացիկ դասեր",
+          profile: "Անձնական էջ",
+          help: "Օգնություն",
+          visit_history: "Այցելության պատմություն",
+          log_out: "Դուրս գալ"
 
         }
 
@@ -782,7 +993,7 @@ i18n
           button: [
             'Курсы',
             'Регистрация',
-            'Заказать проект',
+            'Заказать',
             'онлайн',
             'оффлайн',
             'Выполнять',
@@ -898,11 +1109,12 @@ i18n
 
           validation_reg_log: [
             'Это поле является обязательным',
-            'Напишите правильный E-mail!',
+            'Пишите правильный E-mail!',
             'Пароль должен содержать цифру',
             'Пароль должен содержать строчные буквы',
-            'Пароли не совпадают',
-            
+            'Пароль не совпадают',
+            'Пишите только цифру',
+            'Пароль должен содержать не менее 8 символов'
           ],
 
           resetPasswordModalError_message: 'Что-то не так',
@@ -1031,6 +1243,104 @@ i18n
             'Мобильный',
             'Игры и 3D'
           ],
+
+          web_project_page_top_div_title: 'Разработка веб приложений',
+
+          KeyWordComponent: 'Ключевые слова',
+
+          KeyWordComponentItem: [
+            'Комплексное продвижение сайтов,',
+            'Бюджетное продвижение,',
+            'Реклама в интернете,',
+            'Поисковое продвижение сайта,',
+            'Оптимизация сайта,',
+            'SEO - поисковая оптимизация,',
+            'Контекстная реклама,',
+            'Продвижение в соцсетях, блогах, сервисах,',
+            'Бесплатный экспресс-аудит сайта,',
+            'Бесплатная установка счетчика,',
+            'Продвижение и оптимизация сайтов: вопрос-ответ,',
+            'Статьи о продвижении сайтов,',
+            ' Стоимость продвижения сайтов,',
+            ' Создание бренд-страниц и групп в соцсетях,',
+            'Трехмерное моделирование,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Визуализация коттеджа с территорией,',
+            ' 3D моделирование,',
+            ' 3D Визуализация интерьеров,',
+            ' ИТ-консалтинг,',
+            ' iOS,',
+            ' Android,',
+            'Дизайн,',
+            ' Unity разработкиа,',
+            'UI/UX дизайн,',
+            ' 2D и 3D разработка игр'
+          ],
+
+          web_project_page_web_development_title: 'Разработка веб приложений',
+
+          web_project_page_web_development_info: [
+            'Компания ВэбЕкс Технолоджис была основана в ноябре 2007 года. Наша компания имеет большой опыт в области разработки веб-приложении, аутсорсинга разработки программного обеспечения и веб-разработки, ИТ-консалтинга, интеграции приложений, анализа бизнес-процессов, тестирования ПО, сопровождения и поддержки.',
+            'Давайте разберем, что из себя представляют услуги, которые оказывает компания ВебЭкс Технолоджис.'
+          ],
+          dashboard_name: 'Панель приборов',
+
+          account_Box: [
+            'Счет',
+            'Редактировать профиль',
+          ],
+
+          purchase_history: [
+            'История покупки',
+            'Уроки',
+            'с общего'
+          ],
+          my_Training: 'Моя тренировка',
+
+          description: 'Описание',
+
+          homework_linne: [
+            'Делать домашнюю работу',
+            'Урок',
+            'минуты',
+          ],
+
+          cordial:'Содержание',
+
+          all_video_lessons: "Все видео уроки",
+
+          profileArr: [
+            'Ваш профиль',
+            'Заполните свои данные',
+            'Сохранять',
+            'Отмена',
+            'напиши текущий пароль',
+            'напиши новый пароль',
+            'повторите новый пароль'
+          ],
+
+          help: [
+            'Помощь',
+            'Быстрая поддержка',
+            'Ответы на наиболее часто задаваемые вопросы находятся всего в одном клике.',
+            'Напишите свой вопрос',
+            'Имя Фамилия',
+            'Адрес электронной почты',
+            'номер телефона',
+            'сообщение',
+            'Отправлять'
+          ],
+
+          visitHistory: [
+            'История посещений',
+            'Число',
+            'Уроки',
+            'Всего уроков',
+            'Количество уроков',
+            'Оплата'
+
+          ]
         }
       },
       // Add more languages as needed
