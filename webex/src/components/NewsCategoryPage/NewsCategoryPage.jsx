@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getNewsCategoryPage } from '../../store/slices/NewsCategorySlice/NewsCategoryApi'
@@ -8,6 +8,7 @@ import './NewsCategoryPage.css'
 
 function NewsCategoryPage() {
 
+    const [page, setPage] = useState('1')
     const dispatch = useDispatch()
     const {id} = useParams()
     const navigate = useNavigate()
@@ -17,8 +18,10 @@ function NewsCategoryPage() {
     const shareHref = window.location.origin
 
     useEffect(()=>{
-        dispatch(getNewsCategoryPage(id))
-    },[])
+        dispatch(getNewsCategoryPage({id:id, pageIndex: page.i}))
+    },[page])
+
+
 
     const formatCreatedAt = (createdAt) => {
         const date = new Date(createdAt);
@@ -36,6 +39,22 @@ function NewsCategoryPage() {
             return date.toLocaleDateString('hy-AM', options);
         }
       };
+
+
+      const pagination = () => {
+        if (respCategory.pagination && typeof respCategory.pagination.total !== 'undefined') {
+            const paginationList = [];
+            for (let i = 1; i < respCategory.pagination.last_page; i++) {
+                paginationList.push(<li style={{background: respCategory.pagination.current_page == i ? '#168BF7' : 'none'}} key={i} onClick={()=> setPage({i})}>{i}</li>);
+            }
+            return paginationList;
+        } else {
+            return <li>Error: Pagination information not available</li>;
+        }
+    }
+    
+    // Usage
+    const paginationItems = pagination();
 
 
   return (
@@ -65,6 +84,12 @@ function NewsCategoryPage() {
                     </div>
                 </div>)
             }
+
+            <ul className='pagination_ul'>
+                {
+                    pagination()
+                }
+            </ul>
         </div>
     </div>
   )
