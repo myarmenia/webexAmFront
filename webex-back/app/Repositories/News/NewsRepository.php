@@ -41,7 +41,7 @@ class NewsRepository implements NewsInterface
                 $q->where('lang', session('languages'));
             }
         ])
-            ->paginate(10);
+            ->paginate(12);
     }
 
     public function getCategoryNameById($id)
