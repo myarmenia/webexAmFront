@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './NewsUniquePage.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getNewsUniquePage } from '../../store/slices/NewsUniqueSlice/NewsUniqueApi'
 import { selectNewsUniquePageData, selectNewsUniquePageLoading } from '../../store/slices/NewsUniqueSlice/NewsUniqueSlice'
@@ -11,6 +11,7 @@ import ShareComponent from '../ShareComponent/ShareComponent'
 function NewsUniquePage() {
     const {id} = useParams()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const leng = localStorage.getItem('lang')
     const respUniquePage = useSelector(selectNewsUniquePageData)
     const loading = useSelector(selectNewsUniquePageLoading)
@@ -43,7 +44,7 @@ function NewsUniquePage() {
                 loading ?
                 <span className="loader"></span>: 
                 <div className='news_unique-page-item'>
-                    <h3>{respUniquePage.categoryName}</h3>
+                    <h3 onClick={()=>navigate(`/${leng}/news/category/${respUniquePage.categoryId}`)}>{respUniquePage.categoryName}</h3>
                     <div className='img_and_info_div'>
                         <img src={respUniquePage.image} alt="" />
                         <h4>{respUniquePage.title}</h4>

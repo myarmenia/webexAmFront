@@ -85,6 +85,18 @@
     color: gray;
 }
 
+.pagination_ul{
+    display: flex;
+    padding-top: 50px;
+    gap: 20px;
+}
+
+.pagination_ul li{
+    padding: 5px 20px;
+    color: var(--main_color);
+    cursor: pointer;
+}
+
 
 @media(max-width:1024px){
     .news-category-page .container{
