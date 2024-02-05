@@ -23,6 +23,7 @@ function ProjectsPage() {
   
   const [filterData, setFilterData] = useState([...respProject])
 
+  console.log(respProject,'ggggggggg');
   const projectMenuList = [
     {
       title: t('projectType.0'),
@@ -33,7 +34,7 @@ function ProjectsPage() {
     {
       title: t('projectType.1'),
       icon: web_icon,
-      type: 'WebSite'
+      type: 'web'
     },
   
     {

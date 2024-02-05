@@ -28,11 +28,11 @@ function Registre() {
 
     const loading = useSelector(selectRegisterLoading)
     
-    function handleLogSub(e,handleSubmit, isValid, dirty) {
+   async function handleLogSub(e,handleSubmit, isValid, dirty) {
         e.preventDefault()
         handleSubmit()
-        if (e.target[0].value && e.target[1].value && e.target[2].value && e.target[3].value && (e.target[3].value === e.target[4].value)) {
-            dispatch(postRegister({
+        if (e.target[0].value && e.target[1].value && e.target[2].value && e.target[3].value && (e.target[3].value === e.target[4].value) && isValid) {
+           await dispatch(postRegister({
                 name: e.target[0].value,
                 email: e.target[1].value,
                 phone: e.target[2].value,
@@ -48,11 +48,12 @@ function Registre() {
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
-        phone: yup.string(),
+        phone: yup.string().matches(/^\+?[1-9][0-9]{7,14}$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
         email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
         .matches(/[0-9]/, t('validation_reg_log.'+ '2'))
         .matches(/[a-z]/, t('validation_reg_log.'+ '3'))
+        .min(8, t('validation_reg_log.'+ '6'))
         .required(t('validation_reg_log.'+ '0')),
         confirmPassword: yup.string().oneOf([yup.ref('password')], t('validation_reg_log.'+ '4')).required(t('validation_reg_log.'+ '0')),
 

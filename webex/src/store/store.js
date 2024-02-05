@@ -19,6 +19,7 @@ import { feedBackReducer } from "./slices/FeedbackSlice/FeedbackSlice";
 import { tellUsReducer } from "./slices/TellUsSlice/TellUsSlice";
 import { newsMainPageReducer } from "./slices/NewsMainSlice/NewsMainSlice";
 import { newsUniquePageReducer } from "./slices/NewsUniqueSlice/NewsUniqueSlice";
+import { newsCategoryPageReducer } from "./slices/NewsCategorySlice/NewsCategorySlice";
 
 
 const store = configureStore({
@@ -43,7 +44,7 @@ const store = configureStore({
         tellUs: tellUsReducer,
         newsMainPage: newsMainPageReducer,
         newsUniquePage: newsUniquePageReducer,
-
+        newsCategoryPage: newsCategoryPageReducer,
     },
     // middleware: (getDefaultMiddlware)=>[
     //     ...getDefaultMiddlware(),

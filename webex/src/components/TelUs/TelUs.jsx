@@ -35,7 +35,7 @@ function TelUs() {
 
   const  validationSchema = yup.object().shape({
     name: yup.string().required(t('validation_reg_log.' + '0')),
-    phone: yup.number().required(t('validation_reg_log.' + '0')),
+    phone: yup.string().matches(/^\+?[1-9][0-9]{7,14}$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
     email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
     webSiteAddres: yup.string(),
     message: yup.string(),
@@ -62,7 +62,7 @@ function TelUs() {
 
         handleSubmit()
         
-        if (name.value && phone.value && email.value) {    
+        if (name.value && phone.value && email.value && isValid) {    
             dispatch(postTellUs(formData))
             setMessageModal(true)
             setTextValue('')
@@ -129,8 +129,8 @@ function TelUs() {
                             </div>
 
                             <div className='input-text-div upload-file-div'>
-                              <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
-                              <input style={{display: 'none'}} type="file" id="fileInput" onChange={handleFileChange} />
+                              <label className='fileIcon' htmlFor="fileInput2">{fileIcon}</label>
+                              <input style={{display: 'none'}} type="file" id="fileInput2" onChange={handleFileChange} />
                               <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')}/>
                             </div>
 

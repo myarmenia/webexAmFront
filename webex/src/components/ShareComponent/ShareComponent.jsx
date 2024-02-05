@@ -1,35 +1,35 @@
 import React from 'react'
-import { shareIcon } from '../../iconFolder/icon'
+import { ShareTelegram, ShareWatsUp, shareFb, shareIcon, shareLinkedin, shareTwiter, shareViber } from '../../iconFolder/icon'
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, TelegramShareButton, InstapaperShareButton, WhatsappShareButton, ViberShareButton } from 'react-share';
 import './ShareComponents.css'
 
-function ShareComponent() {
+function ShareComponent(url) {
     return (
-        <div className='share_div'>
+        <div className='share_div' onClick={(e)=> e.stopPropagation()}>
             <span>{shareIcon}</span>
             <div className="share-buttons">
-                <FacebookShareButton url={window.location.href} quote={''}>
-                    Facebook
+                <FacebookShareButton url={url.url} quote={''}>
+                    <span>{shareFb} Facebook</span>
                 </FacebookShareButton>
 
-                <TwitterShareButton url={window.location.href} title={''}>
-                    Twitter
+                <TwitterShareButton url={url.url} title={''}>
+                    <span>{shareTwiter} Twitter</span>
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={window.location.href} title={''}>
-                    LinkedIn
+                <LinkedinShareButton url={url.url} title={''}>
+                    <span>{shareLinkedin} LinkedIn</span>
                 </LinkedinShareButton>
 
-                <TelegramShareButton url={window.location.href} title={''}>
-                    Telegram
+                <TelegramShareButton url={url.url} title={''}>
+                    <span>{ShareTelegram} Telegram</span>
                 </TelegramShareButton>
 
-                <WhatsappShareButton url={window.location.href} title={''}>
-                    WhatsUp
+                <WhatsappShareButton url={url.url} title={''}>
+                    <span>{ShareWatsUp} WhatsUp</span>
                 </WhatsappShareButton>
 
-                <ViberShareButton url={window.location.href} title={''}>
-                    Viber
+                <ViberShareButton url={url.url} title={''}>
+                    <span>{shareViber} Viber</span>
                 </ViberShareButton>
             </div>
         </div>

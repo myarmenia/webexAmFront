@@ -40,7 +40,8 @@ function NewsUniquePage() {
     <div className='news_unique-page'>
         <div className='container'>
             {
-                loading ? <h1>fhvgfrjhfjhbfhjfbh</h1> : 
+                loading ?
+                <span className="loader"></span>: 
                 <div className='news_unique-page-item'>
                     <h3>{respUniquePage.categoryName}</h3>
                     <div className='img_and_info_div'>
@@ -48,7 +49,7 @@ function NewsUniquePage() {
                         <h4>{respUniquePage.title}</h4>
                         <div className='share_and_date'>
                             <span>{formatCreatedAt(respUniquePage.created_at)}</span>
-                            <ShareComponent/>
+                            <ShareComponent url={window.location.href}/>
                         </div>
                     </div>
                     <p>{respUniquePage.description}</p>

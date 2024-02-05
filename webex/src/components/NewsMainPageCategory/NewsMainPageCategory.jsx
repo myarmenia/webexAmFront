@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getNewsMainPage } from '../../store/slices/NewsMainSlice/NewsMainApi';
 import './NewsMainPageCategory.css'
 import { useNavigate } from 'react-router-dom';
+import ShareComponent from '../ShareComponent/ShareComponent';
 
 function NewsMainPageCategory() {
 
@@ -50,7 +51,10 @@ function NewsMainPageCategory() {
                                             </div>
                                         <div>
                                             <p>{item.description}</p>
-                                            <span>{formatCreatedAt(item.created_at)}</span>
+                                            <div className='news_main_page_categorys_div_content_item_share_and_date_div'>
+                                                <span>{formatCreatedAt(item.created_at)}</span>
+                                                <ShareComponent url={`${window.location.href}/${item.id}`}/>
+                                            </div>
                                         </div>
                                     </div>
                                 )
