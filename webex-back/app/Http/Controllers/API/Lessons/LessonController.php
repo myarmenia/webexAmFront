@@ -40,7 +40,7 @@ class LessonController extends BaseController
                       'duration' => $item->duration,
                       'title' => $item->translation(session('languages'))->title,
                       'description' => $item->translation(session('languages'))->description,
-                      'video'=>$item->video,
+                      'video'=> route('get-file', ['path' => $item->video]),
                       'tasks'=> TasksResource::collection($item->tasks),
                     ];
                     array_push($data_lessons,$first_elem);

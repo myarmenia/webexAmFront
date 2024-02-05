@@ -27,11 +27,11 @@ class LessonRequest extends FormRequest
             'course_language_id'=>'required',
             'duration' =>'required',
             'translate.*.title'=>'required',
-            'translate.*.description'=>'required',
+            // 'translate.*.description'=>'required',
             'number'=>'required',
         ];
-        if($lastSegment=="lesson-create"){
-          $array['video']='required';
+        if($lastSegment=="lesson-store"){
+          $array['video']='required|mimes:mp4,mov,ogg,qt | max:20000';
         }
 
         return  $array;
@@ -42,7 +42,7 @@ class LessonRequest extends FormRequest
         return [
           'duration' => 'Поле продолжительность обязательно для заполнения',
           'translate.*.title'=>'Поле название  обязательно для заполнения.',
-          'translate.*.description'=>'Поле описание обязательно для заполнения.',
+          // 'translate.*.description'=>'Поле описание обязательно для заполнения.',
           'number'=>'Поле номер урока обязательно для заполнения.',
           'video'=>'Поле видео обязательно для заполнения.'
         ];

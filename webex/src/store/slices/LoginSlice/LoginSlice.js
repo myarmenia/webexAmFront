@@ -31,7 +31,7 @@ const loginSlice = createSlice({
           })
           .addCase(postLogin.fulfilled, (state, action) => {
             state.data = action.payload
-            state.isAuth = true
+            state.data.isAuth = true
             state.loading = false
              state.status = 'succes';
           })
@@ -39,8 +39,9 @@ const loginSlice = createSlice({
              if(action.payload){
                 state.data.error = action.payload
                 state.data.isAuth = false
+                state.loading = false
                }
-               state.loading = false
+              
                state.status = 'failed'; 
           });
     },

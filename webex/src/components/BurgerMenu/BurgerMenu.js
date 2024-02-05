@@ -68,7 +68,7 @@ function BurgerMenu() {
                     </div>
                   </div>}
 
-                  {isAuth && <div className='user-div' onClick={()=> navigate('/profilePage')}>
+                  {isAuth && <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
                     <img src={authUser.avatar} alt="avatar" />
                     <span>{authUser.name}</span>
                   </div>}

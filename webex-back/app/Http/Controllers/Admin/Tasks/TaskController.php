@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Tasks;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TaskRequest;
+use App\Http\Resources\WEB\AllCourseLessonsResource;
 use App\Interfaces\Task\TaskRepositoryInterface;
 use App\Models\CourseLanguage;
 use App\Models\Lesson;
@@ -40,8 +41,26 @@ class TaskController extends Controller
      */
     public function create()
     {
-      $lessons = Lesson::with('lesson_translations')->get();
-      return view('content.tasks.create',compact('lessons'));
+      $course_languages = CourseLanguage::all();
+      $course_language_first = CourseLanguage::first();
+      if($course_language_first!=null){
+
+        $lessons = Lesson::where('course_language_id',$course_language_first->id)->with('lesson_translations')->get();
+
+        if(count( $lessons)==0){
+
+          return redirect()->back()->with(['errorMessage' => 'Вам следует добавлять язык с уроками']);
+
+        }else{
+
+        return view('content.tasks.create',compact('lessons','course_languages'));
+
+        }
+
+
+      }else{
+        return redirect()->back()->with(['errorMessage' => 'Вам следует добавлять язык']);
+      }
     }
 
     /**
@@ -63,9 +82,18 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function getCourseLessons(Request $request)
     {
-        //
+
+        $lessons = Lesson::where('course_language_id',$request->course_language)
+        ->with('lesson_translations')
+        ->get();
+
+        $lesson_collection = AllCourseLessonsResource::collection($lessons);
+
+
+        return $lesson_collection;
+
     }
 
     /**
@@ -74,7 +102,9 @@ class TaskController extends Controller
     public function edit(string $id)
     {
 
-      $lessons = $this->getAllLesson();
+      $task = Task::where('id',$id)->first();
+      $lesson_course = Lesson::where('id',$task->lesson_id )->first();
+      $lessons = Lesson::where('course_language_id',$lesson_course->course_language_id)->get();
       $task =$this->taskRepository->editTask($id);
 
       return view('content.tasks.edit',compact('task','lessons'));

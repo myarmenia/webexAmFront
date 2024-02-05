@@ -18,7 +18,7 @@ function TelUs() {
     const loading = useSelector(selectTellUsLoading)
     const {t, i18n} = useTranslation()
 
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState("");
     const [textValue, setTextValue] = useState('');
 
     const dispatch = useDispatch()
@@ -60,14 +60,12 @@ function TelUs() {
             formData.append('file', file);
             formData.append('data', jsonOrderObj);
 
-    if (e.target[0].value && e.target[1].value && e.target[2].value){
         handleSubmit()
         
 
         dispatch(postTellUs(formData))
         setMessageModal(true)
         setTextValue('')
-    }
 }
 
   return (
@@ -105,17 +103,17 @@ function TelUs() {
                             <form className="tel-us-form"  onSubmit={(e)=>handleSub(e,handleSubmit, isValid, dirty)}>
 
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="phone-inp">
-                                <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
+                                <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 

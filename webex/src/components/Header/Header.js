@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import Button2 from '../Button2/Button2';
 import OrderModal from '../OrderModal/OrderModal';
 import MessageModal from '../MessageModal/MessageModal';
-import { selectOrder } from '../../store/slices/OrderSlice/OrderSlice';
+import { selectOrder, selectOrderLoading } from '../../store/slices/OrderSlice/OrderSlice';
 import { useSelector } from 'react-redux';
 
 function Header() {
@@ -18,6 +18,8 @@ function Header() {
 
   
   const respOrder = useSelector(selectOrder)
+
+  const loading = useSelector(selectOrderLoading)
 
 
   const startH2Animation = () => {
@@ -76,7 +78,7 @@ function Header() {
         </div>
       </div>
       {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
-      {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}}/>}
+      {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}} loading={loading}/>}
     </div>
   );
 }

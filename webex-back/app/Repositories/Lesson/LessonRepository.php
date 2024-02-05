@@ -57,14 +57,14 @@ class LessonRepository implements LessonRepositoryInterface
         if(Storage::exists($lesson->video)){
           // dd($image->path);
           Storage::delete($lesson->video);
-         
+
         }
         $path = FileUploadService::upload($request->video,'lessons/'.$lesson->id);
         $lesson->video = $path;
         $lesson->save();
       }
 
-    $lesson->update($request->only(['course_language_id','duration']));
+    $lesson->update($request->only(['course_language_id','duration','number']));
 
     if($lesson){
 

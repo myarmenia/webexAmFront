@@ -18,6 +18,7 @@ const initialState = {
           }
     ]
     },
+    loading: true,
    status: 'idle',
    error: null,
    };
@@ -40,12 +41,14 @@ const projectPageSlice = createSlice({
             
             state.data.projects = [...action.payload.data]
              state.status = 'succes';
+             state.loading = false
 
              console.log(state.data.projects,2222);
           })
           .addCase(getProjectPage.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message;
+            state.loading = false
           });
     },
  });
@@ -53,6 +56,7 @@ const projectPageSlice = createSlice({
 
 export const selectProjectPage = (state) => state.projectPage
 export const selectProjectPageData = (state) => state.projectPage.data.projects
+export const selectProjectPageLoading = (state) => state.projectPage.loading
 
 
  export const {} = projectPageSlice.actions
