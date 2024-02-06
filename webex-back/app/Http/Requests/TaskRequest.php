@@ -31,8 +31,8 @@ class TaskRequest extends FormRequest
       ];
       if($lastSegment=="task-store"){
 
-          $array['video']='required|mimes:mp4,mov,ogg,qt | max:20000';
-         
+          $array['video']='required|mimes:mp4,mov,ogg,qt';
+
       }
 
       return $array;
