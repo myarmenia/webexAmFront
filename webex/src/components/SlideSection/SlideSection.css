@@ -17,3 +17,12 @@
     bottom: -30px;
 }
 
+
+.react-multi-carousel-item{
+    transform-style: flat !important;
+}
+
+.react-multi-carousel-track{
+    transform-style: flat !important;
+
+}

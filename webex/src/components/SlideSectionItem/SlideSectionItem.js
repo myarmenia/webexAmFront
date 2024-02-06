@@ -11,7 +11,7 @@ function SlideSectionItem({id, title, timeLine, txt, img, icon}) {
           <h4>{title}</h4>
         </div>
         <p>{txt}</p>
-        <div className='bottom-div'></div>
+        {/* <div className='bottom-div'></div> */}
     </div>
   )
 }

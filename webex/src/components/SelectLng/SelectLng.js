@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import './SelectLng.css'
+import { lengIcon } from '../../iconFolder/icon';
 
 function SelectLng() {
     const { t, i18n } = useTranslation();
+    const leng = localStorage.getItem('lang')
+    const [defaultLng, setDefaultLng] = useState('')
 
     const changeLanguage = (lng) => {
+        console.log(lng,'hhhhhhjgckndvkjn');
         i18n.changeLanguage(lng);
         const ggg = localStorage.getItem('lang')
         console.log(ggg, 'ggg');
@@ -20,15 +24,28 @@ function SelectLng() {
         window.location.href = hhhh
       };
 
-
+    useEffect(()=>{
+      if (leng == "en") {
+        setDefaultLng('Eng')
+      }
+      else if(leng == "ru"){
+        setDefaultLng("Рус")
+      }
+      else{
+        setDefaultLng('Հայ')
+      }
+    },[defaultLng])
       
 
   return (
-    <select value={localStorage.getItem('lang')} name="lng" id="lng" onChange={(e) =>changeLanguage(e.target.value)}>
-        <option value="am">Հայ</option>
-        <option value="ru">Рус</option>
-        <option value="en">Eng</option>
-    </select>
+    <div className='select-lng'>
+       <span>{defaultLng} {lengIcon}</span>
+       <ul className='lng-list'>
+          {defaultLng !== 'Հայ' && <li id="am" onClick={(e) => changeLanguage(e.target.id)}>Հայ</li>}
+          {defaultLng !== 'Рус' && <li id="ru" onClick={(e) => changeLanguage(e.target.id)}>Рус</li>}
+          {defaultLng !== 'Eng' && <li id="en" onClick={(e) => changeLanguage(e.target.id)}>Eng</li>}
+       </ul>
+    </div>
   )
 }
 

@@ -70,7 +70,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    cursor: all-scroll;
+
 }
+
+.slide-section-item p::-webkit-scrollbar {
+    width: 0;
+}
+
 
 .slide-section-item .bottom-div{
     /* width: 273px; */

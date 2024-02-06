@@ -11,7 +11,7 @@ export const getNewsMainPage = createAsyncThunk(
           };
           
           const response = await instance(config);
-            console.log(response.data.data,333333333333333);
+            console.log(response.data,333333333333333);
           return response?.data.data
          
         } catch (error) {

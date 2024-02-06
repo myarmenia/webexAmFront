@@ -171,12 +171,18 @@
 
 .my-reg_log_class, .my-leng_class{
     display: flex;
-    column-gap: 20px;
+    /* column-gap: 20px; */
 }
 
 .my-leng_class{
   margin-left: 20px;
   display: flex;
+  padding-bottom: 100px;
+}
+
+.my-leng_class ul{
+  line-height: 22px;
+  left: 30px;
 }
 
 .list-items li.drop-item{

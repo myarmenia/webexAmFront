@@ -3,15 +3,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 192px;
-    height: 192px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     padding: 15px;
 }
 
 .tools-info-item p{
     color: var(--main_font_color);
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

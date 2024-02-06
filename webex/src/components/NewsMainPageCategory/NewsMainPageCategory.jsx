@@ -5,6 +5,7 @@ import { getNewsMainPage } from '../../store/slices/NewsMainSlice/NewsMainApi';
 import './NewsMainPageCategory.css'
 import { useNavigate } from 'react-router-dom';
 import ShareComponent from '../ShareComponent/ShareComponent';
+import { categoryLine } from '../../iconFolder/icon';
 
 function NewsMainPageCategory() {
 
@@ -40,7 +41,7 @@ function NewsMainPageCategory() {
             {
                 responsNews.map((el, index)=> 
                    index !== 0 && <div key={el.category.categoryId} className='news_main_page_categorys_div'>
-                        <h3 onClick={()=>navigate(`/${leng}/news/category/${el.category.categoryId}`)}>{el.category.categoryName}</h3>
+                        <h3 onClick={()=>navigate(`/${leng}/news/category/${el.category.categoryId}`)}>{el.category.categoryName} {categoryLine}</h3>
                          
                          <div className='news_main_page_categorys_div_content'>
                             {
