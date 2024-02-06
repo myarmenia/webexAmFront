@@ -30,7 +30,9 @@ class TaskRequest extends FormRequest
           'translate.*.description'=>'required',
       ];
       if($lastSegment=="task-store"){
-          $array['video']='required';
+
+          $array['video']='required|mimes:mp4,mov,ogg,qt';
+
       }
 
       return $array;
