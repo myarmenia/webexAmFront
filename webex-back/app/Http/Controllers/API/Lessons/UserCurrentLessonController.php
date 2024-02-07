@@ -38,7 +38,7 @@ class UserCurrentLessonController extends BaseController
   public function index(Request $request){
 
     info(auth('api')->user());
-    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson();
+    $current_lesson = $this->userCurrentLessonRepository->getcurrentlesson($request->all());
     return $this->sendResponse($current_lesson, 'success');
   }
 

@@ -15,7 +15,7 @@ class UserCurrentLessonResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
+// dd($this->id);
         return [
           "id" => $this->id,
           "course_language_id"=>$this->course_language_id,
@@ -24,7 +24,6 @@ class UserCurrentLessonResource extends JsonResource
           "lessons"=>LanguageLessonsResource::collection($this->course_languages->lessons),
           "active_cource"=>$this->course_language_id,
           "all_courses"=> CourseLanguage::all(),
-
 
         ];
     }

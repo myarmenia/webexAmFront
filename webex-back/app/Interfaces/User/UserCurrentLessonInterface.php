@@ -5,6 +5,6 @@ namespace App\Interfaces\User;
 
 interface UserCurrentLessonInterface
 {
-  public function getcurrentlesson();
+  public function getcurrentlesson($request);
 
 }
