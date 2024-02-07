@@ -42,4 +42,19 @@ class NewsCategoryController extends Controller
                 ->with('i', ($request->input('page', 1) - 1) * 5);
         
     }
+
+    public function edit($id){
+        $news_category = NewsCategory::find($id);
+
+        return view('content.news.category.edit', compact('news_category'));
+
+    }
+
+    public function update(NewsCategoryRequest $request, $id){
+
+        $createProj = $this->newsCategoryService->updateNewsCategory($request->all(), $id);
+
+        return redirect()->back();
+
+    }
 }

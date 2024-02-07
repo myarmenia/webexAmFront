@@ -11,9 +11,18 @@
 
 @section('content')
 
+    
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Проекты /</span> Создать нового проект
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{route('project')}}">Проекты</a>
+                </li>
+                <li class="breadcrumb-item active">Создать новый проект</li>
+            </ol>
+        </nav>
     </h4>
+
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">

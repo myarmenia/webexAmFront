@@ -187,6 +187,9 @@ Route::group(['prefix' => 'news'], function () {
   Route::get('/news-category', [NewsCategoryController::class, 'index'])->name('news-category');
   Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
   Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
+  Route::get('/news-category/edit/{id}', [NewsCategoryController::class, 'edit'])->name('news_category_edit');
+  Route::post('/news-category/update/{id}', [NewsCategoryController::class, 'update'])->name('news_category_update');
+
 
   Route::get('/news-edit/{id}', [NewsController::class,'editNews'])->name('news-edit');
   Route::put('/news-update/{id}', [NewsController::class,'updateNews'])->name('news-update');
