@@ -30,9 +30,9 @@ class LessonRequest extends FormRequest
             // 'translate.*.description'=>'required',
             'number'=>'required',
         ];
-        if($lastSegment=="lesson-store"){
-          $array['video']='required|mimes:mp4,mov,ogg,qt';
-        }
+        // if($lastSegment=="lesson-store"){
+        //   $array['video']='required|mimes:mp4,mov,ogg,qt';
+        // }
 
         return  $array;
 
@@ -44,7 +44,7 @@ class LessonRequest extends FormRequest
           'translate.*.title'=>'Поле название  обязательно для заполнения.',
           // 'translate.*.description'=>'Поле описание обязательно для заполнения.',
           'number'=>'Поле номер урока обязательно для заполнения.',
-          'video'=>'Поле видео обязательно для заполнения.'
+          // 'video'=>'Поле видео обязательно для заполнения.'
         ];
     }
 
