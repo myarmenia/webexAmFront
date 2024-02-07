@@ -39,7 +39,7 @@ class LessonController extends Controller
      */
     public function create()
     {
-
+      
       $course_language = CourseLanguage::all();
       return view('content.lessons.create',compact('course_language'));
     }
@@ -99,6 +99,6 @@ class LessonController extends Controller
      */
     public function destroy(string $id)
     {
-        // 
+        //
     }
 }

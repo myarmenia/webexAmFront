@@ -30,7 +30,7 @@
       </div>
       <div class="card-body">
         <form  action="{{route('lesson-store')}}" method="post" enctype="multipart/form-data">
-          @csrf
+        
             <!-- Dropdown with icon -->
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Название языка</label>

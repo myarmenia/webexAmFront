@@ -27,13 +27,13 @@ class TaskRequest extends FormRequest
         $array = [
           'lesson_id'=>'required',
           'duration' =>'required',
-          'translate.*.description'=>'required',
+
       ];
-      if($lastSegment=="task-store"){
+      // if($lastSegment=="task-store"){
 
-          $array['video']='required|mimes:mp4,mov,ogg,qt';
+      //     $array['video']='required|mimes:mp4,mov,ogg,qt';
 
-      }
+      // }
 
       return $array;
     }
@@ -41,8 +41,7 @@ class TaskRequest extends FormRequest
     {
         return [
           'duration' => 'Поле продолжительность обязательно для заполнения',
-          'translate.*.description'=>'Поле описание обязательно для заполнения.',
-          'video'=>'Поле видео обязательно для заполнения.'
+          // 'video'=>'Поле видео обязательно для заполнения.'
         ];
     }
 }

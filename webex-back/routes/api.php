@@ -39,7 +39,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
             Route::post('editPassword', [UserController::class, 'editPassword']);
         });
     });
-    
+
     Route::group(['prefix' => 'project'], function ($router) {
         Route::get('getProject', [ProjectController::class, 'getProject']);
     });
@@ -55,7 +55,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::post('send-new-password', [ForgotPasswordController::class, 'sendNewPassword']);
     Route::post('trial-course', [TrialCourseController::class, 'trialCourse']);
     Route::post('send-order', SendOrderController::class);
-    
+
 
 
     Route::get('dashboard',[DashboardController::class,'index']);
