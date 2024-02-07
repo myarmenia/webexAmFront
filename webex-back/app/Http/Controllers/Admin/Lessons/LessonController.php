@@ -39,7 +39,7 @@ class LessonController extends Controller
      */
     public function create()
     {
-      
+
       $course_language = CourseLanguage::all();
       return view('content.lessons.create',compact('course_language'));
     }
@@ -47,9 +47,9 @@ class LessonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(LessonRequest $request)
+    public function store(Request $request)
     {
-
+     
       $lesson=$this->lessonRepository->storeLesson($request);
 
       if($lesson){

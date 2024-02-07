@@ -1,6 +1,6 @@
 .OurAdvantagesItem{
     width: 273px;
-    height: 500px;
+    height: 350px;
     flex-shrink: 0;
     border-radius: 0px 26px 26px 0px;
     background: rgba(56, 60, 162, 0.80);
@@ -32,14 +32,20 @@
     line-height: normal;
 }
 
-
 .OurAdvantagesItem p{
     color: rgba(255, 255, 255, 0.95);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    cursor: all-scroll;
 }
+
+.OurAdvantagesItem p::-webkit-scrollbar {
+    width: 0;
+  }
 
 
 .OurAdvantagesItem >div{

@@ -5,6 +5,8 @@ import { getNewsCategoryPage } from '../../store/slices/NewsCategorySlice/NewsCa
 import { selectNewsCategoryPageData, selectNewsCategoryPageDataItems } from '../../store/slices/NewsCategorySlice/NewsCategorySlice'
 import ShareComponent from '../ShareComponent/ShareComponent'
 import './NewsCategoryPage.css'
+import { categorLine } from '../../images/images'
+import { categoryLine } from '../../iconFolder/icon'
 
 function NewsCategoryPage() {
 
@@ -49,7 +51,7 @@ function NewsCategoryPage() {
             }
             return paginationList;
         } else {
-            return <li>Error: Pagination information not available</li>;
+            return <span className="loader"></span>;
         }
     }
     
@@ -62,7 +64,7 @@ function NewsCategoryPage() {
         <div className='container'>
             {
               respCategory.data && (  <div className='news-category-page-items-block'>
-                    <h3>{respCategory.data.category}</h3>
+                    <h3>{respCategory.data.category}{categoryLine}</h3>
 
                     <div className='news-category-page-items'>
                         {

@@ -16,8 +16,9 @@ class LessonRepository implements LessonRepositoryInterface
   }
   public function storeLesson($request)
   {
+  //  dd($request->all());
      $lesson = Lesson::create($request->only(['course_language_id','duration','number']));
-
+// dd($lesson);
      if($request->has('video')){
 
 

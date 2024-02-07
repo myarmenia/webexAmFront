@@ -3,16 +3,24 @@ import './Homeworkes.css';
 import { homeworkes } from '../../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import Block from '../../../../images/Block.svg';
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux';
+import { getCurrentLesson } from '../../../../store/slices/CurrentLessons/CurrentLessonsApi';
 
-function Homeworkes({lessons}) {
+function Homeworkes({lessons, setFullData, fullData}) {
   const { t, i18n } = useTranslation()
-  console.log(lessons);
+  console.log(lessons,'pppppppp');
+
+  const dispatch = useDispatch()
+  const changeCurrentLesson = (lesson) =>{
+    dispatch(getCurrentLesson({lengId:fullData.course_language_id, lessonId: lesson.id}))
+    console.log(fullData.course_language_id,'ddddddddddddd');
+  }
   return (
     <>
       {lessons?.map((el, index) => (
-        <div className="homeworkes_linne_div" key={index}>
+        <div className="homeworkes_linne_div" key={index} onClick={()=>changeCurrentLesson(el)}>
           <p className="homeworkes_text">
-          {t('homework_linne.1')} {el.id}: {el.description}
+          {t('homework_linne.1')} {el.number}: {el.description}
           </p>
           <p>{el.duration} {t('homework_linne.2')}</p>
         </div>

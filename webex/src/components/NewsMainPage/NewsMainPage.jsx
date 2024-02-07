@@ -6,6 +6,8 @@ import { selectNewsMainPageData, selectNewsMainPageLoading } from '../../store/s
 import NewsMainPageCategory from '../NewsMainPageCategory/NewsMainPageCategory'
 import { useNavigate } from 'react-router-dom'
 import ShareComponent from '../ShareComponent/ShareComponent'
+import { categoryLine } from '../../iconFolder/icon'
+import { categorLine } from '../../images/images'
 
 function NewsMainPage() {
     const responsNews = useSelector(selectNewsMainPageData)
@@ -41,7 +43,7 @@ function NewsMainPage() {
             loading ? <div className='load-div'><span className="loader"></span> </div> :
             (<div className='container'>
             <div className='category-top-div'>
-                <h3 onClick={()=>navigate(`/${leng}/news/category/${category1.category.categoryId}`)}>{category1.category.categoryName}</h3>
+                <h3 onClick={()=>navigate(`/${leng}/news/category/${category1.category.categoryId}`)}>{category1.category.categoryName}{categoryLine}</h3>
                 
                 <div className='category-top-div-block'>
                     <div className='category-top-div-big-div' onClick={()=>navigate(`/${leng}/news/${category1.items[0].id}`)}>

@@ -81,6 +81,11 @@
     align-items: center;
 }
 
+.news-category-item-share-and-date-div >span{
+    border-right: 1px solid gray;
+    padding-right: 20px;
+}
+
 .news-category-item-share-and-date-div span{
     color: gray;
 }
@@ -95,6 +100,17 @@
     padding: 5px 20px;
     color: var(--main_color);
     cursor: pointer;
+}
+
+
+.news-category-page-items-block h3{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.news-category-page-items-block h3 svg{
+    width: 77%;
 }
 
 

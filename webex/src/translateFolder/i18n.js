@@ -45,8 +45,8 @@ i18n
               `More than ${years_webex} years in the market`,
               'Student',
               'Project',
-              'Websites 8000+',
-              'Supported Projects 6000+',           
+              'Websites 1000+',
+              'Supported Projects 500+',           
               'Programming Languages 30',
             ],
 
@@ -116,7 +116,8 @@ i18n
             webexInfo : [
               'About us',
 
-             'Webex Technologies was founded in 2003 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards. Webex Technologie offers programming courses. The company focuses on quality education of students with an emphasis on practical knowledge. Webex Technologies has developed its training program based on many years of experience. Most Webex Technologies students find jobs in the IT industry. After completing the course, the best students are given a certificate, which gives them advantages when looking for a job. Webex Technologies welcomes new partners.'
+             'Webex Technologies was founded in 2003 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards.',
+             ' Webex Technologie offers programming courses. The company focuses on quality education of students with an emphasis on practical knowledge. Webex Technologies has developed its training program based on many years of experience. Most Webex Technologies students find jobs in the IT industry. After completing the course, the best students are given a certificate, which gives them advantages when looking for a job. Webex Technologies welcomes new partners.'
             ],
 
             // ===========================createWebsitesAndMobileApp=============================
@@ -439,7 +440,9 @@ i18n
             profile: "Profile",
             help: "Help",
             visit_history: "Visit history",
-            log_out: "Log out"
+            log_out: "Log out",
+
+            lerne_more: 'Լearn more...'
 
         },
       },
@@ -482,8 +485,8 @@ i18n
             `Շուկայում ավելի քան ${years_webex} տարի`,
             'Ուսանող',
             'Պրոեկտ',
-            'Վեբ կայքեր 8000+',
-            'Սպասարկվող Պրոեկտներ 6000+',
+            'Վեբ կայքեր 1000+',
+            'Սպասարկվող Պրոեկտներ 500+',
             'Ծրագրավորման Լեզու 30',
           ],
 
@@ -561,7 +564,8 @@ i18n
           webexInfo: [
             'Մեր Մասին',
             
-            'Webex Technologies ընկերությունը հիմնադրվել է 2003թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին: Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:'
+            'Webex Technologies ընկերությունը հիմնադրվել է 2003թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին:',
+            ' Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:'
           ],
 
             // ===========================createWebsitesAndMobileApp=============================
@@ -721,7 +725,7 @@ i18n
           ],
 
           orderFormTitle:[
-            'Գրիր մեզ',
+            'Գրեք մեզ',
             'ձեր նախագծի մասին',
             'Ընտրեք ծառայություններ',
           ],
@@ -753,7 +757,7 @@ i18n
           feedback: [
             'Անուն*',
             'Էլ․ հասցե*',
-            'Հաղորթագրություն'
+            'Հաղորդագրություն'
           ],
 
 
@@ -887,7 +891,9 @@ i18n
           profile: "Անձնական էջ",
           help: "Օգնություն",
           visit_history: "Այցելության պատմություն",
-          log_out: "Դուրս գալ"
+          log_out: "Դուրս գալ",
+
+          lerne_more: 'Իմացեք ավելին...'
 
         }
 
@@ -933,8 +939,8 @@ i18n
             `Более ${years_webex} лет на рынке`,
             'Студентов ',
             'Проектов',
-            'Сайтов 8000+',
-            'Обслуживание сайтов 6000+',
+            'Сайтов 1000+',
+            'Обслуживание сайтов 500+',
             'Язык программирования 30',
           ],
 
@@ -1015,8 +1021,9 @@ i18n
               Качественно  и основательно подходит к процессу создания нового продукта.
               Webex Technologies работает только новыми и актуальными технологиями, которые в свою очередь переодически обновляются в соответствии с требованиями рынка.
               Компания базируется в г.Ереван, и взаимодействует с международными партнерами  по всему миру.
-              В компании Webex Technologies все реализованные продукты соответствуют международной IT стандартизации. 
-              В компании Webex Technologie есть курсы по программированию.
+              В компании Webex Technologies все реализованные продукты соответствуют международной IT стандартизации.`,
+            
+              ` В компании Webex Technologie есть курсы по программированию.
               Компания фокусирует свое внимание на качественном обучении студентов, делая упор на практические знания.
               В Компании Webex Technologies разработана собственная программа обучения, основанная на многолетнем опыте.
               Большинство студентов компании Webex Technologies находят себя в IT сфере.
@@ -1340,7 +1347,9 @@ i18n
             'Количество уроков',
             'Оплата'
 
-          ]
+          ],
+
+          lerne_more: 'Узнать больше...'
         }
       },
       // Add more languages as needed

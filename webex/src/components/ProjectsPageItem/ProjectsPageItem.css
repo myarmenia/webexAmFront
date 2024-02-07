@@ -70,14 +70,14 @@ img{
 .projects-page-item-info-div div{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 
 
 .projects-page-item h4{
     color: var(--main_font_color);
-    font-size: 25px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -86,7 +86,7 @@ img{
 
 .projects-page-item p{
     color: var(--main_font_color);
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -97,6 +97,12 @@ div.link_icon{
     display: flex;
     gap: 20px;
     flex-direction: row;
+}
+
+.projects-page-item-bottom-div div{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 @media(max-width: 1024px){
