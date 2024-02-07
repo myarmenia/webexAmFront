@@ -27,7 +27,7 @@
                 <h5 class="card-header">Список проектов</h5>
             </div>
             <div>
-                <a href="{{ route('create-project') }}" class="btn btn-primary mx-4">Список проектов</a>
+                <a href="{{ route('create-project') }}" class="btn btn-primary mx-4">Создать новый проект</a>
             </div>
         </div>
         <div class="card-body">

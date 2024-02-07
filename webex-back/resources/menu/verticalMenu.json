@@ -20,7 +20,7 @@
     {
       "name": "Курсы",
       "icon": "menu-icon tf-icons bx bx-detail",
-      "slug": "course",
+      "slug": ["course-language","lesson-list", "task-list"],
       "submenu": [
         {
           "url": "/course/course-language",
@@ -30,20 +30,20 @@
         {
           "url": "/lesson/lesson-list",
           "name": "Уроки",
-          "slug": "course"
+          "slug": "lesson-list"
         },
         {
           "url": "/task/task-list",
           "name": "Задания",
-          "slug": "course"
+          "slug": "task-list"
         }
       ]
     },
-    
+
     {
       "name": "Проекты",
       "icon": "menu-icon tf-icons bx bx-collection",
-      "slug": "project",
+      "slug": ["project","create-project"],
       "url": "project"
     },
     {
@@ -55,12 +55,12 @@
     {
       "name": "Новости",
       "icon": "menu-icon tf-icons bx bx-box",
-      "slug": "news",
+      "slug": ["news","news-category"],
       "submenu": [
         {
           "url": "/news/news",
           "name": "Новости",
-          "slug": "news"
+          "slug": ["news","news-create","news-edit"]
         },
         {
           "url": "/news/news-category",
