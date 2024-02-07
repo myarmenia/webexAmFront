@@ -440,7 +440,9 @@ i18n
             profile: "Profile",
             help: "Help",
             visit_history: "Visit history",
-            log_out: "Log out"
+            log_out: "Log out",
+
+            lerne_more: 'Լearn more...'
 
         },
       },
@@ -889,7 +891,9 @@ i18n
           profile: "Անձնական էջ",
           help: "Օգնություն",
           visit_history: "Այցելության պատմություն",
-          log_out: "Դուրս գալ"
+          log_out: "Դուրս գալ",
+
+          lerne_more: 'Իմացեք ավելին...'
 
         }
 
@@ -1343,7 +1347,9 @@ i18n
             'Количество уроков',
             'Оплата'
 
-          ]
+          ],
+
+          lerne_more: 'Узнать больше...'
         }
       },
       // Add more languages as needed

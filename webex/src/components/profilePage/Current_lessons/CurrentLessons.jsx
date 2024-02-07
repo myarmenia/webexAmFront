@@ -35,13 +35,20 @@ function CurrentLessons() {
   const [description, setDescription] = useState('');
   const isCurrentLessonReq = useSelector(getIsCurrentLessonReq);
   console.log('isCurrentLessonReq', isCurrentLessonReq);
+  const[fullData, setFullData] = useState({})
   const dispatch = useDispatch();
   console.log(allCourses, "allCoursesallCourses");
   useEffect(() => {
     // if (isCurrentLessonReq) {
-      dispatch(getCurrentLesson());
+      dispatch(getCurrentLesson({lengId: '0', lessonId: '0'}));
     // }
   }, []);
+
+  useEffect(() => {
+      setFullData(allData)
+  }, [allData]);
+
+  console.log(fullData,'gjhrnvjv');
 
   useEffect(() => {
     let des = '';
@@ -160,7 +167,7 @@ function CurrentLessons() {
                 </div>
                 <div className="homework_side">
                   <p className="HomeworkList">{t('cordial')}</p>
-                  <Homeworkes lessons={allData?.lessons} />
+                  <Homeworkes lessons={allData?.lessons} setFullData={setFullData} fullData={fullData}/>
                 </div>
               </div>
               {/* <div style={{ width: '58vw' }}>
