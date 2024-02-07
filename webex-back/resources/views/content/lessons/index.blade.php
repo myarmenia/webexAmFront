@@ -53,7 +53,7 @@
               <tr>
                 <td>{{++$i}}</td>
                 <td>
-                   <span class="fw-medium">{{ $item->translation("ru")->title }}</span></td>
+                   {{-- <span class="fw-medium">{{ $item->translation("ru")->title }}</span></td> --}}
                 <td>{{$item->number}}</td>
                 <td>{{$item->course_languages->name}}</td>
                 <td>

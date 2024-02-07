@@ -9,5 +9,7 @@ interface NewsCategoryInterface
   public function addTranslation($id, $translate);
   
   public function getCategoryListAdmin();
+
+  public function getCategory($id);
   
 }

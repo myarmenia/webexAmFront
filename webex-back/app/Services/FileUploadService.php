@@ -14,13 +14,13 @@ class FileUploadService
 
         // $filename = md5(microtime()). '.' .$data->getClientOriginalExtension();
         $filename = $data->getClientOriginalName();
-
+// dd( $data);
         $path = Storage::disk('local')->putFileAs(
           'public/' . $folder_path,
           $data,
           $filename
         );
-
+// dd( $path );
         return $path;
 
     }
