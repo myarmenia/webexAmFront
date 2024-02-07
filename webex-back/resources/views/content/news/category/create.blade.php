@@ -10,7 +10,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="javascript:void(0);">Категорию новости</a>
+                    <a href="{{route('news-category')}}">Категория новостей</a>
                 </li>
                 <li class="breadcrumb-item active">Список</li>
             </ol>
@@ -22,7 +22,7 @@
             <div class="card mb-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h5 class="card-header"> Добавить категорию новости</h5>
+                        <h5 class="card-header"> Добавить категорию</h5>
                     </div>
                 </div>
 

@@ -8,9 +8,18 @@
 
 @section('content')
     @include('includes.alert')
+   
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Проекты /</span> Список
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Проекты</a>
+                </li>
+                <li class="breadcrumb-item active">Список</li>
+            </ol>
+        </nav>
     </h4>
+
     <div class="card">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -18,7 +27,7 @@
                 <h5 class="card-header">Список проектов</h5>
             </div>
             <div>
-                <a href="{{ route('create-project') }}" class="btn btn-primary mx-4">Создать нового проект </a>
+                <a href="{{ route('create-project') }}" class="btn btn-primary mx-4">Список проектов</a>
             </div>
         </div>
         <div class="card-body">

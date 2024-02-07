@@ -115,9 +115,10 @@ class NewsService
             $image = Image::where('imageable_id',$id)->first();
 
             if(Storage::exists($image->path)){
-              // dd($image->path);
+             
               Storage::delete($image->path);
               $image->delete();
+
             }
             $path = FileUploadService::upload($data['photo'], 'news/'.$news->id);
 

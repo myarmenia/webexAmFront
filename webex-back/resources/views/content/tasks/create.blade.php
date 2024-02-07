@@ -2,7 +2,7 @@
 
 @section('title', ' Horizontal Layouts - Forms')
 @section('page-script')
-<script src="{{ asset('assets/js/upload-video.js') }}"></script>
+
 @endsection
 
 @section('content')
@@ -109,7 +109,7 @@
             </div>
           </form>
         </div>
-  
+
     </div>
   </div>
 

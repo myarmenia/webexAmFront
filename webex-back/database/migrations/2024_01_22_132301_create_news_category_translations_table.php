@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('news_category_translations', function (Blueprint $table) {
             $table->id();
-            $table->integer('news_category_id');
+            $table->bigInteger('news_category_id')->unsigned();
+            $table->foreign('news_category_id')->references('id')->on('news_categories')->onUpdate('cascade')->onDelete('cascade');            
             $table->string('name');
             $table->string('lang')->index();
             $table->timestamps();

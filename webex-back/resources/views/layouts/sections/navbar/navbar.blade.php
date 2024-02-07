@@ -32,7 +32,7 @@ $navbarDetached = ($navbarDetached ?? '');
       </div>
       @endif
 
-      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+      {{-- <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
         <div class="navbar-nav align-items-center">
           <div class="nav-item d-flex align-items-center">
@@ -103,7 +103,7 @@ $navbarDetached = ($navbarDetached ?? '');
           </li>
           <!--/ User -->
         </ul>
-      </div>
+      </div> --}}
 
       @if(!isset($navbarDetached))
     </div>
