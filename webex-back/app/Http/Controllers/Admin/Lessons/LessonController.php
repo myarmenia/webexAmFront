@@ -53,6 +53,7 @@ class LessonController extends Controller
       $lesson=$this->lessonRepository->storeLesson($request);
 
       if($lesson){
+        // dd(111);
         return redirect()->route('lesson-list');
       }
 

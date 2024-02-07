@@ -23,6 +23,7 @@ class LessonRequest extends FormRequest
     public function rules(): array
     {
       $lastSegment = Request::segment(count(request()->segments()));
+    
         $array = [
             'course_language_id'=>'required',
             'duration' =>'required',
@@ -30,6 +31,7 @@ class LessonRequest extends FormRequest
             // 'translate.*.description'=>'required',
             'number'=>'required',
         ];
+
         // if($lastSegment=="lesson-store"){
         //   $array['video']='required|mimes:mp4,mov,ogg,qt';
         // }
@@ -44,7 +46,9 @@ class LessonRequest extends FormRequest
           'translate.*.title'=>'Поле название  обязательно для заполнения.',
           // 'translate.*.description'=>'Поле описание обязательно для заполнения.',
           'number'=>'Поле номер урока обязательно для заполнения.',
+
           // 'video'=>'Поле видео обязательно для заполнения.'
+
         ];
     }
 

@@ -94,15 +94,19 @@ class ProjectService
             "name" => $data['name'],        
             "project_language" => $data['lang'],
             "process_time" => $data['process_time'],
-            "creation_date_at" => $data['creation_date_at'],            
+            "creation_date_at" => $data['creation_date_at'],  
+            'link_project' => $data['link_project'],
+            'link_app_store' => $data['link_app_store'],
+            'link_play_market' => $data['link_play_market'],   
             "type" => $data['type']]);
         
 
         foreach ( $project->translation as $key => $value) {
-           $value->where('lang', $value->lang)->update(['description' => $data["proj-$value->lang"]]);
+           $value->update(['description' => $data["proj-$value->lang"]]);
+
         }
 
-        if($data['project_photos']){
+        if(isset($data['project_photos'])){
             $projectPhotoInsert = [];
             $photos = $data['project_photos'];
             foreach($photos as $photo){

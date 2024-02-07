@@ -43,4 +43,8 @@ class NewsCategoryRepository implements NewsCategoryInterface{
                 $query->where('lang', app()->getLocale())->get()->toArray();
               }])->get();
     }
+
+    public function getCategory($id){
+        return $type = NewsCategory::find($id);
+    }
 }

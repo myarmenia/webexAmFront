@@ -34,24 +34,25 @@ class ProjectAddOrCreateRequest extends FormRequest
             "process_time" => 'required',
             "creation_date_at" => 'required',
             "type" => 'required',
-            "project_photos"=>'required',
-
+            
         ];
 
 
-        if(isset($this->project_photos)){
+        if($this->id != null){
 
-          if(isset($this->id)){
-            $images_count = count($this->project_photos) + $project->images->count();
+            if(isset($this->project_photos)){        
+                $images_count = count($this->project_photos) + $project->images->count();
 
-            if($images_count >= 4){
-                $count = 4 - $project->images->count();
-                $data["project_photos"] = "required|array|max:$count";
+                if($images_count >= 4){
+                    $count = 4 - $project->images->count();
+                    $data["project_photos"] = "required|array|max:$count";
+                }
+            
             }
-            else{
-                $data["project_photos"] = 'required';
-            }
-          }
+          
+        }
+        else{
+            $data["project_photos"] = 'required';
         }
 
        return $data;
