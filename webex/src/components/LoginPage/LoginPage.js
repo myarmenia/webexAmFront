@@ -47,12 +47,12 @@ function LoginPage() {
         password: yup.string().required(t('validation_reg_log.' + '0')),
     })
 
-    function handleLogSub(e, handleSubmit, isValid, dirty) {
+   async function handleLogSub(e, handleSubmit, isValid, dirty) {
         e.preventDefault()
         handleSubmit()
         if (e.target[0].value && e.target[1].value) {
             if (e.target[0].value && e.target[1].value) {
-                dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
+               await dispatch(postLogin({ email: e.target[0].value, password: e.target[1].value }))
                 !respLogin.data.isAuth && setMessageModal(true)
             }
         }
