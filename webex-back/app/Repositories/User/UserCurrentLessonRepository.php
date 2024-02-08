@@ -35,9 +35,11 @@ class UserCurrentLessonRepository implements UserCurrentLessonInterface
       ])->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->first();
 
       if($user_current_lesson!=null){
+
        
         if($lesson->number <= $user_current_lesson->lesson_number){
           
+
           $all_lesson=Lesson::where('course_language_id',$request['language_id'])->get();
           $lesson['current_lesson_number']=$user_current_lesson->lesson_number;
           $lesson_arr=[];

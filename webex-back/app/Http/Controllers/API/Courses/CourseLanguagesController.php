@@ -6,6 +6,7 @@ use App\Http\Controllers\API\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CourseLanguageResource;
 use App\Models\CourseLanguage;
+use App\Models\UserCourseMenegment;
 use App\Traits\Course\CourseLanguagesTrait;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,12 @@ class CourseLanguagesController extends BaseController
      */
     public function index()
     {
+        $user_id = auth('api')->user()->id;
 
         $course_languages =$this->getAllCourseLanguages();
-
+        $user_course_manegment = UserCourseMenegment::where('user_id',$user_id)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
         return  $this->sendResponse(CourseLanguageResource::collection($course_languages), 'success');
+
 
     }
 
