@@ -32,7 +32,7 @@ Route::group(['middleware' => ['api', 'setlang']], function ($router) {
     Route::group(['middleware' => 'apiAuthCheck'], function ($router) {
         Route::get('course-language',[CourseLanguagesController::class,'index']);
         Route::get('language-lessons/{id}',[LessonController::class,'languageLessons']);
-        Route::get('user-current-lesson/',[UserCurrentLessonController::class,'index']);
+        Route::get('user-current-lesson',[UserCurrentLessonController::class,'index']);
 
         Route::group(['prefix' => 'user'], function ($router) {
             Route::post('edit', [UserController::class, 'edit']);

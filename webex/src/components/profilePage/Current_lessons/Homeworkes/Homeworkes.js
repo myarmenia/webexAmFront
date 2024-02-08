@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Homeworkes.css';
 import { homeworkes } from '../../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import Block from '../../../../images/Block.svg';
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux';
-import { getCurrentLesson } from '../../../../store/slices/CurrentLessons/CurrentLessonsApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentLanguageLesson, getCurrentLesson } from '../../../../store/slices/CurrentLessons/CurrentLessonsApi';
 import {closeLockIconHomeWork, openLockIconHomeWork } from '../../../../iconFolder/icon';
+import { getAllData, getIsCurrentLessonNuber } from '../../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 
-function Homeworkes({lessons, setFullData, fullData}) {
+function Homeworkes({lessons, fullData, open}) {
   const { t, i18n } = useTranslation()
-  console.log(lessons,'pppppppp');
-
+  const dataJan = useSelector(getAllData)
+  
   const dispatch = useDispatch()
+
   const changeCurrentLesson = (lesson) =>{
-    if (lesson.number <= fullData.current_lessson_number ) {
-      dispatch(getCurrentLesson({lengId:fullData.course_language_id, lessonId: lesson.id}))
-    }
+    // if (lesson.number <=  data.current_lessson_number ) {
+        dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: lesson.id}))
+        // console.log(dataJan,);
+    // }
   }
   return (
     <>
@@ -25,7 +28,7 @@ function Homeworkes({lessons, setFullData, fullData}) {
           {t('homework_linne.1')} {el.number}: {el.description}
           </p>
           <p>{el.duration} {t('homework_linne.2')}</p>
-         {el.number <= fullData.current_lessson_number ? <span>{openLockIconHomeWork}</span> : <span>{closeLockIconHomeWork}</span>}
+         {/* {el.number <= dataJan.current_lesson_number ? <span>{openLockIconHomeWork}</span> : <span>{closeLockIconHomeWork}</span>} */}
         </div>
         // <div className="allLIne" key={index}>
         //   <div className="lineLeft">
