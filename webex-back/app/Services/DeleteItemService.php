@@ -44,9 +44,8 @@ class DeleteItemService
               
           if(isset($item_db->images)){
             $item_db->images()->delete();
-            Storage::disk('public')->deleteDirectory("$tb_name/$id");
+            Storage::disk('local')->deleteDirectory("$tb_name/$id");
 
-                
           }
           else{
             

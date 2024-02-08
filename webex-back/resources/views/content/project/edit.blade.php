@@ -174,7 +174,7 @@
                 <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                 <div class="col-md-10">
                     <select id="defaultSelect" name="type" class="form-select">
-                        <option disabled selected>Выберите тип проекта</option>
+                        <option disabled >Выберите тип проекта</option>
                         <option value="web" {{$project->type == 'web' ? 'selected' : ''}}>Web</option>
                         <option value="mobile" {{$project->type == 'mobile' ? 'selected' : ''}}>Mobile</option>
                         <option value="3d" {{$project->type == '3d' ? 'selected' : ''}}>3d</option>
