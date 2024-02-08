@@ -16,6 +16,7 @@ function Homeworkes({lessons, setFullData, fullData}) {
     if (lesson.number <= fullData.current_lessson_number ) {
       dispatch(getCurrentLesson({lengId:fullData.course_language_id, lessonId: lesson.id}))
     }
+    console.log(fullData,'ashot');
   }
   return (
     <>

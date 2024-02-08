@@ -8,7 +8,7 @@ export const getCurrentLesson = createAsyncThunk(
         try {
           const config = {
             method: "get",
-            url: `/user-current-lesson?language_id=${body.lengId}&&lesson_id=${body.lessonId}`,
+            url: `/user-current-lesson?language_id=${body.lengId}&lesson_id=${body.lessonId}`,
           };
           
           const response = await instance(config);
