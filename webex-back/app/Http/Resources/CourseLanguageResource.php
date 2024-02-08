@@ -22,5 +22,7 @@ class CourseLanguageResource extends JsonResource
           "name" => $this->name,
           "logo" => route('get-file', ['path' => $this->logo ])
         ];
+
+     
     }
 }

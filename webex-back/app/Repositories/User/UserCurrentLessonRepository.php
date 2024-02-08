@@ -35,10 +35,9 @@ class UserCurrentLessonRepository implements UserCurrentLessonInterface
       ])->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->first();
 
       if($user_current_lesson!=null){
-// dd($lesson->number,$user_current_lesson->lesson_number);
+
         if($lesson->number <= $user_current_lesson->lesson_number){
 
-          $user_current_lesson = UserCourseMenegment::where('user_id',$user_id)->with('course_languages','lessons','lessons.lesson_translations','lessons.tasks')->get()->last();
           $all_lesson=Lesson::where('course_language_id',$request['language_id'])->get();
 
           $current_lesson = new GetOpendLessonResource($lesson);
