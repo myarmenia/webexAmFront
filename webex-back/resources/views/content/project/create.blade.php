@@ -52,7 +52,7 @@
                     <label for="proj-am" class="col-md-2 col-form-label">Описание Арм.</label>
                     <div class="col-md-10">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Арм."
-                            id="proj-am" name="proj-am" value="{{ old('proj-am') }}"></textarea>
+                            id="proj-am" name="proj-am" >{{ old('proj-am') }}</textarea>
                     </div>
                 </div>
                 @error('proj-am')
@@ -66,7 +66,7 @@
                     <label for="proj-ru" class="col-md-2 col-form-label">Описание Ру.</label>
                     <div class="col-md-10">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Ру." id="proj-ru"
-                            name="proj-ru" value="{{ old('proj-ru') }}"></textarea>
+                            name="proj-ru" >{{ old('proj-ru') }}</textarea>
                     </div>
                 </div>
                 @error('proj-ru')
@@ -80,7 +80,7 @@
                     <label for="proj-en" class="col-md-2 col-form-label">Описание Анг.</label>
                     <div class="col-md-10">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание Анг."
-                            id="proj-en" name="proj-en" value="{{ old('proj-en') }}"></textarea>
+                            id="proj-en" name="proj-en">{{ old('proj-en') }}</textarea>
                     </div>
                 </div>
                 @error('proj-en')
@@ -179,7 +179,7 @@
                     <label for="link_play_market" class="col-md-2 col-form-label">Тип проекта</label>
                     <div class="col-md-10">
                         <select id="defaultSelect" name="type" class="form-select">
-                            <option>Выберите тип проекта</option>
+                            <option disabled selected>Выберите тип проекта</option>
                             <option value="web">Web</option>
                             <option value="mobile">Mobile</option>
                             <option value="3d">3d</option>
