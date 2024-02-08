@@ -30,7 +30,7 @@ class UserController extends Controller
 
         if($request->email != null){
 
-            $data = $data->where('email', $request->email);
+            $data = $data->where('email','LIKE', "%{$request->email}%");
         }
 
         if($request->phone != null){
