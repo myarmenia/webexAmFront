@@ -12,7 +12,7 @@ export const getCurrentLesson = createAsyncThunk(
           };
           
           const response = await instance(config);
-            console.log(response);
+            console.log(response.data,'respData');
           return response?.data?.data;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);
