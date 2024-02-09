@@ -48,7 +48,7 @@ export const currentLessonSlice = createSlice({
 });
 
 export const {
-  setIsCurrentLessonReq
+  setIsCurrentLessonReq,
 } = currentLessonSlice.actions;
 
 export const getAllCourses = (state) => state.currentLesson.courses;

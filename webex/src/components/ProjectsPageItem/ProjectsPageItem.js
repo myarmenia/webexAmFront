@@ -72,12 +72,12 @@ function ProjectsPageItem({id, images, translation, name, project_language, proc
             <div className='projects-page-item-bottom-div'>
                 <div>
                     <h4>{t('projectPage_translation.3')}</h4>
-                    <p>{creation_date_at}</p>
+                    <p>{process_time} {t('projectPage_translation.5')}</p>
                 </div>
 
                 <div>
                     <h4>{t('projectPage_translation.4')}</h4>
-                    <p>{process_time}</p>
+                    <p>{creation_date_at} {t('projectPage_translation.6')}</p>
                 </div>
 
             </div>

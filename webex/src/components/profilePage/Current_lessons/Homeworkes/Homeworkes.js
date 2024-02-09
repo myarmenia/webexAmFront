@@ -8,23 +8,36 @@ import { getCurrentLanguageLesson, getCurrentLesson } from '../../../../store/sl
 import {closeLockIconHomeWork, openLockIconHomeWork } from '../../../../iconFolder/icon';
 import { getAllData, getIsCurrentLessonNuber } from '../../../../store/slices/CurrentLessons/CurrentLessonsSlice';
 
-function Homeworkes({lessons, fullData, open}) {
+function Homeworkes({lessons, fullData, open, changeHomework}) {
   const { t, i18n } = useTranslation()
   const dataJan = useSelector(getAllData)
+
+  useEffect(()=>{
+    lessons.map(el => {
+      dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
+    })
+  },[])
   
   const dispatch = useDispatch()
+
+  
 
   const changeCurrentLesson = (lesson) =>{
     // if (lesson.number <=  data.current_lessson_number ) {
         dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: lesson.id}))
         // console.log(dataJan,);
     // }
+    changeHomework(lesson)
   }
+
+  // const changeCurrentLessonHomework = (homework) =>{
+  //   console.log(homework);
+  // }
   return (
     <>
       {lessons?.map((el, index) => (
         <div className="homeworkes_linne_div" key={index} onClick={()=>changeCurrentLesson(el)}>
-          <p className="homeworkes_text">
+          <p className="homeworkes_text" >
           {t('homework_linne.1')} {el.number}: {el.description}
           </p>
           <p>{el.duration} {t('homework_linne.2')}</p>
