@@ -1,12 +1,13 @@
 .webex-info-div{
     display: flex;
-    column-gap: 100px;
-    align-items: center;
-    justify-content: space-between;
+    /* column-gap: 100px; */
+    /* align-items: center; */
+    justify-content:center;
+    padding: 50px 0;
 }
 
 .webex-info-div >div{
-    width: 50%;
+    width: 45%;
 }
 
 
@@ -14,8 +15,8 @@
 .images-div-webex{
     /* width: 400px; */
     display: grid;
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(2, 350px);
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 230px);
     transition: 1s;
     padding: 50px;
 }
@@ -38,7 +39,7 @@
     background-image: url('../../images/7613.png\ with\ oval\ new_\ 2.png');
     background-repeat: no-repeat;
     background-position: right;
-    /* background-size: cover; */
+    background-size: 12pc;
 }
 
 .img-botom-left{
@@ -52,7 +53,7 @@
     background-image: url('../../images/3img.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 18pc;
+    background-size: cover;
 }
 
 .img-botom-right{
@@ -66,12 +67,13 @@
     background-image: url('../../images/7611\ 3.png');
     background-repeat: no-repeat;
     background-position: top;
+    background-size: 10pc;
 }
 
 .webex-info{
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 10px;
 }
 
 .webex-info p{
@@ -90,6 +92,18 @@
     font-weight: 700;
     line-height: normal;
 }
+
+.nividimi-block{
+    display: none;
+}
+
+.reade-more{
+    color: #FF33FF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
 
 @media(max-width: 1440px){
     .webex-info-div{

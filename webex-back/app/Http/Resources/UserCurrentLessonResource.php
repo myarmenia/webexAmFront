@@ -17,14 +17,13 @@ class UserCurrentLessonResource extends JsonResource
     {
 
         return [
-          "id" => $this->id,
           "course_language_id"=>$this->course_language_id,
           "course_language_name" => $this->course_languages->name,
+          "current_lesson_number" => $this->lessons->number,
           "current_lesson" =>new CurrentLessonResource($this->lessons),
           "lessons"=>LanguageLessonsResource::collection($this->course_languages->lessons),
           "active_cource"=>$this->course_language_id,
           "all_courses"=> CourseLanguage::all(),
-
 
         ];
     }

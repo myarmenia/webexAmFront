@@ -18,8 +18,31 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(10);
-        return view('content.users.index', compact('data'))
+        
+        $data = User::orderBy('id','DESC');
+
+        if($request->role != null){
+            $role = $request->role;
+            $data = $data->whereHas('roles', function ($sub_query) use ($role) {
+                $sub_query->where('name',$role);
+            });
+        }
+
+        if($request->email != null){
+
+            $data = $data->where('email','LIKE', "%{$request->email}%");
+        }
+
+        if($request->phone != null){
+            $data = $data->where('phone', $request->phone);
+        }
+
+        $data = $data->paginate(10)->withQueryString();
+
+        $roles = Role::pluck('name','name')->all();
+
+       
+        return view('content.users.index', compact('data', 'roles'))
         ->with('i', ($request->input('page', 1) - 1) * 10);
     }
 

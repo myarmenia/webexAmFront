@@ -12,11 +12,7 @@ function MessageModal({txt, path, setMessageModal, loading, setMessageModalReset
                 {loading ?
                 <span className="loader"></span>:
                 <div className='message-modal-block'>
-                    {path === `/${leng}/registr` && Array.isArray(txt)? txt.map(el =>
-                        <p>{el[0]}</p>
-                    ): <p>{txt}</p>
-                    }
-                    
+                    <p>{txt}</p>
                     <Button index="6" path={path} setMessageModal={setMessageModal} setMessageModalResetPass={setMessageModalResetPass} />
                 </div>}
         </div>

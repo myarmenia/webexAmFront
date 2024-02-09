@@ -18,11 +18,18 @@ class DeleteItemService
       $model = '';
 
       if(class_exists($className)) {
-          $model = new $className;
-        
+          $model = new $className;  
       }
       else{
+      
         $className = 'App\Models\\' . Str::studly(Str::singular($tb_name)) . '\\' . Str::studly(Str::singular($tb_name));
+            if(class_exists($className)) {
+                $model = new $className;               
+            }
+      }
+
+      if($tb_name == 'news_categories'){
+            $className = 'App\Models\News\\' . Str::studly(Str::singular($tb_name));
             if(class_exists($className)) {
                 $model = new $className;
             }
@@ -36,8 +43,9 @@ class DeleteItemService
           $item_db = $item->first();
               
           if(isset($item_db->images)){
-            Storage::disk('public')->deleteDirectory("$tb_name/$id");
-                
+            $item_db->images()->delete();
+            Storage::disk('local')->deleteDirectory("$tb_name/$id");
+
           }
           else{
             

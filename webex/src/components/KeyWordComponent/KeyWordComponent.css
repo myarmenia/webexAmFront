@@ -30,3 +30,25 @@
 .key-word-component-items .key-word-component-item:hover{
     border-bottom: 1px solid var(--main_font_color);
 }
+
+
+
+@media(max-width: 1440px){
+    .key-word-component .container{
+        padding: 10px 100px;
+    }
+}
+
+
+@media(max-width: 1024px){
+    .key-word-component .container{
+        padding: 10px 80px;
+    }
+}
+
+
+@media(max-width: 780px){
+    .key-word-component .container{
+        padding: 50px;
+    }
+}

@@ -16,8 +16,9 @@ class LessonRepository implements LessonRepositoryInterface
   }
   public function storeLesson($request)
   {
+  //  dd($request->all());
      $lesson = Lesson::create($request->only(['course_language_id','duration','number']));
-
+// dd($lesson);
      if($request->has('video')){
 
 
@@ -57,7 +58,7 @@ class LessonRepository implements LessonRepositoryInterface
         if(Storage::exists($lesson->video)){
           // dd($image->path);
           Storage::delete($lesson->video);
-         
+
         }
         $path = FileUploadService::upload($request->video,'lessons/'.$lesson->id);
         $lesson->video = $path;

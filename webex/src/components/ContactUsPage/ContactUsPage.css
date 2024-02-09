@@ -1,5 +1,6 @@
 .contuct-us-page{
     background-color: var(--main_color);
+    min-height: 100vh;
 }
 
 .contuct-us-page .container {

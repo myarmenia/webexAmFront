@@ -36,13 +36,15 @@ function CurrentLessons() {
   const isCurrentLessonReq = useSelector(getIsCurrentLessonReq);
   console.log('isCurrentLessonReq', isCurrentLessonReq);
   const dispatch = useDispatch();
-  console.log(allCourses, "allCoursesallCourses");
+  console.log(allData, "666666666666666");
   useEffect(() => {
     // if (isCurrentLessonReq) {
-      dispatch(getCurrentLesson());
+      dispatch(getCurrentLesson({lengId: '0', lessonId: '0'}));
     // }
   }, []);
 
+  
+  const [open, setOpen] = useState(null)
   useEffect(() => {
     let des = '';
     if (allData?.current_lesson?.description) {
@@ -51,6 +53,11 @@ function CurrentLessons() {
       des = allData?.lessons[0].description;
     }
     setDescription(des);
+    setOpen({
+      numDas: allData.current_lessson_number,
+      lengId: allData.course_language_id
+
+    })
   }, [allData]);
   // console.log('allData', allData);
   // console.log(typeof allData.lessons, 996966);
@@ -160,7 +167,7 @@ function CurrentLessons() {
                 </div>
                 <div className="homework_side">
                   <p className="HomeworkList">{t('cordial')}</p>
-                  <Homeworkes lessons={allData?.lessons} />
+                  <Homeworkes lessons={allData?.lessons} open={open}  fullData={allData}/>
                 </div>
               </div>
               {/* <div style={{ width: '58vw' }}>

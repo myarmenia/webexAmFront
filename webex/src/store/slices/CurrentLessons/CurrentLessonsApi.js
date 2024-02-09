@@ -4,15 +4,15 @@ import instance from "../../../axios";
 
 export const getCurrentLesson = createAsyncThunk(
     'currentLessons/getCurrentLesson',
-    async (_, thunkAPI) => {
+    async (body, thunkAPI) => {
         try {
           const config = {
             method: "get",
-            url: "/user-current-lesson",
+            url: `/user-current-lesson?language_id=${body.lengId}&lesson_id=${body.lessonId}`,
           };
           
           const response = await instance(config);
-            console.log(response);
+            console.log(response.data,'respData');
           return response?.data?.data;
         } catch (error) {
           return thunkAPI.rejectWithValue(error.response.data.error.both);

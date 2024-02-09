@@ -9,6 +9,7 @@ use App\Http\Resources\LanguageLessonsResource;
 use App\Http\Resources\TasksResource;
 use App\Models\CourseLanguage;
 use App\Models\Lesson;
+use App\Models\UserCourseMenegment;
 use Illuminate\Http\Request;
 
 class LessonController extends BaseController
@@ -19,16 +20,25 @@ class LessonController extends BaseController
 
     public function languageLessons(Request $request,$id)
     {
-      $course_language=CourseLanguage::where('id',$request->id)->first();
+      $user_id = auth('api')->user()->id;
+      // dd($user_id);
+      $course_language = CourseLanguage::where('id',$request->id)->first();
+      $current_lessson_number = UserCourseMenegment::where([
+                                  ['user_id','=', $user_id],
+                                  ['course_language_id','=',$course_language->id]
 
+      ])->first();
+      // dd($current_lessson_number);
       $lessons = Lesson::where('course_language_id',$request->id)
                 ->with('lesson_translations')
                 ->get();
 
                 $lessons_array=[];
                 $data_lessons = [];
-                $lessons_array['course_language_name']=$course_language->name;
-                $lessons_array['course_language_id']=$course_language->id;
+                $lessons_array['course_language_name'] = $course_language->name;
+                $lessons_array['course_language_id'] = $course_language->id;
+                $lessons_array['current_lessson_number'] =$current_lessson_number->lesson_number;
+
 
                 foreach ($lessons as $key => $item) {
 

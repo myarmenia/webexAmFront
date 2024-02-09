@@ -45,8 +45,8 @@ i18n
               `More than ${years_webex} years in the market`,
               'Student',
               'Project',
-              'Websites 8000+',
-              'Supported Projects 6000+',           
+              'Websites 1000+',
+              'Supported Projects 500+',           
               'Programming Languages 30',
             ],
 
@@ -116,7 +116,8 @@ i18n
             webexInfo : [
               'About us',
 
-             'Webex Technologies was founded in 2003 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards. Webex Technologie offers programming courses. The company focuses on quality education of students with an emphasis on practical knowledge. Webex Technologies has developed its training program based on many years of experience. Most Webex Technologies students find jobs in the IT industry. After completing the course, the best students are given a certificate, which gives them advantages when looking for a job. Webex Technologies welcomes new partners.'
+             'Webex Technologies was founded in 2003 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards.',
+             ' Webex Technologie offers programming courses. The company focuses on quality education of students with an emphasis on practical knowledge. Webex Technologies has developed its training program based on many years of experience. Most Webex Technologies students find jobs in the IT industry. After completing the course, the best students are given a certificate, which gives them advantages when looking for a job. Webex Technologies welcomes new partners.'
             ],
 
             // ===========================createWebsitesAndMobileApp=============================
@@ -147,7 +148,7 @@ i18n
               'ERP-system',
               'Unity 3D',
               'Support',
-              'CMR system'
+              'CRM system'
             ],
 
             servicesCentreDivTitle: 'Services',
@@ -205,7 +206,8 @@ i18n
             'Password must contain a number',
             'Password must contain a lowercase letter',
             'Passwords do not match',
-            
+            'Write only a number',
+            'Password must contain at least 8 characters'
           ],
 
           resetPasswordModalError_message: 'Something is wrong',
@@ -335,6 +337,51 @@ i18n
           ],
           dashboard_name: 'Dashboard',  
 
+
+          web_project_page_top_div_title: 'Web App Development',
+
+          KeyWordComponent: 'Keywords',
+
+          KeyWordComponentItem: [
+            'Integrated website promotion,',
+            'Budget Promotion,',
+            'Internet advertising,',
+            'Search Engine,',
+            'Promotion Site Optimization,',
+            ' SEO - Search Engine Optimization,',
+            ' Contextual Advertising,',
+            'Promotion on social networks, blogs, service,',
+            ' Free Site Audit,',
+            'Free counter installation,',
+            ' Website promotion and optimization: question - answer,',
+            ' Articles about website promotion,',
+            ' Cost of website promotion,',
+            '  Price Brand Pages Creation and Groups in Social Networks,',
+            ' 3D modeling,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Visualization of the general plan,',
+            ' 3D modeling,',
+            '  3D interior visualization,',
+            '  ИТ-consulting,',
+            ' iOS,',
+            ' Android,',
+            'Design,',
+            'Unity development,',
+            'UI/UX design,',
+            ' 2D and 3D game development'
+          ],
+
+          web_project_page_web_development_title: 'Web App Development',
+
+          web_project_page_web_development_info: [
+            'Webex Technologies is operating for over 15 years. Our company has extensive experience in web application development, outsourcing, software development and web development, IT consulting, application integration, business process analysis, software testing, maintenance and support.',
+            "Let's take a look at what the services provided by Webex Technologies are."
+          ],
+
+
+
+
           account_Box: [
             'Account',
             'Edit profile',
@@ -358,7 +405,7 @@ i18n
 
           all_video_lessons: "All video lessons",
 
-          profile: [
+          profileArr: [
             'Your Profile',
             'Fill in your details',
             'Save',
@@ -393,8 +440,10 @@ i18n
             profile: "Profile",
             help: "Help",
             visit_history: "Visit history",
-            log_out: "Log out"
-          
+            log_out: "Log out",
+
+            lerne_more: 'Լearn more...'
+
         },
       },
       am: {
@@ -436,8 +485,8 @@ i18n
             `Շուկայում ավելի քան ${years_webex} տարի`,
             'Ուսանող',
             'Պրոեկտ',
-            'Վեբ կայքեր 8000+',
-            'Սպասարկվող Պրոեկտներ 6000+',
+            'Վեբ կայքեր 1000+',
+            'Սպասարկվող Պրոեկտներ 500+',
             'Ծրագրավորման Լեզու 30',
           ],
 
@@ -515,7 +564,8 @@ i18n
           webexInfo: [
             'Մեր Մասին',
             
-            'Webex Technologies ընկերությունը հիմնադրվել է 2003թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին: Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:'
+            'Webex Technologies ընկերությունը հիմնադրվել է 2003թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին:',
+            ' Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:'
           ],
 
             // ===========================createWebsitesAndMobileApp=============================
@@ -548,7 +598,7 @@ i18n
             'ERP-համակարգ ',
             'Unity 3D',
             'Սպասարկում',
-            'CMR համակարգեր'
+            'CRM համակարգեր'
           ],
 
           servicesCentreDivTitle: 'Ծառայություններ',
@@ -609,7 +659,8 @@ i18n
             'Գաղտնաբառը պետք է պարունակի թվանշան',
             'Գաղտնաբառը պետք է պարունակի  Փոքրատառ',
             'Գաղտնաբառները չեն համնկնում',
-  
+            'Գրե՜ք միայն թվանշան',
+            'Գաղտնաբառը ամենաքիչ պետք է պարունակի 8 նիշ',
           ],
 
           resetPasswordModalError_message: 'Ինչ որ բան այն չէ',
@@ -674,7 +725,7 @@ i18n
           ],
 
           orderFormTitle:[
-            'Գրիր մեզ',
+            'Գրեք մեզ',
             'ձեր նախագծի մասին',
             'Ընտրեք ծառայություններ',
           ],
@@ -706,7 +757,7 @@ i18n
           feedback: [
             'Անուն*',
             'Էլ․ հասցե*',
-            'Հաղորթագրություն'
+            'Հաղորդագրություն'
           ],
 
 
@@ -753,6 +804,48 @@ i18n
 
           description: 'Նկարագրություն',
 
+
+          web_project_page_top_div_title: 'Վեբ ծրագրի մշակում',
+
+          KeyWordComponent: 'Բանալի բառեր',
+
+          KeyWordComponentItem: [
+            'Ինտեգրված կայքի առաջխաղացում,',
+            'Բյուջեի առաջխաղացում,',
+            'Ինտերնետ գովազդ,',
+            'Որոնման համակարգ,',
+            'Կայքի օպտիմզացում,',
+            ' SEO - Որոնման համակարգի օպտիմալացում,',
+            'Համատեքստային գովազդ,',
+            'Սոցիալական ցանցերում առաջխաղացում, բլոգեր, ծառայություններ,',
+            ' Կայքերի ազատ աուդիտ,',
+            'Հաշվի անվճար տեղադրում,',
+            ' Կայքերի առաջխաղացում և օպտիմալացում. հարց / պատասխան,',
+            ' Հոդվածների կայքի առաջխաղացման մասին,',
+            ' Կայքի առաջխաղացման արժեք,',
+            'Գներ Բրենդային էջերի ստեղծումը սոցիալական ցանցերում,',
+            'Եռաչափ մոդելավորում,',
+            ' Blender,',
+            'Gimp,',
+            ' Քոթեջի և իր տարածքի 3D վիզուալացում,',
+            ' 3D մոդելավորում,',
+            'Ինտերիերի 3D վիզուալիզացիում,',
+            ' ՏՏ - խորհրդատվություն,',
+            ' iOS,',
+            ' Android,',
+            ' Դիզայն,',
+            'Unity-ով ստեղծում,',
+            ' UI / UX դիզայն,',
+            ' 2D և 3D խաղերի ստեղծում'
+          ],
+
+          web_project_page_web_development_title: 'Վեբ ծրագրի մշակում',
+
+          web_project_page_web_development_info: [
+            'Webex technologies ընկերությունը գործում է ավելի քան 15 տարի։ Մեր ընկերությունը ունի մեծ փորձ վեբ ծրագրերի մշակման, աութսորսինգի, ծրագրային ապահովման և վեբ ծրագրերի մշակման, ՏՏ խորհրդատվության, հավելվածների ինտեգրման, բիզնես գործընթացների վերլուծության, ծրագրային ապահովման փորձարկման, պահպանման և աջակցության ոլորտում։',
+            'Եկեք նայենք, թե որոնք են Webex Technologies-ի մատուցած ծառայությունները:'
+          ],
+
           homework_linne: [
             'Կատարել տնային առաջադրանքները',
             'Դաս',
@@ -763,7 +856,7 @@ i18n
 
           all_video_lessons: "Բոլոր վիդեոդասերը",
 
-          profile: [
+          profileArr: [
             'Քո Պրոֆիլը',
             'Լրացրու տվյալներդ',
             'Պահպանել',
@@ -798,7 +891,10 @@ i18n
           profile: "Անձնական էջ",
           help: "Օգնություն",
           visit_history: "Այցելության պատմություն",
-          log_out: "Դուրս գալ"
+          log_out: "Դուրս գալ",
+
+          lerne_more: 'Իմացեք ավելին...'
+
         }
 
       },
@@ -843,8 +939,8 @@ i18n
             `Более ${years_webex} лет на рынке`,
             'Студентов ',
             'Проектов',
-            'Сайтов 8000+',
-            'Обслуживание сайтов 6000+',
+            'Сайтов 1000+',
+            'Обслуживание сайтов 500+',
             'Язык программирования 30',
           ],
 
@@ -903,7 +999,7 @@ i18n
           button: [
             'Курсы',
             'Регистрация',
-            'Заказать проект',
+            'Заказать',
             'онлайн',
             'оффлайн',
             'Выполнять',
@@ -925,8 +1021,9 @@ i18n
               Качественно  и основательно подходит к процессу создания нового продукта.
               Webex Technologies работает только новыми и актуальными технологиями, которые в свою очередь переодически обновляются в соответствии с требованиями рынка.
               Компания базируется в г.Ереван, и взаимодействует с международными партнерами  по всему миру.
-              В компании Webex Technologies все реализованные продукты соответствуют международной IT стандартизации. 
-              В компании Webex Technologie есть курсы по программированию.
+              В компании Webex Technologies все реализованные продукты соответствуют международной IT стандартизации.`,
+            
+              ` В компании Webex Technologie есть курсы по программированию.
               Компания фокусирует свое внимание на качественном обучении студентов, делая упор на практические знания.
               В Компании Webex Technologies разработана собственная программа обучения, основанная на многолетнем опыте.
               Большинство студентов компании Webex Technologies находят себя в IT сфере.
@@ -1019,11 +1116,12 @@ i18n
 
           validation_reg_log: [
             'Это поле является обязательным',
-            'Напишите правильный E-mail!',
+            'Пишите правильный E-mail!',
             'Пароль должен содержать цифру',
             'Пароль должен содержать строчные буквы',
-            'Пароли не совпадают',
-            
+            'Пароль не совпадают',
+            'Пишите только цифру',
+            'Пароль должен содержать не менее 8 символов'
           ],
 
           resetPasswordModalError_message: 'Что-то не так',
@@ -1152,7 +1250,49 @@ i18n
             'Мобильный',
             'Игры и 3D'
           ],
+
+          web_project_page_top_div_title: 'Разработка веб приложений',
+
+          KeyWordComponent: 'Ключевые слова',
+
+          KeyWordComponentItem: [
+            'Комплексное продвижение сайтов,',
+            'Бюджетное продвижение,',
+            'Реклама в интернете,',
+            'Поисковое продвижение сайта,',
+            'Оптимизация сайта,',
+            'SEO - поисковая оптимизация,',
+            'Контекстная реклама,',
+            'Продвижение в соцсетях, блогах, сервисах,',
+            'Бесплатный экспресс-аудит сайта,',
+            'Бесплатная установка счетчика,',
+            'Продвижение и оптимизация сайтов: вопрос-ответ,',
+            'Статьи о продвижении сайтов,',
+            ' Стоимость продвижения сайтов,',
+            ' Создание бренд-страниц и групп в соцсетях,',
+            'Трехмерное моделирование,',
+            ' Blender,',
+            'Gimp,',
+            ' 3D Визуализация коттеджа с территорией,',
+            ' 3D моделирование,',
+            ' 3D Визуализация интерьеров,',
+            ' ИТ-консалтинг,',
+            ' iOS,',
+            ' Android,',
+            'Дизайн,',
+            ' Unity разработкиа,',
+            'UI/UX дизайн,',
+            ' 2D и 3D разработка игр'
+          ],
+
+          web_project_page_web_development_title: 'Разработка веб приложений',
+
+          web_project_page_web_development_info: [
+            'Компания ВэбЕкс Технолоджис была основана в ноябре 2007 года. Наша компания имеет большой опыт в области разработки веб-приложении, аутсорсинга разработки программного обеспечения и веб-разработки, ИТ-консалтинга, интеграции приложений, анализа бизнес-процессов, тестирования ПО, сопровождения и поддержки.',
+            'Давайте разберем, что из себя представляют услуги, которые оказывает компания ВебЭкс Технолоджис.'
+          ],
           dashboard_name: 'Панель приборов',
+
           account_Box: [
             'Счет',
             'Редактировать профиль',
@@ -1177,7 +1317,7 @@ i18n
 
           all_video_lessons: "Все видео уроки",
 
-          profile: [
+          profileArr: [
             'Ваш профиль',
             'Заполните свои данные',
             'Сохранять',
@@ -1206,7 +1346,10 @@ i18n
             'Всего уроков',
             'Количество уроков',
             'Оплата'
-          ]
+
+          ],
+
+          lerne_more: 'Узнать больше...'
         }
       },
       // Add more languages as needed

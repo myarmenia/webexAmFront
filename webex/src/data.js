@@ -836,13 +836,13 @@ export const servicesPageItemsData= [
 export const keyWordData = [
     {
         id: '1',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Комплексное продвижение сайтов,',
     },
 
     {
         id: '2',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Бюджетное продвижение,',
     },
 
@@ -854,31 +854,31 @@ export const keyWordData = [
 
     {
         id: '4',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Поисковое продвижение сайта,',
     },
 
     {
         id: '5',
-        path: '/webProject',
+        path: '/web-project',
         txt: 'Оптимизация сайта,',
     },
 
     {
         id: '6',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'SEO - поисковая оптимизация,',
     },
 
     {
         id: '7',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Контекстная реклама,',
     },
 
     {
         id: '8',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Продвижение в соцсетях, блогах, сервиса,',
     },
 
@@ -890,67 +890,67 @@ export const keyWordData = [
 
     {
         id: '10',
-        path: '/webProject',
+        path: '/web-project',
         txt: '  Бесплатная установка счетчика,',
     },
 
     {
         id: '11',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Продвижение и оптимизация сайтов: вопрос-ответ,',
     },
 
     {
         id: '12',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Статьи о продвижении сайтов,',
     },
 
     {
         id: '13',
-        path: '/websitePromotion',
+        path: '/website-promotion',
         txt: 'Стоимость продвижения сайтов,',
     },
 
     {
         id: '14',
-        path: '/webProject',
+        path: '/web-project',
         txt: ' Создание бренд-страниц и групп в соцсетях,',
     },
 
     {
         id: '15',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' Трехмерное моделирование,',
     },
 
     {
         id: '16',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' Blender,',
     },
 
     {
         id: '17',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' Gimp,',
     },
 
     {
         id: '18',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' 3D Визуализация коттеджа с территорией,',
     },
 
     {
         id: '19',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' 3D моделирование,',
     },
 
     {
         id: '20',
-        path: '/3dModeling',
+        path: '/3d-modeling',
         txt: ' 3D Визуализация интерьеров,',
     },
 
@@ -980,19 +980,19 @@ export const keyWordData = [
 
     {
         id: '25',
-        path: '/unity_games',
+        path: '/unity-games',
         txt: 'Unity разработкиа,',
     },
 
     {
         id: '26',
-        path: '/unity_games',
+        path: '/unity-games',
         txt: 'UI/UX дизайн,',
     },
 
     {
         id: '27',
-        path: '/unity_games',
+        path: '/unity-games',
         txt: '2D и 3D разработка игр',
     },
 ]

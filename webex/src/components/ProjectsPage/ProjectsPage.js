@@ -23,6 +23,7 @@ function ProjectsPage() {
   
   const [filterData, setFilterData] = useState([...respProject])
 
+  console.log(respProject,'ggggggggg');
   const projectMenuList = [
     {
       title: t('projectType.0'),
@@ -33,7 +34,7 @@ function ProjectsPage() {
     {
       title: t('projectType.1'),
       icon: web_icon,
-      type: 'WebSite'
+      type: 'web'
     },
   
     {
@@ -102,7 +103,7 @@ function ProjectsPage() {
             }
 
             </ul>
-        {loading ? <span class="loader"></span>: 
+        {loading ? <span className="loader"></span>: 
         <div className='project-page-items'>
           {filterData.map((el) => (
             <ProjectsPageItem key={el.id} {...el} />

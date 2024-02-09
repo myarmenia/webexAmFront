@@ -188,6 +188,10 @@
   filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
 }
 
+.homeworkes_linne_div{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
   .allSide {
     gap: 20px;

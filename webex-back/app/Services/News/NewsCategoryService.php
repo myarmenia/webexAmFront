@@ -1,6 +1,8 @@
 <?php
 namespace App\Services\News;
 use App\Repositories\News\NewsCategoryRepository;
+use App\Models\News\NewsCategory;
+
 
 class NewsCategoryService
 {
@@ -62,6 +64,22 @@ class NewsCategoryService
         }
 
         return $readyResource;
+    }
+
+     public function updateNewsCategory($data, $id){
+
+        $news_category = $this->newsCategoryRepository->getCategory($id);
+        $news_category->update(['type' => $data['type']]);
+        
+
+        foreach ( $news_category->translations as $key => $value) {
+           $value->update(['name' => $data['translate'][$value->lang]]);
+        }
+
+        
+        return $news_category;
+        
+
     }
 
 }

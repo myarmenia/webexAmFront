@@ -34,11 +34,11 @@ function SlideSection() {
     <div className='slide-section'>
         
         <div className='slide-section-items'>
-            <Carousel showDots= {true}
+            <Carousel className='jj' showDots= {true}
              responsive={responsive}
              infinite = {true}
              autoPlay={true}
-             autoPlaySpeed={2000}
+             autoPlaySpeed={4000}
              keyBoardControl = {true}
              containerClass='carousel-container'
              dotListClass='custom-dot-list-style'
