@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { years_webex } from '../data';
+import { dotIcon } from '../iconFolder/icon';
 
 i18n
   .use(initReactI18next)
@@ -109,10 +110,12 @@ i18n
               'Offline',
               'Perform',
               'Ok',
+              'Register for the Course',
+              'Order Project'
             ],
             // =============header==================================
-            headerTitlePart1: 'With us, you can conquer the whole world.',
-            headerTitlePart2: ' Learn to program with us. Realize your ideas through Webex Technologies.',
+            headerTitlePart1: 'With our professional team, you can.',
+            headerTitlePart2: 'Order web systems with complex software solutions. - Order multifunctional CRM / ERP systems. - Order hardware programming works. - Order mobile systems with complex software solutions (iOS, Android). - Order multi-functional games for the App Store and Play Store.  - Order complex 3D models.  - Learning the web interface | web backend / Unity / JAVA programming. - improve your knowledge in the field of frontend/server programming․',
 
             // ===========================webexInfo==================
             webexInfo : [
@@ -331,6 +334,75 @@ i18n
             'Original projects. Android and IOS development.',
           ],
 
+          servicesPagesItems_full_txt: [
+            `WebEx Technologies specialists have extensive experience in developing IT products. Our company’s services can be comprehensive or include some part of the development.
+            Turnkey websites are web resources that WebEx Technologies makes from scratch, participating at all stages of its creation. In other words, the customer voices his goals and wishes for design and interface, and we put them into the website.
+            Development of electronic document management automation systems (EDMS) - the creation of this system is an integral and very important part of the corporate information platform.
+            Software development (software) is the activity of creating new software. To simplify the work of employees and automate internal processes
+            The development and implementation of a CRM system are most in demand in situations where there is a qualitative leap in doing business and managing a company.
+             Basic principles of our activities
+                                                                                         
+             1)  Adaptability.
+             2)  Clean Code Principles.
+             3)  Strategically thought out implementation.
+             4)  Reliability.
+             5)  Safety.
+             6)  Оптимальность и эффективностью`,
+
+             `You can choose any option for promoting your website:
+             Comprehensive website promotion - search engine promotion, contextual advertising, and comprehensive advertising campaign for your product on the Internet.
+             Search engine promotion of websites - ensuring that the site is in higher positions in search engines (such as Yandex, Rambler, and Google). As a result of search engine promotion of the site and bringing your site to the top 10 queries of search engines, you receive an increase in site traffic for targeted queries.
+             Contextual advertising is short text ads that appear on search engine results pages in response to user requests.`,
+
+             `Website maintenance carried out by the center’s specialists may include both technical support or information support, and comprehensive website maintenance. There are various options for monthly software maintenance, including various types of technical and information support. There is no longer a need to keep a special employee servicing the site in the company - support for your site, and updating the site, is carried out by WebEx Technologies specialists.
+
+
+             You can order both one-time website maintenance work and monthly website maintenance. We have developed convenient tariff plans for website maintenance.
+             Also, as part of organizing support for the effective operation of the site, the following work is performed:
+
+             1)  Website update, transfer of static websites to modern CMS (content management systems).
+             2)  Website audit, website analysis.
+             3)  Website modernization, including redesign, integration of CMS, additional modules, and interactive interaction systems.`,
+
+             `Three-dimensional modeling or 3D modeling is the process of creating three-dimensional images of any objects or objects.
+             Using 3D graphics, you can create a model of any real or imaginary building, inanimate object, or phenomenon.
+             Areas of application of 3D modeling
+             Using 3D modeling you can create the following objects:
+
+             1)  architectural models;
+             2) heroes and characters of games, and films;
+             3) locations for filming films and games;
+             4)  statues and souvenirs;
+             5) housings for equipment and devices;
+             6) prostheses, orthoses;
+             7) details of various mechanisms and much more.`,
+
+             `Our team has deep knowledge and experience in developing games, and web, desktop, mobile, and cross-platform applications using all the benefits and tools of Unity to achieve customer goals.
+             The advantages of Unity are the presence of a visual development environment, cross-platform support, and a modular system
+             development includes:
+
+             1) 2D and 3D game development
+             2) Development of Unity 3D cross-platform applications
+             3) Development of mobile, web, and desktop applications using Unity3D
+             4) Interactive Application Development
+             5) UI/UX design
+             6) 3D models
+             7) Application configuration and support
+             8) Development of console games (for PS, Xbox, Wii, etc.)`,
+
+             `WebEx Technologies develops applications, first by designing a business model and a strategy for its development. Analytics plays an important role in our work: analysis of requirements and business processes, marketing and technical audit, and requirements management at all stages of the project.
+             Our goal is to create a product that is not only profitable but also useful to society. While developing the concept, you will receive a ready-made working prototype, which will allow you to evaluate the quality of the application, make changes, and refine the product.
+             
+             With the help of mobile applications, you can take your business to a new level: conduct transactions, train employees, plan and set tasks, and purchase and deliver goods in the most convenient format for the company and the client. We cooperate not only with large companies but also with startups that require solutions to problems that do not yet have interface examples.
+             
+             Stages of work:
+             1) Analytics. We conduct specific market analyses and use the best solutions to create first-class products.
+             2) Design. We implement business tasks using user-friendly interfaces based on analytics.
+             3) Design. We create the best user interface. We draw a convenient and understandable product design.
+             4) Development. We implement the application in code. We write clean and stable code for fast and active work.
+             5) Testing. We test the service on different devices and guarantee the release of a high-quality product on time`
+          ],
+
           projectType: [
             'All',
             'Web',
@@ -444,7 +516,12 @@ i18n
             visit_history: "Visit history",
             log_out: "Log out",
 
-            lerne_more: 'Լearn more...'
+            lerne_more: 'Լearn more...',
+
+            slide_section: [
+              'We are teaching',
+              'Our modern and professional approach has already attracted many customers'
+            ]
 
         },
       },
@@ -528,7 +605,7 @@ i18n
           navMenu: [
             'Դասընթացներ',
             'Ծրագրավորում',
-            'Մեր Պրոեկտները',
+            'Մեր Նախագծերը',
             'Մեր Մասին',
             'Կապ',
             'Գլխավոր էջ',
@@ -554,12 +631,14 @@ i18n
             'Օֆլայն',
             'Կատարել',
             'Լավ',
+            'Գրանցվել Դասընթացի',
+            'Պատվիրել Նախագիծ'
           ],
 
             // =============header==================================
 
-          headerTitlePart1: 'Մեզ հետ դուք կարող եք գրավել ամբողջ աշխարհը։',
-          headerTitlePart2: 'Սովորեք ծրագրավորել մեզ հետ։ Իրականացրեք ձեր գաղափարները Վեբէքս Թեքնոլոջիս ընկերության միջոցով։',
+          headerTitlePart1: 'Մեր պրոֆեսիոնալ թիմին կարող եք.',
+          headerTitlePart2: 'Պատվիրել բարդ ծրագրային լուծումներով Web համակարգեր․   - Պատվիրել բազմաֆունկծիոնալ CRM/ERP համակարգեր․  - Պատվիրել սարքավորումների ծրագրավորման աշխատանքներ․ - Պատվիրել բարդ ծրագրային լուծումներով Mobile համակարգեր(iOS, Android)․ - Պատվիրել բազմաֆունկցիոնալ  խաղեր App Store և Play Store-ի համար - Պատվիրել  բարդ 3D մոդելներ - Սովորել Web Frontend | Web Backend | Unity | JAVA ծրագրավորում - Կատարելագործել Frontend/Backend ծրագրավորման Ձեր գիտելիքները․',
 
             // ===========================webexInfo==================
 
@@ -786,6 +865,70 @@ i18n
             'Բջջային ծառայությունների տարբերակները․ այս ամենը բացարձակապես անհրաժեշտ է iOS-ի և Android-ի բջջային սարքի սեփականատիրոջ համար:',
           ],
 
+          servicesPagesItems_full_txt: [
+            `WebEx Technologies-ի մասնագետները ՏՏ արտադրանքի մշակման մեծ փորձ ունեն: Մեր ընկերության ծառայությունները կարող են լինել համապարփակ կամ ներառել զարգացման որոշ մասը:
+            Անտառային կայքերը վեբ ռեսուրս են, որը WebEx Technologies-ը պատրաստում է զրոյից՝ մասնակցելով իր ստեղծման բոլոր փուլերին: Այլ կերպ ասած, հաճախորդը բարձրաձայնում է իր նպատակները, դիզայնի և ինտերֆեյսի ցանկությունները, և մենք դրանք տեղադրում ենք կայքում:
+            Էլեկտրոնային փաստաթղթերի կառավարման ավտոմատացման համակարգերի (EDMS) մշակում - այս համակարգի ստեղծումը կորպորատիվ տեղեկատվական հարթակի անբաժանելի և շատ կարևոր մասն է:
+            Ծրագրային ապահովման մշակումը (ծրագրային ապահովում) նոր ծրագրային ապահովման ստեղծման գործունեություն է՝ աշխատակիցների աշխատանքը պարզեցնելու և ներքին գործընթացների ավտոմատացման համար։
+            CRM համակարգի մշակումն ու ներդրումն առավել պահանջված է այն իրավիճակներում, երբ առկա է որակական թռիչք բիզնես վարելու և ընկերության կառավարման գործում:
+            
+            Մեր գործունեության հիմնական սկզբունքները
+                                                                                         
+            1) Հարմարվողականություն.
+            2) Մաքուր օրենսգրքի սկզբունքները.
+            3) Ռազմավարականորեն մտածված իրականացում.
+            3) Հուսալիություն.
+            4) Անվտանգություն.
+            4) Օպտիմալություն և արդյունավետություն`,
+            `WebEx Technologies-ն առաջարկում է ձեզ վեբ կայքերի, բջջային հավելվածների կամ խաղերի պրոֆեսիոնալ առաջմղում:
+            Դուք կարող եք ընտրել ձեր կայքի առաջխաղացման ցանկացած տարբերակ.
+            Ինտեգրված վեբ կայքի առաջմղում - որոնման համակարգի առաջխաղացում, համատեքստային գովազդ, ձեր արտադրանքի համապարփակ գովազդային արշավ ինտերնետում:
+            Որոնողական կայքերի առաջխաղացում՝ ապահովելով, որ կայքը ավելի բարձր դիրքերում է որոնման համակարգերում (օրինակ՝ Yandex, Rambler, Google): Կայքի որոնման համակարգի առաջխաղացման և ձեր կայքը որոնման համակարգերի TOP10 հարցումներին բերելու արդյունքում դուք ստանում եք կայքի տրաֆիկի ավելացում նպատակային հարցումների համար:
+            Համատեքստային գովազդը կարճ տեքստային գովազդ է, որը հայտնվում է որոնման արդյունքների էջերում՝ ի պատասխան օգտվողների հարցումների:`,
+            `Կենտրոնի մասնագետների կողմից իրականացվող վեբկայքերի սպասարկումը կարող է ներառել ինչպես տեխնիկական աջակցություն կամ տեղեկատվական աջակցություն, այնպես էլ կայքի ամբողջական սպասարկում: Ծրագրային ապահովման ամսական սպասարկման տարբեր տարբերակներ կան, ներառյալ տեխնիկական և տեղեկատվական աջակցության տարբեր տեսակներ: Այլևս կարիք չկա ընկերությունում պահել կայքի սպասարկող հատուկ աշխատակից. Ձեր կայքի աջակցությունը, կայքի թարմացումը իրականացվում է WebEx Technologies-ի մասնագետների կողմից։
+
+            Կարող եք պատվիրել ինչպես վեբ կայքի մեկանգամյա սպասարկում, այնպես էլ կայքի ամսական սպասարկում: Մենք մշակել ենք հարմար սակագնային պլաններ կայքերի սպասարկման համար։
+
+            Նաև կայքի արդյունավետ աշխատանքին աջակցության կազմակերպման շրջանակներում կատարվում են հետևյալ աշխատանքները.
+            1) Կայքի թարմացում, ստատիկ կայքերի տեղափոխում ժամանակակից CMS (բովանդակության կառավարման համակարգեր):
+            2) Կայքի աուդիտ, կայքի վերլուծություն։
+            3) Կայքի արդիականացում, ներառյալ վերանախագծում, CMS-ի ինտեգրում, լրացուցիչ մոդուլներ և ինտերակտիվ փոխազդեցության համակարգեր:`,
+            `Եռաչափ մոդելավորումը կամ եռաչափ մոդելավորումը ցանկացած առարկայի կամ առարկայի եռաչափ պատկերներ ստեղծելու գործընթաց է:
+            Օգտագործելով 3D գրաֆիկա՝ դուք կարող եք ստեղծել ցանկացած իրական կամ երևակայական շենքի, անշունչ առարկայի կամ երևույթի մոդել:
+            3D մոդելավորման կիրառման ոլորտները
+            Օգտագործելով 3D մոդելավորում, կարող եք ստեղծել հետևյալ օբյեկտները.
+            1) ճարտարապետական ​​մոդելներ;
+            2) խաղերի, ֆիլմերի հերոսներ և հերոսներ;
+            3) ֆիլմերի և խաղերի նկարահանման վայրեր;
+            4) արձաններ և հուշանվերներ;
+            5) սարքավորումների և սարքերի համար նախատեսված պատյաններ;
+            6) պրոթեզներ, օրթեզներ;
+            7) տարբեր մեխանիզմների մանրամասներ և շատ ավելին:`,
+            `Մեր թիմը խորը գիտելիքներ և փորձ ունի խաղերի, վեբ, աշխատասեղանի, բջջային և միջպլատֆորմային հավելվածների մշակման գործում՝ օգտագործելով Unity-ի բոլոր առավելություններն ու գործիքները՝ հաճախորդների նպատակներին հասնելու համար:
+            Unity-ի առավելություններն են տեսողական զարգացման միջավայրի առկայությունը, միջպլատֆորմային աջակցությունը և մոդուլային համակարգը
+            զարգացումը ներառում է.
+            1)  2D և 3D խաղերի մշակում
+            2) Unity 3D միջպլատֆորմային հավելվածների մշակում
+            3) Unity3D-ի միջոցով բջջային, վեբ և աշխատասեղանի հավելվածների մշակում
+            4) Ինտերակտիվ հավելվածների մշակում
+            5) UI/UX դիզայն
+            6) 3D մոդելներ
+            7)  Հավելվածի կազմաձևում և աջակցություն
+            8) Վահանակով խաղերի մշակում (PS, Xbox, Wii և այլն)`,
+
+            `WebEx Technologies-ը մշակում է հավելվածներ՝ նախ նախագծելով բիզնես մոդել և դրա զարգացման ռազմավարություն: Վերլուծությունը կարևոր դեր է խաղում մեր աշխատանքում՝ պահանջների և բիզնես գործընթացների վերլուծություն, մարքեթինգային և տեխնիկական աուդիտ, պահանջների կառավարում նախագծի բոլոր փուլերում:
+            Մեր նպատակն է ստեղծել այնպիսի ապրանք, որը ոչ միայն շահավետ է, այլև օգտակար հասարակության համար: Հայեցակարգը մշակելիս դուք կստանաք պատրաստի աշխատանքային նախատիպ, որը թույլ կտա գնահատել հավելվածի որակը, փոփոխություններ կատարել և կատարելագործել արտադրանքը։
+            
+            Բջջային հավելվածների օգնությամբ դուք կարող եք ձեր բիզնեսը տեղափոխել նոր մակարդակ՝ իրականացնել գործարքներ, վերապատրաստել աշխատակիցներին, պլանավորել և դնել առաջադրանքներ, գնել և առաքել ապրանքներ ընկերության և հաճախորդի համար ամենահարմար ձևաչափով: Մենք համագործակցում ենք ոչ միայն խոշոր ընկերությունների, այլեւ ստարտափների հետ, որոնք պահանջում են խնդիրների լուծումներ, որոնք դեռ չունեն ինտերֆեյսի օրինակներ։
+          
+            Աշխատանքի փուլերը.
+            1) Վերլուծություն. Մենք իրականացնում ենք շուկայի կոնկրետ վերլուծություն և օգտագործում ենք լավագույն լուծումները՝ առաջին կարգի ապրանքներ ստեղծելու համար:
+            2) Դիզայն. Մենք իրականացնում ենք բիզնես առաջադրանքներ՝ օգտագործելով օգտագործողի համար հարմար ինտերֆեյսներ՝ հիմնված վերլուծական տվյալների վրա:
+            3) Դիզայն. Մենք ստեղծում ենք լավագույն օգտագործողի միջերեսը: Մենք նկարում ենք արտադրանքի հարմար և հասկանալի դիզայն:
+            4) Զարգացում. Հավելվածն իրականացնում ենք կոդով։ Մենք գրում ենք մաքուր և կայուն կոդ արագ և ակտիվ աշխատանքի համար։
+            5) Փորձարկում. Մենք փորձարկում ենք ծառայությունը տարբեր սարքերի վրա և երաշխավորում ենք որակյալ արտադրանքի ժամանակին թողարկումը:`
+          ],
+
           projectType: [
             'Բոլորը',
             'Վեբ',
@@ -897,7 +1040,12 @@ i18n
           visit_history: "Այցելության պատմություն",
           log_out: "Դուրս գալ",
 
-          lerne_more: 'Իմացեք ավելին...'
+          lerne_more: 'Իմացեք ավելին...',
+
+          slide_section: [
+            'Դասավանդում ենք',
+            'Մեր ժամանակակից և մասնագիտական մոտեցումը գրավել է արդեն իսկ բազում հաճախորդների'
+          ]
 
         }
 
@@ -1008,12 +1156,14 @@ i18n
             'оффлайн',
             'Выполнять',
             'Ок',
+            'Зарегистрироваться на курс',
+            'Заказать проект'
           ],
 
           // ====================header=============================
 
-          headerTitlePart1: 'Вместе с нами вы можете покорить весь Мир.',
-          headerTitlePart2: ' Изучайте программирование с нами. Создайте из идеи продукт с компанией Webex Technologie.',             
+          headerTitlePart1: 'С нашей профессиональной командой вы можете․',
+          headerTitlePart2: 'Заказать Веб-системы с комплексными программными решениями. - Заказать многофункциональные CRM/ERP системы. - Заказать работы по программированию оборудования. - Заказать мобильные системы с комплексными программными решениями (iOS, Android). - Заказ многофункциональных игр для App Store и Play Store. - Заказ сложных 3D-моделей․ - Изучите веб-интерфейс | Веб-бэкэнд |: Единство |: Программирование JAVA. Улучшите свои навыки программирования Frontend/Backend.',             
                         
 
           // ====================webexInfo=========================
@@ -1250,6 +1400,76 @@ i18n
             'Оригинальные проекты, мобильные версии служб – всё это совершенно необходимо владельцу мобильного устройства на IOS и Android.',
           ],
 
+          servicesPagesItems_full_txt: [
+            `Специалисты ВэбЕкс Технолоджис имеют богатый опыт в разработке IT продукции. Услуги нашей компании могут быть комплексными или включать в себя какую-то часть разработки.
+            Сайты под ключ - это веб-ресурс, который компания ВэбЕкс Технолоджис делает с нуля, участвуя на всех этапах его создания. Иначе говоря, заказчик озвучивает свои цели, пожелания к дизайну и интерфейсу и мы оформляем их в сайт.
+            Разработка систем автоматизации электронного документооборота (СЭД)- создание данной системы является неотъемлемой и очень важной частью корпоративной информационной площадки.
+            Разработка программного обеспечения (ПО)— деятельность по созданию нового программного обеспечения.Для упрощения работы сотрудников и автоматизации внутренних процессов
+            Разработка и внедрение CRM-системы наиболее востребована в ситуациях, когда происходит качественный скачок в ведении бизнеса и управлении компанией.
+
+            Основные принципы нашей деятельности
+                                                                                         
+            1) Адаптивность. 
+            2) Принципы чистого кода. 
+            3) Стратегически продуманная реализация.
+            4) Надежность. 
+            5) Безопасность.
+            6) Оптимальность и эффективностью.`,
+
+            `Вы можете выбрать любой вариант продвижения вашего сайта:
+            Комплексное продвижение сайтов- поисковое продвижение, контекстную рекламу, комплексную рекламную кампанию Вашего продукта в Интернете.
+            Поисковое продвижение сайтов- обеспечение нахождения сайта на более высоких позициях в поисковых системах (таких как Яндекс, Рамблер, Google). В результате поискового продвижения сайта и выведения Вашего сайта в ТОП10 запросов поисковых систем, Вы получаете увеличение посещаемости сайта по целевым запросам.
+            Контекстная реклама-краткие текстовые объявления, возникающие на страницах выдачи результатов поисковых систем в ответ на запросы пользователя`,
+
+            `Обслуживание сайта, осуществляемое специалистами центра, может включать как техническую поддержку или информационную поддержку, так и комплексное обслуживание сайта. Возможны различные варианты ежемесячного обслуживания программного обеспечения, включающие различные виды технической и информационной поддержки. Больше нет необходимости держать в компании специального сотрудника, обслуживающего сайт - поддержка Вашего сайта, обновление сайта, осуществляется специалистами ВебЕкс Технолоджис.
+
+            Вы можете заказать как разовые работы по обслуживанию сайта, так и ежемесячное абонентское обслуживание сайта. Нами разработаны удобные тарифные планы на сопровождение сайтов.   
+            Также в рамках организации поддержки эффективной работы сайта выполняются работы:
+
+            1) Обновление сайта, перевод статических сайтов на современные CMS (системы управления контентом).
+            2) Аудит сайтов, анализ сайтов.
+            3) Модернизация сайтов, в том числе редизайн, интеграция CMS, дополнительных модулей и интерактивных систем взаимодействия.`,
+
+            `Трехмерное моделирование или 3D моделирование, представляет собой процесс создания объемных изображений каких-либо предметов или объектов.
+            Используя 3D графику , вы можете создать модель любого реального или воображаемого здания, неодушевленного предмета или явления.
+            Сферы применения 3D моделирования
+            При помощи 3D моделирования можно создать следующие объекты:
+
+            1) архитектурные макеты;
+            2) герои и персонажи игр, фильмов;
+            3) локации для съемки фильмов и игр;
+            4) статуи и сувенирную продукцию;
+            5) корпусы для техники и приборов;
+            6) протезы, ортезы;
+            7) детали различных механизмов и многое другое.`,
+
+            ` Наша команда обладает глубокими знаниями и опытом в сфере разработки игр, веб, десктоп, мобильных и кроссплатформенных приложений с использованием всех преимуществ и инструментов Unity для достижения целей заказчиков. 
+            Преимуществами Unity являются наличие визуальной среды разработки, межплатформенной поддержки и модульной системы
+            разработка включает в себя:
+
+              1) 2D и 3D разработка игр
+              2) Разработка Unity 3D кроссплатформенных приложений
+              3) Разработка мобильных, веб и десктоп приложений на Unity3D
+              4) Разработка интерактивных приложений
+              5) UI/UX дизайн
+              6) 3D модели
+              7) Настройка и поддержка приложений
+              8) Разработка консольных игр (для PS, Xbox, Wii и др.)`,
+
+            `ВебЕкс Технолоджис  разрабатывает приложения, вначале с проектирования бизнес-модели и стратегии его развития. Важное место в нашей работе занимает аналитика: анализ требований и бизнес-процессов, маркетинговый и технический аудит, управление требованиями на всех этапах проекта.
+            Наша цель - создать продукт, не только приносящий прибыль, но и полезный для общества. Во время проработки концепции вы получите готовый рабочий прототип, который позволит оценить качество приложения, внести правки и доработать продукт. 
+            
+             С помощью мобильных приложений вы сможете вывести бизнес на новый уровень: проводить сделки, обучать сотрудников, планировать и ставить задачи, закупать и доставлять товары в максимально удобном для компании и клиента формате. Мы сотрудничаем не только с крупными компаниями, но и стартапами, для которых требуется решение задач, у которых еще нет примеров интерфейса.
+            
+            Этапы работ: 
+            1) Аналитика. Проводим конкретный анализ рынка, используем лучшие решения для создания первоклассных продуктов. 
+            2) Проектирование. Реализуем бизнес- задачи с помощью дружественных пользователю интерфейсов на базе аналитики. 
+            3) Дизайн. Создаем лучший пользовательский интерфейс. Рисуем удобный и понятный дизайн продукта. 
+            4) Разработка. Воплощаем приложение в коде. Пишем чистый и стабильный код, для быстрой и активной работе. 
+            5) Тестирование.  Тестируем сервис на разных устройствах и гарантируем выпуск качественного продукта точно в срок`
+
+          ],
+
           projectType: [
             'Все',
             'Веб',
@@ -1355,7 +1575,12 @@ i18n
 
           ],
 
-          lerne_more: 'Узнать больше...'
+          lerne_more: 'Узнать больше...',
+
+          slide_section: [
+            'Мы преподаем',
+            'Наш современный и профессиональный подход уже привлек множество клиентов.'
+          ]
         }
       },
       // Add more languages as needed

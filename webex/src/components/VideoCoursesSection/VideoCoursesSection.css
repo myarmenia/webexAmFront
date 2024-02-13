@@ -3,6 +3,8 @@
     justify-content: center;
     column-gap: 100px;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -23,8 +25,7 @@
 
 
 .logo-and-title-div h2{
-    border-bottom: 1px solid white;
-    padding: 6px 0;
+    padding: 50px 0;
 }
 
 .logo-and-title-div svg{
@@ -40,9 +41,6 @@
     .video-courses-section{
         column-gap: 10px;
     }
-     .video-courses-section >div:nth-last-of-type(2){
-        width: 20%;
-    } 
 }
 
 @media(max-width: 1440px){
