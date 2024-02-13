@@ -11,13 +11,13 @@ import { getAllData, getIsCurrentLessonNuber } from '../../../../store/slices/Cu
 function Homeworkes({lessons, fullData, open, changeHomework}) {
   const { t, i18n } = useTranslation()
   const dataJan = useSelector(getAllData)
-console.log("fullData",fullData);
+
   // useEffect(()=>{
   //   lessons.map(el => {
   //     dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
   //   })
   // },[])
-  console.log("fullData.current_lessson_number",fullData.current_lesson_number);
+
   const dispatch = useDispatch()
 
   
@@ -30,7 +30,7 @@ console.log("fullData",fullData);
     }
     
   }
-
+console.log(dataJan.current_lesson_number);
   // const changeCurrentLessonHomework = (homework) =>{
   //   console.log(homework);
   // }
