@@ -11,36 +11,40 @@ import { getAllData, getIsCurrentLessonNuber } from '../../../../store/slices/Cu
 function Homeworkes({lessons, fullData, open, changeHomework}) {
   const { t, i18n } = useTranslation()
   const dataJan = useSelector(getAllData)
-
-  useEffect(()=>{
-    lessons.map(el => {
-      dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
-    })
-  },[])
-  
+console.log("fullData",fullData);
+  // useEffect(()=>{
+  //   lessons.map(el => {
+  //     dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
+  //   })
+  // },[])
+  console.log("fullData.current_lessson_number",fullData.current_lesson_number);
   const dispatch = useDispatch()
 
   
 
   const changeCurrentLesson = (lesson) =>{
-    // if (lesson.number <=  data.current_lessson_number ) {
+    if (lesson.number <=  fullData.current_lesson_number ) {
         dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: lesson.id}))
         // console.log(dataJan,);
-    // }
-    changeHomework(lesson)
+        changeHomework(lesson)
+    }
+    
   }
 
   // const changeCurrentLessonHomework = (homework) =>{
   //   console.log(homework);
   // }
+  console.log("fullData.current_lessson_number",fullData.current_lesson_number);
   return (
     <>
       {lessons?.map((el, index) => (
         <div className="homeworkes_linne_div" key={index} onClick={()=>changeCurrentLesson(el)}>
-          <p className="homeworkes_text" >
+          <p className={el.number <= fullData.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
+            {/* {el.number <= fullData.current_lesson_number ? "open" : "close"} */}
+            {console.log(el.number, fullData.current_lesson_number, 55555555)}
           {t('homework_linne.1')} {el.number}: {el.description}
           </p>
-          <p>{el.duration} {t('homework_linne.2')}</p>
+          <p className="homeworkes_duration">{el.duration} {t('homework_linne.2')}</p>
          {/* {el.number <= dataJan.current_lesson_number ? <span>{openLockIconHomeWork}</span> : <span>{closeLockIconHomeWork}</span>} */}
         </div>
         // <div className="allLIne" key={index}>

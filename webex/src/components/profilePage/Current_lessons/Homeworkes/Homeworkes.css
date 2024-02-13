@@ -73,7 +73,36 @@
 }
 
 .homeworkes_text{
-  font-size: 18px;
+  font-size: 17px;
   line-height: 24.41px;
   font-weight: 400;
+  color: rgba(0, 0, 0, 1);;
+}
+.homeworkes_text_dark{
+  font-size: 17px;
+  line-height: 24.41px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.2);;
+}
+
+@media screen and (max-width: 850px) {
+  .homeworkes_text{
+    font-size: 14px;
+  }
+  .homeworkes_text_dark{
+    font-size: 14px;
+  }
+  .homeworkes_linne_div{
+    gap: 9px;
+  }
+  .homeworkes_duration{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .homeworkes_duration{
+    width: 26%;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
