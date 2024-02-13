@@ -23,6 +23,7 @@ import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
 import Plyr from 'plyr-react';
 import { useTranslation } from 'react-i18next'
+import Spinner from '../../../images/Spinner.svg'
 // import 'plyr-react/dist/plyr.css';
 
 function CurrentLessons() {
@@ -52,8 +53,6 @@ function CurrentLessons() {
   
   console.log(selectedHomework,'ffffff');
 
-  console.log(allData,'ash');
-
   
   const [open, setOpen] = useState(null)
   useEffect(() => {
@@ -79,13 +78,14 @@ function CurrentLessons() {
   return (
     <>
       {loading ? (
-        <div>Loading</div>
+        <div className="message-modal"><span className="loader"></span></div>
       ) : (
         (console.log('allData', allData),
         (
           <div className="allSide">
-            <div className="leftSide" style={{ padding: '0 0 0 40px' }}>
+            <div className="leftSide">
               <p className="Introduction">{allData?.course_language_name}</p>
+              <p>{allData?.current_lesson?.title || allData?.lessons[0].title}</p>
               <div style={{ width: '58vw' }} className="leftSideTop">
                 {/* <p className="title_name">HTML/HTML 5</p> */}
                 {/* <video width="100%" height="auto" controls>
