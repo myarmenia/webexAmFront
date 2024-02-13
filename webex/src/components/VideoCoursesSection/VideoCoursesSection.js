@@ -11,7 +11,6 @@ function VideoCoursesSection() {
     <div className='video-courses-section'>
                 <div className='logo-and-title-div'>
                   <SectionTitle title={t('videoCoursesSectionTitle')}/>
-                  {logoImage}
                 </div>
         <div className="video-courses-section-items">
         {

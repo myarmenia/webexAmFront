@@ -12,11 +12,11 @@ function Homeworkes({lessons, fullData, open, changeHomework}) {
   const { t, i18n } = useTranslation()
   const dataJan = useSelector(getAllData)
 
-  useEffect(()=>{
-    lessons.map(el => {
-      dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
-    })
-  },[])
+  // useEffect(()=>{
+  //   lessons.map(el => {
+  //     dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
+  //   })
+  // },[])
   
   const dispatch = useDispatch()
 
@@ -29,7 +29,7 @@ function Homeworkes({lessons, fullData, open, changeHomework}) {
     // }
     changeHomework(lesson)
   }
-
+console.log(dataJan.current_lesson_number);
   // const changeCurrentLessonHomework = (homework) =>{
   //   console.log(homework);
   // }
