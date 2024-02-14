@@ -10,6 +10,10 @@
 .leftSide{
   padding: 0 0 0 40px;
 }
+
+.leftSideTop{
+  width: 58vw;
+}
 /* .leftSideTop{
   position: relative;
   width: 100%; 
@@ -257,7 +261,22 @@ cursor: pointer;
   }
   .rightSide{
     padding: 21px 22px;
-    width: 58vw;
+    width: 76vw;
+  }
+  .leftSideTop{
+    width: 76vw;
   }
 }
 
+@media screen and (max-width: 650px) {
+  .description_title{
+    font-size: 17px;
+  }
+  .homework_title{
+    font-size: 17px;
+  }
+  .HomeworkList{
+    font-size: 17px;
+  }
+
+}

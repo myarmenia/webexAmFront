@@ -58,3 +58,9 @@ padding: 23px;
       padding-top: 55px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .leftSidebar{
+    padding: 15px;
+    }
+}

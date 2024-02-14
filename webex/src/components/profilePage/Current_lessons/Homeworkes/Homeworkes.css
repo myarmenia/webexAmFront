@@ -69,10 +69,10 @@
   border-bottom: 1px solid #5F5F60;
   padding-bottom: 8px;
   margin-bottom: 18px;
-  
+  gap: 10px;
 }
 
-.homeworkes_text{
+.homeworkes_text_dark{
   font-size: 17px;
   line-height: 24.41px;
   font-weight: 400;
@@ -83,6 +83,12 @@
   line-height: 24.41px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.2);;
+}
+
+.homeworkes_duration{
+  min-width: 50px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 850px) {
@@ -97,12 +103,5 @@
   }
   .homeworkes_duration{
     font-size: 14px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .homeworkes_duration{
-    width: 26%;
-    display: flex;
-    justify-content: flex-end;
   }
 }
