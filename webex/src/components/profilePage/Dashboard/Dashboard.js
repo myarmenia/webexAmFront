@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './Dashboard.css';
 import Student from '../../../images/Student.svg';
 import Purchase from '../../../images/Purchase.svg';
-import ProfPic from '../../../images/profile.png';
+import ProfPic from '../../../images/Rectangle.png';
 import Training from './Training/Training';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDashboard } from '../../../store/slices/Dashboard/DashboardApi';
