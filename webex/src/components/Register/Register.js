@@ -48,7 +48,7 @@ function Registre() {
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
-        phone: yup.string().matches(/^\+?[1-9][0-9]{7,14}$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
+        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
         email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
         .matches(/[0-9]/, t('validation_reg_log.'+ '2'))

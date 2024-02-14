@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './BurgerMenu.css'
 import { RegistreIcon, burger, closeBurgerIcon, lengIcon, loginIcon } from '../../iconFolder/icon'
 import { defaultAvatar, logoImage, projectImg_1 } from '../../images/images'
@@ -20,9 +20,29 @@ function BurgerMenu() {
 
   const isAuth = useSelector(getIsAuth)
   const authUser = useSelector(getAuthUser)
+  const burgerMenuRef = useRef(null);
+
+  const handleDocumentClick = (e) => {
+    if (!burgerMenuRef.current.contains(e.target)) {
+      // Click occurred outside the burger menu, close it
+      document.getElementById('btn').checked = false;
+    }
+  };
+
+  useEffect(() => {
+    // Add click event listener to the document
+    document.addEventListener('click', handleDocumentClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
+
 
   return (
-    <div className='burger-menu' onClick={(e) => e.stopPropagation()}>
+    <div ref={burgerMenuRef} className='burger-menu' onClick={(e) => e.stopPropagation()}>
           <div className="wrapper">
             <input type="checkbox" id="btn" hidden />
             <label htmlFor="btn" className="menu-btn">
