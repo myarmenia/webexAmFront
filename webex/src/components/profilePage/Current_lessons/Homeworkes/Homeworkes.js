@@ -29,18 +29,24 @@ function Homeworkes({lessons, fullData, open, changeHomework}) {
     }
     
   }
-console.log(dataJan.current_lesson_number);
+console.log("dataJan.current_lesson_number",dataJan.current_lesson_number);
+
+const scrollToUp = () =>{
+ window.scrollTo(0,0)
+}
   // const changeCurrentLessonHomework = (homework) =>{
   //   console.log(homework);
   // }
+  console.log("dataJan",dataJan);
+  console.log("fullData",fullData);
   console.log("fullData.current_lessson_number",fullData.current_lesson_number);
   return (
     <>
       {lessons?.map((el, index) => (
-        <div className="homeworkes_linne_div" key={index} onClick={()=>changeCurrentLesson(el)}>
-          <p className={el.number <= fullData.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
+        <div className="homeworkes_linne_div" key={index} onClick={()=>{changeCurrentLesson(el);scrollToUp()}}> 
+          <p className={el.number <= dataJan.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
             {/* {el.number <= fullData.current_lesson_number ? "open" : "close"} */}
-            {console.log(el.number, fullData.current_lesson_number, 55555555)}
+            {console.log(el.number, dataJan.current_lesson_number, 55555555)}
           {t('homework_linne.1')} {el.number}: {el.title}
           </p>
           <p className="homeworkes_duration">{el.duration} {t('homework_linne.2')}</p>
