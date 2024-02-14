@@ -85,8 +85,8 @@ function CurrentLessons() {
           <div className="allSide">
             <div className="leftSide">
               <p className="Introduction">{allData?.course_language_name}</p>
-              <p>{allData?.current_lesson?.title || allData?.lessons[0].title}</p>
-              <div style={{ width: '58vw' }} className="leftSideTop">
+              <p>{allData?.current_lesson?.number || allData?.lessons[0].number}. {allData?.current_lesson?.title || allData?.lessons[0].title}</p>
+              <div className="leftSideTop">
                 {/* <p className="title_name">HTML/HTML 5</p> */}
                 {/* <video width="100%" height="auto" controls>
              <source src={kodVideo} type="video/mp4" />
@@ -160,7 +160,7 @@ function CurrentLessons() {
                     ? allData?.current_lesson?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index} onClick={() => changeHomework(el)}>
                           <p className="homework_text">
-                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
                           <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
@@ -168,7 +168,7 @@ function CurrentLessons() {
                     : allData.lessons[0]?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index}>
                           <p className="homework_text">
-                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
                           <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>

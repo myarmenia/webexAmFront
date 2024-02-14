@@ -512,7 +512,7 @@ i18n
             dashboard_name: "Dashboard",
             current_lessons: "Current lessons",
             profile: "Profile",
-            help: "Help",
+            helpp: "Help",
             visit_history: "Visit history",
             log_out: "Log out",
 
@@ -521,7 +521,13 @@ i18n
             slide_section: [
               'We are teaching',
               'Our modern and professional approach has already attracted many customers'
-            ]
+            ],
+            dashboard: 'Dashboard',
+            currentLessons: 'Current lessons',
+            profile: 'Profile',
+            helpp: 'Help',
+            visitHistoryy: 'Visit history',
+            logOut:'Log out',
 
         },
       },
@@ -1036,7 +1042,7 @@ i18n
           dashboard_name: "Գլխավոր էջ",
           current_lessons: "Ընթացիկ դասեր",
           profile: "Անձնական էջ",
-          help: "Օգնություն",
+          helpp: "Օգնություն",
           visit_history: "Այցելության պատմություն",
           log_out: "Դուրս գալ",
 
@@ -1045,8 +1051,13 @@ i18n
           slide_section: [
             'Դասավանդում ենք',
             'Մեր ժամանակակից և մասնագիտական մոտեցումը գրավել է արդեն իսկ բազում հաճախորդների'
-          ]
-
+          ],
+          dashboard: 'Վահանակ',
+          currentLessons: 'Ընթացիկ դասեր',
+          profile: 'Անձնագիր',
+          helpp: 'Օգնություն',
+          visitHistoryy: 'Այցելության պատմություն',
+          logOut:'Դուրս գալ',
         }
 
       },
@@ -1580,7 +1591,13 @@ i18n
           slide_section: [
             'Мы преподаем',
             'Наш современный и профессиональный подход уже привлек множество клиентов.'
-          ]
+          ],
+          dashboard: 'Панель управления',
+          currentLessons: 'Текущие уроки',
+          profile: 'Профиль',
+          helpp: 'Помощь',
+          visitHistoryy: 'История посещений',
+          logOut:'Выйти',
         }
       },
       // Add more languages as needed

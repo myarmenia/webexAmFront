@@ -15,6 +15,7 @@
   align-items: center;
   gap: 28px;
   border-radius: 20px;
+  cursor: pointer;
 }
 .training-cards-blue{
   width: 304px;
@@ -27,6 +28,7 @@
   align-items: center;
   gap: 28px;
   border-radius: 20px;
+  cursor: pointer;
 }
 @media screen and (max-width: 798px) {
   .training-cards-all{

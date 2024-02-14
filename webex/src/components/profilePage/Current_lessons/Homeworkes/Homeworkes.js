@@ -17,7 +17,6 @@ function Homeworkes({lessons, fullData, open, changeHomework}) {
   //     dispatch(getCurrentLesson({lengId:dataJan.course_language_id, lessonId: el.id}))
   //   })
   // },[])
-
   const dispatch = useDispatch()
 
   
@@ -42,7 +41,7 @@ console.log(dataJan.current_lesson_number);
           <p className={el.number <= fullData.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
             {/* {el.number <= fullData.current_lesson_number ? "open" : "close"} */}
             {console.log(el.number, fullData.current_lesson_number, 55555555)}
-          {t('homework_linne.1')} {el.number}: {el.description}
+          {t('homework_linne.1')} {el.number}: {el.title}
           </p>
           <p className="homeworkes_duration">{el.duration} {t('homework_linne.2')}</p>
          {/* {el.number <= dataJan.current_lesson_number ? <span>{openLockIconHomeWork}</span> : <span>{closeLockIconHomeWork}</span>} */}
