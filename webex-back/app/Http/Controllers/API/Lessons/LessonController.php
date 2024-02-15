@@ -23,12 +23,12 @@ class LessonController extends BaseController
       $user_id = auth('api')->user()->id;
       // dd($user_id);
       $course_language = CourseLanguage::where('id',$request->id)->first();
-      $current_lessson_number = UserCourseMenegment::where([
+      $current_lesson_number = UserCourseMenegment::where([
                                   ['user_id','=', $user_id],
                                   ['course_language_id','=',$course_language->id]
 
       ])->first();
-      // dd($current_lessson_number);
+      // dd($current_lesson_number);
       $lessons = Lesson::where('course_language_id',$request->id)
                 ->with('lesson_translations')
                 ->get();
@@ -37,7 +37,7 @@ class LessonController extends BaseController
                 $data_lessons = [];
                 $lessons_array['course_language_name'] = $course_language->name;
                 $lessons_array['course_language_id'] = $course_language->id;
-                $lessons_array['current_lessson_number'] =$current_lessson_number->lesson_number;
+                $lessons_array['current_lesson_number'] =$current_lesson_number->lesson_number;
 
 
                 foreach ($lessons as $key => $item) {
