@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './BurgerMenu.css'
 import { RegistreIcon, burger, closeBurgerIcon, lengIcon, loginIcon } from '../../iconFolder/icon'
-import { logoImage, projectImg_1 } from '../../images/images'
+import { defaultAvatar, logoImage, projectImg_1 } from '../../images/images'
 import NavMenuItem from '../NavMenuItem/NavMenuItem'
 import Button from '../Button/Button'
 import SelectLng from '../SelectLng/SelectLng'
@@ -20,9 +20,29 @@ function BurgerMenu() {
 
   const isAuth = useSelector(getIsAuth)
   const authUser = useSelector(getAuthUser)
+  const burgerMenuRef = useRef(null);
+
+  const handleDocumentClick = (e) => {
+    if (!burgerMenuRef.current.contains(e.target)) {
+      // Click occurred outside the burger menu, close it
+      document.getElementById('btn').checked = false;
+    }
+  };
+
+  useEffect(() => {
+    // Add click event listener to the document
+    document.addEventListener('click', handleDocumentClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
+
 
   return (
-    <div className='burger-menu'>
+    <div ref={burgerMenuRef} className='burger-menu' onClick={(e) => e.stopPropagation()}>
           <div className="wrapper">
             <input type="checkbox" id="btn" hidden />
             <label htmlFor="btn" className="menu-btn">
@@ -38,7 +58,7 @@ function BurgerMenu() {
               <div className='drop-item'>
                     <NavMenuItem index="1" path={"/programing"}/>
                     <ul className='drop-menu'>
-                         <NavMenuItem index="8" path="/1"/>
+                         <NavMenuItem index="8" path="/web-project"/>
                          <NavMenuItem index="9" path="/2"/>
                          <NavMenuItem index="10" path="/3"/>     
                          <NavMenuItem index="11" path="/3"/>     
@@ -69,12 +89,11 @@ function BurgerMenu() {
                   </div>}
 
                   {isAuth && <div className='user-div' onClick={()=> navigate(`/${leng}/profilePage`)}>
-                    <img src={authUser.avatar} alt="avatar" />
+                    <img src={(authUser.avatar !== null && authUser.avatar !== "") ? authUser.avatar : defaultAvatar} alt="avatar" />
                     <span>{authUser.name}</span>
                   </div>}
                   
                   <div className='my-leng_class'>
-                      <a href="#" id='login'>{lengIcon}</a>
                       <SelectLng/>
                   </div>
                     

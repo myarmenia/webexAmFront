@@ -1,10 +1,22 @@
 @extends('layouts/contentNavbarLayout')
 
 @section('title', 'Tables - Basic Tables')
+@section('page-script')
+<script src="{{ asset('assets/js/delete-item.js') }}"></script>
+@endsection
+
 
 @section('content')
+
 <h4 class="py-3 mb-4">
-  <span class="text-muted fw-light">Новости /</span> Создать категорию
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0);">Категория новостей</a>
+            </li>
+            <li class="breadcrumb-item active">Список</li>
+        </ol>
+    </nav>
 </h4>
 
 <hr class="my-5">
@@ -41,13 +53,17 @@
               <td><span class="fw-medium">{{$item['translations']['ru']->name}}</span></td>
               <td><span class="fw-medium">{{$item['translations']['en']->name}}</span></td>
               <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                  </div>
+                <div class="dropdown action" data-id="{{ $item['id'] }}" data-tb-name="news_categories">
+                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('news_category_edit', $item['id'])}}"><i class="bx bx-edit-alt me-1"></i>Редактировать</a>
+                        <button type="button" class="dropdown-item click_delete_item" data-bs-toggle="modal" data-bs-target="#smallModal"><i class="bx bx-trash me-1"></i>
+                            Удалить</button>
+                    </div>
                 </div>
+
               </td>
             </tr>
 
@@ -65,3 +81,5 @@
   </div>
 </div>
 @endsection
+<x-modal-delete></x-modal-delete>
+

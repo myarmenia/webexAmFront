@@ -25,36 +25,35 @@ function Registre() {
     const leng = localStorage.getItem('lang')
 
     const registreResp = useSelector(selectRegister)
-    let arrayFromObject 
-    if (registreResp && registreResp.data && registreResp.data.message) {
-        arrayFromObject = Object.values(registreResp.data.message)
-      }
 
     const loading = useSelector(selectRegisterLoading)
     
-    function handleLogSub(e,handleSubmit, isValid, dirty) {
+   async function handleLogSub(e,handleSubmit, isValid, dirty) {
         e.preventDefault()
         handleSubmit()
-        dispatch(postRegister({
-                            name: e.target[0].value,
-                            email: e.target[1].value,
-                            phone: e.target[2].value,
-                            password: e.target[3].value,
-                            confirmPassword: e.target[4].value,
-                             }))
+        if (e.target[0].value && e.target[1].value && e.target[2].value && e.target[3].value && (e.target[3].value === e.target[4].value) && isValid) {
+           await dispatch(postRegister({
+                name: e.target[0].value,
+                email: e.target[1].value,
+                phone: e.target[2].value,
+                password: e.target[3].value,
+                confirmPassword: e.target[4].value,
+                 }))
 
             setMessageModal(true)
+        }
     }
 
 
 
     const  validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
-        phone: yup.string(),
+        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
         email: yup.string().email(t('validation_reg_log.'+ '1')).required(t('validation_reg_log.'+ '0')),
         password: yup.string()
         .matches(/[0-9]/, t('validation_reg_log.'+ '2'))
         .matches(/[a-z]/, t('validation_reg_log.'+ '3'))
+        .min(8, t('validation_reg_log.'+ '6'))
         .required(t('validation_reg_log.'+ '0')),
         confirmPassword: yup.string().oneOf([yup.ref('password')], t('validation_reg_log.'+ '4')).required(t('validation_reg_log.'+ '0')),
 
@@ -87,28 +86,28 @@ function Registre() {
                             <form className="reg-form"   onSubmit={(e)=>handleLogSub(e,handleSubmit, isValid, dirty)}>
                                 <SectionTitle title={t('reg_and_log.'+ '0')}/>
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="text" name="name" placeholder={t('reg_and_log.'+ '2')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('reg_and_log.'+ '3')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="email" name="email" placeholder={t('reg_and_log.'+ '3')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 
                             <div className="tel-inp">
-                                <input type="" name="phone" placeholder={t('reg_and_log.'+ '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="" name="phone" placeholder={t('reg_and_log.'+ '4')} value={values.phone} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                             </div>
 
                             <div className="password-inp">
-                                <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.'+ '5')} value={values.password} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type={viewPassword ? 'password' : 'text'} name="password" placeholder={t('reg_and_log.'+ '5')} value={values.password} onChange={handleChange} onBlur={handleBlur}/>
                                 <span onClick={()=> setViewPassword(!viewPassword)}>{eyeIcon}</span>
                                 {touched.password && errors.password && <p className="error">{errors.password}</p>}
                             </div>
 
                             <div className="confirmPassword-inp">
-                                <input type={viewConfirmPassword ? 'password' : 'text'} name="confirmPassword" placeholder={t('reg_and_log.'+ '6')} value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type={viewConfirmPassword ? 'password' : 'text'} name="confirmPassword" placeholder={t('reg_and_log.'+ '6')} value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} />
                                 <span onClick={()=> setConfirmViewPassword(!viewConfirmPassword)}>{eyeIcon}</span>
                                 {touched.confirmPassword && errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
                             </div>
@@ -125,7 +124,7 @@ function Registre() {
                              </div>
                     </div>
 
-                    {messageModal && <MessageModal txt={arrayFromObject} path={`/${leng}/registr`} {...{setMessageModal}} loading={loading}/>}
+                    {messageModal && <MessageModal txt={registreResp.data.message} path={`/${leng}/registr`} {...{setMessageModal}} loading={loading}/>}
                 </div>
             )
         }

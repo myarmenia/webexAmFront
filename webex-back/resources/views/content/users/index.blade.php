@@ -29,7 +29,33 @@
             </div>
         </div>
         <div class="card-body">
+            <div>
+                <form action="{{route('users.index')}}" method="get" class="row g-3 mt-2" style="display: flex">
+                    <div class="mb-3 justify-content-end" style="display: flex; gap: 8px">
+                        <div class="col-2">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Э. почта" name="email" value="{{ request()->input('email') }}">
+                        </div>
 
+                        <div class="col-2">
+                            <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" name="phone" value="{{ request()->input('phone') }}">
+                        </div>
+
+                        <div class="col-2">
+                            <select id="select_role" class="form-select" name="role">
+                                <option selected value="">Выберите роль</option>
+                                @foreach ($roles as $role)
+                                <option value="{{$role}}" {{ request()->input('role') == $role ? 'selected' : ''}}>{{$role}}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                        <button class="btn btn-primary col-2">Поиск</button>
+
+                    </div>
+                </form>
+            </div>
+
+            
             <div class="table-responsive text-nowrap">
                 <table class="table table-bordered">
                     <thead>
@@ -47,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+
                         @foreach ($data as $key => $user)
                             <tr>
                                 <td>{{ ++$i }}</td>

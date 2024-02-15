@@ -1,5 +1,6 @@
 .services-page{
     background-color: var(--main_color);
+    min-height: 100vh;
 }
 
 .services-page .container {

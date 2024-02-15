@@ -1,3 +1,12 @@
+
+.slide-section{
+    padding: 100px 0;
+}
+
+.slide-section h2, .slide-section p{
+    color: var(--main_font_color);
+    text-align: center;
+}
 .react-multiple-carousel__arrow{
     display: none;
 }
@@ -10,6 +19,7 @@
 .slide-section-items{
     position: relative;
     padding: 100px 0;
+    padding-top: 70px;
 }
 
 
@@ -17,3 +27,12 @@
     bottom: -30px;
 }
 
+
+.react-multi-carousel-item{
+    transform-style: flat !important;
+}
+
+.react-multi-carousel-track{
+    transform-style: flat !important;
+
+}

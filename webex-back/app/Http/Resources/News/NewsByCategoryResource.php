@@ -19,4 +19,18 @@ class NewsByCategoryResource extends JsonResource
             'items' => NewsResource::collection($this->resource['news']),
         ];
     }
+
+    public function with($request)
+    {
+        return [
+            'pagination' => [
+                'total' => $this->resource['news']->total(),
+                'per_page' => $this->resource['news']->perPage(),
+                'current_page' => $this->resource['news']->currentPage(),
+                'last_page' => $this->resource['news']->lastPage(),
+                'from' => $this->resource['news']->firstItem(),
+                'to' => $this->resource['news']->lastItem(),
+            ],
+        ];
+    }
 }

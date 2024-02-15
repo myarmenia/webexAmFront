@@ -8,15 +8,11 @@ function MessageModal({txt, path, setMessageModal, loading, setMessageModalReset
     const leng = localStorage.getItem('lang')
 
     return (
-        <div className="message-modal">
+        <div className="message_modal">
                 {loading ?
                 <span className="loader"></span>:
-                <div className='message-modal-block'>
-                    {path === `/${leng}/registr` && Array.isArray(txt)? txt.map(el =>
-                        <p>{el[0]}</p>
-                    ): <p>{txt}</p>
-                    }
-                    
+                <div className='message_modal-block'>
+                    <p>{txt}</p>
                     <Button index="6" path={path} setMessageModal={setMessageModal} setMessageModalResetPass={setMessageModalResetPass} />
                 </div>}
         </div>

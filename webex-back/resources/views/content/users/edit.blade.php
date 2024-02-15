@@ -43,7 +43,7 @@
             <div class="mb-3 row">
                 <label for="email" class="col-md-2 col-form-label">Э. почта</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="search" placeholder="Э. почта" id="email" name="email" value="{{$user->email}}">
+                    <input class="form-control" type="email" placeholder="Э. почта" id="email" name="email" value="{{$user->email}}">
 
                 </div>
             </div>

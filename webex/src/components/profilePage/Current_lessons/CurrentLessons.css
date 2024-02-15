@@ -7,6 +7,13 @@
 /* padding-top: 40px;   */
 }
 
+.leftSide{
+  padding: 0 0 0 40px;
+}
+
+.leftSideTop{
+  width: 58vw;
+}
 /* .leftSideTop{
   position: relative;
   width: 100%; 
@@ -81,11 +88,11 @@
 .description{
  background-color: #FFFFFF;
  /* width: 100%; */
- padding: 24px 120px 24px 24px;
+ padding: 24px 24px 24px 24px;
  border-radius: 6px;
  margin-top: 30px;
  box-shadow: 0px 2px 6px 0px #0000001A;
-
+cursor: pointer;
 }
 .description_title{
   font-size: 20px;
@@ -112,10 +119,11 @@
 .homework_linne{
   background-color: #FFFFFF;
   /* width: 100%; */
-  padding: 24px 120px 24px 24px;
+  padding: 24px 24px 24px 24px;
   border-radius: 6px;
   margin-top: 30px;
   box-shadow: 0px 2px 6px 0px #0000001A;
+  cursor: pointer;
 }
 .homework_title{
   font-size: 20px;
@@ -145,7 +153,7 @@
 .homework_side{
   background-color: #FFFFFF;
   /* width: 100%; */
-  padding: 24px 120px 24px 24px;
+  padding: 24px 24px 24px 24px;
   border-radius: 6px;
   margin-top: 30px;
   box-shadow: 0px 2px 6px 0px #0000001A;
@@ -188,6 +196,44 @@
   filter: brightness(0) saturate(100%) invert(27%) sepia(65%) saturate(2298%) hue-rotate(229deg) brightness(76%) contrast(93%);
 }
 
+.homeworkes_linne_div{
+  cursor: pointer;
+}
+.message-modal{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;                                                         
+    position: fixed;                                                             
+    z-index: 999999999999999999999;                         
+    left: 0;                                                                                           
+    top: 0;                                                                                            
+    width: 100%; /* Full width */                                                                      
+    height: 100%; /* Full height */                                                                    
+    overflow-y: auto;
+    background-color: transparent;
+    padding: 100px 0;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
 @media screen and (max-width: 900px) {
   .allSide {
     gap: 20px;
@@ -204,6 +250,33 @@
     font-size: 16px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
+  .allSide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .leftSide{
+    padding: 0;
+  }
+  .rightSide{
+    padding: 21px 22px;
+    width: 76vw;
+  }
+  .leftSideTop{
+    width: 76vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .description_title{
+    font-size: 17px;
+  }
+  .homework_title{
+    font-size: 17px;
+  }
+  .HomeworkList{
+    font-size: 17px;
+  }
 
 }

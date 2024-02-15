@@ -49,10 +49,10 @@ function handleResize(){
   return (
     <>
      <Helmet>
-      <title>HomePage</title>
+      <title>վեբ ծրագրավորման դասընթացներ, CRM/ERP/Unity/iOS/Android/web/PHP/Laravel/ReactJS ծրագրավորում/HomePage</title>
       <meta name="description" content="Our services include, Portfolio websites, e-commerce websites, information portals, turnkey creation for online store, a personal website or a blog."/>
       <meta name="keywords" content="website, development, promotion, service and support, SEO, HTML, CSS, javaScript, 3d, unity, games, mobile, aplication, treinig, search, engine, optimization, internet advertising, design, builder, react, redux, informative,razrabotka, site, разработка, веб студия, заказать, создание, сайтов, продвижение, оптимизация, реклама, дизайн, kayqi patrastum, tsragravorum, armenia."/>
-      <link rel="canonical" href="/"/>
+      <link rel="canonical" href="http://localhost:3000/am"/>
      </Helmet>
       
      <div className='home-page'>

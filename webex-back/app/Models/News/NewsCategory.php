@@ -19,4 +19,9 @@ class NewsCategory extends Model
     {
         return $this->hasMany(NewsCategoryTranslations::class, 'news_category_id', 'id');
     }
+
+    public function news_category_translation($lang){
+
+      return $this->hasOne(NewsCategoryTranslations::class)->where('lang', $lang)->first();
+   }
 }

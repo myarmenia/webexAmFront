@@ -5,9 +5,10 @@ const initialState = {
   allData: [],
   courses: [],
   loading: true,
-  isCurrentLessonReq : true
+  isCurrentLessonReq : true,
   // types: [],
   // typeLoading: false,
+  currentLessonNumber: 0
 };
 
 export const currentLessonSlice = createSlice({
@@ -27,6 +28,7 @@ export const currentLessonSlice = createSlice({
         if(state.isCurrentLessonReq){
           state.allData = action.payload
           state.loading = false
+          state.currentLessonNumber = action.payload.current_lesson_number
         }
         state.isCurrentLessonReq = true
       })
@@ -46,13 +48,14 @@ export const currentLessonSlice = createSlice({
 });
 
 export const {
-  setIsCurrentLessonReq
+  setIsCurrentLessonReq,
 } = currentLessonSlice.actions;
 
 export const getAllCourses = (state) => state.currentLesson.courses;
 export const getAllData = (state) => state.currentLesson.allData;
 export const getLoading = (state) => state.currentLesson.loading;
 export const getIsCurrentLessonReq = (state) => state.currentLesson.isCurrentLessonReq;
+export const getIsCurrentLessonNuber = (state) => state.currentLesson.currentLessonNumber;
 
 
 export const currentLessonReducer = currentLessonSlice.reducer;

@@ -35,7 +35,7 @@ function TelUs() {
 
   const  validationSchema = yup.object().shape({
     name: yup.string().required(t('validation_reg_log.' + '0')),
-    phone: yup.number().required(t('validation_reg_log.' + '0')),
+    phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
     email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
     webSiteAddres: yup.string(),
     message: yup.string(),
@@ -46,7 +46,7 @@ function TelUs() {
     e.preventDefault()
     const [name, phone, email, webSiteAddres,  message] = e.target
 
-    console.dir(e.target);
+
     const orderObj = {
         name: name.value,
         phone: phone.value,
@@ -62,10 +62,11 @@ function TelUs() {
 
         handleSubmit()
         
-
-        dispatch(postTellUs(formData))
-        setMessageModal(true)
-        setTextValue('')
+        if (name.value && phone.value && email.value && isValid) {    
+            dispatch(postTellUs(formData))
+            setMessageModal(true)
+            setTextValue('')
+        }
 }
 
   return (
@@ -103,17 +104,17 @@ function TelUs() {
                             <form className="tel-us-form"  onSubmit={(e)=>handleSub(e,handleSubmit, isValid, dirty)}>
 
                             <div className="name-inp">
-                                <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.name && errors.name && <p className="error">{errors.name}</p>}
                             </div>
 
                             <div className="phone-inp">
-                                <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
                             </div>
 
                             <div className="email-inp">
-                                <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur} required/>
+                                <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
                             </div>
 
@@ -128,8 +129,8 @@ function TelUs() {
                             </div>
 
                             <div className='input-text-div upload-file-div'>
-                              <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
-                              <input style={{display: 'none'}} type="file" id="fileInput" onChange={handleFileChange} />
+                              <label className='fileIcon' htmlFor="fileInput2">{fileIcon}</label>
+                              <input style={{display: 'none'}} type="file" id="fileInput2" onChange={handleFileChange} />
                               <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')}/>
                             </div>
 

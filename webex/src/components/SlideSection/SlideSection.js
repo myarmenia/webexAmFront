@@ -7,11 +7,13 @@ import './SlideSection.css'
 import Carousel from 'react-multi-carousel';
 import { useSelector } from 'react-redux';
 import { selectProgramingLang } from '../../store/slices/HomePageSlice/HomePageSlice';
+import { useTranslation } from 'react-i18next';
 
 function SlideSection() {
 
+  const {t, i18n} = useTranslation()
+
   const programingLang = useSelector(selectProgramingLang)
-  console.log(programingLang);
   const product = 
   programingLang.map(el => {
         el = {
@@ -32,13 +34,16 @@ function SlideSection() {
 
   return (
     <div className='slide-section'>
+
+      <h2>{t('slide_section.0')}</h2>
+      <p>{t('slide_section.1')}</p>
         
         <div className='slide-section-items'>
-            <Carousel showDots= {true}
+            <Carousel className='jj' showDots= {true}
              responsive={responsive}
              infinite = {true}
              autoPlay={true}
-             autoPlaySpeed={2000}
+             autoPlaySpeed={4000}
              keyBoardControl = {true}
              containerClass='carousel-container'
              dotListClass='custom-dot-list-style'

@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start; 
-     row-gap: 90px; 
+     row-gap: 30px; 
     padding: 10px;
     color: var(--main_font_color);
 }

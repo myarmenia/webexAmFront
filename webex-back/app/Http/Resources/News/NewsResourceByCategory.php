@@ -39,7 +39,7 @@ class NewsResourceByCategory extends JsonResource
       }
 
         return [
-            'category' => $categoryName,
+            'category' => ['categoryId' => $categoryId, 'categoryName' => $categoryName],
             'items' => NewsResource::collection($this->resource->reverse()->slice(0, 3)),
         ];
     }

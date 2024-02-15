@@ -74,7 +74,11 @@ Route::group(['middleware' => ['auth']], function () {
   // Main Page Route
   Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
   // Route::resource('roles', RoleController::class);
-  Route::resource('users', UserController::class);
+  Route::resource('users', UserController::class)->names([
+        'index' => 'users.index',
+        'edit' => 'users.edit',
+        'destroy' => 'users.delete',
+    ]);
 
   // pages
   Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
@@ -151,6 +155,7 @@ Route::group(['prefix'=>'task'],function(){
   Route::post('/task-store', [TaskController::class,'store'])->name('task-store');
   Route::get('/task-edit/{id}',[TaskController::class,'edit'])->name('task-edit');
   Route::put('/task-update/{id}',[TaskController::class,'update'])->name('task-update');
+  Route::get('/get-course-lessons',[TaskController::class,'getCourseLessons'])->name('get-course-lessons');
 });
 
 
@@ -186,6 +191,9 @@ Route::group(['prefix' => 'news'], function () {
   Route::get('/news-category', [NewsCategoryController::class, 'index'])->name('news-category');
   Route::get('/news-category-create', [NewsCategoryController::class, 'createCategoryPage'])->name('news-category-create-page');
   Route::post('/news-category-create', [NewsCategoryController::class,'createCategory'])->name('news-category-create');
+  Route::get('/news-category/edit/{id}', [NewsCategoryController::class, 'edit'])->name('news_category_edit');
+  Route::post('/news-category/update/{id}', [NewsCategoryController::class, 'update'])->name('news_category_update');
+
 
   Route::get('/news-edit/{id}', [NewsController::class,'editNews'])->name('news-edit');
   Route::put('/news-update/{id}', [NewsController::class,'updateNews'])->name('news-update');

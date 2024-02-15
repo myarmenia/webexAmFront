@@ -53,6 +53,7 @@ class LessonController extends Controller
       $lesson=$this->lessonRepository->storeLesson($request);
 
       if($lesson){
+        
         return redirect()->route('lesson-list');
       }
 
@@ -98,6 +99,6 @@ class LessonController extends Controller
      */
     public function destroy(string $id)
     {
-        // 
+        //
     }
 }

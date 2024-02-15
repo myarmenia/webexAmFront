@@ -22,9 +22,14 @@ import {
 import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
 import Plyr from 'plyr-react';
+import { useTranslation } from 'react-i18next'
+import Spinner from '../../../images/Spinner.svg'
 // import 'plyr-react/dist/plyr.css';
 
 function CurrentLessons() {
+  const { t, i18n } = useTranslation()
+  const [selectedHomework, setSelectedHomework] = useState(null);
+  const [selectedHomeworkDescription, setSelectedHomeworkDescription] = useState('');
   const allCourses = useSelector(getAllCourses);
   const [allCoursesState, setallCoursesState] = useState(allCourses);
   const allData = useSelector(getAllData);
@@ -34,13 +39,22 @@ function CurrentLessons() {
   const isCurrentLessonReq = useSelector(getIsCurrentLessonReq);
   console.log('isCurrentLessonReq', isCurrentLessonReq);
   const dispatch = useDispatch();
-  console.log(allCourses, "allCoursesallCourses");
+  console.log(allData, "666666666666666");
   useEffect(() => {
     // if (isCurrentLessonReq) {
-      dispatch(getCurrentLesson());
+      dispatch(getCurrentLesson({lengId: '0', lessonId: '0'}));
     // }
   }, []);
 
+  const changeHomework = (homework) => {
+    setSelectedHomework(homework);
+    setSelectedHomeworkDescription(homework?.description || '');
+  };
+  
+  console.log(selectedHomework,'ffffff');
+
+  
+  const [open, setOpen] = useState(null)
   useEffect(() => {
     let des = '';
     if (allData?.current_lesson?.description) {
@@ -49,6 +63,11 @@ function CurrentLessons() {
       des = allData?.lessons[0].description;
     }
     setDescription(des);
+    setOpen({
+      numDas: allData.current_lessson_number,
+      lengId: allData.course_language_id
+
+    })
   }, [allData]);
   // console.log('allData', allData);
   // console.log(typeof allData.lessons, 996966);
@@ -59,14 +78,15 @@ function CurrentLessons() {
   return (
     <>
       {loading ? (
-        <div>Loading</div>
+        <div className="message-modal"><span className="loader"></span></div>
       ) : (
         (console.log('allData', allData),
         (
           <div className="allSide">
-            <div className="leftSide" style={{ padding: '0 0 0 40px' }}>
+            <div className="leftSide">
               <p className="Introduction">{allData?.course_language_name}</p>
-              <div style={{ width: '58vw' }} className="leftSideTop">
+              <p>{allData?.current_lesson?.number || allData?.lessons[0].number}. {allData?.current_lesson?.title || allData?.lessons[0].title}</p>
+              <div className="leftSideTop">
                 {/* <p className="title_name">HTML/HTML 5</p> */}
                 {/* <video width="100%" height="auto" controls>
              <source src={kodVideo} type="video/mp4" />
@@ -88,9 +108,7 @@ function CurrentLessons() {
                     type: 'video',
                     sources: [
                       {
-                        // src: 'https://www.example.com/your-video.mp4',
-                        src : allData?.current_lesson?.video || allData?.lessons[0]?.video,
-                        // src: kodVideo,
+                        src: selectedHomework?.video || allData?.current_lesson?.video || allData?.lessons[0]?.video,
                         type: 'video/mp4',
                       },
                     ],
@@ -114,9 +132,9 @@ function CurrentLessons() {
                   }}
                 />
                 <div className="description">
-                  <p className="description_title">Նկարագրություն</p>
+                  <p className="description_title">{t('description')}</p>
                   <p className="description_text">
-                    {description}
+                  {selectedHomeworkDescription || allData?.current_lesson?.description || allData?.lessons[0]?.description}
 
                     {/* {allData?.current_lesson?.description ? allData?.current_lesson?.description :
                      allData.lessons.length === 0 ? "5555" : allData?.lessons[0].description} */}
@@ -137,28 +155,28 @@ function CurrentLessons() {
              <Button index="5" />
            </div> */}
                 <div className="homework_linne">
-                  <p className="homework_title">Կատարել տնային առաջադրանքները</p>
+                  <p className="homework_title">{t('homework_linne.0')}</p>
                   {allData?.current_lesson?.tasks
                     ? allData?.current_lesson?.tasks.map((el, index) => (
-                        <div className="homework_linne_div" key={index}>
+                        <div className="homework_linne_div" key={index} onClick={() => changeHomework(el)}>
                           <p className="homework_text">
-                            Lesson {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
-                          <p>{el.duration} minutes</p>
+                          <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
                       ))
                     : allData.lessons[0]?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index}>
                           <p className="homework_text">
-                            Lesson {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
-                          <p>{el.duration} minutes</p>
+                          <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
                       ))}
                 </div>
                 <div className="homework_side">
-                  <p className="HomeworkList">Բովանդակություն</p>
-                  <Homeworkes lessons={allData?.lessons} />
+                  <p className="HomeworkList">{t('cordial')}</p>
+                  <Homeworkes lessons={allData?.lessons} open={open}  fullData={allData} changeHomework = {changeHomework}/>
                 </div>
               </div>
               {/* <div style={{ width: '58vw' }}>
@@ -168,7 +186,7 @@ function CurrentLessons() {
             </div>
             <div className="rightSide">
               {/* <div style={{ width: '18vw' }}> */}
-              <p className="titleAllVideo">Բոլոր վիդեոդասերը</p>
+              <p className="titleAllVideo">{t('all_video_lessons')}</p>
               <div className="allvideoLessons_div">
                 {(allCourses || allCoursesState).map((el, index) => (
                   <div

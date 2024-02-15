@@ -18,7 +18,7 @@
   height: 35px;
   width: 35px;
   z-index: 9999;
-  box-shadow: 0 0 10px #4c53d3;
+  /* box-shadow: 0 0 10px #4c53d3; */
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -48,7 +48,7 @@
 }
 #sidebar{
   position: fixed;
-  background: #2D318A;
+  background: #6644BC;
   height: 100%;
   width: 300px;
   overflow: hidden;
@@ -74,7 +74,7 @@
 }
 #sidebar .list-items{
   /* position: relative; */
-  background: #31348E;
+  background: #6644BC;
   width: 100%;
   /* height: 100%; */
   list-style: none;
@@ -171,12 +171,18 @@
 
 .my-reg_log_class, .my-leng_class{
     display: flex;
-    column-gap: 20px;
+    /* column-gap: 20px; */
 }
 
 .my-leng_class{
   margin-left: 20px;
   display: flex;
+  padding-bottom: 100px;
+}
+
+.my-leng_class ul{
+  line-height: 22px;
+  left: 30px;
 }
 
 .list-items li.drop-item{
@@ -249,5 +255,11 @@
 @media(max-width: 1024px){
   .burger-menu{
       display: block;
+  }
+} 
+
+@media(max-width: 850px){
+  .wrapper .menu-btn{
+    left: 12px;
   }
 } 

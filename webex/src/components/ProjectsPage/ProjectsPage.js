@@ -23,6 +23,7 @@ function ProjectsPage() {
   
   const [filterData, setFilterData] = useState([...respProject])
 
+  console.log(respProject,'ggggggggg');
   const projectMenuList = [
     {
       title: t('projectType.0'),
@@ -33,7 +34,7 @@ function ProjectsPage() {
     {
       title: t('projectType.1'),
       icon: web_icon,
-      type: 'WebSite'
+      type: 'web'
     },
   
     {
@@ -83,7 +84,7 @@ function ProjectsPage() {
   return (
     <>
       <Helmet>
-        <title>Project</title>
+        <title>վեբ ծրագրավորման դասընթացներ, CRM/ERP/Unity/iOS/Android/web/PHP/Laravel/ReactJS ծրագրավորում/Project</title>
         <meta name="description" content="Our services include, Portfolio websites, e-commerce websites, information portals, turnkey creation for online store, a personal website or a blog."/>
         <meta name="keywords" content="3d model, unity, games, 3D մոդել, խաղեր, 3d модель, unity, игры, portfolio"/>
         <link rel="canonical" href="/projects"/>
@@ -94,7 +95,7 @@ function ProjectsPage() {
         <ul className='filter-menu-projects'>
             {
               projectMenuList.map((el,index)=>
-              <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid #9944C0' : ''}}>
+              <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid white' : ''}}>
                 <span className='filter-menu-projects-title'>{el.title}</span>
                 <span title={t('projectType.' + index)} className='filter-menu-projects-icon'>{el.icon}</span>
             </li>
@@ -102,7 +103,7 @@ function ProjectsPage() {
             }
 
             </ul>
-        {loading ? <span class="loader"></span>: 
+        {loading ? <span className="loader"></span>: 
         <div className='project-page-items'>
           {filterData.map((el) => (
             <ProjectsPageItem key={el.id} {...el} />

@@ -30,7 +30,7 @@
       </div>
       <div class="card-body">
         <form  action="{{route('lesson-store')}}" method="post" enctype="multipart/form-data">
-          @csrf
+        
             <!-- Dropdown with icon -->
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Название языка</label>
@@ -67,7 +67,7 @@
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Название {{$lang}}</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="translate[{{$lang}}][title]"   id="title" placeholder="Название" />
+                <input type="text" class="form-control" name="translate[{{$lang}}][title]" value="{{old("translate.$lang.title")}}"   id="title" placeholder="Название" />
                 @if($errors->has("translate.$lang.title"))
                   <div class="text-danger mt-2">{{ $errors->first("translate.$lang.title") }}</div>
                 @enderror
@@ -78,7 +78,7 @@
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Описание {{$lang}}</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="translate[{{$lang}}][description]"   id="description" placeholder="Описание" />
+                <input type="text" class="form-control" name="translate[{{$lang}}][description]" value="{{old("translate.$lang.description")}}"  id="description" placeholder="Описание" />
 
                 @if($errors->has("translate.$lang.description"))
                   <div class="text-danger mt-2">{{ $errors->first("translate.$lang.description")  }}</div>

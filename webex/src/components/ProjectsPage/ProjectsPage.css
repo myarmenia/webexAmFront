@@ -1,6 +1,7 @@
 .projects-page{
     background-color: var(--main_color);
     padding: 100px 0;
+    min-height: 100vh;
 }
 
 .projects-page .container{
@@ -9,6 +10,7 @@
     justify-content: center;
     align-items: center;
     row-gap: 100px;
+    
 }
 
 
@@ -16,6 +18,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    width: 85%;
 }
 
 
@@ -25,8 +28,8 @@
 }
 
 .filter-menu-projects li{
-    border: 1px solid rgba(23, 23, 143, 0.185);
-    box-shadow: 0 0 5px rgba(34, 34, 169, 0.185);
+    /* border: 1px solid rgba(23, 23, 143, 0.185); */
+    /* box-shadow: 0 0 5px rgba(34, 34, 169, 0.185); */
     display: flex;
     justify-content: center;
     align-items: center;

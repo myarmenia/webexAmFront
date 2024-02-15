@@ -10,39 +10,78 @@ import CurrentHomework from '../../../images/CurrentHomework.svg';
 // import Student from '../../../images/Student.svg';
 // import Lesson from '../../../images/Lesson.svg';
 // import LogOut from '../../../images/LogOut.svg';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../src/translateFolder/i18n.js';
+// const { t, i18n: { changeLanguage } } = useTranslation();
 
-export const ProfileSidebarArr = [
-  {
-    icon: Dashboard,
-    name: 'Dashboard',
-    slug: 'dashboard'
-  },
-  {
-    icon: Currentlessons,
-    name: 'Current lessons',
-    slug: 'currentLessons'
-  },
-  {
-    icon: Student,
-    name: 'Profile',
-    slug: 'profile'
-  },
-  {
-    icon: Help,
-    name: 'Help',
-    slug: 'help'
-  },
-  {
-    icon: Payment,
-    name: 'Visit history',
-    slug: 'visithistory'
-  },
-  {
-    icon: LogOut,
-    name: 'Log out',
-    slug: 'logOut',
-  },
-];
+// export const ProfileSidebarArr = [
+//   {
+//     icon: Dashboard,
+//     name: t('Dashboard'),
+//     slug: 'dashboard'
+//   },
+//   {
+//     icon: Currentlessons,
+//     name: 'Current lessons',
+//     slug: 'currentLessons'
+//   },
+//   {
+//     icon: Student,
+//     name: 'Profile',
+//     slug: 'profile'
+//   },
+//   {
+//     icon: Help,
+//     name: 'Help',
+//     slug: 'help'
+//   },
+//   {
+//     icon: Payment,
+//     name: 'Visit history',
+//     slug: 'visithistory'
+//   },
+//   {
+//     icon: LogOut,
+//     name: 'Log out',
+//     slug: 'logOut',
+//   },
+// ];
+export const ProfileSidebarArrll = () => {
+  const { t } = useTranslation();
+
+  return [
+    {
+      icon: Dashboard,
+      name: t('dashboard'),
+      slug: 'dashboard'
+    },
+    {
+      icon: Currentlessons,
+      name: t('currentLessons'),
+      slug: 'currentLessons'
+    },
+    {
+      icon: Student,
+      name: t('profile'),
+      slug: 'profile'
+    },
+    {
+      icon: Help,
+      name: t('helpp'),
+      slug: 'help'
+    },
+    {
+      icon: Payment,
+      name: t('visitHistoryy'),
+      slug: 'visithistory'
+    },
+    {
+      icon: LogOut,
+      name: t('logOut'),
+      slug: 'logOut',
+    },
+  ];
+};
 
 export const allVideoLessons = [
   'HTML/HTML 5',
@@ -84,3 +123,6 @@ export const homeworkes = [
     time: '20։04 sec.',
   },
 ];
+
+
+

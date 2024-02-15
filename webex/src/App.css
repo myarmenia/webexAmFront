@@ -1,24 +1,28 @@
 *{
   /* font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
-font-family: 'Roboto Flex', sans-serif;
+font-family: 'TitleFont';
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+letter-spacing: 1px;
+font-weight: 100 !important;
 }
 
 
 @font-face {
   font-family: 'TitleFont';
-  src: url('../src/fonts/Arm\ Hmk\'s\ Bebas\ Neue.TTF') format('truetype');
+  src: url('../src/fonts/BraindGyumri.otf') format('truetype');
  
 }
+
 
 .container{
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 50px;
   box-sizing: border-box;
+  
 }
 
 ul {
