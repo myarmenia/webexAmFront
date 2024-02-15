@@ -84,7 +84,7 @@ function ProjectsPage() {
   return (
     <>
       <Helmet>
-        <title>Project</title>
+        <title>վեբ ծրագրավորման դասընթացներ, CRM/ERP/Unity/iOS/Android/web/PHP/Laravel/ReactJS ծրագրավորում/Project</title>
         <meta name="description" content="Our services include, Portfolio websites, e-commerce websites, information portals, turnkey creation for online store, a personal website or a blog."/>
         <meta name="keywords" content="3d model, unity, games, 3D մոդել, խաղեր, 3d модель, unity, игры, portfolio"/>
         <link rel="canonical" href="/projects"/>
@@ -95,7 +95,7 @@ function ProjectsPage() {
         <ul className='filter-menu-projects'>
             {
               projectMenuList.map((el,index)=>
-              <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid #9944C0' : ''}}>
+              <li key={index} onClick={() => handleItemClick(index, el.type)} style={{borderBottom: selectedItem === index ? '4px solid white' : ''}}>
                 <span className='filter-menu-projects-title'>{el.title}</span>
                 <span title={t('projectType.' + index)} className='filter-menu-projects-icon'>{el.icon}</span>
             </li>

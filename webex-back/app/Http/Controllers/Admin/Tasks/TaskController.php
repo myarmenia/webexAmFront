@@ -41,11 +41,14 @@ class TaskController extends Controller
      */
     public function create()
     {
+
       $course_languages = CourseLanguage::all();
       $course_language_first = CourseLanguage::first();
       if($course_language_first!=null){
 
-        $lessons = Lesson::where('course_language_id',$course_language_first->id)->with('lesson_translations')->get();
+        // $lessons = Lesson::all();
+      $lessons = Lesson::where('course_language_id',$course_language_first->id)->with('lesson_translations')->get();
+     
 
         if(count( $lessons)==0){
 

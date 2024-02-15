@@ -257,3 +257,9 @@
       display: block;
   }
 } 
+
+@media(max-width: 850px){
+  .wrapper .menu-btn{
+    left: 12px;
+  }
+} 
