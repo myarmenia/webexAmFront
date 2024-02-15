@@ -23,9 +23,11 @@ import VisitHistory from './components/profilePage/VisitHistory/VisitHistory';
 import Help from './components/profilePage/Help/Help';
 import ServicesPage from './components/ServicesPage/ServicesPage';
 import WebProjectPage from './components/WebProjectPage/WebProjectPage';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 import NewsMainPage from './components/NewsMainPage/NewsMainPage';
 import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
 import NewsCategoryPage from './components/NewsCategoryPage/NewsCategoryPage';
+
 
 
 
@@ -79,7 +81,7 @@ function App() {
               </Route>
           </Route>
 
-        <Route path="*" element={<div>ejy chka</div>} />
+        <Route path="*" element={<PrivateRoute><ErrorPage/></PrivateRoute>} />
       </Routes>
     </div>
   );

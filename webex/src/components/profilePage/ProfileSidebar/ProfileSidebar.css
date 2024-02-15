@@ -53,3 +53,14 @@ padding: 23px;
   cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+  .leftSidebar_divs{
+      padding-top: 55px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .leftSidebar{
+    padding: 15px;
+    }
+}

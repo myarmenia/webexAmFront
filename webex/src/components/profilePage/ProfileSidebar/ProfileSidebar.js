@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ProfileSidebarArr } from '../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
+import { ProfileSidebarArrll } from '../../Helper/ProfileSidebarHelp/ProfileSidebarHelp';
 import './ProfileSidebar.css';
 import Line from '../../../images/Line.png';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ function ProfileSidebar() {
   // const navigate = useNavigate();
   // const location = useLocation();
   const [sidebar, setSidebar] = useState(false);
+  const ProfileSidebarArr = ProfileSidebarArrll();
   // const params = useParams();
 
   const logOut = (e) =>{
@@ -39,6 +40,7 @@ function ProfileSidebar() {
               className={({ isActive }) => (isActive ? 'line_div line_divActive' : 'line_div')}
               to={el.slug}
               onClick={(e)=>el.slug === 'logOut'? logOut(e):e.preventDefault }
+              key={index}
               >
               <svg
                 width="24"
@@ -82,3 +84,6 @@ function ProfileSidebar() {
 }
 
 export default ProfileSidebar;
+
+
+

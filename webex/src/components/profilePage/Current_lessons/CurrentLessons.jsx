@@ -23,10 +23,13 @@ import { useLoaderData } from 'react-router-dom';
 import VideoPlayer from 'react-video-js-player';
 import Plyr from 'plyr-react';
 import { useTranslation } from 'react-i18next'
+import Spinner from '../../../images/Spinner.svg'
 // import 'plyr-react/dist/plyr.css';
 
 function CurrentLessons() {
   const { t, i18n } = useTranslation()
+  const [selectedHomework, setSelectedHomework] = useState(null);
+  const [selectedHomeworkDescription, setSelectedHomeworkDescription] = useState('');
   const allCourses = useSelector(getAllCourses);
   const [allCoursesState, setallCoursesState] = useState(allCourses);
   const allData = useSelector(getAllData);
@@ -42,6 +45,13 @@ function CurrentLessons() {
       dispatch(getCurrentLesson({lengId: '0', lessonId: '0'}));
     // }
   }, []);
+
+  const changeHomework = (homework) => {
+    setSelectedHomework(homework);
+    setSelectedHomeworkDescription(homework?.description || '');
+  };
+  
+  console.log(selectedHomework,'ffffff');
 
   
   const [open, setOpen] = useState(null)
@@ -68,14 +78,15 @@ function CurrentLessons() {
   return (
     <>
       {loading ? (
-        <div>Loading</div>
+        <div className="message-modal"><span className="loader"></span></div>
       ) : (
         (console.log('allData', allData),
         (
           <div className="allSide">
-            <div className="leftSide" style={{ padding: '0 0 0 40px' }}>
+            <div className="leftSide">
               <p className="Introduction">{allData?.course_language_name}</p>
-              <div style={{ width: '58vw' }} className="leftSideTop">
+              <p>{allData?.current_lesson?.number || allData?.lessons[0].number}. {allData?.current_lesson?.title || allData?.lessons[0].title}</p>
+              <div className="leftSideTop">
                 {/* <p className="title_name">HTML/HTML 5</p> */}
                 {/* <video width="100%" height="auto" controls>
              <source src={kodVideo} type="video/mp4" />
@@ -97,9 +108,7 @@ function CurrentLessons() {
                     type: 'video',
                     sources: [
                       {
-                        // src: 'https://www.example.com/your-video.mp4',
-                        src : allData?.current_lesson?.video || allData?.lessons[0]?.video,
-                        // src: kodVideo,
+                        src: selectedHomework?.video || allData?.current_lesson?.video || allData?.lessons[0]?.video,
                         type: 'video/mp4',
                       },
                     ],
@@ -125,7 +134,7 @@ function CurrentLessons() {
                 <div className="description">
                   <p className="description_title">{t('description')}</p>
                   <p className="description_text">
-                    {description}
+                  {selectedHomeworkDescription || allData?.current_lesson?.description || allData?.lessons[0]?.description}
 
                     {/* {allData?.current_lesson?.description ? allData?.current_lesson?.description :
                      allData.lessons.length === 0 ? "5555" : allData?.lessons[0].description} */}
@@ -149,9 +158,9 @@ function CurrentLessons() {
                   <p className="homework_title">{t('homework_linne.0')}</p>
                   {allData?.current_lesson?.tasks
                     ? allData?.current_lesson?.tasks.map((el, index) => (
-                        <div className="homework_linne_div" key={index}>
+                        <div className="homework_linne_div" key={index} onClick={() => changeHomework(el)}>
                           <p className="homework_text">
-                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
                           <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
@@ -159,7 +168,7 @@ function CurrentLessons() {
                     : allData.lessons[0]?.tasks.map((el, index) => (
                         <div className="homework_linne_div" key={index}>
                           <p className="homework_text">
-                          {t('homework_linne.1')} {el?.lesson_id}: {el?.description}
+                          {t('homework_linne.1')} {index+1}: {el?.description}
                           </p>
                           <p>{el.duration} {t('homework_linne.2')}</p>
                         </div>
@@ -167,7 +176,7 @@ function CurrentLessons() {
                 </div>
                 <div className="homework_side">
                   <p className="HomeworkList">{t('cordial')}</p>
-                  <Homeworkes lessons={allData?.lessons} open={open}  fullData={allData}/>
+                  <Homeworkes lessons={allData?.lessons} open={open}  fullData={allData} changeHomework = {changeHomework}/>
                 </div>
               </div>
               {/* <div style={{ width: '58vw' }}>

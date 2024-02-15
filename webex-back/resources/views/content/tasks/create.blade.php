@@ -53,7 +53,7 @@
                   <select class="form-select" name="lesson_id" id="lessons_section" aria-label="Default select example">
                     @if (count($lessons)>0)
                       @foreach ($lessons as $item)
-                        <option value="{{ $item->id }}">{{$item->translation('ru')->title}}</option>
+                        <option value="{{ $item->id }}">{{$item->translation("ru")->title}}</option>
                       @endforeach
                     @else
 

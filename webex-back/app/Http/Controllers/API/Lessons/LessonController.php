@@ -14,9 +14,10 @@ use Illuminate\Http\Request;
 
 class LessonController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     */
+  /**
+   * Display a listing of the resource.
+   */
+
 
     public function languageLessons(Request $request,$id)
     {
@@ -40,80 +41,81 @@ class LessonController extends BaseController
                 $lessons_array['current_lesson_number'] =$current_lesson_number->lesson_number;
 
 
-                foreach ($lessons as $key => $item) {
 
-                  if($key==0){
+    foreach ($lessons as $key => $item) {
 
-                    $first_elem = [
-                      'id' => $item->id,
-                      'number' => $item->number,
-                      'duration' => $item->duration,
-                      'title' => $item->translation(session('languages'))->title,
-                      'description' => $item->translation(session('languages'))->description,
-                      'video'=> route('get-file', ['path' => $item->video]),
-                      'tasks'=> TasksResource::collection($item->tasks),
-                    ];
-                    array_push($data_lessons,$first_elem);
+      if ($key == 0) {
 
-                  }else{
-                    $element = new LanguageLessonsResource($item);
-                    array_push($data_lessons,$element);
-                  }
-                }
+        $first_elem = [
+          'id' => $item->id,
+          'number' => $item->number,
+          'duration' => $item->duration,
+          'title' => $item->translation(session('languages'))->title,
+          'description' => $item->translation(session('languages'))->description,
+          'video' => route('get-file', ['path' => $item->video]),
+          'tasks' => TasksResource::collection($item->tasks),
+        ];
+        array_push($data_lessons, $first_elem);
 
-                $lessons_array['lessons'] = $data_lessons;
-
-                return $this->sendResponse($lessons_array, 'success');
-
-
-    }
-// ====
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+      } else {
+        $element = new LanguageLessonsResource($item);
+        array_push($data_lessons, $element);
+      }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    $lessons_array['lessons'] = $data_lessons;
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    return $this->sendResponse($lessons_array, 'success');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+  }
+  // ====
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+    //
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(Request $request)
+  {
+    //
+  }
+
+  /**
+   * Display the specified resource.
+   */
+  public function show(string $id)
+  {
+    //
+  }
+
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(string $id)
+  {
+    //
+  }
+
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(Request $request, string $id)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(string $id)
+  {
+    //
+  }
 }
