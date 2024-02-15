@@ -14,10 +14,10 @@ use Illuminate\Http\Request;
 
 class LessonController extends BaseController
 {
-  /**
-   * Display a listing of the resource.
-   */
 
+    /**
+     * Display a listing of the resource.
+     */
 
     public function languageLessons(Request $request,$id)
     {
@@ -41,35 +41,34 @@ class LessonController extends BaseController
                 $lessons_array['current_lesson_number'] =$current_lesson_number->lesson_number;
 
 
+                foreach ($lessons as $key => $item) {
 
-    foreach ($lessons as $key => $item) {
+                  if($key==0){
 
-      if ($key == 0) {
+                    $first_elem = [
+                      'id' => $item->id,
+                      'number' => $item->number,
+                      'duration' => $item->duration,
+                      'title' => $item->translation(session('languages'))->title,
+                      'description' => $item->translation(session('languages'))->description,
+                      'video'=> route('get-file', ['path' => $item->video]),
+                      'tasks'=> TasksResource::collection($item->tasks),
+                    ];
+                    array_push($data_lessons,$first_elem);
 
-        $first_elem = [
-          'id' => $item->id,
-          'number' => $item->number,
-          'duration' => $item->duration,
-          'title' => $item->translation(session('languages'))->title,
-          'description' => $item->translation(session('languages'))->description,
-          'video' => route('get-file', ['path' => $item->video]),
-          'tasks' => TasksResource::collection($item->tasks),
-        ];
-        array_push($data_lessons, $first_elem);
+                  }else{
+                    $element = new LanguageLessonsResource($item);
+                    array_push($data_lessons,$element);
+                  }
+                }
 
-      } else {
-        $element = new LanguageLessonsResource($item);
-        array_push($data_lessons, $element);
-      }
+                $lessons_array['lessons'] = $data_lessons;
+
+                return $this->sendResponse($lessons_array, 'success');
+
+
     }
 
-    $lessons_array['lessons'] = $data_lessons;
-
-    return $this->sendResponse($lessons_array, 'success');
-
-
-  }
-  // ====
 
   /**
    * Show the form for creating a new resource.

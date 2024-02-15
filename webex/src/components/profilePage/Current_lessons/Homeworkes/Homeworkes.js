@@ -44,7 +44,7 @@ const scrollToUp = () =>{
     <>
       {lessons?.map((el, index) => (
         <div className="homeworkes_linne_div" key={index} onClick={()=>{changeCurrentLesson(el);scrollToUp()}}> 
-          <p className={el.number <= dataJan.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
+          <p className={el.number <= dataJan.current_lessson_number || el.number <= dataJan.current_lesson_number ? "homeworkes_text" : "homeworkes_text_dark"}>
             {/* {el.number <= fullData.current_lesson_number ? "open" : "close"} */}
             {console.log(el.number, dataJan.current_lesson_number, 55555555)}
           {t('homework_linne.1')} {el.number}: {el.title}
