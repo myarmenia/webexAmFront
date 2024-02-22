@@ -70,6 +70,7 @@ function WebProjectPage() {
             </p>
 
             <p>{t('development')}</p>
+            
 
             <p>
                <strong>{t('development_crm.0')}</strong> {t('crm_title.0')}
