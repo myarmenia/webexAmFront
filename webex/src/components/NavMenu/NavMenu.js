@@ -30,7 +30,7 @@ function NavMenu() {
                     <ul className='drop-menu'>
                          <NavMenuItem index="8" path="/web-project"/>
                          <NavMenuItem index="9" path="/2"/>
-                         <NavMenuItem index="10" path="/3"/>     
+                         <NavMenuItem index="10" path="/support"/>     
                          <NavMenuItem index="11" path="/3"/>     
                          <NavMenuItem index="12" path="/3"/>     
                          <NavMenuItem index="13" path="/3"/>     
