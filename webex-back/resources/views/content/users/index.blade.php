@@ -35,7 +35,7 @@
                         <div class="col-2">
                             <input type="text" class="form-control" id="inputEmail" placeholder="Э. почта" name="email" value="{{ request()->input('email') }}">
                         </div>
-                        
+
                         <div class="col-2">
                             <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" name="phone" value="{{ request()->input('phone') }}">
                         </div>
@@ -48,12 +48,13 @@
                                 @endforeach
 
                             </select>
-                        </div>                        
+                        </div>
                         <button class="btn btn-primary col-2">Поиск</button>
 
                     </div>
                 </form>
             </div>
+
 
             <div class="table-responsive text-nowrap">
                 <table class="table table-bordered">
@@ -72,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+
                         @foreach ($data as $key => $user)
                             <tr>
                                 <td>{{ ++$i }}</td>

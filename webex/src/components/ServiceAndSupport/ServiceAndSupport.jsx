@@ -1,190 +1,54 @@
 import React from 'react';
-import './WebProjectPage.css';
-import KeyWordComponent from '../KeyWordComponent/KeyWordComponent';
+import './Serviceandsuport.css';
 import { useTranslation } from 'react-i18next';
+import KeyWordComponent from '../KeyWordComponent/KeyWordComponent';
+import suportImg from '../../../../webex/src//images/MaintenanceTypesimg.jpg';
+import suportImg1 from '../../../../webex/src//images/MaintenanceTypesimg1.jpg';
 
-function WebProjectPage() {
+function ServiceAndSupport() {
    const { t, i18n } = useTranslation();
    return (
-      <div className="web-project-page">
-         <div className="web-project-page-top-div">
+      <div className="serviceSuport">
+         <div className="support-top-div">
             <div className="container">
-               <h2>{t('web_project_page_top_div_title')}</h2>
+               <h2>{t('suport')}</h2>
             </div>
          </div>
          <KeyWordComponent />
 
-         <div className="container">
-            <div className="web-project-page-web-development-div">
-               <h4>{t('web_project_page_web_development_title')}</h4>
-               <div className="web-project-page-web-development-div-info">
-                  <p>{t('web_project_page_web_development_info.0')}</p>
-                  <p>{t('web_project_page_web_development_info.1')}</p>
+         <div className="tab">
+            <h1>{t('suport')}</h1>
+            <p>{t('suport_title')}</p>
+
+            <h1 id="h1">{t('MaintenanceTypes.0')}</h1>
+
+            <div className="suprt_img">
+               <div>
+                  <img src={suportImg} alt="" />
+               </div>
+               <div className="suport_text">
+                  <h1>{t('MaintenanceTypes.1')}</h1>
+                  <p>{t('MaintenanceTypes_title.0')}</p>
                </div>
             </div>
 
-            <h1>{t('wey_title')}</h1>
-
-            <p>{t('way_info.0')}</p>
-            <p>
-               <strong> {t('title_h1.0')}</strong> {t('way_info.1')}
-            </p>
-            <p>
-               <strong> {t('title_h1.1')}</strong> {t('way_info.2')}
-            </p>
-            <p>
-               <strong> {t('title_h1.2')}</strong> {t('way_info.3')}
-            </p>
-            <p>
-               <strong> {t('title_h1.3')}</strong> {t('way_info.4')}
-            </p>
-            <p>
-               <strong> {t('title_h1.4')}</strong> {t('way_info.5')}
-            </p>
-            <p>
-               <strong> {t('title_h1.5')}</strong> {t('way_info.6')}
-            </p>
-            <p>
-               <strong> {t('title_h1.6')}</strong> {t('way_info.7')}
-            </p>
-            <p>
-               <strong> {t('title_h1.7')}</strong> {t('way_info.8')}
-            </p>
-            <p>
-               <strong> {t('title_h1.8')}</strong> {t('way_info.9')}
-            </p>
-            <p>
-               <strong> {t('title_h1.9')}</strong> {t('way_info.10')}
-            </p>
-            <p>
-               <strong> {t('title_h1.10')}</strong> {t('way_info.11')}
-            </p>
-            <p>
-               <strong> {t('title_h1.11')}</strong> {t('way_info.12')}
-            </p>
-            <p>
-               <strong> {t('title_h1.12')}</strong> {t('way_info.13')}
-            </p>
-            <p>
-               <strong> {t('title_h1.13')}</strong> {t('way_info.14')}
-            </p>
-
-            <p>{t('development')}</p>
-            
-
-            <p>
-               <strong>{t('development_crm.0')}</strong> {t('crm_title.0')}
-            </p>
-            <ul>
-               <li>{t('crm_title.1')}</li>
-               <li>{t('crm_title.2')}</li>
-               <li>{t('crm_title.3')}</li>
-               <li>{t('crm_title.4')}</li>
-               <li>{t('crm_title.5')}</li>
-            </ul>
-
-            <p>{t('crm_titleP.0')}</p>
-
-            <ul>
-               <li>{t('crm_title_li.1')}</li>
-               <li>{t('crm_title_li.2')}</li>
-               <li>{t('crm_title_li.3')}</li>
-               <li>{t('crm_title_li.4')}</li>
-               <li>{t('crm_title_li.5')}</li>
-               <li>{t('crm_title_li.6')}</li>
-               <li>{t('crm_title_li.7')}</li>
-               <li>{t('crm_title_li.8')}</li>
-               <li>{t('crm_title_li.9')}</li>
-               <li>{t('crm_title_li.10')}</li>
-               <li>{t('crm_title_li.11')}</li>
-               <li>{t('crm_title_li.12')}</li>
-               <li>{t('crm_title_li.13')}</li>
-               <li>{t('crm_title_li.14')}</li>
-               <li>{t('crm_title_li.15')}</li>
-               <li>{t('crm_title_li.16')}</li>
-               <li>{t('crm_title_li.17')}</li>
-               <li>{t('crm_title_li.18')}</li>
-               <li>{t('crm_title_li.19')}</li>
-               <li>{t('crm_title_li.20')}</li>
-               <li>{t('crm_title_li.21')}</li>
-               <li>{t('crm_title_li.22')}</li>
-            </ul>
-
-            <p>{t('crm_titleP.1')}</p>
-            <p>{t('crm_titleP.2')}</p>
-            <p>{t('crm_titleP.3')}</p>
-            <p>{t('crm_titleP.4')}</p>
-
-            <p>
-               <strong>{t('busines_analytic.0')}</strong>
-               {t('busines_analytic_title.0')}
-            </p>
-            <p>
-               <strong>{t('busines_analytic.1')}</strong>
-               {t('busines_analytic_title.1')}
-            </p>
-            <p>
-               <strong>{t('busines_analytic.2')}</strong>
-               {t('busines_analytic_title.2')}
-            </p>
-            <p>
-               <strong>{t('busines_analytic.2')}</strong>
-               {t('busines_analytic_title.3')}
-            </p>
-            <ul>
-               <li>{t('busines_analytic_li.0')}</li>
-               <li>{t('busines_analytic_li.1')}</li>
-               <li>{t('busines_analytic_li.2')}</li>
-            </ul>
-            <p>
-               <strong>{t('busines_analytic_p')}</strong>
-               {t('busines_analytic_title_p.0')}
-            </p>
-            <p>{t('busines_analytic_title_p.1')}</p>
-
-            <div className="introducing ">
-               <div id="h4">
-                  <h4> {t('introducing')}</h4>
+            <div className="suprt_img">
+               <div>
+                  <img src={suportImg1} alt="" />
                </div>
-               <div className="diver">
-                  <div>
-                     <p>HTML5</p>
-                  </div>
-                  <div>
-                     <p>CSS3</p>
-                  </div>
-                  <div>
-                     <p>Bootsrap</p>
-                  </div>
-                  <div>
-                     <p>JavaScrip</p>
-                  </div>
-                  <div>
-                     <p>jQuery</p>
-                  </div>
-                  <div>
-                     <p>Ajax</p>
-                  </div>
-                  <div>
-                     <p>React</p>
-                  </div>
-                  <div>
-                     <p>PHP</p>
-                  </div>
-                  <div>
-                     <p>MySQL</p>
-                  </div>
-                  <div>
-                     <p>OOP/MVS</p>
-                  </div>
-                  <div>
-                     <p>Node JS</p>
-                  </div>
-                  <div>
-                     <p>Laravel</p>
-                  </div>
+               <div className="suport_text">
+                  <h1 id="h1_2">{t('MaintenanceTypes.2')}</h1>
+                  <p>{t('MaintenanceTypes_title.1')}</p>
                </div>
             </div>
+            <p>{t('MaintenanceTypes_title.2')}</p>
+            <p>{t('MaintenanceTypes_title.3')}</p>
+
+            <ul>
+               <li>{t('MaintenanceTypes_ul.0')}</li>
+               <li>{t('MaintenanceTypes_ul.1')}</li>
+               <li>{t('MaintenanceTypes_ul.2')}</li>
+            </ul>
          </div>
 
          <div className="middle_div">
@@ -315,7 +179,7 @@ function WebProjectPage() {
                </div>
             </div>
          </div>
-         <div className="container">
+         <div className="tab">
             <h3>{t('adaptability')}</h3>
             <h5>{t('adaptability_title.0')}</h5>
             <h5>{t('adaptability_title.1')}</h5>
@@ -401,4 +265,4 @@ function WebProjectPage() {
    );
 }
 
-export default WebProjectPage;
+export default ServiceAndSupport;

@@ -29,6 +29,8 @@ import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
 import NewsCategoryPage from './components/NewsCategoryPage/NewsCategoryPage';
 import WebPromotion from './components/WebPromotion/WebPromotion';
 import Modeling3D from './components/Modeling3D/Modeling3D';
+import ServiceAndSupport from './components/ServiceAndSupport/ServiceAndSupport';
+
 
 
 
@@ -66,6 +68,7 @@ function App() {
             <Route path='website-promotion' element={<PrivateRouteForOutSider><WebPromotion/></PrivateRouteForOutSider>}/> 
             <Route path='3d-modeling' element={<PrivateRouteForOutSider><Modeling3D/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
+            <Route path="support" element={<PrivateRouteForOutSider><ServiceAndSupport /></PrivateRouteForOutSider>} />
             <Route path='news'>
               <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
                <Route path=':id' element={<PrivateRouteForOutSider><NewsUniquePage/></PrivateRouteForOutSider>}/>

@@ -1,4 +1,4 @@
-.message-modal{
+.message_modal{
     display: flex;
     justify-content: center;
     align-items: center;                                                         
@@ -13,7 +13,7 @@
     padding: 100px 0;
 }
 
-.message-modal-block{
+.message_modal-block{
     width: 40%;
     background-color: #010526;
     border-radius: 50px;
@@ -27,18 +27,18 @@
     gap: 30px;
 }
 
-.message-modal-block p{
+.message_modal-block p{
     color: var(--main_font_color);
 }
 
 @media(max-width: 1140px){
-    .message-modal-block{
+    .message_modal-block{
         width: 70%;
     }
 }
 
 @media(max-width: 720px){
-    .message-modal-block{
+    .message_modal-block{
         width: 90%;
     }
 }   

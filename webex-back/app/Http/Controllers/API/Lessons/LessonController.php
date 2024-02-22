@@ -14,60 +14,61 @@ use Illuminate\Http\Request;
 
 class LessonController extends BaseController
 {
-  /**
-   * Display a listing of the resource.
-   */
 
-  public function languageLessons(Request $request, $id)
-  {
-    $user_id = auth('api')->user()->id;
-    // dd($user_id);
-    $course_language = CourseLanguage::where('id', $request->id)->first();
-    $current_lessson_number = UserCourseMenegment::where([
-      ['user_id', '=', $user_id],
-      ['course_language_id', '=', $course_language->id]
+    /**
+     * Display a listing of the resource.
+     */
 
-    ])->first();
-    // dd($current_lessson_number);
-    $lessons = Lesson::where('course_language_id', $request->id)
-      ->with('lesson_translations')
-      ->get();
+    public function languageLessons(Request $request,$id)
+    {
+      $user_id = auth('api')->user()->id;
+      // dd($user_id);
+      $course_language = CourseLanguage::where('id',$request->id)->first();
+      $current_lesson_number = UserCourseMenegment::where([
+                                  ['user_id','=', $user_id],
+                                  ['course_language_id','=',$course_language->id]
 
-    $lessons_array = [];
-    $data_lessons = [];
-    $lessons_array['course_language_name'] = $course_language->name;
-    $lessons_array['course_language_id'] = $course_language->id;
-    $lessons_array['current_lesson_number'] = $current_lessson_number->lesson_number;
+      ])->first();
+      // dd($current_lesson_number);
+      $lessons = Lesson::where('course_language_id',$request->id)
+                ->with('lesson_translations')
+                ->get();
+
+                $lessons_array=[];
+                $data_lessons = [];
+                $lessons_array['course_language_name'] = $course_language->name;
+                $lessons_array['course_language_id'] = $course_language->id;
+                $lessons_array['current_lesson_number'] =$current_lesson_number->lesson_number;
 
 
-    foreach ($lessons as $key => $item) {
+                foreach ($lessons as $key => $item) {
 
-      if ($key == 0) {
+                  if($key==0){
 
-        $first_elem = [
-          'id' => $item->id,
-          'number' => $item->number,
-          'duration' => $item->duration,
-          'title' => $item->translation(session('languages'))->title,
-          'description' => $item->translation(session('languages'))->description,
-          'video' => route('get-file', ['path' => $item->video]),
-          'tasks' => TasksResource::collection($item->tasks),
-        ];
-        array_push($data_lessons, $first_elem);
+                    $first_elem = [
+                      'id' => $item->id,
+                      'number' => $item->number,
+                      'duration' => $item->duration,
+                      'title' => $item->translation(session('languages'))->title,
+                      'description' => $item->translation(session('languages'))->description,
+                      'video'=> route('get-file', ['path' => $item->video]),
+                      'tasks'=> TasksResource::collection($item->tasks),
+                    ];
+                    array_push($data_lessons,$first_elem);
 
-      } else {
-        $element = new LanguageLessonsResource($item);
-        array_push($data_lessons, $element);
-      }
+                  }else{
+                    $element = new LanguageLessonsResource($item);
+                    array_push($data_lessons,$element);
+                  }
+                }
+
+                $lessons_array['lessons'] = $data_lessons;
+
+                return $this->sendResponse($lessons_array, 'success');
+
+
     }
 
-    $lessons_array['lessons'] = $data_lessons;
-
-    return $this->sendResponse($lessons_array, 'success');
-
-
-  }
-  // ====
 
   /**
    * Show the form for creating a new resource.

@@ -43,7 +43,7 @@ function NewsMainPage() {
             loading ? <div className='load-div'><span className="loader"></span> </div> :
             (<div className='container'>
             <div className='category-top-div'>
-                <h3 onClick={()=>navigate(`/${leng}/news/category/${category1.category.categoryId}`)}>{category1.category.categoryName}{categoryLine}</h3>
+                <h3 onClick={()=>navigate(`/${leng}/news/category/${category1?.category.categoryId}`)}>{category1.category.categoryName}{categoryLine}</h3>
                 
                 <div className='category-top-div-block'>
                     <div className='category-top-div-big-div' onClick={()=>navigate(`/${leng}/news/${category1.items[0].id}`)}>
@@ -62,7 +62,7 @@ function NewsMainPage() {
 
                     <div className='category-top-div--small-div'>
                         {
-                            category1.items.map(el => 
+                            category1?.items.map(el => 
                                 <div key={el.id} className='category-top-div-small-div-item' onClick={()=>navigate(`/${leng}/news/${el.id}`)}>
                                     <div className='category-top-div-small-div-item-img-div'>
                                         <img src={el.image} alt="nkar"/>

@@ -50,7 +50,7 @@ function ProjectsPageItem({id, images, translation, name, project_language, proc
             <div className='projects-page-item-imgs-div-2'>
                 {
                     allImgs.map((el, index) =>{
-                       return <img key={el.img_id} src={el.imgjan} onClick={()=> renderImg(el, index)}/>
+                       return el.imgjan !== undefined && <img key={el.img_id} src={el.imgjan} onClick={()=> renderImg(el, index)}/>
                     })
                 }
             </div>
