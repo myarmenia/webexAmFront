@@ -27,6 +27,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import NewsMainPage from './components/NewsMainPage/NewsMainPage';
 import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
 import NewsCategoryPage from './components/NewsCategoryPage/NewsCategoryPage';
+import ServiceAndSupport from './components/ServiceAndSupport/ServiceAndSupport';
 
 
 
@@ -63,6 +64,7 @@ function App() {
             </Route>
             <Route path='web-project' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
+            <Route path="support" element={<PrivateRouteForOutSider><ServiceAndSupport /></PrivateRouteForOutSider>} />
             <Route path='news'>
               <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
                <Route path=':id' element={<PrivateRouteForOutSider><NewsUniquePage/></PrivateRouteForOutSider>}/>
