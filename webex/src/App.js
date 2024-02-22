@@ -27,6 +27,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import NewsMainPage from './components/NewsMainPage/NewsMainPage';
 import NewsUniquePage from './components/NewsUniquePage/NewsUniquePage';
 import NewsCategoryPage from './components/NewsCategoryPage/NewsCategoryPage';
+import WebPromotion from './components/WebPromotion/WebPromotion';
+import Modeling3D from './components/Modeling3D/Modeling3D';
 
 
 
@@ -40,7 +42,6 @@ function App() {
 
 
   useEffect(() => {
-    console.log(leng,55555);
     pathname == '/' && navigate(`/${leng}/`);
   }, []);
 
@@ -62,6 +63,8 @@ function App() {
               <Route path=":idd" element={<PrivateRouteForOutSider><ProjectsPage /></PrivateRouteForOutSider>} />
             </Route>
             <Route path='web-project' element={<PrivateRouteForOutSider><WebProjectPage/></PrivateRouteForOutSider>}/> 
+            <Route path='website-promotion' element={<PrivateRouteForOutSider><WebPromotion/></PrivateRouteForOutSider>}/> 
+            <Route path='3d-modeling' element={<PrivateRouteForOutSider><Modeling3D/></PrivateRouteForOutSider>}/> 
             <Route path="aboteus" element={<PrivateRouteForOutSider><AbouteUsPage /></PrivateRouteForOutSider>} />
             <Route path='news'>
               <Route index element={<PrivateRouteForOutSider><NewsMainPage /></PrivateRouteForOutSider>}/>
