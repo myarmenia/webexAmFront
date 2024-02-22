@@ -77,22 +77,23 @@ i18n.use(initReactI18next).init({
             ],
             // ===================nav-menu=================================
             navMenu: [
-               'Courses',
-               'Programming',
-               'Our Projects',
-               'About us',
-               'Feedback',
-               'Home Page',
-               'Projects',
-               'News',
-               'Application Development',
-               'Site Promotion',
-               'Service and Support',
-               'Development of 3D modeling',
-               'Mobile Application Development',
-               'Making Games',
-               'E-mail',
-               'Phone',
+              'Courses',
+              'Programming',
+              'Our Projects',
+              'About us',
+              'Feedback',
+              'Home Page',
+              'Projects',
+              'News',
+              'Application Development',
+              'Site Promotion',
+              'Service and Support',
+              'Development of 3D modeling',
+              'Mobile Application Development',
+              'Making Games',
+              'E-mail',
+              'Phone',
+              'Web development courses'
             ],
             // =======================buttons=========================
             button: [
@@ -477,6 +478,140 @@ i18n.use(initReactI18next).init({
             visitHistoryy: 'Visit history',
             logOut: 'Log out',
 
+            //Website Promotion
+            promotionTitle: 'Website Promotion',
+            promotionText: '"WebexTech" offers you professional website promotion in Yerevan and other regions of Armenia. Choose the best options for your website promotion',
+            photoDivs: [
+                'Integrated Website Promotion',
+                'Such website promotion combines various types of promotion: search engine promotion, contextual advertising, a comprehensive advertising website campaign on the Internet, including banner advertising, ads on bulletin boards, registration catalogs, etc.Through the integrated website promotion, you’ll get the most effective promotion for your website.',
+                'Website Search Engine Promotion',
+                'The goal of search engine promotion is to get the website to the top on search engines (such as Yandex, Rambler, Google). When your website is on the first of top 10 searches, your traffic will be automatically increased.',
+                'Website Search Engine Promotion',
+                'Contextual advertising is also another way for website promotion. It’s short text ads appearing on search engine results pages in response to user requests, as well as on other advertising websites of Yandex.Direct, Runner and Google AdWords.'
+            ],
+            textDivTop: [
+              'WebExTech - a strategy for integrated website development.',
+              'What are the advantages of promoting your website with "WebExTech":',
+              'Transparency at any stage of website promotion. Regular reporting, full awareness of the work is provided. The preliminary stages approval of work, all actions to promote and optimize the website.',
+              '"WebExTech" - the official Yandex partner.Contextual advertising on Yandex and media (banner) advertising on the Internet with the help of "webexTech" specialists - with Yandex-based prices. We provide support for your advertising campaign on Yandex by professionals and it is free of charge!',
+              'Individual approach to each client. We ensure to deliver our clients the most effective website promotion that will meet his business needs.',
+              'Want to order a website promotion? No need to spend time traveling. If your Company is located in Armenia, it is enough for you to call our center, schedule a convenient time and place for you, and our employee will come to you himself. All issues with customers located in other cities allow us to solve quickly modern information exchange systems: E-mail, ICQ, Skype, QIP and others.',
+              'We use only legal and the best methods for your website promotion. We make sure to implement only legal methods for your website optimization so that the client’s website will not fall under the sanctions of the search engine.',
+              'Website promotion is carried out on 1-10 place of search results. You choose what place you want to order your website promotion. No additional charge for performing the promotions mentioned above.',
+              'Because each client is special for us, therefore we give each project the maximum time and attention.'
+            ],
+            middleSide:[
+              'Branches',
+              'WebEx Technologies offers software development services to companies from various industries.',
+              'BANKING AND FINANCE',
+              'TELECOMMUNICATION',
+              'AUTO AND TRANSPORT',
+              'HEALTH CARE',
+              'TRADE AND COMMERCE',
+              'LEARNING AND MARKETING'
+            ],
+
+            bottomSideTexts:[
+              'Adaptability. Clean Code Principles. Strategic Implementation.',
+              'We build fast and reliable websites. We provide optimal implementation of the tasks.',
+              'When creating a website with "Webex Tech" you also get:',
+              'Free domain name registration ',
+              'prefered by the client for one year. We will help you to check for free if the selected domain name options are free for registration.',
+              'Free site registration in major search engines ',
+              'such as Yandex, Google, Rambler, Mail.ru. Registration is done only manually, which guarantees the correctness and timeliness of providing information about your site in search engines.',
+              'Free installation visitors ',
+              'statistics counter on the created website (Yandex, LiveInternet systems, Mail.ru, or another one at your request).',
+              'Placement and configuration of the website on the hosting. ',
+              'Qualified hosting selection that meets the technical requirements to ensure the correct operation of the site. You get a completely ready to work site.',
+              'Free training for clients ',
+              'who order a website (in any place convenient for you in Volgograd or online) to work with the website and the website management system.',
+              'Free technical support -',
+              '6 months (updates installation for required system, program errors correction that may occur).',
+              'Why to cooperate with "WebExTech" Center:',
+              'Transparency of actions at any stage of the website creation. ',
+              'We provide regular reports and ensure full awareness of the work.',
+              'Individual approach to each client. ',
+              'Careful study of the specifics of the client’s business at the preparatory stage of creating the website helps to obtain the maximum effect in the shortest possible time.',
+              'Have you decided to create a website? Then no need to spend time traveling. If your Company is located in Yerevan, just call our Center, arrange a convenient time and place for you, and our employee will come to you himself. All issues with customers located in other cities allow us to quickly solve modern information exchange systems: ',
+              'E-mail, Skype, ICQ, QIP and others.',
+              'Optimal content management system selection (CMS), options for creating a responsive website design, ideas generation and the search for solutions that increase the functionality, individuality and efficiency of the website.',
+              'Creating a website is a passion for our developers. ',
+              'We try to use in the website development not only well-known and widespread solutions, but also new unexpected solutions that make the website unique and inspirational.',
+              'When creating websites,',
+              'we use only licensed (commercial and non-commercial) CMS, modules, components, designs.',
+              'Each Client is UNIQUE for us. You can be sure that when you create a website with us, your project will be given the maximum time and attention.',
+              'Special offers allow us to make website creation for our Clients as efficient and profitable as possible.'
+            ],
+            buttonsSide:[
+              'FOR INQUIRY OR QUESTION',
+              'Website Development',
+              'Website promotion/ SEO',
+              'Service and Support',
+              '3d Modeling Development',
+              'Mobile App Development',
+              'Unity Development'
+            ],
+
+
+
+
+            /////3d modeling///////////
+            topSideUntilSlider:[
+              '3D modeling',
+              'Three-dimensional modeling , or 3D modeling',
+              ', is the process of creating three-dimensional images of any subjects or objects. For these purposes, specialists use specialized computer programms, the so-called 3D editors. With their help, geometric projections are built on the plane, which are necessary for creating a three-dimensional any effect.',
+              'The special beauty of',
+              '3D modeling',
+              'lies in the virtually unlimited possibilities of this technology. Using',
+              '3D graphics',
+              ', you can create a model of any real or imaginary building, inanimate object or phenomenon.'
+            ],
+
+            middleSideUnderSlider:[
+              'INTRODUCING ADVANCED TECHNOLOGIES',
+              'Blender',
+              'Substance',
+              'Gimp, c#',
+              'MakeHuman'
+            ],
+            create3dModel:[
+              'CREATING 3D MODELS',
+              'The process of creating a three-dimensional model of any subject or object requires from the performer not only impeccable mastery of computer graphics skills, but also special thoroughness and scrupulous performance of the work. The success of the whole process as well its reliability depends on how realistic and exact the model will be displayed.',
+              'High-quality performance of works assumes observance of several obligatory conditions. Lets name the most important of them.',
+              'It is necessary to choose the most suitable specialized programm for the purposes of a project. So, the Autodesk 3ds Max mentioned above is famous for its universality. It can be used in any industry and for any task. And, for example, another programm AutoCAD has a narrower specialization - it is indispensable in modeling industrial and construction websites.',
+              'The high quality of the 3D model implies precise order of the instructions of the documentation provided by the customer. Despite the creative nature of the modeling process, the manifestation of any initiative that goes against the terms of reference will be inappropriate and unprofessional here.',
+              'To achieve the most realistic effects, you need to apply only the highest quality textures. This is a question of how well the technician is technically equipped.',
+              'For the same purpose, one should carefully work out all the details and elements of the image of the 3D model, paying particular attention to the smallest of them. The secret of the realism of the final picture lies exactly in the accurate transfer of nuances.',
+            ],
+            table3dModel:[
+              'Prices and deadlines',
+              'Project',
+              'Deadline',
+              'Prices',
+              '3D visualization of the cottage with the territory',
+              '2-5 days',
+              'from 110$ 2-3 angles',
+              'Architectural 3D visualization of shopping malls, apartment buildings',
+              '3-10 days',
+              'from 440$ 3-5 angles',
+              '3D Visualization of land development, residential complexes',
+              '5-14 days',
+              'from 720$ 5-10 angles',
+              '3D Visualization of the general plan',
+              '5-10 days',
+              'from 580$ 1 angles',
+              '3D interior visualization',
+              'from 2 days',
+              '2-10$ for m2 3 angles of the room',
+              'Video presentation of a house, apartment or architectural object',
+              'from 3 days',
+              'from 22$ per 1 second of video + cost of modeling',
+              'Characters of the game',
+              'from 2 days',
+              '22$'
+            ],
+
+        
             wey_title: 'Directions in the development',
 
             way: 'The specialists of our company are of a high level of professionalism in their path, in the categories of services that they provide to you. Each service is provided as a set of works or in a separate part of the development.',
@@ -746,24 +881,26 @@ i18n.use(initReactI18next).init({
 
             // ===================nav-menu=================================
 
-            navMenu: [
-               'Դասընթացներ',
-               'Ծրագրավորում',
-               'Մեր Նախագծերը',
-               'Մեր Մասին',
-               'Կապ',
-               'Գլխավոր էջ',
-               'Նախագծեր',
-               'Նորություններ',
-               'Վեբ հավելվածների մշակում',
-               'Կայքի առաջխաղացում',
-               'Սպասարկում և աջակցություն',
-               '3D մոդելավորման մշակում',
-               'Բջջային հավելվածների մշակում',
-               'Խաղերի ստեղծում',
-               'Էլ․ Հասցե',
-               'Հեռախոս',
-            ],
+
+          navMenu: [
+            'Դասընթացներ',
+            'Ծրագրավորում',
+            'Մեր Նախագծերը',
+            'Մեր Մասին',
+            'Կապ',
+            'Գլխավոր էջ',
+            'Նախագծեր',
+            'Նորություններ',
+            'Վեբ հավելվածների մշակում',
+            'Կայքի առաջխաղացում',
+            'Սպասարկում և աջակցություն',
+            '3D մոդելավորման մշակում',
+            'Բջջային հավելվածների մշակում',
+            'Խաղերի ստեղծում',
+            'Էլ․ Հասցե',
+            'Հեռախոս',
+            'Ծրագրավորման դասընթացներ',
+          ],
 
             // =======================buttons=========================
 
@@ -1156,6 +1293,138 @@ i18n.use(initReactI18next).init({
             visitHistoryy: 'Այցելության պատմություն',
             logOut: 'Դուրս գալ',
 
+
+          //Website Promotion
+          promotionTitle: 'Կայքի առաջխաղացում',
+          promotionText: '«WebexTech»-ն առաջարկում է ձեզ պրոֆեսիոնալ կայքերի առաջմղում Երևանում և Հայաստանի այլ մարզերում։ Ընտրեք ձեր կայքի առաջխաղացման լավագույն տարբերակները',
+
+          photoDivs: [
+            'Կայքի ինտեգրված առաջխաղացում',
+            'Նման վեբ կայքերի առաջխաղացումը համատեղում է տարբեր տեսակի առաջխաղացումներ. ձեր կայքի ամենաարդյունավետ խթանումը:',
+            'Կայքի որոնման համակարգի առաջխաղացում',
+            'Որոնողական համակարգի առաջխաղացման նպատակն է կայքէջը որոնողական համակարգերում (ինչպիսիք են Yandex, Rambler, Google) ամենաբարձր մակարդակը հասցնել: Երբ ձեր կայքը գտնվում է լավագույն 10 որոնումներից առաջինում, ձեր տրաֆիկը ավտոմատ կերպով կավելանա:',
+            'Կայքի որոնման համակարգի առաջխաղացում',
+            'Համատեքստային գովազդը նաև վեբ կայքի առաջմղման այլ միջոց է: Դա կարճ տեքստային գովազդ է, որը հայտնվում է որոնման արդյունքների էջերում՝ ի պատասխան օգտատերերի հարցումների, ինչպես նաև Yandex.Direct-ի, Runner-ի և Google AdWords-ի այլ գովազդային կայքերում:'
+        ],
+        textDivTop: [
+          'WebExTech - ինտեգրված վեբ կայքի մշակման ռազմավարություն:',
+          'Որո՞նք են «WebExTech»-ի միջոցով ձեր կայքի առաջխաղացման առավելությունները.',
+          'Թափանցիկություն կայքի առաջխաղացման ցանկացած փուլում: Ապահովվում է պարբերական հաշվետվություն, աշխատանքի լիարժեք իրազեկում։ Աշխատանքի հաստատման նախնական փուլերը, կայքի առաջխաղացման և օպտիմալացման բոլոր գործողությունները:',
+          '«WebExTech» - Yandex-ի պաշտոնական գործընկերը: Համատեքստային գովազդ Yandex-ում և մեդիա (banner) գովազդ ինտերնետում «webexTech» մասնագետների օգնությամբ՝ Yandex-ի վրա հիմնված գներով: Մենք աջակցում ենք Yandex-ում ձեր գովազդային արշավին մասնագետների կողմից և այն անվճար է:',
+          'Անհատական ​​մոտեցում յուրաքանչյուր հաճախորդին։ Մենք ապահովում ենք մեր հաճախորդներին մատուցել կայքի ամենաարդյունավետ առաջխաղացումը, որը կբավարարի նրա բիզնեսի կարիքները:',
+          'Ցանկանու՞մ եք պատվիրել կայքի առաջխաղացում: Կարիք չկա ժամանակ ծախսել ճանապարհորդելու վրա։ Եթե ​​ձեր Ընկերությունը գտնվում է Հայաստանում, բավական է, որ դուք զանգահարեք մեր կենտրոն, նշանակեք ձեզ հարմար ժամ և վայր, և մեր աշխատակիցն ինքը կգա ձեզ մոտ: Այլ քաղաքներում գտնվող հաճախորդների հետ կապված բոլոր խնդիրները մեզ թույլ են տալիս արագ լուծել տեղեկատվության փոխանակման ժամանակակից համակարգերը՝ E-mail, ICQ, Skype, QIP և այլն:',
+          'Մենք օգտագործում ենք միայն օրինական և լավագույն մեթոդները ձեր կայքի առաջխաղացման համար: Մենք համոզված ենք, որ ձեր վեբ կայքի օպտիմալացման համար կիրառում ենք միայն օրինական մեթոդներ, որպեսզի հաճախորդի կայքը չհայտնվի որոնման համակարգի պատժամիջոցների տակ:',
+          'Կայքի առաջխաղացումն իրականացվում է որոնման արդյունքների 1-10-րդ տեղում: Դուք ընտրում եք, թե որտեղ եք ցանկանում պատվիրել ձեր կայքի առաջխաղացումը: Վերը նշված ակցիաները կատարելու համար լրացուցիչ վճար չկա:',
+          'Քանի որ յուրաքանչյուր հաճախորդ մեզ համար առանձնահատուկ է, ուստի մենք յուրաքանչյուր նախագծին տալիս ենք առավելագույն ժամանակ և ուշադրություն:'
+        ],
+
+        middleSide:[
+          'Մասնաճյուղերը',
+          'WebEx Technologies-ն առաջարկում է ծրագրային ապահովման մշակման ծառայություններ տարբեր ոլորտների ընկերություններին:',
+          'ԲԱՆԿ ԵՎ ՖԻՆԱՆՍՆԵՐ',
+          'ՀԵՌԱԿԱՊ',
+          'ԱՎՏՈ ԵՎ ՏՐԱՆՍՊՈՐՏ',
+          'ԱՌՈՂՋԱՊԱՀՈՒԹՅՈՒՆ',
+          'ԱՌԵՎՏՐԻ ԵՎ ԱՌԵՎՏՐՈՒԹՅԱՆ',
+          'ՈՒՍՈՒՑՈՒՄ ԵՎ ՄԱՐԿԵՏԻՆԳ'
+        ],
+
+        bottomSideTexts:[
+          'Հարմարվողականություն. Մաքուր օրենսգրքի սկզբունքները. Ռազմավարական իրականացում.',
+          'Մենք կառուցում ենք արագ և հուսալի կայքեր: Մենք ապահովում ենք առաջադրանքների օպտիմալ կատարումը։',
+          '«Webex Tech»-ով կայք ստեղծելիս դուք նաև ստանում եք.',
+          'Դոմենի անվճար գրանցում ',
+          'նախընտրելի է հաճախորդի կողմից մեկ տարի ժամկետով: Մենք կօգնենք ձեզ անվճար ստուգել, թե արդյոք ընտրված տիրույթի անվան ընտրանքները գրանցման համար անվճար են:',
+          'Կայքի անվճար գրանցում խոշոր որոնման համակարգերում ',
+          'ինչպիսիք են Yandex-ը, Google-ը, Rambler-ը, Mail.ru-ն: Գրանցումը կատարվում է միայն ձեռքով, ինչը երաշխավորում է որոնման համակարգերում Ձեր կայքի մասին տեղեկատվության տրամադրման ճիշտությունն ու ժամանակին։',
+          'Անվճար տեղադրման այցելուներ ',
+          'Վիճակագրության հաշվիչ ստեղծված կայքում (Yandex, LiveInternet համակարգեր, Mail.ru կամ ձեր խնդրանքով մեկ այլ):',
+          'Կայքի տեղադրում և կազմաձևում հոսթինգում: ',
+          'Որակավորված հոսթինգի ընտրություն, որը համապատասխանում է կայքի ճիշտ շահագործումն ապահովելու տեխնիկական պահանջներին: Դուք լիովին պատրաստ եք աշխատանքի տեղամաս:',
+          'Անվճար ուսուցում հաճախորդների համար ',
+          'ովքեր պատվիրում են կայք (վոլգոգրադում ձեզ հարմար ցանկացած վայրում կամ առցանց) կայքի և կայքի կառավարման համակարգի հետ աշխատելու համար:',
+          'Անվճար տեխնիկական աջակցություն - ',
+          '6 ամիս (թարմացումների տեղադրում պահանջվող համակարգի համար, ծրագրի սխալների ուղղում, որը կարող է առաջանալ):',
+          'Ինչու՞ համագործակցել «WebExTech» կենտրոնի հետ.',
+          'Կայքի ստեղծման ցանկացած փուլում գործողությունների թափանցիկություն. ',
+          'Մենք պարբերաբար հաշվետվություններ ենք տրամադրում և ապահովում ենք աշխատանքի լիարժեք իրազեկում:',
+          'Անհատական մոտեցում յուրաքանչյուր հաճախորդին։ ',
+          'Հաճախորդի բիզնեսի առանձնահատկությունների մանրակրկիտ ուսումնասիրությունը կայքի ստեղծման նախապատրաստական փուլում օգնում է հնարավորինս կարճ ժամանակում ստանալ առավելագույն ազդեցություն:',
+          'Որոշե՞լ եք կայք ստեղծել: Այնուհետև կարիք չկա ժամանակ ծախսել ճամփորդության վրա: Եթե ձեր Ընկերությունը գտնվում է Երևանում, պարզապես զանգահարեք մեր Կենտրոն, կազմակերպեք ձեզ համար հարմար ժամ և վայր, և մեր աշխատակիցն ինքը կգա ձեզ մոտ: Այլ քաղաքներում գտնվող հաճախորդների հետ կապված բոլոր խնդիրները մեզ թույլ են տալիս արագ լուծել տեղեկատվության փոխանակման ժամանակակից համակարգերը. ',
+          'Էլփոստ, Skype, ICQ, QIP և այլն:',
+          'Բովանդակության կառավարման համակարգի օպտիմալ ընտրություն (CMS), ռեսպոնսիվ կայքի դիզայն ստեղծելու տարբերակներ, գաղափարների ստեղծում և լուծումների որոնում, որոնք բարձրացնում են կայքի ֆունկցիոնալությունը, անհատականությունը և արդյունավետությունը:',
+          'Կայքի ստեղծումը մեր ծրագրավորողների կիրքն է: ',
+          'Մենք փորձում ենք կայքի մշակման մեջ օգտագործել ոչ միայն հայտնի և տարածված լուծումներ, այլև նոր անսպասելի լուծումներ, որոնք կայքը դարձնում են յուրահատուկ և ոգեշնչող։',
+          'Կայքեր ստեղծելիս,',
+          'մենք օգտագործում ենք միայն լիցենզավորված (առևտրային և ոչ առևտրային) CMS, մոդուլներ, բաղադրիչներ, ձևավորումներ:',
+          'Յուրաքանչյուր հաճախորդ մեզ համար եզակի է: Դուք կարող եք վստահ լինել, որ երբ մեզ մոտ կայք ստեղծեք, ձեր նախագծին կտրվի առավելագույն ժամանակ և ուշադրություն:',
+          'Հատուկ առաջարկները մեզ թույլ են տալիս մեր Հաճախորդների համար վեբկայքի ստեղծումը հնարավորինս արդյունավետ և շահավետ դարձնել:'
+        ],
+        buttonsSide:[
+          'ՀԱՐՑՈՒՄ ԿԱՄ ՀԱՐՑԻ ՀԱՄԱՐ',
+          'Կայքի մշակում',
+          'Կայքի առաջխաղացում/ SEO',
+          'Ծառայություն և աջակցություն',
+          '3D մոդելավորման մշակում',
+          'Բջջային հավելվածների մշակում',
+          'Միասնության զարգացում'
+        ],
+
+         /////3d modeling///////////
+            topSideUntilSlider:[
+              '3D մոդելավորում',
+              'Եռաչափ մոդելավորում կամ 3D մոդելավորում',
+              ', ցանկացած առարկայի կամ առարկայի եռաչափ պատկերներ ստեղծելու գործընթացն է։ Այդ նպատակների համար մասնագետները օգտագործում են մասնագիտացված համակարգչային ծրագրեր, այսպես կոչված, 3D խմբագիրներ: Նրանց օգնությամբ հարթության վրա կառուցվում են երկրաչափական պրոյեկցիաներ, որոնք անհրաժեշտ են եռաչափ ցանկացած էֆեկտ ստեղծելու համար։',
+              'Հատուկ գեղեցկությունը',
+              '3D մոդելավորում',
+              'կայանում է այս տեխնոլոգիայի գործնականում անսահմանափակ հնարավորությունների մեջ: Օգտագործելով',
+              '3D գրաֆիկա',
+              ', կարող եք ստեղծել ցանկացած իրական կամ երևակայական շենքի, անշունչ առարկայի կամ երևույթի մոդել։'
+            ],
+            middleSideUnderSlider:[
+              'ՆԵՐԿԱՅԱՑՆԵԼ ԸՆԴՀԱՆՈՒՐ ՏԵԽՆՈԼՈԳԻԱՆԵՐ',
+              'Բլենդեր',
+              'Նյութ',
+              'Gimp, c#',
+              'MakeHuman'
+            ],
+            create3dModel:[
+              '3D ՄՈԴԵԼՆԵՐԻ ՍՏԵՂԾՈՒՄ',
+              'Ցանկացած առարկայի կամ առարկայի եռաչափ մոդել ստեղծելու գործընթացը կատարողից պահանջում է ոչ միայն համակարգչային գրաֆիկայի հմտությունների անբասիր տիրապետում, այլև ստեղծագործության առանձնահատուկ մանրակրկիտ և բծախնդիր կատարում: Ամբողջ գործընթացի հաջողությունը, ինչպես նաև դրա հուսալիությունը կախված է նրանից, թե որքան իրատեսական և ճշգրիտ կցուցադրվի մոդելը:',
+              'Աշխատանքների որակյալ կատարումը ենթադրում է մի քանի պարտադիր պայմանների պահպանում. Թվարկենք դրանցից ամենագլխավորները։',
+              'Նախագծի նպատակների համար անհրաժեշտ է ընտրել ամենահարմար մասնագիտացված ծրագիրը: Այսպիսով, վերը նշված Autodesk 3ds Max-ը հայտնի է իր ունիվերսալությամբ: Այն կարող է օգտագործվել ցանկացած ոլորտում և ցանկացած առաջադրանքի համար: Եվ, օրինակ, AutoCAD-ի մեկ այլ ծրագիր ունի ավելի նեղ մասնագիտացում. այն անփոխարինելի է արդյունաբերական և շինարարական կայքերի մոդելավորման համար:',
+              'Եռաչափ մոդելի բարձր որակը ենթադրում է պատվիրատուի կողմից տրամադրված փաստաթղթերի հրահանգների ճշգրիտ կարգ: Չնայած մոդելավորման գործընթացի կրեատիվ բնույթին, ցանկացած նախաձեռնության դրսևորում, որը հակասում է լիազորություններին, այստեղ կլինի ոչ տեղին և ոչ պրոֆեսիոնալ:',
+              'Առավել իրատեսական էֆեկտների հասնելու համար անհրաժեշտ է կիրառել միայն ամենաբարձր որակի հյուսվածքները: Սա հարց է, թե որքանով է տեխնիկապես հագեցած տեխնիկան:',
+              'Նույն նպատակով, պետք է ուշադիր մշակել 3D մոդելի պատկերի բոլոր մանրամասներն ու տարրերը՝ առանձնահատուկ ուշադրություն դարձնելով դրանցից ամենափոքրին: Վերջնական պատկերի ռեալիզմի գաղտնիքը հենց նրբերանգների ճշգրիտ փոխանցման մեջ է։',
+            ],
+            table3dModel:[
+              'Գները և ժամկետները',
+              'Նախագիծ',
+              'Վերջնաժամկետ',
+              'Գները',
+              'Քոթեջի 3D պատկերացում տարածքի հետ',
+              '2-5 օր',
+              '110$ 2-3 անկյուններից',
+              'Առևտրի կենտրոնների, բազմաբնակարան շենքերի ճարտարապետական 3D վիզուալիզացիա',
+              '3-10 օր',
+              '440$ 3-5 անկյուններից',
+              'Հողատարածքի, բնակելի համալիրների 3D պատկերացում',
+              '5-14 օր',
+              '720$ 5-10 անկյուններից',
+              'Ընդհանուր պլանի 3D պատկերացում',
+              '5-10 օր',
+              'fռոմ 580$ 1 անկյուն',
+              'Ինտերիերի 3D վիզուալիզացիա',
+              '2 օրից',
+              'Սենյակի մ2 3 անկյունների համար 2-10$',
+              'Տան, բնակարանի կամ ճարտարապետական օբյեկտի վիդեո ներկայացում',
+              '3 օրից',
+              'սկսած 22$-ից տեսանյութի 1 վայրկյանը + մոդելավորման արժեքը',
+              'Խաղի կերպարները',
+              '2 օրից',
+              '22$'
+            ],
+       
             wey_title: 'Ընկերության զարգացման ուղղությունները',
 
             way: 'Մեր ընկերության մասնագետները բարձր մակարդակի պրոֆեսիոնալիզմ ունեն` իրենց կողմից մատուցվող ծառայությունների ոլորտում: Յուրաքանչյուր ծառայություն մատուցվում է որպես աշխատանքների ամբողջություն կամ որպես մշակման առանձին մաս:',
@@ -1453,6 +1722,25 @@ i18n.use(initReactI18next).init({
                'Телефон',
             ],
 
+          navMenu: [
+            'Курсы',
+            'Программирование',
+            'Наши проекты',
+            'О нас',
+            'Связь',
+            'Главная страница',
+            'Проекты',
+            'Новости',
+            'Разработка веб-приложений',
+            'Продвижение сайта',
+            'Сервис и поддержка',
+            'Развитие 3D моделирования',
+            'Разработка мобильных приложений',
+            'Создание игр',
+            'Эл. адрес',
+            'Телефон',
+            'Курсы программирования'
+          ],
             // ===========buttons==========================
             button: [
                'Курсы',
@@ -1906,6 +2194,149 @@ i18n.use(initReactI18next).init({
             ],
             development: 'Разработка CRM',
 
+          slide_section: [
+            'Мы преподаем',
+            'Наш современный и профессиональный подход уже привлек множество клиентов.'
+          ],
+          dashboard: 'Панель управления',
+          currentLessons: 'Текущие уроки',
+          profile: 'Профиль',
+          helpp: 'Помощь',
+          visitHistoryy: 'История посещений',
+          logOut:'Выйти',
+
+          //Website Promotion
+          promotionTitle: 'Продвижение сайта',
+          promotionText: '«WebexTech» предлагает Вам профессиональное продвижение сайтов в Ереване и других регионах Армении. Подберите оптимальные варианты продвижения вашего сайта',
+
+          photoDivs: [
+            'Комплексное продвижение сайта',
+            'Такое продвижение сайта сочетает в себе различные виды продвижения: поисковое продвижение, контекстную рекламу, комплексную рекламную кампанию сайта в Интернете, в том числе баннерную рекламу, рекламу на досках объявлений, каталогах регистрации и т. д. Благодаря комплексному продвижению сайта вы получите максимально эффективное продвижение вашего сайта.',
+            'Поисковое продвижение сайта',
+            'Целью поискового продвижения является вывод сайта в ТОП поисковых систем (таких как Яндекс, Рамблер, Google). Когда ваш веб-сайт окажется в первых 10 поисковых запросах, ваш трафик будет автоматически увеличен.',
+            'Поисковое продвижение сайта',
+            'Контекстная реклама – еще один способ продвижения сайта. Это короткие текстовые объявления, которые появляются на страницах результатов поисковых систем в ответ на запросы пользователей, а также на других рекламных площадках Яндекс.Директ, Раннер и Google AdWords.'
+        ],
+        textDivTop: [
+          'WebExTech — стратегия комплексной разработки веб-сайтов.',
+          'В чем преимущества продвижения вашего сайта с помощью «WebExTech»:',
+          'Прозрачность на любом этапе продвижения сайта. Регулярная отчетность, полная осведомленность о работе обеспечивается. Предварительные этапы согласования работ, всех действий по продвижению и оптимизации сайта.',
+          '«WebExTech» - официальный партнер Яндекса. Контекстная реклама на Яндексе и медийная (баннерная) реклама в Интернете с помощью специалистов «webexTech» - по ценам Яндекса. Мы обеспечиваем поддержку вашей рекламной кампании на Яндексе профессионалами и это бесплатно!',
+          'Индивидуальный подход к каждому клиенту. Мы гарантируем нашим клиентам наиболее эффективное продвижение сайта, которое будет отвечать потребностям его бизнеса.',
+          'Хотите заказать продвижение сайта? Не нужно тратить время на дорогу. Если ваша компания находится в Армении, вам достаточно позвонить в наш центр, назначить удобное для вас время и место, и наш сотрудник сам приедет к вам. Все вопросы с клиентами, находящимися в других городах, позволяют нам оперативно решать современные системы обмена информацией: E-mail, ICQ, Skype, QIP и другие.',
+          'Мы используем только легальные и лучшие методы продвижения вашего сайта. Мы обязательно применяем только легальные методы оптимизации вашего сайта, чтобы сайт клиента не попал под санкции поисковой системы.',
+          'Продвижение сайта осуществляется на 1-10 место в результатах поиска. Вы сами выбираете, где заказать продвижение вашего сайта. Никакой дополнительной оплаты за проведение упомянутых выше рекламных акций.',
+          'Поскольку каждый клиент для нас особенный, поэтому каждому проекту мы уделяем максимум времени и внимания.'
+        ],
+
+        middleSide:[
+          'Ветви',
+          'WebEx Technologies предлагает услуги по разработке программного обеспечения компаниям из различных отраслей.',
+          'ФИНАНСЫ',
+          'ТЕЛЕКОММУНИКАЦИЯ',
+          'АВТО И ТРАНСПОРТ',
+          'ЗДРАВООХРАНЕНИЕ',
+          'ТОРГОВЛЯ',
+          'ОБУЧЕНИЕ'
+        ],
+        bottomSideTexts:[
+          'Адаптивность. Принципы чистого кода. Стратегическая реализация.',
+          'Мы создаем быстрые и надежные сайты. Мы обеспечиваем оптимальную реализацию поставленных задач.',
+          'Создавая веб-сайт с помощью «Webex Tech», вы также получаете:',
+          'Бесплатная регистрация доменного имени ',
+          'по желанию клиента на один год. Мы бесплатно поможем вам проверить, свободны ли выбранные варианты доменного имени для регистрации.',
+          'Бесплатная регистрация сайта в крупнейших поисковых системах ',
+          'такие как Яндекс, Google, Рамблер, Mail.ru. Регистрация производится только вручную, что гарантирует корректность и своевременность предоставления информации о вашем сайте в поисковых системах.',
+          'Бесплатная установка посетителей ',
+          'счетчик статистики на созданном сайте (системы Яндекс, LiveInternet, Mail.ru или другой по вашему желанию).',
+          'Размещение и настройка сайта на хостинге. ',
+          'Квалифицированный подбор хостинга, соответствующего техническим требованиям для обеспечения корректной работы сайта. Вы получаете полностью готовый к работе сайт.',
+          'Бесплатное обучение для клиентов. ',
+          'которые заказывают сайт (в любом удобном для вас месте в Волгограде или онлайн) для работы с сайтом и системой управления сайтом.',
+          'Бесплатная техническая поддержка -',
+          '6 месяцев (установка обновлений необходимой системы, исправление возможных ошибок программы).',
+          'Почему стоит сотрудничать с Центром «WebExTech»:',
+          'Прозрачность действий на любом этапе создания сайта. ',
+          'Мы предоставляем регулярные отчеты и обеспечиваем полную осведомленность о работе.',
+          'Индивидуальный подход к каждому клиенту. ',
+          'Тщательное изучение специфики бизнеса клиента на подготовительном этапе создания сайта помогает получить максимальный эффект в кратчайшие сроки.',
+          'Вы решили создать сайт? Тогда не придется тратить время на дорогу. Если Ваша Компания находится в Ереване, просто позвоните в наш Центр, согласуйте удобное для Вас время и место, и наш сотрудник сам приедет к Вам. Все вопросы с клиентами, находящимися в других городах, позволяют нам оперативно решать современные системы обмена информацией: ',
+          'Электронная почта, Skype, ICQ, QIP и другие.',
+          'Выбор оптимальной системы управления контентом (CMS), варианты создания адаптивного дизайна сайта, генерация идей и поиск решений, повышающих функциональность, индивидуальность и эффективность сайта.',
+          'Создание веб-сайта — страсть наших разработчиков. ',
+          'Мы стараемся использовать при разработке сайта не только известные и распространенные решения, но и новые неожиданные решения, которые делают сайт уникальным и вдохновляющим.',
+          'При создании веб-сайтов',
+          'мы используем только лицензионные (коммерческие и некоммерческие) CMS, модули, компоненты, разработки.',
+          'Каждый Клиент для нас УНИКАЛЕН. Вы можете быть уверены, что создавая сайт у нас, вашему проекту будет уделено максимум времени и внимания.',
+          'Специальные предложения позволяют нам сделать создание сайтов для наших Клиентов максимально эффективным и выгодным.'
+        ],
+        buttonsSide:[
+          'ДЛЯ ЗАПРОСА ИЛИ ВОПРОСА',
+          'Развитие веб-сайта',
+          'Продвижение сайта/SEO',
+          'Сервис и поддержка',
+          'Разработка 3D-моделирования',
+          'Разработка мобильных приложений',
+          'Юнити Девелопмент'
+        ],
+
+        
+        /////3d modeling///////////
+        topSideUntilSlider:[
+          '3D моделирование',
+          'Трехмерное моделирование, или 3D моделирование.',
+          ', — это процесс создания трехмерных изображений любых предметов или объектов. Для этих целей специалисты используют специализированные компьютерные программы, так называемые 3D-редакторы. С их помощью на плоскости строятся геометрические проекции, необходимые для создания объемного любого эффекта.',
+          'Особая красота',
+          '3D моделирование',
+          'заключается в практически неограниченных возможностях этой технологии. С использованием',
+          '3D графика',
+          ', вы можете создать модель любого реального или воображаемого здания, неодушевленного предмета или явления.'
+        ],
+        middleSideUnderSlider:[
+          'ВНЕДРЯЕМ ПЕРЕДОВЫЕ ТЕХНОЛОГИИ',
+          'Блендер',
+          'Вещество',
+          'Gimp, c#',
+          'MakeHuman'
+        ],
+        create3dModel:[
+          'СОЗДАНИЕ 3D МОДЕЛЕЙ',
+          'Процесс создания трехмерной модели любого предмета или объекта требует от исполнителя не только безупречного владения навыками компьютерной графики, но и особой тщательности и скрупулезного выполнения работы. От того, насколько реалистично и точно будет отображена модель, зависит успех всего процесса, а также его надежность.',
+          'Качественное выполнение работ предполагает соблюдение нескольких обязательных условий. Назовем наиболее важные из них.',
+          'Необходимо выбрать наиболее подходящую для целей проекта специализированную программу. Итак, упомянутый выше Autodesk 3ds Max славится своей универсальностью. Его можно использовать в любой отрасли и для любых задач. А, например, еще одна программа AutoCAD имеет более узкую специализацию – она незаменима при моделировании промышленных и строительных сайтов.',
+          'Высокое качество 3D-модели предполагает точное соблюдение инструкций предоставленной заказчиком документации. Несмотря на творческий характер процесса моделирования, проявление любой инициативы, идущей вразрез с техническим заданием, здесь будет неуместно и непрофессионально.',
+          'Чтобы добиться максимально реалистичных эффектов, нужно применять текстуры только самого высокого качества. Это вопрос того, насколько технически оснащен техник.',
+          'С этой же целью следует тщательно проработать все детали и элементы изображения 3D-модели, уделяя особое внимание самым мелким из них. Секрет реалистичности финальной картинки заключается именно в точной передаче нюансов.',
+        ],
+        table3dModel:[
+          'Цены и сроки',
+          'Проект',
+          'Крайний срок',
+          'Цены',
+          '3D визуализация коттеджа с территорией',
+          '2-5 дней',
+          'от 110$ 2-3 ракурса',
+          'Архитектурная 3D визуализация торговых центров, многоквартирных домов',
+          '3-10 дней',
+          'от 440$ 3-5 ракурсов',
+          '3D Визуализация земельной застройки, жилых комплексов',
+          '5-14 дней',
+          'от 720$ 5-10 ракурсов',
+          '3D Визуализация генерального плана',
+          '5-10 дней',
+          'от 580$ 1 ракурс',
+          '3D визуализация интерьера',
+          'от 2 дней',
+          '2-10$ за м2 3 угла комнаты',
+          'Видеопрезентация дома, квартиры или архитектурного объекта',
+          'от 3 дней',
+          'от 22$ за 1 секунду видео + стоимость моделирования',
+          'Персонажи игры',
+          'от 2 дней',
+          '22$'
+        ],
+
+        
             development_crm: ['Разработка и внедрение CRM-системы'],
 
             crm_title: [
