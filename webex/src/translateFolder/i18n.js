@@ -121,7 +121,7 @@ i18n.use(initReactI18next).init({
             ],
 
             // ===========================createWebsitesAndMobileApp=============================
-            createWebsitesAndMobileApp: 'Creation of websites and mobile applications',
+            createWebsitesAndMobileApp: 'Creating websites, mobile applications, and 3D models',
             createWebsitesAndMobileAppTitle: [
                'Creating a web applications',
                'Mobile applications',
@@ -557,7 +557,30 @@ i18n.use(initReactI18next).init({
                'Mobile App Development',
                'Unity Development',
             ],
+               //===============================
 
+            dropTxt_1: [
+               'element1',
+               'element2',
+               'element3',
+               'element4'
+            ],
+
+            dropTxt_2: [
+               'tandz1',
+               'tandz2',
+               'tandz3',
+               'tandz4'
+            ],
+
+            dropTxt_3: [
+               'shmavon1',
+               'shmavon2',
+               'shmavon3',
+               'shamvon4'
+            ],
+
+               // ============================
             /////3d modeling///////////
             topSideUntilSlider: [
                '3D modeling',
@@ -1026,7 +1049,7 @@ i18n.use(initReactI18next).init({
 
             // ===========================createWebsitesAndMobileApp=============================
 
-            createWebsitesAndMobileApp: 'Վեբ կայքերի եվ բջջային հավելվածների ստեղծում',
+            createWebsitesAndMobileApp: 'Վեբ կայքերի, բջջային հավելվածների եւ 3D մոդելների ստեղծում',
 
             createWebsitesAndMobileAppTitle: [
                'Վեբ կայքերի մշակում',
@@ -1760,7 +1783,7 @@ i18n.use(initReactI18next).init({
                'Webex Technologies-ը ունի ավելի քան 15 տարվա աշխատանքային փորձ՝ աութսորսինգի, ծրագրային ապահովման և կայքի ստեղծման, տեղեկատվական տեխնոլոգիաների խորհրդատվության, ծրագրի ինտեգրման, բիզնես գործընթացների վերլուծության, ծրագրային ապահովման փորձարկումների, սպասարկման եւ աջակցության ապահովման գործում: Բարձրորակ ծառայություններն ուղղված են մեր հաճախորդներին տեղեկատվական անվտանգության եւ առավելագույն հարմարավետության ապահովման համար: Մեր աշխատանքի ընթացքում մեզ վստահեցին Եվրոպայում, ԱՄՆ-ում, Ռուսաստանում եւ Ուկրաինայում տարբեր ընկերություններ:',
 
             Reliable: [
-               'IOS-ի եւ Android-ի համար բջջային հավելվածների հուսալի ստեղծումReliable development of mobile applications for iOS and Android devices',
+               'IOS-ի եւ Android-ի համար բջջային հավելվածների հուսալի ստեղծում',
                '“Webex Technologies”-ը բջջային հավելվածների ստեղծման հայաստանյան ընկերությունն է, ունի բազմաթիվ տարիների փորձ բջջային ոլորտի տեխնոլոգիաների եւ հարթակների հետ: Մենք առաջարկում ենք բջջային հավելվածների զարգացման ծառայությունների լայն շրջանակ Հայաստանի եւ այլ երկրների շուկայում: Մեր ընկերությունը տրամադրում է ՏՏ խորհրդատվություն, մշակում, նախագծում, փորձարկում եւ արտադրանքի տեխնիկական աջակցություն:',
             ],
             Reliable_text:
@@ -1966,7 +1989,7 @@ i18n.use(initReactI18next).init({
 
             // ===========================createWebsitesAndMobileApp=============================
 
-            createWebsitesAndMobileApp: 'Создание сайтов и мобильных приложений',
+            createWebsitesAndMobileApp: 'Создание веб-сайтов, мобильных приложений и 3D моделей',
 
             createWebsitesAndMobileAppTitle: [
                'Создание веб-приложении',

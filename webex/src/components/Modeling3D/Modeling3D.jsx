@@ -25,6 +25,7 @@ import slider3d8 from '../../images/slider3d8.jpg';
 import slider3d9 from '../../images/slider3d9.jpg';
 import KeyWordComponent from '../KeyWordComponent/KeyWordComponent';
 import { NavLink } from 'react-router-dom';
+import Universe from './Universe';
 
 function Modeling3D() {
    const { t, i18n } = useTranslation();
@@ -159,6 +160,14 @@ function Modeling3D() {
                   </div>
                </div>
             </div>
+            <div className="canvs3D">
+
+            <Universe />
+            </div>
+
+
+
+
             {/* ////////////////////// */}
             <div className="table_div">
                <div className="mod-tab">
