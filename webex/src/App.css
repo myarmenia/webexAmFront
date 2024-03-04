@@ -1,7 +1,7 @@
 * {
    /* font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
-   font-family: 'TitleFont';
+   font-family: 'font-1';
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -36,12 +36,12 @@ ul {
    --main_font_color: #d5d5d5;
 }
 
-/* @font-face {
+ @font-face {
   font-family:font-1;
-  src: url(./fonts/RobotoFlex-Regular.ttf);
+  src: url(./fonts/Roboto-Light.ttf);
 } 
 
-
+/*
  @media(min-width: 1920px){
   .container{
     max-width: 100%;

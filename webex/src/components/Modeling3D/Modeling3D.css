@@ -169,7 +169,6 @@
 }
 
 .buttons_side {
-   
    display: flex;
    flex-wrap: wrap;
    align-items: center;
@@ -259,4 +258,16 @@ table {
    to {
       background-position: -200% center;
    }
+}
+
+.loader {
+   color: #5c8374;
+   font-weight: bold;
+}
+.canvs3D {
+   width: 60%;
+   height: 400px;
+}
+.universeScene {
+   height: 400px;
 }
