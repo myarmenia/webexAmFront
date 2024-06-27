@@ -106,6 +106,7 @@ i18n.use(initReactI18next).init({
                'Ok',
                'Register for the Course',
                'Order Project',
+               'Demo'
             ],
             // =============header==================================
             headerTitlePart1: 'With our professional team, you can.',
@@ -116,7 +117,7 @@ i18n.use(initReactI18next).init({
             webexInfo: [
                'About us',
 
-               'Webex Technologies was founded in 2003 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards.',
+               'Webex Technologies was founded in 2007 on November 21. Over the years, the company has implemented a large number of projects. Qualitatively and thoroughly approaches the process of creating new products. Webex Technologies works only with new and modern technologies, which in turn are regularly updated according to market requirements. The company was founded in Yerevan and cooperates with international partners all over the world. All projects implemented at Webex Technologies meet international IT standards.',
                ' Webex Technologie offers programming courses. The company focuses on quality education of students with an emphasis on practical knowledge. Webex Technologies has developed its training program based on many years of experience. Most Webex Technologies students find jobs in the IT industry. After completing the course, the best students are given a certificate, which gives them advantages when looking for a job. Webex Technologies welcomes new partners.',
             ],
 
@@ -155,23 +156,48 @@ i18n.use(initReactI18next).init({
 
             // ==================videoCoursesSection=====================
 
-            videoCoursesSectionTitle: 'Programming learning plan',
+            videoCoursesSectionTitle: 'Programming learning list',
+            videoCoursesSectionTitle_H: 'Programming learning plan',
 
             videoCoursesSectionTxt: [
                'Free trial lesson. Our future students. You have the opportunity to familiarize yourself with Webex Technologies teaching methods and teachers for free.',
                'Course basic. We offer you basic programming courses at Webex Technologies. You have the opportunity to choose the time, format, and instructor that suits you. To do this, you need to register.',
-               'Advanced programming course. Dear students. To improve your skills, we offer you an advanced course. At Webex Technologies, you can increase your knowledge and level of expertise in your preferred field. To do this, you need to register.',
+               'The Advanced Programming Course - Professional Package offers a flexible learning format that includes one-on-one tutoring. Students have access to online resources, assignments, and projects to help them explore selected topics in depth. Students can seek help from experienced teachers to clarify difficult points and provide advice on projects. This course allows students to develop their programming skills at their own pace and receive support from experts in the field.',
+               "Individual Premium courseAs part of this course, you will study with a teacher in a cozy classroom or online, receiving all the attention and support of the lecturer-programmer.about having to share the spotlight with other students - our Individual Premium Course will allow you to be the center of attention. Your teacher will be fully focused on you, helping you develop your programming skills in one-on-one lessons. A flexible class schedule will allow you to choose a convenient time for studying, and an individual approach to each student guarantees maximum learning efficiency. Don't miss the opportunity to become a programming professional with our Custom Premium Course!",
+            ],
+
+            videoCoursesSectionfeatures: [
+               'free',
+               'group',
+               'partial individual approach',
+               'individual approach',
             ],
 
             VideoCoursesSection_duration: [
                'Duration - 120 minutes',
                'Duration - 960 minutes',
                'Duration - 1440 minutes',
+               'Duration - 1440 minutes',
             ],
 
-            VideoCoursesSection_value: ['Value 0 AMD', 'Value 45000 AMD', 'Value 60000 AMD'],
+            VideoCoursesSection_value: [
+               'Value 0 AMD',
+               'Value 45000 AMD',
+               'Value 60000 AMD',
+               'Value 120000 AMD',
+            ],
 
-            VideoCoursesSection_title: ['Trial course', 'Standart course', 'Professional course'],
+            VideoCoursesSection_title: [
+               'Trial course',
+               'Standart course',
+               'Professional course',
+               'Premium course',
+            ],
+
+            videoCoursesSectionTitleGround: ['React JS', 'Java', 'Laravel', 'Node.JS'],
+            videoCoursesSectionTitleCourses: 'Course',
+            videoCoursesSectionTitleCourses_month: '~6 month-3times/week',
+
             // ===============Footer=======================
 
             footerMenu: [
@@ -200,7 +226,7 @@ i18n.use(initReactI18next).init({
             resetPasswordModalError_message: 'Something is wrong',
 
             abouteUs_Header: [
-               'Aboute US',
+               'About US',
                'Webex Technologies LLC is specialized in creating websites. Most common programming languages that are used at work are, HTML5, CSS3-Flex, Grid, Parallax, Sprites, PHP, JavaScript, ES6, jQuery, Bootstrap, Ajax, React JS, Laravel, OOP/MVS , MySQL etc. WebEx Tech has been working for 20 years.',
             ],
 
@@ -274,7 +300,7 @@ i18n.use(initReactI18next).init({
                'Website development',
                'Technical website support',
                'E-mail marketing',
-               'Yandex Market',
+               'Invitation card',
                'Google analytics',
                'Business process automation',
             ],
@@ -428,6 +454,8 @@ i18n.use(initReactI18next).init({
 
             homework_linne: ['Do homework', 'Lesson', 'm'],
 
+            homework_linneHom: ['Do homework', 'Task', 'm'],
+
             cordial: 'Contents',
 
             all_video_lessons: 'All video lessons',
@@ -557,30 +585,9 @@ i18n.use(initReactI18next).init({
                'Mobile App Development',
                'Unity Development',
             ],
-               //===============================
+           
 
-            dropTxt_1: [
-               'element1',
-               'element2',
-               'element3',
-               'element4'
-            ],
-
-            dropTxt_2: [
-               'tandz1',
-               'tandz2',
-               'tandz3',
-               'tandz4'
-            ],
-
-            dropTxt_3: [
-               'shmavon1',
-               'shmavon2',
-               'shmavon3',
-               'shamvon4'
-            ],
-
-               // ============================
+           
             /////3d modeling///////////
             topSideUntilSlider: [
                '3D modeling',
@@ -891,7 +898,61 @@ i18n.use(initReactI18next).init({
                "Choose WebEx Technologies for your mobile app development needs and experience the difference of working with a dedicated team committed to delivering excellence every step of the way. Let's transform your vision into reality and propel your app to new heights of success in the competitive digital landscape.",
             ],
 
+            bottomSideTexts_mobile: [
+               "Crafting a standout presence in today's competitive market requires more than just an idea – it demands strategic execution. At Webex Technologies LLC, we delve deep into market dynamics and brand essence to unearth your unique competitive edge.",
+
+               'Unlock the Potential of Mobile App Innovation',
+
+               'Harness the power of market insights and brand identity to carve out your niche and elevate your brand.',
+               'Product Design:',
+
+               ' Let our experts guide you through every stage, from concept finalization to platform compatibility, ensuring a roadmap tailored for success.',
+               'Mobile App Consulting:',
+
+               'Immerse your users in an intuitive and visually stunning experience that drives conversions and fosters engagement.',
+               ' Mobile App Design:',
+
+               ' With a track record of over 350 successfully implemented projects, our developers deliver robust, lightning-fast apps that exceed expectations.Elevate Your Online Presence Beyond Mobile',
+               'Mobile App Development:',
+
+               ' Complement your mobile app with a seamlessly integrated web presence, from portals to online stores, crafted to captivate your audience.',
+               ' Web Development:',
+
+               ' Seamlessly connect your app with backend systems and third-party software, ensuring smooth operations across all fronts.',
+               '  Mobile App Integration:',
+
+               'Ensure Excellence Every Step of the Way',
+
+               'Testing and QA: Rest easy knowing that our ISTQB-certified engineers rigorously test every aspect, from functionality to security, guaranteeing a flawless user experience.',
+
+               " From post-launch support to ongoing compliance and performance management, we're committed to your app's continued success.",
+               ' Maintenance and Support:',
+
+               ' Mobile App Modernization:',
+               'Revitalize Your Legacy Apps for the Modern Era',
+
+               ' Transform outdated apps into sleek, efficient powerhouses with revamped architecture and enhanced user experiences.Ready to Transform Your Brand?',
+
+               " Partner with Webex Technologies LLC today and embark on a journey of innovation and success. Let's shape the future of your brand together.",
+               ' In Webex Technologies LLC we use the following technologies we use in  Mobile App Development: React Native, Objective C, Java Kotlin',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+            ],
+
             // ======================Games==============================
+
+            games_title:'Making Games',
             games: [
                'Unity Application Development Services Outsourcing',
                'Webex Technologies is a company with extensive development experience. We offer full cycle of professional Unity development services for various industries. Our team has deep knowledge and experience in the areas of game development, web, desktop, mobile and cross-platform applications using all the advantages and tools of Unity to achieve the goals of customers.',
@@ -925,6 +986,16 @@ i18n.use(initReactI18next).init({
                'Setup and support of applications',
                'Development of console games (for PS, Xbox, Wii, etc.)',
             ],
+
+            canvas3D: ['Deactivate control', 'Activate control'],
+
+            proj: [
+               "Birthday Invitation Card",
+               "Party Invitation",
+               "Wedding invitation card",
+            ],
+
+            projTitle: 'Web Invitations'
          },
       },
       am: {
@@ -961,8 +1032,8 @@ i18n.use(initReactI18next).init({
                `Շուկայում ավելի քան ${years_webex} տարի`,
                'Ուսանող',
                'Պրոեկտ',
-               'Վեբ կայքեր 1000+',
-               'Սպասարկվող Պրոեկտներ 500+',
+               'Վեբ կայքեր 100+',
+               'Սպասարկվող Պրոեկտներ 50+',
                'Ծրագրավորման Լեզու 30',
             ],
 
@@ -1030,6 +1101,7 @@ i18n.use(initReactI18next).init({
                'Լավ',
                'Գրանցվել Դասընթացի',
                'Պատվիրել Նախագիծ',
+               'Օրինակը'
             ],
 
             // =============header==================================
@@ -1043,13 +1115,14 @@ i18n.use(initReactI18next).init({
             webexInfo: [
                'Մեր Մասին',
 
-               'Webex Technologies ընկերությունը հիմնադրվել է 2003թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին:',
+               'Webex Technologies ընկերությունը հիմնադրվել է 2007թ. նոյեմբերի 21-ին։ Տարիների ընթացքում ընկերությունն իրականացրել է մեծ թվով  ծրագրեր։ Որակապես և հիմնովին է մոտենում  նոր արտադրանքի ստեղծման գործընթացին։ Webex Technologies-ն աշխատում է միայն նոր և ժամանակակից տեխնոլոգիաներով, որոնք իրենց հերթին պարբերաբար թարմացվում են շուկայի պահանջներին համապատասխան: Ընկերությունը հիմնվել է Երևանում և համագործակցում է միջազգային գործընկերների հետ ամբողջ աշխարհում: Webex Technologies-ում իրականացված բոլոր նախագծերը համապատասխանում են միջազգային ՏՏ ստանդարտներին:',
                ' Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:',
             ],
 
             // ===========================createWebsitesAndMobileApp=============================
 
-            createWebsitesAndMobileApp: 'Վեբ կայքերի, բջջային հավելվածների եւ 3D մոդելների ստեղծում',
+            createWebsitesAndMobileApp:
+               'Վեբ կայքերի, բջջային հավելվածների եւ 3D մոդելների ստեղծում',
 
             createWebsitesAndMobileAppTitle: [
                'Վեբ կայքերի մշակում',
@@ -1084,27 +1157,47 @@ i18n.use(initReactI18next).init({
 
             // ==================videoCoursesSection=====================
 
-            videoCoursesSectionTitle: 'Ծրագրավորման ուսուցման պլան',
+            videoCoursesSectionTitle: 'Ծրագրավորման ուսուցման ցանկ',
+            videoCoursesSectionTitle_H: 'Ծրագրավորման ուսուցման պլան ',
 
             videoCoursesSectionTxt: [
                'Անվճար փորձնական դաս. Մեր ապագա ուսանողները. Դուք հնարավորություն ունեք անվճար ծանոթանալու Webex Technologies-ի դասավանդման մեթոդներին և դասավանդողներին։',
                ' Դասընթաց հիմունքային. Մենք առաջարկում ենք Ձեզ ծրագրավորման հիմունքային դասընթացներ Webex Technologies-ում: Դուք հնարավորություն ունեք ընտրել ձեզ հարմար ժամանակ, ձևաչափ և դասավանդող։ Դա անելու համար անհրաժեշտ է գրանցվել։',
-               'Ծրագրավորման խորացված դասընթաց. Սիրելի ուսանողներ. Ձեր հմտությունները բարելավելու համար մենք ձեզ առաջարկում ենք խորացված դասընթաց։ Webex Technologies-ում դուք կարող եք բարձրացնել ձեր գիտելիքները և ձեր մասնագիտացման մակարդակը նախընտրելի ոլորտում: Դա անելու համար անհրաժեշտ է գրանցվել։',
+               'Ծրագրավորման խորացված դասընթաց. Մասնակի անհատական տարբերակում ուսանողները մի լսարանում տարբեր վիդեոնյութերուվ ուսումնասիրիրում են թեմաները: Միաժամանակ լսարանում կարող են լինել մինչև 6 ուսանող: Դասվար ծրագրավորողը բոլոր ուսանողներին անհատապես ուշադրություն է դարձնում: Ուսանողներից ամեն մեկը տարբեր արագությունով է առաջ գնում',
+               'Անհատական  Պրեմիում դասընթաց. ուսանողը լսարանում կամ օնլայն մենակ է լինում դասախոսի հետ և դասախոս ծրագրավորողի ամբողջ ուշադրութտունը միայն այդ ուսանողինն է ուղղված լինում: Դասերը անցկացվում են ուսանողին հարմար ժամերին:',
             ],
+
+            videoCoursesSectionfeatures: [
+               'անվճար',
+               'խմբաին',
+               'մասնակի անհատական մոտեցում',
+               'անհատական մոտեցում',
+            ],
+
+            videoCoursesSectionTitleGround: ['React JS', 'Java', 'Laravel', 'Node.JS'],
 
             VideoCoursesSection_duration: [
                'Տեվողությունը-120 Րոպե',
                'Տեվողությունը-960 Րոպե',
                'Տեվողությունը-1440 Րոպե',
+               'Տեվողությունը-1440 Րոպե',
             ],
 
-            VideoCoursesSection_value: ['Արժեքը 0 դրամ', 'Արժեքը 45000 դրամ', 'Արժեքը 60000 դրամ'],
+            VideoCoursesSection_value: [
+               'Արժեքը 0 դրամ',
+               'Արժեքը 45000 դրամ',
+               'Արժեքը 60000 դրամ',
+               'Արժեքը 120000 դրամ',
+            ],
 
             VideoCoursesSection_title: [
                'Փորձնական դասընթաց',
                'Ստանդարտ փաթեթ',
                'Պրոֆեսիոնալ փաթեթ',
+               'Պրեմիում դասընթաց',
             ],
+            videoCoursesSectionTitleCourses_month: '~6 ամիս-շաբաթը 3օր',
+            videoCoursesSectionTitleCourses: 'Courses',
             // ==================Footer===========================
 
             footerMenu: [
@@ -1209,7 +1302,7 @@ i18n.use(initReactI18next).init({
                'Կայքի մշակում',
                'Կայքի տեխնիկական աջակցություն',
                'E-mail marketing',
-               'Yandex Market',
+               'Հրավիրատոմս',
                'Google analytics',
                'Բիզնես գործընթացների ավտոմատացում',
             ],
@@ -1359,6 +1452,8 @@ i18n.use(initReactI18next).init({
 
             homework_linne: ['Կատարել տնային առաջադրանքները', 'Դաս', 'ր․'],
 
+            homework_linneHom: ['Կատարել տնային առաջադրանքները', 'Աառաջադրանք', 'ր․'],
+
             cordial: 'Բովանդակություն',
 
             all_video_lessons: 'Բոլոր վիդեոդասերը',
@@ -1485,7 +1580,7 @@ i18n.use(initReactI18next).init({
                'ՀԱՐՑՈՒՄ ԿԱՄ ՀԱՐՑԻ ՀԱՄԱՐ',
                'Կայքի մշակում',
                'Կայքի առաջխաղացում/ SEO',
-               'Ծառայություն և աջակցություն',
+               'Սպասարկում և աջակցություն',
                '3D մոդելավորման մշակում',
                'Բջջային հավելվածների մշակում',
                'Միասնության զարգացում',
@@ -1793,10 +1888,10 @@ i18n.use(initReactI18next).init({
                'IOS բջջային հավելվածի մշակում',
                'ՄԵՐ ՓՈՐՁԱՌՈՒ ԾՐԱԳՐԱՎՈՐՈՂՆԵՐԸ OBJECTIVE C-Ի ԽՈՐԸ ԳԻՏԵԼԻՔՆԵՐՈՎ ԿԿԱՏԱՐԵՆ ՑԱՆԿԱՑԱԾ ԲԱՐԴՈՒԹՅԱՆ ԱՌԱՋԱԴՐԱՆՔՆԵՐ։',
                'IOS բջջային հավելված մշակողների թիմերը',
-               'IOS ՄՇԱԿՈՂ ՄԵՐ ԹԻՄԵՐԸ ԱՇԽԱՏՈՒՄ ԵՆ ԱՇԽԱՐՀԻ ՏԱՐԲԵՐ ԸՆԿԵՐՈՒԹՅՈՒՆԵՐԻ ՀԵՏ՝ IOS- Ի ՀԱՄԱՐ Բջջային հավելվածներ ստեղծելոՎ (IPAD, IPHONE, IPOD TOCH)',
+               'IOS ՄՇԱԿՈՂ ՄԵՐ ԹԻՄԸ ԱՇԽԱՏՈՒՄ ԵՆ ԱՇԽԱՐՀԻ ՏԱՐԲԵՐ ԸՆԿԵՐՈՒԹՅՈՒՆԵՐԻ ՀԵՏ՝ IOS- Ի ՀԱՄԱՐ Բջջային հավելվածներ ստեղծելոՎ (IPAD, IPHONE, IPOD TOCH)',
                'Android բջջային հավելվածի մշակում',
                'ՄԵՔՆ ՍՏԵՂԾՈՒՄ ԵՆՔ ՍՄԱՐԹՖՈՆՆԵՐԻ, ՊԼԱՆՇԵՏՆԵՐԻ ԵՎ ԱՅԼ ԲՋՋԱՅԻՆ ՀԵՌԱԽՈՍՆԵՐԻ ՀԱՄԱՐ ԲԱԶՄԱՖՈՒՆԿՑԻՈՆԱԼ ANDROID ՀԱՎԵԼՎԱԾԸ',
-               'Android բջջային հավելված մշակողների թիմերը',
+               'Android բջջային հավելված մշակողների թիմը',
                'ANDROID բջջային հավելված մշակողների պրոֆեսիոնալ թիմերը JAVA, GOOGLE ANDROID SDK եւ NDK- ի խորը գիտելիքներով',
             ],
 
@@ -1805,7 +1900,55 @@ i18n.use(initReactI18next).init({
                'Webex Technologies- ն առաջարկում է իր ծառայություններն iOS և Android բջջային հավելվածների նեյթիվ և հիբրիդ օպերացիոն համակարգերի մշակման համար: Ծրագրավորողների մեր պրոֆեսիոնալ թիմը հաջողությամբ մշակում է բարդ եւ բազմաֆունկցիոնալ ծրագրեր տարբեր բիզնես ոլորտների համար, ինչպիսիք են տրանսպորտը, բանկերը եւ ֆինանսները, առողջապահությունը, զվարճանքները, հեռահաղորդակցությունը, կրթությունը եւ էլեկտրոնային առեւտուրը:',
             ],
 
+            bottomSideTexts_mobile: [
+               '  Webex Technologies ՍՊԸ-ում մենք խորապես ուսումնասիրում ենք շուկայի դինամիկան և ապրանքանիշի էությունը՝ բացահայտելու ձեր մրցակցային առավելությունը:',
+
+               'Բացեք բջջային հավելվածների նորարարության ներուժը:',
+
+               '    - Արտադրանքի ձևավորում. օգտագործեք շուկայի հետազոտության և ապրանքանիշի ինքնության ուժը՝ ձեր տեղը տարբերակելու և ձեր ապրանքանիշը բարձրացնելու համար:',
+
+               ' - Բջջային հավելվածների խորհրդատվություն. թույլ տվեք մեր փորձագետներին ուղղորդել ձեզ ամեն քայլի մեջ՝ սկսած հավելվածի հայեցակարգի ստեղծումից մինչև հարթակի համատեղելիություն՝ տրամադրելով հաջողության համար ստեղծված ճանապարհային քարտեզ:',
+
+               '  - Բջջային հավելվածների ձևավորում. Ընկղմեք ձեր օգտատերերին ինտուիտիվ և տեսողականորեն ցնցող փորձի մեջ, որը խթանում է փոխարկումները և խթանում ներգրավվածությունը:',
+
+               ' - Բջջային հավելվածների մշակում. ունենալով ավելի քան 50 հաջողությամբ ավարտված նախագծերի փորձ՝ մեր մշակողները առաջարկում են հուսալի, կայծակնային արագ հավելվածներ, որոնք գերազանցում են սպասելիքները:',
+
+               'Բարձրացրեք ձեր առցանց ներկայությունը բջջային սարքերից դուրս',
+
+               '- Վեբ մշակում. Բարելավեք ձեր բջջային հավելվածը՝ ստեղծելով բեքէնդ ֆունկցիոնալություն՝ ավելի առաջադեմ գործառույթների և ֆունկցիոնալության համար:',
+
+               '- Բջջային հավելվածների ինտեգրում. անխափան կերպով կապեք ձեր հավելվածը բեքէնդ համակարգերին և երրորդ կողմի ծրագրերի հետ՝ ապահովելով սահուն և անխափան աշխատանք ամեն առումներով:',
+
+               '   - Թեստավորում /QA/. Իմանալով, որ մեր ISTQB հավաստագրված ինժեներները մանրակրկիտ փորձարկում են բոլոր բջջային հավելվածների ամեն ասպեկտը՝ ֆունկցիոնալությունից մինչև անվտանգություն՝ ապահովելով օգտագործողի անթերի փորձ:',
+
+               ' - Սպասարկում և աջակցություն. գործարկումից հետո աջակցությունից մինչև ընթացիկ համապատասխանության և կատարողականի կառավարում, մենք պատրաստ ենք աջակցել ձեր դիմումի անթերի կատարումը:',
+
+               'Վերականգնեք ձեր ժամանակին ստեղծված բջջային հավելվածները արդիականացնելով դրանք',
+
+               '  - Բջջային հավելվածների արդիականացում. հին հավելվածները վերածեք հզոր և ոճային գործիքների՝ թարմացված ճարտարապետությամբ և բարելավված օգտատիրոջ փորձով:',
+
+               'Պատրա՞ստ եք փոխել ձեր ապրանքանիշը:',
+
+               'Այսօր համագործակցեք Webex Technologies LLC-ի հետ և սկսեք նորարարության և հաջողության ճանապարհորդություն: Եկեք միասին կերտենք ձեր ապրանքանիշի ապագան:',
+
+               'Webex Technologies ՍՊԸ-ում մենք օգտագործում ենք հետևյալ տեխնոլոգիաները, որոնք օգտագործում ենք բջջային հավելվածների մշակման համար՝ React Native, Objective C, Java Kotlin',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+            ],
+
             // ======================Games==============================
+            games_title:'Խաղերի ստեղծում',
             games: [
                'Unity-ով հավելվածների ստեղծման ծառայությունների աութսորսինգ',
                '“ Webex Technologies” ընկերությունը լայնածավալ աշխատանք կատարելու մեծ փորձ ունեցող ընկերություն է: Մենք առաջարկում ենք Unity ծրագրով մասնագիտացված ծառայությունների ամբողջական փուլի մատուցում տարբեր ոլորտների համար: Մեր թիմը խորը գիտելիքներ և փորձ ունի խաղերի ստեղծման, վեբ, համակարգչային, բջջային եւ խաչաձեւ պլատֆորմների հավելվածների ստեղծման ոլորտում՝ կիրառելով Unity-ի բոլոր առավելություններն ու գործիքները` հաճախորդների նպատակներին հասնելու համար:',
@@ -1838,6 +1981,17 @@ i18n.use(initReactI18next).init({
                'Ծրագրերի տեղադրում եւ աջակցություն',
                'Կոնսոլային խաղերի ստեղծում (PS, Xbox, Wii եւ այլն)',
             ],
+
+            canvas3D: ['Պասիվ. կառավարում', 'Ակտիվ կառավարումը, '],
+
+            proj: [
+               'Ծննդյան հրավիրատոմս ',
+               'Երեկույթի հրավիրատոմս ',
+               'Հարսանեկան հրավիրատոմս ',
+               
+            ],
+
+            projTitle: 'Վեբ հրավիրատոմսեր'
          },
       },
 
@@ -1960,6 +2114,7 @@ i18n.use(initReactI18next).init({
                'Ок',
                'Зарегистрироваться на курс',
                'Заказать проект',
+               'Например'
             ],
 
             // ====================header=============================
@@ -1972,7 +2127,7 @@ i18n.use(initReactI18next).init({
             webexInfo: [
                'О нас',
 
-               `Компания Webex Technologies основана  2003 году в ноябре 21.
+               `Компания Webex Technologies основана  2007 году в ноябре 21.
               За эти годы компания имеет большое количество реализованных проектов.
               Качественно  и основательно подходит к процессу создания нового продукта.
               Webex Technologies работает только новыми и актуальными технологиями, которые в свою очередь переодически обновляются в соответствии с требованиями рынка.
@@ -2024,17 +2179,27 @@ i18n.use(initReactI18next).init({
 
             // ==================videoCoursesSection=====================
 
-            videoCoursesSectionTitle: 'План обучения программированию',
+            videoCoursesSectionTitle: 'Список обучения программированию',
+            videoCoursesSectionTitle_H: 'План обучения программированию',
 
             videoCoursesSectionTxt: [
                'Бесплатный пробный урок. Наши будущие студенты. У вас есть возможность бесплатно ознакомится с методами обучения, и преподавателями компании Webex Technologies.',
                'Базовый курс. Предлагаем вам пройти базовый курс по  программированию в компании Webex Technologies. У вас есть возможность выбрать удобное для вас время, формат и преподавателя. Для этого вам нужно зарегистрироваться.',
-               'Углубленный курс по программированию. Дорогие студенты. Для поднятия квалификации вам предлагается, углубленный курс. В компании Webex Technologies вы можете повысить знания и ваш уровень специализации в узкой области. Для этого вам нужно зарегистрироваться.',
+               'Курс продвинутого программирования – Профессиональный пакет предлагает гибкий формат обучения, который включает в себя  индивидуальные подход к занятиям с  преподавателем.Студенты имеют доступ к онлайн-ресурсам, заданиям и проектам, которые помогают им углубленно изучать выбранные темы. Студенты могут обратиться за помощью к опытным преподавателям для разъяснения сложных моментов и консультации по проектам. Этот курс позволяет студентам развивать свои навыки программирования в удобном темпе и получать поддержку от экспертов в области.',
+               'Хотите максимально эффективно освоить программирование? Тогда наш Индивидуальный Премиум-курс – идеальный выбор для вас! В рамках этого курса вы будете заниматься  с преподавателем в уютном классе, либо онлайн, получая всю внимание и поддержку лектора-программиста.   Забудьте о том, что вам придется делить внимание с другими студентами – наш Индивидуальный Премиум-курс позволит вам быть в центре внимания. Ваш преподаватель будет полностью сосредоточен на вас, помогая развивать ваши навыки программирования на индивидуальных занятиях. Гибкий график занятий позволит вам выбирать удобное время для обучения, а индивидуальный подход к каждому студенту гарантирует максимальную эффективность обучения. Не упустите возможность стать профессионалом в области программирования с помощью нашего Индивидуального Премиум-курса!'
+            ],
+
+            videoCoursesSectionfeatures: [
+               'бесплатно',
+               'группа',
+               'частичный индивидуальный подход',
+               'индивидуальный подход',
             ],
 
             VideoCoursesSection_duration: [
                'Продолжительность - 120 минут',
                'Продолжительность - 960 минут',
+               'Продолжительность - 1440 минут',
                'Продолжительность - 1440 минут',
             ],
 
@@ -2042,13 +2207,18 @@ i18n.use(initReactI18next).init({
                'Ценность 0 АМД',
                'Ценность 45000 АМД',
                'Ценность 60000 АМД',
+               'Ценность 120000 АМД',
             ],
 
             VideoCoursesSection_title: [
                'Пробный курс',
                'Стандартный пакет',
                'Профессиональный пакет',
+               'Премиум курс',
             ],
+            videoCoursesSectionTitleGround: ['React JS', 'Java', 'Laravel', 'Node.JS'],
+            videoCoursesSectionTitleCourses: 'Курс:',
+            videoCoursesSectionTitleCourses_month: '~6 месяцев-3 раза в неделю',
 
             // ==========================Footer============================
 
@@ -2154,7 +2324,7 @@ i18n.use(initReactI18next).init({
                'Разработка веб-сайтов',
                'Техническая поддержка сайта',
                'E-mail marketing',
-               'Yandex Market',
+               'Пригласительная открытка',
                'Google analytics',
                'Автоматизация бизнес-процессов',
             ],
@@ -2309,6 +2479,8 @@ i18n.use(initReactI18next).init({
             description: 'Описание',
 
             homework_linne: ['Делать домашнюю работу', 'Урок', 'м'],
+
+            homework_linneHom: ['Делать домашнюю работу', 'Задание', 'м'],
 
             cordial: 'Содержание',
 
@@ -2764,7 +2936,59 @@ i18n.use(initReactI18next).init({
             Reliable_text:
                'Webex Technologies - компания разработчик мобильных приложений в Армении, имеет многолетний опыт работы с технологиями и платформами в мобильной сфере. Мы предлагаем широкий спектр услуг по разработке мобильных приложений на рынке Армении и других стран. Наша компания предоставляет IT-консалтинг, разработку, дизайн, тестирование и поддержку продукта.',
 
+            bottomSideTexts_mobile: [
+               'В Webex Technologies LLC мы глубоко погружаемся в динамику рынка и сущность бренда, чтобы обнаружить ваш конкурентный преимущество.',
+
+               'Разблокируйте потенциал инноваций в мобильных приложениях.',
+
+               '- Дизайн продукта: Используйте силу рыночных исследований и идентичности бренда, чтобы выделить свою нишу и поднять свой бренд.',
+
+               '  - Консультирование по мобильным приложениям:',
+               ' Позвольте нашим экспертам провести вас через каждый этап, от завершения концепции до совместимости с платформой, обеспечивая дорожную карту, созданную для успеха.',
+
+               '- Дизайн мобильных приложений:',
+               'Погрузите ваших пользователей в интуитивный и визуально потрясающий опыт, который стимулирует конверсии и способствует вовлеченности.',
+
+               '  - Разработка мобильных приложений: ',
+               'С имеющимся опытом более чем в 350 успешно реализованных проектах наши разработчики предлагают надежные, молниеносные приложения, которые превосходят ожидания.',
+
+               ' Поднимите ваше онлайн-присутствие за пределы мобильных устройств',
+
+               '- Веб-разработка:',
+               ' Дополните ваше мобильное приложение создавая бэк-энд фунциональность для более многоисленных возможностей и функционалов.',
+
+               '- Интеграция мобильных приложений:',
+               'Безупречно свяжите ваше приложение с системами бэк-энда и сторонним программным обеспечением, обеспечивая плавную работу на всех фронтах.',
+
+               'Обеспечьте превосходство на каждом этапе',
+
+               '- Тестирование и QA: Спокойно зная, что наши сертифицированные инженеры ISTQB тщательно тестируют каждый аспект, от функциональности до безопасности, гарантируя безупречный пользовательский опыт.',
+
+               '- Обслуживание и поддержка: ',
+               ' От пост-запускной поддержки до постоянного соблюдения и управления производительностью мы готовы поддерживать успех вашего приложения. Возродите ваши устаревшие приложения для современной эры',
+
+               '- Модернизация мобильных приложений:',
+               ' Превратите устаревшие приложения в эффективные и стильные инструменты с обновленной архитектурой и улучшенным пользовательским опытом.  Готовы изменить свой бренд?',
+
+               ' Сотрудничайте с Webex Technologies LLC уже сегодня и отправляйтесь в путешествие инноваций и успеха. Давайте вместе формировать будущее вашего бренда.',
+
+               'В ООО «Webex Technologies» мы используем следующие технологии, которые используем для разработки мобильных приложений: React Native, Objective C, Java Kotlin.',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+               '',
+            ],
             // ======================Games==============================
+            games_title:'Создание игр',
             games: [
                'Аутсорсинг услуг по разработке приложений на Unity',
                'WebЕx Technologies это компания с большим опытом разработки. Мы предлагаем профессиональные услуги Unity разработки полного цикла для различных отраслей. Наша команда обладает глубокими знаниями и опытом в сфере разработки игр, веб, десктоп, мобильных и кроссплатформенных приложений с использованием всех преимуществ и инструментов Unity для достижения целей заказчиков.',
@@ -2799,12 +3023,23 @@ i18n.use(initReactI18next).init({
                'Настройка и поддержка приложений',
                'Разработка консольных игр (для PS, Xbox, Wii и др.)',
             ],
+
+            canvas3D: ['Пасив. контроль', 'Актив контроль'],
+
+            proj: [
+               'Приглашение на день рождения',
+               'Приглашение на вечеринку',
+               'Свадебное приглашение',
+               
+            ],
+
+            projTitle: 'Веб-приглашения'
          },
       },
       // Add more languages as needed
    },
    lng: localStorage.getItem('lang') ? localStorage.getItem('lang') : 'am', // Default language
-   fallbackLng: localStorage.getItem('lang'), // Fallback language
+   fallbackLng: localStorage.getItem('lang') ? localStorage.getItem('lang') : 'am', // Fallback language
    interpolation: {
       escapeValue: false,
    },

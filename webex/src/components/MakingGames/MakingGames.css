@@ -44,7 +44,10 @@
    font-size: 90px;
    text-align: center;
 }
-
+.games_title {
+   width: 100%;
+   text-align: center;
+}
 .mobi_title {
    color: white;
    text-align: center;
@@ -96,7 +99,7 @@
 
 /* ==========uniti============= */
 
-.icon {
+.icon_games {
    overflow: hidden;
    width: 290px;
    display: flex;
@@ -107,14 +110,14 @@
    gap: 20px;
 }
 
-.icon svg {
+.icon_games svg {
    transition: all 1s;
 }
-.icon:hover svg {
+.icon_games:hover svg {
    transform: scale(1.2);
 }
 
-.icon p {
+.icon_games p {
    color: white;
    font-size: 30px;
 }
@@ -165,7 +168,7 @@
    margin: 5px;
    text-align: center;
 }
-*/ .diver div:hover {
+.diver div:hover {
    color: #26716e;
    font-weight: 700;
    transform: scale(1.2);

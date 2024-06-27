@@ -37,6 +37,9 @@ import {
    co_workers_image8,
    co_workers_image9,
    our_teemImage,
+   proj1,
+   proj2,
+   proj3,
    projectImg_1,
    projectImg_2,
    projectImg_3,
@@ -81,7 +84,7 @@ import {
 
 // ===================tools-Info====================================
 
-export const years_webex = new Date().getFullYear() - 2003;
+export const years_webex = new Date().getFullYear() - 2007;
 
 export const packageTools = [
    {
@@ -256,6 +259,11 @@ export const packageTxts = {
       icon: closeLockIcon,
       _id: '3',
    },
+   premium_package: {
+      txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
+      icon: closeLockIcon,
+      _id: '4',
+   },
 };
 export const VideoCoursesSectionData = [
    {
@@ -278,6 +286,13 @@ export const VideoCoursesSectionData = [
       timeLine: 'Տեվողությունը-1440 Րոպե',
       value: 'Արժեքը-60000 Դրամ',
    },
+
+   {
+      title: 'Պրոֆեսիոնալ փաթեթներ',
+      type: 'premium_package',
+      timeLine: 'Տեվողությունը-1440 Րոպե',
+      value: 'Արժեքը-60000 Դրամ',
+   }
 ];
 
 // ============================slide=========================================
@@ -1141,3 +1156,53 @@ export const registerDropData = [
       icon:server
       },
 ];
+
+
+
+export const privateProjectsData = [
+   {
+      id: '1',
+      img: proj1,
+      path: 'https://event.webex.am/'
+   },
+
+   {
+      id: '2',
+      img: proj2,
+      path: 'https://goreyansgarden.webex.am/'
+   },
+
+   {
+      id: '3',
+      img: proj3,
+      path: ''
+   },
+
+
+]
+
+
+
+
+
+
+export const responsive3 = {
+   superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1440 },
+      items: 3,
+      slidesToSlide: 2,
+   },
+   desktop: {
+      breakpoint: { max: 1440, min: 1024 },
+      items: 2,
+   },
+   tablet: {
+      breakpoint: { max: 1024, min: 720 },
+      items: 2,
+   },
+   mobile: {
+      breakpoint: { max: 510, min: 0 },
+      items: 1,
+   },
+};

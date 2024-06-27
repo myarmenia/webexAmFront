@@ -13,12 +13,12 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Formik } from 'formik'
 import * as yup from 'yup';
 
-function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
+function OrderModal({ setOpenOrderModal, setMessageModal, currentProject, addres }) {
     const { t, i18n } = useTranslation()
 
-    const  validationSchema = yup.object().shape({
+    const validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.' + '0')),
-        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.'+ '5')).required(t('validation_reg_log.'+ '0')),
+        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.' + '5')).required(t('validation_reg_log.' + '0')),
         email: yup.string().email(t('validation_reg_log.' + '1')).required(t('validation_reg_log.' + '0')),
         webSiteAddres: yup.string(),
         message: yup.string(),
@@ -75,6 +75,7 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
             project: currentProject
         }
 
+
         const jsonOrderObj = JSON.stringify(orderObj)
         const jsonOrderObj2 = JSON.stringify(orderObj2)
         const formData = new FormData();
@@ -129,105 +130,109 @@ function OrderModal({ setOpenOrderModal, setMessageModal, currentProject }) {
                                 <form className="order-modal-form" onSubmit={(e) => handleCloseModal(e, handleSubmit, isValid, dirty)}>
 
                                     <div className='order-modal-full-div'>
-                                    <div className='order-modal-block-info-div'>
-                                        <h3>{t('orderFormTitle.0')}</h3>
-                                        <span>{t('orderFormTitle.1')}</span>
-                                    </div>
-                                    <div className="name-inp">
-                                        <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur} />
-                                        {touched.name && errors.name && <p className="error">{errors.name}</p>}
-                                    </div>
+                                        <div className='order-modal-block-info-div'>
+                                            <h3>{t('orderFormTitle.0')}</h3>
+                                            <span>{t('orderFormTitle.1')}</span>
+                                        </div>
+                                        <div className="name-inp">
+                                            <input type="text" name="name" placeholder={t('orderForm.0')} value={values.name} onChange={handleChange} onBlur={handleBlur} />
+                                            {touched.name && errors.name && <p className="error">{errors.name}</p>}
+                                        </div>
 
-                                    <div className="phone-inp">
-                                        <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur} />
-                                        {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
-                                    </div>
+                                        <div className="phone-inp">
+                                            <input type="text" name="phone" placeholder={t('orderForm.1')} value={values.phone} onChange={handleChange} onBlur={handleBlur} />
+                                            {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
+                                        </div>
 
-                                    <div className="email-inp">
-                                        <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur} />
-                                        {touched.email && errors.email && <p className="error">{errors.email}</p>}
-                                    </div>
+                                        <div className="email-inp">
+                                            <input type="email" name="email" placeholder={t('orderForm.2')} value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                                            {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                                        </div>
 
-                                    <div className="webSite-inp">
-                                        <input type="text" name="webSiteAddres" placeholder={t('orderForm.3')} value={values.webSiteAddres} onChange={handleChange} onBlur={handleBlur} />
-                                        {touched.webSiteAddres && errors.webSiteAddres && <p className="error">{errors.webSiteAddres}</p>}
-                                    </div>
+                                        {
+                                            addres !== 'false' && (
+                                                <div className="webSite-inp">
+                                                    <input type="text" name="webSiteAddres" placeholder={t('orderForm.3')} value={values.webSiteAddres} onChange={handleChange} onBlur={handleBlur} />
+                                                    {touched.webSiteAddres && errors.webSiteAddres && <p className="error">{errors.webSiteAddres}</p>}
+                                                </div>
+                                            )
+                                        }
 
-                                    <div className="message-inp">
-                                        <textarea name="message" placeholder={t('orderForm.4')} value={values.message} onChange={handleChange} onBlur={handleBlur} />
-                                        {touched.message && errors.message && <p className="error">{errors.message}</p>}
-                                    </div>
+                                        <div className="message-inp">
+                                            <textarea name="message" placeholder={t('orderForm.4')} value={values.message} onChange={handleChange} onBlur={handleBlur} />
+                                            {touched.message && errors.message && <p className="error">{errors.message}</p>}
+                                        </div>
 
-                                    <div className='input-text-div upload-file-div'>
-                                        <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
-                                        <input style={{ display: 'none' }} type="file" id="fileInput" onChange={handleFileChange} />
-                                        <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')} />
-                                    </div>
+                                        <div className='input-text-div upload-file-div'>
+                                            <label className='fileIcon' htmlFor="fileInput">{fileIcon}</label>
+                                            <input style={{ display: 'none' }} type="file" id="fileInput" onChange={handleFileChange} />
+                                            <input type="text" id="textInput" value={textValue} onChange={handleTextChange} placeholder={t('orderForm.5')} />
+                                        </div>
 
-                                    <div className='checkbox-div'>
-                                        <span>{t('orderFormTitle.2')}</span>
-                                        <div className='checkobox-items'>
-                                            <div>
-                                                <input id='check1' type="checkbox" name='Corporate website development' />
-                                                <label htmlFor="check1">{t('orderForm.6')}</label>
+                                        <div className='checkbox-div'>
+                                            <span>{t('orderFormTitle.2')}</span>
+                                            <div className='checkobox-items'>
+                                                <div>
+                                                    <input id='check1' type="checkbox" name='Corporate website development' />
+                                                    <label htmlFor="check1">{t('orderForm.6')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check2' type="checkbox" name='Search engine optimization (SEO)' />
+                                                    <label htmlFor="check2">{t('orderForm.7')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check3' type="checkbox" name='Website development' />
+                                                    <label htmlFor="check3">{t('orderForm.8')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check4' type="checkbox" name='E-mail marketing' />
+                                                    <label htmlFor="check4">{t('orderForm.9')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check5' type="checkbox" name='Google analytics' />
+                                                    <label htmlFor="check5">{t('orderForm.10')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check6' type="checkbox" name='Online stores development' />
+                                                    <label htmlFor="check6">{t('orderForm.11')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check7' type="checkbox" name='Contextual advertising' />
+                                                    <label htmlFor="check7">{t('orderForm.12')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check8' type="checkbox" name='Technical website support' />
+                                                    <label htmlFor="check8">{t('orderForm.13')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check9' type="checkbox" name='Invitation card' />
+                                                    <label htmlFor="check9">{t('orderForm.14')}</label>
+                                                </div>
+
+                                                <div>
+                                                    <input id='check10' type="checkbox" name='Business process automation' />
+                                                    <label htmlFor="check10">{t('orderForm.15')}</label>
+                                                </div>
+
+
                                             </div>
-
-                                            <div>
-                                                <input id='check2' type="checkbox" name='Search engine optimization (SEO)' />
-                                                <label htmlFor="check2">{t('orderForm.7')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check3' type="checkbox" name='Website development' />
-                                                <label htmlFor="check3">{t('orderForm.8')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check4' type="checkbox" name='E-mail marketing' />
-                                                <label htmlFor="check4">{t('orderForm.9')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check5' type="checkbox" name='Google analytics' />
-                                                <label htmlFor="check5">{t('orderForm.10')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check6' type="checkbox" name='Online stores development' />
-                                                <label htmlFor="check6">{t('orderForm.11')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check7' type="checkbox" name='Contextual advertising' />
-                                                <label htmlFor="check7">{t('orderForm.12')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check8' type="checkbox" name='Technical website support' />
-                                                <label htmlFor="check8">{t('orderForm.13')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check9' type="checkbox" name='Yandex Market' />
-                                                <label htmlFor="check9">{t('orderForm.14')}</label>
-                                            </div>
-
-                                            <div>
-                                                <input id='check10' type="checkbox" name='Business process automation' />
-                                                <label htmlFor="check10">{t('orderForm.15')}</label>
-                                            </div>
-
 
                                         </div>
 
-                                    </div>
+                                        <ReCAPTCHA
+                                            style={{ alignItems: 'center' }}
+                                            ref={captchaRef}
+                                            sitekey="6Lcc1l8pAAAAAI_bws4kEJ478msd2uBdRfZT4m2e"
+                                        />
 
-                                    <ReCAPTCHA
-                                        style={{alignItems: 'center'}}
-                                        ref={captchaRef}
-                                        sitekey="6Lcc1l8pAAAAAI_bws4kEJ478msd2uBdRfZT4m2e"
-                                    />
-                                    
                                     </div>
 
                                     <SubmitBtn index="3" />

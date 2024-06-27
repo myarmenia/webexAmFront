@@ -1,0 +1,84 @@
+.private-project{
+    padding: 100px 0;
+    position: relative;
+}
+
+
+.private-project-items{
+    position: relative;
+    background-color: #FA44DD0D;
+    padding: 80px 30px;
+    padding-bottom: 110px;
+    border-radius: 26px;
+}
+
+.private-project-items .react-multi-carousel-dot-list {
+  bottom: 20px;
+}
+
+.private-project-item{
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(90deg, rgba(87,22,224,1) 100%, rgba(62,66,165,1) 100%, rgb(0, 0, 0) 20%);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 26px;
+  }
+
+
+
+ .private-project-item-text{
+  display: flex;
+  gap: 20px;
+ }
+
+ .private-project-item-text >a{
+  padding: 10px 15px;
+  font-size: 12px;
+ }
+ 
+
+
+  .private-project-item-img{
+    width: 324px;
+    height: 70%;
+    position: relative;
+  }
+
+
+  .private-project-item-price{
+    position: absolute;
+    max-width: 170px;
+    top: 220px;
+    left: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 13px;
+  }
+
+  .private-project-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+  .private-project-title{
+    margin-bottom: 50px;
+    text-align: center;
+    color: white;
+  }
+
+  @media(max-width: 480px){
+    .private-project-item{
+        width: 300px;
+    }
+
+    .private-project-item-img{
+        width: 250px;
+    }
+  }

@@ -15,6 +15,7 @@ import { Helmet } from 'react-helmet-async'
 import { useDispatch } from 'react-redux'
 import { getHomePage } from '../../store/slices/HomePageSlice/HomePageApi'
 import ModelForHome from '../ModelForHome/ModelForHome'
+import PrivateProject from '../PrivateProject/PrivateProject'
 
 
 
@@ -62,6 +63,7 @@ function handleResize(){
               <WebexInfo/>
               <ToolsInfo/>
               <OurAdvantages/>
+              <PrivateProject/>
               <Services/>
               <ModelForHome/>
               <CreateWebsitesAndMobileApp/>
