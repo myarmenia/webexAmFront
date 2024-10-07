@@ -485,3 +485,26 @@ export const proj2 = require('./project2.png');
 export const proj3 = require('./project3.png');
 
 
+
+
+
+// =====================turnstile======================
+
+
+export const turnsileImg1 = require('./PZ-01.png');
+export const turnsileImg2 = require('./PZ-02.png');
+export const turnsileImg3 = require('./PZ-03.png');
+export const turnsileImg4 = require('./PZ-04.png');
+export const turnsileImg5 = require('./PZ-05.png');
+export const turnsileImg6 = require('./PZ-06.png');
+export const turnsileImg7 = require('./PZ-07.png');
+export const turnsileImg8 = require('./PZ-08.png');
+export const turnsileImg9 = require('./PZ-09.png');
+export const turnsileImg10 = require('./PZ-10.png');
+export const turnsileImg11 = require('./PZ-11.png');
+export const turnsileImg12 = require('./PZ-12.png');
+export const turnsileImg13 = require('./PZ-13.png');
+export const turnsileImg14 = require('./PZ-14.png');
+export const turnsileImg15 = require('./PZ-15.png');
+export const turnsileImg16 = require('./PZ-16.png');
+export const turnsileImg17 = require('./PZ-17.png');

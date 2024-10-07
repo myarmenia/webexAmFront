@@ -21,6 +21,7 @@ import { newsMainPageReducer } from "./slices/NewsMainSlice/NewsMainSlice";
 import { newsUniquePageReducer } from "./slices/NewsUniqueSlice/NewsUniqueSlice";
 import { newsCategoryPageReducer } from "./slices/NewsCategorySlice/NewsCategorySlice";
 import { devCoursesReducer } from './slices/DevelopentCoursisSlice/DevelopentCoursisSlice';
+import { invitationReducer } from "./slices/InvitationSliceHome/InvitationSliceHome";
 
 
 const store = configureStore({
@@ -46,7 +47,8 @@ const store = configureStore({
         newsMainPage: newsMainPageReducer,
         newsUniquePage: newsUniquePageReducer,
         newsCategoryPage: newsCategoryPageReducer,
-        devCourses: devCoursesReducer
+        devCourses: devCoursesReducer,
+        invitation: invitationReducer
     },
     // middleware: (getDefaultMiddlware)=>[
     //     ...getDefaultMiddlware(),

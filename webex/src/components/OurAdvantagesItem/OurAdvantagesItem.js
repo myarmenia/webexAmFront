@@ -27,6 +27,7 @@ function OurAdvantagesItem({id, title, txt, color, botomDivColor}) {
     '500%',
     '-500%',
     '500%',
+    '500%',
 
   ]
   return (

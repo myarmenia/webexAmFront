@@ -61,6 +61,7 @@ i18n.use(initReactI18next).init({
                'Job placement support',
                'Development and implementation of CRM systems',
                'Development and implementation of ERP systems',
+               'Security systems'
             ],
 
             ourAdvantagesItemTxt: [
@@ -74,6 +75,7 @@ i18n.use(initReactI18next).init({
                'Top students who complete their studies at Webex Technologies get an opportunity to intern at the company. Based on the results of the internship, Webex Technologies provides jobs.',
                'Automation of order fulfillment and transactions with status tracking for each specific product; simplifying the flow of documents, due to the automatic creation of contracts, acts, and invoices; maintaining a unified customer database with detailed information about each contact and interaction history.',
                'With the help of the ERP system, there is no need to create several individual information systems, with the help of which the automation of each of the routes is carried out, followed by establishing the connection between these systems.',
+               'We implement various access security system solutions, devices and equipment.'
             ],
             // ===================nav-menu=================================
             navMenu: [
@@ -94,6 +96,7 @@ i18n.use(initReactI18next).init({
                'E-mail',
                'Phone',
                'Web development courses',
+               'Entry Systems'
             ],
             // =======================buttons=========================
             button: [
@@ -106,7 +109,8 @@ i18n.use(initReactI18next).init({
                'Ok',
                'Register for the Course',
                'Order Project',
-               'Demo'
+               'Demo',
+               'See more'
             ],
             // =============header==================================
             headerTitlePart1: 'With our professional team, you can.',
@@ -122,13 +126,14 @@ i18n.use(initReactI18next).init({
             ],
 
             // ===========================createWebsitesAndMobileApp=============================
-            createWebsitesAndMobileApp: 'Creating websites, mobile applications, and 3D models',
+            createWebsitesAndMobileApp: 'Creation of websites, mobile applications, 3D models and creation of access security systems',
             createWebsitesAndMobileAppTitle: [
                'Creating a web applications',
                'Mobile applications',
                'Creating games and Unity',
                '3D modeling',
                'Preparation of CRM systems',
+               'Entry systems'
             ],
 
             createWebsitesAndMobileAppTxt: [
@@ -137,6 +142,7 @@ i18n.use(initReactI18next).init({
                'Advantages of applications created by Webex Technologies with Unity - Our company is an experienced and reliable partner in developing solutions using Unity. We have been creating effective and reliable applications for customers all over the world for years. Using Unity technologies, we successfully solve problems in such fields as online commerce, gaming, healthcare, education, advertising, etc. If you want to discuss the details of the project, please contact us.',
                'Three-dimensional modeling or 3D modeling is the creation of three-dimensional images of any objects or objects. For this purpose, specialists use special computer programs, so-called 3D programs. With their help, geometric projects are transformed into three-dimensional images. The appeal of 3D modeling lies in the almost unlimited possibilities of the technology. Using 3D graphics, you can create a model of any real or imaginary building, static object, or phenomenon.',
                'Development and implementation of the CRM system are most in demand in situations where there is a qualitative leap in business and company management. That is the number of communications (sales, transactions) as well as business contacts (phone calls, e-mails, SMS notifications) during the day. that the manager performs in a month exceeds the threshold of working memory available to a person, in this case, the resources that the staff spends on documents and Excel spreadsheets. These functions can be transferred to the CRM system: 1. Automating order execution and transaction execution by tracking the status of each specific position; 2. Simplification of document circulation due to the automatic creation of contracts, acts, accounts, and invoices, 3. Maintaining a unified customer database that contains detailed information about each customer and the history of interactions with them; Development and implementation of ERP systems.',
+               'Our advanced entry system integrates modern technologies such as RFID (Radio Frequency Identification), QR codes, and facial recognition to provide seamless and secure access control through turnstiles. This system ensures efficient management of entry points in various environments such as office buildings, educational institutions, and public venues.'
             ],
 
             // ==============services=============================
@@ -147,7 +153,7 @@ i18n.use(initReactI18next).init({
                '3D modeling',
                'Courses',
                'ERP-system',
-               'Unity 3D',
+               'Access systems',
                'Support',
                'CRM system',
             ],
@@ -995,7 +1001,21 @@ i18n.use(initReactI18next).init({
                "Wedding invitation card",
             ],
 
-            projTitle: 'Web Invitations'
+            projTitle: 'Web Invitations',
+
+            turnstileTitle: 'Turnstiles',
+
+            turnstileInfoTitle: 'We offer security and access control systems that will allow you to.',
+
+            turnstileInfo: [
+               'Block unauthorized access.',
+               'Allow access to employees or persons authorized to do so using QR cards, RFID cards, FaceID equipment, fingerprint reading equipment.',
+               'Control the days and hours of arrival and departure of employees.',
+               'Create reports on the arrival and departure of employees for different periods of time /month, quarter, year.',
+               'Control the entry and exit of visitors, with the ability to limit the number of entries. In addition, we implement other functions and capabilities in the system according to the needs of the Client.'
+            ],
+
+            turnstileOrder: 'Order',
          },
       },
       am: {
@@ -1052,6 +1072,7 @@ i18n.use(initReactI18next).init({
                'Աշխատանքի տեղավորման աջակցում',
                'CRM համակարգերի մշակում և ներդրում',
                'ERP համակարգերի մշակում և ներդրում',
+               'Անվտանգության համակարգեր'
             ],
 
             ourAdvantagesItemTxt: [
@@ -1065,6 +1086,7 @@ i18n.use(initReactI18next).init({
                'Լավագույն ուսանողները, ովքեր ավարտում են իրենց ուսումը Webex Technologies-ում, հնարավորություն են ստանում պրակտիկա անցնել ընկերությունում: Պրակտիկայի արդյունքների հիման վրա Webex Technologies-ն ապահովում է աշխատատեղեր։',
                'Պատվերների կատարման և գործարքների ավտոմատացում՝ յուրաքանչյուր կոնկրետ ապրանքի համար կարգավիճակի հետևումով. փաստաթղթերի հոսքի պարզեցում, պայմանագրերի, ակտերի, հաշիվ-ապրանքագրերի ավտոմատ ձևավորման շնորհիվ. հաճախորդների միասնական տվյալների բազայի պահպանում՝ յուրաքանչյուր կոնտակտի և փոխգործակցության պատմության մասին մանրամասն տեղեկություններով:',
                'ERP համակարգի օգնությամբ անհրաժեշտություն չկա ստեղծել մի շարք անհատական ​​տեղեկատվական համակարգեր, որոնց օգնությամբ իրականացվում է ուղություններից յուրաքանչյուրի ավտոմատացում, որին հաջորդում է այդ համակարգերի միջև կապի հաստատումը։',
+               'Մենք իրականացնում ենք մուտքի անվտանգության համակարգի տարբեր լուծումներ, սարքեր և սարքավորումներ:'
             ],
 
             // ===================nav-menu=================================
@@ -1087,6 +1109,7 @@ i18n.use(initReactI18next).init({
                'Էլ․ Հասցե',
                'Հեռախոս',
                'Ծրագրավորման դասընթացներ',
+               'Մուտքի համակարգեր'
             ],
 
             // =======================buttons=========================
@@ -1101,9 +1124,9 @@ i18n.use(initReactI18next).init({
                'Լավ',
                'Գրանցվել Դասընթացի',
                'Պատվիրել Նախագիծ',
-               'Օրինակը'
+               'Օրինակը',
+               'Տեսնել ավելին'
             ],
-
             // =============header==================================
 
             headerTitlePart1: 'Մեր պրոֆեսիոնալ թիմին կարող եք.',
@@ -1119,10 +1142,10 @@ i18n.use(initReactI18next).init({
                ' Webex Technologie-ն առաջարկում է ծրագրավորման դասընթացներ: Ընկերությունը կենտրոնացած է ուսանողների որակյալ կրթության վրա, շեշտը դնելով գործնական գիտելիքների  վրա: Webex Technologies-ը մշակել է իր դասավանդման ծրագիրը՝ հիմնված երկար տարիների փորձի վրա: Webex Technologies-ի ուսանողների մեծ մասը աշխատանք են գտնում   ՏՏ ոլորտում: Դասընթացն ավարտելուց հետո լավագույն ուսանողներին տրվում է վկայական, որը նրանց առավելություններ է տալիս աշխատանք փնտրելիս։ Webex Technologies-ը  ողջունում է նոր գործընկերներին:',
             ],
 
-            // ===========================createWebsitesAndMobileApp=============================
+            // =====values======================createWebsitesAndMobileApp=============================
 
             createWebsitesAndMobileApp:
-               'Վեբ կայքերի, բջջային հավելվածների եւ 3D մոդելների ստեղծում',
+               'Վեբ կայքերի, բջջային հավելվածների, 3D մոդելների ստեղծում եւ Մուտքի անվտանգության համակարգերի ստեղծում',
 
             createWebsitesAndMobileAppTitle: [
                'Վեբ կայքերի մշակում',
@@ -1130,6 +1153,7 @@ i18n.use(initReactI18next).init({
                'Խաղերի եւ Unity-ի ստեղծում',
                '3D մոդելավորում',
                'CRM համակարգերի պատրաստում',
+               'Մուտքի անվտանգության համակարգեր'
             ],
 
             createWebsitesAndMobileAppTxt: [
@@ -1138,6 +1162,7 @@ i18n.use(initReactI18next).init({
                '“Webex Technologies” ընկերության կողմից Unity ծրագրով ստեղծված հավելվածների առավելությունները-Մեր ընկերությունը հանդիսանում է փորձառու և հուսալի գործընկեր Unity-ի միջոցով լուծումներ մշակելու գործում։Մենք տարիների ընթացքում ամբողջ աշխարհում հաճախորդների համար արդյունավետ և վստահելի ծրագրեր ենք ստեղծում։ Unity տեխնոլոգիաները օգտագործելով՝ մենք հաջողությամբ լուծում ենք խնդիրներ այնպիսի ոլորտում, ինչպիսիք են օնլայն առևտուրը, խաղերը, առողջապահությունը, կրթությունը, գովազդը և այլն։Եթե ցանկանում եք քննարկել նախագծի մանրամասները,խնդրում ենք կապնվել մեզ հետ։',
                'Եռաչափ մոդելավորում կամ 3D մոդելավորում- ցանկացած առարկաների կամ օբյեկտների եռաչափ պատկերների ստեղծումն է։Այս նպատակով մասնագետները օգտագործում են հատուկ համակարգչային ծրագրեր, այսպես կոչված 3D ծրագրեր։Նրանց օգնությամբ երկրաչափական նախագծերը վերածվում են  եռաչափ պատկերների։ 3D մոդելավորման գրավչությունը կայանում է տեխնոլոգիայի գրեթե անսահմանափակ հնարավորությունների մեջ։Օգտագործելով 3D գրաֆիկա՝ դուք կարող եք ստեղծել ցանկացած իրական կամ երևակայական շենքի, ստատիկ օբյեկտի կամ երևույթի մոդել։',
                'CRM համակարգի մշակումն ու ներդնումը - առավել պահանջարկ ունի այն իրավիճակներում, երբ տեղի է ունենում բիզնեսի և ընկերության կառավարման որակական թռիչք։Այսինքն՝ օրվա ընթացքում հաղորդակցությունների(վաճառքի, գործարքների), ինչպես նաև գործարար կապերի քանակը(հեռախոսազանգեր, էլ- նամակներ,SMS ծանուցումներ), որոնք կառավարիչը կատարում է մեկ ամսվա ընթացքում, գերազանցում է մարդուն հասանելի օպերատիվ հիշողության շեմը, այս դեպքում ռեսուրսները, որը անձնակազմը  ծախսում է փաստաթղթերի և Excel աղյուսակների վրա։ CRM համակարգին կարող են փոխանցել տվյալ գործառույթները՝ 1․ Պատվերի կատարման և գործարքների կնքման ավտոմատացում յուրաքանչյուր կոնկրետ դիրքի կարգավիճակը հետևելու միջոցով․ 2․ Փաստաթղթաշրջանառության պարզեցում՝ պայմանավորված պայմանագրերի, ակտերի, հաշիվների և հաշիվ ապրանքագրերի ավտոմատ ստեղծմամբ, 3․ Հաճախորդների միասնական բազայի վարում, որը պարունակում է մանրամասն տեղեկատվություն յուրաքանչյուր հաճախորդի և նրա հետ փոխազդեցությունների պատմության մասին․ ERP համակարգերի մշակում և ներդրում։',
+               'Մուտքի առաջադեմ համակարգը միավորում է ժամանակակից տեխնոլոգիաները, ինչպիսիք են RFID (Ռադիոհաճախականության նույնականացում), QR կոդերը և դեմքի ճանաչումը, որպեսզի ապահովի մուտքի անխափան և անվտանգ կառավարում տուռնիկետների միջոցով: Այս համակարգը ապահովում է մուտքի կետերի արդյունավետ կառավարում տարբեր միջավայրերում, ինչպիսիք են գրասենյակային շենքերը, կրթական հաստատությունները և հանրային վայրերը:'
             ],
 
             // ==================services=====================================
@@ -1148,7 +1173,7 @@ i18n.use(initReactI18next).init({
                '3D մոդելավորում',
                'Դասընթացներ',
                'ERP-համակարգ ',
-               'Unity 3D',
+               'Մուտքի համակարգեր',
                'Սպասարկում',
                'CRM համակարգեր',
             ],
@@ -1991,7 +2016,22 @@ i18n.use(initReactI18next).init({
                
             ],
 
-            projTitle: 'Վեբ հրավիրատոմսեր'
+            projTitle: 'Վեբ հրավիրատոմսեր',
+
+            turnstileTitle: 'Տուռնիկետներ',
+
+            turnstileInfoTitle: 'Մենք առաջարկում ենք մուտքի անվտանգության և վերահսկողության համակարգեր, որոնց օգնությամբ հնարավոր կլինի՝',
+
+            turnstileInfo: [
+               'Արգելափակել մուտքի իրավունք չունեցող անձանց մուտքը:',
+               'Թույլատրել աշխատակիցների կամ դրա իրավունքը ունեցող անձանց մուտքը QR-ով, RFID քարտերով, FaceID սարքավորումներով, մատնահետքեր կարդացող սարքավորումներով:',
+               'Վերահսկել աշխատակիցների մուտքի և ելքի օրերը և ժամերը:',
+               'Հաշվետվություններ ներկայացնել տարբեր ժամանակահատվածների կտրվածքով աշխատակիցների մուտքի-ելքի վերաբերյալ /ամիս, եռամսյակ, տարի:',
+               'Այցելուների մուտքի-ելքի վերահսկողություն, մուտքի քանակի սահմանափակման հնարավորությամբԲացի դա իրականացնում ենք Պատվիրատուի կարիքներին համապատասխան այլ հնարավորությունների և ֆունկցիոնալի ներդրում համակարգում:'
+            ],
+
+            turnstileOrder: 'Պատվեր'
+
          },
       },
 
@@ -2047,6 +2087,7 @@ i18n.use(initReactI18next).init({
                'Помощь в трудоустройстве',
                'Разработка и внедрение CRM-системы',
                'Разработки и внедрения ERP-систем',
+               'Системы безопасности'
             ],
             ourAdvantagesItemTxt: [
                'Адаптивность. Принципы чистого кода. Стратегически продуманная реализация. Делаем сайты быстрыми, надежными. Обеспечиваем оптимальную реализацию поставленных задач.',
@@ -2059,6 +2100,7 @@ i18n.use(initReactI18next).init({
                'Лучшие студенты, завершившие обучение в Webex Technologies, получают возможность пройти стажировку в компании. По результатам стажировки компания Webex Technologies предоставляет рабочие места.',
                'Автоматизация выполнения заказов и заключения сделок с отслеживанием статуса по каждой конкретной позиции; упрощение документооборота за счет автоматического формирования договоров, актов, счетов и накладных; ведение единой базы клиентов с подробной информацией о каждом контакте и историей взаимодействий.',
                'С помощью ERP-системы отпадает необходимость в создании целого ряда индивидуальных информационных систем, с помощью которых выполняется автоматизация каждого из направлений с последующей наладкой коммуникации между этими системами.',
+               'Мы реализуем различные решения, устройства и оборудование систем безопасности доступа.'
             ],
 
             ourAdvantagesTitle: 'Наши преимущества',
@@ -2102,6 +2144,7 @@ i18n.use(initReactI18next).init({
                'Эл. адрес',
                'Телефон',
                'Курсы программирования',
+               'Системы доступа'
             ],
             // ===========buttons==========================
             button: [
@@ -2114,7 +2157,8 @@ i18n.use(initReactI18next).init({
                'Ок',
                'Зарегистрироваться на курс',
                'Заказать проект',
-               'Например'
+               'Например',
+               'Посмотреть больше'
             ],
 
             // ====================header=============================
@@ -2144,7 +2188,7 @@ i18n.use(initReactI18next).init({
 
             // ===========================createWebsitesAndMobileApp=============================
 
-            createWebsitesAndMobileApp: 'Создание веб-сайтов, мобильных приложений и 3D моделей',
+            createWebsitesAndMobileApp: 'Создание сайтов, мобильных приложений, 3D моделей и создание систем безопасности доступа',
 
             createWebsitesAndMobileAppTitle: [
                'Создание веб-приложении',
@@ -2152,6 +2196,7 @@ i18n.use(initReactI18next).init({
                'Создание игр и Unity',
                '3D моделирование',
                'Подготовка CRM систем',
+               'Система организации входа'
             ],
 
             createWebsitesAndMobileAppTxt: [
@@ -2160,6 +2205,7 @@ i18n.use(initReactI18next).init({
                'Преимущества приложений, созданных Webex Technologies с помощью Unity - Наша компания является опытным и надежным партнером в разработке решений с использованием Unity. Мы уже много лет создаем эффективные и надежные приложения для клиентов по всему миру. Используя технологии Unity, мы успешно решаем задачи в таких сферах, как онлайн-коммерция, игры, здравоохранение, образование, реклама и т. д. Если вы хотите обсудить детали проекта, свяжитесь с нами.',
                'Трехмерное моделирование или 3D-моделирование – это создание трехмерных изображений каких-либо предметов или объектов.Для этой цели специалисты используют специальные компьютерные программы, так называемые 3D-программы.С их помощью геометрические проекты преобразуются в трехмерные изображения. . Привлекательность 3D-моделирования заключается в практически неограниченных возможностях технологии: с помощью 3D-графики можно создать модель любого реального или воображаемого здания, статического объекта или явления.',
                'Разработка и внедрение CRM-системы наиболее востребованы в ситуациях, когда происходит качественный скачок в бизнесе и управлении компанией, то есть увеличивается количество коммуникаций (продажи, сделки), а также деловых контактов (телефонные звонки, электронные письма, СМС-уведомления) в течение дня, которые выполняет руководитель за месяц, превышает порог доступной человеку оперативной памяти, в данном случае ресурсов, которые сотрудники тратят на документы и таблицы Excel. В CRM-систему можно передать следующие функции: 1. Автоматизация исполнения заказов и исполнения транзакций путем отслеживания статуса каждой конкретной позиции; 2. Упрощение документооборота за счет автоматического создания договоров, актов, счетов и счет-фактур, 3. Ведение единой клиентской базы данных, содержащей подробную информацию о каждом клиенте и историю взаимодействия с ним; Разработка и внедрение ERP-систем.',
+               'Наша передовая система входа объединяет современные технологии, такие как RFID (радиочастотная идентификация), QR-коды и распознавание лиц, чтобы обеспечить бесперебойный и безопасный контроль доступа через турникеты. Эта система обеспечивает эффективное управление точками входа в различных средах, таких как офисные здания, учебные заведения и общественные места.'
             ],
 
             // ======================services================================
@@ -2170,7 +2216,7 @@ i18n.use(initReactI18next).init({
                '3D моделирование',
                'Oбучение',
                'ERP-систем',
-               'Unity 3D',
+               'Системы доступа',
                'Обслуживание',
                'Систем CRM',
             ],
@@ -3033,7 +3079,21 @@ i18n.use(initReactI18next).init({
                
             ],
 
-            projTitle: 'Веб-приглашения'
+            projTitle: 'Веб-приглашения',
+
+            turnstileTitle: 'Турникеты',
+
+            turnstileInfoTitle: 'Мы предлагаем системы безопасности и контроля доступа, которые позволят Вам:',
+
+            turnstileInfo: [
+               'Блокировать несанкционированный доступ.',
+               'Разрешить доступ сотрудникам или лицам, имеющим на это право, с помощью QR-карт, RFID-карт, оборудования FaceID, оборудования для считывания отпечатков пальцев.',
+               'Контролировать дни и часы прихода и выхода сотрудников.',
+               'Создавать отчеты о приходе и уходе сотрудников за разные периоды времени /месяц, квартал, год.',
+               'Контроль входа-выхода посетителей, с возможностью ограничения количества входов.'
+            ],
+
+            turnstileOrder: 'Заказ',
          },
       },
       // Add more languages as needed

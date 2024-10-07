@@ -61,11 +61,11 @@ function WebexInfo() {
 
         <div className='webex-info'>
             <h2>{t('webexInfo.'+ '0')}</h2>
-           <p>
+           <div>
             {textBlock}
             <p className='nividimi-block' style={{display: nividimBlock ? "block" : 'none'}}>{textBlock_2}</p>
             <span className='reade-more' onClick={()=>setNividimBlock(!nividimBlock)}>{nividimBlock ? leftArrow : t('lerne_more')}</span>
-           </p>
+           </div>
         </div>
     </div>
   )

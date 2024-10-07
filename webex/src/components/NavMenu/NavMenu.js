@@ -39,6 +39,7 @@ function NavMenu() {
 
                 </div>
                 <NavMenuItem index="2" path="/projects"/>
+                <NavMenuItem index="17" path="/turnstile"/>
                 <NavMenuItem index="7" path="/news"/>
                 <NavMenuItem index="3" path="/aboteus"/>
                 <NavMenuItem index="4" path="/contact"/>

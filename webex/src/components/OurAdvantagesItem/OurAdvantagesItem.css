@@ -19,7 +19,7 @@
     transition: all 1s;
 }
 
-.OurAdvantagesItem:nth-of-type(2), .OurAdvantagesItem:nth-of-type(3), .OurAdvantagesItem:nth-of-type(6), .OurAdvantagesItem:nth-of-type(7), .OurAdvantagesItem:nth-of-type(9), .OurAdvantagesItem:nth-of-type(10) {
+.OurAdvantagesItem:nth-of-type(2), .OurAdvantagesItem:nth-of-type(3), .OurAdvantagesItem:nth-of-type(6), .OurAdvantagesItem:nth-of-type(7), .OurAdvantagesItem:nth-of-type(9), .OurAdvantagesItem:nth-of-type(10), .OurAdvantagesItem:nth-of-type(11) {
     transition: all .7s;
 }
 
@@ -32,7 +32,7 @@
     line-height: normal;
 }
 
-.OurAdvantagesItem p{
+/* .OurAdvantagesItem p{
     color: rgba(255, 255, 255, 0.95);
     font-size: 15px;
     font-style: normal;
@@ -45,8 +45,30 @@
 
 .OurAdvantagesItem p::-webkit-scrollbar {
     width: 0;
-  }
+  } */
 
+
+  .OurAdvantagesItem p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow-y: auto;
+    padding: 0 2px;
+    padding-bottom: 20px;
+    max-height: 200px; 
+}
+
+/* Սքրոլի ոճի համար */
+.OurAdvantagesItem p::-webkit-scrollbar {
+    width: 5px;
+}
+
+.OurAdvantagesItem p::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5); /* Սքրոլի thumb գույն */
+    border-radius: 10px; /* Կլորացված սքրոլ */
+}
 
 .OurAdvantagesItem >div{
     /* width: 273px; */

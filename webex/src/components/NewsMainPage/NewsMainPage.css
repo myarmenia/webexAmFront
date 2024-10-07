@@ -121,7 +121,7 @@
    position: relative;
 }
 
-.news_main_page .container .category-top-div .category-top-div--small-div span {
+.category-top-div-small-div-item-info-share-and-date-div > span {
    color: white;
    font-size: 14px;
 }

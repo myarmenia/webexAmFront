@@ -56,7 +56,7 @@ function CreateWebsitesAndMobileApp() {
           ))}
         </div>
         <div className='slide-btns'>
-          {[1, 2, 3, 4, 5].map((buttonIndex) => (
+          {[1, 2, 3, 4, 5, 6].map((buttonIndex) => (
             <button style={{borderBottom: slide == buttonIndex ? '1px solid white' : 'none'}}
               key={buttonIndex}
               onClick={(e) => handleChangeSlideItem(e, buttonIndex)}

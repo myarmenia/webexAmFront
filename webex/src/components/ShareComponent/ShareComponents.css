@@ -1,11 +1,12 @@
 .share_div {
    position: relative;
    cursor: pointer;
-   filter: brightness(0) saturate(100%) invert(88%) sepia(4%) saturate(494%) hue-rotate(316deg)
+   /* filter: brightness(0) saturate(100%) invert(88%) sepia(4%) saturate(494%) hue-rotate(316deg)
       brightness(112%) contrast(99%);
    filter: brightness(0) saturate(100%) invert(88%) sepia(4%) saturate(494%) hue-rotate(316deg)
-      brightness(112%) contrast(99%);
-   color: white;
+      brightness(112%) contrast(99%); */
+   /* color: white; */
+   /* background-color: white; */
 }
 
 .share-buttons {
@@ -24,14 +25,18 @@
    z-index: 999999;
 }
 
+.share-buttons-text{
+   color: black !important;
+}
 .share_div:hover .share-buttons {
    display: flex;
    color: black;
 }
 
-.share_div:hover > span svg path {
+/* .share_div:hover  span svg path {
    fill: black;
-}
+} */
+
 
 .share-buttons span:hover {
    color: black;

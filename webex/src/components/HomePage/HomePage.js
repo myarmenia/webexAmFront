@@ -16,6 +16,7 @@ import { useDispatch } from 'react-redux'
 import { getHomePage } from '../../store/slices/HomePageSlice/HomePageApi'
 import ModelForHome from '../ModelForHome/ModelForHome'
 import PrivateProject from '../PrivateProject/PrivateProject'
+import TurnstileSectionHome from '../TurnstileSectionHome/TurnstileSectionHome'
 
 
 
@@ -63,6 +64,7 @@ function handleResize(){
               <WebexInfo/>
               <ToolsInfo/>
               <OurAdvantages/>
+              <TurnstileSectionHome/>
               <PrivateProject/>
               <Services/>
               <ModelForHome/>

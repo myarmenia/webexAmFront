@@ -73,6 +73,7 @@ function BurgerMenu() {
                 <NavMenuItem index="7" path="/news"/>
                 <NavMenuItem index = "3" path="/aboteus"/>
                 <NavMenuItem index = "4" path="/contact"/>
+                <NavMenuItem index="17" path="/turnstile"/>
               </ul>
 
 

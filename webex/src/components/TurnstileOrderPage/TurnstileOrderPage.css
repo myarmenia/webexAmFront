@@ -1,0 +1,122 @@
+.turnstile_order_page{
+  /* height: 100vh;   */
+  background: #000525;
+}
+
+.turnstile_order_page_top{
+    background-color: #5B62FF;
+}
+
+.turnstile_order_page_top .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 130px;
+    gap: 30px;
+}
+
+.turnstile_order_page_top_contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.turnstile_order_page_top_contact span{
+    background-color: #5716E09C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+}
+
+.turnstile_order_page_bottom{
+    background: #000525;
+    height: 800px;
+
+}
+
+
+.turnstile_order_page_bottom .container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.turstile_feedback_form_div{
+    background-color:#2D3189 ;
+    width: 931px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    border-radius: 16px;
+    position: relative;
+    top: -120px;
+}
+
+
+.turstile_feedback_form {
+    width: 557px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.turstile_feedback_form >div{
+    width: 100%;
+}
+
+.turstile_feedback_form >div input{
+    width: 100%;
+    height: 52px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #5D64FF;
+    color: white;
+    padding-left: 10px;
+}
+
+.turstile_feedback_form >div textarea{
+    width: 100%;
+    height: 229px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #5D64FF;
+    color: white;
+    padding-left: 10px;
+
+}
+
+.turstile_feedback_form button{
+    width: 100%;
+    height: 52px;
+    background-color: #5D64FF;
+    color: white;
+    border: none;
+    transition: all .6s;
+}
+
+.turstile_feedback_form button:hover{
+ background-color: #2e36db;;
+}
+
+.turstile_feedback_form_div .error{
+    color: red;
+    font-size: 14px;
+}
+
+
+@media(max-width: 780px){
+    .turstile_feedback_form_div{
+        width: 100%;
+    }
+
+    .turstile_feedback_form{
+        width: 90%;
+    }
+}

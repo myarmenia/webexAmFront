@@ -25,7 +25,8 @@ function ShareComponent(url) {
          <span>{shareIcon}</span>
          <div className="share-buttons">
             <FacebookShareButton url={url.url} quote={''} >
-               <span >{shareFb} Facebook</span>
+               <span >{shareFb}</span>
+               <span className='share-buttons-text'>Facebook</span>
             </FacebookShareButton>
 
             <TwitterShareButton url={url.url} title={''}>
