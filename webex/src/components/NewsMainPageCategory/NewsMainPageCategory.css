@@ -19,6 +19,11 @@
 
 .news_main_page_categorys_div h3 {
    cursor: pointer;
+   color: var(--main_font_color)
+}
+
+.news_main_page_categorys_div_content_item p{
+   color: var(--main_font_color)
 }
 .news_main_page_categorys_div_content {
    width:100%;

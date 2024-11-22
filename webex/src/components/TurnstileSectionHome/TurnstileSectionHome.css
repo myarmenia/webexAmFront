@@ -4,7 +4,7 @@
 
 .turnstile_section_home_items_block{
     background-color: #0E082F;
-    padding: 50px 0;
+    padding: 30px;
     border-radius: 52px;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
 }
 
 
-.turnstile_section_home_btn{
+/* .turnstile_section_home_btn{
     padding: 5px 15px;
     background-color: #5B62FF;
     border: none;
@@ -41,5 +41,5 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-}
+} */
 

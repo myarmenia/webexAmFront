@@ -36,6 +36,17 @@ import {
    co_workers_image7,
    co_workers_image8,
    co_workers_image9,
+   javaImg,
+   laravelImg,
+   mobailAppDevelopend_services_android,
+   mobailAppDevelopend_services_apis,
+   mobailAppDevelopend_services_dataBases,
+   mobailAppDevelopend_services_design,
+   mobailAppDevelopend_services_j_query,
+   mobailAppDevelopend_services_java,
+   mobailAppDevelopend_services_python,
+   mobailAppDevelopend_services_swift,
+   nodejsImg,
    our_teemImage,
    proj1,
    proj2,
@@ -48,6 +59,7 @@ import {
    projectImg_6,
    projectImg_7,
    projectImg_8,
+   reactImg,
    servicesLine_1,
    servicesLine_2,
    servicesLine_3,
@@ -66,6 +78,8 @@ import {
    turnsileImg15,
    turnsileImg16,
    turnsileImg17,
+   turnsileImg18,
+   turnsileImg19,
    turnsileImg2,
    turnsileImg3,
    turnsileImg4,
@@ -74,6 +88,18 @@ import {
    turnsileImg7,
    turnsileImg8,
    turnsileImg9,
+   webProject_services_ajax,
+   webProject_services_bootstrap,
+   webProject_services_css,
+   webProject_services_html,
+   webProject_services_javascript,
+   webProject_services_jquery,
+   webProject_services_laravel,
+   webProject_services_mysql,
+   webProject_services_nodejs,
+   webProject_services_php,
+   webProject_services_pyton,
+   webProject_services_react,
 } from '../src/images/images';
 
 import {
@@ -268,57 +294,87 @@ export const createWebAndMobileApp_data = [
 
 // =========================================VideoCoursesSection========================================================
 
-export const packageTxts = {
-   free_package: {
-      txt: 'Կայքում ներկայացված են վիդեոդասեր, որոնք կարող եք դիտել բացարձակ անվճար։ Կծանոթանաք դասավանդման ձևերին, և կհամոզվեք, որ մեր վիդեոդասերը պարզ են և հասկանալի բոլորի համար։',
-      icon: openLockIcon,
-      _id: '1',
-   },
-   standart_package: {
-      txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել Վեբ ծրագրավորման ոլորտում։',
-      icon: closeLockIcon,
-      _id: '2',
-   },
-   profesional_package: {
-      txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
-      icon: closeLockIcon,
-      _id: '3',
-   },
-   premium_package: {
-      txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
-      icon: closeLockIcon,
-      _id: '4',
-   },
-};
-export const VideoCoursesSectionData = [
+// export const packageTxts = {
+//    free_package: {
+//       txt: 'Կայքում ներկայացված են վիդեոդասեր, որոնք կարող եք դիտել բացարձակ անվճար։ Կծանոթանաք դասավանդման ձևերին, և կհամոզվեք, որ մեր վիդեոդասերը պարզ են և հասկանալի բոլորի համար։',
+//       icon: openLockIcon,
+//       _id: '1',
+//    },
+//    standart_package: {
+//       txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել Վեբ ծրագրավորման ոլորտում։',
+//       icon: closeLockIcon,
+//       _id: '2',
+//    },
+//    profesional_package: {
+//       txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
+//       icon: closeLockIcon,
+//       _id: '3',
+//    },
+//    premium_package: {
+//       txt: 'Բազային գիտելիքներ, որոոնք կօգնեն Ձեզ տիրապետելու այն ծրագրավորման լեզուներին և մեթոդներին, որոնց օգնությամբ դուք կարող եք աշխատել եբ ծրագրավորման ոլորտում։',
+//       icon: closeLockIcon,
+//       _id: '4',
+//    },
+// };
+// export const VideoCoursesSectionData = [
+//    {
+//       title: 'Փորձնական դաս',
+//       type: 'free_package',
+//       timeLine: 'Տեվողությունը-120 Րոպե',
+//       value: 'Արժեքը-0 Դրամ',
+//    },
+
+//    {
+//       title: 'Ստանդարտ փաթեթներ',
+//       type: 'standart_package',
+//       timeLine: 'Տեվողությունը-960 Րոպե',
+//       value: 'Արժեքը-45000 Դրամ',
+//    },
+
+//    {
+//       title: 'Պրոֆեսիոնալ փաթեթներ',
+//       type: 'profesional_package',
+//       timeLine: 'Տեվողությունը-1440 Րոպե',
+//       value: 'Արժեքը-60000 Դրամ',
+//    },
+
+//    {
+//       title: 'Պրոֆեսիոնալ փաթեթներ',
+//       type: 'premium_package',
+//       timeLine: 'Տեվողությունը-1440 Րոպե',
+//       value: 'Արժեքը-60000 Դրամ',
+//    }
+// ];
+
+
+export const videoCoursesSectionData = [
    {
-      title: 'Փորձնական դաս',
-      type: 'free_package',
-      timeLine: 'Տեվողությունը-120 Րոպե',
-      value: 'Արժեքը-0 Դրամ',
+      id: '1',
+      img: reactImg,
+      name: 'React JS',
+      price: '60000'
    },
 
    {
-      title: 'Ստանդարտ փաթեթներ',
-      type: 'standart_package',
-      timeLine: 'Տեվողությունը-960 Րոպե',
-      value: 'Արժեքը-45000 Դրամ',
+      id: '2',
+      img: javaImg,
+      name: 'Java',
+      price: '120000'
    },
-
    {
-      title: 'Պրոֆեսիոնալ փաթեթներ',
-      type: 'profesional_package',
-      timeLine: 'Տեվողությունը-1440 Րոպե',
-      value: 'Արժեքը-60000 Դրամ',
+      id: '3',
+      img: laravelImg,
+      name: 'Laravel',
+      price: '80000'
    },
-
    {
-      title: 'Պրոֆեսիոնալ փաթեթներ',
-      type: 'premium_package',
-      timeLine: 'Տեվողությունը-1440 Րոպե',
-      value: 'Արժեքը-60000 Դրամ',
-   }
-];
+      id: '4',
+      img: nodejsImg,
+      name: 'Node JS',
+      price: '60000'
+   },
+   
+]
 
 // ============================slide=========================================
 
@@ -1374,6 +1430,48 @@ export const turnstileData = [
       price1: '435.000',
       price2: '696.000',
    },
+
+   {
+      id: '18',
+      img: turnsileImg18,
+      code: 'pz-18',
+      price1: '',
+      price2: '',
+   },
+
+   {
+      id: '19',
+      img: turnsileImg19,
+      code: 'pz-19',
+      price1: '80000',
+      price2: '',
+   },
+]
+
+export const turnstileVideosData = [
+   {
+      id: '1',
+      video: 'https://www.youtube.com/watch?v=px_KGl8500Y',
+      title: 'Սուպերմարկետների համար նախատեսված տուրնիկետ'
+   },
+
+   {
+      id: '2',
+      video: 'https://www.youtube.com/watch?v=lUzoVbEifyI',
+      title: 'Գրասենյակների համար նախատեսված տուռնիկետ'
+   },
+
+   {
+      id: '3',
+      video: 'https://www.youtube.com/shorts/qIpvQ2NfKG4',
+      title: 'Բացօդյա Տուռնիկետ՝ Դեմքի Ճանաչմամբ․ Ապահով և Խելացի Մուտքի Վերահսկման Համակարգ'
+   },
+
+   {
+      id: '4',
+      video: 'https://www.youtube.com/watch?v=2h6m9jsOMKg',
+      title: 'Տուռնիկետների Վաճառք․ Ձեր Ընկերության Ապահովության և Կառավարման Լավագույն Լուծումները'
+   },
 ]
 
 
@@ -1403,4 +1501,137 @@ export const turnstileDataHome = [
       price1: '490.000',
       price2: '784.000',
    },
+]
+
+
+
+// ============webProjectPaheservicesData==========================
+
+export const web_project_services_data = [
+   {
+      id: '1',
+      name: 'HTML 5',
+      img: webProject_services_html
+   },
+
+   {
+      id: '2',
+      name: 'CSS 3',
+      img: webProject_services_css
+   },
+
+   {
+      id: '3',
+      name: 'Bootstrap',
+      img: webProject_services_bootstrap
+   },
+
+
+   {
+      id: '4',
+      name: 'JavaScript',
+      img: webProject_services_javascript
+   },
+
+   {
+      id: '5',
+      name: 'JQuery',
+      img: webProject_services_jquery
+   },
+
+   {
+      id: '6',
+      name: 'Laravel',
+      img: webProject_services_laravel
+   },
+
+   {
+      id: '7',
+      name: 'Ajax',
+      img: webProject_services_ajax
+   },
+
+   {
+      id: '8',
+      name: 'React',
+      img: webProject_services_react
+   },
+
+   {
+      id: '9',
+      name: 'PHP',
+      img: webProject_services_php
+   },
+
+   {
+      id: '10',
+      name: 'MySQL',
+      img: webProject_services_mysql
+   },
+
+   {
+      id: '11',
+      name: 'Python',
+      img: webProject_services_pyton
+   },
+
+   {
+      id: '12',
+      name: 'Node JS',
+      img: webProject_services_nodejs
+   },
+]
+
+
+
+export const mobile_page_services_data = [
+   {
+      id: '1',
+      name: 'Swift',
+      img: mobailAppDevelopend_services_swift
+   },
+
+   {
+      id: '2',
+      name: 'Java/Java8',
+      img: mobailAppDevelopend_services_java
+   },
+
+   {
+      id: '3',
+      name: 'Databases',
+      img: mobailAppDevelopend_services_dataBases
+   },
+
+
+   {
+      id: '4',
+      name: 'APIs',
+      img: mobailAppDevelopend_services_apis
+   },
+
+   {
+      id: '5',
+      name: 'JQuery',
+      img: mobailAppDevelopend_services_j_query
+   },
+
+   {
+      id: '6',
+      name: 'Android SDK',
+      img: mobailAppDevelopend_services_android
+   },
+
+   {
+      id: '7',
+      name: 'Design guidelines',
+      img: mobailAppDevelopend_services_design
+   },
+
+   {
+      id: '8',
+      name: 'Python',
+      img: mobailAppDevelopend_services_python
+   },
+
 ]

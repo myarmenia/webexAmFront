@@ -17,11 +17,10 @@ function NavMenu() {
      const isAuth = useSelector(getIsAuth)
 
 
-
   return (
        <div className='nav-menu-div' style={{columnGap: isAuth ? '30px' : '110px'}}>
 
-          {!isAuth ? <NavLink to={'/' + leng}>{logoImage}</NavLink> : <NavLink to={'/' + leng}>{logoImage_2}</NavLink>}
+           <NavLink to={'/' + leng}><img className='global_logo_1' style={{width: isAuth ? '55px' : '80px'}} src={logoImage} alt="logo" /></NavLink>
             
              <ul className='nav-menu'>
                 <div className='drop-item'>
@@ -30,7 +29,7 @@ function NavMenu() {
                     <ul className='drop-menu'>
                          <NavMenuItem index="8" path="/web-project"/>
                          <NavMenuItem index="12" path="/mobile"/>   
-                          <NavMenuItem index="16" path="/3"/>    
+                          <NavMenuItem index="16" path="/development-courses"/>    
                          <NavMenuItem index="10" path="/support"/>     
                          <NavMenuItem index="11" path="/3d-modeling"/>     
                          <NavMenuItem index="13" path="/games"/>  

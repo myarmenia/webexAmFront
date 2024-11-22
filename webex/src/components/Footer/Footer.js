@@ -7,10 +7,10 @@ function Footer() {
 
     const { t, i18n } = useTranslation();
     const leng = localStorage.getItem('lang')
-    const {pathname} = useLocation()
+    // const {pathname} = useLocation()
    
   return (
-    <div className='footer' style={{backgroundColor: (pathname !== `/${leng}/contact` && pathname !== `/${leng}/programing`) && "var(--main_color)", backgroundImage: (pathname !== `/${leng}/contact` && pathname !== `/${leng}/programing`) && "none" }}>
+    <div className='footer'>
         
             <div className='footer-content'>
                 <ul className='footer-menu'>

@@ -1,0 +1,131 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+
+
+.testimonial-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 50px;
+  }
+
+  .testimonial-slider-container{
+    background-color: #3b51ff;
+    /* padding: 50px 0; */
+    padding-bottom: 100px;
+    text-align: center;
+    overflow: hidden;
+    /* height: 500px; */
+  }
+  
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .testimonial-content h3 {
+    font-family: 'Arial, sans-serif';
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold !important;
+  }
+  
+  .testimonial-content .rating {
+    color: black;
+    margin-bottom: 15px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .testimonial-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: white;
+  }
+
+  .slick-dots li {
+    margin: 0;
+  }
+
+  .slick-dots{
+    bottom: -50px;
+  }
+
+  
+  .slick-dots li.slick-active button:before {
+    color: white;
+  }
+
+  .web_project_page_top_div_title{
+    color: var(--main_font_color);
+    font-size: 28px;
+    font-weight: 900 !important;
+    text-align: center;
+  }
+  
+
+  .comments_border1{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+  }
+
+
+  .comments_border2{
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+  }
+
+
+  .command_icon1_1{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+  }
+
+  .command_icon1_2{
+    position: absolute;
+    top: -10px;
+    left: 60px;
+  }
+
+  .command_icon2_1{
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+  }
+
+  .command_icon2_2{
+    position: absolute;
+    bottom: -10px;
+    right: 60px;
+  }
+
+
+  @media(max-width: 768px){
+    .testimonial-card{
+      width: 500px !important;
+    }
+  }
+
+
+  @media(max-width: 480px){
+    .testimonial-card{
+      width: 300px !important;
+    }
+  }

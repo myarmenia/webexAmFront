@@ -1,12 +1,13 @@
 .tools-info-item{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     width: 160px;
     height: 160px;
     border-radius: 50%;
     padding: 15px;
+    padding-top: 20px;
 }
 
 .tools-info-item p{
@@ -16,6 +17,10 @@
     font-weight: 400;
     line-height: normal;
     text-align: center;
+}
+
+.tools-info-item span{
+    height: 60px;
 }
 
 @media (max-width: 1440px){

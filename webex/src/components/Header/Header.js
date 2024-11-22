@@ -43,13 +43,13 @@ function Header() {
     }, 100);
   };
 
-  useEffect(() => {
-    document.body.style.overflow = openOrderModal ? 'hidden' : 'auto';
+  // useEffect(() => {
+  //   document.body.style.overflow = openOrderModal ? 'hidden' : 'auto';
 
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [openOrderModal]);
+  //   return () => {
+  //     document.body.style.overflow = 'auto';
+  //   };
+  // }, [openOrderModal]);
 
   return (
     <div className='header'>
@@ -64,15 +64,15 @@ function Header() {
         <div className='btns-div'>
           <Button index='7' path={`/${leng}/registr`} />
           <Button2 index='8' {...{ setOpenOrderModal }} />
+          <Button2 index='12' route="https://calendly.com/webexprojects/30min?back=1&month=2024-11" />
         </div>
       </div>
-
       <div className='animation-container'>
         <div className='animation-badge'>
           <div className='badge-text'>WEBEX</div>
         </div>
       </div>
-      {openOrderModal && <OrderModal {...{ setOpenOrderModal, setMessageModal }} />}
+      {openOrderModal && <OrderModal {...{ setOpenOrderModal, setMessageModal, openOrderModal }} />}
       {messageModal && <MessageModal txt={respOrder?.data.message} {...{ setMessageModal }} loading={loading} />}
     </div>
   );

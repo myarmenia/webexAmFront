@@ -8,24 +8,26 @@
 
 .createItemWebsitesAndMobileApp h4{
     color: var(--main_font_color);
-    font-size: 22px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     max-width: 350px;
     padding: 7px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-bottom: 1px solid #E4E4E4;
 }
 
 
 .createItemWebsitesAndMobileApp p{
     color: var(--main_font_color);
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
     transition: all .6s;
     transform-origin: top center;
+    width: 80%;
 }
 
 

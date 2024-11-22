@@ -17,7 +17,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   flex-wrap: wrap-reverse;
+   flex-wrap: wrap;
    height: 100%;
    column-gap: 100px;
 }
@@ -38,6 +38,7 @@
    outline: none;
    color: var(--main_font_color);
    font-size: 16px !important;
+   border-radius: 8px;
 }
 
 .login .container form p {
@@ -79,6 +80,10 @@
    color: white;
    text-align: center;
    font-size: 14px;
+}
+
+.btn_dv >p{
+   color: var(--main_font_color)
 }
 
 .log_img_div {

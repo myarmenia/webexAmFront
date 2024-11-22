@@ -1,0 +1,38 @@
+.video_courses_section_item_title {
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.video_courses_section_item_menu{
+   display: flex;
+   justify-content: center;
+   width: 80%;
+}
+
+
+.video_courses_section_item_menu li{
+   width: 24%;
+   text-align: center;
+}
+
+
+@media (max-width: 768px) {
+   .video_courses_section_item_menu{
+      width: 100%;
+   }
+
+   .video_courses_section_item_menu li {
+     font-size: 13px;
+   }
+}
+
+
+@media (max-width: 480px) {
+  .video_courses_section_item_menu{
+     width: 100%;
+  }
+
+  .video_courses_section_item_menu li {
+    font-size: 11px;
+  }
+}

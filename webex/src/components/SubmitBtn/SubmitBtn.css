@@ -19,7 +19,7 @@ button.btn{
     /* outline: ; */
     border: 1px solid white;
     width: 100%;
-    border-radius: 0 !important;
+    border-radius: 8px;
 }
 
 button.btn:hover{

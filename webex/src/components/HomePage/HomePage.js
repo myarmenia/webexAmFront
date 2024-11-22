@@ -23,6 +23,7 @@ import TurnstileSectionHome from '../TurnstileSectionHome/TurnstileSectionHome'
 function HomePage() {
 const [activeProject, setActiveProject] = useState(false)
 
+
 const dispatch = useDispatch()
 
 function handleResize(){

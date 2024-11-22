@@ -110,7 +110,9 @@ i18n.use(initReactI18next).init({
                'Register for the Course',
                'Order Project',
                'Demo',
-               'See more'
+               'See more',
+               'Order website',
+               'Free Consultation'
             ],
             // =============header==================================
             headerTitlePart1: 'With our professional team, you can.',
@@ -186,12 +188,7 @@ i18n.use(initReactI18next).init({
                'Duration - 1440 minutes',
             ],
 
-            VideoCoursesSection_value: [
-               'Value 0 AMD',
-               'Value 45000 AMD',
-               'Value 60000 AMD',
-               'Value 120000 AMD',
-            ],
+            VideoCoursesSection_price: "Dram",
 
             VideoCoursesSection_title: [
                'Trial course',
@@ -202,7 +199,8 @@ i18n.use(initReactI18next).init({
 
             videoCoursesSectionTitleGround: ['React JS', 'Java', 'Laravel', 'Node.JS'],
             videoCoursesSectionTitleCourses: 'Course',
-            videoCoursesSectionTitleCourses_month: '~6 month-3times/week',
+            videoCoursesSectionTitleCourses_month: '6 months',
+            videoCoursesSectionTitleCourses_week: '3 days/week',
 
             // ===============Footer=======================
 
@@ -288,6 +286,8 @@ i18n.use(initReactI18next).init({
                'Programming languages',
                'Creation period',
                'Date of creation',
+               'month',
+               'year',
             ],
 
             orderFormTitle: ['Tell us', 'about your project', 'Choose services'],
@@ -1016,6 +1016,257 @@ i18n.use(initReactI18next).init({
             ],
 
             turnstileOrder: 'Order',
+
+            turnstileOrderTitle: 'Connect us',
+
+            turnstileType: [
+               'Unilateral',
+               'Double sided',
+            ],
+
+            turnstile_videos_section_title: 'Work done',
+
+            turnstile_videos_titles: [
+               'Turnstile for supermarkets',
+               'Turnstile intended for offices',
+               'Outdoor Turnstile with Facial Recognition: Secure and Intelligent Access Control System',
+               'Turnstile Sales: The Best Security and Management Solutions for Your Company'
+            ],
+
+            web_project_cycle_title: 'What is needed to create a web application?',
+
+            web_projectPage_cycleTitles:[
+               'Planning',
+               'UX/UI Design',
+               'Programming',
+               'Testing',
+               'Issue:'
+            ],
+
+            web_projectPage_cycleTexts:[
+               'The purpose, features and requirements of the application are defined.',
+               'The interface is being developed to be convenient and efficient.',
+               'Programming languages ​​(eg JavaScript, Python, PHP) are used for the functionality of the web application.',
+               'The app is being tested for bugs.',
+               'The application is put into operation and the work of its constant updates and technical support continues.'
+            ],
+
+            web_projectPage_servicesTitles:[
+               'What technologies do we work with?',
+               'When developing web applications, we use a number of leading technologies based on the complexity and functionality of the applications. Here are some of the main technologies we work with:'
+            ],
+
+            web_projectPageTitle: 'Web Application Development',
+
+            web_projectPageDescription: 'Web Application Development is one of the areas of information systems development that includes the creation of interactive and user-friendly web applications that operate over the Internet. It has a wide range of applications, from trading systems to social networks, tools, databases and other useful services.',
+
+            web_projectPage_info_part1: [
+               'What is Web Application Development?',
+               'Web application development is the process of creating interactive software solutions accessible through Internet browsers. These applications provide a simplified interaction between businesses and users, allowing complex operations to be performed without downloading additional software.'
+            ],
+
+            web_projectPage_info_part2: [
+               'Why is web application development necessary?',
+               'Availability: Web applications are accessible from any device: computers, smartphones, and tablets.',
+               'Ease of use. Users can work with the application without any complicated software.',
+               "Data collection and processing. It's easy to collect and analyze data with apps.",
+               'Manageability and support. Technical support can be provided to users and new updates can be made easily.',
+               'Capacity building. Web applications can be easily integrated with other systems, adding new functions and services.'
+            ],
+
+            
+            webProject_ourPartnersTitles:[
+               'Our partners',
+               'We work with leading organizations to provide quality and reliable solutions.'
+            ],
+
+            webProject_comments_name: [
+               'Anna Markosyan',
+               'Levon Karapetyan',
+               'Arman Sargsyan',
+               'Satenik Harutyunyan'
+            ],
+
+            webProject_comments: [
+               'The partnership with Webex was an important step forward for our organization. Their professional team fulfilled all our technical requirements quickly and with quality.',
+               'Webex exceeded our expectations with professionalism and quick response. Every issue and problem was resolved in a timely and quality manner.',
+               'Thanks to Webex, we acquired modern and smart technological solutions that contributed to the development and success of our business.',
+               "We are impressed with Webex's commitment and results, their team approached all our technical needs with great responsibility and professionalism."
+            ],
+
+
+            commentsTitle: [
+               'Reviews',
+               "Our students' opinions"
+            ],
+
+            studentComments_name: [
+               'Silva Poghosyan',
+               'Karen Ayvazyan',
+               'Narine Keshishyan',
+               'Harutyun Arakelyan'
+            ],
+
+            studentComments: [
+               'By participating in this course, I not only gained professional skills, but also found a job opportunity. It was a great experience that completely changed my career.',
+               'The courses were tailored to my schedule. Thanks to the projects and practical assignments, I felt like I was actually learning what employers needed.',
+               'The individual approach greatly helped me overcome the difficult sections. The instructors were always ready to answer questions.',
+               'I was able to learn without changing my daily routine, thanks to the flexible schedule. Now my skills allow me to work in international teams.'
+            ],
+
+
+            otherServicesTitle: 'Other services',
+
+            otherServicesItemsTitles: [
+               'Web development',
+               '3D modeling',
+               'SEO',
+               'Game development',
+               'Mobile application development'
+            ],
+
+            otherServicesItemsTexts: [
+               'Building a mobile app involves building a comfortable and user-friendly platform, ensuring a seamless experience for users.',
+               'We provide high-quality 3D modeling for a variety of industries, including product presentations, construction projects, and promotional materials.',
+               "Our SEO services increase your website's visibility on search engines, which helps increase organic traffic and boost business growth.",
+               'Our business analytics services help identify business strengths and weaknesses based on data for strategic decision making.',
+               'Thanks to it, you can automatically accept orders, issue invoices, ship products and much more with minimal human involvement.'
+            ],
+
+            tell_us_sub_title: 'Send us a message and our specialists will gladly answer you within 1-2 working days',
+
+            tell_us_right_block_titles:[
+               'Contact information',
+               'Social platforms'
+            ],
+
+            tell_us_right_block_location: 'Baghramyan Ave. 79, 1/1',
+
+            mobail_appDevelopendPageTitle: 'Creating mobile applications',
+
+            mobail_appDevelopendPageDescription: 'Mobile app development is a necessity because it not only provides a smooth and comfortable user experience, but also enables businesses to grow and expand using all the capabilities of mobile technology.',
+
+            mobail_appDevelopendPageInfo_part1: [
+               'What is mobile app development?',
+               'Mobile app development is a technological process that involves developing a program and adapting it to mobile devices such as smartphones and tablets. This process includes several stages, from the initial design of the program to coding, testing and final launch. Apps can serve a variety of purposes, from social networks and games to trading platforms and business tools. It is important that the app design is intuitive, user-friendly, and optimized for different devices and screen sizes.'
+            ],
+
+            mobail_appDevelopendPageInfo_part2: [
+               'Why is mobile app development necessary?',
+               'Immediate access. Applications provide immediate and quick access for the user. Users can easily download the app and use it anywhere and anytime.',
+               'Improving the user experience. Apps enable users to offer a personalized and seamless experience, providing better interaction with the brand.',
+               'Growing mobile market. The number of mobile users is constantly increasing. Apps enable companies to reach their customers in new ways and better respond to market demands.',
+               'High involvement. With constant notifications and push messages, mobile apps enable customers to stay better connected and engaged.',
+               'Business development and revenue growth. Mobile apps can help increase sales by enabling users to make purchases, orders or services directly from the app.'
+            ],
+
+            development_page_header: [
+               'Programming courses',
+               'Learn to code, develop software solutions, and hone your skills on real projects.'
+            ],
+
+
+
+            development_page_our_advantages_titles: [
+               'Skills',
+               'Certificate',
+               'Internship',
+               'Team',
+               'Experience',
+               'Flexibility',
+               'Personalization',
+               'Confidence'
+            ],
+
+            development_page_our_advantages_texts: [
+               'Acquiring new professional skills to achieve success in the relevant field.',
+               'We provide all students with a certificate for professional credibility.',
+               'All of our students have the opportunity to complete a one-month internship with us.',
+               'Using real-world projects and group work, students learn to collaborate effectively with a team.',
+               'Practical projects are implemented through the courses, thanks to which the knowledge gained is used in solving real problems.',
+               "The hours and format of the courses are adapted to the students' daily lives, ensuring comfort.",
+               'A personalized learning approach for each student based on their needs and goals.',
+               'Mastering new skills and successfully completing projects helps increase self-confidence, which is also important in professional life.'
+            ],
+
+            development_courses_cycles_title: 'What are the stages of our courses?',
+
+            development_courses_cycles_stage_menu: [
+               '1st stage',
+               '2nd round',
+               '3rd round'
+            ],
+
+            development_courses_cycles_stage_Texts: [
+               'We will learn frontend programming, a clean way to write code, learn to create adaptive websites for different sizes, learn JavaScript functions, and use the React JS library.',
+               'We will learn Backend programming, working with databases, connecting to the frontend through APIs, and using the PHP library to learn Laravel or Node JS programming languages ​​for 2-5 months.',
+               'In the final stage, the student will have the opportunity to undergo an internship. During this period, we will consolidate the knowledge we have gained during our studies, the work will be carried out within the framework of real projects with the programming team for 1-2 months.'
+            ],
+
+            development_courses_cycles_stage_time: '4-6 months',
+
+            development_courses_page_certificate_section_titles: [
+               'What will you get at the end of the course?',
+               'All our students receive a certificate and an internship opportunity at the end of the course.',
+               'Certificate',
+               'Internship'
+            ],
+
+
+            frequently_asked_questions: [
+               'What are the main requirements for participating in the courses?',
+               'Is a certificate provided at the end of the course?',
+               'What format are the lessons held in?',
+               'Which direction to choose: Frontend or Backend?',
+               'Will I be able to find a job?',
+            ],
+
+            frequently_asked_questions_answers: [
+               'The basic requirements for participating in the courses include basic technological knowledge and a willingness to learn. In some cases, language or specific field knowledge may be required, such as programming basics.',
+               "Yes, the certificate is provided compulsorily. The certificate indicates the number of study hours, the student's progress score (on a 0-100 point system), which is determined based on his/her performance. The certificate also indicates the period of the student's internship and the technologies with which he/she worked during the internship.",
+               'Webex Technologies courses are organized with an individual approach. This means that students can choose the days and times that are convenient for them, as well as the appropriate period of study. The teaching methodology developed by Webex Technologies allows students to effectively master the course materials in the prescribed time. The knowledge and experience gained at Webex Technologies provide students with the necessary skills that will allow them to successfully transition to work in the future.',
+               "At Webex Technologies, each student receives an individual approach from the lecturers. During the course, the lecturers assess the student's skills and abilities, advising on which direction it is advisable to continue: Frontend or Backend. Students who demonstrate excellent progress in both directions will have the opportunity to become Full Stack developers, opening up broader prospects for their professional development.",
+               'After completing the course, students have the opportunity to undergo an internship at Webex Technologies. During the internship, they work with the programming team, participating in the development of real projects. By the end of the internship, students already have a clear understanding of the work process, gain valuable experience and are able to easily integrate into the industry, gaining a solid foundation for further professional development.'
+            ],
+
+            frequently_asked_questions_title: 'Frequently asked questions',
+
+            services_and_support_tile: 'Service and support',
+
+            services_and_supportDescription: 'Website support and maintenance ensure the long-term effectiveness of the site, which is vital for both the business and the users. Without quality service, the site can lose the trust and effectiveness of its users.',
+
+            services_and_support_info_part1: [
+               'What is website support and maintenance?',
+               'Website support and maintenance is the process of maintaining the smooth operation of a website and assisting users in case of technical problems. It includes a number of services, such as website updates, security, content updates, and bug fixes. Website support services include: Technical Support and Informational Support.'
+            ],
+
+            services_and_support_info_part2: [
+               'Technical support',
+               'Data backup',
+               'Backup website recovery monitoring',
+               'Forum management and editing',
+               'Notice boards',
+               'Antivirus',
+               'Support for interaction with the hosting provider',
+               'Creation of mailing addresses and technical support at your address',
+               'Website transfer to new server',
+               'Domain registration support',
+               'FTP server management',
+               'Monitoring website visits through reports'
+            ],
+
+            services_and_support_info_part3: [
+               'Informational support',
+               'Website content addition',
+               'Copying',
+               'Write articles',
+               'Creating product photo catalogs',
+               'Website news update',
+               'Add and update materials on the website: articles, descriptions of services and products',
+               'Competitive environment monitoring'
+            ]
+            
+
          },
       },
       am: {
@@ -1125,7 +1376,9 @@ i18n.use(initReactI18next).init({
                'Գրանցվել Դասընթացի',
                'Պատվիրել Նախագիծ',
                'Օրինակը',
-               'Տեսնել ավելին'
+               'Տեսնել ավելին',
+               'Պատվիրել կայք',
+               'Անվճար Խորրդատվություն'
             ],
             // =============header==================================
 
@@ -1208,12 +1461,10 @@ i18n.use(initReactI18next).init({
                'Տեվողությունը-1440 Րոպե',
             ],
 
-            VideoCoursesSection_value: [
-               'Արժեքը 0 դրամ',
-               'Արժեքը 45000 դրամ',
-               'Արժեքը 60000 դրամ',
-               'Արժեքը 120000 դրամ',
-            ],
+            VideoCoursesSection_price: "Դրամ",
+
+
+            
 
             VideoCoursesSection_title: [
                'Փորձնական դասընթաց',
@@ -1221,7 +1472,8 @@ i18n.use(initReactI18next).init({
                'Պրոֆեսիոնալ փաթեթ',
                'Պրեմիում դասընթաց',
             ],
-            videoCoursesSectionTitleCourses_month: '~6 ամիս-շաբաթը 3օր',
+            videoCoursesSectionTitleCourses_month: '6 ամիս',
+            videoCoursesSectionTitleCourses_week: '3 օր /շաբաթ',
             videoCoursesSectionTitleCourses: 'Courses',
             // ==================Footer===========================
 
@@ -2030,8 +2282,256 @@ i18n.use(initReactI18next).init({
                'Այցելուների մուտքի-ելքի վերահսկողություն, մուտքի քանակի սահմանափակման հնարավորությամբԲացի դա իրականացնում ենք Պատվիրատուի կարիքներին համապատասխան այլ հնարավորությունների և ֆունկցիոնալի ներդրում համակարգում:'
             ],
 
-            turnstileOrder: 'Պատվեր'
+            turnstileOrder: 'Պատվեր',
 
+            turnstileOrderTitle: 'Կապվեք մեզ հետ',
+
+
+            turnstileType: [
+               'Միակողմանի',
+               'Երկողմանի',
+            ],
+
+            turnstile_videos_section_title: 'Կատարված աշխատանքները',
+
+            turnstile_videos_titles: [
+               'Սուպերմարկետների համար նախատեսված տուրնիկետ',
+               'Գրասենյակների համար նախատեսված տուռնիկետ',
+               'Բացօդյա Տուռնիկետ՝ Դեմքի Ճանաչմամբ․ Ապահով և Խելացի Մուտքի Վերահսկման Համակարգ',
+               'Տուռնիկետների Վաճառք․ Ձեր Ընկերության Ապահովության և Կառավարման Լավագույն Լուծումները'
+            ],
+
+            web_project_cycle_title: 'Ինչ է անհրաժեշտ վեբ հավելված ստեղծելու համար',
+
+            web_projectPage_cycleTitles:[
+               'Պլանավորում',
+               'UX/UI Design',
+               'Ծրագրավորում',
+               'Թեստավորում',
+               'Թողարկում'
+            ],
+
+            web_projectPage_cycleTexts:[
+               'Սահմանվում է հավելվածի նպատակը, առանձնահատկությունները և պահանջները։',
+               'Մշակվում է ինտերֆեյսը, որպեսզի այն լինի հարմար և արդյունավետ։',
+               'Օգտագործվում են ծրագրավորման լեզուներ (օրինակ՝ JavaScript, Python, PHP) վեբ հավելվածի ֆունկցիոնալության համար։',
+               'Հավելվածը թեստավորվում է սխալների հայտնաբերման համար։',
+               'Հավելվածը դրվում է շահագործման և շարունակվում է նրա մշտական թարմացումների ու տեխնիկական աջակցության աշխատանքը։'
+            ],
+
+            web_projectPage_servicesTitles:[
+               'Ի՞նչ տեխնոլոգիաներով ենք աշխատում',
+               'Վեբ հավելվածների մշակման ժամանակ մենք օգտագործում ենք մի շարք առաջատար տեխնոլոգիաներ՝ հիմնված հավելվածների բարդության և ֆունկցիոնալության վրա։ Ահա որոշ հիմնական տեխնոլոգիաներ, որոնցով աշխատում ենք.'
+            ],
+
+            web_projectPageTitle: 'Վեբ հավելվածների մշակում',
+
+            web_projectPageDescription: 'Վեբ հավելվածների մշակումը (Web Application Development) տեղեկատվական համակարգերի մշակման ուղղություններից է, որը ներառում է ինտերակտիվ և օգտատերերի կողմից օգտագործվող վեբ հավելվածների ստեղծումը, որոնք գործում են ինտերնետի միջոցով։ Այն ունի լայն կիրառություն՝ սկսած առևտրային համակարգերից մինչև սոցիալական ցանցեր, գործիքներ, տեղեկատվական բազաներ և այլ օգտակար ծառայություններ։',
+
+            web_projectPage_info_part1: [
+               'Ինչ է Վեբ հավելվածների մշակումը',
+               'Վեբ հավելվածների մշակումը գործընթաց է, որի նպատակն է ստեղծել ինտերակտիվ ծրագրային լուծումներ, որոնք հասանելի են ինտերնետ բրաուզերների միջոցով։ Այս հավելվածները ապահովում են բիզնեսների և օգտատերերի միջև պարզեցված փոխազդեցություն՝ թույլ տալով կատարել բարդ գործողություններ առանց հավելյալ ծրագրեր ներբեռնելու։'
+            ],
+
+            web_projectPage_info_part2: [
+               'Ինչու է վեբ հավելվածների մշակումը անհրաժեշտ',
+               'Հասանելիություն. Վեբ հավելվածները հասանելի են ցանկացած սարքից՝ համակարգիչներից, սմարթֆոններից և պլանշետներից։',
+               'Օգտագործման հեշտություն. Օգտատերերը կարող են աշխատել հավելվածի հետ առանց որևէ բարդ ծրագրային ապահովման։',
+               'Տվյալների հավաքագրում և մշակում. Հավելվածների միջոցով հեշտ է հավաքել և վերլուծել տվյալները։',
+               'Կառավարելիություն և աջակցություն. Օգտագործողներին կարելի է ապահովել տեխնիկական աջակցություն և հեշտությամբ կատարել նոր թարմացումներ։',
+               'Կարողությունների ընդլայնում. Վեբ հավելվածները կարող են հեշտությամբ ինտեգրվել այլ համակարգերի հետ՝ ավելացնելով նոր գործառույթներ և ծառայություններ։'
+            ],
+
+            webProject_ourPartnersTitles:[
+               'Մեր գործընկերները',
+               'Մենք աշխատում ենք առաջատար կազմակերպությունների հետ՝ ապահովելով որակյալ և հուսալի լուծումներ:'
+            ],
+
+            webProject_comments_name: [
+               'Աննա Մարկոսյան',
+               'Լեվոն Կարապետյան',
+               'Արման Սարգսյան',
+               'Սաթենիկ Հարությունյան'
+            ],
+
+            webProject_comments: [
+               'Համագործակցությունը Վեբեքսի հետ մեր կազմակերպության համար կարևոր առաջընթաց էր: Նրանց պրոֆեսիոնալ թիմը արագ ու որակով իրականացրեց մեր բոլոր տեխնիկական պահանջները։',
+               'Վեբեքսը գերազանցեց մեր սպասելիքները՝ պրոֆեսիոնալիզմի և արագ արձագանքման շնորհիվ։ Ամեն հարց ու խնդիր լուծվում էր ժամանակին և որակյալ ձևով։',
+               'Վեբեքսի շնորհիվ մենք ձեռք բերեցինք ժամանակակից ու խելացի տեխնոլոգիական լուծումներ, որոնք նպաստեցին մեր բիզնեսի զարգացմանը և հաջողությանը։',
+               'Հիացած ենք Վեբեքսի նվիրվածությամբ և արդյունքներով՝ նրանց թիմը մեր բոլոր տեխնիկական կարիքներին մոտեցավ մեծ պատասխանատվությամբ և պրոֆեսիոնալիզմով։'
+            ],
+
+            commentsTitle: [
+               'Կարծիքներ',
+               'Մեր ուսանողների կարծիքները'
+            ],
+
+            studentComments_name: [
+               'Սիլվա Պողոսյան',
+               'Կարեն Այվազյան',
+               'Նարինե Քեշիշյան',
+               'Հարություն Առաքելյան'
+            ],
+
+            studentComments: [
+               'Մասնակցելով այս դասընթացին՝ ես ոչ միայն ստացա մասնագիտական հմտություններ, այլև հնարավորություն գտա աշխատանքի տեղավորման։ Հիանալի փորձ էր, որն ամբողջովին փոխեց իմ կարիերան։',
+               'Դասընթացները հարմարեցված էին իմ ժամանակացույցին։ Նախագծերի և գործնական առաջադրանքների շնորհիվ զգացի, որ իրականում սովորում եմ այն, ինչ պետք է գործատուներին։',
+               'Անհատական մոտեցումը մեծապես օգնեց ինձ հաղթահարել բարդ հատվածները։ Ինստրուկտորները միշտ պատրաստ էին պատասխանելու հարցերին։',
+               'Կարողացա սովորել առանց իմ առօրյան փոխելու, շնորհիվ հարմարեցված գրաֆիկի։ Հիմա իմ հմտությունները թույլ են տալիս աշխատել միջազգային թիմերում։'
+            ],
+
+
+            otherServicesTitle: 'Այլ ծառայություններ',
+
+            otherServicesItemsTitles: [
+               'Մոբայլ հավելվածի ստեղծում',
+               '3D Մոդելավորում',
+               'SEO',
+               'Բիզնեսի Վերլուծություն',
+               'Բիզնեսի ավտոմատացում'
+            ],
+
+            otherServicesItemsTexts: [
+               'Մոբայլ հավելվածի ստեղծումը ներառում է հարմարավետ և օգտագործողի համար մատչելի պլատֆորմի կառուցումը՝ ապահովելով անխափան փորձ օգտատերերի համար։',
+               'Ապահովում ենք բարձր որակի 3D մոդելավորում՝ տարբեր ոլորտների համար, ներառյալ արտադրանքների ներկայացում, շինարարական նախագծեր և գովազդային նյութեր:',
+               'Մեր SEO ծառայությունները բարձրացնում են ձեր կայքի տեսանելիությունը որոնողական համակարգերում, ինչն օգնում է ավելացնել օրգանական այցելուների քանակը և նպաստում բիզնեսի աճին:',
+               'Մեր բիզնես վերլուծության ծառայությունները օգնում են հայտնաբերել բիզնեսի ուժեղ և թույլ կողմերը՝ հիմնված տվյալների վրա՝ ռազմավարական որոշումներ կայացնելու համար:',
+               'Դրա շնորհիվ դուք կարող եք ավտոմատ կերպով ընդունել պատվերներ, ապրանքագրեր տրամադրել, ապրանքներ ուղարկել և շատ ավելին՝ նվազագույն թվով մարդկանց մասնակցությամբ:'
+            ],
+
+            tell_us_sub_title: 'Ուղարկեք մեզ հաղորդագրություն եվ մեր մասնագետները սիրով կպատասխանեն ձեզ 1-2 աշխատանքային օրվա ընթացքում',
+
+            tell_us_right_block_titles:[
+               'Կոնտակտային տվյալներ',
+               'Սոցիալական հարթակներ'
+            ],
+
+            tell_us_right_block_location: 'Բաղրամյան պող. 79, 1/1',
+
+
+            mobail_appDevelopendPageTitle: 'Բջջային հավելվածների ստեղծում',
+
+            mobail_appDevelopendPageDescription: 'Բջջային հավելվածների ստեղծումը անհրաժեշտություն է, քանի որ այն ոչ միայն ապահովում է սահուն ու հարմարավետ օգտագործողի փորձ, այլև հնարավորություն է տալիս բիզնեսներին աճել և ընդլայնվել՝ օգտագործելով մոբայլ տեխնոլոգիաների բոլոր հնարավորությունները։',
+
+            mobail_appDevelopendPageInfo_part1: [
+               'Ի՞նչ է բջջային հավելվածների ստեղծումը',
+               'Բջջային հավելվածների ստեղծումը տեխնոլոգիական գործընթաց է, որը ներառում է ծրագիր մշակելու և այն հարմարեցնելու շարժական սարքերին, ինչպիսիք են սմարթֆոնները և պլանշետները։ Այս գործընթացը ներառում է մի քանի փուլ՝ սկսած ծրագրի նախնական նախագծումից մինչև կոդավորման, թեստավորման և վերջնական գործարկման։ Հավելվածները կարող են լինել տարբեր նպատակների համար՝ սկսած սոցիալական ցանցերից և խաղերից, մինչև առևտրային հարթակներ և բիզնեսի գործիքներ։ Կարևոր է, որ հավելվածի դիզայնը լինի ինտուիտիվ, օգտագործողի համար հարմար, և օպտիմալացված՝ տարբեր սարքերի ու էկրանների չափսերին համապատասխան։'
+            ],
+
+            mobail_appDevelopendPageInfo_part2: [
+               'Ինչու է բջջային հավելվածների ստեղծումը անհրաժեշտ',
+               'Անմիջական հասանելիություն. Հավելվածները ապահովում են անմիջական և արագ հասանելիություն օգտատիրոջ համար։ Օգտատերերը կարող են հեշտությամբ ներբեռնել հավելվածը և օգտագործել այն ցանկացած վայրում և ցանկացած ժամանակ։',
+               'Օգտագործողի փորձի բարելավում. Հավելվածները հնարավորություն են տալիս առաջարկել օգտատերերին անհատականացված և սահուն փորձառություն՝ ավելի լավ փոխազդեցություն ապահովելով բրենդի հետ։',
+               'Աճող մոբայլ շուկա. Մոբայլ օգտատերերի թիվը անընդհատ աճում է։ Հավելվածները հնարավորություն են տալիս ընկերություններին հասնել իրենց հաճախորդներին նոր ձևերով և շուկայի պահանջներին ավելի լավ արձագանքել։',
+               'Բարձր ներգրավվածություն. Մշտական ծանուցումների և push-հաղորդագրությունների միջոցով բջջային հավելվածները հնարավորություն են տալիս հաճախորդներին ավելի լավ կապ պահպանել և ներգրավվածություն ապահովել։',
+               'Բիզնեսի զարգացում և եկամուտների աճ. Մոբայլ հավելվածները կարող են նպաստել վաճառքների աճին՝ հնարավորություն տալով օգտատերերին կատարել գնումներ, պատվերներ կամ ծառայություններ անմիջապես հավելվածից։'
+            ],
+
+            development_page_header: [
+               'Ծրագրավորման դաընթացներ',
+               'Սովորեք կոդ գրել, ծրագրային լուծումներ մշակել և կատարելագործել ձեր հմտությունները իրական նախագծերի վրա:'
+            ],
+
+            development_page_our_advantages_titles: [
+               'Հմտություններ',
+               'Սերտիֆիկատ',
+               'Ինտերնշիփ',
+               'Թիմ',
+               'Փորձ',
+               'Ճկունություն',
+               'Անհատականացում',
+               'Վստահություն'
+            ],
+
+            development_page_our_advantages_texts: [
+               'Նոր մասնագիտական հմտությունների ձեռքբերում՝ համապատասխան ոլորտում հաջողության հասնելու համար:',
+               'Մենք բոլոր ուսանողներին տրամադրում ենք սերտիֆիկատ՝ մասնագիտական վստահության համար:',
+               'Մեր բոլոր ուսանողները հնարավորություն ունեն անցնելու մեկ ամսյա ինտերնշիփ հենց մեզ մոտ։',
+               'Օգտագործելով իրական նախագծեր և խումբային աշխատանքներ՝ ուսանողները սովորում են արդյունավետորեն համագործակցել թիմի հետ։',
+               'Դասընթացների միջոցով իրականացվում են գործնական նախագծեր, որոնց շնորհիվ ստացած գիտելիքները օգտագործվում են իրական խնդիրների լուծման մեջ:',
+               'Դասընթացների ժամերը և ձևաչափը հարմարեցված են ուսանողների առօրյային՝ ապահովելով հարմարավետություն։',
+               'Յուրաքանչյուր ուսանողի համար անհատականացված ուսուցման մոտեցում՝ հիմնված նրա կարիքների և նպատակների վրա:',
+               'Նոր հմտությունների յուրացումը և նախագծերի հաջող ավարտը նպաստում են ինքնավստահության բարձրացմանը, ինչը նաև կարևոր է մասնագիտական կյանքում։'
+            ],
+
+            development_courses_cycles_title: 'Ի՞նչ փուլերով են անցնում մեր դասընթացները',
+
+            development_courses_cycles_stage_menu: [
+               '1-ին փուլ',
+               '2-ին փուլ',
+               '3-ին փուլ'
+            ],
+
+            development_courses_cycles_stage_Texts: [
+               'Սովորելու ենք frontend ծրագրավորում, կոդ գրելու մաքուր ձեվ, սովորելու ենք ստեղծել ադապտիվ վեբ կայքեր համապատասխան տարբեր չափերի, սեվորելու ենք java script ի ֆունկցիաները, օգտագործելու ենք react JS գրադարան',
+               'Սովորելու ենք Backend ծրագրավորում, բազաների հետ աշխատանք, API ների միջոցով կապվելու ենք frontend ի հետ, PHP ի գրադարանով անցնելու ենք Laravel կամ Node JS ծրագրավորման լեզուները 2-5 ամիս',
+               'Վերջին փուլում ուսանողը հնարավորություն կստանա անցնել ինտերնշիփ։ Այս ընթացքում ամրապնդելու ենք գիտելիքները, որոնք ստացել ենք ուսման ընթացքում, աշխատանքը կատարվելու է իրական պրոեկտների շրջանակներում՝ ծրագրավորման թիմի հետ 1-2 ամիս'
+            ],
+
+            development_courses_cycles_stage_time: '4-6 ամիս',
+
+            development_courses_page_certificate_section_titles: [
+               'Ի՞նչ կստանաք դասընթացի վերջում',
+               'Մեր բոլոր ուսանողները դասընթացի ավարտին ստանում են սերտիֆիկատ եվ ինտերնշիփի հնարավորություն',
+               'Սերտիֆիկատ',
+               'Ինտերնշիփ'
+            ],
+
+            frequently_asked_questions: [
+               'Որո՞նք են դասընթացներին մասնակցելու հիմնական պահանջները։',
+               'Արդյո՞ք դասընթացի ավարտին սերտիֆիկատ է տրամադրվում։',
+               'Ի՞նչ ձևաչափով են անցկացվում դասերը։',
+               'Որ ուղությունը ընտրել՝ Frontend թե Backend?',
+               'Արդյոք կկարողանամ գտնել աշխատանք՞',
+            ],
+
+            frequently_asked_questions_answers: [
+               'Դասընթացներին մասնակցելու հիմնական պահանջները ներառում են տարրական տեխնոլոգիական գիտելիքներ և ուսման պատրաստակամություն։ Որոշ դեպքերում կարող են պահանջվել լեզվի կամ հատուկ ոլորտի գիտելիքներ, օրինակ՝ ծրագրավորման հիմունքներ։',
+               'Այո, սերտիֆիկատը տրամադրվում է պարտադիր կերպով։ Սերտիֆիկատում նշվում են ուսումնական ժամերի քանակը, ուսանողի առաջադիմության գնահատականը (0-100 բալային համակարգով), որը սահմանվում է ելնելով նրա ցուցանիշներից։ Սերտիֆիկատում նշվում է նաև ուսանողի պրակտիկայի անցկացման ժամանակահատվածը և այն տեխնոլոգիաները, որոնց հետ նա աշխատել է պրակտիկայի ընթացքում։',
+               'Webex Technologies-ում դասընթացները կազմակերպվում են անհատական մոտեցմամբ: Սա նշանակում է, որ ուսանողները կարող են ընտրել իրենց համար հարմար օրերն ու ժամերը, ինչպես նաև ուսուցման համապատասխան ժամանակահատվածը: Ուսուցման մեթոդիկան, որը մշակվել է Webex Technologies-ի կողմից, հնարավորություն է տալիս ուսանողներին արդյունավետորեն յուրացնել դասընթացի նյութերը սահմանված ժամանակում: Webex Technologies-ում ստացած գիտելիքներն ու փորձը ուսանողներին ապահովում են անհրաժեշտ հմտություններով, որոնք թույլ կտան նրանց հետագայում հաջողությամբ անցնել աշխատանքի:',
+               "Webex Technologies-ում յուրաքանչյուր ուսանող ստանում է անհատական մոտեցում դասախոսների կողմից: Դասընթացի ընթացքում դասախոսները գնահատում են ուսանողի հմտություններն ու հնարավորությունները՝ խորհուրդ տալով, թե որ ուղղությամբ է նպատակահարմար շարունակել՝ Frontend թե Backend: Այն ուսանողները, ովքեր գերազանց առաջադիմություն կցուցաբերեն երկու ուղղություններով, հնարավորություն կունենան դառնալու Full Stack ծրագրավորողներ՝ բացելով առավել լայն հեռանկարներ իրենց մասնագիտական զարգացման համար։",
+               'Դասընթացի ավարտից հետո ուսանողները հնարավորություն են ստանում անցնել փորձաշրջան Webex Technologies ընկերությունում: Փորձաշրջանի ընթացքում նրանք աշխատում են ծրագրավորման թիմի հետ՝ մասնակցելով իրական նախագծերի մշակմանը: Փորձաշրջանի ավարտին ուսանողներն արդեն ունենում են հստակ պատկերացում աշխատանքային պրոցեսի մասին, ձեռք բերում արժեքավոր փորձ և կարողանում հեշտությամբ ինտեգրվել ոլորտում՝ ստանալով կայուն հիմք հետագա մասնագիտական զարգացման համար։'
+            ],
+
+            frequently_asked_questions_title: 'Հաճախ տրվող հարցեր',
+
+            services_and_support_tile: 'Սպասարկում և աջակցություն',
+
+            services_and_supportDescription: 'Վեբ կայքի աջակցությունն ու սպասարկումը ապահովում են կայքի երկարաժամկետ արդյունավետությունը, ինչը կենսական է ինչպես բիզնեսի, այնպես էլ օգտագործողների համար։ Առանց որակյալ սպասարկման, կայքը կարող է կորցնել իր օգտատերերի վստահությունը և արդյունավետությունը։',
+
+            services_and_support_info_part1: [
+               'Ի՞նչ է վեբ կայքի աջակցությունը և սպասարկումը',
+               'Վեբ կայքի աջակցությունը և սպասարկումը վեբ կայքի անխափան աշխատանքը պահպանելու և տեխնիկական խնդիրների ժամանակ օգտատերերին աջակցելու գործընթացն է։ Այն ներառում է մի շարք ծառայություններ, ինչպիսիք են կայքի թարմացումները, անվտանգության ապահովումը, բովանդակության արդիականացումը, և սխալների շտկումը։ Կայքի աջակցության ծառայությունը ներառում է՝ Տեխնիկական աջակցություն եվ Ինֆորմատիվ աջակցություն։'
+            ],
+
+            services_and_support_info_part2: [
+               'Տեխնիկական աջակցություն',
+               'Տվյալների պահուստավորում',
+               'Պահուստավորման կայքէջի վերականգնման մոնիթորինգ',
+               'Ֆորումների կառավարում և փոփոխում',
+               'Տեղեկագրերի տախտակներ',
+               'Հակավիրուս',
+               'Հոստինգի մատակարարի հետ փոխգործակցության աջակցություն',
+               'Ձեր հասցեում փոստային հասցեների ստեղծում և տեխնիկական աջակցություն',
+               'Վեբ կայքի նոր սերվերի փոխանցում',
+               'Դոմենային գրանցման հարցում աջակցություն',
+               'FTP սերվերի կառավարում',
+               'Հաշվետվությունների միջոցով կայքի այցելությունների մոնիթորինգ'
+
+            ],
+
+            services_and_support_info_part3: [
+               'Ինֆորմատիվ աջակցություն',
+               'Վեբ կայքի բովանդակության լրացում',
+               'Պատճենագրում',
+               'Հոդվածներ գրել',
+               'Արտադրանքի լուսանկարների կատալոգների ստեղծում',
+               'Կայքի նորությունների թարմացում ',
+               'Ավելացնել և թարմացնել կայքում նյութեր՝ հոդվածներ, ծառայությունների և ապրանքների նկարագրություններ',
+               'Մրցակցային միջավայրի մոնիթորինգ'
+            ]
+
+            
          },
       },
 
@@ -2158,7 +2658,9 @@ i18n.use(initReactI18next).init({
                'Зарегистрироваться на курс',
                'Заказать проект',
                'Например',
-               'Посмотреть больше'
+               'Посмотреть больше',
+               'Заказать сайт',
+               'Бесплатное Консультация'
             ],
 
             // ====================header=============================
@@ -2249,12 +2751,9 @@ i18n.use(initReactI18next).init({
                'Продолжительность - 1440 минут',
             ],
 
-            VideoCoursesSection_value: [
-               'Ценность 0 АМД',
-               'Ценность 45000 АМД',
-               'Ценность 60000 АМД',
-               'Ценность 120000 АМД',
-            ],
+            VideoCoursesSection_price: "драм",
+
+            
 
             VideoCoursesSection_title: [
                'Пробный курс',
@@ -2264,7 +2763,8 @@ i18n.use(initReactI18next).init({
             ],
             videoCoursesSectionTitleGround: ['React JS', 'Java', 'Laravel', 'Node.JS'],
             videoCoursesSectionTitleCourses: 'Курс:',
-            videoCoursesSectionTitleCourses_month: '~6 месяцев-3 раза в неделю',
+            videoCoursesSectionTitleCourses_month: '6 месяцев',
+            videoCoursesSectionTitleCourses_week: '3 дня/неделю',
 
             // ==========================Footer============================
 
@@ -3094,6 +3594,254 @@ i18n.use(initReactI18next).init({
             ],
 
             turnstileOrder: 'Заказ',
+
+            turnstileOrderTitle: 'Связаться с нами',
+
+            turnstileType: [
+               'Односторонний',
+               'Двусторонний',
+            ],
+
+            turnstile_videos_section_title: 'Сделано работ',
+
+            turnstile_videos_titles: [
+               'Турникет для супермаркетов',
+               'Турникет для офисов',
+               'Уличный турникет с распознаванием лиц: Безопасная и интеллектуальная система контроля доступа',
+               'Продажа турникетов: Лучшие решения по безопасности и управлению для вашей компании'
+            ],
+
+            web_project_cycle_title: 'Что необходимо для создания веб-приложения?',
+
+            web_projectPage_cycleTitles:[
+               'Планирование',
+               'UX/UI-дизайн:',
+               'Программирование',
+               'Тестирование',
+               'Проблема'
+            ],
+
+            web_projectPage_cycleTexts:[
+               'Определены цель, особенности и требования приложения.',
+               'Интерфейс разрабатывается, чтобы быть удобным и эффективным.',
+               'Языки программирования (например, JavaScript, Python, PHP) используются для функциональности веб-приложения.',
+               'Приложение тестируется на наличие ошибок.',
+               'Приложение введено в эксплуатацию и продолжается работа по его постоянным обновлениям и технической поддержке.'
+            ],
+
+            web_projectPage_servicesTitles:[
+               'С какими технологиями мы работаем?',
+               'При разработке веб-приложений мы используем ряд ведущих технологий, исходя из сложности и функциональности приложений. Вот некоторые из основных технологий, с которыми мы работаем:'
+            ],
+
+            web_projectPageTitle: 'Разработка веб-приложений',
+
+            web_projectPageDescription: 'Разработка веб-приложений — одно из направлений разработки информационных систем, включающее создание интерактивных и удобных для пользователя веб-приложений, работающих через Интернет. Имеет широкий спектр приложений: от торговых систем до социальных сетей, инструментов, баз данных и других полезных сервисов.',
+
+            
+            web_projectPage_info_part1: [
+               'Что такое разработка веб-приложений?',
+               'Разработка веб-приложений — это процесс создания интерактивных программных решений, доступных через интернет-браузеры. Эти приложения обеспечивают упрощенное взаимодействие между предприятиями и пользователями, позволяя выполнять сложные операции без загрузки дополнительного программного обеспечения.'
+            ],
+
+            web_projectPage_info_part2: [
+               'Зачем нужна разработка веб-приложений?',
+               'Доступность: Веб-приложения доступны с любого устройства: компьютеров, смартфонов и планшетов.',
+               'Простота использования. Пользователи могут работать с приложением без какого-либо сложного программного обеспечения.',
+               'Сбор и обработка данных. С помощью приложений легко собирать и анализировать данные.',
+               'Управляемость и поддержка. Пользователям может быть предоставлена ​​техническая поддержка, и можно легко вносить новые обновления.',
+               'Наращивание потенциала. Веб-приложения можно легко интегрировать с другими системами, добавляя новые функции и сервисы.'
+            ],
+
+            
+            webProject_ourPartnersTitles:[
+               'Наши партнеры',
+               'Мы работаем с ведущими организациями, чтобы предоставлять качественные и надежные решения.'
+            ],
+
+            webProject_comments_name: [
+               'Анна Маркосян',
+               'Левон Карапетян',
+               'Арман Саргсян',
+               'Сатеник Арутюнян'
+            ],
+
+            webProject_comments: [
+               'Партнерство с Webex стало важным шагом вперед для нашей организации. Их профессиональная команда быстро и качественно выполнила все наши технические требования.',
+               'Партнерство с Webex стало важным шагом вперед для нашей организации. Их профессиональная команда быстро и качественно выполнила все наши технические требования.',
+               'Благодаря Webex мы приобрели современные и умные технологические решения, которые способствовали развитию и успеху нашего бизнеса.',
+               'Мы впечатлены приверженностью и результатами Webex, их команда подошла ко всем нашим техническим потребностям с большой ответственностью и профессионализмом.'
+            ],
+
+            commentsTitle: [
+               'Отзывы',
+               'Мнения наших студентов'
+            ],
+
+            studentComments_name: [
+               'Сильва Погосян',
+               'Карен Айвазян',
+               'Нарине Кешишян',
+               'Арутюн Аракелян'
+            ],
+
+            studentComments: [
+               'Участвуя в этом курсе, я не только приобрел профессиональные навыки, но и нашел возможности трудоустройства. Это был потрясающий опыт, который полностью изменил мою карьеру.',
+               'Курсы были адаптированы к моему графику. Благодаря проектам и практическим заданиям я почувствовал, что действительно учусь тому, что нужно работодателям.',
+               'Индивидуальный подход очень помог мне преодолеть сложные моменты. Преподаватели всегда были готовы ответить на вопросы.',
+               'Благодаря скорректированному графику я смог заниматься, не меняя своего распорядка дня. Теперь мои навыки позволяют мне работать в международных командах.'
+            ],
+
+            otherServicesTitle: 'Другие услуги',
+
+            otherServicesItemsTitles: [
+               'Разработка веб-приложений',
+               '3D моделирование',
+               'SEO',
+               'Разработка игр',
+               'Разработка мобильных приложений'
+            ],
+
+            otherServicesItemsTexts: [
+               'Мобильная разработка включает создание интерактивной, удобной платформы, обеспечивающей бесшовный пользовательский опыт.',
+               'Наши услуги SEO повышают видимость вашего сайта в поисковых системах, что помогает увеличить органический трафик и стимулировать рост бизнеса.',
+               'Наши услуги SEO повышают видимость вашего сайта в поисковых системах, что помогает увеличить органический трафик и стимулировать рост бизнеса.',
+               'Наши услуги бизнес-аналитики помогают выявить сильные и слабые стороны бизнеса на основе данных для принятия стратегических решений.',
+               'Благодаря ему вы сможете автоматически принимать заказы, выставлять счета, отгружать продукцию и многое другое с минимальным участием человека.'
+            ],
+
+            tell_us_sub_title: 'Отправьте нам сообщение и наши специалисты с радостью ответят Вам в течение 1-2 рабочих дней.',
+
+            tell_us_right_block_titles:[
+               'Контактная информация',
+               'Социальные платформы'
+            ],
+
+            tell_us_right_block_location: 'Баграмяна пр. 79, 1/1',
+
+            mobail_appDevelopendPageTitle: 'Создание мобильных приложений',
+
+            mobail_appDevelopendPageDescription: 'Разработка мобильных приложений является необходимостью, поскольку она не только обеспечивает плавный и комфортный пользовательский опыт, но также позволяет компаниям расти и расширяться, используя все возможности мобильных технологий.',
+
+            mobail_appDevelopendPageInfo_part1: [
+               'Что такое разработка мобильных приложений?',
+               'Разработка мобильного приложения — это технологический процесс, который включает в себя разработку программы и ее адаптацию к мобильным устройствам, таким как смартфоны и планшеты. Этот процесс включает в себя несколько этапов: от первоначального проектирования программы до кодирования, тестирования и окончательного запуска. Приложения могут служить самым разным целям: от социальных сетей и игр до торговых платформ и бизнес-инструментов. Важно, чтобы дизайн приложения был интуитивно понятным, удобным и оптимизированным для разных устройств и размеров экрана.'
+            ],
+
+            mobail_appDevelopendPageInfo_part2: [
+               'Зачем нужна разработка мобильных приложений?',
+               'Немедленный доступ. Приложения обеспечивают немедленный и быстрый доступ для пользователя. Пользователи могут легко загрузить приложение и использовать его где угодно и когда угодно.',
+               'Улучшение пользовательского опыта. Приложения позволяют пользователям предлагать персонализированный и удобный опыт, обеспечивая лучшее взаимодействие с брендом.',
+               'Растущий рынок мобильной связи. Число мобильных пользователей постоянно увеличивается. Приложения позволяют компаниям по-новому обращаться к своим клиентам и лучше реагировать на требования рынка.',
+               'Высокая вовлеченность. Благодаря постоянным уведомлениям и push-сообщениям мобильные приложения позволяют клиентам оставаться на связи и оставаться на связи.',
+               'Развитие бизнеса и рост доходов. Мобильные приложения могут помочь увеличить продажи, позволяя пользователям совершать покупки, заказы или услуги непосредственно из приложения.'
+            ],
+
+            development_page_header: [
+               'Курсы программирования',
+               'Научитесь программировать, разрабатывать программные решения и оттачивать свои навыки на реальных проектах.'
+            ],
+
+            development_page_our_advantages_titles: [
+               'Навыки',
+               'Сертификат',
+               'Стажировка',
+               'Команда',
+               'Опыт',
+               'Гибкость',
+               'Кастомизация',
+               'Уверенность'
+            ],
+
+            development_page_our_advantages_texts: [
+               'Приобретение новых профессиональных навыков для достижения успеха в соответствующей области.',
+               'Всем студентам мы предоставляем сертификат профессионального доверия.',
+               'Все наши студенты имеют возможность пройти у нас месячную стажировку.',
+               'Используя реальные проекты и групповую работу, студенты учатся эффективно сотрудничать в команде.',
+               'Посредством курсов реализуются практические проекты, благодаря которым полученные знания используются при решении реальных задач.',
+               'Часы и формат курсов адаптированы к повседневной жизни студентов, обеспечивая удобство.',
+               'Индивидуальный подход к обучению для каждого студента, исходя из его потребностей и целей.',
+               'Приобретение новых навыков и успешное выполнение проектов способствуют повышению уверенности в себе, что также немаловажно в профессиональной жизни.'
+            ],
+
+            development_courses_cycles_title: 'Каковы этапы наших курсов?',
+
+            development_courses_cycles_stage_menu: [
+               '1-й этап',
+               '2-й этап',
+               '3-й этап'
+            ],
+
+            development_courses_cycles_stage_Texts: [
+               'Мы изучим фронтенд-программирование, чистый способ написания кода, научимся создавать адаптивные веб-сайты разных размеров, изучим функции Java-скриптов, будем использовать JS-библиотеку React.',
+               'Мы изучим Backend-программирование, работу с базами данных, будем подключаться к frontend через API, будем использовать библиотеку PHP для изучения языков программирования Laravel или Node JS за 2-5 месяцев.',
+               'На последнем этапе студент получит возможность пройти стажировку. За этот период мы закрепим полученные во время учебы знания, работа будет вестись в рамках реальных проектов с командой программистов в течение 1-2 месяцев.'
+            ],
+
+            development_courses_cycles_stage_time: '4-6 месяцев',
+
+            development_courses_page_certificate_section_titles: [
+               'Что вы получите в конце курса?',
+               'По окончании курса все наши студенты получают сертификат и возможность стажировки.',
+               'Сертификат',
+               'Стажировка'
+            ],
+
+            frequently_asked_questions: [
+               'Каковы основные требования для участия в курсах?',
+               'Есть ли сертификат по окончании курса?',
+               'Каков формат уроков?',
+               'Какой путь выбрать: Frontend или Backend?',
+               'Смогу ли я найти работу?',
+            ],
+
+            frequently_asked_questions_answers: [
+               'Основные требования для участия в курсах включают базовые технологические знания и желание учиться. В некоторых случаях может потребоваться знание языка или конкретной области, например, основ программирования.',
+               'Да, сертификат предоставляется в обязательном порядке. В сертификате указывается количество учебных часов, оценка успеваемости студента (по системе 0-100 баллов), которая определяется исходя из его показателей. В сертификате также упоминается период стажировки студента и технологии, с которыми он работал во время стажировки.',
+               'В Webex Technologies курсы организуются с индивидуальным подходом. Это означает, что студенты могут выбирать подходящие им дни и время, а также подходящий период обучения. Методика обучения, разработанная Webex Technologies, позволяет студентам эффективно осваивать материалы курса в установленные сроки. Знания и опыт, полученные в Webex Technologies, дают студентам необходимые навыки, которые позволят им успешно выйти на рынок труда.',
+               "В Webex Technologies каждый студент получает индивидуальный подход от преподавателей. В ходе курса преподаватели оценивают навыки и возможности студента, рекомендуя, в каком направлении целесообразно продолжить: Frontend или Backend. Те студенты, которые продемонстрируют отличный прогресс в обоих направлениях, получат возможность стать Full Stack разработчиками, открывая более широкие перспективы для своего профессионального развития.",
+               'После прохождения курса студенты имеют возможность пройти испытательный срок в Webex Technologies. В течение испытательного периода они работают с командой программистов, участвуя в разработке реальных проектов. По окончании испытательного срока студенты уже имеют четкое представление о процессе работы, приобретают ценный опыт и способны легко интегрироваться в сферу, получая стабильную основу для дальнейшего профессионального развития.'
+            ],
+
+            frequently_asked_questions_title: 'Часто задаваемые вопросы',
+
+            services_and_support_tile: 'Сервис и поддержка',
+
+            services_and_supportDescription: 'Поддержка и обслуживание сайта обеспечивают его долгосрочную работу, что жизненно важно как для бизнеса, так и для пользователей. Без качественного обслуживания сайт может потерять доверие и эффективность своих пользователей.',
+
+            services_and_support_info_part1: [
+               'Что такое поддержка и обслуживание сайта?',
+               'Поддержка и обслуживание веб-сайта — это процесс обеспечения бесперебойной работы веб-сайта и оказания помощи пользователям в решении технических проблем. Он включает в себя различные услуги, такие как обновления сайта, безопасность, обновление контента и исправление ошибок. Услуга поддержки сайта включает в себя: Техническую поддержку и Информационную поддержку.'
+            ],
+
+            services_and_support_info_part2: [
+               'Техническая поддержка',
+               'Резервное копирование данных',
+               'Мониторинг восстановления резервного сайта',
+               'Управление и редактирование форумов',
+               'Доски объявлений',
+               'Антивирус',
+               'Поддержка взаимодействия с хостинг-провайдером',
+               'Создание почтовых адресов и техническая поддержка по вашему адресу',
+               'Перенос сайта на новый сервер',
+               'Поддержка регистрации домена',
+               'Управление FTP-сервером',
+               'Мониторинг посещений сайта с помощью отчетов'
+            ],
+
+            services_and_support_info_part3: [
+               'Информационная поддержка',
+               'Добавление контента на сайт',
+               'Копирование',
+               'Пишите статьи',
+               'Создание фотокаталогов продукции.',
+               'Обновление новостей сайта',
+               'Добавляйте и обновляйте контент на сайте: статьи, описания услуг и товаров.',
+               'Мониторинг конкурентной среды'
+            ]
+
+
+
          },
       },
       // Add more languages as needed

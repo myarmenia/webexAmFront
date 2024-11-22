@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './TurnstileOrderPage.css';
-import { turnstileMailIcon, turnstilePhoneIcon } from '../../iconFolder/icon';
+import { turnstileIcon1, turnstileIcon2, turnstileMailIcon, turnstilePhoneIcon, validIcon } from '../../iconFolder/icon';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postFeedBack } from '../../store/slices/FeedbackSlice/FeedbackApi';
 import { selectFeedBAck } from '../../store/slices/FeedbackSlice/FeedbackSlice';
+import { turnstileData } from '../../data';
 
 function TurnstileOrderPage() {
     const { t, i18n } = useTranslation();
@@ -32,51 +33,73 @@ function TurnstileOrderPage() {
     const validationSchema = yup.object().shape({
         name: yup.string().required(t('validation_reg_log.0')),
         email: yup.string().email(t('validation_reg_log.1')).required(t('validation_reg_log.0')),
-        message: yup.string().required(t('validation_reg_log.0')),
-        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.5')).required(t('validation_reg_log.0')),
+        message: yup.string(),
+        phone: yup.string().matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, t('validation_reg_log.5')),
+        turnstile_type: yup.string().required(t('validation_reg_log.0')), // Validation for the radio button
     });
 
     function handleOrder(e, handleSubmit, isValid, dirty) {
         e.preventDefault();
         handleSubmit();
 
-        if (e.target[0].value && e.target[1].value && e.target[2].value) {
-            const feedBackObj = {
-                name: e.target[0].value,
-                email: e.target[1].value +', ' + e.target[2].value,
-                phone: e.target[2].value,
-                message: e.target[3].value,
-            };
+        const turnstileType = e.target.turnstile_type.value === 'oneway' ? 'միակողմանի' : 'երկողմանի';
 
+        if (e.target[2].value && e.target[3].value && e.target[4].value && 
+            (e.target[0].value || e.target[1].value) && isValid) {
+                
+            const feedBackObj = {
+                name: e.target[2].value,
+                email: e.target[3].value + ', ' + e.target[4].value + ', ' + turnstileType,
+                phone: e.target[4].value,
+                message: e.target[5].value,
+            };
             dispatch(postFeedBack(feedBackObj));
-        }
+        } 
+
     }
 
+    const findItem = useMemo(()=> {
+        return turnstileData.find((item) => item.id === search.split('=')[1])
+    },[])
+    
+    
     return (
         <div className="turnstile_order_page">
             <div className="turnstile_order_page_top">
                 <div className="container">
                     <div className="turnstile_order_page_top_contact">
-                        <span>{turnstilePhoneIcon}</span>
-                        <a href="tel:+374 96 10 10 17">+374 96 10 10 17</a>
-                        <a href="tel:+374 95 27 77 62">+374 95 27 77 62</a>
-                        <a href="tel:+374 96 40 00 73">+374 96 40 00 73</a>
-                        <span>{turnstileMailIcon}</span>
-                        <a href="mailto:info@webex.am">info@webex.am</a>
+                        <h3>{t('turnstileOrderTitle')}</h3>
+
+                        <div className='turnstile_order_page_top_contact_block'>
+                            <div className='turnstile_order_page_top_contact_left'>
+                                <span>{turnstilePhoneIcon}</span>
+                                <div className='turnstile_order_page_top_contact_phone'>
+                                    <a href="tel:+374 96 10 10 17">+374 96 10 10 17</a>
+                                    <a href="tel:+374 95 27 77 62">+374 95 27 77 62</a>
+                                    <a href="tel:+374 96 40 00 73">+374 96 40 00 73</a>
+                                </div>
+                            </div>
+
+                            <div className='turnstile_order_page_top_contact_right'>
+                                <span>{turnstileMailIcon}</span>
+                                <a href="mailto:info@webex.am">info@webex.am</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3>{t('turnstileOrder') + '  ' + search.split('=')[1]}</h3>
                 </div>
             </div>
 
             <div className="turnstile_order_page_bottom">
                 <div className="container">
+
                     <Formik
                         initialValues={{
                             name: '',
                             email: '',
                             message: '',
                             phone: '',
+                            turnstile_type: '' 
                         }}
                         onSubmit={(values, { resetForm }) => {
                             resetForm();
@@ -86,7 +109,37 @@ function TurnstileOrderPage() {
                     >
                         {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                             <div className="turstile_feedback_form_div">
+
+
                                 <form className="turstile_feedback_form" onSubmit={(e) => handleOrder(e, handleSubmit, isValid, dirty)}>
+
+                                    <div className='turstile_feedback_form_title_line'>
+                                        <img src={findItem.img} alt="" />
+                                        <div className='turstile_feedback_form_title_line_block'>
+                                            <h3>{findItem.code}</h3>
+                                            <div className='turstile_feedback_form_title_line_block_radio'>
+                                                <label className='turstile_feedback_form_title_line_block_radio_1'>
+                                                    <input type="radio" name='turnstile_type' value="oneway" onChange={handleChange} onBlur={handleBlur}/>
+                                                    <span>{turnstileIcon1}</span>
+                                                    <span>{t('turnstileType.0')}</span>
+                                                    <span>{findItem.price1} AMD</span>
+                                                </label>
+
+                                                <label className='turstile_feedback_form_title_line_block_radio_2'>
+                                                    <input type="radio" name='turnstile_type' value="twoway" onChange={handleChange} onBlur={handleBlur}/>
+                                                    <span>{turnstileIcon2}</span>
+                                                    <span>{t('turnstileType.1')}</span>
+                                                    <span>{findItem.price2} AMD</span>
+                                                </label>
+                                            </div>
+
+                                            
+                                            {touched.turnstile_type && errors.turnstile_type && <p className="error"> <span>{validIcon}</span> <span>{errors.turnstile_type}</span></p>}
+
+                                        </div>
+                                    </div>
+
+                                    
                                     <div className="name-inp">
                                         <p>{t('feedback.0')}</p>
                                         <input
@@ -96,7 +149,7 @@ function TurnstileOrderPage() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                         />
-                                        {touched.name && errors.name && <p className="error">{errors.name}</p>}
+                                        {touched.name && errors.name && <p className="error"> <span>{validIcon}</span> <span>{errors.name}</span></p>}
                                     </div>
 
                                     <div className="email-inp">
@@ -108,7 +161,7 @@ function TurnstileOrderPage() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                         />
-                                        {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                                        {touched.email && errors.email && <p className="error"> <span>{validIcon}</span> <span>{errors.email}</span></p>}
                                     </div>
 
                                     <div className="phone-inp">
@@ -120,7 +173,7 @@ function TurnstileOrderPage() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                         />
-                                        {touched.phone && errors.phone && <p className="error">{errors.phone}</p>}
+                                        {touched.phone && errors.phone && <p className="error"> <span>{validIcon}</span> <span>{errors.phone}</span></p>}
                                     </div>
 
                                     <div className="message-inp">
@@ -131,7 +184,7 @@ function TurnstileOrderPage() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                         />
-                                        {touched.message && errors.message && <p className="error">{errors.message}</p>}
+                                        {touched.message && errors.message && <p className="error"> <span>{validIcon}</span> <span>{errors.message}</span></p>}
                                     </div>
 
                                     {showMessage && selectmessage?.data?.message && (

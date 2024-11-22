@@ -64,6 +64,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     position: relative;
+    color: var(--main_font_color);
 }
 
 .news-category-page-item-info p::after{
@@ -107,6 +108,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    color: var(--main_font_color);
 }
 
 .news-category-page-items-block h3 svg{

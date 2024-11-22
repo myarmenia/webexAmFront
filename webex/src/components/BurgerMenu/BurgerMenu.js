@@ -51,7 +51,7 @@ function BurgerMenu() {
             </label>
             <nav id="sidebar">
               <div className='logo-image'>
-              <NavLink to={'/' + leng}>{logoImage}</NavLink>
+              <NavLink to={'/' + leng}><img src={logoImage} style={{width: '80px'}} alt="logo_webex" /></NavLink>
               </div>
 
               <ul className="list-items">
@@ -59,21 +59,22 @@ function BurgerMenu() {
                     <NavMenuItem index="1" path={"/programing"}/>
                     <ul className='drop-menu'>
                          <NavMenuItem index="8" path="/web-project"/>
-                         <NavMenuItem index="12" path="/mobile"/>     
+                         <NavMenuItem index="12" path="/mobile"/>   
+                        <NavMenuItem index="16" path="/development-courses"/>    
                          <NavMenuItem index="10" path="/support"/>     
                          <NavMenuItem index="11" path="/3d-modeling"/>     
-                         <NavMenuItem index="13" path="/games"/>     
-                         <NavMenuItem index="9" path="/website-promotion"/>
+                         <NavMenuItem index="13" path="/games"/>  
+                         <NavMenuItem index="9" path="/website-promotion"/>  
                     </ul> 
 
 
 
                 </div>
-                <NavMenuItem index = "2" path="/projects"/>
-                <NavMenuItem index="7" path="/news"/>
-                <NavMenuItem index = "3" path="/aboteus"/>
-                <NavMenuItem index = "4" path="/contact"/>
+                <NavMenuItem index="2" path="/projects"/>
                 <NavMenuItem index="17" path="/turnstile"/>
+                <NavMenuItem index="7" path="/news"/>
+                <NavMenuItem index="3" path="/aboteus"/>
+                <NavMenuItem index="4" path="/contact"/>
               </ul>
 
 

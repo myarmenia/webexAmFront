@@ -1,7 +1,7 @@
 .create-website-mobile-app{
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 150px;
     align-items: center;
     padding: 100px 0;
 }
@@ -17,6 +17,7 @@
     flex-direction: column;
     row-gap: 30px;
     overflow: hidden;
+
 }
 
 .create-website-mobile-app-block{
@@ -24,6 +25,10 @@
     gap: 50px;
 }
 
+.create-website-mobile-app >h2{
+    font-size: 25px;
+    width: 70%;
+}
 
 .slide-btns{
     display: flex;

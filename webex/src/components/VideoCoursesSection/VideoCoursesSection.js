@@ -1,58 +1,36 @@
-import React, { useRef } from 'react';
-import { VideoCoursesSectionData, packageTxts } from '../../data';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import VideoCoursesSectionItem from '../VideoCoursesSectionItem/VideoCoursesSectionItem';
-import './VideoCoursesSection.css';
-import { logoImage } from '../../images/images';
+import React, { useState } from 'react'
+import './VideoCoursesSection.css'
 import { useTranslation } from 'react-i18next';
-function VideoCoursesSection() {
-   const { t, i18n } = useTranslation();
-   
-   return (
-      <div className="video-courses-section">
-         <div className="logo-and-title-div">
-            <SectionTitle title={t('videoCoursesSectionTitle')} />
-         </div>
-         <div className="video-courses-section-items">
-            <div className="videoCoursesLine">
-               <SectionTitle title={t('videoCoursesSectionTitle_H')}/>
-               <hr />
-            </div>
-            {VideoCoursesSectionData.map((el, index) => {
-               if (el.type === 'free_package') {
-                  el.txt = packageTxts[el.type].txt;
-                  el._id = packageTxts[el.type]._id;
-                  el.icon = packageTxts[el.type].icon;
-               } else if (el.type === 'standart_package') {
-                  el.txt = packageTxts[el.type].txt;
-                  el._id = packageTxts[el.type]._id;
-                  el.icon = packageTxts[el.type].icon;
-               } else if (el.type === 'profesional_package') {
-                  el.txt = packageTxts[el.type].txt;
-                  el._id = packageTxts[el.type]._id;
-                  el.icon = packageTxts[el.type].icon;
-               } else if (el.type === 'premium_package') {
-                  el.txt = packageTxts[el.type].txt;
-                  el._id = packageTxts[el.type]._id;
-                  el.icon = packageTxts[el.type].icon;
-               }
+import VideoCoursesSectionItemMenu from '../VideoCoursesSectionItem/VideoCoursesSectionItemMenu';
+import { groupIcon } from '../../iconFolder/icon';
+import { videoCoursesSectionData } from '../../data';
+import VideoCoursesSectionCard from '../VideoCoursesSectionItem/VideoCoursesSectionCard';
 
-               
-               return (
-                  <VideoCoursesSectionItem
-                     key={el._id}
-                     id={el._id}
-                     title={el.title}
-                     value={el.value}
-                     timeLine={el.timeLine}
-                     icon={el.icon}
-                     txt={index}
-                  />
-               );
-            })}
+function VideoCoursesSection() {
+   const [activeType, setActiveType] = useState(0);
+   const { t } = useTranslation();
+
+   return (
+      <div className='video_courses_section'>
+         <h2 className='video_courses_section_h2'>{t('videoCoursesSectionTitle')}</h2>
+         <VideoCoursesSectionItemMenu setActiveType={setActiveType} activeType={activeType} translateType="VideoCoursesSection_title" data={videoCoursesSectionData}/>
+
+         <div className="video_courses_section_item_info_div">
+            <p className='video_courses_section_item_info_p'>{t('videoCoursesSectionTxt.' + activeType)}</p>
+            <div className='video_courses_section_item_info_span_div'>
+               <span>{groupIcon}</span>
+               <span className='video_courses_section_item_info_span'>{t('videoCoursesSectionfeatures.1')}</span>
+            </div>
+         </div>
+
+         <div className="video_courses_section_cards">
+            {
+               videoCoursesSectionData.map((item,index) => (
+                  <VideoCoursesSectionCard key={item.id} img={item.img} id={item.id} name={item.name} price={item.price}/>
+               ))
+            }
          </div>
       </div>
    );
 }
-
-export default VideoCoursesSection;
+export default VideoCoursesSection

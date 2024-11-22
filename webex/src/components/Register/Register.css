@@ -38,6 +38,7 @@
    padding: 0 10px;
    outline: none;
    color: var(--main_font_color);
+   border-radius: 8px;
 }
 
 .register .container form p {

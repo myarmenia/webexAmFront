@@ -3,8 +3,13 @@
   background: #000525;
 }
 
-.turnstile_order_page_top{
-    background-color: #5B62FF;
+.turnstile_order_page_top {
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, #000525 100%),
+        url('../../images/turnstileBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .turnstile_order_page_top .container{
@@ -19,6 +24,43 @@
 }
 
 .turnstile_order_page_top_contact{
+    width: 409px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #AEAEAE1A;
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.turnstile_order_page_top_contact_block{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.turnstile_order_page_top_contact_left, .turnstile_order_page_top_contact_right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.turnstile_order_page_top_contact  a{
+  font-size: 13px;
+}
+
+.turnstile_order_page_top_contact h3{
+    font-weight: 700;
+    color: var(--main_font_color);
+}
+
+.turnstile_order_page_top_contact_phone{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,11 +75,12 @@
     width: 43px;
     height: 43px;
     border-radius: 50%;
+    
 }
 
 .turnstile_order_page_bottom{
     background: #000525;
-    height: 800px;
+    min-height: 800px;
 
 }
 
@@ -56,7 +99,7 @@
     padding: 50px 0;
     border-radius: 16px;
     position: relative;
-    top: -120px;
+    top: -130px;
 }
 
 
@@ -79,6 +122,7 @@
     border: 1px solid #5D64FF;
     color: white;
     padding-left: 10px;
+    border-radius: 8px;
 }
 
 .turstile_feedback_form >div textarea{
@@ -89,6 +133,7 @@
     border: 1px solid #5D64FF;
     color: white;
     padding-left: 10px;
+    border-radius: 8px;
 
 }
 
@@ -99,6 +144,7 @@
     color: white;
     border: none;
     transition: all .6s;
+    border-radius: 8px;
 }
 
 .turstile_feedback_form button:hover{
@@ -106,8 +152,66 @@
 }
 
 .turstile_feedback_form_div .error{
-    color: red;
+    color: yellow;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.turstile_feedback_form_title_line{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid #5D64FF;
+    border-radius: 8px;
+}
+
+.turstile_feedback_form_title_line > img{
+    width: 153px;
+    height: 114px;
+}
+
+
+.turstile_feedback_form_title_line_block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.turstile_feedback_form_title_line_block h3{
+    color: var(--main_font_color);
+}
+
+.turstile_feedback_form >div p{
+    color: var(--main_font_color)
+}
+
+.turstile_feedback_form_title_line_block_radio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.turstile_feedback_form_title_line_block_radio label input{
+    width: 15px;
+    height: 15px;
+    
+}
+
+.turstile_feedback_form_title_line_block_radio label{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.turstile_feedback_form_title_line_block_radio label >span{
+    color: white;
+    font-weight: 300;
 }
 
 
@@ -118,5 +222,16 @@
 
     .turstile_feedback_form{
         width: 90%;
+    }
+
+    .turnstile_order_page_top_contact_block{
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width: 480px){
+    .turnstile_order_page_top_contact{
+        width: 300px;
     }
 }

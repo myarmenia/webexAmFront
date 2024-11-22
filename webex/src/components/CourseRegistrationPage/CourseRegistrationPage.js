@@ -70,6 +70,7 @@ function CourseRegistrationPage() {
 
    useEffect(() => {
       dispatch(getDevCourses());
+      window.scrollTo(0, 0);
    }, []);
 
    const handleClicke = (id) => {

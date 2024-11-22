@@ -146,6 +146,10 @@
    justify-content: space-between;
 }
 
+.category-top-div-small-div-item-info >p{
+   color: var(--main_font_color);
+}
+
 .category-top-div-big-div-info-share-and-date-div {
    display: flex;
    gap: 20px;

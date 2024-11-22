@@ -27,6 +27,7 @@
     border: 5px solid #2D3189;
     border-radius: 10px;
     padding: 30px;
+    gap: 20px;
 }
 
 .turnstile_page_items_block{
@@ -37,6 +38,17 @@
 
 }
 
+.turnstile_page_info_list_item{
+    color: var(--main_font_color);
+    font-weight: 400;
+}
+
+.turnstile_page_info h3{
+    color: var(--main_font_color);
+    font-weight: 400;
+    font-size: 22px;
+}
+
 .turnstile_page_items{
     display: flex;
     flex-wrap: wrap;
@@ -44,3 +56,63 @@
     gap: 55px;
 }
 
+
+.turnstile_page_videos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+
+.turnstile_videos_block{
+    background-color: #0E082F;
+    width: 90%;
+    padding: 50px 0;
+    border-radius: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    column-gap: 90px;
+}
+
+
+.turnstile_video_item{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.turnstile_video_item >div{
+    width: 100% !important;
+    height: 70% !important;
+}
+
+.turnstile_video_item >p{
+    color: white;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.turnstile_video_item iframe{
+    border-radius: 20px;
+}
+ 
+.turnstile_page_videos h1{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 42px;
+}
+
+
+@media(max-width: 480px){
+    .turnstile_videos_block{
+        padding: 20px;
+    }
+}

@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 import { selectLogin } from '../store/slices/LoginSlice/LoginSlice'
 import NavBarForUser from '../components/NavBarForUser/NavBarForUser'
 import { getIsAuth } from '../store/slices/Auth/AuthSlice'
+import SendMessage from '../components/SendMessage/SendMessage'
 
 function HomeWraper() {
   const isAuth = useSelector(getIsAuth)
@@ -21,6 +22,7 @@ function HomeWraper() {
       <Outlet/>
       <ScrollUpButton/>
       <Footer/>
+      <SendMessage/>
       <BottomMenu/>
     </div>
   )

@@ -18,14 +18,14 @@
 
 .order-modal-block{
     margin-top: 600px;
-    width: 70%;
+    width: 40%;
     background-color: #010526;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 50px 100px;
+    padding: 50px;
     animation: modalOrderAnim .5s;
     overflow-y: auto;
 }
@@ -34,24 +34,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
     text-align: center;
 }
 
 .order-modal-block-info-div h3{
     color: #FFF;
     font-family: 'TitleFont';
-    font-size: 54px;
+    font-size: 44px;
     font-style: normal;
     font-weight: bold;
     letter-spacing: 1.92px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .order-modal-block-info-div span{
     color: #6644BC;
     font-family: 'TitleFont';
-    font-size: 54px;
+    font-size: 34px;
     font-style: normal;
     font-weight: bold;
     letter-spacing: 1.92px;
@@ -70,6 +71,10 @@
     overflow-y: auto;
 }
 
+.order-modal-form .order-modal-full-div::-webkit-scrollbar {
+    width: 0;
+}
+
 .order-modal-form .order-modal-full-div > div{
     display: flex;
     flex-direction: column;
@@ -84,13 +89,13 @@
 .order-modal-form{
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 10px;
     align-items: center;
     width: 100%;
 }
 
 .order-modal-form-div form div{
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +104,7 @@
 
 .order-modal-form input{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent;
@@ -180,7 +185,8 @@
     margin: 0.2em;
     cursor: pointer;
     padding: 0.2em;
-    font-family: 'Arial'
+    font-family: 'Arial';
+    font-size: 13px;
   }
   
  .checkobox-items input[type=checkbox] {
@@ -238,7 +244,9 @@
     font-size: 14px;
 }
 
-
+.error_captcha{
+    color: red;
+}
 
 
 

@@ -1,0 +1,97 @@
+
+.web_project_cycle{
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.web_project_cycle .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.web_project_cycle >h2{
+    color: var(--main_font_color);
+    font-weight: 900;
+    font-size: 28px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.web_project_cycle_block{
+    background-color: #5D64FF;
+    width: 100%;
+}
+
+
+.web_project_cycle_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.web_project_cycle_item{
+    width: 240px;
+    height: 239px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.web_project_cycle_item h3{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900 !important;
+    color: white;
+}
+
+
+.web_project_cycle_item h4{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800 !important;
+    color: white;
+}
+
+
+.web_project_cycle_item p{
+    text-align: center;
+    color: var(--main_font_color);
+    font-size: 14px;
+}
+
+.web_project_cycle_item span{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.web_project_cycle_order_btn{
+    background-color: white;
+    color:#5D64FF;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: bold !important;
+}
+
+.web_project_cycle_order_btn:hover{
+    outline: 1px solid black;
+}
+
+@media(max-width: 480px){
+    .web_project_cycle >h2{
+        width: 300px;
+    }
+}

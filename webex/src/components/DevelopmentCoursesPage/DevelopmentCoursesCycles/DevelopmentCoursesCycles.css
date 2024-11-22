@@ -1,0 +1,53 @@
+
+.development_courses_cycles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+
+.development_courses_cycles .slide-section{
+    padding: 0;
+}
+
+.development_courses_cycles >h2{
+    color: white;
+    text-align: center;
+}
+
+.development_courses_cycles_item_info_div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
+
+ .video_courses_section_item_info_p{
+    color: var(--main_font_color);
+    font-weight: 400;
+    text-align: center;
+ }
+ 
+ 
+ .development_courses_cycles_item_info_span {
+    color: #5D64FF;
+    font-weight: 400;
+ }
+ 
+ .development_courses_cycles_item_info_span_div {
+    display: flex;
+    column-gap: 10px;
+ }
+ 
+
+ @media (max-width: 768px) {
+    .development_courses_cycles_item_info_div {
+       width: 80%;
+    }
+ }

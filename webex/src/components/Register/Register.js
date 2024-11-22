@@ -82,6 +82,11 @@ function Registre() {
          .required(t('validation_reg_log.' + '0')),
    });
 
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       
          <Formik

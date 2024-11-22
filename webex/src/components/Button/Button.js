@@ -7,6 +7,7 @@ function Button({index, path, setMessageModal, setMessageModalResetPass , addres
    setMessageModal && setMessageModal(false)
    setMessageModalResetPass &&   setMessageModalResetPass(false)
    localStorage.setItem('title', addres.current.textContent)
+   window.scrollTo(0, 0)
   }
   
   return (

@@ -3,16 +3,12 @@ import './TurnstileItem.css'
 import { turnstileIcon1, turnstileIcon2 } from '../../../iconFolder/icon'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Button from '../../Button/Button'
 function TurnstileItem({item}) {
     const navigate = useNavigate()
     const leng = localStorage.getItem('lang')
     const {t, i18n} = useTranslation()
 
-    const handleNavigate = (code) => {
-        navigate(`/${leng}/turnstile/order?code=${code}`)
-        window.scrollTo(0, 0);
-
-    }
 
     return (
         <div key={item.id} className='turnstile_page_item'>
@@ -33,7 +29,8 @@ function TurnstileItem({item}) {
                     </div>}
                 </div>
 
-                <button className='turnstile_page_item_info_btn' onClick={()=> handleNavigate(item.code)}>{t('button.2')}</button>
+                {/* <button className='turnstile_page_item_info_btn' onClick={()=> handleNavigate(item.code)}>{t('button.2')}</button> */}
+                <Button index='2' path={`/${leng}/turnstile/order?id=${item.id}`} />
             </div>
         </div>
     )

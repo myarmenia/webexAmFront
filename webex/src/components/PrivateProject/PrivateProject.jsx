@@ -10,6 +10,7 @@ import { selectOrder, selectOrderLoading } from '../../store/slices/OrderSlice/O
 import OrderModal from '../OrderModal/OrderModal';
 import { selectInvitationData } from '../../store/slices/InvitationSliceHome/InvitationSliceHome';
 import { getInvitationCategoryes } from '../../store/slices/InvitationSliceHome/InvitationApiHome';
+import Button2 from '../Button2/Button2';
 
 function PrivateProject() {
   const [openOrderModal, setOpenOrderModal] = useState(false)
@@ -48,8 +49,8 @@ function PrivateProject() {
             <span>{el.price} AMD</span>
 
             <div className='private-project-item-btns'>
-                <button class="example-btn" onClick={() => window.location.href = `https://invitationcard.webex.am/am${el.route}`}>{t('button.9')}</button>
-                <button class="order-btn" onClick={(e) => setOpenOrderModal(true)}>{t('button.2')}</button>
+                <button className="example-btn" onClick={() => window.location.href = `https://invitationcard.webex.am/am${el.route}`}>{t('button.9')}</button>
+                <button className="order-btn" onClick={(e) => setOpenOrderModal(true)}>{t('button.2')}</button>
             </div>
         </div>
     </div>
@@ -73,8 +74,8 @@ function PrivateProject() {
         </Carousel>
       </div>
 
-      <button className='private_project_view_more'>{t('button.10')}</button>
-
+      {/* <a href='https://invitationcard.webex.am/am/' target='_blank' className='private_project_view_more'>{t('button.10')}</a> */}
+      <Button2 index='10' route="https://invitationcard.webex.am/" />
       {openOrderModal && <OrderModal {...{ setOpenOrderModal, setMessageModal,}} addres='false' />}
       {messageModal && <MessageModal txt={respOrder?.data.message} {...{ setMessageModal }} loading={loading} />}
     </div>

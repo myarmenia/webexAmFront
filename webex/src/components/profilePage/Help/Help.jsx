@@ -17,7 +17,6 @@ function Help() {
   const { t, i18n } = useTranslation()
   const dispatch = useDispatch();
   const messageAnswer = useSelector(getMessage);
-  console.log('messageAnswer', messageAnswer);
   
   const formik = useFormik({
     initialValues: {
@@ -34,6 +33,37 @@ function Help() {
       resetForm();
     },
   });
+
+
+  const questions = [
+    {
+      id: 1,
+      question: t('frequently_asked_questions.0'),
+      answer: t('frequently_asked_questions_answers.0'),
+    },
+      {
+      id: 2,
+      question: t('frequently_asked_questions.1'),
+      answer: t('frequently_asked_questions_answers.1'),
+    },
+      {
+      id: 3,
+      question: t('frequently_asked_questions.2'),
+      answer: t('frequently_asked_questions_answers.2'),
+    },
+    {
+      id: 4,
+      question: t('frequently_asked_questions.3'),
+      answer: t('frequently_asked_questions_answers.3'),
+    },
+
+    { 
+      id: 5,
+      question: t('frequently_asked_questions.4'),
+      answer: t('frequently_asked_questions_answers.4'),
+    },
+    
+  ]
   return (
     <div
       style={{
@@ -49,39 +79,12 @@ function Help() {
         {t('help.2')}
         </p>
         <Accordion>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Որո՞նք են դասավանդման մեթոդները:</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Որո՞նք են դասավանդման մեթոդները:</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="3">
-            <Accordion.Header>Որո՞նք են դասավանդման մեթոդները:</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
+          {questions.map((question) => (
+            <Accordion.Item eventKey={question.id} key={question.id}>
+              <Accordion.Header>{question.question}</Accordion.Header>
+              <Accordion.Body>{question.answer}</Accordion.Body>
+            </Accordion.Item>
+          ))}
         </Accordion>
         <form onSubmit={formik.handleSubmit}>
           <div className="write-your-question">

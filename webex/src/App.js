@@ -34,6 +34,7 @@ import MobailAppDevelopend from './components/MobailAppDevelopend/MobailAppDevel
 import MakingGames from './components/MakingGames/MakingGames';
 import TurnstilePage from './components/TurnstilePage/TurnstilePage';
 import TurnstileOrderPage from './components/TurnstileOrderPage/TurnstileOrderPage';
+import DevelopmentCoursesPage from './components/DevelopmentCoursesPage/DevelopmentCoursesPage';
 
 function App() {
    const leng = localStorage.getItem('lang') != null ? localStorage.getItem('lang') : 'am';
@@ -126,6 +127,15 @@ function App() {
                         </PrivateRouteForOutSider>
                      }
                   />
+
+                  <Route
+                     path="development-courses"
+                     element={
+                        <PrivateRouteForOutSider>
+                           <DevelopmentCoursesPage />
+                        </PrivateRouteForOutSider>
+                     }
+                  />
                   <Route
                      path="aboteus"
                      element={
@@ -200,83 +210,83 @@ function App() {
                   <Route path='turnstile' element={<PrivateRouteForOutSider><TurnstilePage /></PrivateRouteForOutSider>} />
                   <Route path='turnstile/order' element={<PrivateRouteForOutSider><TurnstileOrderPage /></PrivateRouteForOutSider>} />
 
-               
-               <Route
-                  path="courses-registration"
-                  element={
-                     <PrivateRouteForOutSider>
-                        <CourseRegistrationPage />
-                     </PrivateRouteForOutSider>
-                  }
-               />
-               <Route
-                  path="profilePage"
-                  element={
-                     <PrivateRoute>
-                        <ProfilePage />
-                     </PrivateRoute>
-                  }>
+
                   <Route
-                     index
+                     path="courses-registration"
                      element={
-                        <PrivateRoute>
-                           <Dashboard />
-                        </PrivateRoute>
+                        <PrivateRouteForOutSider>
+                           <CourseRegistrationPage />
+                        </PrivateRouteForOutSider>
                      }
                   />
                   <Route
-                     path="dashboard"
+                     path="profilePage"
                      element={
                         <PrivateRoute>
-                           <Dashboard />
+                           <ProfilePage />
                         </PrivateRoute>
-                     }
-                  />
-                  <Route
-                     path="currentlessons"
-                     element={
-                        <PrivateRoute>
-                           <CurrentLessons />
-                        </PrivateRoute>
-                     }
-                  />
-                  <Route
-                     path="profile"
-                     element={
-                        <PrivateRoute>
-                           <Profile />
-                        </PrivateRoute>
-                     }
-                  />
-                  <Route
-                     path="visithistory"
-                     element={
-                        <PrivateRoute>
-                           <VisitHistory />
-                        </PrivateRoute>
-                     }
-                  />
-                  <Route
-                     path="help"
-                     element={
-                        <PrivateRoute>
-                           <Help />
-                        </PrivateRoute>
-                     }
-                  />
+                     }>
+                     <Route
+                        index
+                        element={
+                           <PrivateRoute>
+                              <Dashboard />
+                           </PrivateRoute>
+                        }
+                     />
+                     <Route
+                        path="dashboard"
+                        element={
+                           <PrivateRoute>
+                              <Dashboard />
+                           </PrivateRoute>
+                        }
+                     />
+                     <Route
+                        path="currentlessons"
+                        element={
+                           <PrivateRoute>
+                              <CurrentLessons />
+                           </PrivateRoute>
+                        }
+                     />
+                     <Route
+                        path="profile"
+                        element={
+                           <PrivateRoute>
+                              <Profile />
+                           </PrivateRoute>
+                        }
+                     />
+                     <Route
+                        path="visithistory"
+                        element={
+                           <PrivateRoute>
+                              <VisitHistory />
+                           </PrivateRoute>
+                        }
+                     />
+                     <Route
+                        path="help"
+                        element={
+                           <PrivateRoute>
+                              <Help />
+                           </PrivateRoute>
+                        }
+                     />
+                  </Route>
                </Route>
             </Route>
-         </Route>
 
-         <Route
-            path="*"
-            element={
-               <PrivateRoute>
-                  <ErrorPage />
-               </PrivateRoute>
-            }
-         />
-      </Routes>
+            <Route
+               path="*"
+               element={
+                  <PrivateRoute>
+                     <ErrorPage />
+                  </PrivateRoute>
+               }
+            />
+         </Routes>
       </div >
    );
 }

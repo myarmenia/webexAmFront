@@ -28,6 +28,7 @@
 }
 
 
+
 .react-multi-carousel-item{
     transform-style: flat !important;
 }
@@ -35,4 +36,12 @@
 .react-multi-carousel-track{
     transform-style: flat !important;
 
+}
+
+
+@media(min-width: 1140px){
+    .react-multi-carousel-item{
+        width: 408px !important;
+        
+    }
 }

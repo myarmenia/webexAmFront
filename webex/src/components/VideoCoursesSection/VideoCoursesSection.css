@@ -1,4 +1,4 @@
-.video-courses-section {
+.video_courses_section {
    display: flex;
    justify-content: center;
    column-gap: 100px;
@@ -7,64 +7,52 @@
    align-items: center;
 }
 
-.video-courses-section-items {
-   display: flex;
-   justify-content: center;
-   gap: 0px;
-   flex-wrap: wrap;
-}
-
-.logo-and-title-div {
+.video_courses_section_item_info_div {
+   width: 50%;
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
-   row-gap: 100px;
-}
-
-.logo-and-title-div h2 {
-   padding: 50px 0;
-}
-
-.logo-and-title-div svg {
-   width: 150px;
-   height: 150px;
-   margin: 0 auto;
-}
-
-.videoCoursesLine {
-   width: 100%;
+   justify-content: center;
+   align-items: center;
    text-align: center;
-   position: relative;
-   top: 365px;
-}
-.videoCoursesLine {
-   color: white;
 }
 
-@media (max-width: 1920px) {
-   .logo-and-title-div h2 {
-      font-size: 30px;
-   }
-   .video-courses-section {
-      column-gap: 10px;
-   }
+
+.video_courses_section_item_info_span {
+   color: #5D64FF;
+   font-weight: 400;
 }
 
-@media (max-width: 1440px) {
-   .video-courses-section {
-      row-gap: 50px;
-   }
-   .video-courses-section > div:nth-last-of-type(2) {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-   }
+.video_courses_section_item_info_span_div {
+   display: flex;
+   column-gap: 10px;
 }
-@media (max-width: 1024px) {
-   .logo-and-title-div h2 {
-      font-size: 25px;
+
+.video_courses_section_h2 {
+   text-align: center;
+   padding-bottom: 50px;
+   color: var(--main_font_color);
+   font-weight: 600;
+}
+
+.development_courses_cycles_item_info_p{
+   color: var(--main_font_color);
+   font-weight: 400;
+   text-align: center;
+}
+
+.video_courses_section_cards {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   row-gap: 30px;
+   column-gap: 30px;
+   justify-content: center;
+   align-items: start;
+   width: 100%;
+   padding-top: 50px;
+}
+
+@media (max-width: 768px) {
+   .video_courses_section_item_info_div {
+      width: 80%;
    }
 }
