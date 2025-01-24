@@ -4,7 +4,7 @@
     right: 100px;
     background-color: #AEAEAE1A;
     border: 1px solid #5D64FF;
-    /* backdrop-filter: blur(336px); */
+    backdrop-filter: blur(336px);
     width: 326px;
     z-index: 9999999;
     border-radius: 8px;

@@ -1,0 +1,110 @@
+.making_games_carousel_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #AEAEAE1A;
+   border: 1px solid #5D64FF;
+    padding: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .games_page_carousel{
+    width: 45%;
+  }
+  .games_page_swiper{
+    width: 543px !important;
+    height: 362px !important;
+    border-radius: 8px;
+  }
+
+
+ .making_games_carousel_container .text-content{
+    max-width: 40%;
+    padding-left: 20px;
+ }
+  
+ .making_games_carousel_container .text-content h2 {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .making_games_carousel_container .text-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #d3d3d3;
+  }
+  
+ .making_games_carousel_container .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+  }
+  
+ .making_games_carousel_container .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+
+  .swiper-button-next:after{
+    font-size: 25px !important;
+    color: #5D64FF;
+  }
+
+  .swiper-button-prev{
+    width: 49px !important;
+    height: 49px !important;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 50% !important;
+    border: 1px solid #5D64FF !important;
+  }
+
+  .swiper-button-prev:after{
+    font-size: 25px !important;
+    color: #5D64FF;
+  }
+
+  .swiper-button-next{
+    width: 49px !important;
+    height: 49px !important;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 50% !important;
+    border: 1px solid #5D64FF !important;
+  }
+
+  
+  @media(max-width: 1440px){
+    .games_page_swiper{
+        width: 443px !important;
+        height: 262px !important;
+        border-radius: 8px;
+      }
+  }
+
+  @media(max-width: 1140px){
+    .games_page_swiper{
+        width: 343px !important;
+        height: 262px !important;
+        border-radius: 8px;
+      }
+  }
+
+  @media(max-width: 1024px){
+    .games_page_carousel{
+        width: 100%;
+    }
+    .games_page_swiper{
+        width: 100% !important;
+        height: 362px !important;
+        border-radius: 8px;
+      }
+
+      .making_games_carousel_container{
+        flex-direction: column;
+        gap: 30px;
+      } 
+      
+      .making_games_carousel_container .text-content{
+        max-width: 100%;
+     }
+  }

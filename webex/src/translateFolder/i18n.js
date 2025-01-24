@@ -1030,7 +1030,9 @@ i18n.use(initReactI18next).init({
                'Turnstile for supermarkets',
                'Turnstile intended for offices',
                'Outdoor Turnstile with Facial Recognition: Secure and Intelligent Access Control System',
-               'Turnstile Sales: The Best Security and Management Solutions for Your Company'
+               'Turnstile: The Best Security and Management Solutions for Your Company',
+               'Employee monitoring equipment with facial recognition and QR scanning capabilities',
+               'Demonstration of entry with a QR ticket of the unified ticketing system'
             ],
 
             web_project_cycle_title: 'What is needed to create a web application?',
@@ -1151,6 +1153,8 @@ i18n.use(initReactI18next).init({
                'Mobile app development is a technological process that involves developing a program and adapting it to mobile devices such as smartphones and tablets. This process includes several stages, from the initial design of the program to coding, testing and final launch. Apps can serve a variety of purposes, from social networks and games to trading platforms and business tools. It is important that the app design is intuitive, user-friendly, and optimized for different devices and screen sizes.'
             ],
 
+            mobile_services_title: 'The technologies used in the process of creating a mobile app depend on the nature of the project, its goals, and the platforms. Here are the most common technologies used in mobile app development:',
+
             mobail_appDevelopendPageInfo_part2: [
                'Why is mobile app development necessary?',
                'Immediate access. Applications provide immediate and quick access for the user. Users can easily download the app and use it anywhere and anytime.',
@@ -1264,8 +1268,171 @@ i18n.use(initReactI18next).init({
                'Website news update',
                'Add and update materials on the website: articles, descriptions of services and products',
                'Competitive environment monitoring'
-            ]
+            ],
+
+            modeling3D_title: '3D modeling development',
+
+            modeling3D_description: '3D modeling is widely used in various fields, from product design to cartoon creation, providing professional and effective results.',
+
+            modeling3D_info_part1: [
+               'What is 3D modeling development?',
+               'Three-dimensional modeling, or 3D modeling, is the process of creating three-dimensional images of any object or subject. For these purposes, specialists use specialized computer programs, the so-called 3D editors. With their help, geometric projections are built on a plane, which are necessary to create any three-dimensional effect.'
+            ],
+
+            modeling3D_part2: [
+               'Why is 3D modeling development necessary?',
+               'High quality visualization. Allows you to create realistic images that are used for design, construction, and product presentation.',
+               'Efficiency in the design process. 3D modeling allows designers and engineers to see the result in advance, make changes, and avoid mistakes.',
+               'Marketing and advertising: Models are often used in advertising campaigns because they provide visual engagement.',
+               'In the construction industry: Architects and builders can see designs more clearly, and receive digital versions of physical models.',
+               'Virtual Reality (VR) and Gaming: During the development of VR applications and video games, high-quality 3D models are needed to provide interactive experiences.'
+            ],
+
+            modeling3D_services: 'For 3D modeling development, we use leading technologies and programs that ensure high quality and efficiency. Here are the main technologies we work with:',
+
+            modelind3D_work_section_title: 'One of our works',
+
+            modeling3D_tabel_title: 'Prices and terms',
+
+            modeling3D_tabel_th: [
+               'Project',
+               'Deadline',
+               'Price',
+            ],
+
+            modeling3D_tabel: [
+               {
+                  id: '1',
+                  project: '3D visualization of the cottage with the area',
+                  time: '2-5 Days',
+                  price: '110$',
+                  priceText: '(from 2-3 angles)',
+               },
+
+               {
+                  id: '2',
+                  project: 'Architectural 3D visualization of shopping centers and apartment buildings',
+                  time: '3-10 Days',
+                  price: '1440$',
+                  priceText: '(from 3-5 corners)',
+               },
+
+               {
+                  id: '3',
+                  project: '3D visualization of land and residential complexes',
+                  time: '5-14 Days',
+                  price: '720$',
+                  priceText: '(from 5-10 angles)',
+               },
+
+               {
+                  id: '4',
+                  project: '3D visualization of the general plan',
+                  time: '5-10 days',
+                  price: '580$',
+                  priceText: 'starting from (1 corner)',
+               },
+
+               {
+                  id: '5',
+                  project: '3D interior visualization',
+                  time: '2 days',
+                  price: '2-10$',
+                  priceText: '(for 2-3 corners)',
+               },
+
+               {
+                  id: '6',
+                  project: 'Video presentation of a house, apartment or architectural object',
+                  time: 'In 3 days',
+                  price: '22$',
+                  priceText: 'Starting from (1 second of video + simulation cost)',
+               },
+
+               {
+                  id: '7',
+                  project: 'Video presentation of a house, apartment or architectural object',
+                  time: 'In 2 days',
+                  price: '22$',
+                  priceText: '-',
+               },
+            ],
+
+            making_gamesPage_title: 'Game creation',
+
+            making_gamesPage_description: 'Game creation is not only part of the entertainment industry, but also an important technological and socially influential tool that continues to evolve the ways in which human interaction occurs.',
+
+            making_gamesPage_top_div_part1: [
+               'What is game creation?',
+               'Game development is a complex process that involves the development of interactive video games or virtual environments. It consists of a number of stages, such as idea development, script writing, creation of 3D or 2D graphics, programming, audio integration, and final testing. Game development uses various platforms and engines, such as Unreal Engine, Unity, or Godot, which allow for the creation of interactive and visually appealing experiences.'
+            ],
+
+            making_gamesPage_top_div_part2: [
+               'Why is game creation necessary?',
+               'Economic Growth: The gaming industry is considered one of the fastest growing sectors, generating billions of dollars in revenue and creating a huge number of jobs.',
+               'Social Engagement: Games unite communities, engage users, and often become a tool for social interaction.',
+               'Educational and teaching tools: Many games have an educational component that promotes the acquisition of new skills or knowledge.',
+               'Innovation and Technological Development: Game creation promotes the use of new technologies, such as virtual and augmented reality.',
+               'Creative Expression: Through games, creators can bring their ideas to life, presenting unique stories and designs.'
+            ],
+            making_gamesPage_servicesTitle: 'We use leading technologies and software to create games that ensure high quality and efficiency. Here are the main technologies we work with:',
+
+            making_games_carousel: [
+               'Our works',
+               'Our experienced team continues to work with innovative approaches, creating unique and high-quality models. We guarantee to bring your ideas to life with amazing visualizations.'
+            ],
             
+            web_promotion_page_title: 'Website promotion',
+
+            web_promotion_page_description: 'Website promotion is an important tool for business success, allowing you to attract new customers, develop your brand, and maintain a competitive advantage.',
+
+            web_promotion_page_info_part_1: [
+               'What is website promotion?',
+               'Website promotion is a process that aims to increase the visibility of a website in search engines, attract more visitors, and improve the online presence of a brand. This process includes SEO (search engine optimization), content strategy, link management, and social media marketing. It ensures that the website has the correct technical structure and high-quality content in accordance with the requirements of search engines.'
+            ],
+
+            web_promotiion_page_info_part_2: [
+               'Why is website promotion necessary?',
+               'Increased Visibility: Website promotion ensures that your website appears on the first pages of Google or other search engines, which helps attract new customers.',
+               'Traffic Growth: An optimized website receives more visits, which contributes to business growth and increased sales.',
+               'Competitive Advantage: Through targeted promotion, your business can outperform competitors by winning new market segments.',
+               'Long-Term Results: Search engine optimization provides stable and long-term results without additional advertising costs.',
+               'Effective Analytics: Analytical tools are used in the promotion process to assess results and improve strategy.'
+            ],
+
+            web_promotion_info_part_3_title: "Types of website promotion include a number of strategies aimed at increasing a website's ranking in search engines, attracting visitors, and increasing brand visibility. Here are the main types:",
+
+            web_promotion_info_part_3_data: [
+               {
+                  title: 'SEO (Search Engine Optimization)',
+                  desc: 'It aims to improve the organic visibility of the website in Google, Bing, and other search engines.'
+               },
+
+               {
+                  title: "Social Media Marketing (SMM)",
+                  desc: 'Website promotion through social platforms (Facebook, Instagram, Twitter, LinkedIn).'
+               },
+
+               {
+                  title: 'PPC (Paid Advertising)', 
+                  desc: 'Paid advertising campaigns on Google Ads, Bing Ads, and social media platforms.'
+               },
+
+               {
+                  title: 'Content promotion',
+                  desc: 'Creating high-quality and interesting content that is aimed at the target audience.'
+               },
+
+               {
+                  title: 'Link Building',
+                  desc: "Obtaining external links from highly ranked websites, which increases the website's credibility and ranking."
+               },
+
+               {
+                  title: 'Analytics and optimization',
+                  desc: 'Continuous improvement of strategy through data analysis and user behavior studies.'
+               },
+            ]
 
          },
       },
@@ -2298,7 +2465,9 @@ i18n.use(initReactI18next).init({
                'Սուպերմարկետների համար նախատեսված տուրնիկետ',
                'Գրասենյակների համար նախատեսված տուռնիկետ',
                'Բացօդյա Տուռնիկետ՝ Դեմքի Ճանաչմամբ․ Ապահով և Խելացի Մուտքի Վերահսկման Համակարգ',
-               'Տուռնիկետների Վաճառք․ Ձեր Ընկերության Ապահովության և Կառավարման Լավագույն Լուծումները'
+               'Տուռնիկետների Վաճառք․ Ձեր Ընկերության Ապահովության և Կառավարման Լավագույն Լուծումները',
+               'Աշխատակիցների վերահսկման սարքավորում դեմքի ճանաչման, QR սկանավորման հնարավորությամբ',
+               'Տոմսային միասնական համակարգի QR տոմսով մուտքի դեմոնստրացիա'
             ],
 
             web_project_cycle_title: 'Ինչ է անհրաժեշտ վեբ հավելված ստեղծելու համար',
@@ -2427,6 +2596,8 @@ i18n.use(initReactI18next).init({
                'Բիզնեսի զարգացում և եկամուտների աճ. Մոբայլ հավելվածները կարող են նպաստել վաճառքների աճին՝ հնարավորություն տալով օգտատերերին կատարել գնումներ, պատվերներ կամ ծառայություններ անմիջապես հավելվածից։'
             ],
 
+            mobile_services_title: 'Բջջային հավելվածի ստեղծման գործընթացում օգտագործվող տեխնոլոգիաները կախված են ծրագրի բնույթից, նպատակներից և պլատֆորմներից։ Ահա ամենատարածված տեխնոլոգիաները, որոնք կիրառվում են բջջային հավելվածների զարգացման մեջ.',
+
             development_page_header: [
                'Ծրագրավորման դաընթացներ',
                'Սովորեք կոդ գրել, ծրագրային լուծումներ մշակել և կատարելագործել ձեր հմտությունները իրական նախագծերի վրա:'
@@ -2529,9 +2700,172 @@ i18n.use(initReactI18next).init({
                'Կայքի նորությունների թարմացում ',
                'Ավելացնել և թարմացնել կայքում նյութեր՝ հոդվածներ, ծառայությունների և ապրանքների նկարագրություններ',
                'Մրցակցային միջավայրի մոնիթորինգ'
+            ],
+
+            modeling3D_title: '3D մոդելավորման մշակում',
+
+            modeling3D_description: '3D մոդելավորումը լայնորեն կիրառվում է տարբեր ոլորտներում՝ արտադրանքների դիզայնից մինչև մուլտֆիլմերի ստեղծում, ապահովելով պրոֆեսիոնալ և արդյունավետ արդյունք։',
+
+            modeling3D_info_part1: [
+               'Ի՞նչ է 3D մոդելավորման մշակումը',
+               'Եռաչափ մոդելավորում կամ 3D մոդելավորում, ցանկացած առարկայի կամ առարկայի եռաչափ պատկերներ ստեղծելու գործընթացն է։ Այդ նպատակների համար մասնագետները օգտագործում են մասնագիտացված համակարգչային ծրագրեր, այսպես կոչված, 3D խմբագիրներ: Նրանց օգնությամբ հարթության վրա կառուցվում են երկրաչափական պրոյեկցիաներ, որոնք անհրաժեշտ են եռաչափ ցանկացած էֆեկտ ստեղծելու համար։'
+            ],
+
+            modeling3D_part2: [
+               'Ինչո՞ւ է 3D մոդելավորման մշակումը անհրաժեշտ',
+               'Վիզուալիզացիայի բարձր որակ։ Թույլ է տալիս ստեղծել իրականությանը մոտեցված պատկերներ, որոնք օգտագործվում են դիզայնի, շինարարության և արտադրանքի ներկայացման համար։',
+               'Արդյունավետություն նախագծման գործընթացում։ 3D մոդելավորումը դիզայներներին և ինժեներներին հնարավորություն է տալիս նախապես տեսնել արդյունքը, կատարել փոփոխություններ և խուսափել սխալներից։',
+               'Մարքեթինգ և գովազդ։ Մոդելները հաճախ օգտագործվում են գովազդային արշավներում, քանի որ դրանք ապահովում են տեսողական ներգրավվածություն։',
+               'Շինարարության ոլորտում։ Ճարտարապետները և շինարարները կարող են ավելի հստակ տեսնել նախագծերը, ստանալ ֆիզիկական մոդելների թվային տարբերակները։',
+               'Վիրտուալ իրականություն (VR) և Խաղային ոլորտ։ VR հավելվածների և վիդեոխաղերի մշակման ընթացքում անհրաժեշտ են բարձրորակ 3D մոդելներ՝ ինտերակտիվ փորձառություններ ապահովելու համար։'
+            ],
+
+            modeling3D_services: '3D մոդելավորման մշակման համար մենք օգտագործում ենք առաջատար տեխնոլոգիաներ և ծրագրեր, որոնք ապահովում են բարձր որակ և արդյունավետություն: Ահա հիմնական տեխնոլոգիաները, որոնցով աշխատում ենք՝',
+
+            modelind3D_work_section_title: 'Մեր կատարած աշխատանքներից մեկը',
+
+            modeling3D_tabel_title: 'Գները եվ ժամկետները',
+
+            modeling3D_tabel_th: [
+               'Նախագիծ',
+               'Վերջնաժամկետ',
+               'Գին',
+            ],
+
+            modeling3D_tabel: [
+               {
+                  id: '1',
+                  project: 'Քոթեջի 3D պատկերացում տարածքի հետ',
+                  time: '2-5 Օր',
+                  price: '110$',
+                  priceText: '(2-3 անկյուններից)',
+               },
+
+               {
+                  id: '2',
+                  project: 'Առևտրի կենտրոնների, բազմաբնակարան շենքերի ճարտարապետական 3D վիզուալիզացիա',
+                  time: '3-10 Օր',
+                  price: '1440$',
+                  priceText: '(3-5 անկյուններից)',
+               },
+
+               {
+                  id: '3',
+                  project: 'Հողատարածքի, բնակելի համալիրների 3D պատկերացում',
+                  time: '5-14 Օր',
+                  price: '720$',
+                  priceText: '(5-10 անկյուններից)',
+               },
+
+               {
+                  id: '4',
+                  project: 'Ընդհանուր պլանի 3D պատկերացում',
+                  time: '5-10 օր',
+                  price: '580$',
+                  priceText: '- ից սկսած (1 անկյուն)',
+               },
+
+               {
+                  id: '5',
+                  project: 'Ինտերիերի 3D վիզուալիզացիա',
+                  time: '2 օր',
+                  price: '2-10$',
+                  priceText: '(2-3 անկյունների համար)',
+               },
+
+               {
+                  id: '6',
+                  project: 'Տան, բնակարանի կամ ճարտարապետական օբյեկտի վիդեո ներկայացում',
+                  time: '3 օրից',
+                  price: '22$',
+                  priceText: '- ից սկսած (տեսանյութի 1 վայրկյանը + մոդելավորման արժեքը)',
+               },
+
+               {
+                  id: '7',
+                  project: 'Տան, բնակարանի կամ ճարտարապետական օբյեկտի վիդեո ներկայացում',
+                  time: '2 օրից',
+                  price: '22$',
+                  priceText: '-',
+               },
+            ],
+
+            making_gamesPage_title: 'Խաղերի ստեղծում',
+
+            making_gamesPage_description: 'Խաղերի ստեղծումը ոչ միայն ժամանցային ոլորտի մասն է, այլև կարևոր տեխնոլոգիական և սոցիալական ազդեցություն ունեցող գործիք, որը շարունակում է զարգացնել մարդկային փոխգործակցության ձևերը։',
+
+            making_gamesPage_top_div_part1: [
+               'Ի՞նչ է խաղերի ստեղծումը',
+               'Խաղերի ստեղծումը բարդ գործընթաց է, որը ներառում է ինտերակտիվ վիդեոխաղերի կամ վիրտուալ միջավայրերի մշակումը։ Այն բաղկացած է մի շարք փուլերից, ինչպիսիք են գաղափարի մշակումը, սցենարի գրվելը, 3D կամ 2D գրաֆիկայի ստեղծումը, ծրագրավորումը, աուդիո ինտեգրումը և վերջնական թեստավորումը։ Խաղերի ստեղծման համար օգտագործվում են տարբեր պլատֆորմներ և շարժիչներ, օրինակ՝ Unreal Engine, Unity, կամ Godot, որոնք թույլ են տալիս ստեղծել ինտերակտիվ և վիզուալ գրավիչ փորձառություններ։'
+            ],
+
+            making_gamesPage_top_div_part2: [
+               'Ինչո՞ւ  է խաղերի ստեղծումը անհրաժեշտ',
+               'Տնտեսական Աճ։ Խաղերի ինդուստրիան համարվում է ամենաարագ զարգացող ոլորտներից մեկը՝ ապահովելով միլիարդավոր դոլարների եկամուտ և հսկայական աշխատատեղեր։',
+               'Սոցիալական Ներգրավվածություն։ Խաղերը միավորում են համայնքներ, ներգրավում օգտատերերին և հաճախ դառնում են սոցիալական փոխգործակցության գործիք։',
+               'Կրթական և ուսուցողական գործիքներ։ Շատ խաղեր ունեն ուսուցողական բաղադրիչ, որոնք նպաստում են նոր հմտությունների կամ գիտելիքների ձեռքբերմանը։',
+               'Նորարարություն և Տեխնոլոգիական Զարգացում։ Խաղերի ստեղծումը խթանում է նոր տեխնոլոգիաների կիրառումը, ինչպիսիք են վիրտուալ և լրացված իրականությունը։',
+               'Ստեղծագործական Արտահայտություն։ Խաղերի միջոցով ստեղծագործողները կարող են կյանքի կոչել իրենց գաղափարները՝ ներկայացնելով եզակի պատմություններ և դիզայններ։'
+            ],
+            making_gamesPage_servicesTitle: 'Խաղերի ստեղծման համար մենք օգտագործում ենք առաջատար տեխնոլոգիաներ և ծրագրեր, որոնք ապահովում են բարձր որակ և արդյունավետություն: Ահա հիմնական տեխնոլոգիաները, որոնցով աշխատում ենք՝',
+
+            making_games_carousel: [
+               'Մեր աշխատանքները',
+               'Մեր փորձառու թիմը շարունակում է աշխատել նորարարական մոտեցումներով՝ ստեղծելով եզակի և բարձրորակ մոդելներ։ Մենք երաշխավորում ենք ձեր գաղափարների կյանքի կոչումը՝ զարմանալի վիզուալիզացիաներով։'
+            ],
+
+            web_promotion_page_title: 'Կայքի առաջխաղացում',
+
+            web_promotion_page_description: 'Կայքի առաջխաղացումը բիզնեսի հաջողության կարևոր գործիք է, որը հնարավորություն է տալիս գրավել նոր հաճախորդներ, զարգացնել բրենդը և պահպանել մրցակցային առավելությունը։',
+
+            web_promotion_page_info_part_1: [
+               'Ի՞նչ է կայքի առաջխաղացումը',
+               'Կայքի առաջխաղացումը գործընթաց է, որը նպատակ ունի բարձրացնել կայքի տեսանելիությունը որոնողական համակարգերում, ներգրավել ավելի շատ այցելուներ և բարելավել բրենդի առցանց ներկայությունը։ Այս գործընթացը ներառում է SEO (որոնողական համակարգերի օպտիմիզացիա), բովանդակության ռազմավարություն, հղումների կառավարում, և սոցիալական մեդիա մարքեթինգ։ Այն ապահովում է կայքի տեխնիկական ճիշտ կառուցվածքը և բարձրորակ բովանդակությունը՝ որոնողական համակարգերի պահանջներին համապատասխան։'
+            ],
+
+            web_promotiion_page_info_part_2: [
+               'Ինչո՞ւ  է կայքի առաջխաղացումը անհրաժեշտ',
+               'Տեսանելիության Բարձրացում։ Կայքի առաջխաղացումը ապահովում է, որ ձեր կայքը հայտնվի Google-ի կամ այլ որոնողական համակարգերի առաջին էջերում, ինչը նպաստում է նոր հաճախորդների ներգրավմանը։',
+               'Տրաֆիկի Աճ։ Օպտիմիզացված կայքը ստանում է ավելի շատ այցելություններ, ինչը նպաստում է բիզնեսի աճին և վաճառքների ավելացմանը։',
+               'Մրցակցային Առավելություն։ Թիրախավորված առաջխաղացման միջոցով ձեր բիզնեսը կարող է գերազանցել մրցակիցներին՝ շահելով շուկայի նոր հատվածներ։',
+               'Երկարաժամկետ Արդյունքներ։ Որոնողական համակարգերի օպտիմիզացիան ապահովում է կայուն և երկարաժամկետ արդյունքներ՝ առանց հավելյալ գովազդային ծախսերի։',
+               'Արդյունավետ Վերլուծություն։ Առաջխաղացման գործընթացում կիրառվում են վերլուծական գործիքներ, որոնք թույլ են տալիս գնահատել արդյունքներն ու բարելավել ռազմավարությունը։'
+            ],
+
+            web_promotion_info_part_3_title: 'Կայքի առաջխաղացման տեսակները ներառում են մի շարք ռազմավարություններ, որոնք ուղղված են կայքի վարկանիշի բարձրացմանը որոնողական համակարգերում, այցելուների ներգրավմանը և բրենդի տեսանելիության մեծացմանը։ Ահա հիմնական տեսակները․',
+
+            web_promotion_info_part_3_data: [
+               {
+                  title: 'SEO (Որոնողական համակարգերի օպտիմիզացիա)',
+                  desc: 'Նպատակ ունի բարելավել կայքի օրգանական տեսանելիությունը Google, Bing և այլ որոնողական համակարգերում։'
+               },
+
+               {
+                  title: "Սոցիալական մեդիա մարքեթինգ (SMM)",
+                  desc: 'Կայքի առաջխաղացումը սոցիալական հարթակների միջոցով (Facebook, Instagram, Twitter, LinkedIn):'
+               },
+
+               {
+                  title: 'PPC (Վճարովի գովազդ)', 
+                  desc: 'Վճարովի գովազդային արշավներ Google Ads, Bing Ads և սոցիալական մեդիայի հարթակներում։'
+               },
+
+               {
+                  title: 'Բովանդակության առաջխաղացում',
+                  desc: 'Բարձրորակ և հետաքրքիր բովանդակության ստեղծում, որն ուղղված է թիրախային լսարանին։'
+               },
+
+               {
+                  title: 'Հղումների կառուցում (Link Building)',
+                  desc: 'Արտաքին հղումների ստացում բարձր վարկանիշ ունեցող կայքերից, ինչը մեծացնում է կայքի վստահելիությունն ու վարկանիշը։'
+               },
+
+               {
+                  title: 'Վերլուծություն և օպտիմիզացում',
+                  desc: 'Տվյալների վերլուծության և օգտատերերի վարքագծի ուսումնասիրության միջոցով ռազմավարության շարունակական բարելավում։'
+               },
             ]
 
-            
          },
       },
 
@@ -3608,7 +3942,9 @@ i18n.use(initReactI18next).init({
                'Турникет для супермаркетов',
                'Турникет для офисов',
                'Уличный турникет с распознаванием лиц: Безопасная и интеллектуальная система контроля доступа',
-               'Продажа турникетов: Лучшие решения по безопасности и управлению для вашей компании'
+               'Продажа турникетов: Лучшие решения по безопасности и управлению для вашей компании',
+               'Оборудование для мониторинга сотрудников с распознаванием лиц и возможностью QR-сканирования',
+               'Демонстрация ввода QR-билетов единой билетной системы'
             ],
 
             web_project_cycle_title: 'Что необходимо для создания веб-приложения?',
@@ -3728,6 +4064,8 @@ i18n.use(initReactI18next).init({
                'Разработка мобильного приложения — это технологический процесс, который включает в себя разработку программы и ее адаптацию к мобильным устройствам, таким как смартфоны и планшеты. Этот процесс включает в себя несколько этапов: от первоначального проектирования программы до кодирования, тестирования и окончательного запуска. Приложения могут служить самым разным целям: от социальных сетей и игр до торговых платформ и бизнес-инструментов. Важно, чтобы дизайн приложения был интуитивно понятным, удобным и оптимизированным для разных устройств и размеров экрана.'
             ],
 
+            mobile_services_title: 'Технологии, используемые в процессе создания мобильного приложения, зависят от характера проекта, целей и платформ. Вот наиболее распространенные технологии, используемые при разработке мобильных приложений:',
+
             mobail_appDevelopendPageInfo_part2: [
                'Зачем нужна разработка мобильных приложений?',
                'Немедленный доступ. Приложения обеспечивают немедленный и быстрый доступ для пользователя. Пользователи могут легко загрузить приложение и использовать его где угодно и когда угодно.',
@@ -3838,9 +4176,173 @@ i18n.use(initReactI18next).init({
                'Обновление новостей сайта',
                'Добавляйте и обновляйте контент на сайте: статьи, описания услуг и товаров.',
                'Мониторинг конкурентной среды'
+            ],
+
+            modeling3D_title: 'Разработка 3D-моделирования',
+
+            modeling3D_description: '3D-моделирование широко используется в различных сферах: от дизайна изделий до создания мультфильмов, обеспечивая профессиональный и эффективный результат.',
+
+            modeling3D_info_part1: [
+               'Что такое разработка 3D-моделирования?',
+               'Трехмерное моделирование, или 3D-моделирование, — это процесс создания трехмерных изображений любого объекта или предметов. Для этих целей специалисты используют специализированные компьютерные программы, так называемые 3D-редакторы.'
+            ],
+
+            modeling3D_part2: [
+               'Зачем нужна разработка 3D-моделирования?',
+               'Высокое качество визуализации. Позволяет создавать реалистичные изображения, которые используются для проектирования, строительства и презентации продукции.',
+               'Эффективность процесса проектирования. 3D-моделирование позволяет дизайнерам и инженерам предварительно просмотреть результат, внести изменения и избежать ошибок.',
+               'Маркетинг и реклама. Модели часто используются в рекламных кампаниях, поскольку они обеспечивают визуальное взаимодействие.',
+               'В сфере строительства. Архитекторы и строители смогут более четко видеть проекты, получать цифровые версии физических моделей.',
+               'Виртуальная реальность (VR) и игры. При разработке VR-приложений и видеоигр необходимы высококачественные 3D-модели, обеспечивающие интерактивный опыт.'
+            ],
+
+            modeling3D_services: 'Для разработки 3D моделирования мы используем передовые технологии и программы, обеспечивающие высокое качество и эффективность. Вот основные технологии, с которыми мы работаем:',
+
+            modelind3D_work_section_title: 'Одна из наших работ',
+
+            modeling3D_tabel_title: 'Цены и условия',
+
+            modeling3D_tabel_th: [
+               'Проект',
+               'Крайний срок',
+               'Цена',
+            ],
+
+            modeling3D_tabel: [
+               {
+                  id: '1',
+                  project: '3D визуализация коттеджа с участком',
+                  time: '2-5 дней',
+                  price: '110$',
+                  priceText: '(из 2-3 углов)',
+               },
+
+               {
+                  id: '2',
+                  project: 'Архитектурная 3D визуализация торговых центров, многоквартирных домов',
+                  time: '3-10 дней',
+                  price: '1440$',
+                  priceText: '(из 3-5 углов)',
+               },
+
+               {
+                  id: '3',
+                  project: '3D визуализация земельных участков, жилых комплексов',
+                  time: '5-14 дней',
+                  price: '720$',
+                  priceText: '(из 5-10 углов)',
+               },
+
+               {
+                  id: '4',
+                  project: '3D визуализация генерального плана',
+                  time: '5-10 дней',
+                  price: '580$',
+                  priceText: 'из (1 угол)',
+               },
+
+               {
+                  id: '5',
+                  project: '3D визуализация интерьера',
+                  time: '2 дня',
+                  price: '2-10$',
+                  priceText: '(на 2-3 угла)',
+               },
+
+               {
+                  id: '6',
+                  project: 'Видеопрезентация дома, квартиры или архитектурного объекта',
+                  time: 'через 3 дня',
+                  price: '22$',
+                  priceText: 'от (1 секунда видео + стоимость моделирования)',
+               },
+
+               {
+                  id: '7',
+                  project: 'Видеопрезентация дома, квартиры или архитектурного объекта',
+                  time: 'через 2 дня',
+                  price: '22$',
+                  priceText: '-',
+               },
+            ],
+            
+
+            making_gamesPage_title: 'Создание игр',
+
+            making_gamesPage_description: 'Создание игр — это не только часть индустрии развлечений, но и важный инструмент технологического и социального воздействия, который продолжает развивать формы человеческого взаимодействия.',
+
+            making_gamesPage_top_div_part1: [
+               'Что такое разработка игр?',
+               'Разработка игр — это сложный процесс, включающий разработку интерактивных видеоигр или виртуальных сред. Он состоит из нескольких этапов, таких как разработка идеи, написание сценария, создание 3D или 2D графики, программирование, интеграция звука и финальное тестирование. Для создания игр используются различные платформы и движки, такие как Unreal Engine, Unity или Godot, которые позволяют создавать интерактивные и визуально привлекательные игры.'
+            ],
+
+            making_gamesPage_top_div_part2: [
+               'Зачем нужна разработка игр?',
+               'Экономический рост. Игровая индустрия считается одной из самых быстрорастущих отраслей, приносящей миллиарды долларов дохода и огромные рабочие места.',
+               'Социальная вовлеченность. Игры объединяют сообщества, вовлекают пользователей и часто становятся инструментом социального взаимодействия.',
+               'Образовательные и обучающие инструменты. Многие игры имеют образовательную составляющую, способствующую приобретению новых навыков или знаний.',
+               'Инновации и технологическое развитие. Создание игр способствует использованию новых технологий, таких как виртуальная и дополненная реальность.',
+               'Творческое выражение. С помощью игр создатели могут воплощать свои идеи в жизнь, представляя уникальные истории и дизайны.'
+            ],
+            making_gamesPage_servicesTitle: 'Мы используем передовые технологии и программное обеспечение для создания игр, обеспечивающих высокое качество и производительность. Вот основные технологии, с которыми мы работаем:',
+
+            making_games_carousel: [
+               'Наши работы',
+               'Наша опытная команда продолжает работать с инновационными подходами, создавая уникальные и качественные модели. Мы гарантируем воплощение ваших идей в жизнь с помощью потрясающих визуализаций.'
+            ],
+
+
+            web_promotion_page_title: 'Продвижение сайта',
+
+            web_promotion_page_description: 'Продвижение сайта – важный инструмент успеха в бизнесе, позволяющий привлекать новых клиентов, развивать бренд и сохранять конкурентные преимущества.',
+
+            web_promotion_page_info_part_1: [
+               'Что такое продвижение сайта?',
+               'Продвижение сайта — это процесс, целью которого является повышение видимости сайта в поисковых системах, привлечение большего количества посетителей и улучшение присутствия бренда в Интернете. Этот процесс включает в себя SEO (поисковую оптимизацию), контент-стратегию, управление ссылками и маркетинг в социальных сетях. Это обеспечивает правильную техническую структуру сайта и качественный контент в соответствии с требованиями поисковых систем.'
+            ],
+
+            web_promotiion_page_info_part_2: [
+               'Зачем необходимо продвижение сайта?',
+               'Повышение видимости. Продвижение сайта гарантирует появление вашего сайта на первых страницах Google или других поисковых системах, что способствует привлечению новых клиентов.',
+               'Рост трафика. Оптимизированный сайт получает больше трафика, что способствует росту бизнеса и увеличению продаж.',
+               'Конкурентное преимущество. Благодаря целенаправленному продвижению ваш бизнес может превзойти конкурентов, завоевав новые сегменты рынка.',
+               'Долгосрочные результаты. Поисковая оптимизация обеспечивает стабильные и долгосрочные результаты без дополнительных затрат на рекламу.',
+               'Эффективный анализ. В процессе продвижения используются аналитические инструменты, которые позволяют оценить результаты и улучшить стратегию.'
+            ],
+
+            web_promotion_info_part_3_title: 'Виды продвижения сайта включают в себя ряд стратегий, направленных на повышение рейтинга сайта в поисковых системах, привлечение посетителей и повышение узнаваемости бренда. Вот основные виды:',
+
+            web_promotion_info_part_3_data: [
+               {
+                  title: 'SEO (поисковая оптимизация)',
+                  desc: 'Целью проекта является улучшение органической видимости веб-сайта в Google, Bing и других поисковых системах.'
+               },
+
+               {
+                  title: "Маркетинг в социальных сетях (SMM)",
+                  desc: 'Продвижение сайта через социальные платформы (Facebook, Instagram, Twitter, LinkedIn).'
+               },
+
+               {
+                  title: 'PPC (Платная реклама)', 
+                  desc: 'Платные рекламные кампании в Google Ads, Bing Ads и социальных сетях.'
+               },
+
+               {
+                  title: 'Продвижение контента',
+                  desc: 'Создание качественного и интересного контента, ориентированного на целевую аудиторию.'
+               },
+
+               {
+                  title: 'Создание ссылок',
+                  desc: 'Получение внешних ссылок с высокорейтинговых сайтов, что повышает авторитет и рейтинг сайта.'
+               },
+
+               {
+                  title: 'Анализ и оптимизация',
+                  desc: 'Постоянное совершенствование стратегии посредством анализа данных и исследования поведения пользователей.'
+               },
             ]
-
-
 
          },
       },

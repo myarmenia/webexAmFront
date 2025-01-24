@@ -1,5 +1,6 @@
 .send_message_fixed{
     position: fixed;
+    z-index: 99;
     bottom: 200px;
     right: 55px;
     width: 59px;

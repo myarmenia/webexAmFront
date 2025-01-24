@@ -21,6 +21,7 @@ import {
    wordPressIcon,
 } from './iconFolder/icon';
 import {
+   blenderImg,
    co_workers_image1,
    co_workers_image10,
    co_workers_image11,
@@ -36,8 +37,13 @@ import {
    co_workers_image7,
    co_workers_image8,
    co_workers_image9,
+   gamesPagesServicesImgSubstance,
+   gamesPagesServicesImgUnity,
+   gimpImg,
    javaImg,
    laravelImg,
+   makeHumanImg,
+   materialImg,
    mobailAppDevelopend_services_android,
    mobailAppDevelopend_services_apis,
    mobailAppDevelopend_services_dataBases,
@@ -81,6 +87,7 @@ import {
    turnsileImg18,
    turnsileImg19,
    turnsileImg2,
+   turnsileImg20,
    turnsileImg3,
    turnsileImg4,
    turnsileImg5,
@@ -1297,7 +1304,7 @@ export const turnstileData = [
    {
       id: '1',
       img: turnsileImg1,
-      code: 'pz-1',
+      code: 'PZ-1',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1305,7 +1312,7 @@ export const turnstileData = [
    {
       id: '2',
       img: turnsileImg2,
-      code: 'pz-2',
+      code: 'PZ-2',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1313,7 +1320,7 @@ export const turnstileData = [
    {
       id: '3',
       img: turnsileImg3,
-      code: 'pz-3',
+      code: 'PZ-3',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1321,7 +1328,7 @@ export const turnstileData = [
    {
       id: '4',
       img: turnsileImg4,
-      code: 'pz-4',
+      code: 'PZ-4',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1329,7 +1336,7 @@ export const turnstileData = [
    {
       id: '5',
       img: turnsileImg5,
-      code: 'pz-5',
+      code: 'PZ-5',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1337,7 +1344,7 @@ export const turnstileData = [
    {
       id: '6',
       img: turnsileImg6,
-      code: 'pz-6',
+      code: 'PZ-6',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1345,7 +1352,7 @@ export const turnstileData = [
    {
       id: '7',
       img: turnsileImg7,
-      code: 'pz-7',
+      code: 'PZ-7',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1353,7 +1360,7 @@ export const turnstileData = [
    {
       id: '8',
       img: turnsileImg8,
-      code: 'pz-8',
+      code: 'PZ-8',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1361,7 +1368,7 @@ export const turnstileData = [
    {
       id: '9',
       img: turnsileImg9,
-      code: 'pz-9',
+      code: 'PZ-9',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1370,7 +1377,7 @@ export const turnstileData = [
    {
       id: '10',
       img: turnsileImg10,
-      code: 'pz-10',
+      code: 'PZ-10',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1378,7 +1385,7 @@ export const turnstileData = [
    {
       id: '11',
       img: turnsileImg11,
-      code: 'pz-11',
+      code: 'PZ-11',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1386,7 +1393,7 @@ export const turnstileData = [
    {
       id: '12',
       img: turnsileImg12,
-      code: 'pz-12',
+      code: 'PZ-12',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1394,7 +1401,7 @@ export const turnstileData = [
    {
       id: '13',
       img: turnsileImg13,
-      code: 'pz-13',
+      code: 'PZ-13',
       price1: '199.000',
       price2: '',
    },
@@ -1402,7 +1409,7 @@ export const turnstileData = [
    {
       id: '14',
       img: turnsileImg14,
-      code: 'pz-14',
+      code: 'PZ-14',
       price1: '249.000',
       price2: '398.000',
    },
@@ -1410,7 +1417,7 @@ export const turnstileData = [
    {
       id: '15',
       img: turnsileImg15,
-      code: 'pz-15',
+      code: 'PZ-15',
       price1: '249.000',
       price2: '398.000',
    },
@@ -1418,15 +1425,15 @@ export const turnstileData = [
    {
       id: '16',
       img: turnsileImg16,
-      code: 'pz-16',
+      code: 'PZ-16',
       price1: '435.000',
       price2: '696.000',
    },
 
    {
       id: '17',
-      img: turnsileImg17,
-      code: 'pz-17',
+      img: turnsileImg20,
+      code: 'PZ-20',
       price1: '435.000',
       price2: '696.000',
    },
@@ -1434,7 +1441,7 @@ export const turnstileData = [
    {
       id: '18',
       img: turnsileImg18,
-      code: 'pz-18',
+      code: 'PZ-18',
       price1: '',
       price2: '',
    },
@@ -1442,8 +1449,16 @@ export const turnstileData = [
    {
       id: '19',
       img: turnsileImg19,
-      code: 'pz-19',
-      price1: '80000',
+      code: 'PZ-19',
+      price1: '200000',
+      price2: '',
+   },
+
+   {
+      id: '20',
+      img: turnsileImg17,
+      code: 'PZ-17',
+      price1: '200000',
       price2: '',
    },
 ]
@@ -1472,6 +1487,18 @@ export const turnstileVideosData = [
       video: 'https://www.youtube.com/watch?v=2h6m9jsOMKg',
       title: 'Տուռնիկետների Վաճառք․ Ձեր Ընկերության Ապահովության և Կառավարման Լավագույն Լուծումները'
    },
+
+   {
+      id: '5',
+      video: 'https://www.youtube.com/shorts/fLCiFFd-lwY',
+      title: 'Աշխատակիցների վերահսկման սարքավորում դեմքի ճանաչման, QR սկանավորման հնարավորությամբ'
+   },
+
+   {
+      id: '6',
+      video: 'https://youtube.com/shorts/jUjcHnsi_lM?feature=shared',
+      title: 'Տոմսային միասնական համակարգի QR տոմսով մուտքի դեմոնստրացիա'
+   },
 ]
 
 
@@ -1481,7 +1508,7 @@ export const turnstileDataHome = [
    {
       id: '1',
       img: turnsileImg1,
-      code: 'pz-1',
+      code: 'PZ-1',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1489,7 +1516,7 @@ export const turnstileDataHome = [
    {
       id: '2',
       img: turnsileImg2,
-      code: 'pz-2',
+      code: 'PZ-2',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1497,7 +1524,7 @@ export const turnstileDataHome = [
    {
       id: '3',
       img: turnsileImg3,
-      code: 'pz-3',
+      code: 'PZ-3',
       price1: '490.000',
       price2: '784.000',
    },
@@ -1634,4 +1661,57 @@ export const mobile_page_services_data = [
       img: mobailAppDevelopend_services_python
    },
 
+]
+
+
+export const modelinp3DPageServicesData = [
+   {
+      id: '1',
+      name: 'Blender',
+      img: blenderImg
+   },
+
+   {
+      id: '2',
+      name: 'Material',
+      img: materialImg
+   },
+
+   {
+      id: '3',
+      name: 'Gimp, C#',
+      img: gimpImg
+   },
+
+   {
+      id: '4',
+      name: 'MakeHuman',
+      img: makeHumanImg
+   }
+]
+
+export const gamesPageServicesData = [
+   {
+      id: '1',
+      name: 'Blender',
+      img: blenderImg
+   },
+
+   {
+      id: '2',
+      name: 'Substance',
+      img: gamesPagesServicesImgSubstance
+   },
+
+   {
+      id: '3',
+      name: 'Gimp, C#',
+      img: gimpImg
+   },
+
+   {
+      id: '4',
+      name: 'Unity 3D',
+      img: gamesPagesServicesImgUnity
+   }
 ]

@@ -205,7 +205,7 @@ function LoginPage() {
             )}
          </Formik>
 
-         <div className="title_texth1 ">
+         {/* <div className="title_texth1 ">
             <h1>Ծրագրավորման դասընթացներ</h1>
          </div>
          <div className="register_drop_down">
@@ -250,7 +250,7 @@ function LoginPage() {
                      </div>
                   ))}
             </div>
-         </div>
+         </div> */}
       </div>
    );
 }

@@ -511,9 +511,10 @@ export const turnsileImg13 = require('./PZ-13.png');
 export const turnsileImg14 = require('./PZ-14.png');
 export const turnsileImg15 = require('./PZ-15.png');
 export const turnsileImg16 = require('./PZ-16.png');
-export const turnsileImg17 = require('./PZ-17.png');
+export const turnsileImg17 = require('./PZ-17.jpg');
 export const turnsileImg18 = require('./PZ-18.jpg');
 export const turnsileImg19 = require('./PZ-19.jpg');
+export const turnsileImg20 = require('./PZ-20.png');
 
 
 
@@ -573,3 +574,27 @@ export const development_courese_plus_img = require('./+.png')
 
 
 export const suportPageImg = require('./support_page_img.png');
+
+
+// ==================3dModelingBachround================
+export const dModeling3Bachround = require('./3dModelingBacground.png');
+
+export const blenderImg = require('./blenderImg.png');
+export const materialImg = require('./materialImg.png');
+export const gimpImg = require('./GimpImg.png');
+export const makeHumanImg = require('./makeHumanImg.png');
+
+
+// ==============gamesPage====================  
+
+export const gamesPageImg = require('./games_pageImg.png');
+export const gamesPagesServicesImgUnity = require('./unity_games.png');
+export const gamesPagesServicesImgSubstance = require('./games_substanseImg.png');
+export const gamesImg1 = require('./gamesImg1.jpg');
+export const gamesImg2 = require('./gamesImg2.jpg');
+export const gamesImg3 = require('./gamesImg3.jpg');
+export const gamesImg4 = require('./gamesImg4.jpg');
+
+// =================webPromotion===================
+
+export const web_promotion_img = require('./web_promotion_page_img.png');

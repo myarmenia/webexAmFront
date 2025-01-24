@@ -4,7 +4,7 @@ import { ChevronIcon } from "../../iconFolder/icon";
 import { useTranslation } from "react-i18next";
 
 const FaqComponent = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const {t} = useTranslation()
   
   const questions = [

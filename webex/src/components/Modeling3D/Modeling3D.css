@@ -1,274 +1,201 @@
-.all_modeling3d {
-   min-height: 100vh;
+.modeling3D {
    background-color: var(--main_color);
+   min-height: 100vh;
 }
 
-.all_modeling3d .container {
+.modeling3D .container {
    display: flex;
    justify-content: center;
    flex-direction: column;
    /* align-items: center; */
    overflow: hidden;
-   padding: 50px 180px;
+   padding: 50px 0;
 }
 
-.all_modeling3d .web-project-page-top-div {
-   height: 300px;
-   background-image: url('../../images/postive-caring-relationships-teachers 1 (3).png');
-   background-position: center center;
-   background-size: cover;
-}
-
-.all_modeling3d .web-project-page-top-div .container {
-   flex-direction: column;
-   height: 100%;
-   justify-content: center;
-   padding-bottom: 50px;
-}
-
-.all_modeling3d h2 {
-   color: var(--main_font_color);
-   font-style: normal;
-   font-weight: 400;
-   line-height: normal;
-   font-family: 'TitleFont';
-   text-transform: uppercase;
-   background-image: linear-gradient(-225deg, #231557 0%, #010526 29%, #7c1dc9 67%, white 100%);
-   background-size: auto auto;
-   background-clip: border-box;
-   background-size: 200% auto;
-   background-clip: text;
-   text-fill-color: transparent;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   animation: textclip 3s linear infinite;
-   display: inline-block;
-   font-size: 113px;
-   text-align: center;
-}
-
-.web-project-page-web-development-div {
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   align-items: center;
-}
-
-.web-project-page-web-development-div-info {
+.modeling3D_top_div{
+   width: 100%;
+   background-color: #AEAEAE1A;
+   /* backdrop-filter: blur(336px); */
+   border: 1px solid #5D64FF;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   padding: 50px;
+   gap: 50px;
+   border-radius: 20px;
 }
 
-.web-project-page-web-development-div h4 {
+
+.modeling3D_top_div_title{
    color: var(--main_font_color);
+   font-weight: 700;
    font-size: 32px;
-}
-
-.web-project-page-web-development-div-info p {
-   color: var(--main_font_color);
-   font-size: 20px;
    text-align: center;
 }
 
-.all_sides {
+.modeling3D_top_div_img{
+   width: 70%;
+   height: 571px;
+}
+
+.modeling3D_top_div_img img{
    width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+
+.modeling3D_top_div_info{
+   width: 70%;
    display: flex;
    flex-direction: column;
-   align-items: center;
-}
-.top_side_until_Slider {
-   width: 60%;
-   text-align: center;
-   margin-bottom: 60px;
-   color: white;
-}
-.top_side_until_Slider_divs {
-   text-align: start;
-   margin-top: 20px;
-}
-.tick_texts {
-   font-size: 17px;
-   font-weight: 900 !important;
+   gap: 30px;
 }
 
-/* ///////////////slider side////////////////// */
-.slider_side {
-   width: 100%;
-   background-color: #f5f5f5;
-   text-align: center;
-   padding: 65px 0;
-}
-.swiper {
-   width: 60%;
-   height: 520px;
+
+
+.modeling3D_top_div_info >p{
+   color: var(--main_font_color);
+   font-weight: 500;
 }
 
-.swiper-slide {
-   background-position: center;
-   background-size: contain;
-}
 
-.swiper-slide img {
-   display: block;
-   width: 100%;
-}
-
-/* //////////////////middle side under Slider//////////////// */
-.middle_side_under_Slider {
-   width: 60%;
-   text-align: center;
-}
-.middle_side_under_Slider_top_boxes_title_bigDiv {
-   width: 90%;
-   height: auto;
-   margin: 30px auto;
+.modeling3D_top_div_info_div1{
    display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: row;
-   flex-wrap: wrap;
-   /* display: grid;
-  grid-template-columns: auto auto auto auto; */
-}
-
-.middle_side_under_Slider_top_boxes_title_box {
-   min-width: 181px;
-   height: 100px;
-   font-size: 24px;
-   background-image: linear-gradient(to bottom right, #26716e, #f1e8e8f5);
-   padding: 18px;
-   margin: 5px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   scale: 1;
-}
-
-.middle_side_under_Slider_top_boxes_title_box:hover {
-   scale: 1.1;
-   transition: 0.6s;
-}
-.middle_side_under_Slider_top_boxes {
-   margin-top: 50px;
-}
-.middle_side_under_Slider_top_boxes_title {
-   font-size: 18px;
-   color: white;
-}
-
-/* //////////////////middle side under Slider textss//////////////// */
-.create_3d_model {
-   text-align: start;
-   margin: 120px 0;
-   color: white;
-}
-.create_3d_model_greenText {
-   color: #26716e;
-}
-
-.buttons_side {
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
+   flex-direction: column;
    gap: 20px;
 }
 
-/* ///////////////////////table side//////////////////////// */
-.table_div {
-   width: 72%;
-   margin-left: 100px;
-   margin-bottom: 10px;
-}
-table {
-   text-align: start;
-   font-size: 16px;
+
+.modeling3D_top_div_info_div2{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
 }
 
-.table_div th {
-   font-weight: 700 !important;
+.modeling3D_top_div_info_div1 >h3{
+   color: var(--main_font_color);
+   font-weight: 900;
+   font-size: 24px; 
+   text-align: center;
+
 }
-.table_div tbody tr:not(:last-child),
-.table_div thead tr {
-   border-bottom: 2px solid #dddddd;
+
+
+.modeling3D_top_div_info_div1 p{
+   color: var(--main_font_color);
+   font-weight: 500;
 }
-.mod-tab h3 {
-   padding-top: 50px;
+
+
+.modeling3D_top_div_info_div2 >h3{
+   color: var(--main_font_color);
+   font-weight: 900;
+   font-size: 24px; 
+   text-align: center;
+
 }
-.mod-tab {
+
+.modeling3D_top_div_info_div2 ol{
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+
+.modeling3D_top_div_info_div2 ol li{
+   color: var(--main_font_color);
+   font-weight: 500;
+}
+
+
+.modeling3D_example_section .container{
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   justify-content: center;
+   align-items: center;
+}
+
+.modeling3D_example_section_item{
+   width: 80%;
+}
+
+.modeling3D_example_section .container >h2{
    color: white;
-}
-.mod-tab td {
-   color: white;
-}
-.thead {
-   color: #f5f5f5;
+   font-weight: 900 !important;
+   font-size: 28px;
+   line-height: 56px;
+   text-align: center;
 }
 
-.ifrem_text {
-   text-align: start;
-}
-.ifrem_text_p {
-   padding-top: 34px;
-   color: white;
+
+.modeling3D_page_our_partners .container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
 }
 
-@media screen and (max-width: 855px) {
-   .top_side_until_Slider {
-      width: 77%;
-   }
-   .middle_side_under_Slider {
-      width: 77%;
-   }
-   .table_div {
-      width: 80%;
-      margin-left: 0px;
-   }
+.modeling3D_page_our_partners_titles {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   justify-content: center;
+   align-items: center;
 }
 
-@media screen and (max-width: 777px) {
-   .middle_side_under_Slider_top_boxes_title_box {
-      font-size: 18px;
-   }
-}
-@media screen and (max-width: 693px) {
-   .top_side_until_Slider {
-      width: 90%;
-   }
-   .middle_side_under_Slider {
-      width: 90%;
-   }
-   .table_div {
-      width: 90%;
-   }
+
+.modeling3D_page_our_partners_titles h2{
+   color: var(--main_font_color);
+   font-weight: 900;
+   font-size: 28px;
+   text-align: center;
 }
 
-@media screen and (max-width: 470px) {
-   table {
-      font-size: 12px;
-   }
-   .table_div td {
-      padding: 3px;
-   }
+
+.modeling3D_page_our_partners_titles p{
+   color: var(--main_font_color);
+   font-weight: 500;
+   text-align: center;
 }
 
-@keyframes textclip {
-   to {
-      background-position: -200% center;
-   }
-}
 
-.loader {
-   color: #5c8374;
-   font-weight: bold;
-}
-.canvs3D {
-   width: 100%;
-   height: 400px;
-}
-.universeScene {
-   width: 100%;
-   height: 400px;
-}
+
+@media(max-width: 1024px){
+   .modeling3D_top_div_img{
+     width: 90%;
+     height: 471px;
+   }
+  
+   .modeling3D_top_div_info{
+     width: 90%;
+   }
+  }
+  
+  
+  
+  @media(max-width: 768px){
+     .modeling3D_top_div_img{
+       width: 100%;
+       height: 371px;
+     }
+    
+     .modeling3D_top_div_info{
+       width: 100%;
+     }
+  
+     .modeling3D_top_div{
+        padding: 50px 20px;
+     }
+    }
+  
+  
+    @media(max-width: 480px){
+     .modeling3D_page_our_partners_titles p{
+        width: 300px;
+     }
+  }

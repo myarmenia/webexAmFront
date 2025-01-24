@@ -3,14 +3,14 @@ import { web_project_services_data } from '../../data'
 import './ProjectServices.css'
 import { useTranslation } from 'react-i18next'
 
-function ProjectServices({data}) {
+function ProjectServices({data, title}) {
     const {t} = useTranslation()
   return (
     <div className="web_project_services">
         <div className="container">
             <div className="web_project_services_titles_div">
                 <h2>{t('web_projectPage_servicesTitles.0')}</h2>
-                <p>{t('web_projectPage_servicesTitles.1')}</p>
+                <p>{title}</p>
             </div>
 
             <div className="web_project_services_items">

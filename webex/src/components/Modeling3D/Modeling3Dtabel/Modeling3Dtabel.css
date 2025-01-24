@@ -1,0 +1,121 @@
+.modeling3Dtabel_section{
+    padding: 50px 0;
+
+}
+
+.modeling3Dtabel_section .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.modeling3Dtabel_section .container >h2{
+   color: white;
+   font-weight: 900 !important;
+   font-size: 28px;
+   line-height: 56px;
+   text-align: center;
+}
+
+
+.modeling3Dtabel_table{
+    background-color: white;
+    border-radius: 20px;
+    width: 80%;
+
+}
+
+.modeling3Dtabel_table thead {
+    background-color: #5D64FF;
+    overflow: hidden; 
+}
+
+.modeling3Dtabel_table thead th {
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 21.79px;
+    font-weight: 700 ! important;
+    border-right: 1px solid gray;
+    word-wrap: break-word; 
+
+}
+
+.modeling3Dtabel_table thead th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.modeling3Dtabel_table thead th:last-child {
+    border-top-right-radius: 20px;
+    border-right: none;
+}
+
+
+
+.modeling3Dtabel_table tbody tr {
+    background-color: white;
+    overflow: hidden;
+}
+
+.modeling3Dtabel_table tbody tr td{
+    padding: 15px 10px;
+    font-size: 16px;
+    line-height: 21.79px;
+    font-weight: 400 !important;
+    text-align: center;
+    border-right: 1px solid gray;
+    word-wrap: break-word; 
+
+}
+.modeling3Dtabel_table tbody tr:nth-child(even) {
+    background-color: #5D64FF1A;
+    overflow: hidden; 
+}
+
+
+.modeling3Dtabel_table tbody td:first-child {
+    border-bottom-left-radius: 20px;
+}
+
+.modeling3Dtabel_table tbody td:last-child {
+    border-bottom-right-radius: 20px;
+    border-right: none;
+}
+
+
+.modeling3Dtabel_price{
+    color: #5D64FF;
+    margin-right: 20px;
+}
+
+
+
+.modeling3Dtabel_table {
+    background-color: white;
+    border-radius: 20px;
+    width: 80%; 
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .modeling3Dtabel_table {
+        width: 95%; 
+    }
+    .modeling3Dtabel_table {
+        font-size: 12px;
+    }
+
+    .modeling3Dtabel_table thead th,
+    .modeling3Dtabel_table tbody td {
+        padding: 8px; 
+    }
+}
+
+

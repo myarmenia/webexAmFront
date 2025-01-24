@@ -75,7 +75,7 @@ function MobailAppDevelopend() {
 
         <ProjectCycle/>
 
-        <ProjectServices data={mobile_page_services_data}/>
+        <ProjectServices data={mobile_page_services_data} title={t('mobile_services_title')}/>
 
         <div className='web_project_page_our_partners'>
             <div className="container">

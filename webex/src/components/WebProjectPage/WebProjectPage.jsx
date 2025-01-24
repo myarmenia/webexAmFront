@@ -73,7 +73,7 @@ function WebProjectPage() {
 
         </div>
         <ProjectCycle/>
-        <ProjectServices data={web_project_services_data}/>
+        <ProjectServices data={web_project_services_data} title={t('web_projectPage_servicesTitles.1')}/>
         
         <div className='web_project_page_our_partners'>
             <div className="container">
