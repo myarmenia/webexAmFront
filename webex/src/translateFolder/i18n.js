@@ -96,7 +96,7 @@ i18n.use(initReactI18next).init({
                'E-mail',
                'Phone',
                'Web development courses',
-               'Entry Systems'
+               'Turnstiles'
             ],
             // =======================buttons=========================
             button: [
@@ -117,7 +117,7 @@ i18n.use(initReactI18next).init({
             // =============header==================================
             headerTitlePart1: 'With our professional team, you can.',
             headerTitlePart2:
-               'Order web systems with complex software solutions. - Order multifunctional CRM / ERP systems. - Order hardware programming works. - Order mobile systems with complex software solutions (iOS, Android). - Order multi-functional games for the App Store and Play Store.  - Order complex 3D models.  - Learning the web interface | web backend / Unity / JAVA programming. - improve your knowledge in the field of frontend/server programming․',
+               'Order web systems with complex software solutions. - Order mechanical, automatic or optical turnstiles. - Order multifunctional CRM / ERP systems. - Order hardware programming works. - Order mobile systems with complex software solutions (iOS, Android).   - Order complex 3D models.  - Learning the web interface | web backend / Unity / JAVA programming. - improve your knowledge in the field of frontend/server programming․',
 
             // ===========================webexInfo==================
             webexInfo: [
@@ -1527,7 +1527,7 @@ i18n.use(initReactI18next).init({
                'Էլ․ Հասցե',
                'Հեռախոս',
                'Ծրագրավորման դասընթացներ',
-               'Մուտքի համակարգեր'
+               'Տուռնիկետներ'
             ],
 
             // =======================buttons=========================
@@ -1551,7 +1551,7 @@ i18n.use(initReactI18next).init({
 
             headerTitlePart1: 'Մեր պրոֆեսիոնալ թիմին կարող եք.',
             headerTitlePart2:
-               'Պատվիրել բարդ ծրագրային լուծումներով Web համակարգեր․   - Պատվիրել բազմաֆունկցիոնալ CRM/ERP համակարգեր․  - Պատվիրել սարքավորումների ծրագրավորման աշխատանքներ․ - Պատվիրել բարդ ծրագրային լուծումներով Mobile համակարգեր(iOS, Android)․ - Պատվիրել բազմաֆունկցիոնալ  խաղեր App Store և Play Store-ի համար - Պատվիրել  բարդ 3D մոդելներ - Սովորել Web Frontend | Web Backend | Unity | JAVA ծրագրավորում - Կատարելագործել Frontend/Backend ծրագրավորման Ձեր գիտելիքները․',
+               'Պատվիրել բարդ ծրագրային լուծումներով Web համակարգեր․ - Պատվիրել մեխանիկական, ավտոմատ կամ օպտիկական տուռնիկետներ. - Պատվիրել բազմաֆունկցիոնալ CRM/ERP համակարգեր․  - Պատվիրել սարքավորումների ծրագրավորման աշխատանքներ․ - Պատվիրել բարդ ծրագրային լուծումներով Mobile համակարգեր(iOS, Android)․ - Պատվիրել  բարդ 3D մոդելներ - Սովորել Web Frontend | Web Backend | Unity | JAVA ծրագրավորում - Կատարելագործել Frontend/Backend ծրագրավորման Ձեր գիտելիքները․',
 
             // ===========================webexInfo==================
 
@@ -2978,7 +2978,7 @@ i18n.use(initReactI18next).init({
                'Эл. адрес',
                'Телефон',
                'Курсы программирования',
-               'Системы доступа'
+               'Турникеты'
             ],
             // ===========buttons==========================
             button: [
@@ -3001,7 +3001,7 @@ i18n.use(initReactI18next).init({
 
             headerTitlePart1: 'С нашей профессиональной командой вы можете․',
             headerTitlePart2:
-               'Заказать Веб-системы с комплексными программными решениями. - Заказать многофункциональные CRM/ERP системы. - Заказать работы по программированию оборудования. - Заказать мобильные системы с комплексными программными решениями (iOS, Android). - Заказ многофункциональных игр для App Store и Play Store. - Заказ сложных 3D-моделей․ - Изучите веб-интерфейс | Веб-бэкэнд |: Единство |: Программирование JAVA. Улучшите свои навыки программирования Frontend/Backend.',
+               'Заказать Веб-системы с комплексными программными решениями. - Заказать механические, автоматические или  же оптические турникеты.  - Заказать многофункциональные CRM/ERP системы. - Заказать работы по программированию оборудования. - Заказать мобильные системы с комплексными программными решениями (iOS, Android). - Заказ сложных 3D-моделей․ - Изучите веб-интерфейс | Веб-бэкэнд |: Единство |: Программирование JAVA. Улучшите свои навыки программирования Frontend/Backend.',
 
             // ====================webexInfo=========================
             webexInfo: [
