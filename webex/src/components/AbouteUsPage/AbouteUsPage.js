@@ -72,7 +72,7 @@ function AbouteUsPage() {
 
 
 
-                <div className='our_teem'>
+                {/* <div className='our_teem'>
                     <div className='our_teem_title'>
                         <h4>{t('our_teem_title')}</h4>
                         <img src={bottomLine} alt="img" />
@@ -91,7 +91,7 @@ function AbouteUsPage() {
                             )
                         }
                      </div>
-                </div>
+                </div> */}
             </div>
             {openOrderModal && <OrderModal {...{setOpenOrderModal, setMessageModal}}/>}
             {messageModal && <MessageModal txt={respOrder?.data.message} {...{setMessageModal}}/>}
