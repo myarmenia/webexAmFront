@@ -1402,7 +1402,7 @@ export const turnstileData = [
       id: '13',
       img: turnsileImg13,
       code: 'PZ-13',
-      price1: '199.000',
+      price1: '290.000',
       price2: '',
    },
 
@@ -1410,16 +1410,16 @@ export const turnstileData = [
       id: '14',
       img: turnsileImg14,
       code: 'PZ-14',
-      price1: '249.000',
-      price2: '398.000',
+      price1: '390.000',
+      price2: '450.000',
    },
 
    {
       id: '15',
       img: turnsileImg15,
       code: 'PZ-15',
-      price1: '249.000',
-      price2: '398.000',
+      price1: '390.000',
+      price2: '450.000',
    },
 
    {
